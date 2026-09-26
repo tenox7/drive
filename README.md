@@ -91,17 +91,19 @@ client vehicle picker; DRIVE_WINDOW=WxH sets the window size (default
 (default 1.8, larger is hazier) and DISABLE_DEPTH_CUE=1 turns it off;
 the Config menu changes it while driving.
 
-MACOS APP AND DMG
-=================
+PACKAGING
+=========
 
     make app        build/DRIVE.app, ad-hoc signed
     make dmg        the same in build/DRIVE.dmg
     make release    Developer ID signed, notarized and stapled DMG
+    make zip        build/DRIVE-windows-x64.zip, after build.windows.sh
 
 A double-clickable app with the server hidden inside it; it defaults to
 unlimited practice, and GLFW is linked statically so nothing else has to
 be installed.  "make release" needs DEV_ID and NOTARY_PROFILE in .env --
-copy .env.example and fill them in.
+copy .env.example and fill them in.  The zip is the same two Windows
+binaries and their data, with the .bat files beside them.
 
 TESTING WITHOUT A DESKTOP
 =========================

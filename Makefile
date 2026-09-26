@@ -1,5 +1,6 @@
-# macOS packaging: DRIVE.app and DRIVE.dmg.  The game itself is built by
-# build.macos.sh / build.linux.sh.
+# Packaging: DRIVE.app and DRIVE.dmg on macOS, DRIVE-windows-x64.zip on
+# Windows.  The game itself is built by build.macos.sh / build.linux.sh /
+# build.windows.sh.
 -include .env
 
 APP_NAME = DRIVE
@@ -7,10 +8,12 @@ VERSION  = 1.0
 BUILD    = build
 APP      = $(BUILD)/$(APP_NAME).app
 DMG      = $(BUILD)/$(APP_NAME).dmg
+ZIP      = $(BUILD)/$(APP_NAME)-windows-x64.zip
 STAGING  = $(BUILD)/dmg_staging
+ZIPDIR   = $(BUILD)/zip_staging
 RES      = $(APP)/Contents/Resources
 
-.PHONY: all binaries icon app dmg release clean
+.PHONY: all binaries icon app dmg release zip clean
 
 all: dmg
 
@@ -101,6 +104,22 @@ release: binaries icon
 	xcrun stapler staple $(DMG)
 	spctl -a -t open --context context:primary-signature -v $(DMG)
 	@echo "Signed + notarized: $(DMG)"
+
+# Windows: zip up what build.windows.sh left in DRIVE, laid out the way the
+# .bat files expect.  Run this under MSYS2, after build.windows.sh.
+zip:
+	@test -f DRIVE/drive.exe || { echo "run ./build.windows.sh first"; exit 1; }
+	rm -rf $(ZIPDIR) $(ZIP)
+	mkdir -p $(ZIPDIR)/drive/DRIVE
+	cp run.bat justdrive.bat $(ZIPDIR)/drive/
+	cp DRIVE/drive.exe DRIVE/drive_server.exe DRIVE/drive_help \
+	   DRIVE/drive_blocks DRIVE/sound.cnf $(ZIPDIR)/drive/DRIVE/
+	cp -R DRIVE/pixmaps DRIVE/scenes DRIVE/constructs DRIVE/textures \
+	   $(ZIPDIR)/drive/DRIVE/
+	find $(ZIPDIR) -name .DS_Store -delete
+	(cd $(ZIPDIR); zip -qr ../$(notdir $(ZIP)) drive)
+	rm -rf $(ZIPDIR)
+	@ls -lh $(ZIP)
 
 clean:
 	rm -rf $(BUILD)
