@@ -51,6 +51,8 @@ Launcher scripts in the top-level directory:
     ./run.sh          server console + client, normal race cycle
     ./justdrive.sh    unlimited practice, car already spawned
 
+justdrive.sh runs the server hidden inside the game, so there is one
+window and no console; run.sh still opens the operator console.
 justdrive.sh takes an optional vehicle name, e.g. ./justdrive.sh "Tank".
 Steer with the mouse (up accelerates, down brakes); "r" respawns and "?"
 shows the keyboard help.
@@ -65,12 +67,28 @@ The server has a curses operator console.  NEXT STATE steps Pre-Race ->
 Racing -> Post-Race -> Practice; cars can only be driven in Racing and
 Practice.  Automatic Race Control runs that cycle unattended.
 
-Environment variables: DRIVE_PRACTICE_MODE=1 keeps the server in Practice
-with the clock stopped; DRIVE_VEHICLE="<name>" plus DRIVE_AUTOSTART_MODE=1
-skip the client vehicle picker; DRIVE_WINDOW=WxH sets the window size (default 835x940, the original);
-DRIVE_FOG=<n> sets the starting depth cue
-level (default 1.8, larger is hazier) and DISABLE_DEPTH_CUE=1 turns it
-off; the Config menu changes it while driving.
+Environment variables: DRIVE_LOCAL_SERVER=1 makes the client start and
+stop its own drive_server, with no console and no terminal of its own,
+which the .app does by itself (DRIVE_NO_CONSOLE=1 and
+DRIVE_EXIT_WHEN_EMPTY=1 do those two halves for a server run by hand);
+DRIVE_PRACTICE_MODE=1 keeps the server in Practice with the clock
+stopped; DRIVE_VEHICLE="<name>" plus DRIVE_AUTOSTART_MODE=1 skip the
+client vehicle picker; DRIVE_WINDOW=WxH sets the window size (default
+835x940, the original); DRIVE_FOG=<n> sets the starting depth cue level
+(default 1.8, larger is hazier) and DISABLE_DEPTH_CUE=1 turns it off;
+the Config menu changes it while driving.
+
+MACOS APP AND DMG
+=================
+
+    make app        build/DRIVE.app, ad-hoc signed
+    make dmg        the same in build/DRIVE.dmg
+    make release    Developer ID signed, notarized and stapled DMG
+
+A double-clickable app with the server hidden inside it; it defaults to
+unlimited practice, and GLFW is linked statically so nothing else has to
+be installed.  "make release" needs DEV_ID and NOTARY_PROFILE in .env --
+copy .env.example and fill them in.
 
 TESTING WITHOUT A DESKTOP
 =========================

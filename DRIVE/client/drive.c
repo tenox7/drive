@@ -258,9 +258,74 @@ Boolean StarbaseGetVisuals(
     XVisualInfo *vgraphics);
 #endif
 
+#ifndef WIN32
+/*****************************************************************
+ * start_private_server
+ *
+ *	Run our own drive_server, with no console and no terminal of its
+ *	own, so the game is a single self-contained program.  Enabled
+ *	with DRIVE_LOCAL_SERVER=1, and always inside a macOS .app, which
+ *	has nowhere to set it.  The server exits when we disconnect, and
+ *	is killed outright if we quit first.
+ */
+static pid_t private_server_pid;
+
+static void stop_private_server(void)
+{
+    if (private_server_pid > 0) kill(private_server_pid,SIGTERM);
+    private_server_pid = 0;
+}
+
+/* Inside a .app, construct_filenames() leaves us in Contents/Resources. */
+static boolean_type in_app_bundle(void)
+{
+    static const char rsrc[] = "/Contents/Resources";
+    int n = strlen(drivedir) - (sizeof(rsrc) - 1);
+
+    return (n > 0) && (strcmp(drivedir + n, rsrc) == 0);
+}
+
+static void start_private_server(void)
+{
+    boolean_type bundled = in_app_bundle();
+    pid_t pid;
+
+    if (!bundled && (getenv("DRIVE_LOCAL_SERVER") == NULL)) return;
+
+    pid = fork();
+    if (pid < 0) return;
+
+    if (pid == 0) {
+	/* The server opens its textures relative to the game directory. */
+	chdir(drivedir);
+	setenv("DRIVE_NO_CONSOLE","1",1);
+	setenv("DRIVE_EXIT_WHEN_EMPTY","1",1);
+	/* Endless practice is what a double-clicked app is for. */
+	if (bundled && (getenv("DRIVE_PRACTICE_MODE") == NULL))
+	    setenv("DRIVE_PRACTICE_MODE","1",1);
+	freopen("/dev/null","r",stdin);
+	freopen("/dev/null","w",stdout);
+	freopen("/dev/null","w",stderr);
+	/* Absolute argv[0]: the server finds its scenes the same way we do. */
+	execl(server_programname,server_programname,(char *)NULL);
+	_exit(1);
+    }
+
+    private_server_pid = pid;
+    atexit(stop_private_server);
+}
+#else
+#define start_private_server()
+#endif
+
 char *findServer(void)
 {
     static char result[1024];
+#ifndef WIN32
+    /* Our own server is on the loopback, not on whatever this host calls
+     * itself. */
+    if (private_server_pid > 0) return "localhost";
+#endif
     if (!*result) {
         gethostname(result, sizeof(result));
     }
@@ -1625,6 +1690,9 @@ static void drive_initialize(
 
     /* Build the filenames I need to fetch.  Base them off argv[0] */
     construct_filenames(argv[0]);
+
+    /* Get our own server going while the window comes up. */
+    start_private_server();
 
     /* Must come after construct_filenames */
     check_graphics_configuration();

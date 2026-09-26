@@ -38,3 +38,7 @@ JPEG/config.status
 
 # headless.sh output
 CAPTURE.png
+
+# macOS packaging
+build/
+.env

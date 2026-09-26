@@ -570,13 +570,19 @@ void open_server_interface(
         qsort(courses, i, sizeof(char *), cmpStr);
     }
 
-    if (!tgInit()) {
-        exit(1);
-    }
-
     tgCompile(glist);
-    tgPaintAll(glist);
-    iface_init = 1;
+
+    /* DRIVE_NO_CONSOLE: no operator console at all.  Every tg* call then
+     * does nothing and messages go to stderr, so the server can run out of
+     * sight with no terminal of its own.
+     */
+    if (getenv("DRIVE_NO_CONSOLE") == NULL) {
+        if (!tgInit()) {
+            exit(1);
+        }
+        tgPaintAll(glist);
+        iface_init = 1;
+    }
 
     /* Make the display agree with reality: fill in the course times and
      * pick up the initial state of the Automatic Race Control checkbox.

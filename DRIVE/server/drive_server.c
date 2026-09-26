@@ -1156,6 +1156,11 @@ static boolean_type server_read(
 	case CLI_DISCONNECT :
 	    server_disconnect(c, Msg);
 	    c = 0;
+	    /* DRIVE_EXIT_WHEN_EMPTY: a private server started by a client
+	     * has no reason to outlive it.
+	     */
+	    if (!connection_list && getenv("DRIVE_EXIT_WHEN_EMPTY"))
+		done = TRUE;
 	    break;
 
 	case CLI_READY :

@@ -52,13 +52,10 @@ find . \( -name "*.o" -o -name "*.a" \) -delete
 Xvfb :99 -screen 0 1400x1100x24 >/dev/null 2>&1 &
 sleep 2
 cd DRIVE
-# The server console is curses, so it needs a pty.
-TERM=xterm script -q -c "DRIVE_PRACTICE_MODE=1 ./drive_server" /tmp/srv.pty \
-    >/dev/null 2>&1 &
-sleep 3
-DRIVE_AUTOSTART_MODE=1 DRIVE_VEHICLE="$VEHICLE" ./drive localhost \
+DRIVE_LOCAL_SERVER=1 DRIVE_PRACTICE_MODE=1 \
+    DRIVE_AUTOSTART_MODE=1 DRIVE_VEHICLE="$VEHICLE" ./drive localhost \
     >/tmp/cli.log 2>&1 &
-sleep 10
+sleep 12
 
 WID=$(xdotool search --name "^Drive$" | head -1)
 [ -n "$WID" ] || { echo "no window"; head -5 /tmp/cli.log; exit 1; }

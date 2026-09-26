@@ -47,11 +47,14 @@ static TextFunTab funcTab[] = {
     { paintHSlide, keyHSlide },         /* HSLIDE */
 };
 
+static int tg_live;
+
 int tgInit(void)
 {
     if (!initscr()) {
         return 0;
     }
+    tg_live = 1;
     cbreak();
     nodelay(stdscr, TRUE);
     keypad(stdscr, TRUE);
@@ -89,6 +92,8 @@ int tgCompile(TextGadget *glist)
 void tgPaintAll(TextGadget *glist)
 {
     int i;
+
+    if (!tg_live) return;
 
     wclear(stdscr);
     for (i = 1; glist[i].kind != TG_NULL; i++) {
@@ -251,6 +256,8 @@ static void paintHSlide(TextGadget *glist, int which)
 void tgUpdate(TextGadget *glist, int which)
 {
     int n = glist[which].kind;
+
+    if (!tg_live) return;
     if ((n < 0) || (n > TG_HSLIDE)) {
         return;
     }
@@ -260,7 +267,10 @@ void tgUpdate(TextGadget *glist, int which)
 
 void tgFlush(TextGadget *glist)
 {
-    int active = glist[0].ival;
+    int active;
+
+    if (!tg_live) return;
+    active = glist[0].ival;
 
     switch (glist[active].kind) {
     case TG_TEXTEDIT :
@@ -542,6 +552,8 @@ int tgCheckInput(TextGadget *glist, void (*callback)(TextGadget *, int))
     int i, n, key;
     int active, newActive;
 
+    if (!tg_live) return 0;
+
     key = getch();
     if (key <= 0) {
         return 0;
@@ -625,6 +637,8 @@ void tgAddString(const char *str, TextGadget *glist, int start, int num)
     int i, n, idx;
     char *ptr;
 
+    if (!tg_live) return;
+
     for (i = 1; i < num; i++) {
         strcpy(glist[start+i-1].pval, glist[start+i].pval);
         tgUpdate(glist, start+i-1);
@@ -652,6 +666,8 @@ void tgAddString(const char *str, TextGadget *glist, int start, int num)
 
 void tgTerm(void)
 {
+    if (!tg_live) return;
+    tg_live = 0;
     endwin();
 }
 

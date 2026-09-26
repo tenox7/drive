@@ -143,6 +143,22 @@ void construct_filenames(
 #endif
     }
 
+#ifdef __APPLE__
+    /* Inside a macOS .app the executable sits in Contents/MacOS and the
+     * game files in Contents/Resources.
+     */
+    {
+	static const char macos[] = "/Contents/MacOS";
+	static const char rsrc[]  = "/Contents/Resources";
+	int n = strlen(drivedir) - (sizeof(macos) - 1);
+
+	if ((n > 0) && (strcmp(drivedir + n, macos) == 0)
+		&& (n + sizeof(rsrc) <= sizeof(drivedir))) {
+	    strcpy(drivedir + n, rsrc);
+	}
+    }
+#endif
+
 #if 0 /*def V4_FILE_SYS* [ */
     /* On the V4 File System, the server config file can (and usually does)
      * reside in a different directory than the rest of the files.
