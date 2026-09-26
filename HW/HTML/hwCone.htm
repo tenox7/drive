@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwCone - create a truncated partial cone</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwCone - create a truncated partial cone</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>Tesselation parameter; number of rows in the resulting mesh</td>
+</tr>
+<tr><td>GraphM</td>
+<td>1I</td>
+<td>Tesselation parameter; number of columns in the resulting mesh</td>
+</tr>
+<tr><td>Radius</td>
+<td>2F</td>
+<td>Radius of the cone at the bottom and top</td>
+</tr>
+<tr><td>Height</td>
+<td>1F</td>
+<td>Height of the cone; the distance from the bottom to the top</td>
+</tr>
+<tr><td>LonRange</td>
+<td>2F</td>
+<td>Starting and stopping longitude of the cone in the range 0 to
+  360</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>1B</td>
+<td>True for smooth shading; false for faceted</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tesselation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>9</td>
+</tr>
+<tr><td>GraphM</td>
+<td>17</td>
+</tr>
+<tr><td>Radius</td>
+<td>{1,1}</td>
+</tr>
+<tr><td>Height</td>
+<td>1</td>
+</tr>
+<tr><td>LonRange</td>
+<td>{0,360}</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>True</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwCone class creates a truncated cone, restricted in longitude
+as requested by the user. The cone is specified relative to the
+origin, with a height (default, 1.0), and a lower and upper radius
+(both default to 1.0). The height is specified relative to the
+positive Z axis. The longitude range over which the cone is drawn
+defaults to a complete circle, 0 to 360 degrees. Note that the cone
+IS NOT capped; see hwDisc and hwRing for possible capping objects.
+The cone is tesselated into a mesh with GraphN rows and GraphM
+columns. By default, the cone is smoothly shaded; if a faceted
+appearance is desired, set HasNormals to False.</p>
+<p>The default texture coordinates of an hwCone have the S coordinate
+increasing from 0.0 to 1.0 along the bottom and top of the cone, and
+the T coordinate increasing from 0.0 to 1.0 from the origin to the
+top of the cone.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a half-pipe object, visible from both inside and out */
+    hwObject
+        cone;
+    hwFloat
+        lonRange[2] = {0.0, 180.0};
+
+    cone = hwCone-&gt;create( hwCone );
+    cone-&gt;modify( cone, hwStrLonRange, HW_TYPE_2F, cone );
+    HW_MODIFY_1B( cone, hwStrTwoSided, HW_TRUE );
+    cone-&gt;draw( cone );
+    cone-&gt;destroy( cone );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A half-pipe, visible from both sides
+    hwCone cone {
+        LonRange = {0,180}
+        TwoSided = True
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

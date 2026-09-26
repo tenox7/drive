@@ -1,0 +1,94 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=objects.a
+all: $(LIBTARGET)
+TOPDIR=../..
+
+PHYSICSLIB_DIR=../../libphysics
+NUMLIB_DIR=../../libnum
+PRIMLIB_DIR=../../libprims
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../../include -I../objects \
+  -I$(PHYSICSLIB_DIR) -I$(NUMLIB_DIR) -I$(PRIMLIB_DIR) \
+  @CPPFLAGS@ @DEFS@ @CFLAGS@ $(WARNINGS) $(OPTDEBUGFLAGS)
+
+SRC=\
+  banks.c \
+  barn.c \
+  bridge.c \
+  bump.c \
+  checkpt.c \
+  conifer.c \
+  countach.c \
+  curve.c \
+  curvegdrail.c \
+  curvewall.c \
+  deciduous.c \
+  fence.c \
+  flames.c \
+  flat.c \
+  FokD7.c \
+  graftal.c \
+  ground.c \
+  guardrail.c \
+  hill.c \
+  hillroad.c \
+  hillxroad.c \
+  house.c \
+  lamp.c \
+  land_mine.c \
+  ltube.c \
+  mailbox.c \
+  mcycle.c \
+  minivan.c \
+  mound.c \
+  obj_list.c \
+  obj_utils.c \
+  oval.c \
+  parkinglot.c \
+  pillar.c \
+  police.c \
+  polyline.c \
+  pond.c \
+  railroad.c \
+  ramp.c \
+  road.c \
+  rocket_car.c \
+  rubble.c \
+  sedan.c \
+  shell.c \
+  sign.c \
+  silo.c \
+  skyscraper.c \
+  sphere.c \
+  spiral.c \
+  splroad.c \
+  stoplight.c \
+  T34.c \
+  teleline.c \
+  twistramp.c \
+  ufo.c \
+  wall.c \
+  wormhole.c \
+  xfighter.c
+
+include $(TOPDIR)/Makefile.h
+

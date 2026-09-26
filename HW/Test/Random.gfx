@@ -1,0 +1,51 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+hwEnviron {
+    BackgroundColor = {0,0,0}
+    AmbientFactor = 1.0
+    AmbientColor = {0.4, 0.4, 0.4}
+}
+
+hwCamera {
+    Pos = {0,0,-1}
+    Dir = {0,0,1}
+    Up = {0,1,0}
+    Perspective = True
+    Planes = {0.1, 100}
+    Field = 75
+}
+
+hwTimer {
+    Equation = {0,1}
+    CycleTime = 1
+    Children = { hwSpinner {
+        Lifetime = {0,0.8}
+        PosType = HW_SPIN_RANDOM
+        PosParams = {-0.5, -0.5, 0.0,   0.5, 0.5, 0.0}
+        ColorType = HW_SPIN_RANDOM
+        ColorParams = {.5,.5,.5,  1,1,1}
+        Children = { hwText {
+            Surface = {
+                hwSurface { Color = {1,0,0} },
+                hwSurface { Invisible = True },
+                hwSurface { Invisible = True }
+            }
+            Scale = 0.1
+            Data = "Random"
+        } }
+    } }
+}

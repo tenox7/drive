@@ -1,0 +1,119 @@
+== NAME ==
+hwParseFile - parse a HoverWare object file and return the objects found in it\\
+hwParseArray - parse a string array and return the objects found in it
+
+== SYNOPSIS ==
+{{{
+    #include "hw.h"
+
+    hwInt32 hwParseFile( char *name, hwObject **result )
+    hwInt32 hwParseArray( char **array, hwObject **result )
+}}}
+
+== DESCRIPTION ==
+The hwParseFile utility parses a HoverWare object file.  The format
+of the file is simple; it is a series of object and constant
+definitions.  Constant definitions are of the form
+
+:: <name> = <value>
+
+A <value> is one of five "kinds":  a scalar number, a string, a
+boolean, an object, or an array of one of those types.  Scalar
+numbers are integers or floating point numbers; expressions may be
+entered as well, surrounded by parentheses.  Strings are arbitrary
+sequences of characters surrounded by double quotes "like this".
+Booleans are either True or False.  Objects are the names of
+previously declared named objects.  Arrays are lists of one or more
+items surrounded by curly braces, { "like", "this" }.  Note that
+arrays must be uniform in type; that is, all elements must be
+numbers, or all elements must be objects, etc.  Constants may be
+used in later constant or object definitions, or they may be looked
+up in the program which uses [[hwParseFile]] by using the
+[[hwLookup|hwFindConstant]] call.  The program may register constants for
+later use in parsing by making an [[hwLookup|hwRegisterConstant]] call.
+
+Object definitions are of the form
+{{{
+        <class> {
+            <name> = <value>
+            <name> = <value>
+                ...
+        }
+}}}
+
+or, for named objects,
+{{{
+        <class> <name> {
+            <name> = <value>
+            <name> = <value>
+                ...
+        }
+}}}
+
+The <name>s in this case are the names of properties recognized by
+the object being defined.  For example, the hwOrient class
+understands the Scale, Rotate, and Pos properties; each takes as a
+<value> an array of three floats.  Here is an example hwOrient
+object:
+
+{{{
+        hwOrient twice_bigger {
+            Scale = {2,2,2}
+        }
+}}}
+
+Named objects can be referred to by subsequent constant or object
+definitions, or they may be looked up by using the [[hwLookup|hwFindObject]]
+call.
+
+If it is desired to "include" another HoverWare object file, you may
+use the [[hwFile]] class; for example:
+
+{{{
+        # foo.hw - reference bar.hw
+        hwFile {
+            FileName = "bar.hw"
+        }
+}}}
+
+Constants and named objects defined in the loaded file are available
+for later use in the current file.
+
+A comment in a HoverWare object file begins with the character '#'
+and continues to the end of the line.
+
+The hwParseArray format is very similar to the hwParseFile format,
+except each line of the "file" is kept as a separate string in the
+array, thus:
+{{{
+    char *array[] = {
+        "hwObject mySphere {",
+            "Radius = 5.0",
+            "GraphN = 17",
+            "GraphM = 9",
+        "}",
+        NULL
+    }
+}}}
+
+The array  must be terminated with a NULL pointer as shown.
+
+== RETURN VALUE ==
+The number of objects read from the file, or 0 if an error occurred
+
+== ERRORS ==
+; HW_ERROR_NO_MEMORY
+: An error occurred trying to allocate memory for an object or property.  This is a fatal error and will terminate parsing
+
+; HW_ERROR_BAD_PROP
+: An object didn't recognize a property which was being initialized.  This is a non-fatal error.
+
+; HW_ERROR_BAD_TYPE
+: A value of an improper type was passed to an object for property initialization.  This is a non-fatal error; the property is ignored.
+
+== EXAMPLES ==
+
+== SEE ALSO ==
+[[hwWriteAscii]], [[hwLookup|hwFindConstant]], [[hwLookup|hwFindObject]],
+[[hwLookup|hwFindClass]], [[hwLookup|hwRegisterConstant]],
+[[hwLookup|hwRegisterObject]], [[hwLookup|hwRegisterClass]], [[hw]]

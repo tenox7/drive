@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwPolyline - define a connected series of line segments</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwPolyline - define a connected series of line segments</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li>hwOrient</li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Data</td>
+<td>*F</td>
+<td>The list of vertices, with 3 floats per vertex</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>Color</td>
+<td>3F</td>
+<td>The color of the polyline</td>
+</tr>
+<tr><td>Invisible</td>
+<td>1B</td>
+<td>True iff the polyline is not to be displayed</td>
+</tr>
+<tr><td>Visibility</td>
+<td>1I</td>
+<td>Visibilty mask for use with hwDisplay-&gt;setVisibility</td>
+</tr>
+<tr><td>HasFlags</td>
+<td>1B</td>
+<td>True iff the polyline has move/draw flags per vertex</td>
+</tr>
+<tr><td>PrimSize</td>
+<td>1F</td>
+<td>Width of the lines being drawn, in pixels</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Data</td>
+<td>NULL</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>Color</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>Invisible</td>
+<td>False</td>
+</tr>
+<tr><td>Visibility</td>
+<td>0xFFFFFFFF</td>
+</tr>
+<tr><td>HasFlags</td>
+<td>False</td>
+</tr>
+<tr><td>PrimSize</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwPolyline class takes a list of vertices and displays them as
+a connected strip of lines. The Data pointer is an array of hwFloat
+values; the number must be equal to either n*3 (if HasFlags is False)
+or n*4 (if HasFlags is True), where n is the number of vertices in
+the polyline. The Color is the color in which the polyline is to be
+drawn. See <a href="hwSurface.htm">hwSurface</a> for information on the
+Invisible and Visibility properties.</p>
+<h2>C EXAMPLE</h2>
+<h2>OBJECT FILE EXAMPLE</h2>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwOrient.htm">hwOrient</a>, <a
+href="hwSurface.htm">hwSurface</a></p>
+</body>
+</html>

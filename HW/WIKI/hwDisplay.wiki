@@ -1,0 +1,132 @@
+== NAME ==
+hwDisplay - class to handle graphical rendering
+
+== SYNOPSIS ==
+{{{
+        #include "hw.h"
+
+        hwDisplay disp;
+
+        disp = hwDefaultDisplay->create( hwDefaultDisplay, NULL, NULL );
+        disp->entry_point_name( args... );
+}}}
+
+== DESCRIPTION ==
+HoverWare abstracts graphical rendering away from the underlying API.  This
+allows HoverWare to be implemented on any modern 3D graphics API, including
+the portions of the API which are window-system and operating-system
+dependent.  Currently, HoverWare runs on top of the OpenGL API (the
+OpenGL ES 1.1 subset, specifically) on Linux, Windows, Macintosh,
+and Android.  A DirectX port is underway on Windows as well.
+
+Note that, other than the entry points described in [[hwInit]], applications
+only rarely have to directly call hwDisplay entry points; usually, hwObjects
+are created which themselves call hwDisplay entry points to draw themselves.
+
+These are entry points used to initialize graphics contexts for use
+by HoverWare:
+
+| create        | Create a new instance of the given prototype, typically hwDefaultDisplay
+| chooseVisual  | Called by user application to select a visual which allows for specific kinds of rendering; see [[hwInit]] for details
+| createWindow  | Creates a window of given name, size, and type and returns a HoverWare drawable object
+| makeCurrent   | Makes a HoverWare hwDisplay and hwDrawable object current for rendering.  This must be done before most other Hoverware calls are done.
+| extractVisual | OS-dependent - extracts the visual for other uses by the application
+| extractWindow | OS-dependent - extracts the window ID from the drawable currently attached to the hwDisplay
+| createChildWindow | OS-dependent - creates a child window of a given window, returning a HoverWare drawable object
+| initDrawable  | OS-dependent - create a HoveWare drawable object from an arbitrary OS-dependent window
+| viewport      | Indicates the viewport to be used for subsequent rendering.  Should be called whenever the window size changes.
+| update        | Flushes graphics, presents the pending frame to the display, and prepares for the next frame
+
+The following entry points are to manage user input:
+
+| inputHandler  | Establish a callback routine to handle user input events
+| getMousePos   | Returns the instantaneous current mouse position
+
+
+The following control the global state of rendering and selection:
+| renderMode    | Toggles between rendering and selection
+| selectionInfo | Sets up selection parameters
+| wasSelected   | Gets the selected object
+| currentObject | Establishes the current object for selection
+| currentChild  | Establishes the current child object for selection
+
+The following establish scene rendering parameters.  See [[hwLight]],
+[[hwCamera]], and [[hwEnviron]] for classes which encapsulate these:
+| setCamera     | Establishes viewing geometry parameters.  Note that the current matrix stack affects the camera position and viewing directions
+| positionalLight | Creates an omnidirectional light at a specified position.  Note that the matrix stack affects the position and direction of a light.
+| directionalLight | Creates an infinite directional light.  Note that the matrix stack affects the direction of the light.
+| doFog         | Enables or disables depth-based fog
+| fogParams     | Sets the type and color of fog
+| ambientLight  | Establishes global ambient lighting parameters
+| enableLighting | Enables or disables lighting calculation
+| backgroundColor | Sets the background clear color
+
+The following are texture utilities - see [[hwTexture]] for a class which
+encapsulates these:
+| createTexture | Creates a texture ID from an image and other parameters
+| destroyTexture | Destroys a texture ID
+| currentTexture | Makes a given texture ID current for rendering
+
+The following are bounding box utilities (most rendering objects
+incorporate calls to these automatically):
+| drawBBox       | Draws a 3D min/max bounding box
+| boundsVisible  | Queries whether a 3D min/max bounding box would be within the current window boundaries given the current transformation
+| boundsSize     | Returns the angular extent of a bounding box for level-of-detail calculations
+
+The following affect the position, size, appearance, etc. of subsequent
+rendering commands:
+| pushMatrix    | Pushes a new 4x4 transformation onto the matrix stack
+| popMatrix     | Pops the matrix stack, restoring the previous transformation
+| surfAttrs      | Establishes color, texture, blending, etc. for subsequent rendering
+| setVisibility  | Establishes a visibility mask for simple animations
+| setInvisibility | Establishes an invisibility  mask for simple animations
+| getVisibility  | Returns whether a given mask satisfies visibility/invisibility criteria
+
+The following are the basic 3D rendering primitives - these are
+encapsulated by objects such as [[hwSphere]], [[hwMesh]], and many
+others:
+| drawMesh       | Draws a quadrilateral mesh
+| drawStrip      | Draws a triangle strip
+| drawPolygon    | Draws a convex polygon
+| drawPolyline   | Draws a polyline, with optional move/draw flags
+| drawQuads      | Draws a set of 4-point polygons
+| drawIndexedTriangles | Draws a set of triangles given vertex and index data
+| drawMarkers    | Draws a set of points or markers
+
+The following are used to draw "overlay" GUI elements.  Objects such
+as [[hwImage]], [[hwLabel]], etc. encapsulate most of these:
+| guiText        | Draws GUI (floating overlay) text
+| guiRaster      | Draws a GUI (floating overlay) image
+| guiRectangle   | Draws a GUI (floating overlay) rectangle
+| guiPolyline    | Draws a GUI (floating overlay) polyline
+| guiLines       | Draws several GUI (floating overlay) lines
+| guiPolygon     | Draws a GUI (floating overlay) polygon
+| openGuiList    | Subsequent GUI primitives will be accumulated in a display list
+| closeGuiList   | Terminates accumulation of GUI elements
+| callGuiList    | Calls a previously accumulated list of GUI commands
+| destroyGuiList | Destroys a GUI display list
+
+The following maintain lists of retained graphics rendering primitives
+and state. This is especially important for objects of moderate or
+greater complexity:
+| openList       | Subsequent rendering primitives will be accumulated in a display list
+| closeList      | Terminates accumulation of rendering primitives
+| callList       | Calls a previously accumulated list of primitives
+| destroyList    | Destroys a display list
+
+The following provide information about the current
+rendering context:
+| getTextState   | Gets a pointer to the current 3D text state.
+| getDrawSize    | Gets the current width and height of the current drawable
+| getInfo        | Gets string information (such as the current renderer, extensions, etc.) about the current rendering context
+
+Finally, the following manage the passage of time for Hoverware:
+| getCurrTime    | Gets the current time
+| getStartTime   | Gets the established start time
+| getElapsedTime | Gets how much time has elapsed since the start time
+| setCurrTime    | Establishes a new current time
+| setStartTime   | Establishes a new start time
+| setElapsedTime | Establishes a new elapsed time
+
+== SEE ALSO ==
+[[hw]], [[hwInit]], [[hw_display_h|hw_display.h]] [[hw_types_h|hw_types.h]]

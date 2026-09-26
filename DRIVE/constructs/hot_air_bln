@@ -1,0 +1,77 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Hot air ballon construct
+#
+# Daryl Poe, May 1994
+
+# Build a psuedo-balloon out of colored trees!
+Object: deciduous
+Type: pear
+Radius: 0.0001
+Color: 1 .4 .4
+Height: 80
+Y: 50
+
+Object: deciduous
+Type: pear
+Radius: 0.0001
+Color: .4 .4 1 
+Height: 80
+Y: 50
+
+Object: deciduous
+Type: pear
+Radius: 0.0001
+Color: 1 1 .4 
+Height: 80
+Y: 50
+
+# The basket
+Object: pillar
+Radius: 2.5
+Height: 4.5
+Color: .5 .4 .2
+Y: 56
+
+Object: polyline
+Color: .2 .2 .2
+Count: 9
+Dimension: 3
+Data: 9 3
+  2.5 60.0 0.0
+  8.0 90.0 8.0
+  0.0 60.0 2.5
+  -8.0 90.0 8.0
+  -2.5 60.0 0.0
+  -8.0 90.0 -8.0
+  0.0 60.0 -2.5
+  8.0 90.0 -8.0
+  2.5 60.0 0.0
+
+# The burner
+Object: pillar
+Radius: 1
+Height: 2
+Color: .2 .2 .2
+Y: 64
+
+Object: flames
+Length: 1
+Width: 1
+Height: 5
+Y: 66

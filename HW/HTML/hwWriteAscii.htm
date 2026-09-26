@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwWriteAscii - write a HoverWare object to an output file</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwWriteAscii - write a HoverWare object to an output file</p>
+<h2>SYNOPSIS</h2>
+<pre>
+    #include &quot;hw.h&quot;
+
+    int hwWriteAscii( hwObject obj, FILE *f )
+</pre>
+<h2>DESCRIPTION</h2>
+<p>The hwWriteAscii function is used to write a HoverWare object and
+all of its children to the given stdio FILE. It does this by using
+the props table of the object, and the inquire method. It will
+recursively traverse any un-named hwObject properties of this object.
+Named hwObject properties are referred to by name.</p>
+<h2>RETURN VALUE</h2>
+<p>If the write succeeded, 1 is returned. Otherwise, 0 is returned.</p>
+<h2>ERRORS</h2>
+<p>None</p>
+<h2>EXAMPLES</h2>
+<pre>
+    /* Write out a textured sphere */
+    hwObject
+        sphere, tm;
+
+    tm = hwTexture-&gt;create( hwTexture );
+    tm-&gt;modify( tm, hwStrFileName, HW_TYPE_STRING, &quot;foo.ppm&quot; );
+    tm-&gt;name = &quot;FooTexture&quot;;
+
+    sphere = hwSphere-&gt;create( hwSphere );
+    sphere-&gt;modify( sphere, hwStrTexture, HW_TYPE_OBJECT, tm );
+    (void)hwWriteAscii( tm, stdout );
+    (void)hwWriteAscii( sphere, stdout );
+
+    /* This produces the following output: */
+    hwTexture FooTexture {
+        FileName = &quot;foo.ppm&quot;
+    }
+    hwSphere {
+        Texture = FooTexture
+    }
+
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwParseFile.htm">hwParseFile</a></p>
+</body>
+</html>

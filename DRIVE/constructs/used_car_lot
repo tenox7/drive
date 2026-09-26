@@ -1,0 +1,156 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Abdul's Used Cars
+#
+# A 140x100 group of objects centered at 0,0
+#
+# To place it next to a road, offset it by 50 in the +Z direction
+# (before rotation).
+#
+
+Object: parking lot
+Position: 0 0 0
+Length: 100
+Width: 100
+
+# Building
+Object: wall
+Position: 0 0 25
+Size: 20 40 12
+Color: 0.3 0.3 0.3
+
+# door
+Object: light
+Size: 7.0 3.0 0.0
+Position: 0 3.5 25
+Xrot: -90
+Color: 0.7 0.8 0.8
+
+Object: flat
+Position: 0 3.5 24.8
+Size: .2 3.0 .2
+Color: 0.5 0.5 0.5
+
+# windows
+Object: light
+Size: 2.0 10.0 0.0
+Position: -10 4 25
+Xrot: -90
+Color: 0.7 0.8 0.8
+
+Object: light
+Size: 2.0 10.0 0.0
+Position: 10 4 25
+Xrot: -90
+Color: 0.7 0.8 0.8
+
+
+# Sign
+Object: generic sign
+Label: CRAZY ABDUL'S
+Position: 1 0 -40
+Size: 10.0 20.0 10.0
+Color: 0.0 1.0 0.0
+Yrot: 90
+Animation Bits: 0x00ff
+
+Object: generic sign
+Label: CRAZY ABDUL'S
+Position: -1 0 -40
+Size: 10.0 20.0 10.0
+Color: 0.0 1.0 0.0
+Yrot: 270
+Animation Bits: 0x00ff
+
+Object: generic sign
+Label: USED CARS
+Position: 1 0 -40
+Size: 10.0 20.0 10.0
+Color: 1.0 1.0 0.0
+Yrot: 90
+Animation Bits: 0xff00
+
+Object: generic sign
+Label: USED CARS
+Position: -1 0 -40
+Size: 10.0 20.0 10.0
+Color: 1.0 1.0 0.0
+Yrot: 270
+Animation Bits: 0xff00
+
+# Some Vehicles
+#Object: sedan
+#Position: 40.0 0.0 -10.0
+#Yrot: 180
+
+
+Object: minivan
+Position: -10.0 0.0 -35.0
+Yrot: 180
+
+Object: generic sign
+Position: -10.0 5.0 -40.0
+Xrot: 30
+Label: $14000
+Color: 1.0 0.0 0.0
+Size: 3.0 5.0 0.01
+
+
+Object: countach
+Position: -40.0 0.0 -35.0
+Yrot: 180
+
+Object: generic sign
+Position: -40.0 2.0 -40.0
+Xrot: 30
+Label: LO MILEAGE
+Color: 1.0 0.0 0.0
+Size: 3.0 5.0 0.01
+
+
+Object: sedan
+Position: 20.0 0.0 -35.0
+Yrot: 180
+
+Object: generic sign
+Position: 20.0 3.0 -40.0
+Xrot: 30
+Label: SALE!!!
+Color: 1.0 0.0 0.0
+Size: 3.0 5.0 0.01
+
+# Misc.
+Object: generic sign
+Position: -70.0 0.0 -20.0
+Size: 5.0 15.0 1.0
+Label: STOP IN!!!
+Yrot: -90
+
+Object: generic sign
+Position: 70.0 0.0 -20.0
+Size: 5.0 15.0 1.0
+Label: YOU CAN'T MISS
+Yrot: 90
+
+
+Object: lamp
+Position: 30.0 0.0 0.0
+
+Object: lamp
+Position: -30.0 0.0 0.0
+

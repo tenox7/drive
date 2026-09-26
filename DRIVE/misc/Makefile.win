@@ -1,0 +1,36 @@
+!include <win32.mak>
+
+#DEBUG=
+PDF_DEBUG=-debug -pdb:drive2pdf.pdb
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../libnum -I../libphysics -I../include -I../../HW/Inc -I../libprims -I../../pdcurses -I../server/objects
+
+all:    drive2pdf.exe
+
+OBJS=drive2pdf.obj pdf.obj
+
+SRV_LIBS=../server.lib  \
+	../libnum.lib \
+	../libphysics.lib \
+	../libprims.lib \
+	../drive_physics.lib \
+	../objects.lib \
+	../shared.lib
+
+IMPORTS=../../HW/hwnull.lib ../../JPEG/libjpeg.lib ../../pdcurses/pdcurses.lib
+SYSLIBS=wsock32.lib user32.lib
+
+drive2pdf.exe:  $(OBJS) $(SRV_LIBS) $(IMPORTS)
+	cd ..
+	nmake /f makefile.win drive_server
+	cd misc
+	$(link) $(LOPTS) -nodefaultlib:libcd -out:drive2pdf.exe \
+		$(PDF_DEBUG) \
+		$(OBJS) \
+		$(SRV_LIBS) \
+		$(IMPORTS) \
+		$(SYSLIBS)
+
+clean:
+	del /Q *.obj *.exe

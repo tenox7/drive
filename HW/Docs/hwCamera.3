@@ -1,0 +1,68 @@
+NAME
+    hwCamera - create a virtual camera for viewing a scene
+
+PROPERTIES
+    Pos		3F	The position of the camera
+    Dir		3F	The direction the camera is pointing
+    Up		3F	The direction which is considered "up"
+    Field	1F	The field of view, in degrees
+    Perspective	1B	True for perspective projection, false for
+			orthographic projection
+    Planes	2F	The front and back clipping planes, defined
+			as distances along the Dir vector from the Pos
+			point.
+
+DEFAULTS
+    Pos = {0,0,-1.4}
+    Dir = {0,0,1}
+    Up = {0,1,0}
+    Field = 90
+    Planes = {0.4, 2.4}
+
+DESCRIPTION
+    The hwCamera class provides a mechanism for specifying a virtual
+    camera through which a scene may be viewed.  The camera is located
+    at a particular point in 3-dimensional space, and points in a
+    certain direction.  The camera may be rotated around this direction
+    by modifying the Up vector.  The Planes describe the volume being
+    examined by the camera; objects in front of the first plane or
+    behind the second are not visible.  The Planes additionally define
+    the depth range used for depth buffering; for best visual results,
+    you should try to set the Planes value to just encompass all of the
+    interesting objects in the view.
+
+    By default, the view is an orthographic projection of the unit cube
+    about the origin.  In order to establish a camera object as the
+    current viewing camera, merely execute its draw method.  Note that
+    the camera MUST be drawn before any lights or objects are drawn; if
+    this rule is not followed, visual results are undefined.  Note also
+    that only the first camera drawn after an hwUpdate has any effect;
+    subsequent camera draws are ignored.  This allows, for example, an
+    interactive camera to take precedence over an animated camera.
+
+C EXAMPLE
+    /* Create a perspective view of the origin from far away, but
+     * with a fairly narrow field-of-view
+     */
+    hwObject
+	camera;
+
+    camera = hwCamera->create( hwCamera );
+    HW_MODIFY_3F( camera, hwStrPos, 0, 0, 300 );
+    HW_MODIFY_1F( camera, hwStrField, 30 );
+    HW_MODIFY_2F( camera, hwStrPlanes, 1.0, 600.0 );
+    HW_MODIFY_1B( camera, hwStrPerspective, HW_TRUE );
+    camera->draw( camera, disp );
+    
+
+OBJECT FILE EXAMPLE
+    # A perspective view of the origin from far away
+    hwCamera {
+	Pos = {0,0,300}
+	Field = 30
+	Planes = {1,600}
+	Perspective = True
+    }
+
+SEE ALSO
+    hw(3)

@@ -1,0 +1,64 @@
+NAME
+    hwVertex - describe the format of a HoverWare vertex
+
+PROPERTIES
+    HasRGB		1B	Does each vertex contain an RGB triple?
+    HasAlpha		1B	Does each vertex contain an alpha?
+    HasNormals		1B	Does each vertex contain a normal XYZ triple?
+    HasST		1B	Does each vertex contain a texture S,T pair?
+    HasRQ		1B	Does each vertex contain a texture R,Q pair?
+    HasST1, HasST2,	1B	Same as HasST for texture unit N
+      HasST3, HasST4,
+      HasST5, HasST6,
+      HasST7
+    HasRQ1, HasRQ2,	1B	Same as HasRQ for texture unit N
+      HasRQ3, HasRQ4,
+      HasRQ5, HasRQ6,
+      HasRQ7
+
+DEFAULTS
+    All vertex properties default to False
+
+DESCRIPTION
+    There is not really a hwVertex class; however, several HoverWare
+    classes use these properties and inherit them from a pseudo-class.
+    The classes which use these properties include:
+
+	hwMesh
+	hwPolygon
+	hwQuads
+	hwStrip
+	hwTriangles
+
+    Some of the properties are only valid to specify if another property
+    is also specified.  This is the complete list of such "dependent"
+    properties:
+
+	Property:	Dependent upon:
+	-------------------------------
+	HasAlpha	HasRGB
+	HasRQ		HasST
+	HasRQ1		HasST1
+	HasRQ2		HasST2
+	HasRQ3		HasST3
+	HasRQ4		HasST4
+	HasRQ5		HasST5
+	HasRQ6		HasST6
+	HasRQ7		HasST7
+
+    The data in a vertex is specified in the same order as the list of
+    flags above.  Each data element consists of one, two, or three
+    floating point numbers.  All vertices implicitly contain an XYZ
+    coordinate triple, regardless of any other flag settings.  This
+    triple is always the first element in each vertex.  HoverWare
+    therefore supports from 3 (if no flags are specified) to 39
+    (if all possible flags are specified) floats per vertex.
+
+C EXAMPLE
+    TBD
+
+OBJECT FILE EXAMPLE
+    TBD
+
+SEE ALSO
+    hw(3), hwMesh(3), hwPolygon(3), hwQuads(3), hwStrip(3), hwTriangles(3)

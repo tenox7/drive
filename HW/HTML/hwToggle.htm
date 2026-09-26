@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwToggle - toggle button GUI element</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwToggle - toggle button GUI element</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwGUI.htm">hwGUI</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Label</td>
+<td>0S</td>
+<td>Text label for the button</td>
+</tr>
+<tr><td>Color</td>
+<td>3F</td>
+<td>Color of the text label</td>
+</tr>
+<tr><td>BackgroundColor</td>
+<td>4F</td>
+<td>Background color of the button, if any</td>
+</tr>
+<tr><td>ActiveColor</td>
+<td>3F</td>
+<td>Color of text while the button is pushed</td>
+</tr>
+<tr><td>ActiveBackground</td>
+<td>4F</td>
+<td>Background color of the button while it is pushed</td>
+</tr>
+<tr><td>BorderColor</td>
+<td>3F</td>
+<td>Color of the border, if any</td>
+</tr>
+<tr><td>ActiveBorderColor</td>
+<td>3F</td>
+<td>Color of the border while the button is pushed, if any</td>
+</tr>
+<tr><td>Font</td>
+<td>0O</td>
+<td>Font to use for label rendering</td>
+</tr>
+<tr><td>Texture</td>
+<td>0O</td>
+<td>Texture to draw as a background image</td>
+</tr>
+<tr><td>ActiveTexture</td>
+<td>0O</td>
+<td>Texture to draw while the button is pused</td>
+</tr>
+<tr><td>Exclude</td>
+<td>*O</td>
+<td>List of other toggle widgets with which to be mutually
+  exclusive. If this property is provided, the toggle is drawn in a
+  radio button style. Otherwise, it is drawn in an on/off button
+  style.</td>
+</tr>
+<tr><td>Value</td>
+<td>1B</td>
+<td>Selected (if True) or unselected (if False) state of the toggle</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Label</td>
+<td>NULL</td>
+</tr>
+<tr><td>Color</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>BackgroundColor</td>
+<td>0</td>
+</tr>
+<tr><td>ActiveColor</td>
+<td>{0,0,0}</td>
+</tr>
+<tr><td>ActiveBackground</td>
+<td>{1,1,1,.75}</td>
+</tr>
+<tr><td>BorderColor</td>
+<td>0</td>
+</tr>
+<tr><td>ActiveBorderColor</td>
+<td>0</td>
+</tr>
+<tr><td>Font</td>
+<td>NULL</td>
+</tr>
+<tr><td>Texture</td>
+<td>NULL</td>
+</tr>
+<tr><td>ActiveTexture</td>
+<td>NULL</td>
+</tr>
+<tr><td>Exclude</td>
+<td>NULL</td>
+</tr>
+<tr><td>Value</td>
+<td>False</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwToggle class can be used to create simple toggle-button GUI
+elements with a label and foreground/background colors in both an
+active and inactive state, as well as a toggle indicator in either a
+radio-button or a on/off-button style.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    hwObject toggle;
+
+    /* Create a simple toggle in the middle of the screen */
+    toggle = hwToggle-&gt;create( hwButton );
+    HW_MODIFY_3F( toggle, hwStrBackgroundColor, 0.5, 0.5, 0.5 );
+    HW_MODIFY_1I( toggle, hwStrAlign, HW_GUI_CENTER | HW_GUI_FRACTIONAL);
+    HW_MODIFY_1I( toggle, hwStrPosX, 500 );
+    HW_MODIFY_1I( toggle, hwStrPosY, 500 );
+    HW_MODIFY_1I( toggle, hwStrWidth, 250 );
+    HW_MODIFY_1I( toggle, hwStrHeight, 250 );
+    toggle-&gt;modify( toggle, hwStrLabel, HW_TYPE_STRING, &quot;Toggle me&quot; );
+
+    while( 1 ) {
+        toggle-&gt;draw( toggle );
+        disp-&gt;update( disp, HW_UPDATE_ALL );
+    }
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    hwToggle toggle {
+        PosX = 500  PosY = 500
+        Width = 250 Height = 250
+        Align = (HW_GUI_CENTER + HW_GUI_FRACTIONAL)
+        BackgroundColor = {.5,.5,.5}
+        Label = &quot;Toggle me&quot;
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwGUI.htm">hwGUI</a></p>
+</body>
+</html>

@@ -1,0 +1,1473 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#
+# J.R. Dobbs Motor Speedway
+#
+# Designed by Jeff Benjamin
+
+Racecourse: J.R. Dobbs
+Practice Seconds: 0
+Race Seconds: 330
+Start Positions: 6
+Start SceneX: -1
+Start SceneZ: -9
+Start Angle: 90
+Start Position: 775 0 -37.5
+Turbo Mode: 2
+Turbo Boosts: 10
+
+# Surrounding hills
+Scene Location: -1 -8
+Scene Type: hill no roads
+
+Scene Location: -2 -7
+Scene Type: hill no roads
+
+Scene Location: -3 -7
+Scene Type: hill no roads
+
+Scene Location: -4 -8
+Scene Type: hill no roads
+
+Scene Location: -4 -11
+Scene Type: hill no roads
+
+Scene Location: -3 -11
+Scene Type: hill no roads
+
+Scene Location: -2 -11
+Scene Type: hill no roads
+
+Scene Location: -1 -10
+Scene Type: hill no roads
+
+
+# Highway turnoff, finish-to-start loop
+Scene Location: 0 -9
+
+Object: road
+Width: 30
+Length: 2000
+Position: 0 0 -1000
+Yrot: 0
+
+Object: curve
+Radius: 415
+Position: -400 0 400
+Width: 30
+Angle: 90
+Yrot: 270
+
+Object: road
+Width: 60
+Length: 600
+Position: -400 0 0
+Yrot: 90
+
+Object: curve
+Width: 90
+Radius: 345
+Position: -1000 0 -300
+Angle: 90
+
+Object: road
+Width: 90
+Length: 300
+Position: -700 0 -600
+
+Object: curve
+Width: 90
+Radius: 345
+Position: -1000 0 -600
+Angle: 90
+Yrot: -90
+
+Object: generic sign
+Label: J.R. DOBBS\MOTOR\SPEEDWAY
+Color: 0 1 0
+Size: 60 80 2
+Position: 80 0 200
+Yrot: 180
+
+Object: ground
+
+# Starting area, straightaway, S-curve
+Scene Location: -1 -9
+
+Object: road
+Width: 90
+Length: 1000
+Position: 1000 0 0
+Yrot: 90
+
+Object: curve
+Width: 90
+Radius: 245
+Position: 0 0 -200
+Angle: 90
+Yrot: 90
+
+Object: curve
+Width: 90
+Radius: 245
+Position: -400 0 -200
+Angle: 180
+Yrot: 180
+
+Object: road
+Width: 90
+Length: 100
+Position: -600 0 -200
+Yrot: 0
+
+Object: curve
+Width: 90
+Radius: 245
+Position: -400 0 -100
+Angle: 90
+Yrot: 90
+
+Object: curve
+Width: 90
+Radius: 245
+Position: -400 0 300
+Angle: 90
+Yrot: 270
+
+Object: road
+Width: 90
+Length: 400
+Position: -200 0 300
+Yrot: 0
+
+Object: curve
+Width: 90
+Radius: 245
+Position: -400 0 700
+Angle: 90
+Yrot: 0
+
+Object: road
+Width: 90
+Length: 600
+Position: -400 0 900
+Yrot: 90
+
+# Final run
+Object: curve
+Width: 90
+Radius: 245
+Position: -1000 0 400
+Angle: 90
+Yrot: 0
+
+Object: road
+Width: 90
+Length: 400
+Position: -800 0 0
+Yrot: 0
+
+Object: ramp
+Width: 90
+Height: 20
+Length: 250
+Position: -800 0 0
+Yrot: 180
+
+Object: road
+Width: 60
+Length: 300
+Position: -800 0 -300
+Yrot: 180
+
+# Last bank
+Object: bank
+#Object: curve
+Width: 60
+Radius: 330
+Height: 10
+Position: -500 0 -600
+Angle: 90
+Yrot: 180
+
+Object: road
+Width: 60
+Length: 400
+Position: -100 0 -900
+Yrot: 90
+
+Object: ramp
+Width: 60
+Length: 100
+Height: 25
+Position: -100 0 -900
+Yrot: 270
+
+Object: road
+Width: 90
+Length: 900
+Position: 1000 0 -900
+Yrot: 90
+
+
+# RAILINGS AND SUCH
+
+# MISC
+
+Object: skyscraper
+Length: 700
+Width: 400
+Height: 80
+Position: 200 0 300
+
+# Signs
+Object: start
+Length: 13
+Width: 100
+Height: 30
+Label: J.R. DOBBS
+Radius: 0.5
+Position: 700 0 0
+Yrot: 90
+Type: 1 14
+
+Object: checkpoint
+Length: 20
+Width: 96
+Height: 41
+Label: CHECKPOINT 1
+Radius: 0.5
+Position: -600 0 -150
+Type: 1 1
+Data: 1 3
+5 2 1
+
+Object: generic sign
+Size: 60 60 3
+Position: -200 0 10
+Label: SLOW!\SHARP\CURVES\<-
+Color: 1 0 0
+Yrot: 90
+
+Object: checkpoint
+Length: 20
+Width: 60
+Height: 40
+Label: CHECKPOINT 13
+Radius: 0.5
+Position: -710 0 -810
+Yrot: 225
+Type: 1 13
+
+Object: finish
+Length: 20
+Width: 100
+Height: 50
+Label: FINISH
+Radius: 0.5
+Position: 700 0 -900
+Type: 1 14
+Yrot: -90
+
+Object: ground
+
+Scene Location: -2 -10
+
+# More Twining snake curves
+# Number 1, finish
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: -200 0 1000
+Angle: 90
+Yrot: -90
+Xrot: -10
+
+Object: bank
+Radius: 345
+Width: 90
+Height: 20
+Position: -200 0 400
+Angle: 90
+Yrot: 90
+
+Object: road
+Width: 90
+Length: 300
+Position: -500 0 100
+
+
+# Number 2, finish
+Object: bank
+Radius: 345
+Width: 90
+Height: 20
+Position: -200 0 700
+Angle: 180
+Yrot: -90
+
+Object: curve
+Radius: 345
+Width: 90
+Position: -200 0 100
+Angle: 90
+Yrot: 90
+
+# Back together
+
+Object: road
+Length: 300
+Width: 90
+Position: -500 0 100
+Yrot: 180
+
+Object: curve
+Radius: 445
+Width: 90
+Position: -900 0 -200
+Angle: 90
+Yrot: -90
+
+Object: road
+Width: 90
+Length: 100
+Position: -900 0 -600
+Yrot: 90
+
+Object: checkpoint
+Width: 90
+Height: 65
+Length: 20
+Position: 95.442 44.28 999
+Yrot: 180
+Radius: 0.5
+Label: CHECKPOINT 3
+Type: 1 3
+
+Object: ground
+
+#
+#
+#
+Scene Location: -2 -8
+
+# Turn into finish
+Object: bank
+Radius: 445
+Width: 90
+Height: 15
+Position: 300 0 -1000
+Angle: 180
+
+# Up to elevated loop
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: -400 60 -100
+Angle: 90
+Yrot: 90
+Zrot: 6.137
+
+Object: curve
+Radius: 245
+Width: 90
+Height: 2
+Position: -900 60 -100
+Angle: 90
+Yrot: -90
+Zrot: -6.137
+
+Object: road
+Length: 100
+Width: 90
+Height: 2
+Position: -1000 38.619 -300
+Yrot: -90
+Zrot: -6.137
+
+
+# Elevated loop
+
+Object: road
+Length: 300
+Width: 135
+Position: -100 80 800
+Height: 2
+Yrot: 90
+
+# Split section
+Object: road
+Length: 200
+Width: 45
+Height: 2
+Position: -400 80 800
+Yrot: 90
+Xrot: 4.289
+
+Object: road
+Length: 200
+Width: 45
+Height: 2
+Position: -400 80 755
+Yrot: 90
+
+Object: road
+Length: 200
+Width: 45
+Height: 2
+Position: -400 80 845
+Yrot: 90
+
+Object: wall
+Width: 2
+Height: 8
+Length: 47
+Position: -601 80 776.5
+Color: 1 1 0
+
+# far-side straightaway & curve
+Object: road
+Length: 350
+Width: 135
+Height: 2
+Position: -450 80 200
+Yrot: -90
+
+Object: curve
+Radius: 367.5
+Width: 135
+Height: 2
+Position: -100 80 500
+Angle: 180
+Yrot: -90
+
+# Out from under
+Object: road
+Width: 45
+Height: 2
+Length: 400
+Position: -600 65 800
+Yrot: 90
+
+# Guardrails etc. 
+# middle drop
+
+Object: wall
+Width: 1
+Height: 25
+Length: 200
+Position: -400 63 777.5
+Color: 1 1 0
+Yrot: 90
+
+Object: wall
+Width: 1
+Height: 25
+Length: 200
+Position: -400 63 822.5
+Color: 1 1 0
+Yrot: 90
+
+# El curve railing
+Object: curvewall
+Width: 2
+Height: 3
+Radius: 367.5
+Position: -100 80 500
+Angle: 180
+Yrot: -90
+
+# Signs & checkpoints
+
+Object: checkpoint
+Height: 54
+Width: 88
+Length: 20
+Radius: 0.5
+Position: -950 31.808 -300
+Label: CHECKPOINT 6
+Yrot: -90
+Type: 1 6
+Data: 1 3
+5 1 1
+
+Object: checkpoint
+Height: 40
+Length: 19
+Width: 45
+Position: -900 65 800
+Radius: 0.5
+Label: CHECKPOINT 7
+Yrot: 90
+Type: 1 7
+Data: 1 3
+5 0 1
+
+Object: checkpoint
+Height: 60
+Width: 90
+Length: 20
+Radius: 0.5
+Position: 300 0 -600
+Label: CHECKPOINT 12
+Yrot: -90
+Type: 1 12
+Data: 1 3
+5 1 1
+
+Object: twopole sign
+Width: 147
+Height: 42
+Length: 35
+Position: -400 78 800
+Label: THRU TRAFFIC\USE CENTER LANE     
+Yrot: 90
+Color: 0 0 1
+
+Object: ground
+
+#
+# 
+Scene Location: -2 -9
+
+# Feed into end of course
+Object: road
+Length: 100
+Width: 90
+Height: 2
+Position: 700 0 900
+
+Object: curve
+Width: 90
+Radius: 345
+Height: 2
+Position: 1000 0 900
+Angle: 90
+Yrot: 180
+
+# Out into rest of course
+Object: bridge
+Length: 600
+Width: 90
+Position: 700 0 900
+Height: 30
+Yrot: 90
+
+Object: curve
+Width: 90
+Radius: 345
+Height: 20
+Position: 400 0 600
+Angle: 90
+Yrot: 90
+
+Object: road
+Length: 700
+Width: 90
+Position: 100 0 -100
+
+# Twining snake curves
+# Number 1, first part
+Object: curve
+Radius: 345
+Width: 90
+Position: -200 0 200
+Angle: 90
+Yrot: -90
+
+Object: bank
+Radius: 345
+Width: 90
+Height: 20
+Position: -200 0 -400
+Angle: 180
+Yrot: 90
+
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: -200 0 -1000
+Angle: 90
+Zrot: 10
+
+# Number 2, first part
+Object: bank
+Radius: 345
+Height: 25
+Width: 90
+Position: -200 0 -100
+Angle: 90
+Yrot: -90
+
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: -200 0 -700
+Angle: 180
+Yrot: 90
+Xrot: -10
+
+# The Y
+Object: ramp
+Width: 90
+Length: 175
+Height: 20
+Position: -750 0 500
+Yrot: 90
+
+Object: road
+Width: 90
+Length: 550
+Position: -750 0 500
+Yrot: -90
+
+Object: curve
+Width: 90
+Radius: 445
+Position: -500 0 900
+Angle: 90
+Yrot: -90
+
+Object: road
+Width: 90
+Length: 100
+Position: -100 0 900
+
+Object: curve
+Radius: 345
+Width: 90
+Position: -200 0 200
+Angle: 90
+
+# Signs
+
+Object: generic sign
+Size: 60 40 2
+Position: -200 0 575
+Label: 12\<-
+Yrot: -90
+Color: 0 0 1
+
+Object: generic sign
+Size: 60 40 2
+Position: 155 0 500
+Label: 9\->
+Yrot: -90
+Color: 0 0 1
+
+Object: generic sign
+Size: 60 40 2
+Label: 3\->
+Position: 25 0 -80
+Yrot: 180
+Color: 0 0 1
+
+Object: generic sign
+Size: 60 40 2
+Label: 9\AHEAD
+Position: 170 0 -80
+Yrot: 180
+Color: 0 0 1
+
+
+# Checkpoints
+Object: checkpoint
+Length: 20
+Width: 90
+Height: 50
+Label: CHECKPOINT 2
+Radius: 0.5
+Position: 700 30 900
+Yrot: 90
+Type: 1 2
+
+Object: checkpoint
+Length: 20
+Width: 90
+Height: 66
+Position: -495.442 44.28 -700
+Radius: 0.5
+Label: CHECKPOINT 9
+Yrot: 180
+Type: 1 9
+
+# Signs
+
+Object: ground
+
+#
+#
+#
+Scene Location: -3 -10
+
+Object: road
+Width: 90
+Length: 200
+Position: 1000 0 -600
+Yrot: 90
+
+# Up to split
+Object: road
+Length: 301.496
+Height: 2
+Width: 90
+Position: 800 0 -600
+Yrot: 90
+Xrot: -5.711
+
+# Inner loop
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: 500 30 -300
+Angle: 90
+Yrot: 180
+
+Object: road
+Length: 502.112
+Width: 90
+Height: 2
+Position: 200 30 -300
+Xrot: -5.256
+
+Object: curve
+Radius: 449
+Width: 94
+Height: 2
+Position: -200 76 200
+Angle: 90
+
+# Drop-off
+Object: road
+Width: 90
+Length: 200
+Height: 2
+Position: -200 76 600
+Xrot: 5
+Yrot: 90
+
+Object: ramp
+Width: 90
+Length: 150
+Height: 30
+Position: -650 0 600
+Yrot: -90
+
+# To high curve
+Object: road
+Length: 281.945
+Width: 90
+Position: -650 0 600
+Yrot: 90
+
+Object: road
+Length: 69.105
+Width: 90
+Height: 2
+Position: -931.945 0 600
+Yrot: 90
+Xrot: -10
+
+
+# Continue straight
+Object: road
+Length: 500
+Width: 90
+Height: 2
+Position: 500 30 -600
+Yrot: 90
+
+Object: road
+Length: 200
+Width: 90
+Height: 2
+Position: 0 30 -600
+Yrot: 90
+Xrot: -3
+
+Object: ramp
+Width: 90
+Length: 200
+Height: 20
+Position: -550 0 -600
+Yrot: -90
+
+Object: road
+Length: 350
+Width: 90
+Position: -900 0 -600
+Yrot: -90
+
+Object: ramp
+Length: 100
+Width: 90
+Height: 10
+Position: -900 0 -600
+Yrot: 90
+
+# Walls etc.
+Object: curvewall
+Radius: 449
+Width: 4
+Height: 4
+Position: -200 76 200
+Angle: 90
+
+# Signs
+
+Object: generic sign
+Size: 60 50 2
+Position: 500 30 -675
+Label: 4\AHEAD
+Yrot: 90
+Color: 0 0 1
+
+Object: generic sign
+Size: 60 50 2
+Position: 500 30 -525
+Label: 10 ->\SHARP\RIGHT
+Yrot: 90
+Color: 0 0 1
+
+Object: left curve sign
+Width: 20
+Height: 15
+Position: 246 76 200
+Label: 100
+
+
+# Checkpoints
+
+Object: checkpoint
+Width: 90
+Height: 40
+Length: 20
+Position: -850 0 -600
+Label: CHECKPOINT 4
+Radius: 0.5
+Yrot: 90
+Type: 1 4
+
+Object: checkpoint
+Width: 90
+Height: 42
+Length: 20
+Position: 200 66.797 100
+Radius: 0.5
+Label: CHECKPOINT 10
+Type: 1 10
+
+Object: ground
+
+#
+#
+#
+Scene Location: -3 -8
+
+
+# Tunnel
+#
+# First level
+Object: road
+Length: 950
+Width: 90
+Height: 2
+Position: 1000 65 800
+Yrot: 90
+
+Object: road
+Length: 50
+Width: 90
+Height: 2
+Position: 50 65 800
+Yrot: 90
+Xrot: -5
+
+# Black hole underneath jump
+Object: wormhole
+Position: 0 50 800
+Length: 2
+Width: 90
+Height: 350
+Xrot: 90
+Yrot: 90
+Destination: -4430 80 -15800
+Angle: -90
+
+Object: road
+Length: 320
+Width: 90
+Height: 2
+Position: -180 65 800
+Yrot: 90
+
+Object: wall
+Length: 90
+Width: 2
+Height: 2
+Position: -150 76 755
+
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: -500 50 500
+Angle: 90
+Yrot: 90
+
+Object: road
+Length: 100
+Width: 90
+Height: 2
+Position: -800 40 500
+Yrot: 180
+
+Object: road
+Length: 100
+Width: 90
+Height: 2
+Position: -800 35 400
+Yrot: 180
+
+Object: road
+Length: 100
+Width: 90
+Height: 2
+Position: -800 30 300
+Yrot: 180
+
+Object: curve
+Radius: 245
+Width: 90
+Height: 2
+Position: -600 20 200
+Angle: 90
+Yrot: 180
+
+Object: curve
+Radius: 345
+Width: 90
+Height: 2
+Position: -600 15 -300
+Angle: 90
+Xrot: 2
+
+Object: road
+Length: 300
+Width: 90
+Height: 2
+Position: -300 10 -300
+Yrot: 180
+
+# Tunnel walls
+Object: wall
+Length: 500
+Width: 4
+Height: 80
+Position: 0 0 847
+Yrot: 90
+
+Object: wall
+Length: 500
+Width: 4
+Height: 80
+Position: 0 0 753
+Yrot: 90
+
+Object: curvewall
+Radius: 349
+Width: 4
+Height: 75
+Position: -500 0 500
+Yrot: 90
+Angle: 90
+
+Object: curvewall
+Radius: 255
+Width: 4
+Height: 75
+Position: -500 0 500
+Yrot: 90
+Angle: 90
+
+Object: wall
+Length: 300
+Width: 4
+Height: 60
+Position: -753 0 500
+Yrot: 180
+
+Object: wall
+Length: 300
+Width: 4
+Height: 60
+Position: -847 0 500
+Yrot: 180
+
+Object: curvewall
+Radius: 249
+Width: 4
+Height: 40
+Position: -600 0 200
+Angle: 90
+Yrot: 180
+
+Object: curvewall
+Radius: 155
+Width: 4
+Height: 40
+Position: -600 0 200
+Angle: 90
+Yrot: 180
+
+Object: curvewall
+Radius: 349
+Width: 4
+Height: 35
+Position: -600 0 -300
+Angle: 90
+
+Object: curvewall
+Radius: 255
+Width: 4
+Height: 35
+Position: -600 0 -300
+Angle: 90
+
+Object: wall
+Length: 300
+Width: 4
+Height: 30
+Position: -347 0 -300
+Yrot: 180
+
+Object: wall
+Length: 300
+Width: 4
+Height: 30
+Position: -253 0 -300
+Yrot: 180
+
+## Out of tunnel
+Object: road
+Length: 400
+Width: 60
+Position: -300 0 -1000
+
+# To elevated loop
+Object: road
+Width: 90
+Length: 300
+Position: 700 0 -1000
+
+Object: road
+Width: 30
+Length: 100
+Height: 1
+Position: 670 0 -700
+Xrot: -5
+
+Object: road
+Width: 30
+Length: 100
+Height: 1
+Position: 730 0 -700
+Xrot: -5
+
+Object: curve
+Width: 90
+Radius: 345
+Height: 2
+Position: 1000 6.424 -600
+Angle: 90
+Yrot: 90
+Zrot: 6.137
+
+# signs & checkpoints
+
+Object: checkpoint
+Height: 30
+Width: 94
+Length: 10
+Radius: 0.5
+Position: -300 10 -500
+Yrot: 180
+Label: CHECKPOINT 8
+Type: 1 8
+Data: 1 3
+0 0 1
+
+Object: twopole sign
+Height: 15
+Width: 98
+Length: 15
+Position: 350 65 800
+Yrot: 90
+Label: 100 - 110 MPH
+Color: 1 0 0
+
+
+Object: ground
+
+#
+#
+#
+Scene Location: -3 -9
+
+# Out of tunnel
+Object: road
+Width: 90
+Length: 200
+Position: -300 0 1000
+Yrot: 180
+
+Object: curve
+Width: 90
+Radius: 345
+Position: 0 0 800
+Angle: 90
+Yrot: 180
+
+# From nested loop
+Object: road
+Width: 90
+Length: 200
+Position: -1000 0 -100
+Yrot: -90
+
+Object: bank
+Width: 90
+Radius: 345
+Height: 20
+Position: -800 0 200
+Angle: 90
+Yrot: -90
+
+Object: bank
+Width: 90
+Radius: 345
+Height: 20
+Position: -200 0 200
+Angle: 90
+Yrot: 90
+
+Object: road
+Width: 90
+Length: 950
+Position: -200 0 500
+Yrot: -90
+
+Object: ramp
+Width: 90
+Length: 175
+Height: 20
+Position: 750 0 500
+Yrot: -90
+
+# Turnoff to high loop
+Object: curve
+Radius: 345
+Width: 90
+Position: 400 0 800
+Angle: 90
+Yrot: -90
+
+Object: road
+Length: 200
+Width: 90
+Position: 700 0 800
+
+# signs
+
+Object: generic sign
+Size: 60 40 2
+Position: 710 0 575
+Label: 6\<-
+Yrot: -90
+Color: 0 0 1
+
+Object: generic sign
+Size: 60 40 2
+Position: 710 0 420
+Label: 9 AND 12\AHEAD
+Yrot: -90
+Color: 0 0 1
+
+Object: ground
+
+#
+#
+#
+Scene Location: -4 -10
+
+# First curve of inner loop
+Object: curve
+Width: 90
+Radius: 445
+Height: 2
+Position: 1000 12 1000
+Angle: 90
+Yrot: 180
+Zrot: 10
+
+# To Split roadway
+
+Object: road
+Width: 90
+Length: 300
+Position: 1000 0 -600
+Yrot: 90
+
+Object: curve
+Width: 90
+Radius: 445
+Position: 700 0 -200
+Angle: 90
+Yrot: 180
+
+# Split roadway
+
+Object: road
+Width: 90
+Length: 400
+Position: 300 0 -200
+
+Object: ramp
+Width: 120
+Height: 5
+Length: 100
+Position: 300 0 200
+
+Object: road
+Length: 100
+Width: 120
+Height: 2
+Position: 300 5 300
+
+Object: road
+Length: 100
+Height: 2
+Width: 30
+Position: 255 5 400
+Xrot: -3
+
+Object: road
+Length: 100
+Height: 2
+Width: 60
+Position: 300 2.5 400
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 345 5 400
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 120
+Height: 2
+Position: 300 5 500
+
+Object: road
+Length: 100
+Width: 60
+Height: 2
+Position: 270 5 600
+Xrot:-3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 315 2.5 600
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 345 5 600
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 120
+Height: 2
+Position: 300 5 700
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 255 2.5 800
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 285 5 800
+Xrot:-3
+
+Object: road
+Length: 100
+Width: 60
+Height: 2
+Position: 330 2.5 800
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 120
+Height: 2
+Position: 300 5 900
+
+
+Object: ground
+
+#
+#
+#
+Scene Location: -4 -9
+
+# End of inner high curve
+Object: road
+Width: 90
+Height: 2
+Length: 500
+Position: 606.080 81.459 -500
+Yrot: 180
+Zrot: 10
+
+Object: curve
+Radius: 445
+Width: 90
+Height: 2
+Position: 1000 12 -500
+Angle: 90
+Xrot: -10
+Yrot: 90
+
+# End of split roadway
+
+Object: road
+Length: 100
+Height: 2
+Width: 60
+Position: 270 5 -1000
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 60
+Height: 2
+Position: 330 2.5 -1000
+Xrot: -3
+
+Object: road
+Length: 200
+Width: 120
+Height: 2
+Position: 300 5 -900
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 255 5 -700
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 285 2.5 -700
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 315 5 -700
+Xrot: -3
+
+Object: road
+Length: 100
+Width: 30
+Height: 2
+Position: 345 2.5 -700
+Xrot: -3
+
+# Together and out of split
+Object: road
+Length: 200
+Width: 120
+Height: 2
+Position: 300 5 -600
+
+Object: curve
+Radius: 360
+Width: 120
+Height: 2
+Position: 600 5 -400
+Angle: 90
+Yrot: 90
+
+Object: ramp
+Length: 100
+Width: 90
+Height: 5
+Position: 600 0 -100
+Yrot: -90
+
+Object: road
+Width: 90
+Length: 300
+Position: 700 0 -100
+Yrot: -90
+
+# Checkpoints
+Object: checkpoint
+Width: 122
+Height: 41
+Length: 20
+Position: 600 5 -100
+Radius: 0.5
+Label: CHECKPOINT 5
+Yrot: -90
+Type: 1 5
+
+Object: checkpoint
+Width: 92
+Height: 56
+Length: 20
+Position: 606.077 73.645 -750
+Radius: 0.5
+Label: CHECKPOINT 11
+Type: 1 11
+
+
+Object: ground

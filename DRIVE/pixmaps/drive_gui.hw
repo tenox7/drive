@@ -1,0 +1,110 @@
+hwLayout driveGui {
+    Aspect = (800 / 300)
+    PosX = 0    PosY = 600
+    Width = 1000 Height = 400
+    Align = HW_GUI_FRACTIONAL
+
+    Children = {
+        hwImage dashboard {
+            PosX = 0   PosY = 0
+            Width =  1000 Height = 1000
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dboard.jpg"
+        },
+        hwImage gearR {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dashR.jpg"
+        },
+        hwImage gearN {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dashN.jpg"
+        },
+        hwImage gear1 {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dash1.jpg"
+        },
+        hwImage gear2 {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dash2.jpg"
+        },
+        hwImage gear3 {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dash3.jpg"
+        },
+        hwImage gear4 {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dash4.jpg"
+        },
+        hwImage gear5 {
+            PosX = 800    PosY = 300
+            Width = 200 Height = 700
+            Align = HW_GUI_FRACTIONAL
+            FileName = "dash5.jpg"
+        },
+        hwGauge speedo {
+            PosX = 210  PosY = 550
+            Width = 550 Height = 550
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Scale = 2.3
+            LonRange = { 225., -45. }
+            GaugeRange = { 0, 240, 20 }
+            Divisions = { 12, 2, 10 }
+            FontHeight = 18
+            Label = "MPH"
+            Color = {1,1,1}
+            BackgroundColor = {0,0,0}
+            SpotColor = {.5,.5,.5}
+            NeedleColor = {1,0,0}
+            NeedleLength = 75.
+            OptFlags = 0
+        },
+        hwGauge tach {
+            PosX = 530  PosY = 550
+            Width = 550 Height = 550
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Scale = 3.0
+            LonRange = { 225., -45. }
+            GaugeRange = { 0, 12000, 2 }
+            Divisions = { 6, 2, 4 }
+            FontHeight = 18
+            Label = "RPM"
+            Color = {1,1,1}
+            BackgroundColor = {0,0,0}
+            SpotColor = {.5,.5,.5}
+            NeedleColor = {1,0,0}
+            NeedleLength = 75.
+            OptFlags = 0
+        }
+    }
+}
+
+hwRowCol menuBar {
+    PosX = 0 PosY = 925
+    Width = 1000        Height =  75
+    Align = HW_GUI_FRACTIONAL
+    Rows = 1    Columns = 6
+    Padding = {5,0}
+    Invisible = True
+    Children = {
+        hwButton { Label = "Vehicle"    ID = 1000 },
+        hwButton { Label = "Config"     ID = 2000 },
+        hwButton { Label = "Upright"    ID = 3000 },
+        hwButton { Label = "Start Over" ID = 4000 },
+        hwButton { Label = "Quit"       ID = 5000 },
+        hwButton { Label = "Help"       ID = 6000 }
+    }
+    BackgroundColor = 0x80808080
+    FontHeight = 18
+}

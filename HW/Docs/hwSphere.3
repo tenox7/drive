@@ -1,0 +1,64 @@
+NAME
+    hwSphere - create a partial sphere of a given radius
+
+INHERITS FROM
+    hwSurface
+    hwOrient
+
+PROPERTIES
+    GraphN	1I	Tesselation parameter; the number of rows in the
+    			resulting mesh
+    GraphM	1I	Tesselation parameter; the number of columns in
+    			the resulting mesh
+    Radius	1F	The radius of the sphere
+    LatRange	2F	The range of latitudes covered by the partial sphere,
+    			from -90 to 90
+    LonRange	2F	The range of longitudes covered by the partial
+    			sphere, from 0 to 360
+    OptLevel	1I	The optimization level; see hw(3) for details
+    HasNormals	1B	True if smooth shading is desired; false for a
+			faceted appearance
+    Resolution	1F	Tesselation multiplier
+
+DEFAULTS
+    GraphN = 9
+    GraphM = 17
+    Radius = 1.0
+    LatRange = {-90,90}
+    LonRange = {0,360}
+    HasNormals = True
+    Resolution = 1.0
+
+DESCRIPTION
+    The hwSphere class creates a partial sphere object with specified
+    radius, latitude range, and longitude range.  GraphN and GraphM
+    correspond the the numbers of rows and columns in the mesh resulting
+    from tesselation of the sphere.  Note that for full spheres, the
+    tesselation might not be a trivial latitude-longitude mesh.  By
+    default, the sphere has a smoothly shaded appearance; if a faceted
+    appearance is desired instead, set the HasNormals property to False.
+
+    The default texture coordinates have the S coordinate increasing
+    from 0 to 1 along the longitudes of the sphere, and the T coordinate
+    increasing from 0 to 1 along the latitudes of the sphere.
+
+C EXAMPLE
+    /* Draw a bowl */
+    hwObject
+	sphere;
+
+    sphere = hwSphere->create( hwSphere );
+    HW_MODIFY_1B( sphere, hwStrTwoSided, HW_TRUE );
+    HW_MODIFY_2F( sphere, hwStrLatRange, -90.0, -45.0 );
+    sphere->draw( sphere, disp );
+    sphere->destroy( sphere );
+
+OBJECT FILE EXAMPLE
+    # A bowl-shaped object
+    hwSphere sphere {
+	TwoSided = True
+	LatRange = {-90, -45}
+    }
+
+SEE ALSO
+    hw(3), hwSurface(3), hwOrient(3)

@@ -1,0 +1,70 @@
+NAME
+    hwCone - create a truncated partial cone
+
+INHERITS FROM
+    hwSurface
+    hwOrient
+
+PROPERTIES
+    GraphN	1I	Tesselation parameter; number of rows in the
+    			resulting mesh
+    GraphM	1I	Tesselation parameter; number of columns in the
+			resulting mesh
+    Radius	2F	Radius of the cone at the bottom and top
+    Height	1F	Height of the cone; the distance from the bottom
+    			to the top
+    LonRange	2F	Starting and stopping longitude of the cone in
+    			the range 0 to 360
+    OptLevel	1I	Optimization level; see hw(3) for details
+    HasNormals	1B	True for smooth shading; false for faceted
+    Resolution	1F	Tesselation multiplier
+
+DEFAULTS
+    GraphN = 9
+    GraphM = 17
+    Radius = {1,1}
+    Height = 1
+    LonRange = {0,360}
+    OptLevel = HW_OPT_NONE
+    HasNormals = True
+    Resolution = 1.0
+
+DESCRIPTION
+    The hwCone class creates a truncated cone, restricted in longitude
+    as requested by the user.  The cone is specified relative to the
+    origin, with a height (default, 1.0), and a lower and upper radius
+    (both default to 1.0).  The height is specified relative to the
+    positive Z axis.  The longitude range over which the cone is drawn
+    defaults to a complete circle, 0 to 360 degrees.  Note that the cone
+    IS NOT capped; see hwDisc and hwRing for possible capping objects.
+    The cone is tesselated into a mesh with GraphN rows and GraphM
+    columns.  By default, the cone is smoothly shaded; if a faceted
+    appearance is desired, set HasNormals to False.
+
+    The default texture coordinates of an hwCone have the S coordinate
+    increasing from 0.0 to 1.0 along the bottom and top of the cone, and
+    the T coordinate increasing from 0.0 to 1.0 from the origin to the
+    top of the cone.
+
+C EXAMPLE
+    /* Draw a half-pipe object, visible from both inside and out */
+    hwObject
+	cone;
+    hwFloat
+	lonRange[2] = {0.0, 180.0};
+
+    cone = hwCone->create( hwCone );
+    cone->modify( cone, hwStrLonRange, HW_TYPE_2F, cone );
+    HW_MODIFY_1B( cone, hwStrTwoSided, HW_TRUE );
+    cone->draw( cone, disp );
+    cone->destroy( cone );
+
+OBJECT FILE EXAMPLE
+    # A half-pipe, visible from both sides
+    hwCone cone {
+	LonRange = {0,180}
+	TwoSided = True
+    }
+
+SEE ALSO
+    hw(3), hwSurface(3), hwOrient(3)

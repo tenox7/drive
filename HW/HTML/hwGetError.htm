@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwGetError - return error information from HoverWare</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwGetError - return error information from HoverWare</p>
+<h2>SYNOPSIS</h2>
+<pre>
+    #include &quot;hw.h&quot;
+
+    hwInt32 hwGetError(void);
+</pre>
+<h2>DESCRIPTION</h2>
+<p>The hwGetError() call may be used to retrieve a token representing
+the last error that HoverWare encountered. The following are possible
+values which may be returned:</p>
+<table>
+<tr><td>HW_ERROR_NO_MEMORY</td>
+<td>An out-of-memory condition was encountered</td>
+</tr>
+<tr><td>HW_ERROR_BAD_PROP</td>
+<td>A modification or inquiry was done of a property not recognized
+  by a class</td>
+</tr>
+<tr><td>HW_ERROR_BAD_TYPE</td>
+<td>The type passed in to modify() is not valid for the given
+  property</td>
+</tr>
+<tr><td>HW_ERROR_INTERNAL</td>
+<td>An internal error has occurred - this should not happen in
+  practice</td>
+</tr>
+</table>
+<h2>EXAMPLE</h2>
+<pre>
+    hwInt32 err;
+
+    err = hwGetError();
+    if (err) {
+        printf(&quot;Error occurred recently\n&quot;);
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

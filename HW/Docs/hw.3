@@ -1,0 +1,237 @@
+NAME
+    hw(3) - HoverWare, an object-oriented three-dimensional graphics
+    library
+
+OVERVIEW
+    HoverWare is a middleware library which is intended to make the
+    problem of graphics primitive creation and management more
+    tractable.  HoverWare is written to interface with ANSI-C code;
+    despite this, it is object-oriented.  In order to enhance
+    portability, all parameters to and return values from HoverWare are
+    encapsulated via typedefs; these typedefs are:
+
+	hwInt8		- a signed, 8-bit integer
+	hwInt16		- a signed, 16-bit integer
+	hwInt32		- a signed, 32-bit integer
+	hwFloat		- a 32-bit floating point number
+
+    The central datatype of HoverWare is the hwObject.  From a C point
+    of view, the hwObject looks like this:
+
+	typedef struct _hwObjectStruct *hwObject;
+	struct _hwObjectStruct {
+	    hwObject	parent;
+	    const char	*name;
+	    const char	**props;
+	    hwObject	(*create)( hwObject template );
+	    void	(*addref)( hwObject obj );
+	    void	(*destroy)( hwObject obj );
+	    void	(*modify)( hwObject obj, const char *prop,
+					hwInt32 type, const void *val );
+	    hwInt32	(*inquire)( hwObject obj, const char *prop,
+					void **val );
+	    void	(*draw)( hwObject obj, hwDisplay disp );
+	};
+
+    There are three publicly visible (but read-only) data items:
+
+	parent		The parent class of this object (this
+			is NULL if the object is a class template).
+
+	name		The name of this object, if any,
+			or the name of the class if it is a class
+			template.
+
+	props		A NULL-terminated list of valid properties
+			which may be inquired of the object (this
+			is primarily used when saving objects to
+			disc).
+
+    There are, in addition, 6 methods, or function pointers, which are
+    defined for a HoverWare object:
+
+	create		Create a new HoverWare object given a template.
+			Note that only a class template's create method
+			may be executed.
+
+	addref          Tells a HoverWare object to add a reference to
+			itself.  Any time you store a pointer to a
+			HoverWare object, you probably should call its
+			addref method.
+
+	destroy		Ask a HoverWare object to destroy itself
+
+	modify		Modify one of the parameters of a HoverWare
+			object
+
+	inquire		Inquire one of the parameters of a HoverWare
+			object
+
+	draw		Ask a HoverWare object to draw itself to a
+			given hwDisplay.
+
+    Each HoverWare object will have one or more properties which further
+    define the object; these properties may ONLY be set and gotten via
+    the modify and inquire methods.  When setting a property to a value,
+    the *type* of the value must be passed in.  HoverWare properties can
+    be assigned single values, or may be uniform arrays of values.  To
+    describe the type of a property, a type naming scheme has been
+    created.  A type name consists of a 32-bit integer divided into two
+    parts: the type tag (4 bits) and the count (24 bits).  If the count
+    is zero, the parameter value is a scalar pointer type (hwObjects or
+    strings only).  The defined type tags are:
+
+	HW_TYPE_BYTE		An array of hwInt8 objects
+	HW_TYPE_SHORT		An array of hwInt16 objects
+	HW_TYPE_INT		An array of hwInt32 objects
+	HW_TYPE_BOOL		An array of hwInt32 objects, with
+				a value of HW_TRUE or HW_FALSE
+	HW_TYPE_FLOAT		An array of hwFloat objects
+	HW_TYPE_STRING		A scalar (count = 0) pointer to or array of
+				pointers to null-terminated strings
+	HW_TYPE_OBJECT		A scalar (count = 0) or array of hwObjects
+
+    In order to find the size of the array, the HW_GET_COUNT(name) macro
+    is provided.  To find the type tag, use the HW_GET_BASE(name) macro.
+    To construct a type name, use the HW_MAKE_TYPE(tag,count) macro.
+    Here are some examples of some values and their corresponding type
+    name:
+
+	C declaration		HW type name
+	-------------		------------
+	char *x			HW_TYPE_STRING
+	hwFloat foo[3]		HW_MAKE_TYPE(HW_TYPE_FLOAT,3)
+	hwObject z		HW_TYPE_OBJECT
+	char *x[5]		HW_MAKE_TYPE(HW_TYPE_STRING,5)
+
+    For convenience, the most common array type names have predeclared
+    names in hw.h:
+
+	HW_TYPE_1I		HW_MAKE_TYPE(HW_TYPE_INT,1)
+	HW_TYPE_1B		HW_MAKE_TYPE(HW_TYPE_BOOL,1)
+	HW_TYPE_1F		HW_MAKE_TYPE(HW_TYPE_FLOAT,1)
+	HW_TYPE_2F		HW_MAKE_TYPE(HW_TYPE_FLOAT,2)
+	HW_TYPE_3F		HW_MAKE_TYPE(HW_TYPE_FLOAT,3)
+
+    These type names are passed as the third parameter to the modify
+    method (to tell the object what you're giving it), and returned from
+    the inquire method (to tell you what it is you got from the object).
+
+    In the object man pages which describe each class template, a
+    shorthand version of this type naming is used.  This shorthand
+    consists of an integer count concatenated with a single-character
+    type from the set 'I', 'B', 'F', 'S', and 'O', corresponding to
+    HW_TYPE_INT, HW_TYPE_BOOL, HW_TYPE_FLOAT, HW_TYPE_STRING, and
+    HW_TYPE_OBJECT, respectively.  If the integer count is 0, it
+    represents a scalar value.  Here are some example shorthand names
+    with their equivalent full types:
+
+	1I		HW_MAKE_TYPE(HW_TYPE_INT,1)
+	6F		HW_MAKE_TYPE(HW_TYPE_FLOAT,6)
+	0O		HW_TYPE_OBJECT
+	0S		HW_TYPE_STRING
+
+    In addition to using C code to create and modify hwObjects, an
+    object file format is defined.  See hwParseFile(3) for more details
+    on this file format.
+
+    HoverWare implements the following classes:
+
+	hwCamera		Camera-like scene viewing parameters
+	hwLight			A light source
+	hwSpinner		An animation object
+	hwTimer			Application-controlled time settings
+	hwFile			A reference to a HoverWare object file
+	hwEnviron		Environmental settings (fog, depth test,
+				etc.)
+	hwImage			An image for use as a texture map
+	hwTexture		A texture map, including texture
+				coordinate generation
+	hwSphere		A full or partial sphere
+	hwCone			A full or partial cone
+	hwRing			A full or partial ring
+	hwTorus			A full or partial torus
+	hwDisc			A disc
+	hwGroup			A group of primitives
+	hwBox			A 3-dimensional box
+	hwSurfRev		A surface of revolution
+	hwSweep			A general sweep, extrusion primitive
+	hwText			An extruded 3-dimensional text string
+	hwMesh			A quadrilateral mesh of vertices
+	hwPolygon		A closed, convex polygonal primitive
+	hwPolyline		A connected list of line segments
+	hwPolymarker		A set of dot or marker primitives
+	hwTriangles		A collections of 1 or more triangles
+	hwSurface		Surface characteristics for primitives
+	hwOrient		Orientation values for primitives
+
+    For more information on each class, please see the appropriate man
+    page.
+
+USING HOVERWARE
+    The following is the smallest possible HoverWare program.  It
+    doesn't do anything but put up a window and wait for the user to hit
+    return on the console from which it was started:
+
+	/* Include HoverWare type and function definitions */
+    	#include "hw.h"
+
+	main( int argc, char **argv )
+	{
+	    /* Declare a pointer to the display */
+    	    hwDisplay
+		disp;
+	    /* Declare a pointer to the drawable (window) */
+    	    hwDrawable
+		draw;
+
+	    /* Initialize HoverWare to the default display */
+    	    disp = hwInit( hwSbDisplay, (OS_DISPLAY_TYPE)0, argc, argv );
+	    if( !disp )	exit( 1 );
+
+	    /* Choose a double-buffered visual */
+    	    if( !hwChooseVisual( disp, HW_VIS_DBUFF, 0 ) )	exit( 1 );
+
+	    /* Create a simple window */
+    	    draw = disp->createWindow( disp, "Test", 100, 100, 256, 256 );
+	    if( !draw )	exit( 1 );
+
+	    /* Make the window the current context */
+	    disp->makeCurrent( disp, draw );
+
+	    /* Flush out any rendering commands */
+	    disp->update( disp );
+
+	    /* Wait for the user to hit return */
+	    (void)getchar();
+	}
+
+    For HP-UX 10.10, use the following line (Starbase graphics library):
+
+	c89 -D_HPUX_SOURCE -I/usr/include/X11R5 -o prog prog.c libhwsb.a \
+		-L/usr/lib/X11R5 -L/opt/graphics/common/lib \
+		-lXwindow -ldl -lhpgfx -ldld -lXhp11 -lX11 -lm
+
+    For HP-UX 10.20, use the following line (Starbase graphics
+    library):
+
+	c89 -D_HPUX_SOURCE -I/usr/include/X11R6 -o prog prog.c libhwsb.a \
+		-L/usr/lib/X11R6 -L/opt/graphics/common/lib \
+		-lXwindow -ldl -lhpgfx -ldld -lXhp11 -lX11 -lm
+
+    And finally, for HP Native OpenGL, use the following line:
+
+	c89 -D_HPUX_SOURCE -I/usr/include/X11R6 -o prog prog.c libhwglx.a \
+		-L/usr/lib/X11R6 -I/opt/graphics/OpenGl/include \
+		-L/opt/graphics/OpenGL/lib \
+		-lGL -ldld -lXhp11 -lX11 -lm
+
+    To run it, just type "prog".
+
+SEE ALSO
+    hwBox(3), hwCamera(3), hwCone(3), hwDisc(3), hwEnviron(3),
+    hwFile(3), hwGroup(3), hwImage(3), hwInit(3), hwLight(3),
+    hwMatrix(3), hwMesh(3), hwOrient(3), hwParseFile(3), hwPolygon(3),
+    hwPolyline(3), hwRing(3), hwSphere(3), hwSpinner(3), hwSurfRev(3),
+    hwSurface(3), hwSweep(3), hwText(3), hwTexture(3), hwTimer(3), 
+    hwTorus(3), hwWriteAscii(3)

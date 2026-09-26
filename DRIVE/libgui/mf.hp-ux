@@ -1,0 +1,97 @@
+# $Source: /cvsroot/hoverball/HB_HW/DRIVE/libgui/mf.hp-ux,v $
+# $Revision: 1.1.1.1 $
+# $Date: 2004/02/19 19:27:31 $
+
+OPTFLAGS=-O
+OBJ=Opt/
+INC=../include
+INCLUDES= -I. \
+  -I/usr/include/X11R6 -I/usr/include/X11R5 \
+  -I/usr/include/Motif1.2 -I$(INC) -I/opt/HoverWare/Inc
+ANSI_FLAGS=-Aa -DANSI -D_HPUX_SOURCE
+CFLAGS=$(OPTFLAGS) $(INCLUDES) $(ANSI_FLAGS)
+LOAD_FLAGS= -L/usr/lib/X11R6 -L/usr/lib/X11R5 -L/usr/lib/Motif1.2
+LIBS= -lsbXg -lXwindow -lsb -lXm -lXt -lXhp11 -lX11 -ldld -lm
+
+all:
+	rm -f gui.a
+	make "OPTFLAGS=-O" "OBJ=Opt/" gui.a
+
+debug:
+	rm -f gui.a
+	make "OPTFLAGS=-g" "OBJ=Debug/" gui.a
+
+$(OBJ)cmap.o:		cmap.c windows.h
+	$(CC) $(CFLAGS) -c -o $@ cmap.c
+
+$(OBJ)findsvr.o:	findsvr.c windows.h $(INC)/drive.h $(INC)/filenames.h
+	$(CC) $(CFLAGS) -c -o $@ findsvr.c
+
+$(OBJ)gauge.o:		gauge.c windows.h $(INC)/gauge.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ gauge.c
+
+$(OBJ)help.o:		help.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ help.c
+
+$(OBJ)interface.o:	interface.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ interface.c
+
+$(OBJ)menubar.o:	menubar.c windows.h
+	$(CC) $(CFLAGS) -c -o $@ menubar.c
+
+$(OBJ)starwin.o:	starwin.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ starwin.c
+
+$(OBJ)placewin.o:	placewin.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ placewin.c
+
+$(OBJ)radar.o:		radar.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ radar.c
+
+$(OBJ)textwin.o:	textwin.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ textwin.c
+
+$(OBJ)title.o:		title.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ title.c
+
+$(OBJ)visDrawArea.o:	visDrawArea.c visDrawAreaP.h
+	$(CC) $(CFLAGS) -c -o $@ visDrawArea.c
+
+$(OBJ)Starbase.o:	Starbase.c StarbaseP.h
+	$(CC) $(CFLAGS) -c -o $@ Starbase.c
+
+$(OBJ)wheel.o:		wheel.c windows.h
+	$(CC) $(CFLAGS) -c -o $@ wheel.c
+
+$(OBJ)windows.o:	windows.c windows.h $(INC)/gauge.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ windows.c
+
+$(OBJ)xsight.o:	xsight.c windows.h $(INC)/drive.h
+	$(CC) $(CFLAGS) -c -o $@ xsight.c
+
+$(OBJ)xutils.o:	xutils.c windows.h
+	$(CC) $(CFLAGS) -c -o $@ xutils.c
+
+gui.a: \
+	    $(OBJ)cmap.o \
+	    $(OBJ)windows.o \
+	    $(OBJ)xutils.o \
+	    $(OBJ)menubar.o \
+	    $(OBJ)gauge.o \
+	    $(OBJ)wheel.o \
+	    $(OBJ)radar.o \
+	    $(OBJ)title.o \
+	    $(OBJ)textwin.o \
+	    $(OBJ)placewin.o \
+	    $(OBJ)starwin.o \
+	    $(OBJ)xsight.o \
+	    $(OBJ)help.o \
+	    $(OBJ)findsvr.o \
+	    $(OBJ)interface.o \
+	    $(OBJ)visDrawArea.o \
+	    $(OBJ)Starbase.o
+	ar rv gui.a $?
+
+guitest: main.c gui.a
+	$(CC) -o guitest main.c gui.a ../client/filenames.o \
+	    $(CFLAGS) $(LOAD_FLAGS) $(LIBS)

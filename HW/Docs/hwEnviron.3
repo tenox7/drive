@@ -1,0 +1,44 @@
+NAME
+    hwEnviron - establish global scene parameters
+
+PROPERTIES
+    BackgroundColor	3F
+    AmbientFactor	1F
+    AmbientColor	3F
+    Fog			1B
+    FogColor		3F
+    Lighting		1B
+
+DEFAULTS
+    BackgroundColor =  {0,0,0}
+    AmbientFactor = 0.5
+    AmbientColor = {1,1,1}
+    Fog = False
+    FogColor = {0,0,0}
+    Lighting = True
+
+DESCRIPTION
+    The hwEnviron class establishes global parameters for scene display;
+    these parameters are the background color, the ambient factor (the
+    percent of the ambient color used in lighting), the ambient color,
+    whether or not fog is enabled, and its color if enabled, and whether
+    or not lighting is enabled.
+
+C EXAMPLE
+    /* Set the background to blue */
+    hwObject
+	environ;
+
+    environ = hwEnviron->create( hwEnviron );
+    HW_MODIFY_3F( environ, hwStrBackgroundColor, 0.0, 0.0, 1.0 );
+    environ->draw( environ, disp );
+    environ->destroy( environ );
+
+OBJECT FILE EXAMPLE
+    # An environment with a blue background color
+    hwEnviron environ {
+	BackgroundColor = {0,0,1}
+    }
+
+SEE ALSO
+    hw(3)

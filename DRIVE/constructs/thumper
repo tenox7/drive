@@ -1,0 +1,113 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+Object: cylinder
+Animation Bits: 0x0001
+Radius: 10
+Position: 0 0 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0002
+Radius: 10
+Position: 0 0.5 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0004
+Radius: 10
+Position: 0 1 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0008
+Radius: 10
+Position: 0 2 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0010
+Radius: 10
+Position: 0 4 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0020
+Radius: 10
+Position: 0 7 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0040
+Radius: 10
+Position: 0 10 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0080
+Radius: 10
+Position: 0 12 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0100
+Radius: 10
+Position: 0 12 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0200
+Radius: 10
+Position: 0 11.5 0 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0400
+Radius: 10
+Position: 0 10 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x0800
+Radius: 10
+Position: 0 9 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x1000
+Radius: 10
+Position: 0 7 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x2000
+Radius: 10
+Position: 0 5 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x4000
+Radius: 10
+Position: 0 3 0
+Height: 30
+
+Object: cylinder
+Animation Bits: 0x8000
+Radius: 10
+Position: 0 0 0
+Height: 30

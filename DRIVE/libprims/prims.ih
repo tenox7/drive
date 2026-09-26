@@ -1,0 +1,152 @@
+/* (c) Copyright Hewlett-Packard Company 2001
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+
+
+/* prims.ih */
+/*            Definitions for the include modules              */
+
+#ifndef PRIMS_IH_INCLUDED
+#define PRIMS_IH_INCLUDED
+
+#include "../include/global.h"
+#ifndef M_PI
+#define M_PI 3.1415926535897932384626433832795
+#endif
+
+#ifndef M_SQRT1_2
+#define M_SQRT1_2 0.70710678118654752440084436210485
+#endif
+
+
+#define TOGGLE_ORDER	2
+#define SAME_ORDER	3
+
+/* Routines for internal use */
+extern void _prim_push_default_u(
+    int fildes);
+extern void _prim_push_default_v(
+    int fildes);
+extern void _prim_push_u_knot(
+    int fildes,
+    float *knot_vector,
+    int numpts);
+extern void _prim_push_v_knot(
+    int fildes,
+    float *knot_vector,
+    int numpts);
+extern void _prim_pop_u_knot(
+    int fildes);
+extern void _prim_pop_v_knot(
+    int fildes);
+extern void _prim_pop_knots(
+    int fildes);
+extern void _prim_push_vertex_format(
+    int fildes,
+    int coord,
+    int use,
+    int rgb,
+    int normals,
+    int order);
+extern void _prim_push_vertex_order(
+    int fildes,
+    int neworder);
+extern void _prim_pop_vertex_format(
+    int fildes);
+extern void _prim_trimmed_plane(
+    int fildes,
+    float *clist, int poly_size,
+    int order,
+    int rational,
+    int raw);
+extern void _prim_trimmed_plane_center(
+    int fildes,
+    float *clist, int poly_size,
+    int order,
+    int rational,
+    float xc, float yc, float zc,
+    int raw);
+extern void _prim_construct_orientation_matrix(
+    float mat[4][4],
+    float x1, float y1, float z1,
+    float x2, float y2, float z2);
+extern void _prim_push_orientation_matrix(
+    int fildes,
+    float mat[4][4],
+    float x1, float y1, float z1,
+    float x2, float y2, float z2);
+extern float *_prim_malloc_object(
+    int size);
+extern void _prim_free_object(
+    void *object);
+extern void _prim_xform_points(
+    float *points, int num_points,
+    int coord_per_vertex,
+    int normals,
+    float xform[4][4]);
+extern void _libprims_link_dummy(
+    void);
+
+
+#ifndef ABS
+# define ABS(x)			(((x) < 0) ? (-(x)) : (x))
+#endif
+
+#ifndef FSQRT
+# define FSQRT(k)		((float) sqrtf((float)(k)))
+#endif
+
+#ifndef FSIN
+# define FSIN(k)		((float) sinf((float)(k)))
+#endif
+
+#ifndef FCOS
+# define FCOS(k)		((float) cosf((float)(k)))
+#endif
+
+#ifndef FPOW
+# define FPOW(x,y)		((float) powf((float)(x),(float)(y)))
+#endif
+
+#ifndef FATAN2
+# define FATAN2(y,x)		((float) atan2f((float)(y),(float)(x)))
+#endif
+
+#ifndef FLN
+# define FLN(x)			((float) logf((float)(x)))
+#endif
+
+#ifndef FEXP
+# define FEXP(x)		((float) expf((float)(x)))
+#endif
+
+#ifndef FHYPOT2
+# define FHYPOT2(x,y)		FSQRT((x)*(x) + (y)*(y))
+#endif
+
+#ifndef FHYPOT3
+# define FHYPOT3(x,y,z)		FSQRT((x)*(x) + (y)*(y) + (z)*(z))
+#endif
+
+#ifndef HYPOT3
+# define HYPOT3(x,y,z)		FHYPOT3(x,y,z)
+#endif
+
+#if defined(__linux__) || defined(WIN32)
+# include "stub_starbase.c.h"
+#endif
+
+#endif /* PRIMS_IH_INCLUDED */

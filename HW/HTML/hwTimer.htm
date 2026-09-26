@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwTimer - alter the passage of time for its children</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwTimer - alter the passage of time for its children</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Lifetime</td>
+<td>2F</td>
+<td>Range of time for which this hwTimer is effective</td>
+</tr>
+<tr><td>Equation</td>
+<td>*F</td>
+<td>Polynomial equation for the alteration of time</td>
+</tr>
+<tr><td>CycleTime</td>
+<td>1F</td>
+<td>How long does it take to cycle from 0 to 1? If 0, it doesn't
+  cycle</td>
+</tr>
+<tr><td>Children</td>
+<td>*O</td>
+<td>List of objects affected by the timer</td>
+</tr>
+<tr><td>Invisible</td>
+<td>1B</td>
+<td>Is this timer invisible?</td>
+</tr>
+<tr><td>Visibility</td>
+<td>1I</td>
+<td>Visibility mask for use with hwDisplay-&gt;setVisibility</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Lifetime</td>
+<td>{0,1e38}</td>
+</tr>
+<tr><td>Equation</td>
+<td>{0,1} # That is, 0*X^0 + 1*X^1, or identity</td>
+</tr>
+<tr><td>CycleTime</td>
+<td>0.0</td>
+</tr>
+<tr><td>Children</td>
+<td>NULL</td>
+</tr>
+<tr><td>Invisible</td>
+<td>False</td>
+</tr>
+<tr><td>Visibility</td>
+<td>0xFFFFFFFF</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwTimer class can be used to change time for its children from
+a strict 1:1 realtime ratio to whatever polynomial equation is
+desired. For example, to &quot;freeze&quot; time at a given value,
+say, 42, merely create an hwTimer object whose equation is {42}. The
+equation is interpreted using the following algorithm:</p>
+<pre>
+        /* Compute sum of polynomial */
+        Tsum = 0.0;
+        for( i = 0; i &lt; Length(Equation); i++ ) {
+            Tsum = Tsum + Equation[i] * pow( RealTime, (double)i );
+        }
+
+        RealTime = Tsum;
+</pre>
+<p>In other words, a polynomial equation. The Lifetime parameter
+specifies the range of real time over which this hwTimer object
+operates; if real time is outside this range, the hwTimer object and
+its children do not display. The CycleTime parameter specifies how
+long it takes for the hwTimer object to cycle back to (relative) T =
+0. If a CycleTime is specified, time will cycle from Lifetime[0] to
+Lifetime[0]+CycleTime.</p>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # Pause time for the children of this object, for 10 seconds starting
+    # 100 seconds into time
+    hwTimer {
+        Lifetime = {100,110}
+        Equation = {100}        # In other words, make T = 100.0 seconds
+        Children = {
+            hwSpinner {
+                UpType = HW_SPIN_LINEAR
+                UpParams = {0,360}
+                CycleTime = 5
+                Children = {
+                    hwFile {
+                        FileName = &quot;foo.gfx&quot;
+                    }
+                }
+            }
+        }
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

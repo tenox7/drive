@@ -1,0 +1,169 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Nuclear power facility
+#
+# This fills a block 280 x 280 feet and should be positioned
+# 140 feet from a road in the +Z direction (before rotation)
+#
+# Edgar Circenis
+#
+
+#------------------------------ Cooling towers and water supply
+Construct: cooling_tower
+Position: -90 0 -10
+
+Construct: cooling_tower
+Position: -90 0 80
+
+Construct: cooling_tower
+Position: 80 0 -50
+
+Object: pond
+Width: 140
+Length: 80
+Position: 30 0 90
+
+#------------------------------ The reactor building
+Object: sphere
+Position: -60 10 -80
+Radius: 20
+Color: 0.8 0.8 0.8
+
+Object: pillar
+Radius: 20
+Position: -60 0 -80
+Color: 0.8 0.8 0.8
+
+#------------------------------ The main building
+Object: skyscraper
+Width: 95
+Length: 70
+Height: 30
+Position: -40 0 -50
+
+Object: skyscraper
+Width: 50
+Length: 72
+Height: 45
+Position: -41 0 -10
+
+Object: flat
+Width: 6
+Length: 8
+Color: 0.3 0.3 0.5
+Xrot: -90
+Position: -5 4 -50.5
+
+Object: pillar
+Radius: 3
+Height: 20
+Position: 20 45 30
+
+Object: pillar
+Radius: 3
+Height: 20
+Position: 5 45 30
+
+Object: generic sign
+Label: ACME NUCLEAR\POWER FACILITY
+Size: 7 50 0.01
+Position: -5 38 -11
+Color: 0 0 0
+
+#------------------------------ Pipes, conduits, etc
+Object: pillar
+Radius: 1.5
+Height: 20
+Position: -60 5 -60
+Xrot: 90
+Color: 1 1 1
+
+Object: pillar
+Radius: 1.5
+Height: 20
+Position: -60 9 -40
+Yrot: -90
+Xrot: 90
+Color: 1 1 1
+
+Object: pillar
+Radius: 1.5
+Height: 20
+Position: -60 9 -60
+Xrot: 90
+Color: 1 1 1
+
+Object: pillar
+Radius: 1.5
+Height: 20
+Position: -60 5 -40
+Yrot: -90
+Xrot: 90
+Color: 1 1 1
+
+Object: pillar
+Radius: 4
+Height: 25
+Position: -90 0 23
+Xrot: 90
+Color: 1 1 1
+
+Object: pillar
+Radius: 4
+Height: 20
+Position: -57 0 -10
+Yrot: -90
+Xrot: 90
+Color: 1 1 1
+
+Object: pillar
+Radius: 4
+Height: 20
+Position: 28 0 -40
+Yrot: -90
+Xrot: 90
+Color: 1 1 1
+
+#------------------------------ Road, parking lot, etc
+Object: parking lot
+Width: 70
+Length: 45
+Position: 5 0 -87.5
+
+Object: road
+Width: 15
+Length: 31
+Position: 32.5 0 -140
+
+Object: sidewalk
+Width: 3
+Length: 70
+Position: 5 0 -60
+Yrot: -90
+
+Object: sidewalk
+Width: 6
+Length: 8.5
+Position: -5 0 -54.25
+
+Object: generic sign
+Label: CLEAN ENERGY\FOR THE FUTURE
+Size: 10 20 0.01
+Position: 10 2 -52
+Color: 0 0 0
+

@@ -1,0 +1,43 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=libphysics.a
+all: $(LIBTARGET)
+TOPDIR=..
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include -I../libnum @CPPFLAGS@ @DEFS@ @CFLAGS@ \
+  $(WARNINGS) $(OPTDEBUGFLAGS)
+
+SRC=\
+    collision.c \
+    pobject.c \
+    pobj_state.c \
+    pobjst_sim.c
+
+# ptest building only valid on HP-UX
+PTEST_LDFLAGS=-L/usr/lib/X11R6 -L/opt/graphics/common/lib \
+    -lXwindow -ldl -lhpgfx -lXhp11 -lX11 -lm -ldld
+ptest:  $(LIBTARGET) ptest.c physics.h
+	$(CC) -g $(CFLAGS) ptest.c $(LIBTARGET) \
+	    ../libnum/libnum.a $(PTEST_LDFLAGS) -o $@
+clean::
+	rm -f ptest
+
+include $(TOPDIR)/Makefile.h

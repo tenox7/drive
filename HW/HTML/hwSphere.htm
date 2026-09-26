@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwSphere - create a partial sphere of a given radius</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwSphere - create a partial sphere of a given radius</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>Tesselation parameter; the number of rows in the resulting mesh</td>
+</tr>
+<tr><td>GraphM</td>
+<td>1I</td>
+<td>Tesselation parameter; the number of columns in the resulting
+  mesh</td>
+</tr>
+<tr><td>Radius</td>
+<td>1F</td>
+<td>The radius of the sphere</td>
+</tr>
+<tr><td>LatRange</td>
+<td>2F</td>
+<td>The range of latitudes covered by the partial sphere, from -90
+  to 90</td>
+</tr>
+<tr><td>LonRange</td>
+<td>2F</td>
+<td>The range of longitudes covered by the partial sphere, from 0
+  to 360</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>The optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>1B</td>
+<td>True if smooth shading is desired; false for a faceted
+  appearance</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tesselation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>9</td>
+</tr>
+<tr><td>GraphM</td>
+<td>17</td>
+</tr>
+<tr><td>Radius</td>
+<td>1.0</td>
+</tr>
+<tr><td>LatRange</td>
+<td>{-90,90}</td>
+</tr>
+<tr><td>LonRange</td>
+<td>{0,360}</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>True</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwSphere class creates a partial sphere object with specified
+radius, latitude range, and longitude range. GraphN and GraphM
+correspond the the numbers of rows and columns in the mesh resulting
+from tesselation of the sphere. Note that for full spheres, the
+tesselation might not be a trivial latitude-longitude mesh. By
+default, the sphere has a smoothly shaded appearance; if a faceted
+appearance is desired instead, set the HasNormals property to False.</p>
+<p>The default texture coordinates have the S coordinate increasing
+from 0 to 1 along the longitudes of the sphere, and the T coordinate
+increasing from 0 to 1 along the latitudes of the sphere.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a bowl */
+    hwObject
+        sphere;
+
+    sphere = hwSphere-&gt;create( hwSphere );
+    HW_MODIFY_1B( sphere, hwStrTwoSided, HW_TRUE );
+    HW_MODIFY_2F( sphere, hwStrLatRange, -90.0, -45.0 );
+    sphere-&gt;draw( sphere );
+    sphere-&gt;destroy( sphere );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A bowl-shaped object
+    hwSphere sphere {
+        TwoSided = True
+        LatRange = {-90, -45}
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

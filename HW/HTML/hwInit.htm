@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwInit, etc. - visual selection and context management routines for HoverWare</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwInit, etc. - visual selection and context management routines
+for HoverWare</p>
+<h2>SYNOPSIS</h2>
+<pre>
+    #include &quot;hw.h&quot;
+
+    int hwInit( hwInt32 argc, char **argv )
+    hwDisplay hwDisplay-&gt;create( hwDisplay proto, hwDisplay sharedDisp,
+                                 OS_DISPLAY_TYPE osDisplay )
+    hwInt32 hwDisplay-&gt;chooseVisual( hwDisplay disp,
+                        hwInt32 must, hwInt32 want )
+    hwDrawable hwDisplay-&gt;createWindow( hwDisplay disp, const char *winName,
+                        hwInt32 winX, hwInt32 winY,
+                        hwInt32 winW, hwInt32 winH )
+    void hwDisplay-&gt;makeCurrent( hwDisplay disp, hwDrawable draw )
+    OS_VISUAL_TYPE hwDisplay-&gt;extractVisual( hwDisplay disp )
+    OS_DRAWABLE_TYPE hwDisplay-&gt;extractWindow( hwDisplay disp, hwDrawable draw )
+    hwDrawable hwDisplay-&gt;initDrawable( hwDisplay disp, OS_DRAWABLE_TYPE draw )
+    void hwDisplay-&gt;viewport( hwDisplay disp, hwInt32 x, hwInt32 y,
+                                        hwInt32 width, hwInt32 height )
+    void hwDisplay-&gt;update( hwDisplay disp )
+</pre>
+<h2>DESCRIPTION</h2>
+<p>These functions are used to initialize HoverWare for drawing.
+Their specific uses are:</p>
+
+<dl>
+  <dt>hwInit()</dt>
+  <dd>Initializes HoverWare. Exactly one call to hwInit should be
+  made per program. The argc and argv arguments are as received by
+  main(). The result should be checked against 0.</dd>
+</dl>
+
+<dl>
+  <dt>create()</dt>
+  <dd>Creates and initializes a hwDisplay. The shareDisp parameter
+  indicates that another hwDisplay exists with which you want to
+  share resources - such as object names, display lists, and texture
+  IDs. For portability, NULL should be passed as the osDisplay.</dd>
+</dl>
+
+<dl>
+  <dt>chooseVisual()</dt>
+  <dd>Finds a visual (or pixel format, in the case of Windows NT)
+  which matches the given critera. The criteria specified in the
+  &quot;must&quot; argument must all be present; the criteria
+  specified in the &quot;want&quot; argument are used to distinguish
+  between multiple visuals which meet the must criteria. The result
+  contains all of the criteria which were met, or 0 if the must
+  criteria could not be met. Additionally, if a visual was found, the
+  HW_VIS_SUCCESS flag will be or'd into the result passed to the
+  caller. This call must be made before any disp-&gt;createWindow or
+  disp-&gt;initDrawable calls. The set of criteria includes:</dd>
+</dl>
+<table>
+<tr><td>HW_VIS_DBUFF</td>
+<td>A double-buffered visual</td>
+</tr>
+<tr><td>HW_VIS_DEPTH</td>
+<td>A visual with depth (Z) buffer</td>
+</tr>
+<tr><td>HW_VIS_ALPHA</td>
+<td>A visual with destination alpha</td>
+</tr>
+<tr><td>HW_VIS_STENCIL</td>
+<td>A visual with a stencil buffer</td>
+</tr>
+<tr><td>HW_VIS_TEXTURE</td>
+<td>A visual which accelerates texture mapping</td>
+</tr>
+<tr><td>HW_VIS_AA</td>
+<td>A visual which has multisample AA (&gt;= 2 and &lt; 4 samples)</td>
+</tr>
+<tr><td>HW_VIS_AA_MED</td>
+<td>A visual which has multisample AA (&gt;= 4 and &lt; 8 samples)</td>
+</tr>
+<tr><td>HW_VIS_AA_HI</td>
+<td>A visual which has multisample AA (&gt;= 8 samples)</td>
+</tr>
+</table>
+
+<dl>
+  <dt>createWindow()</dt>
+  <dd>This is an &quot;easy&quot; window creation routine which
+  creates a window on the chosen display and visual, and creates a
+  HoverWare context which fills the window. The name is the name to
+  be placed in the window title bar. The winX and winY parameters
+  specify window placement. The winW and winH parameters specify the
+  window size. The return value may be used for subsequent
+  makeCurrent calls. Flags describing the window style can include:</dd>
+</dl>
+<table>
+<tr><td>HW_WIN_INPUT</td>
+<td>Allow window input to pass events to the routine established
+  via disp-&gt;inputHandler</td>
+</tr>
+<tr><td>HW_WIN_FULLSCREEN</td>
+<td>Make the window full-screen and borderless</td>
+</tr>
+<tr><td>HW_WIN_BORDERLESS</td>
+<td>Make the window borderless</td>
+</tr>
+<tr><td>HW_WIN_HIDE_CURSOR</td>
+<td>Hide the cursor when inside the window</td>
+</tr>
+<tr><td>HW_WIN_JOYSTICK</td>
+<td>Allow joystick input to pass events to the routine established
+  via disp-&gt;inputHandler</td>
+</tr>
+</table>
+
+<dl>
+  <dt>makeCurrent()</dt>
+  <dd>This routine makes the given hwDisplay current to the running
+  thread. A &quot;live&quot; hwDisplay should only be made current to
+  one thread at a time.</dd>
+</dl>
+
+<dl>
+  <dt>extractVisual()</dt>
+  <dd>This routine extracts the system-dependent visual ID from the
+  HoverWare display. On X-based systems, this visual ID is a pointer
+  to an XVisualInfo structure.</dd>
+</dl>
+
+<dl>
+  <dt>extractWindow()</dt>
+  <dd>This routine extracts the system-dependent window ID from the
+  HoverWare drawable object. On X-based systems, this is a Window
+  atom.</dd>
+</dl>
+
+<dl>
+  <dt>initDrawable()</dt>
+  <dd>This routine creates a HoverWare drawable object to be
+  displayed on the given system-dependent window object. It returns
+  the HoverWare drawable which can be passed to subsequent
+  makeCurrent calls.</dd>
+</dl>
+
+<dl>
+  <dt>viewport()</dt>
+  <dd>This routine resizes the HoverWare viewport of the current
+  drawable. This is typically called upon receiving a window resize
+  event from the window manager. The viewport is specified with the
+  origin at the upper-left corner of the screen.</dd>
+</dl>
+
+<dl>
+  <dt>update()</dt>
+  <dd>This routine flushes all pending graphics requests to the
+  current drawable. If the visual is a double-buffered one, it also
+  performs a double buffer swap, clearing the back and depth buffers.</dd>
+</dl>
+<p>Note that create(), chooseVisual(), createWindow(),
+makeCurrent(), extractVisual(), extractWindow(), initDrawable(),
+viewport(), and update() are actually methods in the hwDisplay class,
+and as such are always called through an instance of that class.</p>
+<h2>EXAMPLES</h2>
+<pre>
+    /* This program creates a simple window on the display and
+     * then exits after the user hits return
+     */
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    #include &quot;hw.h&quot;
+
+    int main( int argc, char **argv )
+    {
+        hwDisplay disp;
+        hwInt32 visResult;
+        hwDrawable win;
+
+        /* Initialize the display pointer */
+        hwInit( argc, argv );
+        disp = hwDefaultDisplay-&gt;create( hwDefaultDisplay, NULL, NULL );
+        if( !disp )     exit( 1 );
+
+        /* Find the appropriate visual type */
+        visResult = disp-&gt;chooseVisual( disp, HW_VIS_DBUFF|HW_VIS_DEPTH, 0 );
+        if( !visResult )        exit( 1 );
+
+        /* Create a 512x512 window */
+        win = disp-&gt;createWindow( disp, &quot;Test&quot;, 10, 10, 512, 512 );
+        if( !win )              exit( 1 );
+
+        /* Establish it as current */
+        disp-&gt;makeCurrent( disp, win );
+
+        /* Update all graphics in it */
+        disp-&gt;update( disp );
+
+        /* Wait for user to hit return */
+        (void)getchar();
+
+        /* All done! */
+        return 0;
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

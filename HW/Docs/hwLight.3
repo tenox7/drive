@@ -1,0 +1,72 @@
+NAME
+    hwLight - create a light source for illuminating a scene
+
+PROPERTIES
+    Color	3F	Color of the light source
+    Positional	1I	True if it has a finite distance, false if
+			is placed an infinite distance from the scene
+    Pos		3F	Position, if Positional is true
+    Dir		3F	Direction the light is pointing
+    Cutoff	1F	Cutoff angle of a positional light, in degrees
+    LightExp	1F	Rate of "fade" as objects get away from the
+			centerline of the light
+    Atten	1F	Rate of "fade" as objects get farther away from
+			the light
+
+DEFAULTS
+    Color = {1,1,1}
+    Positional = False
+    Pos = {0,0,-1}
+    Dir = {0,0,1}
+    Cutoff = 0.0	# That is, radiate in all directions
+    LightExp = 0.0	# That is, don't fade
+    Atten = 0.0		# That is, don't attenuate
+
+DESCRIPTION
+    The hwLight class creates a light source which will illuminate
+    objects in the scene.  Either directional or positional light
+    sources may be created; a directional light source lights as if it
+    were located an infinite distance away from the view and objects; a
+    positional light source has a specified position in the scene.
+
+    For directional light sources, the only relevant parameters are the
+    Color and the Dir (the direction the light beams are shining).  All
+    other parameters are ignored.  Directional light sources are
+    probably the easiest to use.  The Dir parameter will be modified by
+    the model matrix in place when the light is drawn.
+
+    For positional light sources, all parameters are relevant.  The Pos
+    is the position of the light, in *model* coordinates.  That is, the
+    Pos will be effected by whatever matrix is pushed on the stack.  The
+    Dir is only useful if the Cutoff angle is non-zero; it is the
+    direction that a cone light is pointing.  It is modified by the
+    model matrix in place when the light is drawn.  The Cutoff angle is
+    half of the width, in degrees, of a conical light source.  If this
+    angle is zero, the light source radiates in all directions.  The
+    LightExp is a number between 0.0 and 1.0 which specifies the
+    spotlight "fade" as the direction from the light to the object gets
+    farther from the axis.  The Atten is a number specifying the rate at
+    which the light attenuates as objects get farther from it.  If this
+    is 0.0, then the light does not attenuate.  Otherwise, it must be
+    greater than or equal to 1.0.
+
+C EXAMPLE
+    /* Draw a directional red light */
+    hwObject
+	light;
+
+    light = hwLight->create( hwLight );
+    HW_MODIFY_3F( light, hwStrColor, 1, 0, 0 );
+    HW_MODIFY_3F( light, hwStrDir, 1, 1, 1 );
+    light->draw( light, disp );
+    light->destroy( light );
+
+OBJECT FILE EXAMPLE
+    # A directional red light
+    hwLight light {
+	Color = {1,0,0}
+	Dir = {1,1,1}
+    }
+
+SEE ALSO
+    hw(3), hwMatrix(3), hwSpinner(3)

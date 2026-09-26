@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwTexture - define a texture map for use in rendering</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwTexture - define a texture map for use in rendering</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwImage.htm">hwImage</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Apply</td>
+<td>1I</td>
+<td>One of HW_TM_MODULATE, HW_TM_BUMP, HW_TM_RELIEF, HW_TM_GLOSS,
+  HW_TM_SHADOW, or HW_TM_SHADOW_VAR</td>
+</tr>
+<tr><td>Bound</td>
+<td>1I</td>
+<td>One of HW_TM_REPEAT or HW_TM_CLAMP</td>
+</tr>
+<tr><td>CoordMode</td>
+<td>1I</td>
+<td>One of HW_TM_EXPLICIT, HW_TM_PLANAR, HW_TM_SPHERE,
+  HW_TM_CYLINDER, HW_TM_ENVMAP, or HW_TM_STAGE_0</td>
+</tr>
+<tr><td>Filter</td>
+<td>1I</td>
+<td>One of HW_TM_POINT, HW_TM_LINEAR, HW_TM_MIP, or HW_TM_TRILINEAR</td>
+</tr>
+<tr><td>InternalFormat</td>
+<td>1I</td>
+<td>One of HW_TM_COLOR, HW_TM_ALPHA, HW_TM_INTENSITY, HW_TM_HEIGHT,
+  HW_TM_NORMAL, HW_TM_NORMAL_HEIGHT, HW_TM_DEPTH, or HW_TM_DEPTH_VAR</td>
+</tr>
+<tr><td>ReliefHeight</td>
+<td>1F</td>
+<td>A scale factor applied when converting height fields to normal
+  maps</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Apply</td>
+<td>HW_TM_MODULATE</td>
+</tr>
+<tr><td>Bound</td>
+<td>HW_TM_REPEAT</td>
+</tr>
+<tr><td>CoordMode</td>
+<td>HW_TM_EXPLICIT</td>
+</tr>
+<tr><td>Filter</td>
+<td>HW_TM_TRILINEAR</td>
+</tr>
+<tr><td>InternalFormat</td>
+<td>HW_TM_COLOR</td>
+</tr>
+<tr><td>ReliefHeight</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwTexture class is used to create a texture map which may be
+applied to rendered surfaces. The texture encapsulates both the image
+used for texturing (see <a href="hwImage.htm">hwImage</a> for more
+information) and methods used when applying the texture.</p>
+<p>The possible Apply values are:</p>
+
+<dl>
+  <dt>HW_TM_MODULATE</dt>
+  <dd>The diffuse lit surface color is modulated by the texture
+  color; this is accomplished by multiplying the two colors together
+  component-by-component</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_BUMP</dt>
+  <dd>Uses the contents of the texture map to perturb lighting,
+  creating a bumpy appearance on the surface. Only effective if the
+  InternalFormat is HW_TM_HEIGHT, HW_TM_NORMAL, or
+  HW_TM_NORMAL_HEIGHT.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_RELIEF</dt>
+  <dd>Similar to HW_TM_BUMP, the texture map perturbs the surface.
+  However, an additional correction is applied which give a
+  parallalx-like effect. Only effective if the InternalFormat is
+  HW_TM_HEIGHT or HW_TM_NORMAL_HEIGHT.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_GLOSS</dt>
+  <dd>The specular lit surface color is modulated by the texture
+  color; this is accomplished by multiplying the two colors together
+  component-by-component</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_SHADOW</dt>
+  <dd>The &quot;R&quot; component of the texture coordinate is
+  compared against the depth sampled from the texture map, and the
+  result goes into the alpha channel of the frament color</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_SHADOW_VAR</dt>
+  <dd>The &quot;R&quot; component of the texture coordinate is
+  compared against the depth computed from a depth+variance texture
+  map, and the result goes into the alpha channel of the frament
+  color</dd>
+</dl>
+<p>The two possible Bound modes are:</p>
+
+<dl>
+  <dt>HW_TM_REPEAT</dt>
+  <dd>If the texture coordinates exceed the range [0.0,1.0], then
+  the texture map repeats infinitely</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_CLAMP</dt>
+  <dd>The texture coordinates are clamped to the range [0.0,1.0]</dd>
+</dl>
+<p>The possible CoordMode values are:</p>
+
+<dl>
+  <dt>HW_TM_EXPLICIT</dt>
+  <dd>Texture coordinates used are those specified with the
+  original surface; see each graphics type for what the default
+  explicit surface texture coordinates are. These coordinates are
+  then passed through the matrix expressed using the hwOrient
+  parameters of the texture.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_PLANAR</dt>
+  <dd>Texture coordinates are specified projected onto a plane
+  whose center and orientation are specifed by the hwOrient Pos and
+  Rotate parameters. The coordinates are then scaled by the inverse
+  of the Scale parameter. The effect is as if the texture were blown
+  up by the Scale parameter and the vertices of the surface were
+  projected into that blown up texture map.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_SPHERE</dt>
+  <dd>Texture coordinates are specified relative to a sphere
+  centered at the hwOrient Pos parameter, and oriented by the
+  hwOrient Rotate parameter. They are then subsequently scaled by the
+  Scale parameter.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_CYLINDER</dt>
+  <dd>Texture coordinates are specified relative to a cylinder
+  (with axis along Z) centered at the hwOrient Pos parameter, and
+  oriented by the hwOrient Rotate parameter. The U coordinate is the
+  longitude along the cylinder; the V coordinate is the distance from
+  the (rotated) plane at the origin.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_ENVMAP</dt>
+  <dd>Texture coordinates are generated based on the vertex normal
+  and the eye-to-vertex vector. This allows for &quot;shiny&quot;
+  looking surfaces such as a mirrored ball.</dd>
+</dl>
+<p>The possible values for the Filter parameter include:</p>
+
+<dl>
+  <dt>HW_TM_POINT</dt>
+  <dd>The texture is not filtered at all</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_LINEAR</dt>
+  <dd>The texture is filtered from the nearest four samples</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_MIP</dt>
+  <dd>The texture is filtered from the nearest four samples in the
+  appropriate level-of-detail</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_TRILINEAR</dt>
+  <dd>The texture is filtered between the neare eight samples in
+  the two nearest MIP levels-of-detail.</dd>
+</dl>
+<p>The possible values for the InternalFormat parameter include:</p>
+
+<dl>
+  <dt>HW_TM_COLOR</dt>
+  <dd>Red, green, blue, and alpha are extracted from the texture
+  and used to modulate either the diffuse or specular color. The
+  texture may have 1, 2, 3, or 4 components. If it has 1 or 3
+  components, the alpha is assumed to be 1.0. If the texture has
+  fewer than 3 components, red, green, and blue are identical.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_ALPHA</dt>
+  <dd>Red, green, and blue are set to 1.0, and alpha is set to the
+  value of the 1-component texture.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_INTENSITY</dt>
+  <dd>Red, green, blue and alpha are set identically to the value
+  of the 1-component texture.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_HEIGHT</dt>
+  <dd>A normal map is computed from the 1-component height texture,
+  and used for HW_TM_BUMP or HW_TM_RELIEF application.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_NORMAL</dt>
+  <dd>The given 3-component normal map is used for HW_TM_BUMP
+  texture application. The normals are extracted by subtracting 0.5
+  from each component and then multiplying by 2.0, converting the
+  [0..1] range of an unsigned texture component to the [-1..1] range
+  of a normal component. The optional parameter ReliefScale is used
+  during the conversion.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_NORMAL_HEIGHT</dt>
+  <dd>The given 4-component normal+height map is used for
+  HW_TM_BUMP or HW_TM_RELIEF. The first 3 components are a normal
+  map, as in HW_TM_NORMAL, and the last co mponent is a height value,
+  useful for HW_TM_RELIEF.</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_DEPTH</dt>
+  <dd>The given 1-component texture is used as a depth map for
+  HW_TM_SHADOW mapping</dd>
+</dl>
+
+<dl>
+  <dt>HW_TM_DEPTH_VAR</dt>
+  <dd>The given 2-component texture is used as a variance depth map
+  for HW_TM_SHADOW_VAR mapping.</dd>
+</dl>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Texture map a sphere using planar coordinate generation */
+    hwObject
+        tm, sphere;
+
+    tm = hwTexture-&gt;create( hwTexture );
+    tm-&gt;modify( tm, hwStrFileName, HW_TYPE_STRING, &quot;foo.ppm&quot; );
+    HW_MODIFY_1I( tm, hwStrCoordMode, HW_TM_PLANAR );
+
+    sphere = hwSphere-&gt;create( hwSphere );
+    sphere-&gt;modify( sphere, hwStrTexture, HW_TYPE_OBJECT, tm );
+    sphere-&gt;draw( sphere );
+    sphere-&gt;destroy( sphere );
+    tm-&gt;destroy( tm );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A sphere demonstrating planar coordinate generation
+    hwSphere sphere {
+        Texture = hwTexture {
+            FileName = &quot;foo.ppm&quot;
+            CoordMode = HW_TM_PLANAR
+        }
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwImage.htm">hwImage</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

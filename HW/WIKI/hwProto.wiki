@@ -1,0 +1,27 @@
+== NAME ==
+name - what it does
+
+== INHERITS FROM ==
+* list of classes it inherits from
+
+== PROPERTIES ==
+| propname | TT | what this prop does
+
+== DEFAULTS ==
+| propname |  value
+
+== DESCRIPTION ==
+Describe the thing in a few paragraphs
+
+== C EXAMPLE ==
+{{{
+    /* Put a C example here */
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # Put an object file example here
+}}}
+
+== SEE ALSO ==
+[[hw]]

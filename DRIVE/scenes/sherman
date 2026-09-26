@@ -1,0 +1,1156 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#-------------------------------------------------------------------------
+# Sherman Farm Raceway
+# by Edgar Circenis
+#
+# Features:
+# - Decreasing radius curve
+# - tunnel ramp
+# - whoop-dee-doos
+# - elevated roadways
+# - more hidden surprises
+#-------------------------------------------------------------------------
+
+Racecourse: Sherman Farms
+Start SceneX: 8
+Start SceneZ: -1
+Start Position: -400 1 -525
+Start Angle: 90
+Start Positions: 4
+Race Seconds: 195
+Practice Seconds: 0
+Turbo Mode: 2
+Turbo Boosts: 5
+
+
+#SCENE ONE
+Scene Location: 8 -1
+
+# (a)
+Object: road
+Length: 100
+Width: 60
+Position: 200 0 -1000
+
+# (b)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: -200 0 -900
+Yrot: 0
+# (c)
+Object: road
+Length: 800
+Width: 60
+Position: -200 0 -500
+Yrot: 90
+
+# (f/g)
+Object: curve
+Radius: 430
+Width: 60
+Height: 2
+Angle: 180
+Position: -500 40 -100
+Yrot: 90
+Xrot: -25
+
+# (h)
+Object: road
+Length: 301.5
+Width: 60
+Height: 2
+Position: -500 40 300
+Yrot: -90
+Xrot: 5.717
+
+# (i/j)
+Object: curve
+Radius: 430
+Width: 60
+Height: 2
+Angle: 180
+Position: -200 10 -100
+Yrot: -90
+
+# (k)
+Object: ramp
+Length: 300
+Width: 60
+Height: 40
+Position: 400 0 -500
+Yrot: 90
+
+# (l)
+Object: road
+Length: 100
+Width: 60
+Position: 500 0 -500
+Yrot: 90
+
+# (m)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 500 0 -100
+Yrot: -90
+
+# (n)
+Object: road
+Length: 100
+Width: 60
+Position: 900 0 0
+Yrot: 180
+
+# (o)
+Object: bridge
+Length: 300
+Width: 60
+Height: 20
+Position: 900 0 150
+Yrot: 0
+
+# (p)
+Object: road
+Length: 100
+Width: 60
+Position: 900 0 400
+Yrot: 180
+
+# (q)
+Object: bridge
+Length: 300
+Width: 60
+Height: 20
+Position: 900 0 550
+Yrot: 0
+
+# (r)
+Object: road
+Length: 300
+Width: 60
+Position: 900 0 1000
+Yrot: 180
+
+# (s)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 47
+Position: 0 0 1300
+Yrot: -47
+
+# (t)
+Object: road
+Width: 60
+Length: 1780
+Position: -817.16 0 -382.85
+Yrot: -38.157
+
+# (u)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 47
+Position: -1100 0 -100
+Yrot: 270
+
+# (w)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 45
+Position: -1100 0 -100
+Yrot: -90
+
+# (x)
+Object: road
+Length: 600
+Width: 60
+Height: 2
+Position: 100 40 -500
+Yrot: 90
+
+# (y)
+Object: road
+Length: 200
+Width: 60
+Height: 2
+Position: -200 10 -500
+Yrot: 90
+
+# WALLS
+
+# (f/g)
+Object: curvewall
+Radius: 430
+Width: 2
+Height: 4
+Angle: 180
+Position: -500 40 -100
+Yrot: 90
+Xrot: -25
+
+# (i/j)
+Object: curvewall
+Radius: 430
+Width: 2
+Height: 4
+Angle: 180
+Position: -200 10 -100
+Yrot: -90
+
+# CHECKPOINTS
+
+Object: start
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: START
+Radius: 0.5
+Position: -500 0 -500
+Yrot: 90
+Type: 1 10
+Data: 1 3
+2 0 1
+
+Object: finish
+Length: 20.0
+Width:  60.0
+Height: 50.0
+Label: FINISH
+Radius: 0.5
+Position: -400 30 300
+Type: 1 10
+Yrot: -90.0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: -515 0 0
+Type: 1 5
+Yrot: -38.157
+Data: 1 3
+4 1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 9
+Radius: 0.5
+Position: 900 0 0
+Type: 1 9
+Yrot: 180
+Data: 1 3
+5 0 1
+
+# SIGNS
+
+Object: generic sign
+Size: 20 30 2
+Label: SLOW
+Position: 0 0 -507
+Yrot: 60
+Color: 1 1 0
+
+# Welcome sign
+Object: generic sign
+Size: 50 80 2
+Label: SHERMAN FARM\RACEWAY
+Position: 120 0 -950
+Yrot: 0
+Color: 0.7 0.7 1.0
+
+Object: ground
+
+#-------------------------------------------------------------------------
+#SCENE TWO
+Scene Location: 7 -1
+
+# (a)
+Object: ramp
+Length: 150
+Width: 60
+Height: 20
+Position: -500 0 700
+Yrot: 0
+
+# (b)
+Object: road
+Length: 300
+Width: 60
+Position: -500 0 700
+Yrot: 180
+
+# (c)
+Object: curve
+Radius: 230
+Width: 60
+Angle: 90
+Position: -300 0 400
+Yrot: 180
+
+# (d)
+Object: curve
+Radius: 330
+Width: 60
+Angle: 90
+Position: -300 0 500
+Yrot: 270
+
+# (e)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: -400 0 500
+Yrot: 0
+
+# (f)
+Object: curve
+Radius: 530
+Width: 60
+Angle: 90
+Position: -400 0 400
+Yrot: 90
+
+# (g)
+Object: road
+Length: 500
+Width: 60
+Position: -900 0 400
+Yrot: 180
+
+# (h)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: -500 0 -100
+Yrot: 180
+
+# (i)
+Object: road
+Length: 350
+Width: 60
+Position: -500 0 -500
+Yrot: 270
+
+# (j)
+Object: road
+Length: 153
+Width: 60
+Height: 2
+Position: -150 0 -500
+Yrot: -90
+Xrot: -11.36
+
+# (k)
+Object: road
+Length: 153
+Width: 60
+Height: 2
+Position: 250 0 -500
+Yrot: 90
+Xrot: -11.36
+
+# (l)
+Object: road
+Length: 750
+Width: 60
+Position: 250 0 -500
+Yrot: -90
+
+# (n)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 47
+Position: 900 0 -100
+Yrot: 270
+
+# (u)
+Object: curve
+Radius: 630
+Width: 60
+Height: 2
+Angle: 90
+Position: 700 20 100
+Yrot: 180
+
+# (v)
+Object: road
+Length: 700
+Width: 60
+Position: 100 0 300
+Yrot: 0
+
+# (w)
+Object: ramp
+Length: 200
+Width: 60
+Height: 20
+Position: 100 0 300
+Yrot: 180
+
+# WALLS
+
+# tunnel north
+Object: wall
+Width: 10
+Height: 10
+Length: 1100
+Position: 700 0 -465
+Yrot: 90
+
+# tunnel south (east)
+Object: wall
+Width: 10
+Height: 10
+Length: 645
+Position: 700 0 -535
+Yrot: 90
+
+# tunnel south (west)
+Object: wall
+Width: 10
+Height: 10
+Length: 445
+Position: -400 0 -535
+Yrot: -90
+
+# ramp north
+Object: wall
+Width: 10
+Height: 60
+Length: 500
+Position: 300 10 -465
+Yrot: 90
+
+# ramp south
+Object: wall
+Width: 10
+Height: 60
+Length: 500
+Position: 300 10 -535
+Yrot: 90
+
+# ramp top
+Object: wall
+Width: 80
+Height: 10
+Length: 500
+Position: 300 70 -500
+Yrot: 90
+
+# ramp west top
+Object: wall
+Width: 80
+Height: 10
+Length: 200
+Position: -200 10 -500
+Yrot: 90
+
+# ramp east top
+Object: wall
+Width: 80
+Height: 10
+Length: 400
+Position: 700 10 -500
+Yrot: 90
+
+# ramp west wall
+Object: wall
+Width: 80
+Height: 60
+Length: 10
+Position: -200 20 -500
+Yrot: 90
+
+# ramp east wall
+Object: wall
+Width: 80
+Height: 60
+Length: 10
+Position: 300 20 -500
+Yrot: -90
+
+# block of concrete after jump to scene 3
+Object: wall
+Width: 100
+Height: 20
+Length: 50
+Position: -500 0 930
+Yrot: 0
+
+# (u)
+Object: curvewall
+Radius: 630
+Width: 2
+Height: 4
+Angle: 90
+Position: 700 20 100
+Yrot: 180
+
+
+# SIGNS
+
+# sign in/on block of concrete
+Object: generic sign
+Size: 50 60 0.001
+Label: EST.\1992
+Position: -500 20 930
+Yrot: 0
+Xrot: 90
+Color: 1 1 1
+
+# tunnel ramp sign
+Object: generic sign
+Size: 10 80 0.001
+Label: LOW CLEARANCE
+Position: 700 10 -500
+Yrot: 90
+Color: 1 1 0
+
+Object: left curve sign
+Label: 300
+Position: 900 0 -460
+Width: 20
+Height: 10
+Yrot: -90
+
+Object: left curve sign
+Label: 300
+Position: 900 0 -540
+Width: 20
+Height: 10
+Yrot: -90
+
+Object: left curve sign
+Label: 150
+Position: 60 0 300
+Width: 20
+Height: 10
+Yrot: 180
+
+Object: right curve sign
+Label: 120
+Position: -940 0 400
+Width: 20
+Height: 10
+Yrot: 0
+
+Object: wall
+Position: -800 0 -200
+Width: 4
+Height: 3
+Length: 700
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: -900 0 -100
+Type: 1 1
+Yrot: 0
+Data: 1 3
+0 0 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: -300 0 200
+Type: 1 2
+Yrot: 90
+Data: 1 3
+1 2 1
+
+Object: ground
+
+#-------------------------------------------------------------------------
+#SCENE THREE
+Scene Location: 7 0
+
+# (a)
+Object: road
+Length: 700
+Width: 60
+Position: -500 0 -1000
+Yrot: 0
+
+# (b)
+Object: road
+Length: 160
+Width: 60
+Height: 2
+Position: -500 0 -300
+Yrot: 0
+Xrot: -9
+
+# (f)
+Object: road
+Length: 550
+Width: 60
+Position: 200 0 350
+Yrot: 180
+
+# (g)
+Object: ramp
+Length: 100
+Width: 60
+Height: 20
+Position: -500 0 -100
+Yrot: 0
+
+# (h)
+Object: road
+Length: 550
+Width: 60
+Height: 20
+Position: -500 20 0
+Yrot: 0
+
+# (i/j)
+Object: curve
+Radius: 380
+Width: 60
+Height: 20
+Angle: 180
+Position: -150 20 550
+Yrot: 0
+
+# (k)
+Object: road
+Length: 201
+Width: 60
+Height: 2
+Position: 200 0 350
+Yrot: 0
+Xrot: -5.717
+
+# (l) (up curve)
+Object: curve
+Radius: 330
+Width: 60
+Height: 2
+Angle: 180
+Position: 500 0 -200
+Yrot: 180
+Xrot: -10
+
+# (l) (down curve)
+Object: curve
+Radius: 380
+Width: 60
+Height: 2
+Angle: 180
+Position: 450 0 -200
+Yrot: 0
+Xrot: 10
+
+# (m) (ramp)
+Object: road
+Width: 60
+Length: 101.5
+Height: 2
+Position: 100 0 -200
+Yrot: 180
+Xrot: -10
+
+# (n)
+Object: road
+Width: 60
+Length: 300.5
+Height: 2
+Position: 100 0 -700
+Yrot: 0
+Xrot: -3.3
+
+# (o)
+Object: road
+Length: 300
+Width: 60
+Position: 100 0 -700
+Yrot: 180
+
+# WALLS
+
+# (l) (up curve)
+Object: curvewall
+Radius: 330
+Width: 2
+Height: 4
+Angle: 180
+Position: 500 0 -200
+Yrot: 180
+Xrot: -10
+
+# (l) (down curve)
+Object: curvewall
+Radius: 380
+Width: 2
+Height: 4
+Angle: 180
+Position: 450 0 -200
+Yrot: 0
+Xrot: 10
+
+# (i/j)
+Object: curvewall
+Radius: 380
+Width: 2
+Height: 4
+Angle: 180
+Position: -150 20 550
+Yrot: 0
+
+# anti-cheating wall
+Object: wall
+Width: 2
+Height: 4
+Length: 750
+Position: 169 0 550
+Yrot: 180
+
+# anti-cheating wall
+Object: wall
+Width: 2
+Height: 4
+Length: 400
+Position: 168 0 0
+Yrot: 90
+
+Object: wall
+Position: 160 0  0
+Length: 1000
+Width: 4
+Height: 5
+Yrot: 180
+
+# SIGNS
+
+# underground section
+Object: generic sign
+Size: 60 80 5
+Label: DANGER\QUICKSAND
+Position: 800 0 -150
+Yrot: 0
+Color: 1 1 0
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 70.0
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: -500 0 500
+Type: 1 3
+Yrot: 0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: 100 0 -800
+Type: 1 4
+Yrot: 180
+
+Object: ground
+
+#-------------------------------------------------------------------------
+#SCENE FOUR
+Scene Location: 8 0
+
+# (a)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 47
+Position: 0 0 -700
+Yrot: -47
+
+# (b)
+Object: curve
+Radius: 831
+Width: 62
+Angle: 90
+Position: -400 0 -700
+Yrot: 0
+
+# (b2)
+Object: road
+Width: 60
+Length: 100
+Position: -400 0 100
+Yrot: 90
+
+# (c)
+Object: curve
+Radius: 431
+Width: 62
+Angle: 180
+Position: -500 0 500
+Yrot: 90
+
+# (d)
+Object: road
+Length: 200
+Width: 60
+Position: -500 0 900
+Yrot: -90
+
+# (e)
+Object: ramp
+Length: 200
+Height: 20
+Width: 60
+Position: -300 0 900
+Yrot: -90
+
+# (f)
+Object: ramp
+Length: 200
+Height: 20
+Width: 60
+Position: 200 0 900
+Yrot: 90
+
+# (g)
+Object: road
+Length: 300
+Width: 60
+Position: 200 0 900
+Yrot: -90
+
+# (h)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 500 0 500
+Yrot: 0
+
+# (i)
+Object: road
+Length: 200
+Width: 60
+Position: 900 0 500
+Yrot: 180
+
+# (j)
+Object: ramp
+Length: 200
+Height: 10
+Width: 60
+Position: 900 0 300
+Yrot: 180
+
+# (k) (into lake)
+Object: road
+Length: 401.12
+Width: 60
+Position: 900 -0.5 0
+Yrot: 180
+Xrot: 4.283
+
+# (l) (bottom of lake)
+Object: road
+Length: 100
+Width: 60
+Position: 900 -30.5 -400
+Yrot: 180
+
+# (m) (out of lake)
+Object: road
+Length: 401.12
+Width: 60
+Position: 900 -0.5 -900
+Yrot: 0
+Xrot: 4.283
+
+# (n)
+Object: road
+Length: 100
+Width: 60
+Position: 900 0 -900
+Yrot: 180
+
+# (w)
+Object: road
+Length: 150
+Width: 60
+Position: 282.84 0 -982.84
+Yrot: 141.843
+
+# WALLS
+
+# (b) (outside)
+Object: curvewall
+Radius: 836
+Width: 6
+Height: 15
+Angle: 90
+Position: -400 0 -700
+Yrot: 0
+Color: 0.05 0.05 0.05
+
+# (b) (inside)
+Object: curvewall
+Radius: 770
+Width: 6
+Height: 15
+Angle: 90
+Position: -400 0 -700
+Yrot: 0
+Color: 0.05 0.05 0.05
+
+# (b) (top top)
+Object: curvewall
+Radius: 836
+Width: 72
+Height: 1
+Angle: 90
+Position: -400 16 -700
+Yrot: 0
+Color: 0.05 0.05 0.05
+
+# (b) (top bottom)
+Object: curvewall
+Radius: 836
+Width: 72
+Height: 1
+Angle: 90
+Position: -400 16 -700
+Yrot: 90
+Xrot: 180
+Color: 0.05 0.05 0.05
+
+# (b2) (outside)
+Object: wall
+Length: 100
+Width: 6
+Height: 15
+Position: -400 0 133
+Yrot: 90
+Color: 0.05 0.05 0.05
+
+# (b2) (inside)
+Object: wall
+Length: 100
+Width: 6
+Height: 15
+Position: -400 0 67
+Yrot: 90
+Color: 0.05 0.05 0.05
+
+# (b2) (top top)
+Object: wall
+Length: 100
+Width: 72
+Height: 2
+Position: -400 15 100
+Yrot: 90
+Color: 0.05 0.05 0.05
+
+# (b2) (top bottom)
+# not necessary; walls already have bottoms
+
+# (c) (outside)
+Object: curvewall
+Radius: 436
+Width: 6
+Height: 15
+Angle: 180
+Position: -500 0 500
+Yrot: 90
+Color: 0.05 0.05 0.05
+
+# (c) (inside)
+Object: curvewall
+Radius: 370
+Width: 6
+Height: 15
+Angle: 180
+Position: -500 0 500
+Yrot: 90
+Color: 0.05 0.05 0.05
+
+# (c) (top top)
+Object: curvewall
+Radius: 436
+Width: 72
+Height: 1
+Angle: 180
+Position: -500 16 500
+Yrot: 90
+Color: 0.05 0.05 0.05
+
+# (c) (top bottom)
+Object: curvewall
+Radius: 436
+Width: 72
+Height: 1
+Angle: 180
+Position: -500 16 500
+Yrot: -90
+Xrot: 180
+Color: 0.05 0.05 0.05
+
+# MISC
+
+Object: pond
+Length: 900
+Width: 200
+Height: 60
+Position: 900 0 -450
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 6
+Radius: 0.5
+Position: 400 0 -700
+Type: 1 6
+Yrot: 0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 7
+Radius: 0.5
+Position: 500 0 900
+Type: 1 7
+Yrot: -90
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 59.0
+Label:  CHECKPOINT 8
+Radius: 0.5
+Position: 900 -60 -450
+Type: 1 8
+Yrot: 180
+
+# SIGNS
+
+# (w)
+Object: left curve sign
+Label: 200
+Width: 20
+Height: 10
+Position: 332 0 -982
+Yrot: -38.157
+
+# (b)
+Object: generic sign
+Size: 20 72 0.001
+Label: USE\HEADLIGHTS
+Position: 400 6 -700
+Yrot: 0
+Color: 0 0 0
+
+# (b2) sign
+Object: generic sign
+Size: 5 60 0.001
+Label: >>>
+Color: 1 1 0
+Position: -450 10 100
+Yrot: 90
+
+# (i)
+Object: generic sign
+Size: 30 50 2
+Label: NO\FISHING
+Position: 960 0 300
+Yrot: 180
+Color: 1 1 1
+
+Object: ground
+
+#-----------------------------------------------------------------------------
+# HILL SCENES
+
+Scene Location: 7 1
+Scene Type:  hill no roads
+
+Scene Location: 8 1
+Scene Type:  hill no roads
+
+Scene Location: 9 1
+Scene Type:  hill no roads
+
+Scene Location: 9 0
+Scene Type:  hill no roads
+
+Scene Location: 9 -1
+Scene Type:  hill no roads
+
+#-----------------------------------------------------------------------------
+# TURNOFF FROM MAIN HIGHWAY
+Scene Location: 8 -2
+
+Object: road
+Width: 60
+Length: 2000
+Position: -1000 0 0
+Yrot: -90
+
+Object: curve
+Radius: 530
+Position: -300 0 500
+Width: 60
+Angle: 90
+Yrot: -90 
+
+Object: road
+Length: 500
+Width: 60
+Position: 200 0 500
+
+Object: generic sign
+Label: Sherman Farm\<----
+Color: 1 1 1
+Size: 60 80 2
+Position: -400 0 -75
+Yrot: -90
+
+Object: ground

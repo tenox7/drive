@@ -1,0 +1,42 @@
+hwRowCol {
+    PosX =  250  PosY = 125             # i.e. .250, .125
+    Width = 500  Height = 750           # i.e. .500, .750
+    Align = HW_GUI_FRACTIONAL
+    Rows = 3    Columns = 2
+    Padding = {10,10}
+    BackgroundColor = {.25,.25,.25}
+    Children = {
+        hwButton Push {
+            Color = {1,1,1}
+            BackgroundColor = {.5,.5,.5}
+            ActiveColor = {0,0,0}
+            ActiveBackground = {1,0,0}
+            FontHeight = 24
+            Label = "Push"
+        },
+        hwButton Button {
+            Color = {1,1,1}
+            BackgroundColor = {.5,.5,.5}
+            ActiveColor = {0,0,0}
+            ActiveBackground = {1,0,0}
+            FontHeight = 24
+            Label = "Button"
+        },
+        hwButton Another {
+            Color = {1,1,1}
+            BackgroundColor = {.5,.5,.5}
+            ActiveColor = {0,0,0}
+            ActiveBackground = {1,0,0}
+            FontHeight = 24
+            Label = "Another"
+        },
+        hwButton OneMore {
+            Color = {1,1,1}
+            BackgroundColor = {.5,.5,.5}
+            ActiveColor = {0,0,0}
+            ActiveBackground = {1,0,0}
+            FontHeight = 24
+            Label = "One More"
+        }
+    }
+}

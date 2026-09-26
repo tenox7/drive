@@ -1,0 +1,161 @@
+== NAME ==
+hwSpinner - animate a list of child objects
+
+== PROPERTIES ==
+| Children    | *O | The objects under animation control
+| Invisible   | 1B | True iff this object is not displayable
+| Visibility  | 1I | Visibility mask for use with hwDisplay->setVisibility
+| PosType     | 1I | Type of position animation; see below
+| DirType     | 1I | Type of direction animation; see below
+| UpType      | 1I | Type of up-vector animation; see below
+| ScaleType   | 1I | Type of size animation; see below
+| TransType   | 1I | Type of transparency animation; see below
+| PosParams   | *F | Parameters for position animation
+| DirParams   | *F | Parameters for direction animation
+| UpParams    | *F | Parameters for up-vector animation
+| ScaleParams | *F | Parameters for size animation
+| TransParams | *F | Parameters for transparency animation
+| PosTimes    | *F | Key times for smooth position animation
+| DirTimes    | *F | Key times for smooth direction animation
+| UpTimes     | *F | Key times for smooth up-vector animation
+| ScaleTimes  | *F | Key times for smooth size animation
+| TransTimes  | *F | Key times for smooth transparency animation
+| Lifetime    | 2F | Starting and beginning time, in seconds, for which the children are visible
+| CycleTime   | 1F | Time, in seconds, before all parameters wrap around to beginning
+| Offset      | 1F | Offset to add to current time,in seconds
+| Delay       | 1F | Inter-child delay in time
+| PosOffset   | 3F | Position offset applied to PosParams for PosType HW_SPIN_SMOOTH
+
+== DEFAULTS ==
+| Children      | NULL
+| Invisible     | False
+| Visibility    | 0xFFFFFFFF
+| PosType       | undefined
+| DirType       | undefined
+| UpType        | undefined
+| ScaleType     | undefined
+| TransType     | undefined
+| PosParams     | NULL
+| DirParams     | NULL
+| UpParams      | NULL
+| ScaleParams   | NULL
+| TransParams   | NULL
+| PosTimes      | NULL
+| DirTimes      | NULL
+| UpTimes       | NULL
+| ScaleTimes    | NULL
+| TransTimes    | NULL
+| Lifetime      | {0,infinity}
+| CycleTime     | 0.0
+| Offset        | 0.0
+| Delay         | 0.0
+
+== DESCRIPTION ==
+The hwSpinner class is probably the most complicated class in all
+HoverWare; it contains code which can spin its children along a
+variety of complicated paths.  It can be used to animate objects,
+text, lights, or even the camera.
+
+Each of PosType, DirType, UpType, ScaleType, and TransType can be one of the
+following integers:
+
+; HW_SPIN_CONSTANT : keep this parameter at a constant value
+; HW_SPIN_LINEAR : linearly interpolate this parameter between 2 values
+; HW_SPIN_SMOOTH : smoothly interpolate this parameter between several values
+
+The default for each of these is "undefined", which means that
+parameter will not be modifed by this hwSpinner object.  The
+PosParams, DirParams, UpParams, ScaleParams, and TransParams properties will be
+interpreted differently depending on the *Type params.  Here is the
+table:
+
+; HW_SPIN_CONSTANT
+: *Params not used
+
+; HW_SPIN_LINEAR
+: Interpolate between two 3-dimensional positions (for PosType/PosParams) or two scalar angles (for DirType/DirParams or UpType/UpParams) or two 3-dimensional sizes (for ScaleType/ScaleParams) or two Transparency values (for TransType/TransParams).  Note that only objects that allow a Transparency property will be affected by TransType/TransParams/TransTimes settings.
+
+; HW_SPIN_SMOOTH
+: Interpolate the position, direction vector, up vector, size, or transparency smoothly between several 3-dimensional values specified in the *Params array.  For HW_SPIN_SMOOTH, the *Times arrays may be used to vary the timing between segments of the smooth interpolation; there should be the same number of entries in the *Times array as there are vertices in the *Params array.  The number in the *Times array corresponds to the percentage (between 0 and 100) of the CycleTime at which the specified Pos/Up/Dir/Scale/Trans value will be exactly the *Params value.  An example will make this clearer.
+
+The PosType/PosParams/PosTimes values modify the position of its children
+in modelling coordinates.  The DirType/DirParams/DirTimes values modify
+the direction the children are facing, relative to the vector {1,0,0}.
+The UpTime/UpParams/UpTimes values modify the "up" vector of the children,
+relative to the vector {0,1,0}.  The ScaleType/ScaleParams/ScaleTimes values
+modify the size of the children (NOTE: If all three scale values (X,Y, and Z)
+are not identical, graphics performance may be diminished).  The TransType/TransParams/TransTimes values modify the Transparency of the children (NOTE: only the first, X, value of the curve is used for the Transparency).
+
+The Lifetime is the first and last time, in seconds, that this hwSpinner
+and its children are visible. By default, HoverWare calculates the number
+of seconds since hwInit was performed, and this is the time which is used
+by the hwSpinner object.  See [[hwTimer]] for ways to alter the passage
+of time.  
+
+The CycleTime specifes how many seconds it takes for this hwSpinner
+object to recycle back to the beginning; the hwSpinner object will
+make (Lifetime[1]-Lifetime[0])/CycleTime cycles through its animation.
+
+The Offset is a simple scalar value to add a specified number of seconds to the current time while this hwSpinner object is being displayed.
+
+The Delay is a delay, in seconds, between each child's position in
+the animation, and can be used to make the children chase each other
+along the path.
+
+A C source code example is not provided, as managing these things in
+C is just too complicated for this man page.
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # Spin the camera around in a circle, looking at the origin
+    # The camera spins faster for the first half of the circle
+    hwSpinner {
+        PosType = HW_SPIN_SMOOTH
+        PosParams = {
+             0,0,-6,
+             6,0, 0,
+             0,0, 6,
+            -6,0, 0,
+             0,0,-6
+        }
+        PosTimes = {
+             0,         # At time 0%, be at 0,0,-6
+             10,        # At time 10%, be at 6,0,0
+             20,        # At time 20%, be at 0,0,6
+             60,        # At time 60%, be at -6,0,0
+             100        # At time 100%, be at 0,0,-6
+        }
+
+        DirType = HW_SPIN_SMOOTH
+        DirParams = {
+             0,0, 1,
+            -1,0, 0,
+             0,0,-1,
+             1,0, 0,
+             0,0, 1
+        }
+        DirTimes = {
+             0,
+             10,
+             20,
+             60,
+             100
+        }
+
+        CycleTime = 5.0
+        Children = {
+            hwCamera {
+                Pos = {0,0,0}
+                Dir = {1,0,0}   # Make it correspond to hwSpinner
+                                # direction
+                Up = {0,1,0}
+                Perspective = True
+                Planes = {0.1,12}
+                Field = 45
+            }
+        }
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]]

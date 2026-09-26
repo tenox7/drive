@@ -1,0 +1,116 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Road construction
+#
+# A stretch of road construction, 15' wide, 400' long (including signs).
+#
+# Daryl Poe
+
+
+Construct: barricade
+X: -100.0
+Z: 6.0
+Yrot: -90
+
+Construct: barricade
+X: -90.0
+Z: -0.0
+Yrot: -90
+
+Construct: barricade
+X: -80.0
+Z: -5.0
+Yrot: -90
+
+
+Construct: barricade
+X: 100.0
+Z: 6.0
+Yrot: -90
+
+Construct: barricade
+X: 90.0
+Z: -0.0
+Yrot: -90
+
+Construct: barricade
+X: 80.0
+Z: -5.0
+Yrot: -90
+
+
+Object: rubble
+Length: 12.0
+Width: 20.0
+Height: 2.0
+X: -30.0
+Color: 0.4 0.4 0.4
+
+Object: rubble
+Length: 12.0
+Width: 20.0
+Height: 2.0
+X: 30.0
+Color: 0.4 0.4 0.4
+
+Construct: pylon
+X: -70.0
+Z: -7.0
+
+Construct: pylon
+X: -50.0
+Z: -7.0
+
+Construct: pylon
+X: -30.0
+Z: -7.0
+
+Construct: pylon
+X: -10.0
+Z: -7.0
+
+Construct: pylon
+X: 10.0
+Z: -7.0
+
+Construct: pylon
+X: 30.0
+Z: -7.0
+
+Construct: pylon
+X: 50.0
+Z: -7.0
+
+Construct: pylon
+X: 70.0
+Z: -7.0
+
+Object: generic sign
+Color: 1.0 0.5 0.0
+Label: Construction Ahead\Left Lane Closed
+Size: 7.0 20.0 2.0
+Position: -190.0 0.0 18.0
+Yrot: -90
+
+Object: generic sign
+Color: 1.0 0.5 0.0
+Label: Construction Ahead\Right Lane Closed
+Size: 7.0 20.0 2.0
+Position: 190.0 0.0 18.0
+Yrot: 90
+

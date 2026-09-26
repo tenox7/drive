@@ -1,0 +1,1908 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#----------------------------------------------------------------------------
+# Sunday Drive (aka Lemans II)
+# designed by Edgar Circenis
+#
+Racecourse: Sunday Drive
+Practice Seconds: 0
+Race Seconds: 240
+Start SceneX: 14
+Start SceneZ: 1
+Start Position: -22.5 0 -800
+Start Angle: 0
+Start Positions: 4
+#Turbo Mode: 0
+Turbo Mode: 2
+#Turbo Boosts: 10
+Practice Seconds: 0
+#----------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------
+# SCENE ONE
+
+Scene Location: 14 1
+
+Object: road
+Width: 60
+Length: 400
+Position: 0 0 -1000
+
+Object: curve
+Width: 60
+Radius: 1030
+Angle: 90
+Position: -1000 0 -600
+
+# scenery
+
+Object: generic sign
+Label: EST\1993
+Width: 5
+Length: 5
+Height: 0.001
+Color: 0.6 0.5 0.5
+Position: -35 0 -702.5
+
+Object: wall
+Width: 5
+Length: 5
+Height: 5
+Color: 0.6 0.5 0.5
+Position: -35 0 -702.5
+
+Object: generic sign
+Label: BY\EDGAR\CIRCENIS
+Width: 5
+Length: 5
+Height: 0.001
+Color: 0.6 0.5 0.5
+Position: 35 0 -702.5
+
+Object: wall
+Width: 5
+Length: 5
+Height: 5
+Color: 0.6 0.5 0.5
+Position: 35 0 -702.5
+
+Object: left curve sign
+Position: 40 0 -600
+Width: 20
+Height: 10
+Label: 150
+
+Object: tree
+Height: 30
+Position: 40 0 -400
+
+Object: tree
+Height: 30
+Position: -177 0 -125
+
+Object: tree
+Height: 30
+Position: -195 0 200
+
+Object: tree
+Height: 30
+Position: -525 0 222
+
+Object: tree
+Height: 30
+Position: -817 0 434
+
+Object: conifer
+Height: 35
+Position: -100 0 -350
+
+Object: conifer
+Height: 35
+Position: -20 0 -70
+
+Object: conifer
+Height: 35
+Position:  -400 0 125
+
+Object: conifer
+Height: 35
+Position:  -550 0 400
+
+Object: conifer
+Height: 35
+Position:  -900 0 350
+
+Object: start
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: SUNDAY DRIVE
+Radius: 0.5
+Position: 0 0 -700
+Yrot: 0
+Type: 1 12
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE TWO
+
+Scene Location: 13 1
+
+Object: road
+Width: 60
+Length: 400
+Position: 1000 0 400
+Yrot: 90
+
+Object: curve
+Width: 60
+Radius: 630
+Angle: 90
+Position: 600 0 1000
+Yrot: 180
+
+# scenery
+
+Object: conifer
+Position: 850 0 450
+
+Object: conifer
+Position: 790 0 450
+
+Object: generic sign
+Label: LEARN\TO\DRIVE
+Size: 40 60 2
+Color: 0 0 0
+Position: 700 0 340
+Yrot: 90
+
+Object: generic sign
+Label: NORM GEE\DRIVING SCHOOL\1-800-EAT DUST
+Size: 40 60 2
+Color: 0 0 0
+Position: 500 0 340
+Yrot: 90
+
+Object: tree
+Height: 50
+Position: -40 0 900
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 1
+Radius: 0.5
+Position: 900 0 400
+Yrot: 90
+Type: 1 1
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE THREE
+
+Scene Location: 13 2
+
+Object: road
+Width: 60
+Length: 500
+Position: 0 0 -1000
+
+Object: curve
+Width: 60
+Radius: 430
+Angle: 270
+Position: -400 0 -500
+
+Object: road
+Width: 60
+Length: 250
+Position: -400 0 -900
+Yrot: -90
+
+Object: bridge
+Width: 60
+Length: 300
+Height: 15
+Position: 0 0 -900
+Yrot: -90
+
+Object: wall
+Width: 4
+Height: 2
+Length: 70
+Position: 32 0 -1000
+
+Object: wall
+Width: 4
+Height: 2
+Length: 70
+Position: -32 0 -1000
+
+Object: left curve sign
+Width: 20
+Height: 10
+Label: 150
+Position: 70 0 500
+
+Object: road
+Width: 60
+Length: 850
+Position: 150 0 -900
+Yrot: -90
+
+# scenery
+
+Object: house
+Type: dutch colonial
+Position: 90 0 -700
+Yrot: -90
+
+Object: house
+Type: gothic cottage
+Position: 90 0 -600
+Yrot: -90
+
+Object: house
+Type: antebellum farm
+Position: 90 0 -500
+Yrot: -90
+
+Object: skyscraper
+Position: 70 0 -400
+Width: 50
+Length: 60
+Height: 150
+
+Object: generic sign
+Label: INSTITUTE\FOR ADVANCED\SIMULATIONS
+Width: 70
+Length: 50
+Height: 2
+Position: 50 0 -400
+Yrot: -45
+Color: 0.25 0.9 1
+
+Object: road
+Width: 30
+Length: 150
+Position: 0 0 -450
+Yrot: -90
+
+Object: road
+Width: 30
+Length: 300
+Position: 55 0 -465
+Yrot: 180
+
+Object: parking lot
+Width: 100
+Length: 200
+Position: 200 0 -380
+
+Object: barn
+Position: -400 0 0
+Yrot: 180
+
+Object: silo
+Position: -450 0 -50
+
+Object: house
+Type: dutch colonial
+Position: -860 0 -400
+Yrot: 90
+
+Object: house
+Type: antebellum farm
+Position: -860 0 -450
+Yrot: 90
+
+Object: house
+Type: garrison
+Position: -860 0 -500
+Yrot: 90
+
+Object: house
+Type: dutch colonial
+Position: -400 0 -960
+Yrot: 180
+
+Object: road
+Position: -340 0 -930
+Length: 100
+Width: 20
+Yrot: 180
+
+Object: mailbox
+Position: -320 0 -930
+Yrot: 180
+
+Object: generic sign
+Label: ROAD\CONSTRUCTION\AHEAD
+Width: 60
+Length: 50
+Height: 2
+Position: 700 0 -840
+Yrot: -90
+Color: 1 0.549 0
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 2
+Radius: 0.5
+Position: 0 0 -600
+Yrot: 0
+Type: 1 2
+Data: 1 3
+5 2 1
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 3
+Radius: 0.5
+Position: -150 0 -900
+Yrot: -90
+Type: 1 3
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE FOUR
+
+Scene Location: 14 2
+
+Object: road
+Width: 60
+Length: 500
+Position: -1000 0 -900
+Yrot: -90
+
+# open lane
+Object: road
+Width: 30
+Length: 360
+Position: -500 0 -915
+Yrot: -90
+
+# road under construction
+Object: wall
+Width: 360
+Length: 30
+Height: 5
+Position: -320 -4.85 -900
+
+Object: road
+Width: 60
+Length: 140
+Position: -140 0 -900
+Yrot: -90
+
+Object: curve
+Width: 60
+Radius: 430
+Angle: 90
+Position: 0 0 -500
+Yrot: -90
+
+Object: road
+Width: 60
+Length: 900.5
+Position: 400 0 -500
+
+Object: ramp
+Width: 60
+Length: 220
+Height: 10
+Position: 400 0 400
+
+Object: ramp
+Width: 60
+Length: 220
+Height: 10
+Position: 400 0 900
+Yrot: 180
+
+Object: road
+Width: 60
+Length: 101
+Position: 400 0 899.5
+
+# scenery
+
+Object: generic sign
+Label: LEFT LANE\CLOSED
+Width: 50
+Length: 35
+Height: 2
+Position: -900 0 -845
+Yrot: -90
+Color: 1 0.549 0
+
+Object: generic sign
+Label: >>>
+Width: 50
+Length: 35
+Height: 2
+Position: -600 0 -845
+Yrot: -90
+Color: 1 0.549 0
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -560 0 -880
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -530 0 -890
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -500 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -470 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -440 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -410 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -380 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -350 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -320 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -290 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -260 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -230 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -200 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -170 0 -900
+
+Object: pillar
+Radius: 1
+Height: 4
+Color: 1 0 0
+Position: -140 0 -900
+
+Object: generic sign
+Label: CONSTRUCTION\ENDS
+Width: 50
+Length: 35
+Height: 2
+Position: 0 0 -955
+Yrot: -90
+Color: 1 0.549 0
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 4
+Radius: 0.5
+Position: 400 0 -300
+Yrot: 0
+Type: 1 4
+Data: 1 3
+2 2 1
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE FIVE
+
+Scene Location: 14 3
+
+Object: ramp
+Width: 60
+Length: 200
+Height: 10
+Position: 400 0 -1000
+
+Object: road
+Width: 60
+Length: 200
+Height: 2
+Position: 400 10 -800
+
+#drawbridge south
+Object: road
+Width: 60
+Height: 2
+Length: 260
+Position: 400 10 -600 
+Xrot: -11
+
+Object: guardrail
+Position: 430 10 -600
+Length: 260
+Xrot: -11
+
+Object: guardrail
+Position: 370 10 -600
+Length: 260
+Xrot: -11
+
+#drawbridge north
+Object: road
+Width: 60
+Length: 260
+Height: 2
+Position: 400 10 100
+Xrot: -11
+Yrot: 180
+
+Object: guardrail
+Position: 430 10 100
+Length: 260
+Xrot: -11
+Yrot: 180
+
+Object: guardrail
+Position: 370 10 100
+Length: 260
+Xrot: -11
+Yrot: 180
+
+Object: road
+Width: 60
+Length: 200
+Height: 2
+Position: 400 10 100
+
+Object: ramp
+Width: 60
+Height: 10
+Length: 200
+Position: 400 0 500
+Yrot: 180
+
+Object: bank
+Width: 60
+Radius: 430
+Angle: 90
+Height: 10
+Position: 0 0 500
+
+Object: road
+Width: 60
+Length: 800
+Position: 0 0 900
+Yrot: 90
+
+Object: ramp
+Width: 60
+Length: 200
+Height: 15
+Position: -800 0 900
+Yrot: 90
+
+# scenery
+
+Construct: arm
+Position: 430 10 -790
+
+Construct: arm
+Position: 370 10 290
+Yrot: 180
+
+#drawbridge pillars (four)
+Object: wall
+Width: 10
+Length: 10
+Height: 100
+Color: 0 0.5 0
+Position: 435 10 -610
+
+Object: wall
+Width: 10
+Length: 10
+Height: 100
+Color: 0 0.5 0
+Position: 365 10 -610
+
+Object: wall
+Width: 10
+Length: 10
+Height: 100
+Color: 0 0.5 0
+Position: 435 10 100
+
+Object: wall
+Width: 10
+Length: 10
+Height: 100
+Color: 0 0.5 0
+Position: 365 10 100
+
+#drawbridge tops (two)
+Object: pillar
+Radius: 5
+Height: 60
+Position: 370 105 -605
+Color: 0 0.5 0
+Zrot: -90
+
+Object: pillar
+Radius: 5
+Height: 60
+Position: 370 105 105
+Color: 0 0.5 0
+Zrot: -90
+
+#drawbridge wires (four)
+Object: pillar
+Radius: 1
+Height: 260.15
+Position: 435 110 -600
+Color: 0 0.5 0
+Xrot: 101.168
+Yrot: 1.12
+
+Object: pillar
+Radius: 1
+Height: 260.15
+Position: 365 110 -600
+Color: 0 0.5 0
+Xrot: 101.168
+Yrot: -1.12
+
+Object: pillar
+Radius: 1
+Height: 260.15
+Position: 435 110 100
+Color: 0 0.5 0
+Yrot: 178.877
+Xrot: 101.168
+
+Object: pillar
+Radius: 1
+Height: 260.15
+Position: 365 110 100
+Color: 0 0.5 0
+Yrot: 181.12
+Xrot: 101.168
+
+#end drawbridge hardware
+
+Object: generic sign
+Label: WARNING\DRAWBRIDGE
+Size: 40 50 2
+Color: 1 1 1
+Position: 455 0 -999
+
+Object: pond
+Width: 2000
+Length: 900
+Height: 30
+Position: 400 0 -250
+
+Object: pond
+Width: 1800
+Length: 800
+Height: 30
+Position: -700 0 0
+Yrot: -30
+
+#south dock
+Object: wall
+Width: 800
+Length: 200
+Height: 9.5
+Position: 400 0 -800
+
+#north dock
+Object: wall
+Width: 800
+Length: 200
+Height: 9.5
+Position: 400 0 100
+
+#barge
+Object: wall
+Width: 295
+Length: 120
+Height: 4
+Position: 650 0 -310
+Color: 0.65 0.35 0.18
+
+#barge
+Object: wall
+Width: 295
+Length: 120
+Height: 4
+Position: 350 0 -310
+Color: 0.65 0.35 0.18
+
+#pusher deck
+Object: wall
+Width: 95
+Length: 50
+Height: 2
+Position: 150 1 -275
+Color: 0 0 0
+
+#pusher waterline
+Object: wall
+Width: 95
+Length: 50
+Height: 1
+Position: 150 0 -275
+Color: 1 0 0
+
+#pusher bridge
+Object: wall
+Width: 30
+Length: 40
+Height: 20
+Color: 1 1 1
+Position: 150 3 -250
+Yrot: 90
+
+#bridge window
+Object: flat
+Color: 0.5 0.5 0.5
+Width: 25
+Length: 5
+Position: 150.5 19 -250
+Yrot: 90
+Xrot: -90
+
+#pusher name
+Object: generic sign
+Label: S.S. EDGAR
+Color: 1 1 1
+Width: 35
+Length: 15
+Height: 0.001
+Position: 130 6 -266
+
+# pusher bar
+Object: wall
+Width: 5
+Length: 10
+Height: 10
+Color: 0.1 0.1 0.1
+Position: 200 0 -275
+
+# pusher bar
+Object: wall
+Width: 5
+Length: 10
+Height: 10
+Color: 0.1 0.1 0.1
+Position: 200 0 -235
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 5
+Radius: 0.5
+Position: -200 0 900
+Yrot: 90
+Type: 1 5
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE SIX
+
+Scene Location: 13 3
+
+Object: road
+Width: 60
+Length: 600
+Height: 2
+Position: 1000 15 900
+Yrot: 90
+
+Construct: trestle
+Position: 1000 15 900
+Yrot: 90
+
+#Construct: trestle
+#Position: 900 15 900
+#Yrot: 90
+
+#Construct: trestle
+#Position: 800 15 900
+#Yrot: 90
+
+#Construct: trestle
+#Position: 700 15 900
+#Yrot: 90
+
+#Construct: trestle
+#Position: 600 15 900
+#Yrot: 90
+
+Construct: trestle
+Position: 500 15 900
+Yrot: 90
+
+Object: ramp
+Width: 60
+Length: 200
+Height: 15
+Position: 200 0 900
+Yrot: -90
+
+Object: pond
+Width: 600
+Length: 1200
+Height: 100
+Position: 700 0 600
+
+Object: road
+Width: 60
+Length: 200
+Position: 200 0 900
+Yrot: 90
+
+Object: bank
+Width: 60
+Radius: 430
+Height: 20
+Angle: 90
+Position: 0 0 500
+Yrot: 90
+
+Object: road
+Width: 60
+Length: 100
+Position: -400 0 400
+
+Object: bank
+Width: 60
+Radius: 430
+Height: 20
+Angle: 90
+Position: -800 0 400
+Yrot: -90
+
+Object: road
+Width: 60
+Length: 200
+Position: -800 0 0
+Yrot: 90
+
+# scenery
+
+#from scene 5
+Object: pond
+Width: 1800
+Length: 800
+Height: 30
+Position: 1300 0 0
+Yrot: -30
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 6
+Radius: 0.5
+Position: -400 0 450
+Yrot: 180
+Type: 1 6
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE SEVEN
+
+Scene Location: 12 3
+
+Object: road
+Width: 60
+Length: 1000
+Position: 1000 0 0
+Yrot: 90
+
+Object: curve
+Width: 60
+Radius: 430
+Angle: 270
+Position: 0 0 -400
+Yrot: 90
+
+Object: road
+Width: 60
+Length: 1000
+Position: 400 0 -400
+
+Object: curve
+Width: 60
+Radius: 280
+Angle: 53.132
+Position: 150 0 600
+Yrot: 0
+
+Object: curve
+Width: 60
+Radius: 280
+Angle: 53.132
+Position: 450 0 1000
+Yrot: 180
+
+#scenery
+
+# CEMETARY STUFF
+
+Object: generic sign
+Label: SHADY\ACRES\CEMETARY
+Width: 60
+Length: 50
+Height: 2
+Color: 1 1 1
+Position: 600 0 60
+Yrot: 90
+
+Object: generic sign
+Label: DANGER:\OPEN GRAVES
+Width: 50
+Length: 40
+Height: 2
+Color: 1 1 1
+Position: 200 0 60
+Yrot: 90
+
+# WALLS (6)
+
+#north
+Object: wall
+Width: 2
+Height: 10
+Length: 870
+Position: 370 0 100
+Color: 1 1 1
+Yrot: 90
+
+#west
+Object: wall
+Width: 2
+Height: 10
+Length: 1000
+Position: -500 0 -900
+Color: 1 1 1
+
+#south
+Object: wall
+Width: 2
+Height: 10
+Length: 1000
+Position: -500 0 -900
+Color: 1 1 1
+Yrot: -90
+
+#east
+Object: wall
+Width: 2
+Height: 10
+Length: 870
+Position: 500 0 -900
+Color: 1 1 1
+
+#east/north
+Object: wall
+Width: 2
+Height: 10
+Length: 70
+Position: 500 0 30
+Color: 1 1 1
+
+#north/east
+Object: wall
+Width: 2
+Height: 10
+Length: 70
+Position: 430 0 100
+Color: 1 1 1
+Yrot: -90
+
+# WALL TOPS (6)
+
+#north
+Object: wall
+Width: 3
+Height: 3
+Length: 870
+Position: 370 10 100
+Yrot: 90
+
+#west
+Object: wall
+Width: 3
+Height: 3
+Length: 1000
+Position: -500 10 -900
+
+#south
+Object: wall
+Width: 3
+Height: 3
+Length: 1000
+Position: -500 10 -900
+Yrot: -90
+
+#east
+Object: wall
+Width: 3
+Height: 3
+Length: 870
+Position: 500 10 -900
+
+#east/north
+Object: wall
+Width: 3
+Height: 3
+Length: 70
+Position: 500 10 30
+
+#north/east
+Object: wall
+Width: 3
+Height: 3
+Length: 70
+Position: 430 10 100
+Yrot: -90
+
+# EAST ARCH
+
+Object: curvewall
+Width: 5
+Height: 1.5
+Radius: 35
+Angle: 180
+Position: 500 13 0
+Yrot: 90
+Xrot: -90
+
+Object: curvewall
+Width: 5
+Height: 1.5
+Radius: 35
+Angle: 180
+Position: 500 13 0
+Yrot: -90
+Xrot: -90
+
+Object: generic sign
+Label: R I P
+Width: 20
+Length: 10
+Height: 0.001
+Position: 503 40 0
+Color: 0 0 0
+Yrot: 90
+
+# NORTH ARCH
+
+Object: curvewall
+Width: 5
+Height: 1.5
+Radius: 35
+Angle: 180
+Position: 400 13 100
+Xrot: -90
+
+Object: curvewall
+Width: 5
+Height: 1.5
+Radius: 35
+Angle: 180
+Position: 400 13 100
+Yrot: 180
+Xrot: -90
+
+Object: generic sign
+Label: COME\BACK\SOON
+Width: 20
+Length: 20
+Height: 0.001
+Position: 400 35 97
+Color: 0 0 0
+
+Construct: tombstone
+Position: -180 0 0
+Yrot: 90
+Label: RIP
+
+Construct: cross
+Position: -440 0 -480
+
+Construct: cross
+Position: -440 0 -440
+
+Construct: cross
+Position: -440 0 -400
+
+Construct: cross
+Position: -440 0 -360
+
+Construct: cross
+Position: -440 0 -320
+
+Construct: tombstone
+Position: -200 0 -800
+Yrot: 240
+Label: FIVE\ACES
+
+Construct: tombstone
+Position: -100 0 -840
+Yrot: 250
+Label: SLOW\DRAW
+
+Construct: cross
+Position: -120 0 -740
+Yrot: 30
+
+Construct: tombstone
+Position: 0 0 -850
+Yrot: 265
+Label: BAD\DRIVER
+
+# open grave
+Construct: tombstone
+Position: -280 0 -800
+Yrot: 180
+Label: BAT\MAN
+
+Object: flat
+Width: 30
+Length: 60
+Color: 0 0 0
+Position: -280 0 -768
+
+Object: wormhole
+Width: 30
+Length: 60
+Position: -280 0 -798
+Xrot: 90
+Destination: 24000 1000 6000
+Angle: 0
+
+Object: generic sign
+Label: YOU'RE NOT\DEAD YET!
+Width: 400
+Length: 200
+Height: 0.001
+Color: 1 1 1
+Position: 0 800 500
+
+
+Object: generic sign
+Label: GRAVITY\WILL FIX\THAT
+Width: 400
+Length: 200
+Height: 0.001
+Color: 1 1 1
+Position: 0 500 500
+
+# closed grave
+
+Construct: tombstone
+Position: 360 0 -660
+Yrot: -45
+Label: COBOL
+
+Object: bump
+Width: 20
+Length: 60
+Color: 0.65 0.35 0.18
+Position: 340 0 -680
+Yrot: -45
+
+Construct: tombstone
+Position: 340 0 -320
+Label: DEC
+
+Construct: tombstone
+Position: 340 0 -220
+Label: IBM
+
+Construct: tombstone
+Position: 340 0 -120
+Label: SUN
+
+Construct: cross
+Position: 450 0 -220
+
+Construct: cross
+Position: 450 0 -180
+
+Construct: cross
+Position: 450 0 -140
+
+Construct: cross
+Position: 450 0 -100
+
+Object: tree
+Height: 40
+Position: 350 0 -50
+
+Object: conifer
+Height: 40
+Position: 445 0 60
+
+Object: conifer
+Height: 40
+Position: 460 0 -460
+
+Object: tree
+Height: 40
+Position: 360 0 -700
+
+Object: conifer
+Height: 40
+Position: -360 0 -750
+
+Object: tree
+Height: 40
+Position: -420 0 -180
+
+Object: tree
+Height: 40
+Position: -260 0 -160
+
+# OIL COMPANY STUFF ------------------------
+
+#fuel tanks
+Object: curvewall
+Width: 100
+Radius: 100
+Angle: 360
+Height: 50
+Color: 1 1 1
+Position: 400 0 900
+
+Object: curvewall
+Width: 30
+Radius: 30
+Angle: 360
+Height: 80
+Color: 1 1 1
+Position: 100 0 900
+
+Object: curvewall
+Width: 30
+Radius: 30
+Angle: 360
+Height: 80
+Color: 1 1 1
+Position: 100 0 820
+
+Object: generic sign
+Width: 60
+Length: 40
+Height: 3
+Color: 1 0 0
+Label: GASOLINE\FLAMMABLE
+Position: 400 0 798
+
+#pipe
+Object: pillar
+Radius: 2.5
+Height: 170
+Color: 1 1 1
+Position: 300 30 900
+Zrot: 90
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 7
+Radius: 0.5
+Position: 100 0 0
+Yrot: 90
+Type: 1 7
+Data: 1 3
+5 0 0
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 8
+Radius: 0.5
+Position: 400 0 -300
+Yrot: 0
+Type: 1 8
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE EIGHT
+
+Scene Location: 12 4
+
+Object: road
+Width: 60
+Length: 200
+Position: 200 0 -1000
+
+Object: road
+Width: 60
+Length: 1013.223913
+Height: 2
+Position: 200 0 -800
+Xrot: -9.266983229
+
+Object: road
+Width: 60
+Height: 2
+Length: 302.2529476
+Position: 200 163.1646317 200
+Xrot: -7
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 430
+Angle: 180
+Position: -200 200 500
+Xrot: -5
+
+Object: road
+Width: 60
+Height: 2
+Length: 300
+Position: -600 200 200
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 430
+Angle: 90
+Position: -200 200 200
+Yrot: 180
+
+Object: road
+Width: 60
+Height: 2
+Length: 200
+Position: -200 200 -200
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 150
+Position: 0 200 -200
+Yrot: -90
+Xrot: -5
+
+Object: road
+Width: 60
+Height: 2
+Length: 150
+Position: 400 200 -200
+Yrot: 90
+Xrot: -5
+
+Object: road
+Width: 60
+Height: 2
+Length: 600
+Position: 400 200 -200
+Yrot: -90
+
+#scenery
+
+Object: pillar
+Radius: 20
+Height: 159.5
+Position: 200 0 200
+
+Object: pillar
+Radius: 20
+Height: 197
+Position: 200 0 500
+
+Object: pillar
+Radius: 20
+Height: 232.86
+Position: -200 0 898.47
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: -600 0 500
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: -600 0 200
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: -200 0 -200
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: 0 0 -200
+
+Object: pillar
+Radius: 20
+Height: 206.748
+Position: 100 0 -200
+
+Object: pillar
+Radius: 20
+Height: 206.748
+Position: 300 0 -200
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: 400 0 -200
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: 800 0 -200
+
+# scenery
+
+Object: skyscraper
+Position: 50 0 -950
+Width: 200
+Length: 100
+Height: 200
+
+Object: generic sign
+Label: BIG OIL COMPANY
+Width: 100
+Length: 40
+Height: 0.001
+Position: 100 160 -951
+Color: 0 0 0
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 9
+Radius: 0.5
+Position: 200 0 -800
+Yrot: 0
+Type: 1 9
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 10
+Radius: 0.5
+Position: 600 199 -200
+Yrot: -90
+Type: 1 10
+Data: 1 3
+0 0 1
+
+Object: wall
+Width: 75
+Length: 5
+Height: 1
+Position: 597.5 198 -200
+Yrot: -90
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE NINE
+
+Scene Location: 13 4
+
+Object: road
+Width: 60
+Height: 2
+Length: 200
+Position: -1000 200 -200
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 101.99
+Position: -800 200 -200
+Yrot: -90
+Xrot: -11.30993248
+
+# lip1
+Object: road
+Width: 6
+Height: 2
+Length: 40
+Position: -700 220 -173
+Yrot: -90
+Xrot: -25
+
+# lip2
+Object: road
+Width: 6
+Height: 2
+Length: 40
+Position: -700 220 -185
+Yrot: -90
+Xrot: -25
+
+# lip3
+Object: road
+Width: 6
+Height: 2
+Length: 40
+Position: -700 220 -197
+Yrot: -90
+Xrot: -25
+
+# lip4
+Object: road
+Width: 6
+Height: 2
+Length: 40
+Position: -700 220 -209
+Yrot: -90
+Xrot: -25
+
+# lip5
+Object: road
+Width: 6
+Height: 2
+Length: 40
+Position: -700 220 -221
+Yrot: -90
+Xrot: -25
+
+Object: road
+Width: 120
+Length: 1800
+Position: -800 0 -200
+Yrot: -90
+
+#scenery
+
+Object: pillar
+Radius: 20
+Height: 199
+Position: -800 0 -200
+
+Object: skyscraper
+Position: -600 0 -120
+Width: 200
+Length: 1000
+Height: 300
+
+Object: skyscraper
+Position: -600 0 -480
+Width: 200
+Length: 1000
+Height: 300
+
+# from scene 6
+Object: pond
+Width: 600
+Length: 1200
+Height: 100
+Position: 700 0 -1400
+
+Object: checkpoint
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: CHECKPOINT 11
+Radius: 0.5
+Position: 990 0 -200
+Yrot: -90
+Type: 1 11
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE TEN
+
+Scene Location: 14 4
+
+Object: curve
+Width: 60
+Radius: 430
+Angle: 90
+Position: -1000 0 200
+Yrot: -90
+
+Object: left curve sign
+Position: 990 0 -270
+Width: 20
+Height: 10
+Label: 150
+
+Object: curvewall
+Width: 4
+Radius: 434
+Angle: 90
+Position: -1000 0 200
+Yrot: -90
+Color: 1 1 0
+
+Object: road
+Width: 60
+Length: 800
+Position: -600 0 200
+
+# scenery
+
+Object: generic sign
+Label: SUSPENSION\REPAIRS\1-800-BIG DROP
+Size: 60 80 4
+Color: 0 1 1
+Position: -530 0 500
+
+Object: tree
+Position: -640 0 360
+
+Object: tree
+Position: -560 0 360
+
+Object: tree
+Position: -640 0 560
+
+Object: tree
+Position: -560 0 560
+
+Object: tree
+Position: -640 0 760
+
+Object: tree
+Position: -560 0 760
+
+Object: tree
+Position: -640 0 960
+
+Object: tree
+Position: -560 0 960
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE ELEVEN
+
+Scene Location: 14 5
+
+# First Tube, Walls, roads
+Object: lower tube
+Position: -600 0  0
+Radius: 200
+Length: 2000
+
+# FIRST SET
+Object: wall
+Position: -600 0  -800
+Width: 60
+Height: 10
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -737.5 0  -600
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -462.5 0  -600
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+# SECOND SET
+Object: wall
+Position: -600 0  -400
+Width: 150
+Height: 15
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -737.5 0  -200
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -462.5 0  -200
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+# THIRD SET
+Object: wall
+Position: -600 0  0
+Width: 150
+Height: 15
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -737.5 0  200
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -462.5 0  200
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+# FOURTH SET
+Object: wall
+Position: -600 0  400
+Width: 150
+Height: 15
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -737.5 0  600
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+Object: wall
+Position: -462.5 0  600
+Height: 70
+Width: 125
+Length: 10
+Color: 0 0 0
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE TWELVE
+
+Scene Location: 14 6
+
+Object: road
+Width: 60
+Length: 2000
+Position: -600 0 -1000
+
+Object: finish
+Length: 15.0
+Width:  70.0
+Height: 30.0
+Label: FINISH
+Radius: 0.5
+Position: -600 0 -700
+Yrot: 0
+Type: 1 12
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# HIGHWAY TURNOFF
+
+Scene Location: 14 -2
+
+Object: road
+Width: 60
+Length: 2000
+Position: 1000 0 0
+Yrot: 90
+
+Object: curve
+Width: 60
+Radius: 530
+Position: -500 0 500
+Yrot: -90
+Angle: 90
+
+Object: road
+Width: 60
+Length: 500
+Position: 0 0 500
+
+Object: generic sign
+Label: SUNDAY DRIVE\AND\POINTS NORTH\<---
+Size: 70 80 2
+Color: 1 1 1
+Position: -700 0 -70
+Yrot: -90
+
+Object: ground
+
+#-----------------------------
+Scene Location: 14 -1
+
+Scene Type: hill z road
+
+#-----------------------------
+Scene Location: 14 0
+
+Scene Type: hill z road
+

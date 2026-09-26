@@ -1,0 +1,69 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# A small hospital, centered at 0,0
+
+Object: skyscraper
+Size: 50 50 30
+Position: -25 0 -25
+
+Object: flat
+Size: 7 2 0
+Color: 1.0 0.0 0.0
+Xrot: -90
+Position: -10 5 -25.05
+
+Object: flat
+Size: 2 7 0
+Color: 1.0 0.0 0.0
+Xrot: -90
+Position: -10 5 -25.05
+
+Object: flat
+Size: 7 2 0
+Color: 1.0 0.0 0.0
+Xrot: -90
+Position: 10 5 -25.05
+
+Object: flat
+Size: 2 7 0
+Color: 1.0 0.0 0.0
+Xrot: -90
+Position: 10 5 -25.05
+
+Object: flat
+Size: 8 7 0
+Color: 0.0 0.0 0.0
+Xrot: -90
+Position: 0 4 -25.05
+
+Object: generic sign
+Size: 3 8 0.01
+Color: 0.0 1.0 1.0
+Position: 0 10 -25.05
+Label: HOSPITAL
+
+Object: flat
+Size: 12 3 0
+Color: 1.0 0.0 0.0
+Position: 0 30.05 0
+
+Object: flat
+Size: 3 12 0
+Color: 1.0 0.0 0.0
+Position: 0 30.05 0
+

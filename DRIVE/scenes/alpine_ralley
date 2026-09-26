@@ -1,0 +1,4731 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+Racecourse:             Dickey's Alpine Ralley 
+Practice Seconds:       0 
+Pre-Race Seconds:       5 
+Race Seconds:           600 
+Post-Race Seconds:      5 
+Start SceneX:           10 
+Start SceneZ:           6 
+Start Angle:            90 
+Start Position:         -300 0 -25 
+Start Positions:        4
+Turbo Mode:             2 
+Turbo Boosts:           20 
+Guns Mode:              1 
+Ammo:                   0 
+
+Scene Location:  7 10
+
+Object:  road 
+Position:  502 0 -1021
+Xrot:  -3.6
+Yrot:  45
+Length:  794 
+Width:  60 
+Color:  0 0 0
+
+Object:  generic sign 
+Position:  -55 70 -462
+Type:  nd=A8-
+Label:  max. Headroom
+Xrot:  -45
+Yrot:  45
+Size:  30 70 0.1
+Color:  1 1 0
+Radius:  0.1 
+
+Object:  mound 
+Position:  -88 0 -743
+Yrot:  45
+Size:  500 300 400
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -352 0 -85
+Yrot:  -45
+Size:  800 300 700
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  782 0 236
+Size:  400 700 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  864 0 -235
+Yrot:  5
+Size:  400 400 500
+Color:  0.7 0.7 0.7
+
+Object:  speed limit sign 
+Position:  219 0 -664
+Type:  1
+Yrot:  45
+Size:  30 30 40
+Color:  1 0 0
+Radius:  0.1 
+
+Object:  spiral 
+Position:  133 0 -270
+Yrot:  90
+Size:  500 100 50
+Radius:  320 
+Angle:  135 
+
+Object:  curvewall 
+Position:  136 70 -271
+Yrot:  90
+Size:  500 110 10
+Color:  0 0 1
+Radius:  325 
+Angle:  135 
+
+Object:  curvewall 
+Position:  130 0 -268
+Yrot:  90
+Size:  500 10 70
+Color:  0 0 1
+Radius:  322 
+Angle:  136 
+
+Object:  curvewall 
+Position:  136 0 -271
+Yrot:  90
+Size:  500 10 70
+Color:  0 0 1
+Radius:  225 
+Angle:  135 
+
+Object:  light 
+Position:  -22 60 -492
+Xrot:  60
+Yrot:  45
+Size:  50 50 500
+Color:  1 1 0
+
+Object:  mound 
+Position:  320 0 247
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  178 -1 -277
+Yrot:  158
+Size:  400 400 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  405 -1 -233
+Yrot:  3
+Size:  395 900 500
+Color:  0.7 0.7 0.7
+
+Object:  road 
+Position:  1001 0 0
+Yrot:  90
+Length:  882 
+Width:  100 
+Color:  0 0 0
+
+Object:  deciduous 
+Position:  511 0 -931
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  517 0 -876
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  456 0 -882
+Type:  top
+Size:  30 30 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  252 0 -915
+Type:  top
+Size:  30 30 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  341 0 -926
+Type:  top
+Size:  30 30 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  325 0 -717
+Type:  top
+Size:  30 30 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -93 0 -513
+Type:  top
+Size:  30 30 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  1 0 -436
+Type:  top
+Size:  30 40 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -120 0 -519
+Type:  top
+Size:  30 40 60
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  7 9
+
+Object:  road 
+Position:  1021 0 -455
+Yrot:  135
+Length:  800 
+Width:  60 
+Color:  0 0 0
+
+Object:  mound 
+Position:  420 0 723
+Yrot:  45
+Size:  800 300 200
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  24 0 837
+Yrot:  45
+Size:  300 300 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  565 -1 -585
+Yrot:  -43
+Size:  1500 400 30
+Color:  0.5 0.5 0
+
+Object:  road 
+Position:  1022 0 459
+Yrot:  45
+Length:  801 
+Width:  60 
+Color:  0 0 0
+
+Object:  deciduous 
+Position:  867 0 458
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  861 0 557
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  955 0 596
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  889 0 668
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  972 0 459
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  796 0 575
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  912 0 702
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  703 0 663
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  786 0 635
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  924 0 629
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  869 0 739
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  682 0 711
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  754 0 672
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  897 0 501
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  671 0 864
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  820 0 765
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  969 0 732
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  908 0 738
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  534 0 887
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  523 0 865
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  606 0 970
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  782 0 821
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  771 0 810
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  749 0 639
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  644 0 771
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  952 0 435
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  660 0 897
+Type:  s dead!
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  forest 
+Position:  599 0 -943
+Yrot:  -49
+Size:  500 100 50
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  7 8
+
+Object:  mound 
+Position:  -394 0 -682
+Yrot:  60
+Size:  600 300 16
+Color:  0.5 0.5 0
+
+Object:  pillar 
+Position:  -300 0 -500
+Yrot:  60
+Size:  800 300 100
+Color:  1 0 0
+Radius:  5 
+
+Object:  pillar 
+Position:  -100 0 -500
+Yrot:  60
+Size:  800 300 100
+Color:  1 0 0
+Radius:  5 
+
+Object:  mound 
+Position:  -192 0 -491
+Size:  600 300 25
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  -176 0 -104
+Yrot:  90
+Size:  600 600 10
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  75 0 -543
+Size:  1000 300 60
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  -445 0 -205
+Size:  1000 300 60
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  -738 0 -289
+Size:  1500 400 80
+Color:  0.5 0.5 0
+
+Object:  curve 
+Position:  193 0 194
+Yrot:  135
+Width:  100 
+Color:  0 0 0
+Radius:  420 
+Angle:  45 
+
+Object:  mound 
+Position:  -315 0 378
+Yrot:  -20
+Size:  600 300 20
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  -497 0 -780
+Yrot:  -20
+Size:  600 300 20
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  451 0 316
+Yrot:  -44
+Size:  1200 400 80
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  373 0 -426
+Size:  1200 400 120
+Color:  0.5 0.5 0
+
+Object:  wall 
+Position:  -429 40 -62
+Xrot:  52
+Yrot:  -10
+Size:  100 100 100
+Color:  1 0.5 0
+
+Object:  wall 
+Position:  -367 48 467
+Xrot:  50
+Yrot:  130
+Zrot:  5
+Size:  100 100 100
+Color:  0.4 0.8 0.4
+
+Object:  wall 
+Position:  -249 58 591
+Xrot:  47
+Yrot:  120
+Zrot:  6
+Size:  100 100 100
+Color:  0.2 0.4 0.6
+
+Object:  lamp 
+Position:  -372 13 8
+Type:  
+Size:  100 100 110
+Radius:  2 
+
+Object:  lamp 
+Position:  -284 13 512
+Type:  
+Size:  100 100 130
+Radius:  2 
+
+Object:  lamp 
+Position:  -388 13 381
+Type:  
+Size:  100 100 120
+Radius:  2 
+
+Object:  mound 
+Position:  -89 0 -892
+Yrot:  90
+Size:  700 400 20
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  4 0 254
+Yrot:  -20
+Size:  300 300 20
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  405 -1 622
+Yrot:  -45
+Size:  1200 400 80
+Color:  0.5 0.5 0
+
+Object:  mound 
+Position:  -115 0 739
+Yrot:  -48
+Size:  1500 400 80
+Color:  0.5 0.5 0
+
+Object:  road 
+Position:  502 0 1026
+Yrot:  135
+Length:  805 
+Width:  100 
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  7 7
+
+Object:  bank 
+Position:  -200 85 -759
+Yrot:  120
+Zrot:  -5
+Size:  250 100 20
+Radius:  600 
+Angle:  60 
+
+Object:  bank 
+Position:  -749 -14 189
+Yrot:  -60
+Zrot:  5
+Size:  250 100 20
+Radius:  600 
+Angle:  60 
+
+Object:  curvewall 
+Position:  -749 -14 189
+Yrot:  -60
+Zrot:  5
+Size:  800 2 27
+Color:  1 1 0
+Radius:  601 
+Angle:  60 
+
+Object:  curvewall 
+Position:  -200 85 -759
+Yrot:  120
+Zrot:  -5
+Size:  800 2 27
+Color:  1 1 0
+Radius:  601 
+Angle:  60 
+
+Object:  mound 
+Position:  -159 0 858
+Yrot:  45
+Size:  600 300 20
+Color:  0.5 0.5 0
+
+Object:  pillar 
+Position:  -300 0 1000
+Yrot:  60
+Size:  600 300 100
+Color:  1 0 0
+Radius:  5 
+
+Object:  pillar 
+Position:  -100 0 1000
+Yrot:  60
+Size:  600 300 100
+Color:  1 0 0
+Radius:  5 
+
+Object:  mound 
+Position:  -206 0 512
+Size:  800 300 16
+Color:  0.5 0.5 0
+
+Object:  checkpoint 
+Position:  -200 0 251
+Type:  1 4
+Label:  DESERT
+Size:  30 140 80
+Radius:  2 
+
+Object:  forest 
+Position:  -366 0 238
+Size:  800 100 50
+
+Object:  forest 
+Position:  -113 0 244
+Size:  800 100 50
+
+Object:  road 
+Position:  -750 64 -1001
+Size:  251 100 2
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  7 6
+
+Object:  mound 
+Position:  -318 0 396
+Yrot:  135
+Size:  500 700 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -581 0 746
+Yrot:  90
+Size:  300 500 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -935 0 785
+Yrot:  85
+Size:  300 500 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  165 0 213
+Yrot:  181
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  188 0 -218
+Yrot:  181
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  726 0 -213
+Yrot:  184
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  679 0 202
+Yrot:  184
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  checkpoint 
+Position:  -766 65 636
+Type:  1 3
+Label:  Katschberg
+Size:  30 100 50
+Radius:  0.4 
+
+Object:  curvewall 
+Position:  0 64.2 750
+Yrot:  180
+Size:  400 2 4
+Color:  1 1 0
+Radius:  800 
+Angle:  90 
+
+Object:  deciduous 
+Position:  -647 60.7 469
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  road 
+Position:  1001 66 0
+Yrot:  90
+Size:  1001 100 2
+Color:  0 0 0
+
+Object:  curve 
+Position:  0 66 750
+Yrot:  180
+Size:  300 100 2
+Color:  0.1 0.1 0.1
+Radius:  800 
+Angle:  90 
+
+Object:  road 
+Position:  -750 66 1001
+Yrot:  180
+Size:  251 100 2
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  8 6
+
+Object:  mound 
+Position:  -614 0 227
+Yrot:  184
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -639 0 -208
+Yrot:  179
+Size:  400 900 500
+Color:  0.7 0.7 0.7
+
+Object:  forest 
+Position:  -47 0 85
+Yrot:  187
+Size:  150 200 80
+
+Object:  mound 
+Position:  -953 66 -29
+Yrot:  45
+Size:  9 9 6
+Color:  1 0.7 0.7
+
+Object:  mound 
+Position:  -925 66 -23
+Yrot:  45
+Size:  11 5 2
+Color:  1 0.7 0.7
+
+Object:  mound 
+Position:  -908 66 21
+Yrot:  45
+Size:  5 5 8
+Color:  1 0.7 0.7
+
+Object:  mound 
+Position:  824 0 -212
+Yrot:  177
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  661 0 220
+Yrot:  177
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  252 0 -222
+Yrot:  184
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  154 0 219
+Yrot:  175
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  deciduous 
+Position:  -944 60.7 45
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  invisible wormhole 
+Position:  -150 0 -300
+Type:  position in scene =3D 4000.0, 0.0, 0.0; angle =3D -90.0; angularvelocity =3D 0.0, 0.0, 0.0
+Xrot:  90
+Size:  1 600 600
+
+Object:  road 
+Position:  1001 64.6 0
+Xrot:  -1.4
+Yrot:  90
+Size:  1051 100 2
+Color:  0 0 0
+
+Object:  road 
+Position:  -250 66 0
+Yrot:  90
+Size:  751 100 2
+Color:  0 0 0
+
+Object:  checkpoint 
+Position:  -447 55 16
+Type:  1 2
+Label:  Arlberg
+Yrot:  90
+Size:  30 100 60
+Radius:  0.3 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  9 6
+
+Object:  mound 
+Position:  287 64 17
+Yrot:  45
+Size:  5 5 4
+Color:  1 0.7 0.7
+
+Object:  mound 
+Position:  -969 64 17
+Yrot:  45
+Size:  5 7 5
+Color:  1 0.7 0.7
+
+Object:  mound 
+Position:  -930 64 6
+Yrot:  45
+Size:  16 8 3
+Color:  1 0.7 0.7
+
+Object:  mound 
+Position:  -543 0 210
+Yrot:  184
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -887 0 -233
+Yrot:  177
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  602 0 -215
+Yrot:  178
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  576 0 216
+Yrot:  178
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  69 0 -206
+Yrot:  182
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -432 0 -213
+Yrot:  184
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  43 0 227
+Yrot:  182
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  generic sign 
+Position:  950 28 83
+Type:  
+Label:  ROCKS !
+Yrot:  50
+Size:  20 80 0.1
+Color:  1 0 0
+Radius:  0.1 
+Animation Bits:  0x3333 
+
+Object:  deciduous 
+Position:  386 60.7 -41
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -264 60.7 45
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -900 60.7 45
+Type:  top
+Size:  30 30 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  road 
+Position:  1000 0 0
+Xrot:  -15
+Yrot:  90
+Size:  250 100 2
+Color:  0 0 0
+
+Object:  road 
+Position:  758.51 64.7 0
+Yrot:  90
+Size:  1759.51 100 2
+Color:  0 0 0
+
+Object:  checkpoint 
+Position:  -650 60 -16
+Type:  1 1
+Label:  Silvretta
+Yrot:  90
+Size:  30 100 60
+Radius:  0.3 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  10 6
+
+Object:  curve 
+Position:  500 0 -530
+Yrot:  210
+Width:  60 
+Color:  0 0 0
+Radius:  300 
+Angle:  60 
+
+Object:  curve 
+Position:  -274 0 -270
+Yrot:  30
+Width:  60 
+Color:  0 0 0
+Radius:  300 
+Angle:  60 
+
+Object:  road 
+Position:  266 0 -665
+Yrot:  30
+Length:  612 
+Width:  60 
+Color:  0 0 0
+
+Object:  right curve sign 
+Position:  750 0 -841
+Type:  80
+Yrot:  90
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  left curve sign 
+Position:  110 1 -312
+Type:  80
+Yrot:  30
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  lower tube 
+Position:  -600 -7 0
+Yrot:  90
+Size:  800 10 40
+Radius:  200 
+
+Object:  wall 
+Position:  -200 0 32
+Yrot:  90
+Size:  800 2 4
+Color:  1 1 0
+
+Object:  wall 
+Position:  -260 0 -32
+Yrot:  90
+Size:  740 2 4
+Color:  1 1 0
+
+Object:  finish 
+Position:  0 0 0
+Type:  1 15
+Label:  FINISH
+Yrot:  90
+Size:  20 70 50
+Radius:  0.5 
+
+Object:  start 
+Position:  -800 0 0
+Type:  1 15
+Label:  START
+Yrot:  90
+Size:  20 70 50
+Radius:  0.5 
+
+Object:  skyscraper 
+Position:  -642 0 169
+Yrot:  90
+Size:  50 50 120
+
+Object:  generic sign 
+Position:  -667 90 169
+Type:  
+Label:  PRESS
+Size:  30 50 0.1
+Color:  1 0 0
+Radius:  0.1 
+
+Object:  skyscraper 
+Position:  -642 0 -219
+Yrot:  90
+Size:  50 50 120
+
+Object:  skyscraper 
+Position:  -642 90 -170
+Yrot:  90
+Size:  10 50 40
+
+Object:  generic sign 
+Position:  -667 105 -160
+Type:  
+Label:  ADM
+Yrot:  180
+Size:  15 50 0.1
+Color:  0 0 1
+Radius:  0.1 
+
+Object:  generic sign 
+Position:  129 0 -645
+Type:  
+Label:  Dickey's Alpine Ralley
+Yrot:  120
+Size:  30 250 0.1
+Color:  1 1 1
+Radius:  0.1 
+
+Object:  mound 
+Position:  -235 0 -588
+Yrot:  -45
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -753 0 -437
+Size:  400 500 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -515 0 463
+Size:  400 1000 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  283 0 564
+Size:  800 1000 400
+Color:  0.6 0.65 0.6
+
+Object:  mound 
+Position:  686 0 -372
+Size:  650 800 200
+Color:  0.6 0.65 0.6
+
+Object:  mound 
+Position:  693 0 384
+Size:  650 800 200
+Color:  0.55 0.65 0.55
+
+Object:  road 
+Position:  1001 0 -800
+Yrot:  90
+Length:  501 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  1001 0 0
+Yrot:  90
+Length:  2002 
+Width:  60 
+Color:  0 0 0
+
+Object:  deciduous 
+Position:  -154 0 72
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -99 0 61
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -27 0 -60
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -154 0 138
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -11 0 99
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -33 0 66
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  0 0 -88
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -88 0 171
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -11 0 127
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  0 0 -60
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  385 0 50
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  325 0 -672
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  154 0 -160
+Type:  top
+Size:  30 25 40
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -132 0 -116
+Type:  top
+Size:  30 25 42
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  297 0 -782
+Type:  top
+Size:  30 25 35
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  88 0 111
+Type:  top
+Size:  30 25 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -11 0 -309
+Type:  top
+Size:  30 25 38
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  226 0 -485
+Type:  top
+Size:  30 25 42
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -49 0 133
+Type:  top
+Size:  30 25 42
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -132 0 100
+Type:  top
+Size:  30 25 38
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  435 0 56
+Type:  top
+Size:  30 25 45
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  127 0 -55
+Type:  top
+Size:  30 25 30
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  930 0 56
+Type:  top
+Size:  30 25 50
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -165 0 -177
+Type:  top
+Size:  30 25 30
+Color:  0 0.6 0
+Radius:  0.9 
+
+Object:  generic sign 
+Position:  -160 0 55
+Type:  
+Label:  <-
+Size:  20 50 0.1
+Color:  1 1 1
+Radius:  0.1 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  11 6
+
+Object:  curve 
+Position:  -1000 0 1000
+Yrot:  -90
+Width:  60 
+Color:  0 0 0
+Radius:  1030 
+Angle:  90 
+
+Object:  mound 
+Position:  325 0 304
+Yrot:  70
+Size:  800 1500 150
+Color:  0.4 0.5 0.45
+
+Object:  mound 
+Position:  -437 0 -201
+Yrot:  30
+Size:  500 1500 170
+Color:  0.5 0.6 0.5
+
+Object:  road 
+Position:  1001 0 -800
+Yrot:  90
+Length:  2002 
+Width:  60 
+Color:  0 0 0
+
+Object:  light 
+Position:  40 5 953
+Xrot:  90
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x1 
+
+Object:  light 
+Position:  33 5 881
+Xrot:  90
+Yrot:  -7
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x2 
+
+Object:  light 
+Position:  0 5 714
+Xrot:  90
+Yrot:  -18
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x8 
+
+Object:  light 
+Position:  -69 5 537
+Xrot:  90
+Yrot:  -27
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x20 
+
+Object:  light 
+Position:  20 5 797
+Xrot:  90
+Yrot:  -13
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x4 
+
+Object:  light 
+Position:  -29 5 626
+Xrot:  90
+Yrot:  -22
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x10 
+
+Object:  light 
+Position:  -119 5 448
+Xrot:  90
+Yrot:  -30
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x40 
+
+Object:  light 
+Position:  -184 5 355
+Xrot:  90
+Yrot:  -37
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x80 
+
+Object:  light 
+Position:  -264 5 265
+Xrot:  90
+Yrot:  -43
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x100 
+
+Object:  light 
+Position:  -354 5 185
+Xrot:  90
+Yrot:  -47
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x200 
+
+Object:  light 
+Position:  -461 5 110
+Xrot:  90
+Yrot:  -55
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x400 
+
+Object:  light 
+Position:  -575 5 51
+Xrot:  90
+Yrot:  -62
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x800 
+
+Object:  light 
+Position:  -694 5 6
+Xrot:  90
+Yrot:  -68
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x1000 
+
+Object:  light 
+Position:  -822 5 -24
+Xrot:  90
+Yrot:  -77
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x2000 
+
+Object:  light 
+Position:  -958 5 -39
+Xrot:  90
+Yrot:  -87
+Size:  10 20 300
+Color:  1 1 0
+Animation Bits:  0x4000 
+
+Object:  mound 
+Position:  -679 -1 689
+Yrot:  45
+Size:  800 1000 150
+Color:  0.4 0.55 0.45
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  11 7
+
+Object:  curve 
+Position:  -1000 0 -1000
+Width:  60 
+Color:  0 0 0
+Radius:  1030 
+Angle:  90 
+
+Object:  mound 
+Position:  498 0 -487
+Yrot:  90
+Size:  800 1500 150
+Color:  0.4 0.5 0.45
+
+Object:  mound 
+Position:  -711 0 -667
+Yrot:  -45
+Size:  800 1000 150
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  59 0 -343
+Yrot:  -45
+Size:  300 300 100
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -50 0 -113
+Yrot:  -45
+Size:  300 300 100
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -229 0 9
+Yrot:  -45
+Size:  300 300 80
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -452 0 124
+Yrot:  -45
+Size:  300 300 60
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -675 0 182
+Yrot:  -45
+Size:  300 300 40
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -876 0 247
+Yrot:  -45
+Size:  300 300 20
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -804 0 470
+Size:  400 400 60
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -509 0 348
+Size:  400 400 100
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -847 0 772
+Size:  400 400 120
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -49 0 110
+Yrot:  45
+Size:  1000 400 130
+Color:  0.4 0.55 0.45
+
+Object:  cone 
+Position:  -215 -14 -226
+Xrot:  30
+Yrot:  84
+Zrot:  30
+Size:  20 20 200
+Color:  1 0.2 0.5
+Radius:  0.1 
+
+Object:  cone 
+Position:  -362 -14 -366
+Xrot:  30
+Yrot:  -95
+Zrot:  30
+Size:  20 20 200
+Color:  1 0.2 0.5
+Radius:  0.1 
+
+Object:  cone 
+Position:  -192 -14 -607
+Xrot:  30
+Yrot:  -116
+Zrot:  30
+Size:  20 20 200
+Color:  1 0.2 0.5
+Radius:  0.1 
+
+Object:  cone 
+Position:  -6 -14 -530
+Xrot:  30
+Yrot:  63
+Zrot:  30
+Size:  20 20 200
+Color:  1 0.2 0.5
+Radius:  0.1 
+
+Object:  cone 
+Position:  99 -14 -923
+Xrot:  30
+Yrot:  43
+Zrot:  30
+Size:  20 20 200
+Color:  1 0.2 0.5
+Radius:  0.1 
+
+Object:  cone 
+Position:  -104 -14 -936
+Xrot:  30
+Yrot:  -134
+Zrot:  30
+Size:  20 20 200
+Color:  1 0.2 0.5
+Radius:  0.1 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  11 8
+
+Object:  road 
+Position:  -813 0 -210
+Yrot:  104
+Length:  200 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  111 0 1022
+Yrot:  135
+Length:  923 
+Width:  60 
+Color:  0 0 0
+
+Object:  curve 
+Position:  -350.5 0 178.5
+Yrot:  135
+Width:  60 
+Color:  0 0 0
+Radius:  300 
+Angle:  54.5 
+
+Object:  curve 
+Position:  -878.5 0 52
+Yrot:  -76
+Width:  60 
+Color:  0 0 0
+Radius:  300 
+Angle:  85.5 
+
+Object:  road 
+Position:  -612 0 95
+Yrot:  7.3
+Length:  41 
+Width:  60 
+Color:  0 0 0
+
+Object:  railroad 
+Position:  -84 0 1035
+Yrot:  135
+Length:  1329 
+Width:  20 
+
+Object:  wall 
+Position:  -518 7 601
+Yrot:  135
+Size:  60 20 5
+Color:  0 0 0
+
+Object:  pillar 
+Position:  -518 20 601
+Xrot:  90
+Yrot:  135
+Size:  20 200 60
+Color:  0.6 0.2 0
+Radius:  10 
+
+Object:  pillar 
+Position:  -534 27 584
+Yrot:  135
+Size:  20 20 10
+Color:  0.8 0.8 0
+Radius:  3 
+
+Object:  pillar 
+Position:  -519 7 605
+Xrot:  90
+Yrot:  45
+Zrot:  90
+Size:  20 20 2
+Color:  1 1 0
+Radius:  2 
+
+Object:  pillar 
+Position:  -513 7 599
+Xrot:  90
+Yrot:  45
+Zrot:  90
+Size:  20 20 2
+Color:  1 1 0
+Radius:  2 
+
+Object:  pillar 
+Position:  -516 7 588
+Xrot:  90
+Yrot:  135
+Zrot:  90
+Size:  60 20 2
+Color:  0 0 0
+Radius:  6 
+
+Object:  pillar 
+Position:  -533 7 604
+Xrot:  90
+Yrot:  135
+Zrot:  90
+Size:  60 20 2
+Color:  0 0 0
+Radius:  6 
+
+Object:  pillar 
+Position:  -524 29 595
+Yrot:  135
+Size:  60 20 10
+Color:  0.8 0.8 0
+Radius:  4 
+
+Object:  wall 
+Position:  -560 7 559
+Yrot:  135
+Size:  20 20 32
+Color:  0 0 0
+
+Object:  generic sign 
+Position:  -531 17 573
+Type:  
+Label:  BUSTER
+Yrot:  45
+Size:  6 40 0.1
+Color:  1 1 0
+Radius:  0.1 
+
+Object:  pillar 
+Position:  -575 7 562
+Xrot:  90
+Yrot:  135
+Zrot:  90
+Size:  6 20 2
+Color:  0 0 0
+Radius:  6 
+
+Object:  pillar 
+Position:  -563 7 574
+Xrot:  90
+Yrot:  135
+Zrot:  90
+Size:  6 20 2
+Color:  0 0 0
+Radius:  6 
+
+Object:  pillar 
+Position:  -558 7 546
+Xrot:  90
+Yrot:  135
+Zrot:  90
+Size:  6 20 2
+Color:  0 0 0
+Radius:  6 
+
+Object:  pillar 
+Position:  -546 7 558
+Xrot:  90
+Yrot:  135
+Zrot:  90
+Size:  6 20 2
+Color:  0 0 0
+Radius:  6 
+
+Object:  conifer 
+Position:  -744 0 -55
+Size:  6 20 40
+Color:  0 0.6 0
+Radius:  1 
+
+Object:  conifer 
+Position:  -692 0 -34
+Size:  6 20 45
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -702 0 32
+Size:  6 20 40
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -738 0 56
+Size:  6 20 42
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -557 0 46
+Size:  6 20 43
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -538 0 -26
+Size:  6 20 45
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -566 0 -66
+Size:  6 20 46
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -541 0 -96
+Size:  6 20 48
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -667 0 133
+Size:  6 20 44
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -658 0 67
+Size:  6 20 43
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -756 0 -127
+Size:  6 20 44
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -673 0 -190
+Size:  6 20 45
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -569 0 192
+Size:  6 20 44
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -690 0 159
+Size:  6 20 43
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -805 0 25
+Size:  6 20 50
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -789 0 -44
+Size:  6 20 55
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -490 0 -49
+Size:  6 20 55
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -548 0 -147
+Size:  6 20 55
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -759 0 -263
+Size:  6 20 55
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -631 0 348
+Size:  6 20 55
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -512 0 142
+Size:  6 20 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -807 0 183
+Size:  6 20 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -446 0 320
+Size:  6 20 51
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -705 0 222
+Size:  6 20 51
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -741 0 156
+Size:  6 20 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -805 0 -151
+Size:  6 20 51
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  checkpoint 
+Position:  -414 0 497
+Type:  1 13
+Label:  CHICANE
+Yrot:  135
+Size:  20 70 40
+Radius:  1 
+
+Object:  mound 
+Position:  65 -1 528
+Yrot:  50
+Size:  400 1500 80
+Color:  0.4 0.55 0.45
+
+Object:  conifer 
+Position:  -368 15 123
+Size:  400 1500 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -320 21 116
+Size:  400 1500 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -430 5 62
+Size:  400 1500 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  conifer 
+Position:  -315 24 192
+Size:  400 1500 52
+Color:  0 0.6 0
+Radius:  2 
+
+Object:  mound 
+Position:  -704 -1 772
+Yrot:  45
+Size:  400 1500 80
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -537 -1 -409
+Yrot:  30
+Size:  400 1500 80
+Color:  0.4 0.55 0.45
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  11 9
+
+Object:  bank 
+Position:  0 0 0
+Yrot:  -45
+Size:  200 60 50
+Radius:  800 
+Angle:  180 
+
+Object:  curvewall 
+Position:  0 0 0
+Yrot:  -45
+Size:  750 2 4
+Color:  1 1 0
+Radius:  740 
+Angle:  180 
+
+Object:  curveguardrail 
+Position:  0 0 0
+Xrot:  -3.5
+Yrot:  -45
+Radius:  800 
+Angle:  180 
+
+Object:  ramp 
+Position:  397 0 -692
+Yrot:  135
+Size:  200 120 20
+
+Object:  checkpoint 
+Position:  545 0 545
+Type:  1 12
+Label:  SHELL
+Yrot:  225
+Size:  20 80 75
+Radius:  1 
+
+Object:  pond 
+Position:  5 0 3
+Size:  1600 1600 -300
+
+Object:  mound 
+Position:  1029 -1 -20
+Yrot:  90
+Size:  400 1700 100
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  756 -1 700
+Yrot:  -45
+Size:  400 1700 120
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  22 -1 1016
+Size:  400 1700 100
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -921 -1 535
+Yrot:  45
+Size:  400 1700 80
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  662 -1 -825
+Yrot:  45
+Size:  400 1700 80
+Color:  0.4 0.55 0.45
+
+Object:  road 
+Position:  14 0 -1075
+Yrot:  -45
+Size:  750 60 2
+Color:  0 0 0
+
+Object:  road 
+Position:  -1075 0 14
+Yrot:  -45
+Size:  759 60 2
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  11 10
+
+Object:  bank 
+Position:  -500 0 0
+Yrot:  -90
+Size:  500 120 30
+Radius:  600 
+Angle:  180 
+
+Object:  curvewall 
+Position:  -500 0 0
+Yrot:  -90
+Size:  500 4 60
+Color:  0.8 0 0
+Radius:  601 
+Angle:  180 
+
+Object:  curvewall 
+Position:  -500 60 0
+Yrot:  -90
+Size:  500 120 4
+Color:  0.8 0 0
+Radius:  601 
+Angle:  180 
+
+Object:  generic sign 
+Position:  -501 60 541
+Type:  
+Label:  DUNLOP
+Yrot:  -90
+Size:  30 120 0.1
+Color:  0 0 1
+Radius:  601 
+
+Object:  checkpoint 
+Position:  38 0 0
+Type:  1 8
+Label:  SEMPERIT
+Yrot:  180
+Size:  20 120 61
+Radius:  1 
+
+Object:  mound 
+Position:  -61 0 -748
+Yrot:  30
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -155 0 828
+Yrot:  -30
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  376 0 605
+Yrot:  -30
+Size:  700 800 600
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  375 0 195
+Yrot:  -30
+Size:  400 500 400
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  361 0 -244
+Yrot:  -20
+Size:  800 500 400
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -675 0 842
+Size:  400 700 300
+Color:  0.7 0.7 0.7
+
+Object:  road 
+Position:  -500 0 -540
+Yrot:  90
+Length:  501 
+Width:  120 
+Color:  0 0 0
+
+Object:  road 
+Position:  -500 0 540
+Yrot:  90
+Length:  501 
+Width:  120 
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  10 10
+
+Object:  road 
+Position:  200 0 540
+Yrot:  90
+Length:  500 
+Width:  120 
+Color:  0 0 0
+
+Object:  ramp 
+Position:  1000 0 -540
+Yrot:  90
+Size:  380 120 30
+
+Object:  mound 
+Position:  -806 0 361
+Yrot:  -2
+Size:  300 700 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -724 0 738
+Yrot:  3
+Size:  300 700 500
+Color:  0.7 0.7 0.7
+
+Object:  road 
+Position:  -498 0 -1021
+Yrot:  -45
+Length:  510 
+Width:  60 
+Color:  0 0 0
+
+Object:  curve 
+Position:  124.3 0 -922
+Yrot:  90
+Width:  60 
+Color:  0 0 0
+Radius:  400 
+Angle:  45 
+
+Object:  pillar 
+Position:  178 0 -495
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  178 8 -495
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  178 16 -495
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  120 16 -501
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  120 8 -501
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  120 0 -501
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  59 16 -514
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  59 8 -514
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  59 0 -514
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  0 16 -533
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  0 8 -533
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  0 0 -533
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  -58 16 -558
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  -58 8 -558
+Size:  510 4 8
+Color:  0 0 0
+Radius:  8 
+
+Object:  pillar 
+Position:  -58 0 -558
+Size:  510 4 8
+Color:  1 0 0
+Radius:  8 
+
+Object:  checkpoint 
+Position:  642 0 -540
+Type:  1 9
+Label:  GO LEFT !
+Yrot:  90
+Size:  30 114 80
+Radius:  1 
+
+Object:  bridge 
+Position:  600 0 540
+Yrot:  90
+Size:  801 120 20
+
+Object:  pond 
+Position:  -429 0 162
+Yrot:  -3
+Size:  2000 250 -200
+
+Object:  pond 
+Position:  579 0 77
+Yrot:  -3
+Size:  2500 150 -200
+
+Object:  deciduous 
+Position:  -292 0 474
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -292 0 611
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -82 0 472
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -81 0 611
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -189 0 433
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -129 0 445
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -245 0 445
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -189 0 656
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -128 0 640
+Type:  Mozart is dead!
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -245 0 640
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  461 0 -523
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  414 0 -584
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  468 0 -624
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  461 0 -416
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  374 0 -470
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  435 0 -470
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  455 0 -571
+Type:  round
+Size:  30 30 40
+Color:  0.2 0.7 0.2
+Radius:  0.9 
+
+Object:  road 
+Position:  -500 40 540
+Yrot:  90
+Size:  501 120 2
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  9 10
+
+Object:  pond 
+Position:  79 0 -430
+Yrot:  90
+Size:  1000 1000 -500
+
+Object:  pond 
+Position:  -111 0 -39
+Yrot:  45
+Size:  500 700 -500
+
+Object:  pond 
+Position:  14 0 624
+Yrot:  45
+Size:  500 700 -500
+
+Object:  curveguardrail 
+Position:  435 40 0
+Yrot:  90
+Radius:  600 
+Angle:  60 
+
+Object:  curveguardrail 
+Position:  -500 -3 540
+Xrot:  -4.6
+Yrot:  -90
+Radius:  597 
+Angle:  60 
+
+Object:  mound 
+Position:  -355 0 353
+Yrot:  -45
+Size:  500 500 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -730 0 -195
+Size:  300 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -681 0 192
+Size:  300 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  661 0 727
+Size:  300 1000 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  291 0 192
+Yrot:  -45
+Size:  500 500 400
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  634 0 343
+Size:  300 1000 500
+Color:  0.7 0.7 0.7
+
+Object:  road 
+Position:  -500 0 0
+Yrot:  90
+Length:  501 
+Width:  120 
+Color:  0 0 0
+
+Object:  road 
+Position:  1001 40 540
+Yrot:  90
+Size:  566 120 2
+Color:  0 0 0
+
+Object:  curve 
+Position:  435 40 0
+Yrot:  90
+Size:  500 120 7
+Color:  0 0 0
+Radius:  600 
+Angle:  60 
+
+Object:  spiral 
+Position:  -500 0 540
+Yrot:  -90
+Size:  500 120 42
+Radius:  600 
+Angle:  63 
+
+Object:  checkpoint 
+Position:  826 40 538
+Type:  1 7
+Label:  TIROL
+Yrot:  -90
+Size:  30 110 60
+Radius:  0.3 
+
+Object:  pond 
+Position:  57 0 858
+Yrot:  45
+Size:  500 700 -500
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  8 10
+
+Object:  mound 
+Position:  -110 0 361
+Yrot:  -3
+Size:  300 600 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -71 0 -353
+Yrot:  -10
+Size:  300 600 500
+Color:  0.7 0.7 0.7
+
+Object:  telephone line 
+Position:  0 0 -200
+Size:  600 10 40
+Radius:  0.2 
+Spacing:  100 
+
+Object:  speed limit sign 
+Position:  -7 0 0
+Type:  
+Yrot:  -90
+Size:  10 5 15
+Color:  1 1 1
+Radius:  0.1 
+
+Object:  barn 
+Position:  67 0 131
+Yrot:  180
+Size:  10 5 15
+
+Object:  barn 
+Position:  -91 0 -119
+Yrot:  180
+Size:  10 5 15
+
+Object:  fence 
+Position:  -63 0 58
+Type:  
+Yrot:  90
+Size:  200 20 20
+Color:  1 1 1
+Spacing:  100 
+
+Object:  fence 
+Position:  247 0 -70
+Type:  
+Yrot:  90
+Size:  200 20 20
+Color:  1 1 1
+Spacing:  100 
+
+Object:  fence 
+Position:  47 0 -170
+Type:  
+Size:  100 20 20
+Color:  1 1 1
+Spacing:  100 
+
+Object:  fence 
+Position:  -63 0 58
+Type:  
+Size:  150 20 20
+Color:  1 1 1
+Spacing:  100 
+
+Object:  mound 
+Position:  -461 0 -198
+Yrot:  -1
+Size:  300 600 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -814 0 -198
+Yrot:  -3
+Size:  300 600 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -790 0 185
+Yrot:  -3
+Size:  300 600 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -385 0 185
+Yrot:  6
+Size:  300 420 500
+Color:  0.7 0.7 0.7
+
+Object:  checkpoint 
+Position:  -520 0 -8
+Type:  1 6
+Label:  Maria ALm
+Yrot:  -90
+Size:  30 120 60
+Radius:  0.1 
+
+Object:  mound 
+Position:  630 -1 -200
+Size:  300 1000 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  720 -1 180
+Size:  300 800 500
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 0 0
+Yrot:  90
+Size:  500 500 500
+Color:  0 0.35 0
+
+Object:  mound 
+Position:  274 -1 239
+Yrot:  -43
+Size:  300 400 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  219 -1 -224
+Yrot:  16
+Size:  300 400 500
+Color:  0.7 0.7 0.7
+
+Object:  road 
+Position:  -250 0 0
+Yrot:  90
+Length:  751 
+Width:  120 
+Color:  0 0 0
+
+Object:  road 
+Position:  1001 0 0
+Yrot:  90
+Length:  751 
+Width:  120 
+Color:  0 0 0
+
+Object:  deciduous 
+Position:  -72 0 69
+Type:  top
+Yrot:  90
+Size:  30 30 40
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -111 0 63
+Type:  top
+Yrot:  90
+Size:  30 30 40
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -105 0 107
+Type:  top
+Yrot:  90
+Size:  30 30 45
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  209 0 -53
+Type:  top
+Yrot:  90
+Size:  30 30 40
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  192 0 90
+Type:  top
+Yrot:  90
+Size:  30 30 40
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  220 0 57
+Type:  top
+Yrot:  90
+Size:  30 30 40
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  143 0 90
+Type:  top
+Yrot:  90
+Size:  30 30 40
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  160 0 118
+Type:  top
+Yrot:  90
+Size:  30 30 50
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -33 0 -86
+Type:  top
+Yrot:  90
+Size:  30 30 50
+Color:  0 0.35 0
+Radius:  0.9 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  8 9
+
+Object:  curvewall 
+Position:  0 0 0
+Yrot:  225
+Size:  80 2 120
+Color:  1 0.2 0.5
+Radius:  402 
+Angle:  270 
+
+Object:  curvewall 
+Position:  0 30 0
+Yrot:  -225
+Size:  80 2 90
+Color:  1 0.2 0.5
+Radius:  402 
+Angle:  90 
+
+Object:  road 
+Position:  -1039.5 0 -516
+Yrot:  -45
+Length:  1100 
+Width:  60 
+Color:  0 0 0
+
+Object:  ramp 
+Position:  -261.3 0 -262
+Yrot:  45
+Size:  300 60 20
+
+Object:  road 
+Position:  -542.5 0 23.5
+Yrot:  45
+Length:  690 
+Width:  60 
+Color:  0 0 0
+
+Object:  bank 
+Position:  0 0 0
+Yrot:  225
+Size:  600 60 40
+Radius:  400 
+Angle:  270 
+
+Object:  generic sign 
+Position:  -403 35 0
+Type:  
+Label:  DOME 1
+Yrot:  -90
+Size:  80 200 0.1
+Color:  1 0.2 0.5
+Radius:  1.5 
+
+Object:  checkpoint 
+Position:  361 0 0
+Type:  1 5
+Label:  DOME 1
+Yrot:  180
+Size:  30 80 80
+Radius:  2 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  8 8
+
+Object:  curve 
+Position:  1000 0 -600
+Yrot:  90
+Width:  60 
+Color:  0 0 0
+Radius:  1430 
+Angle:  108 
+
+Object:  curve 
+Position:  1000 0 -385
+Yrot:  90
+Width:  60 
+Color:  0 0 0
+Radius:  415 
+Angle:  180 
+
+Object:  deciduous 
+Position:  -403 0 -923
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -420 0 -773
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -448 0 -590
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -437 0 -423
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -415 0 -262
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -359 0 -95
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -281 0 83
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -203 0 227
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -103 0 349
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  19 0 460
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  175 0 599
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  331 0 699
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  464 0 755
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  625 0 799
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  786 0 838
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  964 0 838
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  mound 
+Position:  -788 0 -902
+Yrot:  100
+Size:  600 800 300
+Color:  0.7 0.7 0.7
+
+Object:  pond 
+Position:  -600 0 586
+Yrot:  50
+Size:  1000 1500 -300
+
+Object:  pond 
+Position:  -867 0 54
+Yrot:  70
+Size:  1000 1500 -300
+
+Object:  pond 
+Position:  -269 0 932
+Yrot:  30
+Size:  1000 1500 -300
+
+Object:  deciduous 
+Position:  982 0 -813
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  881 0 -803
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  793 0 -764
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  703 0 -694
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  646 0 -627
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  607 0 -565
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  581 0 -488
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  563 0 -403
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  568 0 -323
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  589 0 -238
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  617 0 -168
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  663 0 -111
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  712 0 -57
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  771 0 -21
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  830 0 13
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  897 0 36
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  972 0 51
+Type:  onion
+Size:  30 25 50
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  curveguardrail 
+Position:  1000 0 -600
+Yrot:  90
+Radius:  1430 
+Angle:  108 
+
+Object:  curveguardrail 
+Position:  1000 0 -600
+Yrot:  90
+Radius:  1370 
+Angle:  108 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  8 7
+
+Object:  curve 
+Position:  1000 0 1400
+Yrot:  195
+Width:  60 
+Color:  0 0 0
+Radius:  1430 
+Angle:  75 
+
+Object:  deciduous 
+Position:  -24 0 394
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  98 0 283
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  220 0 200
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  342 0 122
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  475 0 61
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  608 0 5
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  741 0 -23
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  891 0 -45
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -115 0 483
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -204 0 605
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -282 0 738
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  deciduous 
+Position:  -354 0 888
+Type:  
+Size:  10 50 100
+Color:  0 0.8 0.5
+Radius:  2 
+
+Object:  mound 
+Position:  583 0 -394
+Yrot:  175
+Size:  400 800 500
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  110 0 -182
+Yrot:  150
+Size:  400 800 450
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -188 0 -232
+Yrot:  150
+Size:  400 600 700
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -331 0 142
+Yrot:  150
+Size:  400 600 350
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -682 0 519
+Yrot:  100
+Size:  600 800 300
+Color:  0.7 0.7 0.7
+
+Object:  curveguardrail 
+Position:  1000 0 1400
+Yrot:  195
+Radius:  1430 
+Angle:  75 
+
+Object:  curveguardrail 
+Position:  1000 0 1400
+Yrot:  195
+Radius:  1370 
+Angle:  75 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  9 7
+
+Object:  pond 
+Position:  540 0 481
+Size:  400 800 -1000
+
+Object:  pond 
+Position:  0 0 -330
+Size:  600 1100 -1000
+
+Object:  forest 
+Position:  -27 0 -23
+Yrot:  -20
+Size:  400 800 100
+
+Object:  deciduous 
+Position:  223 0 68
+Type:  
+Yrot:  -20
+Size:  100 100 120
+Color:  0.4 0.6 0.3
+Radius:  3 
+
+Object:  guardrail 
+Position:  1000 0 -800
+Yrot:  90
+Size:  2000 100 50
+Spacing:  25 
+
+Object:  guardrail 
+Position:  1000 0 800
+Yrot:  90
+Size:  2000 100 50
+Spacing:  25 
+
+Object:  generic sign 
+Position:  0 0 -30
+Type:  
+Label:  Pass here!
+Yrot:  -90
+Size:  20 60 30
+Color:  1 0 1
+Radius:  1 
+
+Object:  twopole sign 
+Position:  1000 0 0
+Label:  COURSE
+Yrot:  -90
+Size:  20 80 50
+Color:  0 1 0.2
+Radius:  1 
+
+Object:  twopole sign 
+Position:  -900 0 0
+Label:  The Outback!
+Yrot:  -90
+Size:  20 80 30
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  road 
+Position:  -750 0 0
+Yrot:  90
+Length:  251 
+Width:  60 
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  10 7
+
+Object:  pond 
+Position:  85 0 451
+Yrot:  20
+Size:  600 1100 -1000
+
+Object:  bush 
+Position:  -457 0 -37
+Yrot:  90
+Size:  500 400 20
+
+Object:  bush 
+Position:  -483 0 -161
+Yrot:  90
+Size:  500 400 20
+
+Object:  bush 
+Position:  -730 0 47
+Yrot:  90
+Size:  500 400 20
+
+Object:  bush 
+Position:  -652 0 -135
+Yrot:  90
+Size:  500 400 20
+
+Object:  bush 
+Position:  -509 0 86
+Yrot:  90
+Size:  500 400 20
+
+Object:  tree 
+Position:  -854 0 -63
+Yrot:  90
+Size:  500 400 100
+
+Object:  guardrail 
+Position:  1000 0 800
+Yrot:  90
+Size:  2000 80 50
+Spacing:  25 
+
+Object:  guardrail 
+Position:  1000 0 -800
+Yrot:  90
+Size:  2000 80 50
+Spacing:  25 
+
+Object:  forest 
+Position:  688 0 -506
+Yrot:  90
+Size:  1000 600 100
+
+Object:  generic sign 
+Position:  -30 0 90
+Type:  
+Label:  Pass here!
+Yrot:  -90
+Size:  20 60 30
+Color:  1 0 1
+Radius:  1 
+
+Object:  twopole sign 
+Position:  750 0 0
+Label:  COURSE
+Yrot:  -90
+Size:  20 80 50
+Color:  0 1 0.2
+Radius:  1 
+
+Object:  mound 
+Position:  808 -5 -581
+Size:  1000 400 20
+Color:  0.5 0.7 0
+
+Object:  mound 
+Position:  815 -5 563
+Size:  1000 400 20
+Color:  0.5 0.7 0
+
+Object:  road 
+Position:  1001 0 0
+Yrot:  90
+Length:  251 
+Width:  60 
+Color:  0 0 0
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  10 8
+
+Object:  curve 
+Position:  -1000 0 0
+Yrot:  -90
+Width:  60 
+Color:  0 0 0
+Radius:  800 
+Angle:  60 
+
+Object:  curve 
+Position:  160.5 0 -670
+Yrot:  60
+Width:  60 
+Color:  0 0 0
+Radius:  600 
+Angle:  90 
+
+Object:  curve 
+Position:  830.5 0 490.5
+Yrot:  240
+Width:  60 
+Color:  0 0 0
+Radius:  800 
+Angle:  44 
+
+Object:  pond 
+Position:  168 0 -674
+Yrot:  45
+Size:  1100 1100 -2000
+
+Object:  skyscraper 
+Position:  -667 0 -556
+Yrot:  45
+Size:  80 80 150
+
+Object:  skyscraper 
+Position:  -116 0 -6
+Yrot:  45
+Size:  80 80 150
+
+Object:  generic sign 
+Position:  -412 80 -204
+Type:  1 11
+Label:  MARLBORO
+Yrot:  45
+Size:  70 700 0.1
+Color:  1 0 0
+Radius:  2 
+
+Object:  curvewall 
+Position:  -80 82 -42
+Xrot:  90
+Yrot:  135
+Size:  70 50 700
+Color:  0.7 0.6 0.5
+Radius:  150 
+Angle:  57 
+
+Object:  mound 
+Position:  213 -1 384
+Yrot:  80
+Size:  1500 800 50
+Color:  0.4 0.55 0.45
+
+Object:  deciduous 
+Position:  932 0 -140
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  878 0 -174
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  542 0 -267
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  468 0 -227
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  388 0 -195
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  183 0 -142
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  94 0 -28
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  140 0 -17
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  884 0 -345
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  703 0 -444
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  681 0 -373
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  725 0 -357
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  873 0 -220
+Type:  onion
+Size:  30 30 40
+Color:  0.1 0.7 0.1
+Radius:  0.9 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  60
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  70
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  80
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  90
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  100
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  110
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  120
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  130
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  140
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  curvewall 
+Position:  160.5 0 -670
+Yrot:  150
+Size:  30 2 4
+Color:  1 1 1
+Radius:  540 
+Angle:  5 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  10 9
+
+Object:  road 
+Position:  -1021 0 -455
+Yrot:  -135
+Length:  300 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  1022 0 111
+Yrot:  135
+Length:  1100 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  -1021 0 455
+Yrot:  -45
+Length:  800 
+Width:  60 
+Color:  0 0 0
+
+Object:  generic sign 
+Position:  657 50 -254
+Type:  
+Label:  GOOD YEAR
+Yrot:  -45
+Size:  30 113 0.1
+Color:  0 0 0
+Radius:  100 
+
+Object:  curvewall 
+Position:  738 0 -173
+Xrot:  -90
+Yrot:  135
+Size:  1100 50 50
+Color:  1 0 0
+Radius:  100 
+Angle:  180 
+
+Object:  curvewall 
+Position:  821 0 -90
+Xrot:  -90
+Yrot:  135
+Size:  1100 50 50
+Color:  0 0 1
+Radius:  100 
+Angle:  180 
+
+Object:  curvewall 
+Position:  902 0 -11
+Xrot:  -90
+Yrot:  135
+Size:  1100 50 50
+Color:  0 1 0
+Radius:  100 
+Angle:  180 
+
+Object:  curvewall 
+Position:  657 0 -254
+Xrot:  -90
+Yrot:  135
+Size:  1100 50 50
+Color:  0.1 0.1 0.1
+Radius:  100 
+Angle:  180 
+
+Object:  checkpoint 
+Position:  658 0 -254
+Type:  1 11
+Label:  GOOD YEAR
+Yrot:  -45
+Size:  30 108 80
+Radius:  0.1 
+
+Object:  mound 
+Position:  -215 -1 103
+Yrot:  45
+Size:  1500 1500 50
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  504 -1 182
+Yrot:  45
+Size:  600 600 120
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  618 -1 -739
+Yrot:  45
+Size:  400 1700 80
+Color:  0.4 0.55 0.45
+
+Object:  mound 
+Position:  -200 -1 -465
+Yrot:  30
+Size:  600 600 150
+Color:  0.4 0.55 0.45
+
+Object:  curve 
+Position:  -282.2 0 -140.4
+Yrot:  -135
+Size:  300 60 1
+Color:  0 0 0
+Radius:  775 
+Angle:  90 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  9 9
+
+Object:  curvewall 
+Position:  0 0 0
+Yrot:  45
+Width:  2 
+Height:  120 
+Color:  1 0.2 0.5
+Radius:  402 
+Angle:  270 
+
+Object:  curvewall 
+Position:  0 30 0
+Yrot:  -45
+Width:  2 
+Height:  90 
+Color:  1 0.2 0.5
+Radius:  402 
+Angle:  90 
+
+Object:  road 
+Position:  261 0 -262
+Yrot:  -45
+Length:  1100 
+Width:  60 
+Color:  0 0 0
+
+Object:  ramp 
+Position:  261.5 0 262
+Yrot:  -135
+Size:  300 60 20
+
+Object:  road 
+Position:  1032.5 0 -508.5
+Yrot:  45
+Length:  690 
+Width:  60 
+Color:  0 0 0
+
+Object:  generic sign 
+Position:  403 35 0
+Type:  
+Label:  DOME 2
+Yrot:  90
+Size:  80 200 0.1
+Color:  1 0.2 0.5
+Radius:  1.5 
+
+Object:  bank 
+Position:  0 0 0
+Yrot:  45
+Size:  80 60 40
+Radius:  400 
+Angle:  270 
+
+Object:  checkpoint 
+Position:  -361 0 0
+Type:  1 10
+Label:  DOME 2
+Size:  30 80 80
+Radius:  2 
+
+Object:  ground 
+Position:  0 0 0
+
+Scene Location:  9 8
+
+Object:  road 
+Position:  0 0 -1000
+Length:  2000 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  -690 0 -1000
+Length:  2000 
+Width:  60 
+Color:  0 0 0
+
+Object:  checkpoint 
+Position:  800 0 -770
+Type:  1 14
+Label:  SALZBURG
+Yrot:  90
+Size:  20 70 40
+Radius:  1 
+
+Object:  house 
+Position:  669 0 -705
+Type:  dutch colonial
+
+Object:  house 
+Position:  530 0 -705
+Type:  dutch colonial
+
+Object:  house 
+Position:  390 0 -705
+Type:  dutch colonial
+
+Object:  house 
+Position:  250 0 -705
+Type:  dutch colonial
+
+Object:  house 
+Position:  110 0 -705
+Type:  dutch colonial
+
+Object:  house 
+Position:  130 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  270 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  410 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  620 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -60 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -200 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -340 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -480 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -620 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -760 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -900 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -900 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -760 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -620 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -480 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -340 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -200 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  house 
+Position:  -60 0 -700
+Type:  dutch colonial
+Yrot:  180
+
+Object:  silo 
+Position:  497 0 -654
+Size:  20 70 40
+Radius:  10 
+
+Object:  silo 
+Position:  232 0 -909
+Size:  20 70 40
+Radius:  10 
+
+Object:  silo 
+Position:  -544 0 -626
+Size:  20 70 40
+Radius:  10 
+
+Object:  silo 
+Position:  -530 0 -603
+Size:  20 70 40
+Radius:  10 
+
+Object:  silo 
+Position:  -753 0 -868
+Size:  20 70 40
+Radius:  10 
+
+Object:  silo 
+Position:  97 0 -854
+Size:  20 70 40
+Radius:  10 
+
+Object:  mailbox 
+Position:  702 0 -801
+
+Object:  mailbox 
+Position:  631 0 -802
+
+Object:  mailbox 
+Position:  628 0 -802
+
+Object:  mailbox 
+Position:  676 0 -737
+
+Object:  mailbox 
+Position:  541 0 -736
+
+Object:  mailbox 
+Position:  536 0 -802
+
+Object:  mailbox 
+Position:  488 0 -803
+
+Object:  mailbox 
+Position:  387 0 -738
+
+Object:  mailbox 
+Position:  278 0 -803
+
+Object:  mailbox 
+Position:  275 0 -803
+
+Object:  mailbox 
+Position:  190 0 -737
+
+Object:  mailbox 
+Position:  70 0 -802
+
+Object:  mailbox 
+Position:  -70 0 -803
+
+Object:  mailbox 
+Position:  -73 0 -737
+
+Object:  mailbox 
+Position:  -205 0 -737
+
+Object:  mailbox 
+Position:  -264 0 -803
+
+Object:  mailbox 
+Position:  -332 0 -803
+
+Object:  mailbox 
+Position:  -335 0 -803
+
+Object:  mailbox 
+Position:  -338 0 -803
+
+Object:  mailbox 
+Position:  -420 0 -736
+
+Object:  mailbox 
+Position:  -561 0 -737
+
+Object:  mailbox 
+Position:  -488 0 -738
+
+Object:  mailbox 
+Position:  -611 0 -802
+
+Object:  mailbox 
+Position:  -630 0 -737
+
+Object:  mailbox 
+Position:  -748 0 -802
+
+Object:  mailbox 
+Position:  -820 0 -737
+
+Object:  mailbox 
+Position:  -957 0 -803
+
+Object:  mailbox 
+Position:  -960 0 -803
+
+Object:  mailbox 
+Position:  -963 0 -803
+
+Object:  stoplight 
+Position:  -690 0 -770
+Size:  30 60 20
+
+Object:  stoplight 
+Position:  -690 0 0
+Size:  30 60 20
+
+Object:  stoplight 
+Position:  0 0 0
+Size:  30 60 20
+
+Object:  stoplight 
+Position:  0 0 800
+Size:  30 60 20
+
+Object:  stoplight 
+Position:  -690 0 800
+Size:  30 60 20
+
+Object:  sidewalk 
+Position:  -345 0 35
+Yrot:  90
+Size:  630 10 20
+
+Object:  sidewalk 
+Position:  -345 0 -35
+Yrot:  90
+Size:  630 10 20
+
+Object:  sidewalk 
+Position:  -345 0 835
+Yrot:  90
+Size:  630 10 20
+
+Object:  sidewalk 
+Position:  -345 0 765
+Yrot:  90
+Size:  630 10 20
+
+Object:  sidewalk 
+Position:  -860 0 765
+Yrot:  90
+Size:  280 10 20
+
+Object:  sidewalk 
+Position:  -860 0 835
+Yrot:  90
+Size:  280 10 20
+
+Object:  sidewalk 
+Position:  -860 0 35
+Yrot:  90
+Size:  280 10 20
+
+Object:  sidewalk 
+Position:  -860 0 -35
+Yrot:  90
+Size:  280 10 20
+
+Object:  skyscraper 
+Position:  -660 0 40
+Size:  120 50 200
+
+Object:  skyscraper 
+Position:  -660 0 -90
+Size:  120 50 140
+
+Object:  skyscraper 
+Position:  -150 0 -120
+Size:  120 80 140
+
+Object:  skyscraper 
+Position:  -150 0 40
+Size:  120 60 170
+
+Object:  skyscraper 
+Position:  30 0 30
+Size:  80 60 170
+
+Object:  skyscraper 
+Position:  30 0 -90
+Size:  150 60 60
+
+Object:  skyscraper 
+Position:  -540 0 -80
+Size:  150 40 60
+
+Object:  skyscraper 
+Position:  -390 0 -80
+Size:  240 40 50
+
+Object:  generic sign 
+Position:  -440 0 40
+Type:  
+Label:  Don't drink and drive
+Size:  30 200 0.1
+Color:  1 0.5 0.5
+Radius:  10 
+
+Object:  generic sign 
+Position:  -245 0 40
+Type:  
+Label:  Rhinos are hornier
+Size:  30 190 0.1
+Color:  0 0.5 1
+Radius:  10 
+
+Object:  silo 
+Position:  -185 0 134
+Size:  30 190 120
+Radius:  40 
+
+Object:  skyscraper 
+Position:  -1000 0 -80
+Size:  280 40 80
+
+Object:  skyscraper 
+Position:  -1000 0 40
+Size:  80 50 50
+
+Object:  skyscraper 
+Position:  -920 0 40
+Size:  80 50 80
+
+Object:  skyscraper 
+Position:  -840 0 40
+Size:  120 50 160
+
+Object:  skyscraper 
+Position:  -840 0 840
+Size:  120 50 160
+
+Object:  skyscraper 
+Position:  -1000 0 840
+Size:  100 50 120
+
+Object:  skyscraper 
+Position:  -1000 0 710
+Size:  200 50 80
+
+Object:  skyscraper 
+Position:  -720 0 660
+Yrot:  90
+Size:  100 80 80
+
+Object:  skyscraper 
+Position:  -660 0 700
+Size:  150 60 110
+
+Object:  skyscraper 
+Position:  -500 0 700
+Size:  200 60 160
+
+Object:  skyscraper 
+Position:  -290 0 700
+Size:  260 60 120
+
+Object:  skyscraper 
+Position:  -290 0 840
+Size:  260 60 120
+
+Object:  skyscraper 
+Position:  -450 0 840
+Size:  100 60 120
+
+Object:  skyscraper 
+Position:  -600 0 840
+Size:  100 60 120
+
+Object:  stoplight 
+Position:  1 0 -770
+Size:  30 60 20
+Animation Bits:  0xffffffff 
+
+Object:  road 
+Position:  200 0 800
+Yrot:  90
+Length:  1201 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  200 0 0
+Yrot:  90
+Length:  1201 
+Width:  60 
+Color:  0 0 0
+
+Object:  road 
+Position:  1001 0 -770
+Yrot:  90
+Length:  2002 
+Width:  60 
+Color:  0 0 0
+
+Object:  skyscraper 
+Position:  -500 60 700
+Size:  50 200 60
+
+Object:  generic sign 
+Position:  -450 40 800
+Type:  
+Label:  Mozart is dead!
+Yrot:  90
+Size:  20 84 0.1
+Color:  0 0 0
+Radius:  0.1 
+
+Object:  deciduous 
+Position:  59 0 853
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  105 0 853
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  325 0 838
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  271 0 844
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  374 0 818
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  420 0 792
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  157 0 850
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  211 0 847
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  466 0 767
+Type:  @j=84=8C
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  594 0 623
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  569 0 658
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  540 0 698
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  503 0 735
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  613 0 588
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  634 0 542
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  646 0 494
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  658 0 453
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  660 0 414
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  655 0 370
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  648 0 324
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  639 0 278
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  625 0 243
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  609 0 202
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  588 0 165
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  563 0 126
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  538 0 96
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  508 0 66
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  471 0 36
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  432 0 13
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  386 0 -8
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  340 0 -29
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  289 0 -45
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  238 0 -52
+Type:  top
+Size:  30 30 40
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  pond 
+Position:  825 0 126
+Size:  1500 300 -40
+
+Object:  pond 
+Position:  782 0 -553
+Yrot:  45
+Size:  400 300 -40
+
+Object:  pond 
+Position:  696 0 -173
+Size:  600 500 -40
+
+Object:  deciduous 
+Position:  727 0 -724
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  574 0 -721
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  651 0 -818
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  484 0 -702
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  449 0 -829
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  343 0 -711
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  351 0 -700
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  229 0 -730
+Type:  pear
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  154 0 -825
+Type:  oval
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  37 0 -716
+Type:  round
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  38 0 -814
+Type:  oval
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -90 0 -707
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -163 0 -724
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -176 0 -818
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -285 0 -724
+Type:  round
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -383 0 -813
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -367 0 -814
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -451 0 -693
+Type:  round
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -574 0 -716
+Type:  pear
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -648 0 -814
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -794 0 -715
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -875 0 -824
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -899 0 -737
+Type:  top
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  deciduous 
+Position:  -995 0 -816
+Type:  onion
+Size:  30 15 25
+Color:  0.5 1 0.5
+Radius:  0.9 
+
+Object:  mound 
+Position:  272 -1 389
+Size:  500 450 200
+Color:  0 0.5 0
+
+Object:  left curve sign 
+Position:  200 0 35
+Type:  
+Yrot:  -90
+Size:  10 10 10
+Color:  1 1 1
+Radius:  1 
+
+Object:  curve 
+Position:  200 0 400
+Yrot:  -90
+Width:  60 
+Color:  0 0 0
+Radius:  430 
+Angle:  180 
+
+Object:  house 
+Position:  516 0 -830
+Type:  dutch colonial
+Yrot:  180
+
+Object:  ground 
+Position:  0 0 0

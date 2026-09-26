@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwSpinner - animate a list of child objects</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwSpinner - animate a list of child objects</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Children</td>
+<td>*O</td>
+<td>The objects under animation control</td>
+</tr>
+<tr><td>Invisible</td>
+<td>1B</td>
+<td>True iff this object is not displayable</td>
+</tr>
+<tr><td>Visibility</td>
+<td>1I</td>
+<td>Visibility mask for use with hwDisplay-&gt;setVisibility</td>
+</tr>
+<tr><td>PosType</td>
+<td>1I</td>
+<td>Type of position animation; see below</td>
+</tr>
+<tr><td>DirType</td>
+<td>1I</td>
+<td>Type of direction animation; see below</td>
+</tr>
+<tr><td>UpType</td>
+<td>1I</td>
+<td>Type of up-vector animation; see below</td>
+</tr>
+<tr><td>ScaleType</td>
+<td>1I</td>
+<td>Type of size animation; see below</td>
+</tr>
+<tr><td>TransType</td>
+<td>1I</td>
+<td>Type of transparency animation; see below</td>
+</tr>
+<tr><td>PosParams</td>
+<td>*F</td>
+<td>Parameters for position animation</td>
+</tr>
+<tr><td>DirParams</td>
+<td>*F</td>
+<td>Parameters for direction animation</td>
+</tr>
+<tr><td>UpParams</td>
+<td>*F</td>
+<td>Parameters for up-vector animation</td>
+</tr>
+<tr><td>ScaleParams</td>
+<td>*F</td>
+<td>Parameters for size animation</td>
+</tr>
+<tr><td>TransParams</td>
+<td>*F</td>
+<td>Parameters for transparency animation</td>
+</tr>
+<tr><td>PosTimes</td>
+<td>*F</td>
+<td>Key times for smooth position animation</td>
+</tr>
+<tr><td>DirTimes</td>
+<td>*F</td>
+<td>Key times for smooth direction animation</td>
+</tr>
+<tr><td>UpTimes</td>
+<td>*F</td>
+<td>Key times for smooth up-vector animation</td>
+</tr>
+<tr><td>ScaleTimes</td>
+<td>*F</td>
+<td>Key times for smooth size animation</td>
+</tr>
+<tr><td>TransTimes</td>
+<td>*F</td>
+<td>Key times for smooth transparency animation</td>
+</tr>
+<tr><td>Lifetime</td>
+<td>2F</td>
+<td>Starting and beginning time, in seconds, for which the children
+  are visible</td>
+</tr>
+<tr><td>CycleTime</td>
+<td>1F</td>
+<td>Time, in seconds, before all parameters wrap around to
+  beginning</td>
+</tr>
+<tr><td>Offset</td>
+<td>1F</td>
+<td>Offset to add to current time,in seconds</td>
+</tr>
+<tr><td>Delay</td>
+<td>1F</td>
+<td>Inter-child delay in time</td>
+</tr>
+<tr><td>PosOffset</td>
+<td>3F</td>
+<td>Position offset applied to PosParams for PosType HW_SPIN_SMOOTH</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Children</td>
+<td>NULL</td>
+</tr>
+<tr><td>Invisible</td>
+<td>False</td>
+</tr>
+<tr><td>Visibility</td>
+<td>0xFFFFFFFF</td>
+</tr>
+<tr><td>PosType</td>
+<td>undefined</td>
+</tr>
+<tr><td>DirType</td>
+<td>undefined</td>
+</tr>
+<tr><td>UpType</td>
+<td>undefined</td>
+</tr>
+<tr><td>ScaleType</td>
+<td>undefined</td>
+</tr>
+<tr><td>TransType</td>
+<td>undefined</td>
+</tr>
+<tr><td>PosParams</td>
+<td>NULL</td>
+</tr>
+<tr><td>DirParams</td>
+<td>NULL</td>
+</tr>
+<tr><td>UpParams</td>
+<td>NULL</td>
+</tr>
+<tr><td>ScaleParams</td>
+<td>NULL</td>
+</tr>
+<tr><td>TransParams</td>
+<td>NULL</td>
+</tr>
+<tr><td>PosTimes</td>
+<td>NULL</td>
+</tr>
+<tr><td>DirTimes</td>
+<td>NULL</td>
+</tr>
+<tr><td>UpTimes</td>
+<td>NULL</td>
+</tr>
+<tr><td>ScaleTimes</td>
+<td>NULL</td>
+</tr>
+<tr><td>TransTimes</td>
+<td>NULL</td>
+</tr>
+<tr><td>Lifetime</td>
+<td>{0,infinity}</td>
+</tr>
+<tr><td>CycleTime</td>
+<td>0.0</td>
+</tr>
+<tr><td>Offset</td>
+<td>0.0</td>
+</tr>
+<tr><td>Delay</td>
+<td>0.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwSpinner class is probably the most complicated class in all
+HoverWare; it contains code which can spin its children along a
+variety of complicated paths. It can be used to animate objects,
+text, lights, or even the camera.</p>
+<p>Each of PosType, DirType, UpType, ScaleType, and TransType can be
+one of the following integers:</p>
+
+<dl>
+  <dt>HW_SPIN_CONSTANT </dt>
+  <dd>keep this parameter at a constant value</dd>
+  <dt>HW_SPIN_LINEAR </dt>
+  <dd>linearly interpolate this parameter between 2 values</dd>
+  <dt>HW_SPIN_SMOOTH </dt>
+  <dd>smoothly interpolate this parameter between several values</dd>
+</dl>
+<p>The default for each of these is &quot;undefined&quot;, which
+means that parameter will not be modifed by this hwSpinner object.
+The PosParams, DirParams, UpParams, ScaleParams, and TransParams
+properties will be interpreted differently depending on the *Type
+params. Here is the table:</p>
+
+<dl>
+  <dt>HW_SPIN_CONSTANT</dt>
+  <dd>*Params not used</dd>
+</dl>
+
+<dl>
+  <dt>HW_SPIN_LINEAR</dt>
+  <dd>Interpolate between two 3-dimensional positions (for
+  PosType/PosParams) or two scalar angles (for DirType/DirParams or
+  UpType/UpParams) or two 3-dimensional sizes (for
+  ScaleType/ScaleParams) or two Transparency values (for
+  TransType/TransParams). Note that only objects that allow a
+  Transparency property will be affected by
+  TransType/TransParams/TransTimes settings.</dd>
+</dl>
+
+<dl>
+  <dt>HW_SPIN_SMOOTH</dt>
+  <dd>Interpolate the position, direction vector, up vector, size,
+  or transparency smoothly between several 3-dimensional values
+  specified in the *Params array. For HW_SPIN_SMOOTH, the *Times
+  arrays may be used to vary the timing between segments of the
+  smooth interpolation; there should be the same number of entries in
+  the *Times array as there are vertices in the *Params array. The
+  number in the *Times array corresponds to the percentage (between 0
+  and 100) of the CycleTime at which the specified
+  Pos/Up/Dir/Scale/Trans value will be exactly the *Params value. An
+  example will make this clearer.</dd>
+</dl>
+<p>The PosType/PosParams/PosTimes values modify the position of its
+children in modelling coordinates. The DirType/DirParams/DirTimes
+values modify the direction the children are facing, relative to the
+vector {1,0,0}. The UpTime/UpParams/UpTimes values modify the
+&quot;up&quot; vector of the children, relative to the vector
+{0,1,0}. The ScaleType/ScaleParams/ScaleTimes values modify the size
+of the children (NOTE: If all three scale values (X,Y, and Z) are not
+identical, graphics performance may be diminished). The
+TransType/TransParams/TransTimes values modify the Transparency of
+the children (NOTE: only the first, X, value of the curve is used for
+the Transparency).</p>
+<p>The Lifetime is the first and last time, in seconds, that this
+hwSpinner and its children are visible. By default, HoverWare
+calculates the number of seconds since hwInit was performed, and this
+is the time which is used by the hwSpinner object. See <a
+href="hwTimer.htm">hwTimer</a> for ways to alter the passage of time.</p>
+<p>The CycleTime specifes how many seconds it takes for this
+hwSpinner object to recycle back to the beginning; the hwSpinner
+object will make (Lifetime[1]-Lifetime[0])/CycleTime cycles through
+its animation.</p>
+<p>The Offset is a simple scalar value to add a specified number of
+seconds to the current time while this hwSpinner object is being
+displayed.</p>
+<p>The Delay is a delay, in seconds, between each child's position in
+the animation, and can be used to make the children chase each other
+along the path.</p>
+<p>A C source code example is not provided, as managing these things
+in C is just too complicated for this man page.</p>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # Spin the camera around in a circle, looking at the origin
+    # The camera spins faster for the first half of the circle
+    hwSpinner {
+        PosType = HW_SPIN_SMOOTH
+        PosParams = {
+             0,0,-6,
+             6,0, 0,
+             0,0, 6,
+            -6,0, 0,
+             0,0,-6
+        }
+        PosTimes = {
+             0,         # At time 0%, be at 0,0,-6
+             10,        # At time 10%, be at 6,0,0
+             20,        # At time 20%, be at 0,0,6
+             60,        # At time 60%, be at -6,0,0
+             100        # At time 100%, be at 0,0,-6
+        }
+
+        DirType = HW_SPIN_SMOOTH
+        DirParams = {
+             0,0, 1,
+            -1,0, 0,
+             0,0,-1,
+             1,0, 0,
+             0,0, 1
+        }
+        DirTimes = {
+             0,
+             10,
+             20,
+             60,
+             100
+        }
+
+        CycleTime = 5.0
+        Children = {
+            hwCamera {
+                Pos = {0,0,0}
+                Dir = {1,0,0}   # Make it correspond to hwSpinner
+                                # direction
+                Up = {0,1,0}
+                Perspective = True
+                Planes = {0.1,12}
+                Field = 45
+            }
+        }
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

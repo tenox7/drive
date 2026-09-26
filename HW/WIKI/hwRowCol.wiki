@@ -1,0 +1,64 @@
+== NAME ==
+hwRowCol - GUI layout widget that tightly controls placement of children
+
+== INHERITS FROM ==
+* [[hwGUI]]
+
+== PROPERTIES ==
+| Rows          | 1I | Number of rows in the hwRowCol
+| Columns       | 1I | Number of columns in the hwRowCol
+| Children      | *O | List of children.  This need not match Rows*Columns.
+| Padding       | 2I | X and Y padding around each child in the hwRowCol
+| BackgroundColor | 4F | Background color of the entire hwRowCol
+| Texture       | 0O | Background texture image of the entire hwRowCol
+| Invisible     | 1B | True if the background should not be drawn
+
+== DEFAULTS ==
+| Rows | 1
+| Columns | 1
+| Invisible | False
+| BackgroundColor | {0,0,0,0}
+| Texture | NULL
+| Padding | {0,0}
+
+== DESCRIPTION ==
+The hwRowCol widget arranges its children in a strict row/column
+fashion.  Note that there does not need to be a 1:1 mapping between
+the total number of cells (Rows*Columns) and the number of children.
+If there are more cells than children, the last cells will be empty.
+If there are more children than cells, not all the children will
+be drawn.
+
+Note that the hwRowCol widget overrites the hwGUI paramters of
+the children's PosX, PosY, Width, Height, and Align properties, since
+it forces a position / size on all its children.
+
+== OBJECT FILE EXAMPLE ==
+{{{
+      hwRowCol numPad {
+          PosX = 625   PosY = 425
+          Width = 570 Height = 760
+          Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+          Rows = 4    Columns = 3
+          Padding = {20,20}
+          Children = {
+              hwButton B_1   { Label = "1" ID = 10049 },
+              hwButton B_2   { Label = "2" ID = 10050 },
+              hwButton B_3   { Label = "3" ID = 10051 },
+              hwButton B_4   { Label = "4" ID = 10052 },
+              hwButton B_5   { Label = "5" ID = 10053 },
+              hwButton B_6   { Label = "6" ID = 10054 },
+              hwButton B_7   { Label = "7" ID = 10055 },
+              hwButton B_8   { Label = "8" ID = 10056 },
+              hwButton B_9   { Label = "9" ID = 10057 },
+              hwButton B_dot { Label = "." ID = 10046 },
+              hwButton B_0   { Label = "0" ID = 10048 },
+              hwButton B_del { Label = "bs" ID = 10008 }
+          }
+          BackgroundColor = {.5,.5,.5}
+          Invisible = True
+      }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwGUI]], [[hwLayout]]

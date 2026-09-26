@@ -1,0 +1,132 @@
+# Makefile constructed by configure from Makefile.in and itself.
+# Do not check in Makefile itself!
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+RM = rm -f
+
+INSTALL = @INSTALL@
+EXEEXT = @EXEEXT@
+
+TOPDIR = @prefix@
+BINDIR = @bindir@
+DATADIR = @datadir@
+SBINDIR = @sbindir@
+LIBDIR = @libdir@
+INCLUDEDIR = @includedir@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+RM = rm -f
+AR = ar
+
+SUBDIRS = libgui libnum libphysics libprims shared server client
+CLIENT = drive
+SERVER = drive_server
+PROGS = $(CLIENT) $(SERVER)
+
+default: all
+.PHONY: all debug clean fullclean always
+all debug clean fullclean::
+	for subdir in $(SUBDIRS); do \
+	  (cd $$subdir; $(MAKE) $@); \
+	done
+always:
+drive: always
+	cd client; $(MAKE)
+
+clean::
+	$(RM) $(PROGS)
+
+release: check_filename_length
+
+COMPONENTS=\
+    README \
+    .driverc \
+    .server_config \
+    add_drive_services \
+    drive.6 \
+    drive_blocks \
+    drive_help \
+    objects \
+    textures \
+    scenes \
+    pixmaps \
+    constructs \
+    sounds \
+    drive_server \
+    drive
+#MOTIF=\
+#    libMrm.so.1 \
+#    libXm.so.1
+MOTIF=
+
+TARBALL=drive.tar.gz
+.PHONY: tarball
+tarball $(TARBALL):
+	rm -f drive.tar $(TARBALL)
+	tar cvf drive.tar $(COMPONENTS) $(MOTIF)
+	gzip -9v drive.tar
+
+
+########################### META_TARGETS ######################################
+.PHONY: clean fullclean install uninstall debug dep depend
+
+fullclean::  clean
+	$(RM) config.status config.log Makefile config.h config.cache
+
+# configure itself
+#configure: configure.in
+#	cd ${srcdir} && autoconf
+#Makefile: Makefile.in config.status
+#	./config.status
+config.h: config.h.in config.status
+	./config.status
+config.status: configure
+	./config.status --recheck
+
+# To build the depend files, clear them out and make them old, then rebuild
+dep depend:
+	for subdir in $(SUBDIRS); do \
+	    (cd $$subdir; \
+	    rm -f .depend; touch -t 199001010000 .depend; \
+	    $(MAKE) depend); \
+	done
+
+
+install: all
+	$(INSTALL) ./drive		$(BINDIR)/drive
+	$(INSTALL) ./drive_server	$(SBINDIR)/drive_server
+	$(INSTALL) ./README		$(TOPDIR)/README
+	$(INSTALL) ./add_drive_services	$(SBINDIR)/add_services
+	$(INSTALL) ./.server_config	$(TOPDIR)/.server_config
+	$(INSTALL) ./drive_blocks	$(DATADIR)/drive_blocks
+	$(INSTALL) ./Drive2PS		$(BINDIR)/Drive2PS
+	$(INSTALL) ./drive_help		$(TOPDIR)/drive_help
+	$(INSTALL) ./drive.6		$(MANDIR)/drive.6
+	# Objects in Hoverware format
+	for obj in $(ls ./objects/*hw); do			\
+	  $(INSTALL) $$obj		$(DATADIR)/$$obj;	\
+	done
+	# Pixmaps
+	for obj in $(ls ./pixmaps/*.raw.Z); do			\
+	  $(INSTALL) $$obj		$(DATADIR)/$$obj;	\
+	done
+	# Scenes
+	for obj in $(ls ./scenes/*); do				\
+	  $(INSTALL) $$obj		$(DATADIR)/$$obj;	\
+	done
+	# Constructs
+	for obj in $(ls ./constructs/*); do			\
+	  $(INSTALL) $$obj		$(DATADIR)/$$obj;	\
+	done
+
+uninstall: 

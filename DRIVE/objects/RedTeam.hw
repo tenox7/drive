@@ -1,0 +1,290 @@
+hwGroup {
+    Children = {
+        hwSurfRev  {
+            GraphN = 7
+            Data = {30,0,30,60,50,110}
+            LonRange = {0,360}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0
+            Backface = False
+            TwoSided = True
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {-90,0,0}
+            Pos = {-120,-110,0}
+        },
+        hwSurfRev  {
+            GraphN = 7
+            Data = {30,0,30,60,50,110}
+            LonRange = {0,360}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0
+            Backface = False
+            TwoSided = True
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {-90,0,0}
+            Pos = {120,-110,0}
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 4
+            Radius = {100,0}
+            Height = -10
+            LonRange = {0,90}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0
+            Backface = True
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1.75,1}
+            Rotate = {0,-90,0}
+            Pos = {0,-190,-25}
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 4
+            Radius = {100,0}
+            Height = 10
+            LonRange = {0,90}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1.75,1}
+            Rotate = {0,-90,0}
+            Pos = {0,-190,-25}
+        },
+        hwMesh  {
+            GraphN = 2
+            GraphM = 2
+            HasNormals = True
+            HasRGB = True
+            HasUV = True
+            Data = {10,0,0,0.3,0.3,0.5,0,0,
+                -1,0,0,10,0,0,0.3,0.3,
+                0.5,0,0,-1,0,1,0,100,
+                0,0.3,0.3,0.5,0,0,-1,1,
+                0,20,100,0,0.3,0.3,0.5,0,
+                0,-1,1,1}
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = True
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {-90,0,0}
+            Pos = {-10,-190,-125}
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 13
+            Radius = {190,95}
+            Height = 25
+            LonRange = {0,360}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {0,0,0}
+            Pos = {0,0,25}
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 13
+            Radius = {95,190}
+            Height = 25
+            LonRange = {0,360}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {0,0,0}
+            Pos = {0,0,-50}
+        },
+        hwSphere  {
+            GraphN = 4
+            GraphM = 13
+            Radius = 100
+            LatRange = {0,90}
+            LonRange = {0,360}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,0.5}
+            Rotate = {0,0,0}
+            Pos = {0,0,49}
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 13
+            Radius = {190,190}
+            Height = 50
+            LonRange = {0,360}
+            HasNormals = True
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {0,0,0}
+            Pos = {0,0,-25}
+        },
+        hwRing  {
+            GraphN = 2
+            GraphM = 13
+            Radius = {0,95}
+            LonRange = {0,360}
+            Uncolored = True
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {0,0,0}
+            Pos = {0,0,-50}
+        },
+        hwSphere  {
+            GraphN = 4
+            GraphM = 10
+            Radius = 100
+            LatRange = {-90,0}
+            LonRange = {0,360}
+            HasNormals = True
+            Color = {0,0,0}
+            Transparency = 0
+            Shininess = 0.125
+            Backface = False
+            TwoSided = False
+            Bright = False
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {0.5,1,0.5}
+            Rotate = {-7,0,0}
+            Pos = {0,90,-37}
+        },
+        hwRing  {
+            GraphN = 2
+            GraphM = 7
+            Radius = {0,30}
+            LonRange = {0,360}
+            Color = {1,1,0}
+            Transparency = 0
+            Shininess = 0
+            Backface = False
+            TwoSided = False
+            Bright = True
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {90,0,0}
+            Pos = {120,-170,0}
+        },
+        hwRing  {
+            GraphN = 2
+            GraphM = 7
+            Radius = {0,30}
+            LonRange = {0,360}
+            Color = {1,1,0}
+            Transparency = 0
+            Shininess = 0
+            Backface = False
+            TwoSided = False
+            Bright = True
+            Invisible = False
+            Wireframe = False
+            Visibility = 0xffffffff
+            SpecColor = {1,1,1}
+            PrunePrim = True
+            Scale = {1,1,1}
+            Rotate = {90,0,0}
+            Pos = {-120,-170,0}
+        }
+    }
+    Invisible = False
+    Visibility = 0xffffffff
+    Scale = {.030,.030,.030}
+    Rotate = {90,180,180}
+    Pos = {0,0,0}
+}

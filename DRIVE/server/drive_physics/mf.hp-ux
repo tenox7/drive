@@ -1,0 +1,71 @@
+# $Source: /cvsroot/hoverball/HB_HW/DRIVE/server/drive_physics/mf.hp-ux,v $
+# $Revision: 1.1 $
+# $Date: 2004/02/20 00:44:29 $
+
+LIBPRIMS=../../libprims
+LIBPHYSICS=../../libphysics
+LIBNUM=../../libnum
+INC=../../include
+OPTFLAGS=-O
+OBJ=Opt/
+ANSI_FLAGS=-DANSI -Aa -D_HPUX_SOURCE -DV4_FILE_SYS
+INCLUDES= -I$(INC) -I$(LIBPHYSICS) -I$(LIBNUM) -I$(LIBPRIMS) -I../objects -I/opt/HoverWare/Inc
+CFLAGS= $(OPTFLAGS) $(INCLUDES) $(ANSI_FLAGS) -D_HP_NO_FAST_MACROS +DA1.1
+
+# header files used everywhere
+GLOBAL_HEADERS=\
+	$(INC)/object.h \
+	$(INC)/controls.h \
+	$(INC)/demo_physics.h \
+	$(INC)/global.h \
+	./local_physics.h \
+	$(LIBPHYSICS)/physics.h \
+	$(LIBNUM)/libnum.h
+
+all:
+	rm -f physics.a
+	make "OPTFLAGS=-O" "OBJ=Opt/" physics.a
+
+debug:
+	rm -f physics.a
+	make "OPTFLAGS=-g" "OBJ=Debug/" physics.a
+
+$(OBJ)common.o:		common.c		$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ common.c
+
+$(OBJ)ballistic.o:	ballistic.c		$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ ballistic.c
+
+$(OBJ)car.o:		car.c			$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ car.c
+
+$(OBJ)intersect.o:	intersect.c		$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ intersect.c
+
+$(OBJ)simple.o:		simple.c		$(GLOBAL_HEADERS)
+	$(CC) $(CFLAGS) -c -o $@ simple.c
+
+$(OBJ)gears.o:		gears.c			$(GLOBAL_HEADERS)
+	$(CC) $(CFLAGS) -c -o $@ gears.c
+
+$(OBJ)plane.o:		plane.c			$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ plane.c
+
+$(OBJ)ufop.o:		ufop.c			$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ ufop.c
+
+$(OBJ)xfighterp.o:	xfighterp.c		$(GLOBAL_HEADERS) $(INC)/scene.h
+	$(CC) $(CFLAGS) -c -o $@ xfighterp.c
+
+physics.a: \
+		$(OBJ)ballistic.o	\
+		$(OBJ)car.o		\
+		$(OBJ)plane.o		\
+		$(OBJ)ufop.o		\
+		$(OBJ)xfighterp.o	\
+		$(OBJ)common.o		\
+		$(OBJ)gears.o		\
+		$(OBJ)intersect.o	\
+		$(OBJ)simple.o
+	sleep 1
+	ar rv physics.a $?

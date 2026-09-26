@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwImage - create an image for later use in texture mapping or GUI display</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwImage - create an image for later use in texture mapping or GUI
+display</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Rows</td>
+<td>1I</td>
+<td>Number of rows in the image</td>
+</tr>
+<tr><td>Columns</td>
+<td>1I</td>
+<td>Number of columns in the image</td>
+</tr>
+<tr><td>Components</td>
+<td>1I</td>
+<td>1, 2, 3, or 4 depending on the image type</td>
+</tr>
+<tr><td>Image</td>
+<td><b></b></td>
+<td>A 2-dimensional array of values</td>
+</tr>
+<tr><td>FileName</td>
+<td>0S</td>
+<td>The name of a file from which to load the image</td>
+</tr>
+<tr><td>TransparentColor</td>
+<td>3F</td>
+<td>If a pixel of the image matches this color, then that pixel
+  will be made transparent (alpha of 0)</td>
+</tr>
+<tr><td>PosX</td>
+<td>1I</td>
+<td>X position for GUI display</td>
+</tr>
+<tr><td>PosY</td>
+<td>1I</td>
+<td>Y position for GUI display</td>
+</tr>
+<tr><td>Width</td>
+<td>1I</td>
+<td>Pixel width for GUI display</td>
+</tr>
+<tr><td>Height</td>
+<td>1I</td>
+<td>Pixel height for GUI display</td>
+</tr>
+<tr><td>Color</td>
+<td>4F</td>
+<td>Color to blend with GUI image</td>
+</tr>
+<tr><td>Align</td>
+<td>1I</td>
+<td>GUI alignment options, from HW_GUI_*</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<p>None</p>
+<h2>DESCRIPTION</h2>
+<p>The hwImage class allows the application to either load a file off
+disc (currently, only PPM, PNG, and JPEG files are supported), or
+create an image in memory. If loading off disc is desired, set the
+FileName property to the name of the file to be loaded. If an
+in-memory image is required, first set the Rows, Columns, and
+Components properties to the desired values, and then set the Image
+property to the array of pixel samples.</p>
+<p>When reading images from disc, the hwImage class uses the file
+extension to determine the which image format reader to use. Thus,
+files with the extension &quot;.jpg&quot; or &quot;.jpeg&quot; (case
+insensitive) are loaded using the JPEG image reader. All other files
+are loaded using the PPM image reader.</p>
+<p>The only really useful thing to do with hwImage objects is to give
+them to hwTexture objects for use as a texture map</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Create a 4x4 luminance checkerboard image */
+    hwObject
+        image;
+    hwInt8
+        pixels[4*4] = {
+            1, 1, 0, 0,
+            1, 1, 0, 0,
+            0, 0, 1, 1,
+            0, 0, 1, 1,
+        };
+
+    image = hwImage-&gt;create( hwImage );
+    HW_MODIFY_1I( image, hwStrRows, 4 );
+    HW_MODIFY_1I( image, hwStrColumns, 4 );
+    HW_MODIFY_1I( image, hwStrComponents, 1 );
+    image-&gt;modify( image, hwStrImage, HW_MAKE_TYPE(HW_TYPE_BYTE,4*4),
+                        pixels );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    /* An image to be loaded out of &quot;foo.jpg&quot; */
+    hwImage image {
+        FileName = &quot;foo.jpg&quot;
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwTexture.htm">hwTexture</a></p>
+</body>
+</html>

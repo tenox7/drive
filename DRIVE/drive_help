@@ -1,0 +1,362 @@
+# This file is organized as follows:
+#  Lines beginning with '#' are ignored by the program.
+#  The file consists of a series of subject blocks, each of which
+#   will be given a button on the help menu of the menubar.
+#  Each subject block contains a subject, which is the first non-blank
+#   line, and subject text, which is all subsequent lines up to a line
+#   that begins with a period '.'.
+#  Blank lines in the subject text will be retained, and lines beginning
+#   with '^' will have a newline inserted before them.
+#
+
+#####################################################################
+Introduction
+^DRIVE:  Distributed
+^         Real-time
+^          Interactive 
+^           Vehicle 
+^            Emulator
+
+DRIVE is a distributed client-server simulation, and the client (which
+you are running) must connect to a server.  When it first comes
+up, it will search for a server on the local subnet.  It then gives you
+the choice of servers to run, or, if one is not found, the option to
+start a server on your local system.
+
+After a server is selected, DRIVE creates two windows on your display.
+(The placement of these windows may be specified in the
+/usr/lib/X11/app-defaults/Drive file).
+
+The larger window (entitled "Driving Simulator") is used for controlling
+your vehicle as you drive around in the scene; it also "previews" the
+vehicles before you select one.
+
+The smaller window (entitled "Select") allows you to preview the
+vehicles available, select a vehicle, select the vehicle's color, and
+join the game.  The available vehicles are displayed at the top of the
+"Select" window.  To preview a vehicle, simply click on the vehicle's
+name using the left mouse button.  The selected vehicle will be
+displayed in the large window.  The sliders allow you to modify the
+vehicle's color.  To choose a color, simply move the slider bars using
+the left mouse button.
+
+Once you have selected the vehicle you want and have chosen a color,
+click the "Join" button in the "Select" window to begin driving.  Once
+the "Join" button is pressed, the "Select" window will disappear.
+
+When you join the game, you enter the world scene "inside" the vehicle
+you have selected.  Your view is from inside the vehicle looking
+forward, out the windshield.  There are various keys and buttons you
+can press to affect your vehicle or your view -- see the other help
+items for details.
+.
+
+##############################################################
+DRIVE buttons
+The buttons at the bottom of the screen control various aspects of the 
+simulation.  The 'Windows' button allows you to resize the window to
+two preselected sizes.  You can also resize the window through normal
+methods provided by your window manager.  On many devices, DRIVE runs
+fastest in the smaller window.  The program will try to determine whether
+your graphics are fast enough to use a large window; if not, it will 
+default to the smaller window.
+
+Also under the 'Windows' menu item is a button to constrain the cursor to
+the drive window.  Many users find this makes driving easier, since the 
+cursor cannot leave the DRIVE window.  To unconstrain the cursor, simply
+select the button again.
+
+Two special windows can be brought up or hidden under the 'Windows' menu
+item:  the Radar Window and the Leaders Window.  See other help items
+for more details.
+
+The 'Upright' button can be used when you crash and your vehicle is resting
+on its side, top, nose, etc.  The button will leave your vehicle where it
+is, but in the upright position.  If you are racing, there is a penalty
+associated with uprighting yourself:  10% of the total time of the race.
+
+The 'Start Over' button can be used to put your vehicle back to its original
+postion.  If you are racing, any checkpoints you have crossed will be
+invalidated.
+
+The simulation can be run such that upended vehicles will be automatically
+set upright or automatically started over without input from the user.
+
+The 'Quit' button should need no explanation.
+.
+
+##############################################################
+Input control
+The input to the program is assumed to come from a mouse, tablet, joystick,
+or other analog device.  The position of the pointer in the screen controls
+the vehicle -- when the pointer is near the top of the window, the vehicle
+is accelerating; when it's near the bottom, it's braking.  This is reflected
+in the "Accelerate/Brake" bar on the side of the main window.  When the 
+pointer is left of center, the vehicle has its "wheels" turned left; when
+right of center, the wheels are right.  Just like a real car, when you're
+in reverse, the sense of left and right are reversed.
+
+The selectors on the input device, such as the buttons on the mouse, are
+used to shift gears and to fire the gun (if it is enabled -- see
+"Guns").  The left button shifts the gearshift down; the right button,
+up.  To shift into reverse, press the left button until the the gear
+selector shows 'R'.
+
+As a convenience, by pressing the 'c' key, you can center the pointer in
+the screen.
+
+The keyboard is also used for input -- see the other subjects for details.
+.
+
+##############################################################
+drive_server
+DRIVE is a client-server application.  A central process, the
+"drive_server", controls the physics and interactions of the world.
+Connected to the drive_server can be up to 32 "drive clients", which do
+all the graphics for each driver in the simulation.  The two processes
+communicate across the LAN via IPC sockets.
+
+The drive_server can be configured in many ways -- from running
+different racecourses and allowing the drivers to use "Turbo boosts"
+and/or guns, to race details and driving at night.  The server can exist
+on any HP machine, though the closer on the LAN, the less chance of
+lost frames due to LAN delays.
+
+The server puts out "graphics frames" at a high rate:  about the same
+as motion picture film.  Each client picks these frames off the net as
+fast as it can draw them.  Thus, both fast graphics machines and slow
+graphics machines stay "synchronized" in the world, but fast machines
+will be displaying more frames per second and will have a smoother
+sense of motion.
+.
+
+##############################################################
+Races
+Various racecourses are included with DRIVE.  Races are controlled
+by the drive_server.  The person running the server can select from
+various racecourses; change their timing; and change their parameters.
+
+Races are run by running from checkpoint to checkpoint on a racecourse.
+Depending on the configuration of the drive_server, your vehicle is timed
+either from the start of a race or from when it crosses the Starting Line.
+Races end either when a timer runs out and/or when someone crossed the
+Finish Line (depending on the server).  The vehicle that crossed the 
+highest number of consecutive checkpoints in the least amount of time
+is the winner.
+.
+
+##############################################################
+Views
+By pressing certain keys, you can "turn your head" and look out the sides
+and rear of your vehicle.
+^  The 'f' key (Forward) looks out the front of the vehicle.
+^  The 'a' key (Aft) looks out the rear of the vehicle.
+^  The 's' key (Sinister) looks left.
+^  The 'd' key (Dexter) looks right.
+
+When in Skycam Mode (q.v.), these keys move the camera differently.
+.
+
+##############################################################
+Skycam Mode
+This is a mode that allows you to see from a different perspective the
+world around your vehicle.  When in Skycam Mode, you end up always
+looking toward your vehicle, but you can control the angle at which you
+view it, as well as the distance of the viewpoint from the vehicle.
+Thus, a great deal of the scene around your vehicle may be viewed,
+depending on how you position the viewpoint.
+
+To enter Skycam Mode, press the 'v' key or the 'Home' key.  The
+camera can be positioned with the arrow keys and other keys:
+^  The left arrow and the 's' key rotate the camera left.
+^  The right arrow and the 'd' key rotate the camera right.
+^  The down arrow and the 'a' key rotate the camera down.
+^  The up arrow and the 'f' key rotate the camera up.
+^  The 'Next' key and the 'i' key move the camera closer to the vehicle.
+^  The 'Previous' key and the 'o' key move the camera further from the vehicle.
+
+To exit Skycam Mode, press the 'Home' or 'v' key again.
+.
+##############################################################
+Turbo
+Pressing the 't' key (for "Turbo") will give your vehicle a burst of power.
+Races can be configured to run with no turbo, limited turbo, and unlimited
+turbo.  With limited turbo, you get a limited number of presses of the 't'
+key per race -- use them wisely.  With unlimited turbo, you can use as much
+turbo as you like, though at high speeds vehicles may be difficult to 
+control.
+.
+
+##############################################################
+Guns
+The drive_server can be set to run with guns in several modes.
+With guns disabled you cannot fire.  With them enabled, the server
+can be set so that there is a visual explosion when a shell impacts
+something.  In addition, it can be set to throw vehicles away from the
+impact point, or to reset any vehicle hit.  To fire a shell, press the
+middle button.
+
+When guns are enabled, you can get one of two special "gunsight view"'s,
+complete with crosshair, by pressing 'g'.  The first time 'g' is pressed,
+a crosshair is drawn in the main view window.  If 'g' is pressed again,
+a telescopic view, which can be zoomed in or out with the 'Prev' and 'Next'
+keys, is displayed in the main view window.
+You can also direct your attention
+to the other views such as left and right while in "Gunsight Mode", but
+when looking anywhere but where the gun is actually pointed, the
+crosshairs will not be drawn.  Pressing 'g' once more will return the
+main view window to its original state (with no crosshairs displayed).
+
+The tank can actually move its gun and turret independent of the vehicle.
+When the 'Shift' key is pressed, the wheel and accelerator are locked in
+their current position, and the mouse position controls the aiming of the
+gun:  up, down, left, and right, as you would expect.  No other vehicle
+can aim its gun independent of the vehicle body.
+
+MINES can be dropped behind a vehicle when guns are enabled; just hold 
+down the 'Shift' key and press the middle button.  Mines dropped from
+a vehicle will be active for 10 seconds, then dissappear. Any object 
+running into a mine will set off an explosion, with similar effects
+as described above for shells.
+.
+
+##############################################################
+Night Driving
+The drive_server can be set up to run so that everything looks like a
+night view.  When running at night, headlights become important.  The
+'l' key (for "Lights") turns your headlights on and off.  There is also
+a highbeam/lowbeam control toggled by the 'h' key.
+
+Headlights should be left off during the day, because on many machines
+performance will be reduced when headlights are on.
+.
+
+##############################################################
+Space Vehicles
+Certain vechicle types (X Fighter, for example) have significantly different
+controls than the normal car vehicles.  To control these space vehicles,
+use the following:
+^ Mouse Left/Right : Turn left and right
+^ Mouse Down:   Pull nose of vehicle up (climb)
+^ Mouse Up:     Push nose of vehicle down (dive)
+^ Mouse Buttons  Left: Roll Left  Right: Roll Right  Middle: Fire
+^  (Use Shift+Mouse buttons for faster roll)
+^ 1-0 for 10-100% throttle
+^ ` for 0% throttle 
+^ z,x:  Increment / Decrement throttle
+
+These Vehicles are anti-gravity, rear thrust propulsion.  If the engines are
+shut completely off, the vehicle will slowly sink to the ground.  Otherwise,
+the vehicle ignores gravity.
+.
+
+##############################################################
+Radar Window
+Under the 'Windows' menu item in the menu bar at the bottom of the main
+window is a button to turn the "Radar" window on and off.  At the center of
+the Radar Window is a dot representing your vehicle.  The Radar Window
+shows the positions of all other vehicles in the simulation.  Distances in
+the Radar Window are not linear -- the distance of a dot from the center of
+the window is proportional to the square root of the distance of the
+corresponding vehicle to your vehicle.
+.
+
+##############################################################
+Dual Radar Window
+If Dual Radar is specified in the .driverc file, a '3 Dimensional' radar
+will be used.  The 3D radar has two windows:  The upper window is 
+the normal ground (X-Z) plane radar, showing the position of vehicles 
+position relative to the way your vehicle is facing; front, back, left
+and right positions are shown.  In the lower window, the X-Y plane is
+shown, indicating whether the vehicles are above or below you (again
+depending on the way you are facing) as well as if they are to your left
+or right.  Additionally, a wireframe representation of the ground plane
+is drawn -- in red if you are pointing towards the ground, and in green
+if you are facing away from the ground.  With these two radar windows,
+you should have a fairly good idea of where your vehicle is with respect
+to other vehicles and the ground.
+.
+
+##############################################################
+Leaders Window
+Under the 'Windows' menu item in the menu bar at the bottom of the main
+window is a button to turn the "Leaders" window on and off.  The Leaders
+Window shows the current race standings.  Each time a vehicle in a race
+goes through a checkpoint, the standings are updated.
+.
+
+##############################################################
+Watch Mode
+When in Watch Mode, the user is not actually controlling a vehicle; he
+or she is watching another driver as if he were a passenger in the
+other driver's vehicle.  All of the keys that control the view work
+correctly in Watch Mode, but the user cannot steer or otherwise affect
+the car.
+
+When in Watch Mode, by pressing the "Next Vehicle" button, the user can
+change the point-of-view to be that of the next vehicle in the
+simulation.
+
+When in Automatic Watch Mode, the point-of-view automatically switches
+to the next vehicle every few seconds.
+.
+
+##############################################################
+driverc
+Many of the parameters of DRIVE can be controlled through the ".driverc"
+file in the user's HOME directory.  Here is a list of options and choices
+for the .driverc file:
+^  Vehicle:  {any vehicle name}
+^    The default vehicle is selected.
+^  Color: {0.0-1.0} {0.0-1.0} {0.0-1.0}
+^    By specifying red, green, and blue values between 0.0 and 1.0, the
+^    default color is set.  Very dark colors will be mapped to lighter
+^    colors, since dark colors do not show up on the Radar Window.
+^  Colorname:  {X color name}
+^    You can also specify the color with any X Named Color (see rgb.txt).
+^  Autostart
+^    The simulation will not go through vehicle and color selection,
+^    it will use the defaults.
+^  Confine Cursor
+^    The simulation will start with the cursor confined to the main window.
+^  Small Window
+^    The simulation will always start in a small window.
+^  Radar
+^    The Radar Window should be mapped initially.
+^  Server: {hostname}
+^    Specifies the default place to look for a running drive_server.
+^  Nickname: {string}
+^    The name that should be displayed for your vehicle when the "Who"
+^    key is pressed.
+^  Watch Mode
+^    DRIVE should start up in Watch Mode (q.v.).
+^  Automatic Watch Mode
+^    DRIVE should start up in Automatic Watch Mode.
+^  Standings
+^    The Leader Standings Window should be mapped initially.
+^  Dual Radar
+^    Turns on the Dual Radar mode. (See the Dual Radar help section)
+^
+^Several options are only used in Watch Mode:
+^  Automatic Watch Frames:  {framecount}
+^    The number of frames before switching to a new vehicle.
+^  Automatic Camera
+^    Camera movements are automated.
+^  Overhead Camera
+^  Camera Up Angle: {0-90}
+^    Elevation angle of the camera in SkyCam Watch Mode.
+^  Camera Around Angle: {0-359}
+^    Azimuth of the camera in SkyCam Watch Mode.
+^  Camera Distance:  {distance}
+^    Distance to the camera in SkyCam Watch Mode.
+.
+
+##############################################################
+Command-Line Options
+The drive program is run as follows:  drive [-w|-W] [hostname].
+^  The -w option starts the program in Watch Mode.
+^  The -W option starts the program in Automatic Watch Mode.
+^  "hostname" specifies where the drive_server is running.
+.
+
+##############################################################

@@ -1,0 +1,153 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+# Skirt
+Object: cone
+Width: 135
+Radius: 120
+Y: 150
+Height: 120
+Color: 0 0 1
+
+# Top
+Object: pillar
+Radius: 120
+Height: 60
+Color: 0 0 1
+Y: 270
+
+Object: sphere
+Radius: 120
+Y: 330
+Color: 0 0 1
+
+# Breasts
+Object: sphere
+Radius: 60
+Color: 0 0 1
+Position: -45 345 -90
+
+Object: sphere
+Radius: 60
+Color: 0 0 1
+Position: 45 345 -90
+
+# Legs
+Object: pillar
+Radius: 30
+Height: 240
+Color: 1 0.7 0.7
+X: -60
+
+Object: pillar
+Radius: 30
+Height: 240
+Color: 1 0.7 0.7
+X: 60
+
+# Feet
+Object: mound
+Length: 75
+Width: 120
+Height: 60
+X: -90
+Color: 1 0 0
+
+Object: mound
+Length: 75
+Width: 120
+Height: 60
+X: 90
+Color: 1 0 0
+
+# Head
+Object: sphere
+Radius: 75
+Y: 510
+Color: 1 0.83 0.73
+
+# Left arm (stage left)
+Object: pillar
+Radius: 30
+Height: 180
+Color: 0 0 1
+X: 63
+Y: 393
+Xrot: 135
+Yrot: -90
+
+# Right arm (stage right)
+Object: pillar
+Radius: 30
+Height: 180
+Color: 0 0 1
+X: -63
+Y: 393
+Xrot: 135
+Yrot: 90
+
+# Hat
+Object: cone
+Width: 105
+Radius: 0
+Height: 80
+Y: 540
+Xrot: 20
+Color: 1 0 0
+
+# Eyes
+
+Object: oval
+Width: 22.5
+Length: 22.5
+Color: 0 0 0
+Xrot: -90
+Y: 540
+X: -30
+Z: -60
+
+Object: oval
+Width: 22.5
+Length: 22.5
+Color: 0 0 0
+Xrot: -90
+Y: 540
+X: 30
+Z: -60
+
+# Nose
+
+Object: oval
+Width: 22.5
+Length: 22.5
+Color: 1 0.4 0.4
+Xrot: -90
+Y: 517.5
+Z: -82.5
+
+# Mouth
+
+Object: curvewall
+Width: 15
+Radius: 45
+Height: 64.5
+Angle: 180
+Yrot: 180
+Xrot: 90
+Color: 1 0 0
+Y: 510

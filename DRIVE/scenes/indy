@@ -1,0 +1,380 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#
+# Indy 
+#
+# Designed by Brian Atkins
+
+Racecourse: Big Indy
+Practice Seconds: 0
+Race Seconds: 180
+Start Positions: 6
+Start SceneX: 2
+Start SceneZ: -8
+Start Angle: 270
+Start Position: -700 0 -907.5
+Turbo Mode: 1
+Turbo Boosts: 10
+
+
+# Highway turnoff 
+Scene Location: 0 -8
+
+# north-south main road
+Object: road
+Width: 30
+Length: 2000
+Position: 0 0 -1000
+Yrot: 0
+
+Object: generic sign
+Label: BIG INDY\<-
+Size: 40 60 2
+Color: 0 1 0
+Position: 50 0 -300
+Yrot: 180
+
+# exit curve
+Object: curve
+Radius: 415
+Position: 400 0 -525
+Width: 30
+Angle: 90
+Yrot: 180
+
+# entrance
+Object: road
+Width: 60
+Length: 600
+Position: 400 0 -930
+Yrot: -90
+
+Object: ground
+
+# turn 2 enter
+Scene Location: 1 -7
+
+Object: wall
+Width: 6
+Height: 10
+Length: 200
+Position: 1000 -3 902
+Color: 0.0 0.0 0.0
+Yrot: 93
+Zrot: -30
+
+Object: bank
+Height: 40
+Width: 90
+Radius: 1900
+Angle: 180
+Position: 1000 0 -1000
+Yrot: 90
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 1810
+Angle: 180
+Position: 1000 0 -1000
+Yrot: 90
+Color: 1 1 0
+
+Object: ground
+
+
+Scene Location: 1 -8
+
+Object: bank
+Height: 40
+Width: 90
+Radius: 1900
+Angle: 180
+Position: 1000 0 1000
+Yrot: 90
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 1810
+Angle: 180
+Position: 1000 0 1000
+Yrot: 90
+Color: 1 1 0
+
+Object: wall
+Width: 2
+Height: 4
+Length: 100
+Position: 900 0 -855
+Color: 1.0 1.0 0
+Yrot: -90
+
+# more entrence
+
+Object: road
+Width: 60
+Length: 2000
+Position: -1000 0 -930
+Yrot: -90
+
+Object: ground
+
+# home stretch
+Scene Location: 2 -8
+
+Object: road
+Width: 90
+Length: 2000
+Position: -1000 0 -855
+Yrot: -90
+
+Object: wall
+Width: 2
+Height: 2
+Length: 1000
+Position: -1000 0 -900
+Color: 1.0 1.0 0
+Yrot: -90
+
+Object: road
+Width: 90
+Length: 1750
+Position: -1000 0 -945
+Yrot: -90
+
+Object: road
+Width: 90
+Length: 450
+Position: 700 0 -945
+Yrot: -76
+
+Object: wall
+Width: 10
+Height: 5
+Length: 110
+Position: 600 0 -995
+Color: 1 1 0
+Yrot: -90
+
+Object: wall
+Width: 10
+Height: 5
+Length: 400
+Position: 700 0 -995
+Color: 1 1 0
+Yrot: -76
+
+Object: start
+Length: 13
+Width: 100
+Height: 30
+Label: START
+Radius: 0.5
+Position: 0 0 -950
+Yrot: -90
+Type: 1 6
+
+Object: finish
+Length: 20
+Width: 45
+Height: 30
+Label: FINISH
+Radius: 0.5
+Position: 0 0 -877.5
+Yrot: -90
+Type: 1 6
+
+Object: wall
+Width: 2
+Height: 2
+Length: 400
+Position: -200 0 -855
+Color: 1.0 1.0 0
+Yrot: -90
+
+Object: checkpoint
+Length: 20
+Width: 45
+Height: 30
+Label: CHECKPOINT 3
+Radius: 0.5
+Position: 0 0 -832.5
+Yrot: -90
+Type: 1 3
+
+Object: wall
+Width: 7
+Height: 7
+Length: 100
+Position: 0 0 -800
+Color: 1.0 0.0 1.0
+Yrot: -90
+Xrot: -90
+
+Object: checkpoint
+Length: 20
+Width: 45
+Height: 30
+Label: CHECKPOINT 2
+Radius: 0.5
+Position: -990 0 -832.5
+Yrot: -90
+Type: 1 2
+
+Object: wall
+Width: 2
+Height: 2
+Length: 200
+Position: -900 0 -855
+Color: 1.0 1.0 0
+Yrot: 90
+
+Object: checkpoint
+Length: 20
+Width: 45
+Height: 30
+Label: CHECKPOINT 5
+Radius: 0.5
+Position: -990 0 -877.5
+Yrot: -90
+Type: 1 5
+
+Object: ground
+
+# back stretch
+Scene Location: 2 -7
+
+Object: road
+Width: 90
+Length: 2000
+Position: -1000 0 855
+Yrot: -90
+
+Object: skyscraper
+Length: 2000
+Width: 50
+Height: 100
+Position: -1000 -25.5 767
+Xrot: -30
+
+Object: twopole sign
+Width: 150
+Height: 0.001
+Length: 30
+Position: 0 30 855
+Label: HP OPENVIEW\NETWORK NODE MANAGER
+Color: 0 0 1
+Yrot: 90
+
+Object: skyscraper
+Length: 2000
+Width: 50
+Height: 100
+Position: -1000 0 900
+Xrot: 30
+
+Object: checkpoint
+Length: 20
+Width: 45
+Height: 30
+Label: CHECKPOINT 1
+Radius: 0.5
+Position: 990 0 832.5
+Yrot: 90
+Type: 1 1
+
+Object: wall
+Width: 2
+Height: 2
+Length: 220
+Position: 790 0 855
+Color: 1.0 1.0 0
+Yrot: -90
+
+Object: checkpoint
+Length: 20
+Width: 45
+Height: 30
+Label: CHECKPOINT 4
+Radius: 0.5
+Position: 990 0 877.5
+Yrot: 90
+Type: 1 4
+Object: ground
+
+# turn 1 enter
+Scene Location: 3 -8
+
+Object: bank
+Height: 40
+Width: 90
+Radius: 1900
+Angle: 180
+Position: -1000 0 1000
+Yrot: 270
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 1810
+Position: -1000 0 1000
+Angle: 180
+Yrot: 270
+Color: 1 1 0
+
+Object: ground
+
+Scene Location: 3 -7
+
+Object: wall
+Width: 6
+Height: 10
+Length: 200
+Position: -1000 -3 902
+Color: 0.0 0.0 0.0
+Yrot: -93
+Zrot: 30
+
+Object: wall
+Width: 2
+Height: 4
+Length: 100
+Position: -1000 0 855
+Color: 1.0 1.0 0
+Yrot: -90
+
+Object: bank
+Height: 40
+Width: 90
+Radius: 1900
+Angle: 180
+Position: -1000 0 -1000
+Yrot: 270
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 1810
+Angle: 180
+Position: -1000 0 -1000
+Yrot: 270
+Color: 1 1 0
+
+Object: ground
+

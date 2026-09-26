@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwFont - maintain references to TexFont objects</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwFont - maintain references to TexFont objects</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>FileName</td>
+<td>0S</td>
+<td>Name of the font file, if the font is to be loaded from disc</td>
+</tr>
+<tr><td>FontHeight</td>
+<td>1I</td>
+<td>Desired font height, if one of the incuded static fonts should
+  be used</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<p>None</p>
+<h2>DESCRIPTION</h2>
+<p>The hwFont class can be used to maintain references to font files.
+There is no requirement to use this class; however, it makes the
+programmer's job slightly easier.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    hwObject myFont, label;
+
+    myFont = hwFont-&gt;create( hwFont );
+    myFont-&gt;modify( myFont, hwStrFileName, HW_TYPE_STRING, &quot;fontfile.txf&quot; );
+
+    label = hwLabel-&gt;create( hwLabel );
+    label-&gt;modify( label, hwStrFont, HW_TYPE_OBJECT, myFont );
+    label-&gt;modify( label, hwStrLabel, HW_TYPE_STRING, &quot;Howdy!&quot; );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    hwLabel label {
+        Label = &quot;Howdy!&quot;
+        Font = hwFont { FileName = &quot;fontfile.txf&quot; }
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="TexFont.htm">TexFont</a></p>
+</body>
+</html>

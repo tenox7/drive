@@ -1,0 +1,29 @@
+OBJS=dirent_win.obj \
+	dlist.obj \
+	fastmalloc.obj \
+	filenames.obj \
+	ipc.obj \
+	message.obj \
+	nquery.obj \
+	random.obj \
+	scanargs.obj \
+	utils.obj \
+	version.obj
+
+LIBS=..\shared.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../libnum -I../libphysics -I../include -I../../HW/Inc -I../libprims
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+../shared.lib:     $(OBJS)
+	$(LIB32) @<<
+    $(OBJS) -out:../shared.lib
+<<
+

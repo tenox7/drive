@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>spinner - a playback program for HoverWare animations</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>spinner - a playback program for HoverWare animations</p>
+<h2>SYNOPSIS</h2>
+<p>spinner [-time] [-opt n] [-wire] [-rgb] [-windowid id] [-full]
+file</p>
+<h2>DESCRIPTION</h2>
+<p>The spinner program will play back HoverWare animations to a
+resizable window. The options to spinner are as follows:</p>
+
+<dl>
+  <dt>-time </dt>
+  <dd>Provide a frames-per-second rate on the console from which
+  spinner was invoked</dd>
+  <dt>-opt n </dt>
+  <dd>Override the default optimization level of all of the
+  HoverWare objects in the animation.</dd>
+  <dt>-wire </dt>
+  <dd>Play the animation in wireframe mode</dd>
+  <dt>-rgb </dt>
+  <dd>Play the animation in color-per-vertex mode instead of
+  texture mapped mode (which is the default)</dd>
+  <dt>-windowid id </dt>
+  <dd>Given a specified window ID, spinner will play the animation
+  in that window. The window should be suitable for 3D graphics; that
+  is, a truecolor, double-bufferable window, in the image planes, if
+  possible</dd>
+  <dt>-full </dt>
+  <dd>Play the animation in full-screen mode</dd>
+</dl>
+<p>The window that the animation is playing in may be resized at
+any time; additionally, the following keyboard inputs are recognized:</p>
+
+<dl>
+  <dt>&lt;space&gt; </dt>
+  <dd>Toggle the pause state of spinner</dd>
+  <dt>&lt;r&gt; </dt>
+  <dd>Restart the animation</dd>
+  <dt>&lt;q&gt; </dt>
+  <dd>Exit spinner</dd>
+</dl>
+<p>Spinner may also be exited by using the close menu item in the
+window menu.</p>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    background-color:#FFFFFF;
+    font-family: Times;
+    font-size:14px;
+    text-align:left;
+    margin:5x;
+    padding:0px 0px 0px 0px;
+}
+
+h1 {
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    margin:0px;
+    padding:0px;
+}
+h2 {
+    font-size:24px;
+    font-weight:bold;
+    margin:0px;
+    padding:0px;
+}
+h3 {
+    font-size:18px;
+    font-weight:bold;
+    margin:0px;
+    padding:0px;
+}
+h4 {
+    font-size:16px;
+    margin:0px;
+    padding:0px;
+}
+
+p {
+    padding: 0px 0px 0px 20px;
+}
+
+dt {
+    font-weight:bold;
+}
+
+dl {
+    padding: 0px 0px 0px 20px;
+}
+
+pre {
+        padding: 0px 0px 0px 30px;
+}
+
+table {
+        padding: 5px 5px 5px 30px;
+        border-width: 0px;
+        border-spacing: 0px;
+        border-style: none;
+        border-color: gray;
+        border-collapse: separate;
+        background-color: white;
+}
+table th {
+        border-width: 1px;
+        padding: 5px;
+        border-style: solid;
+        border-color: gray;
+        background-color: #CCC;
+        -moz-border-radius: 0px 0px 0px 0px;
+}
+table td {
+        vertical-align:top;
+        border-width: 1px;
+        padding: 5px;
+        border-style: solid;
+        border-color: gray;
+        background-color: white;
+        -moz-border-radius: 0px 0px 0px 0px;
+}
+
+
+a {
+    font-weight:bold;
+    color: navy;
+    background-color: #FFFFFF; text-decoration:none;
+}
+a:hover {
+    font-weight:bold;
+    color: #FF0000;
+    background-color: #FFFFFF;
+    text-decoration:none;
+}
+
+  
+
+td.text {background-color: #ffffff; width: 80%; }
+td.link {background-color: #ffffff; width: 20%; }
+span.y {font-family: Harlow; font-size: 120%; }
+span.redletter {color: #A50042; font-size: 130%; font-weight: bold; }

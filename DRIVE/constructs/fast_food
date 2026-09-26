@@ -1,0 +1,237 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Fast Food Restaraunt
+#
+# This construct fills a block 160 x 180 feed and should be
+# positioned 90 feet from the side of the road in the +Z
+# direction (before rotation).
+#
+# Edgar Circenis
+#
+
+Object: skyscraper
+Height: 30
+Position: -25 -20 10
+Width: 30
+Length: 50
+
+# roof
+
+Object: wall
+Height: 1
+Width: 60
+Length: 40
+Position: 0 10 5
+Color: 1 0.7 0
+Zrot: 180
+
+Object: bump
+Position: 0 10 25
+Length: 40
+Width: 60
+Height: 5
+Color: 1 1 0
+
+Object: wall
+Width: 44
+Length: 24
+Height: 5
+Position: 0 15 13
+Color: 1 0.7 0
+
+Object: generic sign
+Label: HUNGRY CHEF
+Width: 38
+Length: 4
+Height: 0.01
+Position: 0 15.5 12.5
+Color: 1 0.7 0
+
+# lot
+
+Object: parking lot
+Width: 120
+Length: 70
+Position: 0 0 -35
+
+# driveways
+
+Object: road
+Width: 15
+Length: 20
+Position: -25 0 -90
+
+Object: road
+Width: 15
+Length: 20
+Position: 25 0 -90
+
+# Drive thru
+
+Object: road
+Width: 15
+Length: 40
+Position: -35 0 0
+
+Object: road
+Width: 15
+Length: 40
+Position: 35 0 0
+
+Object: curve
+Width: 15
+Radius: 22.5
+Angle: 90
+Position: -20 0 40
+Yrot: 90
+
+Object: curve
+Width: 15
+Radius: 22.5
+Angle: 90
+Position: 20 0 40
+
+Object: road
+Width: 15
+Length: 40
+Position: 20 0 55
+Yrot: 90
+
+# our hero
+
+Object: wall
+Width: 30
+Length: 15
+Height: 3
+Position: 0 0 -40
+
+Construct: hungry_chef
+Position: 0 3 -32.5
+
+Object: generic sign
+Label: PRESS BUTTON\TO HEAR\HUNGRY CHEF BELCH
+Color: 1 1 1
+Size: 2.5 5 0.001
+Position: 0 0.25 -40.08
+
+Object: oval
+Color: 1 0 0
+Length: 0.3
+Width: 0.3
+Position: -3 1.5 -40.08
+Xrot: -90
+
+# big sign
+
+Object: generic sign
+Label: HUNGRY\CHEF
+Color: 1 1 0
+Size: 25 45 0.01
+Position: 0.5 70 -75
+Yrot: 90
+
+Object: generic sign
+Label: HUNGRY\CHEF
+Color: 1 1 0
+Size: 25 45 0.01
+Position: -0.5 70 -75
+Yrot: -90
+
+Object: pillar
+Radius: 1
+Height: 70
+Position: 0 0 -75
+Color: 1 1 1
+
+# trees
+
+Object: deciduous
+Type: cylinder
+Height: 25
+Radius: 0.5
+Width: 15
+Position: 50 0 30
+
+Object: deciduous
+Type: round
+Height: 25
+Radius: 0.5
+Width: 20
+Position: 50 0 10
+
+Object: deciduous
+Type: cylinder
+Height: 25
+Radius: 0.5
+Width: 15
+Position: 70 0 -20
+
+Object: deciduous
+Type: cylinder
+Height: 25
+Radius: 0.5
+Width: 15
+Position: -50 0 30
+
+Object: deciduous
+Type: round
+Height: 25
+Radius: 0.5
+Width: 20
+Position: -50 0 10
+
+Object: deciduous
+Type: cylinder
+Height: 25
+Radius: 0.5
+Width: 15
+Position: -70 0 -20
+
+# drive-thru sign
+
+Object: twopole sign
+Label: DRIVE THRU
+Size: 4 18 10
+Color: 1 1 1
+Position: 35 0 0
+
+# menu
+
+Object: generic sign
+Label: MENU\HUNGRY BURGER    2.50\DBL HUNGRY BRGR  3.50\FRIES     .75\DRINK      .99
+Color: 1 0.7 0
+Size: 8 10 0.5
+Position: 26 0 25
+Yrot: 90
+
+# pick up window
+
+Object: wall
+Width: 6
+Length: 4
+Height: 10
+Position: -27 0 25
+Yrot: -90
+
+Object: flat
+Color: 0.25 0.9 1
+Width: 4
+Length: 4
+Xrot: -90
+Yrot: -90
+Position: -27.08 5 25

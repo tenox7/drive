@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwLayout - basic nestable layout of HoverWare GUI elements</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwLayout - basic nestable layout of HoverWare GUI elements</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwGUI.htm">hwGUI</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Children</td>
+<td>*O</td>
+<td>List of children of this Layout container</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<p>None</p>
+<h2>DESCRIPTION</h2>
+<p>The hwLayout widget may be used to nest a collection of child
+widgets. This widget does not enforce any layout constraints on its
+children; it merely provides a bounding box relative to which the
+children are positioned, as well as a hierarchy for event management.</p>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A layout with a 10% border all around
+    hwLayout layout {
+        PosX = 100   PosY = 100
+        Width = 800  Height = 800
+        Align = HW_GUI_FRACTIONAL
+        Children = {
+            # A list of children...
+        }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwGUI.htm">hwGUI</a>, <a
+href="hwRowCol.htm">hwRowCol</a></p>
+</body>
+</html>

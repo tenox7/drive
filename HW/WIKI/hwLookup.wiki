@@ -1,0 +1,70 @@
+== NAME ==
+hwLookup - routines to manage class, object, and constant names for hwParse
+
+== SYNOPSIS ==
+{{{
+    #include "hw.h"
+
+    void hwRegisterConstant( char *name, hwInt32 type, void *val );
+    void hwRegisterClass( hwObject cls );
+    void hwRegisterObject( hwObject obj );
+    void hwRegisterCallback( char *name, hwCallback cbProc );
+    void hwUnregisterObjects( void );
+    hwInt32 hwFindConstant( char *name, void **pVal );
+    hwObject hwFindClass( char *name );
+    hwObject hwFindObject( char *name );
+    hwCallback hwFindCallback( char *name );
+}}}
+
+== DESCRIPTION ==
+These routines help manage the namespace for [[hwParseFile]] and
+[[hwParseFile|hwParseArray]].  Their usage is as follows:
+
+; hwRegisterConstant
+: Register a constant for use in parsing.  The given name is inserted into the constant table with the given type and value.
+
+; hwRegisterClass
+: Register a class for use in parsing.  It is assumed that the class is appropriately named.
+
+; hwRegisterObject
+: Register an object for use in parsing.  It is assumed that the object is appropriately named.
+
+; hwRegisterCallback
+: Register a callback for use with various classes (typically, GUI classes).  The callback is of type "cbProc".
+
+; hwUnregisterObjects
+: Unregister all registered objects - this allows HoverWare to start from a blank canvas when needed
+
+; hwFindConstant
+: Find a constant in the registry.  Its return value is the type of the constant; a pointer to the constant value is returned in *pVal.
+
+; hwFindClass
+: Find a class in the registry.  Returns the hwObject class, or NULL if the class was not found.
+
+; hwFindObject
+: Find an object in the registry.  Returns the hwObject, or NULL if the object was not found.
+
+; hwFindCallback
+: Find a callback in the registry.  Returns the hwCallback, or NULL if the callback was not found.
+
+== C EXAMPLE ==
+{{{
+    hwInt32 nobjs;
+    hwObject *objs;
+    hwObject obj;
+
+    nobjs = hwParseFile("example.hw", &objs);
+
+    // This will find the sphere in the global namespace, assuming that
+    // example.hw includes the object file example below.
+    obj = hwFindObject( "MySphere" );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    hwSphere MySphere {
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwParseFile]], [[hwParseFile|hwParseArray]]

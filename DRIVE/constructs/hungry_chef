@@ -1,0 +1,166 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Bottom
+Object: sphere
+Radius: 8
+Y: 18
+Color: 0 0 1
+
+# Top
+Object: pillar
+Radius: 8
+Height: 4
+Color: 1 0 0
+Y: 18
+
+Object: sphere
+Radius: 8
+Y: 22
+Color: 1 0 0
+
+# Legs
+Object: pillar
+Radius: 2
+Height: 16
+Color: 0 0 1
+X: -4
+
+Object: pillar
+Radius: 2
+Height: 16
+Color: 0 0 1
+X: 4
+
+# Feet
+Object: mound
+Length: 5
+Width: 8
+Height: 4
+X: -6
+Color: 0 0 0
+
+Object: mound
+Length: 5
+Width: 8
+Height: 4
+X: 6
+Color: 0 0 0
+
+# Head
+Object: sphere
+Radius: 5
+Y: 34
+Color: 1 0.83 0.73
+
+# Left arm (stage left)
+Object: pillar
+Radius: 2
+Length: 12
+Color: 1 0 0
+X: 4.2
+Y: 26.2
+Xrot: 135
+Yrot: -90
+
+# Right arm (stage right)
+Object: pillar
+Radius: 2
+Length: 12
+Color: 1 0 0
+X: -4.2
+Y: 26.2
+Xrot: 45
+Yrot: 90
+
+# Spoon
+Object: pillar
+Radius: 0.5
+Height: 7
+X: -11.68
+Y: 32.68
+Color: 0.58 0.27 0
+
+Object: curvewall
+Radius: 1.5
+Width: 1.5
+Angle: 360
+Height: 0.5
+X: -11.68
+Y: 41.18
+Color: 0.58 0.27 0
+Xrot: -90
+
+Object: curvewall
+Radius: 1.5
+Width: 1.5
+Angle: 360
+Height: 0.5
+X: -11.68
+Y: 41.18
+Color: 0.58 0.27 0
+Xrot: -90
+Yrot: 180
+
+# Chef hat
+Object: pillar
+Radius: 3.5
+Height: 8
+Color: 1 1 1
+Y: 38
+
+# Eyes
+
+Object: oval
+Width: 1.5
+Length: 1.5
+Color: 0.5 0.5 1
+Xrot: -90
+Y: 36
+X: -2
+Z: -4
+
+Object: oval
+Width: 1.5
+Length: 1.5
+Color: 0.5 0.5 1
+Xrot: -90
+Y: 36
+X: 2
+Z: -4
+
+# Nose
+
+Object: oval
+Width: 1.5
+Length: 1.5
+Color: 1 0.4 0.4
+Xrot: -90
+Y: 34.5
+Z: -5.5
+
+# Mouth
+
+Object: curvewall
+Width: 1
+Radius: 3
+Height: 4.3
+Angle: 180
+Yrot: 180
+Xrot: 90
+Color: 1 0 0
+Y: 34

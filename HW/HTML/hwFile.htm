@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwFile - create an object which refers to a HoverWare file</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwFile - create an object which refers to a HoverWare file</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>FileName</td>
+<td>0S</td>
+<td>The name of the file to be loaded by this object</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<p>None</p>
+<h2>DESCRIPTION</h2>
+<p>The hwFile class is a convenient way in which to refer to another
+HoverWare object file. The FileName is a string which names the file
+to be read and displayed when the hwFile object's draw routine is
+called.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Parse and display &quot;foo.hw&quot; */
+    hwObject
+        file;
+
+    file = hwFile-&gt;create( hwFile );
+    file-&gt;modify( file, hwStrFileName, HW_TYPE_STRING, &quot;foo.hw&quot; );
+    file-&gt;draw( file );
+    file-&gt;destroy( file );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # Indirectly refer to the HoverWare file foo.hw
+    hwFile file {
+        FileName = &quot;foo.hw&quot;
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwParseFile.htm">hwParseFile</a></p>
+</body>
+</html>

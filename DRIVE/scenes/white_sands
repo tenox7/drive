@@ -1,0 +1,2081 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+Racecourse:             White Sands
+Practice Seconds:       0 
+Pre-Race Seconds:       5 
+Race Seconds:           120 
+Post-Race Seconds:      5 
+Start SceneX:           0 
+Start SceneZ:           10
+Start Angle:            0 
+Start Position:         -50 1 100 
+Turbo Mode:             0 
+Turbo Boosts:           0 
+Guns Mode:              0 
+Ammo:                   0 
+
+# 
+#
+#
+Scene Location:  0 10
+
+Object:  spline road 
+Position:  0 0 0
+Width:  30 
+Color:  0 0 0
+Data:  3 4
+0  0  -1000  30  
+0  0  -500  80  
+0  0  0  120  
+
+Object:  road 
+Position:  0 0 0
+Length:  1000.1 
+Width:  120 
+Color:  0 0 0
+
+Object:  pillar 
+Position:  -300 10 650
+Size:  100 100 50
+Color:  0.6 0.6 0.6
+Radius:  10 
+
+Construct: flag
+Position:  -300 60 650
+Color:  1.0 0.0 1.0
+
+Object:  mound 
+Position:  -300 0 650
+Yrot:  90
+Size:  150 150 10
+
+Object:  curvewall 
+Position:  -300 0 650
+Yrot:  90
+Size:  150 5 15
+Color:  0.6 0.6 0.6
+Radius:  50 
+Angle:  360 
+
+Object:  flat 
+Position:  0 -0.25 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  539 0 -564
+Yrot:  211
+Size:  679 321 20
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -524 0 -422
+Yrot:  41
+Size:  679 452 43
+Color:  0.7 0.7 0.7
+
+Object:  cone 
+Position:  -300 60 650
+Width:  12 
+Height:  20 
+Color:  0.6 0 0
+Radius:  1 
+
+Object:  pond 
+Position:  -300 0 650
+Yrot:  85
+Size:  300 550 30
+
+Object:  generic sign 
+Position:  150 0 700
+Type:  
+Label:  White Sands\Rocket Track
+Size:  50 100 5
+Color:  1 1 1
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  -100 0 900
+Type:  
+Label:  200 MPH\Curves Ahead
+Size:  30 50 5
+Color:  1 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  110 0 900
+Label:  By Daryl Poe
+Size:  5 20 5
+Color:  0 0 0
+Radius:  1.5 
+
+Scene Location:  0 11
+
+# Right side walls
+Object:  wall 
+Position:  65 0 0
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 -200
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 -400
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 200
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 400
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 800
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 1000
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 600
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 -600
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  65 0 -800
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+# Left side walls
+Object:  wall 
+Position:  -65 0 0
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 -200
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 -400
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 200
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 400
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 800
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 1000
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 600
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 -600
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+Object:  wall 
+Position:  -65 0 -800
+Size:  5 5 15
+Color:  0.6 0.6 0.6
+
+# Right side lights
+Object:  light 
+Position:  65 13 -800.001
+Xrot:  -90
+Length:  4 
+Width:  5 
+Color:  0 1 0
+Animation Bits:  0x1111 
+
+Object:  light 
+Position:  65 13 -600.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x2222 
+
+Object:  light 
+Position:  65 13 -400.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x4444 
+
+Object:  light 
+Position:  65 13 -200.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x8888 
+
+Object:  light 
+Position:  65 13 -0.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x1111 
+
+Object:  light 
+Position:  65 13 199.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x2222 
+
+Object:  light 
+Position:  65 13 399.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x4444 
+
+Object:  light 
+Position:  65 13 599.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x8888 
+
+Object:  light 
+Position:  65 13 799.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x1111 
+
+Object:  light 
+Position:  65 13 999.99
+Xrot:  -90
+Length:  4 
+Width:  5 
+Color:  0 1 0
+Animation Bits:  0x1 
+
+# Left side lights
+Object:  light 
+Position:  -65 13 -800.001
+Xrot:  -90
+Length:  4 
+Width:  5 
+Color:  0 1 0
+Animation Bits:  0x1111 
+
+Object:  light 
+Position:  -65 13 -600.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x2222 
+
+Object:  light 
+Position:  -65 13 -400.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x4444 
+
+Object:  light 
+Position:  -65 13 -200.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x8888 
+
+Object:  light 
+Position:  -65 13 -0.001
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x1111 
+
+Object:  light 
+Position:  -65 13 199.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x2222 
+
+Object:  light 
+Position:  -65 13 399.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x4444 
+
+Object:  light 
+Position:  -65 13 599.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x8888 
+
+Object:  light 
+Position:  -65 13 799.99
+Xrot:  -90
+Size:  4 5 15
+Color:  0 1 0
+Animation Bits:  0x1111 
+
+Object:  light 
+Position:  -65 13 999.99
+Xrot:  -90
+Length:  4 
+Width:  5 
+Color:  0 1 0
+Animation Bits:  0x1 
+
+Object:  start 
+Position:  0 0 -900
+Type:  1 10
+Label:  Start
+Size:  10 124 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  0 0 900
+Type:  1 1
+Label:  Checkpoint 1
+Size:  10 120 20
+Radius:  0.5 
+
+Object:  road 
+Position:  0 0 -1000
+Length:  2000 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  left curve sign 
+Position:  -60 0 890
+Label: 200
+Size:  10 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  left curve sign 
+Position:  60 0 890
+Label: 200
+Size:  10 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  twopole sign 
+Position:  0 20 0
+Label:  Curves Ahead\200 MPH
+Size:  20 125 0.001
+Color:  0 1 0.2
+Radius:  0.1 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  0 12
+
+Object:  wall 
+Position:  21 0 -713
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  53 0 -809
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  72 0 -911
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  -23 0 -617
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  -70 0 -545
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  -126 0 -476
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  -198 0 -401
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  -277 0 -338
+Size:  5 5 15
+Color:  0 0.8 1
+
+Object:  wall 
+Position:  -503 0 -357
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -572 0 -300
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -629 0 -234
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -682 0 -159
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -726 0 -80
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -764 0 5
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -795 0 121
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  checkpoint 
+Position:  -740 0 900
+Type:  1 2
+Label:  Checkpoint 2
+Size:  10 124 20
+Radius:  0.5 
+
+Object:  wall 
+Position:  -809 0 282
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -809 0 395
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  road 
+Position:  -740 0 280
+Length:  720 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  curve 
+Position:  0 0 281
+Yrot:  180
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  800 
+Angle:  60 
+
+Object:  curve 
+Position:  -740 0 -1000
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  800 
+Angle:  60 
+
+Object:  right curve sign 
+Position:  -328 0 -474
+Label: 200
+Yrot:  40
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  right curve sign 
+Position:  -228 0 -380
+Label: 200
+Yrot:  40
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  guardrail 
+Position:  -800 0 496
+Length:  400 
+Height:  3.5 
+Spacing:  50 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -239 0 102
+Yrot:  30
+Size:  500 300 40
+Color:  0.7 0.7 0.7
+
+Scene Location:  0 14
+
+Object:  checkpoint 
+Position:  -740 0 -950
+Type:  1 3
+Label:  Checkpoint 3
+Size:  20 134 30
+Radius:  0.5 
+
+Object:  wall 
+Position:  -803 0 -840
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -781 0 -661
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -718 0 -428
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -627 0 -205
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -498 0 21
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -341 0 219
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -127 0 423
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  65 0 552
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  269 0 656
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  527 0 747
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  788 0 797
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  checkpoint 
+Position:  990 0 740
+Type:  1 4
+Label:  Checkpoint 4
+Yrot:  -90
+Size:  20 134 30
+Radius:  0.5 
+
+Object:  curve 
+Position:  1000 0 -1000
+Yrot:  90
+Width:  120 
+Color:  0.15 0 0.15
+Radius:  1800 
+Angle:  90 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  706 0 -549
+Yrot:  -31
+Size:  442 247 11
+Color:  0.7 0.7 0.7
+
+Scene Location:  1 14
+
+Object:  wall 
+Position:  -760 0 798
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -477 0 738
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -219 0 637
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  -40 0 540
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  161 0 395
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  353 0 203
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  507 0 -4
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  677 0 -318
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  762 0 -582
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  803 0 -868
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  checkpoint 
+Position:  740 0 -990
+Type:  1 5
+Label:  Checkpoint 5
+Yrot:  180
+Size:  20 120 40
+Radius:  0.5 
+
+Object:  curve 
+Position:  -1000 0 -1000
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  1800 
+Angle:  90 
+
+Object:  land mine 
+Position:  -750 0 -750
+Size:  500 500 1
+Radius:  500 
+
+Object:  generic sign 
+Position:  -300 1 -500
+Type:  
+Label:  land\mine\zone
+Yrot:  90
+Size:  30 50 0.001
+Color:  1 0 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  640 0 -800
+Type:  
+Label:  Straight
+Yrot:  195
+Size:  15 30 5
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  820 0 -800
+Type:  
+Label:  Straight
+Yrot:  195
+Size:  15 30 5
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  1 13
+
+Object:  wall 
+Position:  809 0 892
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  809 0 735
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  wall 
+Position:  812 0 584
+Size:  5 5 15
+Color:  0.8 0.8 0
+
+Object:  deciduous 
+Position:  655 0 628
+Type:  
+Size:  50 50 70
+Color:  0.307068 0.772164 0.00212841
+Radius:  1 
+
+Object:  deciduous 
+Position:  604 0 246
+Type:  
+Size:  -1 40 50
+Color:  0.24438 0.805898 0.198412
+Radius:  1 
+
+Object:  deciduous 
+Position:  840 0 -334
+Type:  
+Size:  4 60 80
+Color:  0.0792336 0.560166 0.180598
+Radius:  1 
+
+Object:  deciduous 
+Position:  617 0 -799
+Type:  
+Size:  4 60 70
+Color:  0.47 0.58679 0.150763
+Radius:  1 
+
+Object:  conifer 
+Position:  593 0 -519
+Size:  4 60 70
+Color:  0.161566 0.831463 0.21794
+Radius:  1 
+
+Object:  conifer 
+Position:  943 0 322
+Size:  4 60 100
+Color:  0.272611 0.670609 0.512881
+Radius:  1 
+
+Object:  road 
+Position:  740 0 -1000
+Length:  2000 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  generic sign 
+Position:  0 1 822
+Type:  
+Label:  finish\ahead
+Xrot:  80
+Yrot:  90
+Size:  50 100 0.001
+Color:  1 0.6 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  200 1 822
+Type:  
+Label:  land\mine\zone
+Yrot:  90
+Size:  30 50 0.001
+Color:  1 0 0
+Radius:  1.5 
+
+Object:  land mine 
+Position:  -500 0 500
+Size:  1000 1000 1
+Radius:  1000 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  0 13
+
+Object:  conifer 
+Position:  -854 0 -446
+Height:  50 
+Color:  0.0887876 0.50951 0.377847
+Radius:  1 
+
+Object:  conifer 
+Position:  -593 0 -790
+Height:  50 
+Color:  0.195583 0.842624 0.366818
+Radius:  1 
+
+Object:  conifer 
+Position:  -618 0 -89
+Yrot:  40
+Height:  50 
+Color:  0.251248 0.858519 0.121511
+Radius:  1 
+
+Object:  conifer 
+Position:  -847 0 446
+Yrot:  420
+Zrot:  5
+Height:  60 
+Color:  0.0389129 0.524328 0.342685
+Radius:  1 
+
+Object:  conifer 
+Position:  -630 0 956
+Yrot:  243
+Zrot:  5
+Height:  60 
+Color:  0.106754 0.875766 0.0809801
+Radius:  1 
+
+Object:  deciduous 
+Position:  -574 0 -593
+Type:  
+Size:  22.5 22.5 30
+Color:  0.34912 0.785158 0.241784
+Radius:  0.675 
+
+Object:  deciduous 
+Position:  -823 0 -255
+Type:  
+Size:  10 22.5 50
+Color:  0.289008 0.779993 0.0229639
+Radius:  0.675 
+
+Object:  deciduous 
+Position:  -542 0 249
+Type:  
+Size:  20 30 55
+Color:  0.276175 0.615819 0.0758158
+Radius:  0.3375 
+
+Object:  mound 
+Position:  -452 0 -465
+Yrot:  30
+Size:  400 200 20
+Color:  0.7 0.7 0.7
+
+Object:  pond 
+Position:  -370 0.5 816
+Yrot:  -30
+Size:  100 400 20
+
+Object:  road 
+Position:  -740 0 -1000
+Length:  2000 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  generic sign 
+Position:  200 1 822
+Type:  
+Label:  finish\ahead
+Xrot:  80
+Yrot:  90
+Size:  50 100 0.001
+Color:  1 0.6 0
+Radius:  1.5 
+
+Object:  right curve sign 
+Position:  -670 0 800
+Label: 400
+Size:  1 20 10
+Color:  0 0 0
+Radius:  200 
+
+Object:  right curve sign 
+Position:  -810 0 800
+Label: 400
+Size:  1 20 10
+Color:  0 0 0
+Radius:  200 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  646 0 -359
+Yrot:  -32
+Size:  600 200 30
+Color:  0.7 0.7 0.7
+
+Scene Location:  1 12
+
+Object:  road 
+Position:  740 0 -1000
+Length:  2000 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  generic sign 
+Position:  900 0 0
+Type:  
+Label:  Speed\Bumps\Ahead
+Yrot:  180
+Size:  60 80 5
+Color:  1 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  600 0 0
+Type:  
+Label:  Speed\Bumps\Ahead
+Yrot:  180
+Size:  60 80 5
+Color:  1 1 0
+Radius:  1.5 
+
+Object:  ramp 
+Position:  740 0 1000
+Yrot:  180
+Size:  400 120 6
+
+Object:  checkpoint 
+Position:  740 5 600
+Type:  1 6
+Label:  Checkpoint 6
+Yrot:  180
+Size:  10 125 35
+Radius:  0.5 
+
+Object:  bush 
+Position:  650 0 185
+Height:  10 
+
+Object:  bush 
+Position:  656 0 -344
+Height:  10 
+
+Object:  tree 
+Position:  828 0 -523
+Size:  1.2 1.2 30
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  1 11
+
+Object:  bump 
+Position:  740 0 0
+Size:  10 120 0.5
+
+Object:  invisible wormhole 
+Position:  740 0 0
+Type:  linear velocity *= 0.5
+Size:  20 120 50
+
+Object:  bump 
+Position:  740 0 120
+Size:  10 120 0.5
+
+Object:  invisible wormhole 
+Position:  740 0 120
+Type:  linear velocity *= 0.5
+Size:  20 120 50
+
+Object:  bump 
+Position:  740 0 240
+Size:  10 120 0.5
+
+Object:  invisible wormhole 
+Position:  740 0 240
+Type:  linear velocity *= 0.5
+Size:  20 120 50
+
+Object:  curve 
+Position:  1480 0 0
+Yrot:  180
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  800 
+Angle:  55 
+
+Object:  road 
+Position:  740 0 0
+Length:  1000.08 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  checkpoint 
+Position:  870 0 -400
+Type:  1 7
+Label:  Checkpoint 7
+Yrot:  210
+Size:  10 150 35
+Radius:  0.5 
+
+Object:  left curve sign 
+Position:  820 0 400
+Label: 100
+Yrot:  180
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  left curve sign 
+Position:  670 0 400
+Label: 100
+Yrot:  180
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  curvewall 
+Position:  1480 0 0
+Yrot:  180
+Width:  5 
+Height:  5 
+Color:  1 0.15 0.15
+Radius:  805 
+Angle:  55 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -463 0 478
+Yrot:  -31
+Size:  842 447 11
+Color:  0.7 0.7 0.7
+
+Scene Location:  2 11
+
+Object:  road 
+Position:  1000 0 -733
+Yrot:  90
+Length:  1530 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  curve 
+Position:  -528 0 7
+Yrot:  225
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  800 
+Angle:  45 
+
+Object:  deciduous 
+Position:  -454 0 -607
+Type:  round
+Size:  11.25 11.25 40
+Color:  0.162828 0.584883 0.146723
+Radius:  0.5 
+
+Object:  deciduous 
+Position:  -474 0 -607
+Type:  round
+Size:  11.25 11.25 40
+Color:  0.434487 0.779654 0.0271614
+Radius:  0.5 
+
+Object:  deciduous 
+Position:  -494 0 -607
+Type:  round
+Size:  11.25 11.25 40
+Color:  0.387246 0.795749 0.347058
+Radius:  0.5 
+
+Object:  deciduous 
+Position:  141 0 -843
+Type:  
+Size:  20 40 40
+Color:  0.161696 0.858739 0.188186
+Radius:  1 
+
+Object:  telephone line 
+Position:  1000 0 -652
+Yrot:  90
+Length:  1500 
+Height:  20 
+Radius:  0.4 
+Spacing:  100 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  3 11
+
+Object:  road 
+Position:  1000 0 -733
+Yrot:  90
+Length:  2000 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  left curve sign 
+Position:  800 0 -810
+Label: 500
+Yrot:  -90
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  left curve sign 
+Position:  800 0 -660
+Label: 500
+Yrot:  -90
+Size:  5 20 10
+Color:  0 0 0
+Radius:  1.5 
+
+Object:  telephone line 
+Position:  500 0 -652
+Yrot:  90
+Length:  1600 
+Height:  20 
+Radius:  0.4 
+Spacing:  100 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  4 11
+
+Object:  curve 
+Position:  -1004 0 2007
+Yrot:  -90
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  2800 
+Angle:  49 
+
+Object:  conifer 
+Position:  -777 -10 -860
+Height:  100 
+Color:  0.0473815 0.8338 0.374392
+Radius:  1 
+
+Object:  conifer 
+Position:  115 -10 -631
+Height:  100 
+Color:  0.00558558 0.796636 0.514116
+Radius:  1 
+
+Object:  conifer 
+Position:  835 -10 -191
+Height:  100 
+Color:  0.218958 0.513031 0.585212
+Radius:  1 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  5 11
+
+Object:  curve 
+Position:  -2984 0 2029
+Yrot:  -45
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  2800 
+Angle:  24 
+
+Object:  conifer 
+Position:  -526 -10 541
+Height:  100 
+Color:  0.234142 0.760551 0.00533123
+Radius:  1 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  408 0 434
+Yrot:  10
+Size:  400 200 26
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  443 0 -558
+Yrot:  -32
+Size:  632 422 40
+Color:  0.7 0.7 0.7
+
+Scene Location:  5 12
+
+Object:  checkpoint 
+Position:  -234 0 0
+Type:  1 8
+Label:  Checkpoint 8
+Size:  10 135 35
+Radius:  0.5 
+
+Object:  curve 
+Position:  -2980 0 39
+Yrot:  -23
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  2800 
+Angle:  44 
+
+Object:  conifer 
+Position:  -211 -10 -790
+Height:  100 
+Color:  0.0531053 0.822542 0.220491
+Radius:  1 
+
+Object:  conifer 
+Position:  -99 -10 -140
+Height:  100 
+Color:  0.283187 0.691502 0.259482
+Radius:  1 
+
+Object:  deciduous 
+Position:  -140 -10 500
+Type:  
+Size:  56.25 56.25 100
+Color:  0.0101101 0.700961 0.0973589
+Radius:  1 
+
+Object:  deciduous 
+Position:  -252 -10 947
+Type:  
+Size:  56.25 56.25 100
+Color:  0.333775 0.867205 0.081567
+Radius:  1 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  408 0 434
+Yrot:  10
+Size:  400 200 26
+Color:  0.7 0.7 0.7
+
+Scene Location:  5 13
+
+Object:  curve 
+Position:  -2982 0 -1956
+Yrot:  20
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  2800 
+Angle:  25 
+
+Object:  deciduous 
+Position:  -384 -10 -729
+Type:  
+Size:  56.25 56.25 100
+Color:  0.123098 0.535771 0.374214
+Radius:  1 
+
+Object:  deciduous 
+Position:  -872 -10 -28
+Type:  
+Size:  56.25 56.25 100
+Color:  0.291483 0.522588 0.37945
+Radius:  1 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  408 0 434
+Yrot:  29
+Size:  930 200 26
+Color:  0.7 0.7 0.7
+
+Scene Location:  4 13
+
+Object:  curve 
+Position:  -989 0 -1949
+Yrot:  42
+Width:  120 
+Color:  0.15 0.15 0.15
+Radius:  2800 
+Angle:  48 
+
+Object:  road 
+Position:  -986 0 791
+Yrot:  90
+Length:  20 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  generic sign 
+Position:  -700 0 700
+Type:  
+Label:  Straight
+Yrot:  85
+Size:  15 30 5
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  -700 0 870
+Type:  
+Label:  Straight
+Yrot:  85
+Size:  15 30 5
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  deciduous 
+Position:  490 -10 510
+Type:  
+Size:  56.25 56.25 100
+Color:  0.0795181 0.659868 0.0639732
+Radius:  1 
+
+Object:  deciduous 
+Position:  -384 -10 855
+Type:  
+Size:  56.25 56.25 100
+Color:  0.367276 0.56773 0.159249
+Radius:  1 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  3 13
+
+Object:  road 
+Position:  -1000 0 791
+Yrot:  -90
+Length:  2000 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  generic sign 
+Position:  650 0 680
+Type:  
+Label:  fast
+Yrot:  90
+Size:  20 40 3
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  650 0 880
+Type:  
+Label:  fast
+Yrot:  90
+Size:  20 40 3
+Color:  0 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  -700 0 870
+Type:  
+Label:  JUMP\AHEAD
+Yrot:  85
+Size:  30 30 5
+Color:  1 1 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  -700 0 680
+Type:  
+Label:  JUMP\AHEAD
+Yrot:  85
+Size:  30 30 5
+Color:  1 1 0
+Radius:  1.5 
+
+Object:  mound 
+Position:  457 0 508
+Size:  300 200 20
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -529 0 498
+Yrot:  40
+Size:  300 100 20
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -672 0 915
+Yrot:  90
+Size:  300 80 30
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  2 13
+
+Object:  road 
+Position:  1000 0 791
+Yrot:  90
+Length:  1001 
+Width:  120 
+Color:  0.15 0.15 0.15
+
+Object:  ramp 
+Position:  0 0 791
+Yrot:  90
+Size:  1000 120 20
+
+Object:  ramp 
+Position:  -500 0 791
+Yrot:  90
+Size:  500 180 40
+
+Object:  checkpoint 
+Position:  -990 25 791
+Type:  1 9
+Label:  Checkpoint 9
+Yrot:  90
+Size:  20 190 70
+Radius:  0.5 
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  -1 13
+
+Object:  rubble 
+Position:  -110 0 516
+Size:  20 20 5
+Color:  0 0 0
+
+Object:  rubble 
+Position:  -142 0 752
+Yrot:  8167
+Size:  20 20 5
+Color:  0 0 0
+
+Object:  rubble 
+Position:  -104 0 943
+Yrot:  8167
+Size:  20 20 5
+Color:  0 0 0
+
+Object:  flames 
+Position:  -104 0 943
+Yrot:  -21
+Size:  20 20 15
+
+Object:  flames 
+Position:  -142 0 752
+Yrot:  234
+Size:  20 20 15
+
+Object:  flames 
+Position:  -110 0 516
+Size:  20 20 15
+
+Object:  finish 
+Position:  -200 0 500
+Type:  1 10
+Label:  FINISH
+Yrot:  90
+Size:  100 1000 500
+Radius:  5 
+
+Object:  invisible wormhole 
+Position:  -250 0 500
+Type:  linear velocity*=0.1; angle=0,90,0; angular velocity=0,0,0
+Yrot:  90
+Size:  10 1000 500
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  -1 14
+
+Object:  rubble 
+Position:  -98 0 -867
+Yrot:  -21
+Size:  20 20 5
+Color:  0 0 0
+
+Object:  rubble 
+Position:  -149 0 -669
+Yrot:  -213
+Size:  20 20 5
+Color:  0 0 0
+
+Object:  flames 
+Position:  -149 0 -669
+Yrot:  -213
+Size:  20 20 15
+
+Object:  flames 
+Position:  -98 0 -867
+Yrot:  -21
+Size:  20 20 15
+
+Object:  finish 
+Position:  -200 0 -500
+Type:  1 10
+Label:  HERE
+Yrot:  90
+Size:  100 1000 500
+Radius:  5 
+
+Object:  invisible wormhole 
+Position:  -200 0 -500
+Type:  linear velocity*=0.1; angle=0,90,0; angular velocity=0,0,0
+Yrot:  90
+Size:  10 1000 500
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  493 0 529
+Yrot:  39
+Size:  670 496 25
+Color:  0.7 0.7 0.7
+
+####################### Basically empty scenes #################################
+Scene Location:  2 12
+
+Object:  mound 
+Position:  -279 0 -276
+Yrot:  43
+Size:  488 602 36
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -5 0 139
+Yrot:  4
+Size:  712 723 46
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -284 0 -546
+Yrot:  30
+Size:  760 602 12
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  3 12
+
+Object:  mound 
+Position:  290 0 -381
+Yrot:  16
+Size:  238 854 33
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  220 0 352
+Yrot:  13
+Size:  867 903 39
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  218 0 441
+Yrot:  -18
+Size:  565 510 37
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  4 12
+
+Object:  mound 
+Position:  379 0 -407
+Yrot:  22
+Size:  991 315 40
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  760 0 -718
+Yrot:  31
+Size:  369 418 14
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -71 0 471
+Yrot:  -3
+Size:  787 305 30
+Color:  0.7 0.7 0.7
+
+Scene Location:  0 15
+
+Object:  mound 
+Position:  -144 0 -393
+Yrot:  -23
+Size:  536 557 35
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -458 0 -432
+Yrot:  -17
+Size:  974 294 39
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  564 0 -73
+Yrot:  39
+Size:  670 496 25
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -512 0 -251
+Yrot:  -2
+Size:  688 781 35
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -448 0 596
+Yrot:  31
+Size:  315 495 32
+Color:  0.7 0.7 0.7
+
+Scene Location:  1 15
+
+Object:  mound 
+Position:  -265 0 -577
+Yrot:  25
+Size:  778 202 17
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  271 0 -499
+Yrot:  -12
+Size:  480 636 39
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -150 0 550
+Yrot:  40
+Size:  285 808 32
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  366 0 -18
+Yrot:  -21
+Size:  867 883 19
+Color:  0.7 0.7 0.7
+
+Scene Location:  2 14
+
+Object:  mound 
+Position:  -17 0 270
+Yrot:  21
+Size:  834 260 29
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -259 0 -511
+Yrot:  41
+Size:  594 855 26
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  453 0 -333
+Yrot:  -16
+Size:  583 911 42
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  551 0 661
+Yrot:  27
+Size:  322 809 12
+Color:  0.7 0.7 0.7
+
+Scene Location:  1 10
+
+Object:  mound 
+Position:  88 0 -343
+Yrot:  -7
+Size:  584 511 26
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  260 0 44
+Yrot:  -40
+Size:  718 267 19
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  64 0 -376
+Yrot:  26
+Size:  387 787 19
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  370 0 -84
+Yrot:  -17
+Size:  931 950 26
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  2 10
+
+Object:  mound 
+Position:  -374 0 -632
+Yrot:  -26
+Size:  333 763 31
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -51 0 -406
+Yrot:  22
+Size:  773 322 39
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -516 0 -7
+Yrot:  -14
+Size:  224 695 44
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  458 0 478
+Yrot:  -31
+Size:  842 447 11
+Color:  0.7 0.7 0.7
+
+Scene Location:  3 10
+
+Object:  mound 
+Position:  -78 0 -412
+Yrot:  -45
+Size:  882 214 28
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  384 0 -260
+Yrot:  -22
+Size:  965 627 44
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  434 0 244
+Yrot:  27
+Size:  828 603 21
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  4 10
+
+Object:  mound 
+Position:  410 0 -110
+Yrot:  17
+Size:  631 465 25
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  6 0 190
+Yrot:  -13
+Size:  321 808 45
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -547 0 -265
+Yrot:  -21
+Size:  633 479 46
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  3 14
+
+Object:  mound 
+Position:  326 0 -125
+Yrot:  -2
+Size:  381 717 21
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  9 0 399
+Yrot:  -13
+Size:  445 220 37
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -20 0 -275
+Yrot:  29
+Size:  437 387 23
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Scene Location:  4 14
+
+Object:  mound 
+Position:  1 0 -641
+Yrot:  -4
+Size:  569 400 30
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  371 0 -327
+Yrot:  -20
+Size:  242 295 48
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  305 0 -80
+Yrot:  6
+Size:  876 917 22
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  403 0 -74
+Yrot:  -22
+Size:  553 601 29
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -619 0 469
+Yrot:  -29
+Size:  930 200 26
+Color:  0.7 0.7 0.7
+
+Scene Location:  -1 12
+
+Object:  mound 
+Position:  -489 0 605
+Yrot:  41
+Size:  679 452 23
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -235 0 12
+Yrot:  5
+Size:  692 580 23
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -77 0 -14
+Yrot:  30
+Size:  846 971 25
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  245 0 289
+Yrot:  -45
+Size:  686 290 35
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+
+Scene Location:  -2 14
+
+Object:  mound 
+Position:  -646 0 506
+Yrot:  73
+Size:  346 822 60
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -517 0 -26
+Yrot:  30
+Size:  346 822 70
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -565 0 -574
+Yrot:  98
+Size:  346 822 50
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7
+
+
+Scene Location:  -2 13
+
+Object:  mound 
+Position:  -517 0 -26
+Yrot:  -28
+Size:  346 822 70
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -485 0 538
+Yrot:  78
+Size:  553 872 50
+Color:  0.7 0.7 0.7
+
+Object:  mound 
+Position:  -614 0 -542
+Yrot:  120
+Size:  332 872 80
+Color:  0.7 0.7 0.7
+
+Object:  flat 
+Position:  0 -0.1 0
+Length:  2000 
+Width:  2000 
+Color:  0.7 0.7 0.7

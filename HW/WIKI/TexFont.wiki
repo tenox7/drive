@@ -1,0 +1,107 @@
+== NAME ==
+TexFont - utilities for displaying text from a texture-mapped font
+
+== SYNOPSIS ==
+{{{
+        #include "hw.h"
+
+        typedef struct {
+            ...
+        } TexFont;
+
+        typedef size_t (*TxfReadFunc)(void *, size_t, size_t, void *);
+        char *txfErrorString(void);
+        TexFont *txfLoadFont(TxfReadFunc read, void *file);
+        void txfUnloadFont(TexFont * txf);
+        hwObject txfEstablishTexture(hwDisplay disp, TexFont * txf);
+        void txfBindFontTexture(hwDisplay disp, TexFont * txf);
+        void txfGetStringMetrics(TexFont * txf, char *string, int len,
+                                int *width, int *max_ascent, int *max_descent);
+        void txfRenderGlyph(hwDisplay disp, TexFont * txf, int c);
+        void txfRenderString(hwDisplay disp, TexFont * txf,
+                            char *string, int len);
+        void txfRenderFancyString(hwDisplay disp, TexFont * txf,
+                                 char *string, int len);
+        void txfSetPosition(hwFloat xPos, hwFloat yPos);
+        void txfSetScale(hwFloat pixSize);
+        void txfSetColor(hwFloat color[3]);
+        int txfBeginFontRendering(hwDisplay disp, TexFont *txf, hwInt32 mode);
+        void txfEndFontRendering(hwDisplay disp);
+        TexFont *txfLoadStaticFont(int size);
+}}}
+
+== DESCRIPTION ==
+This is a set of routines for loading character glyphs into textures
+from a standardized file format, and displaying strings with them with
+appropriate scaling and alignment.  The font files are in the
+format defined by Mark Kilgard's texfont utilities (which this
+set of routines was derived from).  Original documentation for
+those utilities may be found at [[http://www.opengl.org/archives/resources/code/samples/glut_examples/texfont/texfont.html|opengl.org]]
+
+=== Font loading routines ===
+; TexFont *txfLoadFont(TxfReadFunc read, void *file)
+: Loads a font using the provided read function and extra pointer (frequently, fread and fopen'd FILE *)
+
+; void txfUnloadFont(TexFont * txf)
+: Unloads a font loaded with txfLoadFont
+
+; TexFont *txfLoadStaticFont(int size)
+: Loads a static font of the given size.  Static fonts do not need to be unloaded.
+
+=== Font texture routines ===
+//Note that these routines are not typically called by user programs//
+
+; hwObject txfEstablishTexture(hwDisplay disp, TexFont * txf)
+: Creates a hwTexture object from the loaded TexFont
+
+; void txfBindFontTexture(hwDisplay disp, TexFont * txf)
+: Makes the texture in the given TexFont current
+
+=== Font glyph rendering state routines ===
+; int txfBeginFontRendering(hwDisplay disp, TexFont *txf, hwInt32 mode)
+: Begins font rendering.  Mode is one of TXF_COORD_MODE_NDC or TXF_COORD_MODE_WIN.  In TXF_COORD_MODE_NDC, character positions and sizes range from -1 to 1 in X and Y.  In TXF_COORD_MODE_WIN, character positions and sizes range from 0 to the window size in X and Y.
+
+; void txfSetPosition(hwFloat xPos, hwFloat yPos)
+: Sets the current "cursor" position for font glyph rendering, using the current font coordinate mode
+
+; void txfSetScale(hwFloat pixSize)
+: Sets the current glyph size for subsequent font glyph rendering, using the
+current font coordinate mode
+
+; void txfSetColor(hwFloat color[3])
+: Sets the current color for subsequent font glyph rendering
+
+; void txfEndFontRendering(hwDisplay disp)
+: Terminates a series of font rendering calls
+
+=== Font glyph rendering calls ===
+; void txfGetStringMetrics(TexFont * txf, char *string, int len, int *width, int *max_ascent, int *max_descent)
+: Given a string and input length, returns the overall width of the string, and the maximum ascent and descent of the glyphs relative to the baseline.
+
+; void txfRenderGlyph(hwDisplay disp, TexFont * txf, int c)
+: Renders a single glpyh to the given hwDisplay
+
+; void txfRenderString(hwDisplay disp, TexFont * txf, char *string, int len)
+: Renders a simple string as a series of glyphs to the given hwDisplay
+
+; void txfRenderFancyString(hwDisplay disp, TexFont * txf, char *string, int len)
+: Interprets escape codes in the string to modify the color of the glyphs:
+|= Escape sequence |= Colors
+| \033 M r g b | Sets the current glyph color to the given uniform RGB color
+| \033 T r0 g0 b0 r1 g1 b1 | Top-bottom color gradient.  r0,g0,b0 is the top color and r1,g1,b1 is the bottom color.
+| \033 L r0 g0 b0 r1 g1 b1 | Left-right color gradient.  r0,g0,b0 is the left color and r1,g1,b1 is the right color.
+| \033 F r0 g0 b0 r1 g1 b1 r2 g2 b2 r3 g3 b3 | Four corner color gradient.  The four colors are the top left, top right, bottom left, and bottom right colors, respectively.
+
+== NOTES ==
+The original implementation of TexFont.c had the following copyright
+notices:
+{{{
+    /* Copyright (c) Mark J. Kilgard, 1997. */
+
+    /* This program is freely distributable without licensing fees  and is
+       provided without guarantee or warrantee expressed or  implied. This
+       program is -not- in the public domain. */
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwFont]]

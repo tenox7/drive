@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwLookup - routines to manage class, object, and constant names for hwParse</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwLookup - routines to manage class, object, and constant names
+for hwParse</p>
+<h2>SYNOPSIS</h2>
+<pre>
+    #include &quot;hw.h&quot;
+
+    void hwRegisterConstant( char *name, hwInt32 type, void *val );
+    void hwRegisterClass( hwObject cls );
+    void hwRegisterObject( hwObject obj );
+    void hwRegisterCallback( char *name, hwCallback cbProc );
+    void hwUnregisterObjects( void );
+    hwInt32 hwFindConstant( char *name, void **pVal );
+    hwObject hwFindClass( char *name );
+    hwObject hwFindObject( char *name );
+    hwCallback hwFindCallback( char *name );
+</pre>
+<h2>DESCRIPTION</h2>
+<p>These routines help manage the namespace for <a
+href="hwParseFile.htm">hwParseFile</a> and <a
+href="hwParseFile.htm">hwParseArray</a>. Their usage is as follows:</p>
+
+<dl>
+  <dt>hwRegisterConstant</dt>
+  <dd>Register a constant for use in parsing. The given name is
+  inserted into the constant table with the given type and value.</dd>
+</dl>
+
+<dl>
+  <dt>hwRegisterClass</dt>
+  <dd>Register a class for use in parsing. It is assumed that the
+  class is appropriately named.</dd>
+</dl>
+
+<dl>
+  <dt>hwRegisterObject</dt>
+  <dd>Register an object for use in parsing. It is assumed that the
+  object is appropriately named.</dd>
+</dl>
+
+<dl>
+  <dt>hwRegisterCallback</dt>
+  <dd>Register a callback for use with various classes (typically,
+  GUI classes). The callback is of type &quot;cbProc&quot;.</dd>
+</dl>
+
+<dl>
+  <dt>hwUnregisterObjects</dt>
+  <dd>Unregister all registered objects - this allows HoverWare to
+  start from a blank canvas when needed</dd>
+</dl>
+
+<dl>
+  <dt>hwFindConstant</dt>
+  <dd>Find a constant in the registry. Its return value is the type
+  of the constant; a pointer to the constant value is returned in
+  *pVal.</dd>
+</dl>
+
+<dl>
+  <dt>hwFindClass</dt>
+  <dd>Find a class in the registry. Returns the hwObject class, or
+  NULL if the class was not found.</dd>
+</dl>
+
+<dl>
+  <dt>hwFindObject</dt>
+  <dd>Find an object in the registry. Returns the hwObject, or NULL
+  if the object was not found.</dd>
+</dl>
+
+<dl>
+  <dt>hwFindCallback</dt>
+  <dd>Find a callback in the registry. Returns the hwCallback, or
+  NULL if the callback was not found.</dd>
+</dl>
+<h2>C EXAMPLE</h2>
+<pre>
+    hwInt32 nobjs;
+    hwObject *objs;
+    hwObject obj;
+
+    nobjs = hwParseFile(&quot;example.hw&quot;, &amp;objs);
+
+    // This will find the sphere in the global namespace, assuming that
+    // example.hw includes the object file example below.
+    obj = hwFindObject( &quot;MySphere&quot; );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    hwSphere MySphere {
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwParseFile.htm">hwParseFile</a>, <a
+href="hwParseFile.htm">hwParseArray</a></p>
+</body>
+</html>

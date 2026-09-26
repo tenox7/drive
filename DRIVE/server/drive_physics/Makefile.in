@@ -1,0 +1,45 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=drivePhysics.a
+all: $(LIBTARGET)
+TOPDIR=../..
+
+PHYSICSLIB_DIR=../../libphysics
+NUMLIB_DIR=../../libnum
+PRIMLIB_DIR=../../libprims
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../../include -I../objects \
+  -I$(PHYSICSLIB_DIR) -I$(NUMLIB_DIR) -I$(PRIMLIB_DIR) \
+  @CPPFLAGS@ @DEFS@ @CFLAGS@ $(WARNINGS) $(OPTDEBUGFLAGS)
+
+SRC=\
+  ballistic.c \
+  car.c \
+  common.c \
+  gears.c \
+  intersect.c \
+  plane.c \
+  simple.c \
+  ufop.c \
+  xfighterp.c
+
+include $(TOPDIR)/Makefile.h
+

@@ -1,0 +1,111 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+all: ../drive
+TOPDIR=..
+
+GUILIB_DIR=../libgui
+GUILIB=libgui.a
+
+PHYSICSLIB_DIR=../libphysics
+PHYSICSLIB=libphysics.a
+
+DEMO_PHYSICSLIB_DIR=drive_physics
+DEMO_PHYSICSLIB=drivePhysics.a
+
+OBJECTS_DIR=objects
+DEMO_OBJECTS=objects.a
+
+SHARED_LIB_DIR=../shared
+SHARED_LIB=libshared.a
+
+NUMLIB_DIR=../libnum
+NUMLIB=libnum.a
+
+PRIMLIB_DIR=../libprims
+PRIMLIB=libprims.a
+
+###############################################################################
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+EXEEXT = @EXEEXT@
+X_LIBS = @X_LIBS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+RTA = @RTA@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include -I../server/objects \
+  -I$(PRIMLIB_DIR) -I$(PHYSICSLIB_DIR) -I$(NUMLIB_DIR) \
+  @CPPFLAGS@ @DEFS@ @CFLAGS@ @X_CFLAGS@ $(WARNINGS) $(OPTDEBUGFLAGS)
+HOVERWARE = @HOVERWARE@
+OPENGL = @OPENGL@
+
+###############################################################################
+SRC=\
+  camera.c \
+  clook.c \
+  daylight.c \
+  disp_ctrl.c \
+  drive.c \
+  drive_msg.c \
+  drive_sb.c \
+  explosion.c \
+  frame.c \
+  headlight.c \
+  joystick.c \
+  parse_rcfile.c \
+  sbwin.c \
+  sound.c \
+  stars.c
+
+LOCAL_LIBS=\
+  $(PRIMLIB_DIR)/$(PRIMLIB) \
+  $(GUILIB_DIR)/$(GUILIB) \
+  $(SHARED_LIB_DIR)/$(SHARED_LIB)
+
+include $(TOPDIR)/Makefile.h
+
+$(LOCAL_LIBS):
+	cd $(@D) && $(MAKE) $(@F)
+
+../drive: $(OFILES) $(LOCAL_LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ \
+	  $(OFILES) $(LOCAL_LIBS) $(HOVERWARE) $(OPENGL) \
+	  $(X_LIBS) -lXext -lMrm -lXm -lXt -lX11 $(RTA) -lm
+clean::
+	$(RM) ../drive
+

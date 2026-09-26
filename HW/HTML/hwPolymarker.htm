@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwPolymarker - define a set of "markers" (typically, points)</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwPolymarker - define a set of &quot;markers&quot; (typically,
+points)</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Data</td>
+<td>*F</td>
+<td>The list of vertices, with 3 or 6 floats per vertex</td>
+</tr>
+<tr><td>HasRGB</td>
+<td>1B</td>
+<td>True iff there are RGB color values per vertex in Data</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>The optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>Color</td>
+<td>3F</td>
+<td>The color of the polyline</td>
+</tr>
+<tr><td>PrimSize</td>
+<td>1F</td>
+<td>The size of the primitives to draw</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Data</td>
+<td>NULL</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>Color</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>HasFlags</td>
+<td>False</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwPolymarker class takes a list of vertices and displays them
+as a series of &quot;markers&quot; (usually, points). The Data
+pointer is an array of hwFloat values; the number must be equal to
+either n*3 (if HasRGB is False) or n*6 (if HasRGB is True), where n
+is the number of vertices in the polyline. The Color is the color in
+which the polymarker is to be drawn, if HasRGB is False.</p>
+<h2>C EXAMPLE</h2>
+<h2>OBJECT FILE EXAMPLE</h2>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwOrient.htm">hwOrient</a>, <a
+href="hwSurface.htm">hwSurface</a></p>
+</body>
+</html>

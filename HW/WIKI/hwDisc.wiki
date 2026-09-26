@@ -1,0 +1,52 @@
+== NAME ==
+hwDisc - create a circular disc
+
+== INHERITS FROM ==
+* [[hwSurface]]
+* [[hwOrient]]
+
+== PROPERTIES ==
+|   GraphN     |1I | Tessellation of the disc - number of columns in the resulting mesh
+|   Radius     |1F | Radius of the disc
+|   OptFlags   |1I | Optimization flags - see [[hw]] for details
+|   Resolution |1F | Tessellation multiplier
+
+== DEFAULTS ==
+|   GraphN | 17
+|   Radius | 1.0
+|   OptFlags | hwDefaultOptFlags
+|   Resolution | 1.0
+
+== DESCRIPTION ==
+The hwDisc class creates a circular disc of a given radius about the
+origin.  The disc lies in the XY plane, and its front surface faces
+positive Z.  The default texture coordinates for a disc are as if
+the disc were cut out of the (square) texture map projected on the
+XY plane with the center at the origin.
+
+== C EXAMPLE ==
+{{{
+    /* Draw a purple twosided disc of radius 2.0 */
+    hwObject
+        disc;
+
+    disc = hwDisc->create( hwDisc );
+    HW_MODIFY_1B( disc, hwStrTwoSided, HW_TRUE );
+    HW_MODIFY_1F( disc, hwStrRadius, 2.0 );
+    HW_MODIFY_3F( disc, hwStrColor, 1.0, 0.0, 1.0 );
+    disc->draw( disc );
+    disc->destroy( disc );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A purple twosided disc of radius 2.0
+    hwDisc disc {
+        TwoSided = True
+        Radius = 2.0
+        Color = {1,0,1}
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwSurface]], [[hwOrient]]

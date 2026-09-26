@@ -1,0 +1,103 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#base
+Object: wall
+Width: 4
+Length: 4
+Height: 2.5
+Position: 0 0 0
+Color: 0.25 0.25 0.25
+Yrot: -90
+
+#pole
+Object: pillar
+Radius: 0.5
+Height: 7
+Position: 2 0 0
+
+#shadows
+Object: wall
+Width: 2
+Height: 2
+Length: 1
+Position: 0.5 6 -0.5
+Color: 0 0 0
+
+Object: wall
+Width: 2
+Height: 2
+Length: 1
+Position: 3.5 6 -0.5
+Color: 0 0 0
+
+#lights
+Object: wall
+Width: 0.5
+Height: 0.5
+Length: 0.5
+Color: 1 0 0
+Position: 0.5 6.75 -1
+
+Object: wall
+Width: 0.5
+Height: 0.5
+Length: 0.5
+Color: 1 0 0
+Position: 3.5 6.75 -1
+
+#arms
+Object: wall
+Height: 1
+Width: 7
+Length: 1
+Color: 1 0 0
+Position: -3.5 4.5 0
+Zrot: -45.0
+
+Object: wall
+Height: 1
+Width: 7
+Length: 1
+Color: 1 1 1
+Position: -8.5 9.5 0
+Zrot: -45.0
+
+Object: wall
+Height: 1
+Width: 7
+Length: 1
+Color: 1 0 0
+Position: -13.5 14.5 0
+Zrot: -45.0
+
+Object: wall
+Height: 1
+Width: 7
+Length: 1
+Color: 1 1 1
+Position: -18.5 19.5 0
+Zrot: -45.0
+
+Object: wall
+Height: 1
+Width: 7
+Length: 1
+Color: 1 0 0
+Position: -23.5 24.5  0
+Zrot: -45.0
+

@@ -1,0 +1,123 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#--------------------------------------------
+# Space building #2
+#--------------------------------------------
+
+Object: pillar
+Radius: 70
+Height: 150
+Color: 0 1 0.5
+Position: 0 0 0
+
+#platform #1
+Object: curvewall
+Radius: 100
+Width: 100
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 0 0
+
+Object: curvewall
+Radius: 100
+Width: 100
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 0 0
+Xrot: 180
+Yrot: 180
+
+#platform #2
+Object: curvewall
+Radius: 105
+Width: 105
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 50 0
+
+Object: curvewall
+Radius: 105
+Width: 105
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 50 0
+Xrot: 180
+Yrot: 180
+
+#platform #3
+Object: curvewall
+Radius: 110
+Width: 110
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 100 0
+
+Object: curvewall
+Radius: 110
+Width: 110
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 100 0
+Xrot: 180
+Yrot: 180
+
+#platform #4
+Object: curvewall
+Radius: 115
+Width: 115
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 150 0
+
+Object: curvewall
+Radius: 115
+Width: 115
+Height: 2.5
+Angle: 360
+Color: 0 0 0
+Position: 0 150 0
+Xrot: 180
+Yrot: 180
+
+#sign
+
+Object: pillar
+Radius: 4
+Height: 20
+Position: 0 150 0
+
+Object: generic sign
+Label: SPACELY INC.
+Color: 1 1 0
+Size: 100 150 0.001
+Position: -4 170 0
+
+Object: generic sign
+Label: SPACELY INC.
+Color: 1 1 0
+Size: 100 150 0.001
+Position: 4 170 0
+Yrot: 180
+

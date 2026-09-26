@@ -1,0 +1,37 @@
+== NAME ==
+hwFile - create an object which refers to a HoverWare file
+
+== PROPERTIES ==
+|   FileName  | 0S  |   The name of the file to be loaded by this object
+
+== DEFAULTS ==
+None
+
+== DESCRIPTION ==
+The hwFile class is a convenient way in which to refer to another
+HoverWare object file.  The FileName is a string which names the
+file to be read and displayed when the hwFile object's draw routine
+is called.
+
+== C EXAMPLE ==
+{{{
+    /* Parse and display "foo.hw" */
+    hwObject
+        file;
+
+    file = hwFile->create( hwFile );
+    file->modify( file, hwStrFileName, HW_TYPE_STRING, "foo.hw" );
+    file->draw( file );
+    file->destroy( file );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # Indirectly refer to the HoverWare file foo.hw
+    hwFile file {
+        FileName = "foo.hw"
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwParseFile]]

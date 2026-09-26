@@ -1,0 +1,239 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+Object:  road 
+Position:  0 0 -1000
+Length:  600 
+Width:  60 
+
+Object:  road 
+Position:  0 0 400
+Length:  600 
+Width:  60 
+
+Object:  road 
+Position:  0 0 -400
+Length:  800 
+Width:  125 
+
+Object:  road 
+Position:  400 30 0
+Yrot:  90
+Size:  800 125 4
+
+Object:  spiral 
+Position:  390 30 390
+Yrot:  270
+Size:  800 32 -30
+Radius:  360 
+Angle:  270 
+
+Object:  spiral 
+Position:  390 0 -390
+Yrot:  180
+Size:  800 32 30
+Radius:  360 
+Angle:  270 
+
+Object:  spiral 
+Position:  -390 30 -390
+Yrot:  90
+Size:  800 32 -30
+Radius:  360 
+Angle:  270 
+
+Object:  spiral 
+Position:  -390 0 390
+Size:  800 32 30
+Radius:  360 
+Angle:  270 
+
+Object:  pillar 
+Position:  -400 0 55
+Size:  800 1 29
+Color:  0.8 0.8 0.8
+Radius:  5 
+
+Object:  pillar 
+Position:  -400 0 -55
+Size:  800 1 29
+Color:  0.8 0.8 0.8
+Radius:  5 
+
+Object:  pillar 
+Position:  400 0 -55
+Size:  800 1 29
+Color:  0.8 0.8 0.8
+Radius:  5 
+
+Object:  pillar 
+Position:  400 0 55
+Size:  800 1 29
+Color:  0.8 0.8 0.8
+Radius:  5 
+
+Object:  curve 
+Position:  220 0 -1000
+Yrot:  90
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  220 0 -800
+Yrot:  -90
+Length:  400 
+Width:  30 
+
+Object:  road 
+Position:  900 0 0
+Xrot:  -3.43365
+Yrot:  90
+Size:  500.899 60 2
+
+Object:  curve 
+Position:  1000 0 -215
+Yrot:  90
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  curve 
+Position:  600 0 -600
+Yrot:  -90
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  800 0 -600
+Length:  400 
+Width:  30 
+
+Object:  curve 
+Position:  -220 0 1000
+Yrot:  -90
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  -220 0 800
+Yrot:  90
+Length:  400 
+Width:  30 
+
+Object:  curve 
+Position:  -600 0 600
+Yrot:  90
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  -800 0 600
+Yrot:  180
+Length:  400 
+Width:  30 
+
+Object:  road 
+Position:  -900 0 0
+Xrot:  -3.43364
+Yrot:  -90
+Size:  500.9 60 2
+
+Object:  curve 
+Position:  -1000 0 215
+Yrot:  -90
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  curve 
+Position:  -1000 0 -220
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  -800 0 -620
+Length:  400 
+Width:  30 
+
+Object:  curve 
+Position:  -600 0 -600
+Yrot:  180
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  curve 
+Position:  -220 0 -1000
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  -215 0 -800
+Yrot:  90
+Length:  386 
+Width:  30 
+
+Object:  curve 
+Position:  220 0 1000
+Yrot:  180
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  215 0 800
+Yrot:  -90
+Length:  386 
+Width:  30 
+
+Object:  curve 
+Position:  600 0 600
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  800 0 620
+Yrot:  180
+Length:  400 
+Width:  30 
+
+Object:  curve 
+Position:  1000 0 220
+Yrot:  180
+Width:  30 
+Radius:  215 
+Angle:  90 
+
+Object:  road 
+Position:  1000 0 0
+Yrot:  90
+Length:  100 
+Width:  60 
+
+Object:  road 
+Position:  -900 0 0
+Yrot:  90
+Length:  100 
+Width:  60 

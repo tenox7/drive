@@ -1,0 +1,33 @@
+== NAME ==
+hwPolymarker - define a set of "markers" (typically, points)
+
+== INHERITS FROM ==
+* [[hwOrient]]
+
+== PROPERTIES ==
+| Data       | *F | The list of vertices, with 3 or 6 floats per vertex
+| HasRGB     | 1B | True iff there are RGB color values per vertex in Data
+| OptFlags   | 1I | The optimization flags; see [[hw]] for details
+| Color      | 3F | The color of the polyline
+| PrimSize   | 1F | The size of the primitives to draw
+
+== DEFAULTS ==
+| Data       | NULL
+| OptFlags   | hwDefaultOptFlags
+| Color      | {1,1,1}
+| HasFlags   | False
+
+== DESCRIPTION ==
+The hwPolymarker class takes a list of vertices and displays them as a
+series of "markers" (usually, points). The Data pointer is an array of
+hwFloat values; the number must be equal to either n*3 (if HasRGB is
+False) or n*6 (if HasRGB is True), where n is the number of
+vertices in the polyline.  The Color is the color in which the
+polymarker is to be drawn, if HasRGB is False.
+
+== C EXAMPLE ==
+
+== OBJECT FILE EXAMPLE ==
+
+== SEE ALSO ==
+[[hw]], [[hwOrient]], [[hwSurface]]

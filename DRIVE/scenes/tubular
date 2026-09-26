@@ -1,0 +1,869 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#### TUBULAR ####
+Racecourse:  Tubular
+Start SceneX: -10
+Start SceneZ: 0
+Start Position: 677 105 -350
+Start Positions: 4
+Start Angle: 0
+Turbo Mode: 2
+Turbo Boosts: 10
+Practice Seconds: 0
+Race Seconds: 240
+
+
+Scene Location: -10 0
+
+#Big mongo wall to start on top of
+Object: wall
+Position: 650 0 -900
+Width: 500
+Height: 100
+Length: 600
+
+Object: road
+Position: 700 100 -1000
+Length: 700
+Width: 60
+Height: 2
+
+Object: curve
+Position: 400 100 -500
+Radius: 330
+Width: 60
+Angle: 90
+Yrot: -90
+
+Object: road
+Position: 700 100 -300
+Length: 510
+Height: 2
+Width: 60
+Xrot: 11.31
+
+Object: road
+Position: 700 0 200
+Length: 100
+Width: 60
+
+Object: bridge
+Position: 700 0 450
+Width: 60
+Height: 25
+Length: 300
+
+Object: road
+Position: 700 1 680
+Length: 320
+Height: 2
+Width: 60
+
+Object: pond
+Position: 700 0 650
+Width: 200
+Length: 100
+Height: 20
+
+Object: curve
+Position: 300 0 1000
+Radius: 430
+Width: 60
+Angle: 90
+Yrot: -90
+
+#section of road for jump into wormhole
+Object: road
+Position: 300 0 600
+Width: 60
+Length: 600
+Yrot: 90
+
+Object: bridge
+Position: -450 0 600
+Width: 60
+Height: 20
+Length: 300
+Yrot: 90
+#walls enclosing wormhole
+
+Object: wall
+Position: -700 0 550
+Width: 4
+Height: 5
+Length: 100
+
+Object: wall
+Position: -900 0 550
+Width: 4
+Height: 5
+Length: 100
+
+Object: wall
+Position: -900 0 550
+Width: 4
+Height: 5
+Length: 200
+Yrot: -90
+
+Object: wall
+Position: -900 0 650
+Width: 4
+Height: 5
+Length: 200
+Yrot: -90
+
+#This wormhole teleports the car to scene -10,-1, at -500,1000,-700
+Object: wormhole
+Position: -800 2 560
+Length: 2
+Width: 180
+Height: 80
+Xrot: 90.0
+Destination: -20500.0 1000.0 -2700.0
+
+#Object: road
+#Position: 300 0 600
+#Width: 60
+#Height: 2
+#Length: 539
+#Yrot: 90
+#Xrot: -21.8
+
+#Ariel Section
+Object: road
+Position: -200 200 600
+Width: 60
+Height: 2
+Length: 101
+Yrot: 90
+
+Object: curve
+Position: -300 200 300
+Radius: 330
+Width: 60
+Height: 2
+Angle: 270
+Yrot: 90
+
+Object: road
+Position: 0 200 300
+Width: 60
+Height: 2
+Length: 300
+
+Object: curve
+Position: -300 200 600
+Radius: 330
+Height: 2
+Width: 60
+Angle: 90
+
+Object: road
+Position: -300 200 900
+Width: 60
+Height: 2
+Length: 300
+Yrot: 90
+
+Object: curve
+Position: -600 200 600
+Radius: 330
+Width: 60
+Height: 2
+Angle: 90
+Yrot: 90
+
+Object: road
+Position: -900 200 600
+Width: 60
+Height: 2
+Length: 400
+Yrot: 180
+Xrot: -10.0
+
+Object: road
+Position: -900 200 -400
+Width: 60
+Height: 2
+Length: 400
+Xrot: -10.0
+
+Object: curve
+Position: -500 200 -400
+Radius: 430
+Width: 60
+Height: 2
+Angle: 90
+Yrot: 180
+
+Object: road
+Position: -500 200 -800
+Width: 60
+Length: 400
+Height: 2
+Yrot: -90
+
+Object: road
+Position: -100 200 -800
+Width: 60
+Length: 510
+Height: 2
+Yrot: -90
+Xrot: 11.31
+
+Object: generic sign
+Label: 120\M.P.H
+Size: 40 40 10
+Yrot: 90
+Color: 1.0 0.0 0.0
+Position: 300 0 640
+
+Object: right curve sign
+Position: 660 0 900
+Width: 20.0
+Height: 10.0
+Label: 80
+Yrot: 180.0
+
+Object: right curve sign
+Position: 740 0 900
+Width: 20.0
+Height: 10.0
+Label: 80
+Yrot: 180.0
+
+Object: generic sign
+Position: -100 200 -760
+Label: SLOW DOWN!\70 M.P.H.
+Size: 60 60 10
+Yrot: -90
+Color: 1.0 0.0 0.0
+
+##############
+
+#checkpoints for Scene -10,0
+
+#Object: wormhole
+#Position: 700 20 -300
+#Length: 20
+#Width: 100
+#Height: 100
+#Destination: 0.0 38.0 -4000.0
+#Angle: 90.0
+
+
+Object: start
+Length: 20
+Width: 100
+Height: 40
+Label: START
+Radius: 0.5
+Position: 700 100 -300
+Type: 1 12
+Data: 1 3
+5 0 1
+
+Object: finish
+Length: 20.0
+Width:  100.0
+Height: 40.0
+Label: FINISH LINE
+Radius: 0.5
+Position: -300 200 -800
+Type: 1 12
+Yrot: -90.0
+
+Object: checkpoint
+Length: 20.0
+Width:  120.0
+Height: 40.0
+Label:  CHECKPOINT 10
+Radius: 0.5
+Position: -500 200 85
+Type: 1 10
+Yrot: -135
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 40.0
+Label:  CHECKPOINT 11
+Radius: 0.5
+Position: -900 200 600
+Type: 1 11
+Yrot: 180
+
+Object: ground
+
+Scene Location: -10 1
+
+# First Tube, Walls, roads
+Object: lower tube
+Position: 700 0  -700
+Radius: 100
+Length: 600
+
+Object: road
+Position: 634 25 -400
+Length: 399.5
+Width: 30
+Height: 2
+Zrot: -40
+
+Object: road
+Position: 766 25 -400
+Length: 399.5
+Width: 30
+Height: 2
+Zrot: 40
+
+Object: wall
+Position: 700 0  -850
+Width: 60
+Height: 10
+Length: 10
+Color: 1.0 0.0 0.0
+
+Object: wall
+Position: 700 0  -400
+Width: 150
+Height: 10
+Length: 10
+Color: 1.0 0.0 0.0
+
+Object: wall
+Position: 625 0  -600
+Height: 70
+Width: 50
+Length: 10
+Color: 1.0 0.0 0.0
+
+Object: wall
+Position: 775 0  -600
+Height: 70
+Width: 50
+Length: 10
+Color: 1.0 0.0 0.0
+
+# Second Tube, Walls, roads
+Object: lower tube
+Position: 700 0  200
+Radius: 100
+Length: 400
+
+Object: wall
+Position: 625 0  200
+Height: 70
+Width: 80
+Length: 10
+Color: 1.0 0.0 0.0
+
+Object: wall
+Position: 775 0  200
+Height: 70
+Width: 80
+Length: 10
+Color: 1.0 0.0 0.0
+
+Object: wall
+Position: 700 0  400
+Height: 10
+Width: 150
+Length: 10
+Color: 1.0 0.0 0.0
+
+Object: road
+Position: 634 25 400
+Length: 200
+Width: 30
+Height: 2
+Zrot: -40
+
+Object: road
+Position: 766 25 400
+Length: 200
+Width: 30
+Height: 2
+Zrot: 40
+
+# Third Tube
+Object: lower tube
+Position: 700 0  800
+Radius: 100
+Length: 400
+
+Object: ramp
+Position: -300 0 1000
+Length: 300
+Width: 60
+Height: 50
+Yrot: 180
+
+Object: ramp
+Position: -300 0 200
+Length: 300
+Width: 60
+Height: 50
+
+Object: road
+Position: -300 0 0
+Width: 60
+Length: 200
+
+Object: road
+Position: -300 0 0
+Width: 60
+Height: 2
+Length: 539
+Yrot: 180
+Xrot: -21.80
+
+Object: curve
+Position: -700 200 -500
+Width: 60
+Height: 2
+Radius: 430
+Angle: 90
+Yrot: -90
+
+Object: road
+Position: -700 200 -900
+Width: 60
+Height: 2
+Length: 400
+Yrot: 90
+
+# Curve and roads in upper left corner
+Object: curve
+Position: -800 0 900
+Radius: 330
+Width: 60
+Angle: 90
+Yrot: -90
+
+Object: road
+Position: -1000 0 600
+Width: 60
+Length: 200
+Yrot: -90
+
+Object: road
+Position: -500 0 900
+Width: 60
+Length: 100
+
+Object: generic sign
+Label: 50\M.P.H
+Size: 40 40 10
+Yrot: -90
+Color: 1.0 0.0 0.0
+Position: -1300 100 650
+
+# Lolli-pop to jump through
+Object: curvewall
+Position: -300 60 600
+Radius: 22
+Width: 5
+Height: 5
+Angle: 360
+Xrot: 90
+
+Object: generic sign
+Label: 50\M.P.H
+Size: 40 40 10
+Color: 1.0 0.0 0.0
+Position: -340 0 0
+Yrot: 180
+
+Object: generic sign
+Label: 100\M.P.H
+Size: 40 40 10
+Color: 1.0 0.0 0.0
+Position: -340 0 1100
+Yrot: 180
+
+Object: pillar
+Radius: 2
+Position: -300 0 600
+Height: 38
+
+#checkpoints for scene -10,1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 70.0
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: 620 8 -200
+Type: 1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 70.0
+Label:  CHECKPOINT 9
+Radius: 0.5
+Position: 780 8 -200
+Type: 1 9
+Yrot: 180
+Data: 1 3
+5 0 1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 50.0
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: -300 50 700 
+Type: 1 3
+Yrot: 180
+
+Object: ground
+
+
+Scene Location: -10 2
+
+Object: road
+Position: 700 0 -1000
+Width: 60
+Length: 500
+
+#Smaller inclined curve
+Object: curve
+Position: 200 0 -600
+Angle: 180
+Height: 2
+Width: 60
+Radius: 530
+Xrot: -10
+
+Object: road
+Position: -300 0 -1000
+Width: 60
+Length: 400
+
+
+#incline leading up to big inclined curve
+Object: road
+Position: -500 0 -1000
+Length: 806
+Height: 2 
+Width: 60
+Xrot: -7.13
+
+Object: curve
+Position: 100 100 -200
+Height: 2
+Width: 60
+Radius: 630
+Xrot: -10.0
+
+Object: road
+Position: 700 100 -200
+Width: 60
+Height: 2
+Length: 200
+Yrot: 180
+
+Object: bridge
+Position: 700 100 -370
+Length: 300
+Height: 10
+Width: 60
+
+# checkpoints for scene -10,2
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 70.0
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: 200 65  -105
+Type: 1 2
+Yrot: 90
+Xrot: -10.0
+Data: 1 3
+2 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 70.0
+Label:  CHECKPOINT 8
+Radius: 0.5
+Position: 100 200  400
+Type: 1 8
+Yrot: -90
+Xrot: -10.0
+
+Object: ground
+
+
+Scene Location: -11 1
+
+Object: road
+Position: 1000 0 -900
+Width: 60
+Length: 1000
+Yrot: 90
+
+Object: curve
+Position: 0 0 -600
+Width: 60
+Radius: 330
+Angle: 90
+Yrot: 180
+
+Object: road
+Position: -300 0 -600
+Width: 60
+Length: 600
+
+Object: curve
+Position: 0 0 0
+Width: 60
+Radius: 330
+Angle: 180
+
+Object: curve
+Position: -100 0 0
+Width: 60
+Height: 2
+Radius: 430
+Angle: 180
+Yrot: 180
+Xrot: -15
+
+Object: curve
+Position: 0 0 0
+Width: 60
+Radius: 530
+Angle: 180
+
+Object: curve
+Position: -100 0 0
+Width: 60
+Radius: 630
+Height: 2
+Angle: 180
+Yrot: 180
+Xrot: -15
+
+Object: curve
+Position: -100 0 0
+Width: 60
+Radius: 630
+Angle: 90
+Yrot: 90
+
+Object: road
+Position: -100 0 600
+Width: 60
+Length: 100
+Yrot: -90
+
+Object: road
+Position: 0 0 600
+Width: 60
+Height: 2
+Length: 510
+Yrot: -90
+Xrot: -11.31
+
+Object: road
+Position: 500 100 600
+Width: 60
+Height: 2
+Length: 600
+Yrot: -90
+
+#checkpoints for scene -11,1
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 50.0
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: 999 198 -900
+Type: 1 4
+Yrot: 90
+Data: 1 3
+5 0 1
+
+Object: checkpoint
+Length: 20.0
+Width:  80.0
+Height: 70.0
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: -100 95 -395
+Type: 1 5
+Yrot: 90
+Xrot: -15.0
+Data: 1 3
+1 1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  80.0
+Height: 70.0
+Label:  CHECKPOINT 6
+Radius: 0.5
+Position: -100 150 -595
+Type: 1 6
+Yrot: 90
+Xrot: -15.0
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 50.0
+Label:  CHECKPOINT 7
+Radius: 0.5
+Position: 995 98 600
+Type: 1 7
+Yrot: -90
+
+Object: ground
+
+
+Scene Location: -10 -1
+#scene to connect the tubular speedway to the freeway
+
+Object: curve
+Position: 400 0 -1000
+Radius: 430
+Width: 60
+Angle: 90
+Yrot: 90
+
+Object: curve
+Position: 400 0 -300
+Width: 60
+Radius: 330
+Angle: 90
+Yrot: -90
+
+Object: road
+Position: 700 0 -300
+Width: 60
+Length: 800
+
+Object: road
+Position: 700 0 500
+Width: 60
+Height: 2
+Length: 510
+Xrot: -11.31
+
+Object: right curve sign
+Position: -100 0 -1000
+Width: 20.0
+Height: 10.0
+Label: 100
+
+Object: right curve sign
+Position: 100 0 -1000
+Width: 20.0
+Height: 10.0
+Label: 100
+
+Object: left curve sign
+Position: 400 0 -500
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: -90
+
+Object: left curve sign
+Position: 400 0 -700
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: -90
+
+Object: generic sign
+Label: F\R\E\E\ \F\A\L\L\ 
+Size: 1000 100 2
+Color: 1.0 0.0 0.0
+Position: -500 0 -400
+
+# give the car a little spin on the way down
+Object: wall
+Position: -495 998 -800
+Size: 200 7 3
+
+Object: skyscraper
+Position: -700 0 -400
+Size: 100 120 1200
+
+Object: skyscraper
+Position: -440 0 -400
+Size: 100 120 1200
+
+
+#this wormhole teleports a car to scene -10,0 at -210,203,600
+Object: wormhole
+Position: -500 2 -800
+Size: 2 200 200
+Destination: -20210 203 600
+Angle: 90
+Xrot: 90
+
+Object: ground
+
+Scene Location: -10 -2
+
+Object: road
+Position: 1000 0 0
+Length: 2000
+Width: 60
+Yrot: 90
+
+Object: curve
+Position: 500 0 500
+Radius: 530
+Width: 60
+Angle: 90
+Yrot: 180
+
+Object: road
+Position: 0 0 500
+Length: 500
+Width: 60
+
+Object: generic sign
+Label: Tubular Speedway\------>
+Size: 100 200 10
+Yrot: 90
+Color: 1.0 1.0 0.0
+Position: 500 0 -120
+
+Object: ground
+
+Scene Location: -11 0
+Scene Type:  hill no roads
+
+Scene Location: -11 2
+Scene Type:  hill no roads
+

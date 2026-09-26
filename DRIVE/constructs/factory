@@ -1,0 +1,126 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Factory
+#
+# Approx size:  600x300
+# Offset 250' from road.
+#
+# Daryl Poe, July 1993
+
+
+# Tilted walls
+Object: wall
+Size: 80 40 40
+Position: -80.0 -10.0 -40.0
+Zrot: 30
+
+Object: wall
+Size: 80 40 40
+Position: -40.0 -10.0 -40.0
+Zrot: 30
+
+Object: wall
+Size: 80 40 40
+Position: 0.0 -10.0 -40.0
+Zrot: 30
+
+Object: wall
+Size: 80 40 40
+Position: 40.0 -10.0 -40.0
+Zrot: 30
+
+Object: wall
+Size: 80 40 40
+Position: 80.0 -10.0 -40.0
+Zrot: 30
+
+# End walls
+Object: wall
+Size: 80 20 25
+Position: -110.0 0.0 -40.0
+
+Object: wall
+Size: 80 20 25
+Position:  90.0 0.0 -40.0
+
+# Smokestack
+Construct: smokestack
+Position: -70.0 0.0 0.0
+
+# Windows
+Object: flat
+Size: 4.0 50.0 0.0
+Position: -50.0 5.0 -40.0
+Xrot: -90
+Color: 0.05 0.05 0.05
+
+Object: flat
+Size: 4.0 50.0 0.0
+Position:  50.0 5.0 -40.0
+Xrot: -90
+Color: 0.05 0.05 0.05
+
+Object: flat
+Size: 8.0 8.0 0.0
+Position: 0.0 4.0 -40.0
+Xrot: -90
+Color: 0.05 0.05 0.05
+
+Object: flat
+Size: 4.0 150.0 0.0
+Position: 0.0 5.0 40.0
+Xrot: 90
+Color: 0.05 0.05 0.05
+
+## sign
+#Object: generic sign
+#Label:  MOTEEFE WIDGET CO.
+#Size:  8 50 0.01
+#Position: 0 10 -40.5
+#Color: 0.0 0.1 0.5
+
+Object: parking lot
+Size: 200 250 0
+Position: 0.0 0.0 -150.0
+
+## A couple cars in the parking lot
+#Object: minivan
+#Position: -25.0 0.0 -90.0
+#Color: 0.1 0.4 0.1
+#
+#Object: sedan
+#Position: -45.0 0.0 -160.0
+#Color: 0.1 0.0 0.4
+
+Object: telephone line
+Length: 500
+Position: 400.0 0.0 0.0
+Yrot: 90.0
+
+# Loading dock
+Object: flat
+Size: 80 40 0
+Position: -140.0 0.0 0.0
+
+Object: road
+Position: -165.0 0.0 -250
+Length: 290
+
+Object: wall
+Size: 80 30 1.5
+Position: -135.0 15.0 -40.0

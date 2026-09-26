@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwMesh - create a 2-dimensional mesh of vertices, to be drawn as a sequence of triangle strips</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwMesh - create a 2-dimensional mesh of vertices, to be drawn as a
+sequence of triangle strips</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+  <li><a href="hwVertex.htm">hwVertex</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>Number of rows in the data mesh</td>
+</tr>
+<tr><td>GraphM</td>
+<td>1I</td>
+<td>Number of columns in the data mesh</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>Data</td>
+<td>*F</td>
+<td>The data mesh</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tessellation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>0</td>
+</tr>
+<tr><td>GraphM</td>
+<td>0</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>Data</td>
+<td>NULL</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwMesh class takes a mesh of vertices and displays them as a
+series of triangle strips. The GraphN parameter describes the number
+of rows in the mesh. The GraphM parameter describes the number of
+columns in the mesh. The Data pointer is an array of hwFloat values;
+the number of values should be equal to GraphN*GraphM*FPV, where FPV
+is the number of hwFloats present per vertex as described by
+hwVertex.3.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a two-sided square using the hwMesh primitive */
+    hwObject
+        mesh;
+    hwFloat
+        data[] = {
+            0,0,0,      1,0,0,
+            0,1,0,      1,1,0
+        };
+
+    mesh = hwMesh-&gt;create( hwMesh );
+    mesh-&gt;modify( mesh, hwStrData, HW_MAKE_TYPE(HW_TYPE_FLOAT,3*2*2), data );
+    HW_MODIFY_1I( mesh, hwStrGraphN, 2 );
+    HW_MODIFY_1I( mesh, hwStrGraphM, 2 );
+    HW_MODIFY_1B( mesh, hwStrTwoSided, HW_TRUE );
+    mesh-&gt;draw( mesh );
+    mesh-&gt;destroy( mesh );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A two-sided square using an hwMesh
+    hwMesh mesh {
+        GraphN = 2;
+        GraphM = 2
+        TwoSided = True
+        Data = {0,0,0,  1,0,0,    0,1,0,  1,1,0}
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

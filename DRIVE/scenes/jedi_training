@@ -1,0 +1,383 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#------------------------------------------------------------------------
+# One way to do a space course?
+#
+Racecourse:  Jedi Training Facility
+Race Seconds: 240
+Practice Seconds: 0
+Start SceneX: 5
+Start SceneZ: 4
+Start Position: -82.5 0 -500
+Start Angle: 0
+Start Positions: 12
+Turbo Mode: 0
+
+#------------------------------------------------------------------------
+Scene Location: 5 4
+
+Construct: windsock
+Position: -95 0 -300
+
+Construct: windsock
+Position: 95 0 -300
+
+Construct: landing_lights
+Radius: 2
+Color: 0.5 0.5 1
+Position: -90 0 -500
+
+Construct: landing_lights
+Radius: 2
+Color: 0.5 0.5 1
+Position: 0 0 -500
+
+Construct: landing_lights
+Radius: 2
+Color: 0.5 0.5 1
+Position: 90 0 -500
+
+Object: start
+Label: Jedi Training Facility
+Width: 180
+Length: 25
+Height: 55
+Radius: 1
+Position: 0 0 0
+Type: 1 9
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 60 500
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 182 818
+Xrot: -45
+
+Object: generic sign
+Color: 1 1 1
+Label: USE THE\FORCE
+Width: 120
+Length: 100
+Height: 0.001
+Position: 0 800 990
+Xrot: -90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 500 940
+Xrot: -90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 818 818
+Xrot: -135
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 940 500
+Xrot: 0
+
+Construct: boxed_chkpnt
+Type: 1 1
+Color: 1 0 0
+Label: CHECKPOINT 1
+Position: 0 940 0
+Yrot: 180
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 940 -500
+Xrot: 0
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 182 920 -818
+Xrot: 0
+Yrot: 45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 500 900 -940
+Xrot: 0
+Yrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 750 880 -940
+Xrot: 0
+Yrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 900 860 -940
+Xrot: 0
+Yrot: 90
+
+Object: flat
+Color: 0 0 0
+Width: 2000
+Length: 2000
+
+#------------------------------------------------------------------------
+Scene Location: 6 4
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -682 840 -818
+Yrot: -45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -500 820 -500
+
+Construct: boxed_chkpnt
+Type: 1 2
+Color: 1 0 0
+Label: CHECKPOINT 2
+Position: -500 810 -250
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -500 800 0
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -500 600 300
+Xrot: 30
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -500 300 600
+Xrot: 30
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -400 100 800
+Xrot: 10
+Yrot: -45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 0 100 900
+Yrot: 90
+
+Construct: boxed_chkpnt
+Type: 1 3
+Color: 1 0 0
+Label: CHECKPOINT 3
+Position: 250 100 900
+Yrot: -90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 500 100 900
+Yrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 782 100 782
+Yrot: 45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 900 100 500
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 900 218 218
+Xrot: 45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 900 500 100
+Xrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 782 782 100
+Yrot: 90
+Xrot: -45
+
+Construct: boxed_chkpnt
+Type: 1 4
+Color: 1 0 0
+Label: CHECKPOINT 4
+Position: 500 900 100
+Yrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 218 782 100
+Yrot: 90
+Xrot: 45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 100 500 100
+Xrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 218 218 100
+Yrot: 90
+Xrot: -45
+
+Construct: boxed_chkpnt
+Type: 1 5
+Color: 1 0 0
+Label: CHECKPOINT 5
+Position: 500 100 100
+Yrot: -90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 782 120 -18
+Yrot: 45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 900 140 -300
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 782 160 -582
+Yrot: -45
+
+Construct: boxed_chkpnt
+Type: 1 6
+Color: 1 0 0
+Label: CHECKPOINT 6
+Position: 500 180 -700
+Yrot: 90
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 76 200 -876
+Yrot: -45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: 76 200 -876
+Yrot: -45
+
+Object: flat
+Color: 0 0 0
+Width: 2000
+Length: 2000
+
+#------------------------------------------------------------------------
+Scene Location: 6 3
+
+Construct: boxed_chkpnt
+Type: 1 7
+Color: 1 0 0
+Label: CHECKPOINT 7
+Position: -100 200 700
+Yrot: 180
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -100 150 500
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -100 200 300
+
+Construct: boxed_chkpnt
+Type: 1 8
+Color: 1 0 0
+Label: CHECKPOINT 8
+Position: -100 150 100
+Yrot: 180
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -100 200 -100
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -100 150 -300
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -100 276 -724
+Xrot: 45
+
+Construct: hoop
+Color: 1 0 0
+Radius: 50
+Position: -100 700 -900
+Xrot: 90
+
+Construct: boxed_finish
+Type: 1 9
+Color: 1 0 0
+Label: FINISH
+Position: -100 900 -900
+Xrot: -90
+Zrot: 180
+
+Construct: space_bldg_1
+Position: -300 400 -900
+
+Construct: space_bldg_2
+Position: 200 300 -800
+
+Object: flat
+Color: 0 0 0
+Width: 2000
+Length: 2000
+

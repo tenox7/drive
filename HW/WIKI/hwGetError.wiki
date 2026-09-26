@@ -1,0 +1,32 @@
+== NAME ==
+hwGetError - return error information from HoverWare
+
+== SYNOPSIS ==
+{{{
+    #include "hw.h"
+
+    hwInt32 hwGetError(void);
+}}}
+
+== DESCRIPTION ==
+The hwGetError() call may be used to retrieve a token representing the
+last error that HoverWare encountered.  The following are possible values
+which may be returned:
+
+| HW_ERROR_NO_MEMORY | An out-of-memory condition was encountered
+| HW_ERROR_BAD_PROP  | A modification or inquiry was done of a property not recognized by a class
+| HW_ERROR_BAD_TYPE  | The type passed in to modify() is not valid for the given property
+| HW_ERROR_INTERNAL  | An internal error has occurred - this should not happen in practice
+
+== EXAMPLE ==
+{{{
+    hwInt32 err;
+
+    err = hwGetError();
+    if (err) {
+        printf("Error occurred recently\n");
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]]

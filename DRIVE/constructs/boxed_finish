@@ -1,0 +1,97 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# A boxed finish checkpoint that you have to fly through
+# specify type, label, color
+
+Object: finish
+Width: 90
+Length: 30
+Height: 90
+Radius: 1
+Position: 0 -45 0
+
+#bottom
+Object: wall
+Width: 100
+Height: 10
+Length: 5
+Position: 0 -55 0
+Xrot: -90
+
+#top
+Object: wall
+Width: 100
+Height: 10
+Length: 5
+Position: 0 45 0
+Xrot: -90
+
+#left
+Object: wall
+Width: 5
+Height: 10
+Length: 100
+Position: -47.5 -55 0
+Xrot: -90
+
+#right
+Object: wall
+Width: 5
+Height: 10
+Length: 100
+Position: 47.5 -55 0
+Xrot: -90
+
+#and the other side...
+
+#bottom
+Object: wall
+Width: 100
+Height: 10
+Length: 5
+Position: 0 -55 0
+Xrot: -90
+Yrot: 180
+
+#top
+Object: wall
+Width: 100
+Height: 10
+Length: 5
+Position: 0 45 0
+Xrot: -90
+Yrot: 180
+
+#left
+Object: wall
+Width: 5
+Height: 10
+Length: 100
+Position: -47.5 -55 0
+Xrot: -90
+Yrot: 180
+
+#right
+Object: wall
+Width: 5
+Height: 10
+Length: 100
+Position: 47.5 -55 0
+Xrot: -90
+Yrot: 180
+

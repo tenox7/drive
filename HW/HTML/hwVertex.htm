@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwVertex - describe the format of a HoverWare vertex</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwVertex - describe the format of a HoverWare vertex</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>HasW</td>
+<td>1B</td>
+<td>Does each vertex contain a homogeneous W component?</td>
+</tr>
+<tr><td>HasRGB</td>
+<td>1B</td>
+<td>Does each vertex contain an RGB triple?</td>
+</tr>
+<tr><td>HasAlpha</td>
+<td>1B</td>
+<td>Does each vertex contain an alpha?</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>1B</td>
+<td>Does each vertex contain a normal XYZ triple?</td>
+</tr>
+<tr><td>HasTangent</td>
+<td>1B</td>
+<td>Does each vertex have a 4-component tangent vector (for
+  bump/relief mapping)?</td>
+</tr>
+<tr><td>HasST</td>
+<td>1B</td>
+<td>Does each vertex contain a texture S,T pair?</td>
+</tr>
+<tr><td>HasR</td>
+<td>1B</td>
+<td>Does each vertex contain a texture R?</td>
+</tr>
+<tr><td>HasQ</td>
+<td>1B</td>
+<td>Does each vertex contain a texture Q?</td>
+</tr>
+<tr><td>HasST1, HasST2, HasST3, HasST4, HasST5, HasST6, HasST7</td>
+<td>1B</td>
+<td>Same as HasST for texture unit N</td>
+</tr>
+<tr><td>HasR1, HasR2, HasR3, HasR4, HasR5, HasR6, HasR7</td>
+<td>1B</td>
+<td>Same as HasR for texture unit N</td>
+</tr>
+<tr><td>HasQ1, HasQ2, HasQ3, HasQ4, HasQ5, HasQ6, HasQ7</td>
+<td>1B</td>
+<td>Same as HasQ for texture unit N</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<p>All vertex properties default to False</p>
+<h2>DESCRIPTION</h2>
+<p>There is not really a hwVertex class; however, several HoverWare
+classes use these properties and inherit them from a pseudo-class.
+The classes which use these properties include:</p>
+
+<ul>
+  <li><a href="hwMesh.htm">hwMesh</a></li>
+  <li><a href="hwPolygon.htm">hwPolygon</a></li>
+  <li><a href="hwQuads.htm">hwQuads</a></li>
+  <li><a href="hwStrip.htm">hwStrip</a></li>
+  <li><a href="hwTriangles.htm">hwTriangles</a></li>
+</ul>
+<p>Some of the properties are only valid to specify if another
+property is also specified. This is the complete list of such
+&quot;dependent&quot; properties:</p>
+<table>
+<tr><th>Property</th>
+<th>Dependent upon:</th>
+</tr>
+<tr><td>HasAlpha</td>
+<td>HasRGB</td>
+</tr>
+<tr><td>HasR</td>
+<td>HasST</td>
+</tr>
+<tr><td>HasR1</td>
+<td>HasST1</td>
+</tr>
+<tr><td>HasR2</td>
+<td>HasST2</td>
+</tr>
+<tr><td>HasR3</td>
+<td>HasST3</td>
+</tr>
+<tr><td>HasR4</td>
+<td>HasST4</td>
+</tr>
+<tr><td>HasR5</td>
+<td>HasST5</td>
+</tr>
+<tr><td>HasR6</td>
+<td>HasST6</td>
+</tr>
+<tr><td>HasR7</td>
+<td>HasST7</td>
+</tr>
+<tr><td>HasQ</td>
+<td>HasR</td>
+</tr>
+<tr><td>HasQ1</td>
+<td>HasR1</td>
+</tr>
+<tr><td>HasQ2</td>
+<td>HasR2</td>
+</tr>
+<tr><td>HasQ3</td>
+<td>HasR3</td>
+</tr>
+<tr><td>HasQ4</td>
+<td>HasR4</td>
+</tr>
+<tr><td>HasQ5</td>
+<td>HasR5</td>
+</tr>
+<tr><td>HasQ6</td>
+<td>HasR6</td>
+</tr>
+<tr><td>HasQ7</td>
+<td>HasR7</td>
+</tr>
+</table>
+<p>The data in a vertex is specified in the same order as the list
+of flags above. Each data element consists of one, two, or three
+floating point numbers. All vertices implicitly contain an XYZ
+coordinate triple, regardless of any other flag settings. This triple
+is always the first element in each vertex. HoverWare therefore
+supports from 3 (if no flags are specified) to 47 (if all possible
+flags are specified) floats per vertex.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* TBD */
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # TBD
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwMesh.htm">hwMesh</a>, <a
+href="hwPolygon.htm">hwPolygon</a>, <a href="hwQuads.htm">hwQuads</a>, <a
+href="hwStrip.htm">hwStrip</a>, <a href="hwTriangles.htm">hwTriangles</a></p>
+</body>
+</html>

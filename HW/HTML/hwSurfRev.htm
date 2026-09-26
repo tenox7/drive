@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwSurfRev - create a shape specified by revolving a path about the Z axis</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwSurfRev - create a shape specified by revolving a path about the
+Z axis</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>The number of rows in the resulting mesh</td>
+</tr>
+<tr><td>Data</td>
+<td>*F</td>
+<td>The 2-dimensional path to be rotated around the Z axis</td>
+</tr>
+<tr><td>LonRange</td>
+<td>2F</td>
+<td>The starting and ending points of the rotation, in degrees from
+  0 to 360</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>1B</td>
+<td>True for smooth shading; false for faceted appearance</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tesselation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>9</td>
+</tr>
+<tr><td>LonRange</td>
+<td>{0,360}</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>True</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwSurfRev class creates a surface of revolution based on a
+2-dimensional path. The path consists of radius, height pairs. The
+radius is the distance of this point on the path from the Z axis. The
+height is the distance of the point above the XY plane. This path is
+revolved about the Z axis, starting at LonRange[0] degrees, and going
+to LonRange[1] degrees. By default, this surface is smoothly shaded;
+set HasNormals to False if you want a faceted appearance.</p>
+<p>The default texture coordinates for a surface of revolution have
+the S coordinate increasing from 0.0 to 1.0 around the arc, and T
+increasing from 0.0 to 1.0 from minimum Z to maximum Z.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a surface of revolution */
+    hwObject
+        surfRev;
+    hwFloat
+        points[] = {1,0, 0.5,1, 1,2};
+
+    surfRev = hwSurfRev-&gt;create( hwSurfRev );
+    surfRev-&gt;modify( surfRev, hwStrData,
+                        HW_MAKE_TYPE(HW_TYPE_FLOAT,6), points );
+    HW_MODIFY_1B( surfRev, hwStrTwoSided, HW_TRUE );
+    surfRev-&gt;draw( surfRev );
+    surfRev-&gt;destroy( surfRev );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A simple surface of revolution
+    hwSurfRev surfRev {
+        Data = {1,0, 0.5,1, 1,2}
+        TwoSided = True
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Gas pump
+#
+# A gas pump for service stations, centered at 0,0.
+#
+
+# The pump
+Object: wall
+Size: 1.5 2.0 4.0
+Position: 0.0 0.0 -.75
+Color: 0.5 0.5 0.5
+
+Object: wall
+Size: 1.5 2.0 2.0
+Position: 0.0 4.0 -.75
+Color: 0.1 0.1 0.1
+
+# The hose
+Object: pillar
+Height: 3.0
+Radius: 0.15
+Position: 1.75 1.0 0.0
+Zrot: 20.0
+Color: 0.0 0.0 0.0
+
+Object: pillar
+Height: 3.0
+Radius: 0.15
+Position: 1.75 1.0 0.0
+Color: 0.0 0.0 0.0
+
+# The nozzle
+Object: wall
+Size: .3 .5 .7
+Position: 2.0 4.0 -.1
+Zrot: 45.0
+Color: 0.5 0.5 0.5
+
+Object: pillar
+Height: 1.5
+Radius: 0.1 
+Position: 2.0 4.0 0.0
+Zrot: 45.0
+Color: 0.5 0.5 0.5
+
+Object: generic sign
+Position: 0 6 0
+Size: 1.5 2 0.01
+Label: Check\Your Oil?
+Color: 0.0 0.0 1.0

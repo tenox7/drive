@@ -1,0 +1,270 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+### TWILIGHT ZONE ###
+
+Scene Location: -1 -6
+
+Object: flat
+Size: 500 500 0
+Position: -750 0 -750 
+Color: 0.0 0.0 0.0
+
+Object: flat
+Size: 500 500 0
+Position: -250 0 -750 
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 500 500 0
+Position: 250 0 -750 
+Color: 0.0 0.0 0.0
+
+Object: flat
+Size: 500 500 0
+Position: 750 0 -750 
+Color: 1.0 1.0 1.0
+
+
+Object: flat
+Size: 500 500 0
+Position: -750 0 -250 
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 500 500 0
+Position: -250 0 -250 
+Color: 0.0 0.0 0.0
+
+Object: flat
+Size: 500 500 0
+Position: 250 0 -250 
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 500 500 0
+Position: 750 0 -250 
+Color: 0.0 0.0 0.0
+
+
+Object: flat
+Size: 500 500 0
+Position: -750 0 250 
+Color: 0.0 0.0 0.0
+
+Object: flat
+Size: 500 500 0
+Position: -250 0 250 
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 500 500 0
+Position: 250 0 250 
+Color: 0.0 0.0 0.0
+
+Object: flat
+Size: 500 500 0
+Position: 750 0 250 
+Color: 1.0 1.0 1.0
+
+
+Object: flat
+Size: 500 500 0
+Position: -750 0 750 
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 500 500 0
+Position: -250 0 750 
+Color: 0.0 0.0 0.0
+
+Object: flat
+Size: 500 500 0
+Position: 250 0 750 
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 500 500 0
+Position: 750 0 750 
+Color: 0.0 0.0 0.0
+
+Construct: arch
+Color: 1.0 0.0 0.0
+Position: 990 0 0
+Yrot: 90
+
+Construct: arch
+Color: 1.0 0.5 0.0
+Position: 980 0 0
+Yrot: 90
+
+Construct: arch
+Color: 1.0 1.0 0.0
+Position: 970 0 0
+Yrot: 90
+
+Construct: arch
+Color: 0.0 1.0 0.0
+Position: 960 0 0
+Yrot: 90
+
+Construct: arch
+Color: 0.0 0.0 1.0
+Position: 950 0 0
+Yrot: 90
+
+Construct: arch
+Color: 0.5 0.0 1.0
+Position: 940 0 0
+Yrot: 90
+
+Object: ufo
+Position: 500 1 500
+
+Object: ufo
+Position: -500 1 -500
+
+Object: generic sign
+Position: 870 0 0
+Yrot: 90
+Label: Abandon Hope!
+Size: 20 40 1
+Color: 1.0 0.0 1.0
+
+Construct: triple_arch
+Color: 0.0 0.0 1.0
+Position: 900 0 70
+Yrot: 45
+Zrot: 10
+
+Construct: triple_arch
+Color: 1.0 1.0 0.0
+Position: 800 0 -100
+Yrot: -17
+Zrot: -30
+
+Construct: triple_arch
+Color: 0.0 1.0 1.0
+Position: 671 -5 -85
+Yrot: -217
+Xrot: 21
+
+Object: road
+Position: 700 0 0
+Yrot: 90
+Xrot: 30
+Length: 100
+Height: 2
+
+Object: road
+Position: 600 35 0
+Yrot: 90
+Length: 100
+Height: 2
+
+Object: tree
+Position: 580 35 10
+Zrot: 180
+Height: 30
+
+Object: tree
+Position: 520 35 0
+Zrot: 160
+Height: 30
+
+Object: conifer
+Position: 560 35 -5
+Zrot: 170
+Yrot: 10
+Height: 30
+
+Object: road
+Position: 800 0 -200
+Length: 400
+Yrot: 90
+Xrot: -30
+Height: 2
+
+Object: generic sign
+Position: 500 200 -200
+Xrot: -30
+Yrot: 90
+Label: DEAD END
+Size: 10 20 0.1
+Color: 1.0 1.0 0.0
+
+Object: curve
+Angle: 359.99
+Radius: 50.0
+Position: 400 50 -200
+
+Object: curvewall
+Angle: 359.99
+Position: 400 50 -200
+Radius: 50.0
+Height: 20.0
+Zrot: 180
+
+#Object: lower tube
+#Position: 800 0 800
+#Length: 300
+#Xrot: -10
+
+Object: conifer
+Position: 400 0 -100
+Height: 50
+
+Object: wall
+Position: 400 38 -110
+Size: 20 20 2
+
+Object: house
+Yrot: 40
+Position: 400 40 -100
+
+
+Object: wall
+Size: 200 20 200
+
+Object: house
+Zrot: -90
+Position: 10 30 40
+
+Object: house
+Zrot: -90
+Position: 10 140 120
+
+Object: house
+Zrot: -90
+Position: 10 70 150
+
+# Eyeball
+Object: sphere
+Radius: 30.0
+Position: 200.0 40.0 0.0
+Color: 1.0 1.0 1.0
+
+Object: sphere
+Radius: 15.0
+Position: 220.0 40.0 0.0
+Color: 0.0 0.0 1.0
+
+Object: sphere
+Radius: 12.0
+Position: 225.0 40.0 0.0
+Color: 0.0 0.0 0.0
+

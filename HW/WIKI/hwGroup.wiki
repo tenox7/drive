@@ -1,0 +1,70 @@
+== NAME ==
+hwGroup - create a group of objects which share a transformation
+
+== INHERITS FROM ==
+* [[hwOrient]]
+
+== PROPERTIES ==
+|   Children   | *O  |   The list of children which are grouped together in this object
+|   Invisible  | 1B  |   True if the object is not to be displayed; false otherwise
+|   Visibility | 1I  |   Visibility mask for use with hwDisplay->setVisibility
+|   LOD        | *F  |   Array of level-of-detail information
+|   Matrices   | *F  |   Individual transform matrix for each Child
+|   OptFlags   | 1B  |   Optimization flags; see [[hw]] for more details
+
+== DEFAULTS ==
+|   Children | {}
+|   Invisible | False
+|   Visibility | 0xFFFFFFFF
+|   LOD | {}
+|   Matrices | {}
+|   OptFlags | False
+
+== DESCRIPTION ==
+The hwGroup class is used to group a set of children together and
+apply a common transformation to them.  This is useful for two
+reasons; first, it is often easier to transform multiple objects
+simultaneously; second, a hierarchy of objects enhances the
+visibility culling algorithms used by HoverWare.
+
+The LOD property is an array of minimum and maximum LOD values at
+which the corresponding Child is to be drawn.  The LOD values are
+expressed as a percentage of viewport size.  When the bounding
+volume of the whole group is found to be within range of a
+particular Child's LOD min and max, then that child is drawn.  If
+the Children array has more entries than the LOD array has pairs,
+then the extra Children are always drawn.
+
+The Matrices property is used to transform individual Children.
+Every 16 floats of the Matrices property is considered to be an
+individual matrix corresponding to the i'th Child.  This matrix is
+pushed before the Child is drawn, and then popped afterward.  If
+there are more Children than Matrices, the extra children are drawn
+without an extra matrix push/pop.
+
+== C EXAMPLE ==
+{{{
+    /* Draw a group of objects all rotated about Y by 30 degrees */
+    hwObject
+        group,
+        objectList[] = {obj1, obj2, obj3, obj4};
+
+    group = hwGroup->create( hwGroup );
+    group->modify( group, hwStrChildren,
+                        HW_MAKE_TYPE(HW_TYPE_OBJECT,4), objectList );
+    HW_MODIFY_3F( group, hwStrRotate, 0.0, 30.0, 0.0 );
+    group->draw( group );
+    group->destroy( group );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A group of objects, rotated about Y by 30 degrees
+    hwGroup group {
+        Rotate = {0,30,0}
+        Children = {obj1, obj2, obj3, obj4}
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwOrient]], [[hwDisplay|hwDisplay->setVisibility]]

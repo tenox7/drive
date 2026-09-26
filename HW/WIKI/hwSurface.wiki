@@ -1,0 +1,98 @@
+== NAME ==
+hwSurface - define surface parameters of an object
+
+== PROPERTIES ==
+| Color        | 3F | The color of the surface
+| Transparency | 1F | How transparent is the surface; 0 = completely opaque
+| SpecColor    | 3F | The specular highlight color of the surface
+| Shininess    | 1F | How "specular" is the surface; 0 = dull, 1.0 = extremely shiny
+| Backface     | 1B | Is this surface back-facing only?
+| TwoSided     | 1B | Is this surface visible from both sides?
+| Bright       | 1B | Is this surface intrinsically bright?
+| Invisible    | 1B | Is this surface visible at all?
+| Wireframe    | 1B | Should this surface be drawn as a wireframe?
+| Visibility   | 1I | Visibility mask for use with hwDisplay->setVisibility
+| Texture      | 0O | Object to be used to texture map this surface; should be a hwTexture object
+| PrunePrim    | 1B | Obsolete
+| SampVert     | 1B | Should the objects using this surface be drawn with texturing simulated by sampling the color at the vertex?
+| Blend        | 1B | Should this object be alpha blended?
+| PreMult      | 1B | When blending, is alpha pre-multiplied?
+| FlipNormals  | 1B | Should the normals of this surface be flipped?
+| Uncolored    | 1B | Should this surface inherit color/texture attributes from the previously drawn surface?
+| PrimSize     | 1F | Size of lines or points to be drawn
+
+== DEFAULTS ==
+| Color        | {1,1,1}
+| Transparency | 0.0
+| SpecColor    | {1,1,1}
+| Shininess    | 0.1;
+| Backface     | False
+| TwoSided     | False
+| Bright       | False
+| Invisible    | False
+| Wireframe    | False
+| Visibility   | 0xFFFFFFFF
+| Texture      | NULL
+| PrunePrim    | False
+| SampVert     | False
+| Blend        | False
+| PreMult      | False
+| FlipNormals  | False
+| Uncolored    | False
+| PrimSize     | 1.0
+
+== DESCRIPTION ==
+The hwSurface class defines the surface attributes of graphics
+primitives in HoverWare.  Most primitives inherit these properties
+from the hwSurface class; however, you can always create a hwSurface
+object and pass it in to one of these objects as the Surface
+parameter.
+
+The Color is the color of the surface; an RGB triple.  Transparency
+is the amount of transparency the object has; 0.0 is opaque, 1.0 is
+fully transparent.  SpecColor is the specular highlight color of the
+surface; an RGB triple.  Shininess controls how shiny the object is;
+a Shininess of 0.0 implies a matte object, a Shininess of 1.0 is a
+very reflective surface.  The Backface attribute tells HoverWare
+that this surface has an orientation which is the reverse of
+HoverWare's default.  The TwoSided attribute tells HoverWare that
+both sides of a surface are visible.  The Bright attribute indicates
+that the surface is fully emissive; that is, it is always fully
+bright.  The Invisible flag is handy when you want to temporarily
+not draw a surface.  The Wireframe flag tells HoverWare to draw the
+surface as a wireframe outline only.  The Visibility mask is a set
+of 32 bits which indicates which states this surface is visible in;
+see hwDisplay->setVisibility for more information.  The Texture attribute is
+an hwTexture object which indicates how the surface should be
+texture mapped.  Finally, the Uncolored flag tells HoverWare that
+this surface should inherit color and texture attributes from the
+previously drawn surface.
+
+== C EXAMPLE ==
+{{{
+    /* Create a red surface and use it on a ball */
+    hwObject
+        surf, sphere;
+
+    surf = hwSurface->create( hwSurface );
+    HW_MODIFY_3F( surf, hwStrColor, 1, 0, 0 );
+
+    sphere = hwSphere->create( hwSphere );
+    sphere->modify( sphere, hwStrSurface, HW_TYPE_OBJECT, surf );
+    sphere->draw( sphere );
+    sphere->destroy( sphere );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A red surface used on a ball
+    hwSurface surf {
+        Color = {1,0,0}
+    }
+    hwSphere sphere {
+        Surface = surf
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwTexture]], [[hwDisplay|hwDisplay->setVisibility]]

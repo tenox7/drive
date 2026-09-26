@@ -1,0 +1,328 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Mikeville !  A simple town.
+
+Scene Location: 0 -4
+
+# Road Into Town
+Object: road
+Length: 2000
+Yrot:   0
+Width:  40
+Position: 0 0 -1000
+
+# T Junction
+Object: road
+Length: 2000
+Yrot: 90
+Width: 40
+Position: 1000 0 0
+    
+# Stop Sign at the Junction
+Object: stop sign
+Position: 25.0 0.0 25.0 
+Yrot: 180
+Height: 4
+
+# Warning sign (!) at the Junction
+Object: generic sign
+Label: Now Entering\Mikeville
+Size:  5 10 7
+Position: -33 0 250
+Yrot: 180
+Color: 0.4 0.7 0.7
+
+# Lamps along the road
+Object: lamp
+Position: -33 0 100
+Type: overhanging
+Yrot: 0
+
+Object: lamp
+Position: -33 0 200
+Type: overhanging
+Yrot: 0
+
+Object: lamp
+Position: -33 0 300
+Type: overhanging
+Yrot: 0
+
+Object: lamp
+Position: -33 0 400
+Type: overhanging
+Yrot: 0
+
+Object: lamp
+Position: -33 0 500
+Type: overhanging
+Yrot: 0
+
+Object: lamp
+Position: 33 0 100
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 200
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 300
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 400
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 500
+Type: overhanging
+Yrot: 180
+
+# Houses along the road
+
+Object: house
+Type: dutch colonial
+Position: 50 0 100
+
+Object: house
+Type: antebellum farm
+Position: 50 0 250
+
+Object: house
+Type: gothic cottage
+Position: 50 0 200
+
+Object: house
+Type: dutch colonial
+Position: 50 0 250
+
+Object: house
+Type: gothic cottage
+Position: 50 0 300
+
+Object: house
+Type: dutch colonial
+Position: 50 0 350
+
+Object: house
+Type: antebellum farm
+Position: 50 0 400
+
+Object: house
+Type: gothic cottage
+Position: 50 0 450
+
+Object: house
+Type: dutch colonial
+Position: -50 0 100
+
+Object: house
+Type: gothic cottage
+Position: -50 0 150
+
+Object: house
+Type: antebellum farm
+Position: -50 0 250
+Yrot: 180
+
+Object: house
+Type: dutch colonial
+Position: -50 0 300
+Yrot: 180
+
+Object: house
+Type: gothic cottage
+Position: -50 0 350
+Yrot: 180
+
+Object: house
+Type: dutch colonial
+Position: -50 0 400
+Yrot: 180
+
+Object: house
+Type: dutch colonial
+Position: -50 0 450
+Yrot: 180
+
+# Speed sign
+Object: speed limit sign
+Label: 100
+Position: -32 0 450
+Yrot: 180
+
+# Road around the back
+
+Object: curve
+Width: 40.0
+Radius: 500
+Angle: 180
+Yrot: 180
+Position: 0 0 0
+
+Object: ground
+
+#
+# A figure of eight raceway with a rather large bridge
+#
+
+Scene Location: 0 -5
+
+# Sign !
+
+Object: start
+Length: 20.0
+Width: 100.0
+Height: 50.0
+Label: Silly!
+Radius: 0.5
+Position: 0 0 980
+Type: 1 2
+Yrot: 180
+
+Object: finish
+Length: 20.0
+Width: 100.0
+Height: 50.0
+Label: Normality!
+Radius: 0.5
+Position: 0 0 -900
+Type: 1 3
+Yrot: 180
+
+# Checkpoints
+
+Object: checkpoint
+Length: 20.0
+Width: 100.0
+Height: 50.0
+Label: Big Momma Bridge
+Radius: 0.5
+Position: 0 0 500
+Yrot: 180
+
+Object: checkpoint
+Length: 20.0
+Width: 100.0
+Height: 50.0
+Label: Thru the Hole
+Radius: 0.5
+Position: -500 0 0
+Yrot: 270
+
+# Incoming roads
+
+Object: road
+Length: 5000
+Width: 40
+Yrot: -180
+Z: 1000
+
+Object: road
+Length: 500
+Width: 40
+Yrot: -180
+Z: -1000
+
+Object: road
+Length: 500
+Width: 40
+Yrot: -90
+X: 1000
+
+Object: road
+Length: 500
+Width: 40
+Yrot: -90
+X: -1000
+
+# Roadsigns
+
+Object: right curve sign
+Position: -33 0 -500
+Width: 6
+Height: 4
+Label: 95
+Yrot: 180
+
+Object: left curve sign
+Position: 500 0 -33
+Width: 6
+Height: 4
+Label: 95
+Yrot: 270
+
+# Gatehouse
+
+Object: skyscraper
+Size: 50 50 20
+Position: -80 0 900  
+
+Object: lamp
+Position: -35 0 900
+
+# The central bridges
+
+Object: bridge
+Length: 1000
+Width: 40
+Position: 0 0 0
+Yrot: 0
+Height: 100
+
+Object: bridge
+Length: 1000
+Width: 40
+Position: 0 0 0
+Yrot: 90
+Height: 50
+
+# Track Curves
+
+Object: curve
+Radius: 520
+Width: 40
+Position: -500 0 -500
+Angle: 270
+Yrot: 90 
+
+Object: curve
+Radius: 520
+Width: 40
+Position: 500 0 500
+Angle: 270
+Yrot: 270
+
+# The water
+
+Object: pond
+Length: 800
+Width: 800
+Position: -500 0 -500
+
+Object: pond
+Length: 800
+Width: 800
+Position: 500 0 500
+
+Object: ground

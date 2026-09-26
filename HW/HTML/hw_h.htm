@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>
+OADL header file
+</title>
+<link rel="stylesheet" type="text/css" href="code.css">
+</head>
+<body>
+<pre>
+<i>/* (c) Copyright Hewlett-Packard Company 2001
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */</i>
+
+<i>/* Get OS definitions, header files, etc. that HW needs */</i>
+<b>#</b><b>include</b> <em>"hw_os.h"</em>
+
+<i>/* Get typedefs, #defines, etc. */</i>
+<b>#</b><b>include</b> <em>"hw_types.h"</em>
+
+<i>/* Get definition of display class */</i>
+<b>#</b><b>include</b> <em>"hw_display.h"</em>
+
+<i>/* Get function declarations */</i>
+<b>#</b><b>include</b> <em>"hw_protos.h"</em>
+
+<i>/* Get strings */</i>
+<b>#</b><b>include</b> <em>"hw_strings.h"</em>
+
+<strong>extern</strong> hwInt32
+    hwDefaultOptFlags;  <i>/* Default optimization level */</i>
+
+<strong>extern</strong> <strong>char</strong> 
+    *hwDefaultDataFilePath;  <i>/* Default location of texture, other Data files */</i>
+
+<i>/* Built-in classes */</i>
+<strong>extern</strong> hwObject
+    hwCamera,           <i>/* Eye position, orientation */</i>
+    hwLight,            <i>/* A single light */</i>
+    hwSpinner,          <i>/* An animation object */</i>
+    hwTimer,            <i>/* Control the passage of time */</i>
+    hwFile,             <i>/* A reference to a file containing other objects */</i>
+    hwEnviron,          <i>/* Environmental settings (depth cue, etc.) */</i>
+    hwImage,            <i>/* A raster image, for textures, etc. */</i>
+    hwTexture,          <i>/* A texture map, for subsequent use */</i>
+    hwSphere,           <i>/* Sphere with rad, lat[01], lon[01] */</i>
+    hwCone,             <i>/* Cone with rad0, rad1, height, lon[01] */</i>
+    hwRing,             <i>/* Ring with rad0, rad1, lon[01] */</i>
+    hwTorus,            <i>/* Torus with rad0, rad1, lat[01], lon[01] */</i>
+    hwDisc,             <i>/* Disc with rad, lon[01] */</i>
+    hwGroup,            <i>/* Group of primitives */</i>
+    hwBox,              <i>/* Box with [xyz]min and [xyz]max */</i>
+    hwSurfRev,          <i>/* Surface of revolution */</i>
+    hwSweep,            <i>/* Sweep a shape about a path */</i>
+    hwText,             <i>/* A text string with extrusion */</i>
+    hwText2D,           <i>/* A 2D bitmap-font text string */</i>
+    hwMesh,             <i>/* A N x M array of vertices */</i>
+    hwPolygon,          <i>/* A convex polygon */</i>
+    hwPolyline,         <i>/* A connected list of line segments */</i>
+    hwPolymarker,       <i>/* A set of dots */</i>
+    hwTriangles,        <i>/* A pile o' triangles */</i>
+    hwQuads,            <i>/* A pile o' quads */</i>
+    hwStrip,            <i>/* A Triangle Strip */</i>
+    hwSurface,          <i>/* Conveniently packaged surface attributes */</i>
+    hwOrient;           <i>/* Conveniently packaged orientation values */</i>
+
+<i>/* GUI classes */</i>
+<strong>extern</strong> hwObject
+    hwFont,             <i>/* Texture font object */</i>
+    hwButton,           <i>/* Command push button */</i>
+    hwGauge,            <i>/* Circular analog gauge */</i>
+    hwJoystick,         <i>/* Joystick mapper */</i>
+    hwLabel,            <i>/* Text label */</i>
+    hwLayout,           <i>/* Arbitrary gadget layout */</i>
+    hwRowCol,           <i>/* Row/col layout widget */</i>
+    hwToggle;           <i>/* Toggle button */</i>
+</pre>
+</body>
+</html>

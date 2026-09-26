@@ -1,0 +1,503 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+### FIGURE 8 SPEEDWAY ###
+
+Racecourse:  Figure-8
+Practice Seconds: 0
+Race Seconds: 240
+Start SceneX: -13
+Start SceneZ: -1
+Start Position: -322 0 0
+Start Angle: 0
+Start Positions: 4
+Turbo Mode: 2
+Turbo Boosts: 10
+
+
+Scene Location: -13 0
+
+
+Object: wall
+Position: -300 0 -900
+Size: 5 200 10
+Color: 1.0 0.0 0.0
+
+Object: road
+Position: -300 0 -900
+Size: 300 60 0
+
+Object: road
+Position: -300 0 -600 
+Size: 240 60 2
+Xrot: -10.0
+
+Object: road
+Position: -300 0 0
+Size: 240 60 2
+Yrot: 180
+Xrot: -10.0
+
+Object: road
+Position: -300 0 0
+Size: 600 60 0
+
+# two curves forming loop back
+Object: curve
+Position: -600 0 600
+Width: 60
+Radius: 330
+Angle: 270
+
+Object: curve
+Position: -600 0 0
+Width: 60
+Radius: 330
+Angle: 90
+
+
+# curve forming north side of figure 8
+
+Object: curve
+Position: 0 0 0
+Radius: 330
+Width: 60
+Angle: 270
+Yrot: -90
+
+Object: road
+Position: 0 0 -300
+Size: 240 60 2
+Yrot: 90
+Xrot: -10.0
+
+Object: road
+Position: -600 0 -300
+Size: 240 60 2
+Yrot: -90
+Xrot: -10.0
+
+# curve forming south side of figure 8
+Object: curve
+Position: -600 0 -600
+Width: 60
+Radius: 330
+Angle: 270
+Yrot: 90
+
+
+# Part going east
+
+Object: curve
+Position: 0 0 -600
+Width: 60
+Radius: 330
+Angle: 90
+Yrot: 180
+
+Object: road
+Position: 0 0 -900
+Size: 825 60 2
+Yrot: -90
+Xrot: -14.04
+
+Object: road
+Position: 800 200 -900
+Size: 300 60 2
+Yrot: -90
+
+
+# diagonal section, north
+
+Object: road 
+Position: 1000 0 500
+Size: 520 60 0
+Yrot: 90
+
+Object: road
+Position: 500 0 500
+Size: 300 60 0
+Yrot: 135
+
+Object: bridge
+Position: 210 0 210
+Size: 300 80 20
+Yrot: 135
+
+Object: road
+Position: 120 0 120
+Size: 320 60 0
+Yrot: 135
+
+Object: road
+Position: -88 0 -88
+Size: 240 60 2
+Yrot: 135
+Xrot: -10.0
+
+# diagonal section, north
+
+Object: bridge
+Position: -810 0 -810
+Size: 300 80 20
+Yrot: -45
+
+Object: road
+Position: -700 0 -700
+Size: 320 60 0
+Yrot: -45
+
+Object: road
+Position: -512 0 -512
+Size: 240 60 2
+Yrot: -45
+Xrot: -10.0
+
+Object: road
+Position: -900 0 -900
+Size: 150 60 0
+Yrot: 135
+
+Object: generic sign
+Position: -200 0 300
+Size: 50 100 10
+Label: CHKPT 2 -->
+Color: 1.0 0.0 0.0
+
+Object: generic sign
+Position: -400 0 300
+Size: 50 100 10
+Label: <-- CHKPT 5 
+Color: 1.0 0.0 0.0
+
+Object: generic sign
+Position: -200 0 -900
+Size: 50 100 10
+Label: <-- CHKPT 8 
+Color: 1.0 0.0 0.0
+Yrot: 180
+
+Object: generic sign
+Position: -400 0 -900
+Size: 50 100 10
+Label: CHKPT 7 --> 
+Color: 1.0 0.0 0.0
+Yrot: 180
+
+Object: generic sign
+Position: 500 0 600
+Size: 100 100 10
+Label: SHARP\LEFT\TURN!!\<---
+Color: 1.0 0.0 0.0
+Yrot: 90
+
+
+
+Object: ground
+
+#checkpoints  
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: -300 48 -240
+Type: 1 1
+Data: 1 3
+2 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 40.0
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: 300 0 0
+Type: 1 2
+Yrot: 180
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: -360 48 -300
+Type: 1 3
+Yrot: 90
+Data: 1 3
+2 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 40.0
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: -600 0 -900
+Type: 1 4
+Yrot: -90
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 40.0
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: -900 0 600
+Type: 1 5
+Data: 1 3
+2 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 6
+Radius: 0.5
+Position: -300 48 -360
+Type: 1 6
+Yrot: 180
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 7
+Radius: 0.5
+Position: -240 48 -300
+Type: 1 7
+Yrot: -90
+Data: 1 3
+2 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 8
+Radius: 0.5
+Position: 800 200 -900
+Type: 1 8
+Yrot: -90.0
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 9
+Radius: 0.5
+Position: -360 44 -360
+Type: 1 9
+Yrot: 135
+Data: 1 3
+2 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 40.0
+Label:  CHECKPOINT 11
+Radius: 0.5
+Position: -240 44 -240
+Type: 1 11
+Yrot: -45
+Data: 1 3
+2 2 1
+
+
+Scene Location: -14 -1
+
+# corner loop
+
+Object: road
+Position: 900 0 900
+Size: 150 60 0
+Yrot: -45
+
+Object: road
+Position: 900 0 900
+Size: 300 60 0
+Yrot: 90
+
+Object: road
+Position: 900 0 600
+Size: 300 60 0
+
+Object: curve
+Position: 600 0 600
+Width: 60
+Radius: 330
+Angle: 270
+Yrot: 90
+
+Object: ground
+
+Object: checkpoint
+Length: 20.0
+Width:  150
+Height: 40.0
+Label:  CHECKPOINT 10
+Radius: 0.5
+Position: 350  0 400
+Type: 1 10
+Yrot: 45
+
+
+Scene Location:  -12 0
+
+Object: road
+Position: -900 200 -900
+Size: 200 60 2
+Yrot: 90
+
+Object: curve
+Position: -900 200 -600
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Yrot: -90
+
+Object: road
+Position: -600 200 -600
+Size: 200 60 2
+
+Object: bridge
+Position: -600 200 -300
+Size: 200 60 10
+
+Object: road
+Position: -600 0 -500
+Size: 700 60 0
+
+Object: curve
+Position: -900 0 200
+Width: 60
+Radius: 330
+Angle: 90
+
+Object: road
+Position: -900 0 500
+Size: 101 60 0
+Yrot: 90
+
+#checkpoints
+
+Object: finish
+Length: 20.0
+Width:  100.0
+Height: 40.0
+Label: FINISH LINE
+Radius: 0.5
+Position: -600 0 -300
+Type: 1 12
+Yrot: 180
+
+Construct: hospital
+Position: -600 0 -600
+Yrot: 180
+
+Object: ground
+
+
+Scene Location: -13 -1
+
+#Start
+
+Object: road
+Position: -300 0 -1000
+Size: 2000 60 0
+
+Object: bridge
+Position: -300 0 950
+Size: 200 60 15
+
+Object: start
+Length: 20
+Width: 100
+Height: 40
+Label: START
+Radius: 0.5
+Position: -300 0 700
+Type: 1 12
+Data: 1 3
+3 0 1
+
+Object: generic sign
+Position: -200 0 600
+Size: 100 100 3
+Label: Optimum\Ramp Speed:\85-90 M.P.H
+Color: 1.0 0.0 0.0
+
+Object: generic sign
+Position: -400 0 600
+Size: 100 100 3
+Label: Optimum\Ramp Speed:\85-90 M.P.H
+Color: 1.0 0.0 0.0
+
+
+Object: ground
+
+
+Scene Location: -14 0
+Scene Type: hill no roads
+
+Scene Location: -12 -1
+Scene Type: hill no roads
+
+Scene Location: -12 1
+Scene Type: hill no roads
+
+Scene Location: -13 1
+Scene Type: hill no roads
+
+Scene Location: -14 1
+Scene Type: hill no roads
+
+#Hook up onto highway
+Scene Location: -13 -2
+
+Object: road
+Position: 1000 0 0
+Length: 2000
+Width: 60
+Yrot: 90
+
+Object: curve
+Position: 200 0 500
+Radius: 530
+Width: 60
+Angle: 90
+Yrot: 180
+
+Object: road
+Position: -300 0 500
+Length: 500
+Width: 60
+
+Object: generic sign
+Label: Figure 8 Speedway\------>
+Size: 100 200 10
+Yrot: 90
+Color: 1.0 1.0 0.0
+Position: 200 0 -120
+
+Object: ground
+

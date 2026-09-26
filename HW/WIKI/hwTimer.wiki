@@ -1,0 +1,68 @@
+== NAME ==
+hwTimer - alter the passage of time for its children
+
+== PROPERTIES ==
+| Lifetime  | 2F | Range of time for which this hwTimer is effective
+| Equation  | *F | Polynomial equation for the alteration of time
+| CycleTime | 1F | How long does it take to cycle from 0 to 1?  If 0, it doesn't cycle
+| Children  | *O | List of objects affected by the timer
+| Invisible | 1B | Is this timer invisible?
+| Visibility | 1I | Visibility mask for use with hwDisplay->setVisibility
+
+== DEFAULTS ==
+| Lifetime  | {0,1e38}
+| Equation  | {0,1} # That is, 0*X^0 + 1*X^1, or identity
+| CycleTime | 0.0
+| Children  | NULL
+| Invisible | False
+| Visibility | 0xFFFFFFFF
+
+== DESCRIPTION ==
+The hwTimer class can be used to change time for its children from a
+strict 1:1 realtime ratio to whatever polynomial equation is
+desired.  For example, to "freeze" time at a given value, say, 42,
+merely create an hwTimer object whose equation is {42}.  The
+equation is interpreted using the following algorithm:
+
+{{{
+        /* Compute sum of polynomial */
+        Tsum = 0.0;
+        for( i = 0; i < Length(Equation); i++ ) {
+            Tsum = Tsum + Equation[i] * pow( RealTime, (double)i );
+        }
+
+        RealTime = Tsum;
+}}}
+
+In other words, a polynomial equation.  The Lifetime parameter
+specifies the range of real time over which this hwTimer object
+operates; if real time is outside this range, the hwTimer object and
+its children do not display.  The CycleTime parameter specifies how
+long it takes for the hwTimer object to cycle back to (relative)
+T = 0.  If a CycleTime is specified, time will cycle from
+Lifetime[0] to Lifetime[0]+CycleTime.
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # Pause time for the children of this object, for 10 seconds starting
+    # 100 seconds into time
+    hwTimer {
+        Lifetime = {100,110}
+        Equation = {100}        # In other words, make T = 100.0 seconds
+        Children = {
+            hwSpinner {
+                UpType = HW_SPIN_LINEAR
+                UpParams = {0,360}
+                CycleTime = 5
+                Children = {
+                    hwFile {
+                        FileName = "foo.gfx"
+                    }
+                }
+            }
+        }
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]]

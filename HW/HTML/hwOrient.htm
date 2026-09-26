@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwOrient - define a transformation</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwOrient - define a transformation</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Scale</td>
+<td>3F</td>
+<td>Scaling factors along each axis</td>
+</tr>
+<tr><td>Rotate</td>
+<td>3F</td>
+<td>Rotation about each axis, in degrees</td>
+</tr>
+<tr><td>Pos</td>
+<td>3F</td>
+<td>Offset from origin</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Scale</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>Rotate</td>
+<td>{0,0,0}</td>
+</tr>
+<tr><td>Pos</td>
+<td>{0,0,0}</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwOrient class defines a transformation in terms of high-level
+operations. The operations are always performed in the order: scale,
+rotate, position. This will never yield a &quot;skewed&quot; matrix.
+The Scale parameter specifies scaling along each of the X, Y, and Z
+axes. The Rotate parameter specifies a rotation about the X, Y, and Z
+axes *in turn*; that is, a rotation about X followed by a rotation
+about Y followed by a rotation about Z. The angles are specified in
+degrees. The Pos parameter specifies a translation from the origin.
+Note that most primitives have embedded hwOrient classes; a
+standalone hwOrient object is only useful to pass to multiple
+primitives which might share an orientation.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Create an X scale of 2 with 30 degree rotation about Y, moved
+     * 20 units in Z, and apply it to a box.
+     */
+    hwObject
+        orient,
+        box;
+
+    orient = hwOrient-&gt;create( hwOrient );
+    HW_MODIFY_3F( orient, hwStrScale, 2, 1, 1 );
+    HW_MODIFY_3F( orient, hwStrRotate, 0, 30, 0 );
+    HW_MODIFY_3F( orient, hwStrPos, 0, 0, 20 );
+
+    box = hwBox-&gt;create( hwBox );
+    box-&gt;modify( box, hwStrOrient, HW_TYPE_OBJECT, orient );
+    box-&gt;draw( box );
+    box-&gt;destroy( box );
+    orient-&gt;destroy( orient );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # Same as above
+    hwOrient orient {
+        Scale = {2, 1, 1}
+        Rotate = {0, 30, 0}
+        Pos = {0,0,20}
+    }
+    hwBox box {
+        Orient = orient
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

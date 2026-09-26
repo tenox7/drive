@@ -1,0 +1,678 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#----------------------------------------------------------------------------
+# Oval Speedway
+# designed by Edgar Circenis
+
+Racecourse: Oval
+Practice Seconds: 0
+Race Seconds: 180
+Start SceneX: 13
+Start SceneZ: 0
+Start Position: -500 0 -647.5
+Start Angle: -90
+Start Positions: 8
+Turbo Mode: 2
+Turbo Boosts: 10
+
+
+#----------------------------------------------------------------------------
+# SCENE ONE
+
+Scene Location: 13 0
+
+# (a)
+Object: road
+Width: 120
+Length: 1200
+Position: -1000 0 -700
+Yrot: -90
+
+# (b)
+Object: curve
+Radius: 660
+Width: 120
+Height: 2
+Angle: 90
+Position: 200 0 -100
+Yrot: -90
+
+# (c)
+Object: road
+Width: 120
+Height: 2
+Length: 210
+Position: 800 0 -100
+Yrot: 0
+Xrot: -3
+
+# (d)
+Object: curve
+Radius: 660
+Width: 120
+Height: 2
+Angle: 90
+Position: 200 0 200
+Yrot: 0
+
+# (e)
+Object: road
+Width: 120
+Height: 2
+Length: 1246.5
+Position: 200 0 800
+Yrot: 90
+Xrot: -15.7
+
+# (g)
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -300 0 -1000
+Yrot: 90
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: start
+Length: 15.0
+Width:  140.0
+Height: 30.0
+Label: START
+Radius: 0.5
+Position: -300 0 -700
+Yrot: -90
+Type: 1 3
+
+# WALLS
+
+# (b)
+Object: curvewall
+Radius: 662
+Width: 2
+Height: 4
+Angle: 90
+Position: 200 0 -100
+Yrot: -90
+Color: 1 1 0
+
+# (d)
+Object: curvewall
+Radius: 662
+Width: 2
+Height: 4
+Angle: 0
+Position: 200 0 200
+Yrot: 0
+Color: 1 1 0
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE TWO
+
+Scene Location: 12 0
+
+# (a)
+Object: road
+Width: 120
+Height: 2
+Length: 1038.75
+Position: 1000 337.3 800
+Yrot: 90
+Xrot: -15.7
+
+# (b)
+Object: road
+Width: 120
+Height: 2
+Length: 210
+Position: 0 618.3 800
+Yrot: 90
+Xrot: -18.7
+
+# (c)
+Object: road
+Width: 120
+Height: 2
+Length: 779
+Position: -250 688.65 800
+Yrot: 90
+Xrot: -15.7
+
+# (d)
+Object: road
+Width: 120
+Length: 200
+Position: -1000 0 -800
+Yrot: -90
+
+# (e)
+Object: ramp
+Width: 120
+Height: 20
+Length: 200
+Position: -800 0 -800
+Yrot: -90
+
+# (f)
+Object: ramp
+Width: 120
+Height: 20
+Length: 200
+Position: -300 0 -800
+Yrot: 90
+
+# (g)
+Object: road
+Width: 120
+Length: 300
+Position: -300 0 -800
+Yrot: -90
+
+# (h)
+Object: curve
+Width: 120
+Radius: 760
+Angle: 90
+Position: 0 0 -100
+Yrot: -90
+
+# (i)
+Object: curve
+Width: 120
+Radius: 360
+Angle: 180
+Position: 400 0 -100
+Yrot: 0
+
+# (j)
+Object: curve
+Width: 120
+Radius: 660
+Angle: 90
+Position: 700 0 -100
+Yrot: 180
+
+# (k)
+Object: road
+Width: 120
+Length: 300
+Position: 700 0 -700
+Yrot: -90
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 15.0
+Width:  120.0
+Height: 30.0
+Label: TWO
+Radius: 0.5
+Position: 400 0 200
+Yrot: 90
+Type: 1 2
+
+Object: finish
+Length: 15.0
+Width:  140.0
+Height: 30.0
+Label: FINISH
+Radius: 0.5
+Position: 900 0 -700
+Yrot: -90
+Type: 1 3
+
+# WALLS
+
+# (h1)
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 762
+Angle: 36
+Position: 0 0 -100
+Yrot: -90
+Color: 1 1 0
+
+# (h2)
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 762
+Angle: 43
+Position: 0 0 -100
+Yrot: -43
+Color: 1 1 0
+
+# (i)
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 362
+Angle: 180
+Position: 400 0 -100
+Yrot: 0
+Color: 1 1 0
+
+# (j1)
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 662
+Angle: 56
+Position: 700 0 -100
+Yrot: 180
+Color: 1 1 0
+
+# (j2)
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 662
+Angle: 22
+Position: 700 0 -100
+Yrot: 248
+Color: 1 1 0
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE THREE
+
+Scene Location: 11 0
+
+# (a)
+Object: road
+Width: 120
+Height: 2
+Length: 700
+Position: 1000 899.5 800
+Yrot: 90
+
+# (b)
+Object: road
+Width: 120
+Height: 2
+Length: 500
+Position: 300 889.5 800
+Yrot: 90
+
+# (c)
+Object: curve
+Width: 60
+Angle: 90
+Height: 2
+Position: 0 889.5 470
+Radius: 330
+Yrot: 90
+
+# (d)
+Object: curve
+Width: 60
+Angle: 90
+Height: 2
+Position: -200 889.5 530
+Radius: 330
+Yrot: 90
+
+# (e)
+Object: curve
+Width: 60
+Angle: 90
+Height: 2
+Position: -600 879.5 470
+Radius: 330
+Yrot: -90
+
+# (f)
+Object: curve
+Width: 60
+Angle: 90
+Height: 2
+Position: -800 879.5 530
+Radius: 330
+Yrot: -90
+
+# (g)
+Object: road
+Width: 120
+Height: 2
+Length: 400
+Position: -600 869.5 200
+Yrot: 90
+
+# (h)
+Object: road
+Width: 120
+Height: 2
+Length: 505
+Position: -1000 121.5 -800
+Yrot: -90
+Xrot: 8.07
+
+# (i)
+Object: road
+Width: 120
+Height: 2
+Length: 500
+Position: -500 40 -800
+Yrot: -90
+Zrot: 10
+
+# (j)
+Object: road
+Width: 120
+Height: 2
+Length: 500
+Position: 0 30 -800
+Yrot: -90
+Zrot: 20
+
+# (k)
+Object: road
+Width: 120
+Height: 2
+Length: 500
+Position: 500 20 -800
+Yrot: -90
+Zrot: 10
+
+# SIGNS
+
+# CHECKPOINTS
+
+# WALLS
+
+# (a) south
+Object: wall
+Width: 2
+Height: 20
+Length: 700
+Position: 700 889.5 739
+Yrot: 90
+Color: 0 1 0
+
+# (a) north
+Object: wall
+Width: 2
+Height: 20
+Length: 900
+Position: 700 889.5 861
+Yrot: 90
+Color: 0 1 0
+
+# (a) top
+Object: wall
+Width: 124
+Height: 2
+Length: 500
+Position: 700 909.5 800
+Yrot: 90
+Color: 0 1 0
+
+# (b) top
+Object: wall
+Width: 124
+Height: 2
+Length: 400
+Position: 200 899.5 800
+Yrot: 90
+Color: 0 1 0
+
+# (b) edge
+Object: wall
+Width: 124
+Height: 12
+Length: 2
+Position: 200 899.5 800
+Yrot: 90
+Color: 0 1 0
+
+# (c) top
+Object: curvewall
+Width: 62
+Angle: 90
+Height: 2
+Position: 0 899.5 470
+Radius: 330
+Yrot: 90
+Color: 0 1 0
+
+# (c) outside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 10
+Position: 0 889.5 470
+Radius: 330
+Yrot: 90
+Color: 1 1 0
+
+# (c) inside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 10
+Position: 0 889.5 470
+Radius: 270
+Yrot: 90
+Color: 1 1 0
+
+# (d1)
+Object: wall
+Width: 2
+Height: 10
+Length: 200
+Position: 0 889.5 800
+Yrot: 90
+Color: 1 1 0
+
+# (d) top
+Object: curvewall
+Width: 62
+Angle: 90
+Height: 2
+Position: -200 899.5 530
+Radius: 332
+Yrot: 90
+Color: 0 1 0
+
+# (d) outside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 10
+Position: -200 889.5 530
+Radius: 330
+Yrot: 90
+Color: 1 1 0
+
+# (d) inside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 10
+Position: -200 889.5 530
+Radius: 271
+Yrot: 90
+Color: 1 1 0
+
+# (e) top
+Object: curvewall
+Width: 62
+Angle: 70
+Height: 2
+Position: -600 889.5 470
+Radius: 332
+Yrot: -90
+Color: 0 1 0
+
+# (e) outside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 20
+Position: -600 879.5 470
+Radius: 330
+Yrot: -90
+Color: 1 1 0
+
+# (e) inside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 20
+Position: -600 879.5 470
+Radius: 270
+Yrot: -90
+Color: 1 1 0
+
+# (f) top top
+Object: curvewall
+Width: 64
+Angle: 70
+Height: 1
+Position: -800 890.5 530
+Radius: 332
+Yrot: -90
+Color: 0 1 0
+
+# (f) top bottom
+Object: curvewall
+Width: 64
+Angle: 70
+Height: 1
+Position: -800 890.5 530
+Radius: 332
+Yrot: 200
+Xrot: 180
+Color: 0 1 0
+
+# (f) outside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 20
+Position: -800 879.5 530
+Radius: 330
+Yrot: -90
+Color: 1 1 0
+
+# (f) inside
+Object: curvewall
+Width: 2
+Angle: 90
+Height: 20
+Position: -800 879.5 530
+Radius: 270
+Yrot: -90
+Color: 1 1 0
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE FOUR
+
+Scene Location: 10 0
+
+# (a)
+Object: road
+Width: 120
+Height: 2
+Length: 1489.85
+Position: 1000 869.5 200
+Yrot: 90
+Xrot: 20
+
+# (b)
+Object: curve
+Width: 120
+Height: 2
+Radius: 560
+Angle: 180
+Position: -400 360 -300
+Yrot: 90
+
+# (c)
+Object: road
+Width: 120
+Height: 2
+Length: 500
+Position: -400 360 -800
+Yrot: -90
+
+# (c2)
+Object: road
+Width: 120
+Height: 2
+Length: 20
+Position: 100 360 -800
+Yrot: -90
+Xrot: -3
+
+# (d)
+Object: road
+Width: 120
+Height: 2
+Length: 926.15
+Position: 100 340 -800
+Yrot: -90
+Xrot: 13.65
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 15.0
+Width:  120.0
+Height: 30.0
+Label: ONE
+Radius: 0.5
+Position: -900 360 -300
+Yrot: 180
+Type: 1 1
+
+# WALLS
+
+# (b)
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 562
+Angle: 180
+Position: -400 360 -300
+Yrot: 90
+Color: 1 1 0
+
+# MISC
+
+Object: ground
+

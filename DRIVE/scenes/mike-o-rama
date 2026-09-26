@@ -1,0 +1,1525 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+Racecourse:             Mike-O-Rama 
+Practice Seconds:       0 
+Pre-Race Seconds:       2 
+Race Seconds:           420 
+Post-Race Seconds:      5 
+Start SceneX: 0
+Start SceneZ: 5
+Start Angle:            0.00 
+Start Position:         -30.00 0.00 10.00 
+Turbo Mode:             1 
+Turbo Boosts:           5 
+Guns Mode:              1 
+Ammo:                   0 
+
+# Welcome to Mike-O-Rama
+# Designed by M.Erickson 
+# Version 2.03   9/19/94
+
+##### SCENE -1 1 ###########
+##### West loop Checkpoint 1
+Scene Location: -1 5
+
+Object:  curve 
+Position:  200.00 0.00 200.00
+Yrot:  90.00
+Width:  30.00 
+Color:  0.00 0.00 0.00
+Radius:  415.00 
+Angle:  360.00 
+
+Object:  road 
+Position:  -492.50 0.00 900.00
+Length:  100.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  -82.50 0.00 -82.50
+Type:  1 1
+Label:  -1-
+Yrot:  -135.00
+Size:  10.00 30.00 20.00
+Radius:  0.50 
+Data:  1 3
+10.00  2.00  0.00  
+
+Object:  pond 
+Position:  200.00 0.00 200.00
+Size:  750.00 750.00 30.00
+
+Object:  generic sign 
+Position:  -50.00 0.00 560.00
+Type:  
+Label:  Checkpoint\< 1      2 >
+Yrot:  90.00
+Size:  30.00 70.00 10.00
+Color:  0.00 0.40 0.00
+Radius:  2.00 
+
+Object:  bank 
+Position:  -192.50 0.00 900.00
+Yrot:  180.00
+Size:  1201.00 45.00 20.00
+Radius:  322.50 
+Angle:  90.00 
+
+Object:  road 
+Position:  -193.00 0.00 600.00
+Yrot:  -90.00
+Length:  1193.00 
+Width:  30.00 
+Color:  0.00 0.00 0.00
+
+Object:  wall 
+Position:  -191.00 0.00 617.00
+Yrot:  45.00
+Size:  5.00 5.00 2.00
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -191.00 0.00 579.50
+Yrot:  45.00
+Size:  5.00 5.00 2.00
+Color:  1.00 1.00 0.00
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 0 0 ##############################
+##### Starting line
+Scene Location: 0 5
+
+# --- the starting pad ---
+Object:  road 
+Position:  0.00 0.00 0.00
+Length:  430.00 
+Width:  120.00 
+Color:  0.00 0.00 0.00
+
+Object:  start 
+Position:  0.00 0.00 200.00
+Type:  1 11
+Label:  START
+Size:  15.00 120.00 35.00
+Radius:  2.00 
+Data:  1 3
+15.00  0.00  1.00  
+
+# --- entrance road ---
+Object:  road 
+Position:  0.00 0.00 0.00
+Yrot:  -180.00
+Length:  1000.00 
+Width:  60.00 
+Color:  0.00 0.00 0.00
+
+# --- west path ---
+Object:  curve 
+Position:  -185.00 0.00 430.00
+Width:  30.00 
+Color:  0.00 0.00 0.00
+Radius:  185.00 
+Angle:  90.00 
+
+Object:  road 
+Position:  -185.00 0.00 600.00
+Yrot:  90.00
+Length:  815.00 
+Width:  30.00 
+Color:  0.00 0.00 0.00
+
+Object:  lamp 
+Position:  -40.00 0.00 450.00
+Type:  1 10
+Yrot:  90.00
+Size:  40.00 120.00 40.00
+Radius:  2.00 
+
+Object:  lamp 
+Position:  -60.00 0.00 500.00
+Type:  
+Yrot:  45.00
+Size:  20.00 120.00 40.00
+Radius:  2.00 
+
+Object:  lamp 
+Position:  -100.00 0.00 550.00
+Type:  
+Yrot:  45.00
+Size:  20.00 120.00 40.00
+Radius:  2.00 
+
+Object:  lamp 
+Position:  -150.00 0.00 575.00
+Type:  
+Size:  20.00 120.00 40.00
+Radius:  2.00 
+
+# --- east path ---
+Object:  curve 
+Position:  185.00 0.00 430.00
+Yrot:  90.00
+Width:  30.00 
+Color:  0.00 0.00 0.00
+Radius:  185.00 
+Angle:  90.00 
+
+Object:  road 
+Position:  185.00 0.00 600.00
+Yrot:  -90.00
+Length:  815.00 
+Width:  30.00 
+Color:  0.00 0.00 0.00
+
+Object:  lamp 
+Position:  40.00 0.00 450.00
+Type:  1 10
+Yrot:  90.00
+Size:  40.00 120.00 40.00
+Radius:  2.00 
+
+Object:  lamp 
+Position:  60.00 0.00 500.00
+Type:  
+Yrot:  45.00
+Size:  20.00 120.00 40.00
+Radius:  2.00 
+
+Object:  lamp 
+Position:  100.00 0.00 550.00
+Type:  
+Yrot:  45.00
+Size:  20.00 120.00 40.00
+Radius:  2.00 
+
+Object:  lamp 
+Position:  150.00 0.00 575.00
+Type:  
+Size:  20.00 120.00 40.00
+Radius:  2.00 
+
+# --- crash barriers ---
+Object:  wall 
+Position:  -30.00 0.00 430.00
+Yrot:  135.00
+Size:  40.00 3.00 5.00
+Color:  1.00 0.90 0.00
+
+Object:  wall 
+Position:  30.00 0.00 430.00
+Yrot:  -135.00
+Size:  40.00 5.00 5.00
+Color:  1.00 0.90 0.00
+
+Object:  curveguardrail 
+Position:  -185.00 0.00 430.00
+Radius:  185.00 
+Angle:  90.00 
+
+Object:  curveguardrail 
+Position:  185.00 0.00 430.00
+Yrot:  90.00
+Radius:  185.00 
+Angle:  90.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 480.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  -5.00 0.00 490.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  5.00 0.00 490.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 500.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  -10.00 0.00 505.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  10.00 0.00 505.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  15.00 0.00 520.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  -15.00 0.00 520.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  -5.00 0.00 515.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  5.00 0.00 515.00
+Size:  30.00 5.00 5.00
+Color:  1.00 1.00 0.00
+Radius:  5.00 
+
+Object:  pillar 
+Position:  0.00 0.00 430.00
+Size:  30.00 1.00 10.00
+Color:  1.00 0.00 0.00
+Radius:  1.00 
+
+# --- bridge from the finish ---
+Object:  curve 
+Position:  130.00 45.00 1000.00
+Yrot:  180.00
+Size:  2000.00 60.00 3.00
+Color:  0.00 0.00 0.00
+Radius:  160.00 
+Angle:  90.00 
+
+Object:  curve 
+Position:  130.00 45.00 740.00
+Size:  2000.00 60.00 3.00
+Color:  0.00 0.00 0.00
+Radius:  160.00 
+Angle:  90.00 
+
+Object:  cylinder 
+Position:  130.00 0.00 870.00
+Size:  460.00 60.00 43.00
+Color:  0.50 0.50 0.50
+Radius:  20.00 
+
+Object:  ramp 
+Position:  260.00 0.00 0.00
+Size:  430.00 60.00 45.00
+
+Object:  road 
+Position:  260.00 45.00 740.00
+Yrot:  180.00
+Size:  310.00 60.00 3.00
+Color:  0.00 0.00 0.00
+
+Object:  curve 
+Position:  145.00 0.00 0.00
+Yrot:  180.00
+Width:  60.00 
+Color:  0.00 0.00 0.00
+Radius:  145.00 
+Angle:  180.00 
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 1 0 ######################
+##### East loop Checkpoint 1
+Scene Location: 1 5
+
+Object:  curve 
+Position:  -200.00 0.00 200.00
+Width:  30.00 
+Color:  0.00 0.00 0.00
+Radius:  415.00 
+Angle:  360.00 
+
+Object:  road 
+Position:  200.00 0.00 600.00
+Yrot:  90.00
+Length:  1200.00 
+Width:  30.00 
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  492.50 0.00 900.00
+Length:  100.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  82.50 0.00 -82.50
+Type:  1 1
+Label:  -1-
+Yrot:  135.00
+Size:  10.00 30.00 20.00
+Radius:  0.50 
+Data:  1 3
+10.00  2.00  0.00  
+
+Object:  pond 
+Position:  -200.00 0.00 200.00
+Size:  750.00 750.00 30.00
+
+Object:  generic sign 
+Position:  50.00 0.00 560.00
+Type:  
+Label:  Checkpoint\< 2      1 >
+Yrot:  -90.00
+Size:  30.00 70.00 10.00
+Color:  0.00 0.40 0.00
+Radius:  2.00 
+
+Object:  bank 
+Position:  192.50 0.00 900.00
+Yrot:  -90.00
+Size:  1193.00 45.00 20.00
+Radius:  322.50 
+Angle:  90.00 
+
+Object:  wall 
+Position:  194.00 0.00 617.00
+Yrot:  45.00
+Size:  5.00 5.00 2.00
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  194.00 0.00 579.50
+Yrot:  45.00
+Size:  5.00 5.00 2.00
+Color:  1.00 1.00 0.00
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE -1 1 #######################
+##### West turn of big oval
+Scene Location: -1 6
+
+Object:  road 
+Position:  600.00 0.00 710.00
+Yrot:  -90.00
+Length:  400.00 
+Width:  120.00 
+Color:  0.00 0.00 0.00
+
+Object:  curve 
+Position:  600.00 0.00 0.00
+Yrot:  90.00
+Width:  120.00 
+Color:  0.00 0.00 0.00
+Radius:  770.00 
+Angle:  180.00 
+
+Object:  road 
+Position:  600.00 0.00 -710.00
+Yrot:  -90.00
+Length:  400.00 
+Width:  120.00 
+Color:  0.00 0.00 0.00
+
+Object:  wall 
+Position:  1000.00 0.00 -990.00
+Yrot:  90.00
+Size:  360.00 5.00 5.00
+Color:  1.00 1.00 0.00
+
+Object:  curveguardrail 
+Position:  600.00 0.00 0.00
+Yrot:  90.00
+Radius:  650.00 
+Angle:  180.00 
+
+Object:  guardrail 
+Position:  600.00 0.00 -650.00
+Yrot:  -90.00
+Size:  400.00 120.00 3.00
+Spacing:  10.00 
+
+Object:  generic sign 
+Position:  600.00 0.00 -630.00
+Type:  
+Label:  Checkpoint 4\Keep Left
+Yrot:  -90.00
+Size:  30.00 40.00 10.00
+Color:  0.10 0.50 0.10
+Radius:  1.50 
+
+# ----- entrance to oval -----
+Object:  bank 
+Position:  -240.00 0.00 -1000.00
+Yrot:  90.00
+Size:  400.00 45.00 20.00
+Radius:  275.00 
+Angle:  90.00 
+
+Object:  ramp 
+Position:  -80.00 0.00 -747.50
+Yrot:  -90.00
+Size:  400.00 45.00 20.00
+
+Object:  road 
+Position:  -80.00 0.00 -747.50
+Yrot:  90.00
+Length:  160.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  320.00 0.00 -747.50
+Type:  1 2
+Label:  -2-
+Yrot:  -90.00
+Size:  10.00 45.00 60.00
+Radius:  2.00 
+Data:  1 3
+25.00  5.00  0.00  
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 0 1 ###################
+##### Center of big oval
+Scene Location: 0 6
+
+# ----- the oval -----
+Object:  road 
+Position:  0.00 45.00 -1000.00
+Size:  2000.00 60.00 3.00
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  -1000.00 0.00 -740.00
+Yrot:  -90.00
+Length:  2000.00 
+Width:  60.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  1.00 0.00 710.00
+Type:  1 3
+Label:  -3-
+Yrot:  90.00
+Size:  20.00 120.00 40.00
+Radius:  5.00 
+
+Object:  checkpoint 
+Position:  -1.00 0.00 710.00
+Type:  1 3
+Label:  -3-
+Yrot:  -90.00
+Size:  20.00 120.00 40.00
+Radius:  5.00 
+
+# ----- slalom course -----
+Object:  wall 
+Position:  -1000.00 0.00 775.00
+Yrot:  -90.00
+Size:  2000.00 2.00 6.00
+Color:  0.50 0.50 0.50
+
+Object:  wall 
+Position:  -1000.00 0.00 645.00
+Yrot:  -90.00
+Size:  2000.00 2.00 6.00
+Color:  0.50 0.50 0.50
+
+Object:  wall 
+Position:  1000.00 0.00 650.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  1000.00 0.00 740.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  800.00 0.00 680.00
+Size:  60.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  600.00 0.00 650.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  600.00 0.00 740.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  400.00 0.00 680.00
+Size:  60.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  200.00 0.00 650.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  200.00 0.00 740.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -200.00 0.00 740.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -200.00 0.00 650.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -400.00 0.00 680.00
+Size:  60.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -600.00 0.00 740.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -600.00 0.00 650.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -800.00 0.00 680.00
+Size:  60.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -1000.00 0.00 740.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -1000.00 0.00 650.00
+Size:  30.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+# ----- retaining wall, south edge -----
+Object:  wall 
+Position:  1000.00 0.00 -990.00
+Yrot:  90.00
+Size:  2000.00 5.00 5.00
+Color:  1.00 1.00 0.00
+
+# -----  west checkpoint 4 and ramp -----
+Object:  checkpoint 
+Position:  -1000.00 0.00 -665.00
+Type:  1 4
+Label:  -4-
+Yrot:  -90.00
+Size:  10.00 26.00 20.00
+Radius:  2.00 
+
+Object:  wall 
+Position:  -1000.00 0.00 -695.00
+Yrot:  -90.00
+Size:  60.00 30.00 20.00
+Color:  1.00 0.00 0.00
+
+Object:  spiral 
+Position:  -1000.00 0.00 310.00
+Yrot:  -90.00
+Size:  30.00 30.00 65.00
+Radius:  990.00 
+Angle:  85.00 
+
+Object:  cylinder 
+Position:  -240.00 0.00 -300.00
+Size:  15.00 60.00 38.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  wall 
+Position:  -32.00 0.00 197.00
+Xrot:  -2.00
+Yrot:  -6.00
+Size:  30.00 30.00 63.50
+Color:  0.50 0.50 0.50
+
+# ----- east checkpoint 4 and ramp -----
+Object:  checkpoint 
+Position:  1000.00 0.00 -665.00
+Type:  1 4
+Label:  -4-
+Yrot:  90.00
+Size:  10.00 26.00 20.00
+Radius:  2.00 
+
+Object:  wall 
+Position:  1000.00 0.00 -695.00
+Yrot:  90.00
+Size:  60.00 30.00 20.00
+Color:  1.00 0.00 0.00
+
+Object:  spiral 
+Position:  1000.00 65.00 310.00
+Yrot:  185.00
+Size:  30.00 30.00 -65.00
+Radius:  990.00 
+Angle:  85.00 
+
+Object:  cylinder 
+Position:  240.00 0.00 -300.00
+Size:  15.00 60.00 38.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  wall 
+Position:  32.00 0.00 197.00
+Xrot:  -2.00
+Yrot:  6.00
+Size:  30.00 30.00 63.50
+Color:  0.50 0.50 0.50
+
+# ----- bridge with finish -----
+Object:  road 
+Position:  -1000.00 0.00 710.00
+Yrot:  -90.00
+Length:  2000.00 
+Width:  120.00 
+Color:  0.00 0.00 0.00
+
+Object:  finish 
+Position:  0.00 0.00 0.00
+Type:  1 11
+Label:  Finish
+Yrot:  180.00
+Size:  10.00 50.00 70.00
+Radius:  5.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 -900.00
+Size:  310.00 60.00 43.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 -600.00
+Size:  310.00 60.00 43.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 -300.00
+Size:  310.00 60.00 43.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 600.00
+Size:  310.00 60.00 43.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  cylinder 
+Position:  0.00 0.00 820.00
+Size:  310.00 60.00 43.00
+Color:  0.50 0.50 0.50
+Radius:  15.00 
+
+Object:  wall 
+Position:  0.00 0.00 680.00
+Size:  60.00 10.00 4.50
+Color:  1.00 1.00 0.00
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 1 1 ######################
+##### East curve of big oval
+Scene Location: 1 6
+
+Object:  road 
+Position:  -600.00 0.00 -710.00
+Yrot:  90.00
+Length:  400.00 
+Width:  120.00 
+Color:  0.00 0.00 0.00
+
+Object:  curve 
+Position:  -600.00 0.00 0.00
+Yrot:  -90.00
+Width:  120.00 
+Color:  0.00 0.00 0.00
+Radius:  770.00 
+Angle:  180.00 
+
+Object:  road 
+Position:  -600.00 0.00 710.00
+Yrot:  90.00
+Length:  400.00 
+Width:  120.00 
+Color:  0.00 0.00 0.00
+
+Object:  wall 
+Position:  -640.00 0.00 -990.00
+Yrot:  90.00
+Size:  360.00 5.00 5.00
+Color:  1.00 1.00 0.00
+
+Object:  curveguardrail 
+Position:  -600.00 0.00 0.00
+Yrot:  -90.00
+Radius:  650.00 
+Angle:  180.00 
+
+Object:  guardrail 
+Position:  -600.00 0.00 -650.00
+Yrot:  90.00
+Size:  200.00 120.00 3.50
+Spacing:  10.00 
+
+Object:  generic sign 
+Position:  -600.00 0.00 -630.00
+Type:  
+Label:  Checkpoint 4\Keep Right
+Yrot:  90.00
+Size:  30.00 40.00 10.00
+Color:  0.10 0.50 0.10
+Radius:  1.50 
+
+# ----- entrance to oval -----
+Object:  ramp 
+Position:  80.00 0.00 -747.50
+Yrot:  90.00
+Size:  400.00 45.00 20.00
+
+Object:  bank 
+Position:  240.00 0.00 -1000.00
+Size:  400.00 45.00 20.00
+Radius:  275.00 
+Angle:  90.00 
+
+Object:  road 
+Position:  80.00 0.00 -747.50
+Yrot:  -90.00
+Length:  160.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  -320.00 0.00 -747.50
+Type:  1 2
+Label:  -2-
+Yrot:  90.00
+Size:  10.00 45.00 60.00
+Radius:  2.00 
+Data:  1 3
+25.00  5.00  0.00  
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 0 2 #############################
+##### 4-way intersection
+Scene Location: 0 7
+
+Object:  ramp 
+Position:  0.00 0.00 -500.00
+Yrot:  180.00
+Size:  500.00 60.00 45.00
+
+Object:  curve 
+Position:  -270.00 0.00 0.00
+Width:  60.00 
+Color:  0.00 0.00 0.00
+Radius:  300.00 
+Angle:  90.00 
+
+Object:  ramp 
+Position:  0.00 0.00 500.00
+Yrot:  180.00
+Size:  300.00 45.00 10.00
+
+Object:  road 
+Position:  0.00 0.00 1000.00
+Yrot:  180.00
+Length:  500.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  0.00 0.00 -1000.00
+Type:  1 5
+Label:  -5-
+Size:  10.00 60.00 75.00
+Radius:  2.00 
+
+Object:  road 
+Position:  -1000.00 0.00 -270.00
+Yrot:  -90.00
+Length:  2000.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  -267.00 0.00 270.00
+Yrot:  90.00
+Length:  733.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  0.00 0.00 0.00
+Yrot:  180.00
+Length:  501.00 
+Width:  60.00 
+Color:  0.00 0.00 0.00
+
+Object:  wall 
+Position:  -1000.00 0.00 0.00
+Yrot:  -90.00
+Size:  900.00 3.00 8.00
+Color:  0.80 0.80 0.00
+
+Object:  wall 
+Position:  -268.00 0.00 242.50
+Yrot:  45.00
+Size:  5.00 5.00 4.00
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  -268.00 0.00 294.00
+Yrot:  45.00
+Size:  5.00 5.00 4.00
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  40.00 0.00 0.00
+Yrot:  180.00
+Size:  240.00 3.00 10.00
+Color:  1.00 1.00 0.00
+
+Object:  wall 
+Position:  40.00 0.00 -306.00
+Yrot:  180.00
+Size:  200.00 3.00 10.00
+Color:  1.00 1.00 0.00
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE -1 2 ####################################
+##### West banked turns
+Scene Location: -1 7
+
+Object:  road 
+Position:  1000.00 0.00 270.00
+Yrot:  90.00
+Length:  1000.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  1000.00 0.00 -270.00
+Yrot:  90.00
+Length:  1000.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  bank 
+Position:  0.00 0.00 0.00
+Yrot:  90.00
+Size:  1000.00 45.00 15.00
+Radius:  292.00 
+Angle:  135.00 
+
+Object:  curve 
+Position:  0.00 0.00 0.00
+Yrot:  225.00
+Size:  1000.00 45.00 15.00
+Color:  0.00 0.00 0.00
+Radius:  292.00 
+Angle:  45.00 
+
+Object:  bank 
+Position:  -150.00 0.00 0.00
+Yrot:  180.00
+Size:  1000.00 45.00 15.00
+Radius:  292.00 
+Angle:  90.00 
+
+Object:  road 
+Position:  0.00 0.00 -270.00
+Yrot:  90.00
+Length:  150.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  -420.00 0.00 0.00
+Length:  1000.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  100.00 0.00 270.00
+Type:  1 6
+Label:  -6-
+Yrot:  90.00
+Size:  10.00 45.00 30.00
+Radius:  2.00 
+Data:  1 3
+50.00  10.00  0.00  
+
+Object:  checkpoint 
+Position:  -150.00 0.00 -270.00
+Type:  1 9
+Label:  -9-
+Yrot:  90.00
+Size:  10.00 45.00 30.00
+Radius:  2.00 
+
+Object:  generic sign 
+Position:  200.00 0.00 -220.00
+Type:  
+Label:  Two-way Traffic\Next 2 miles
+Yrot:  -90.00
+Size:  20.00 50.00 10.00
+Color:  1.00 0.50 0.00
+Radius:  2.00 
+
+Object:  wall 
+Position:  1000.00 0.00 0.00
+Yrot:  90.00
+Size:  1200.00 3.00 8.00
+Color:  0.80 0.80 0.00
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 1 2 ###############################
+##### Turn towards fountian
+Scene Location: 1 7
+
+Object:  curve 
+Position:  -1000.00 0.00 500.00
+Yrot:  -90.00
+Width:  45.00 
+Color:  0.00 0.00 0.00
+Radius:  792.50 
+Angle:  90.00 
+
+Object:  road 
+Position:  -230.00 0.00 1000.00
+Yrot:  180.00
+Length:  500.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  -400.00 0.00 20.00
+Type:  1 7
+Label:  -7-
+Yrot:  -45.00
+Size:  10.00 45.00 30.00
+Radius:  2.00 
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 0 3 ################################
+##### Turn towards finish
+Scene Location: 0 8
+
+Object:  road 
+Position:  0.00 0.00 -1000.00
+Length:  500.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  road 
+Position:  0.00 0.00 -1000.00
+Length:  500.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  curve 
+Position:  -677.50 0.00 -500.00
+Width:  45.00 
+Color:  0.00 0.00 0.00
+Radius:  700.00 
+Angle:  90.00 
+
+Object:  road 
+Position:  -1000.00 0.00 177.50
+Yrot:  -90.00
+Length:  325.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+# ----- the hill -----
+Object:  mound 
+Position:  -570.00 0.00 -395.00
+Size:  628.00 826.00 23.00
+Color:  0.50 0.80 0.60
+
+Object:  mound 
+Position:  -555.00 0.00 -400.00
+Size:  428.00 426.00 63.00
+Color:  0.45 0.80 0.65
+
+Object:  mound 
+Position:  -690.00 0.00 -255.00
+Size:  228.00 326.00 47.00
+Color:  0.52 0.80 0.60
+
+Object:  mound 
+Position:  -350.00 0.00 -210.00
+Size:  228.00 326.00 57.00
+Color:  0.50 0.75 0.50
+
+# ----- the vegetation -----
+Object:  bush 
+Position:  -200.00 4.00 -400.00
+Size:  628.00 826.00 13.00
+
+Object:  bush 
+Position:  -160.00 0.00 -350.00
+Size:  628.00 826.00 18.00
+
+Object:  bush 
+Position:  -210.00 6.00 -380.00
+Size:  628.00 826.00 8.00
+
+Object:  conifer 
+Position:  -460.00 0.00 0.00
+Size:  75.00 76.00 24.00
+Color:  0.10 0.80 0.60
+Radius:  12.00 
+
+Object:  conifer 
+Position:  -560.00 0.00 30.00
+Size:  75.00 76.00 29.00
+Color:  0.15 0.70 0.60
+Radius:  12.00 
+
+Object:  conifer 
+Position:  -690.00 0.00 79.00
+Size:  75.00 76.00 21.00
+Color:  0.15 0.70 0.60
+Radius:  9.00 
+
+Object:  conifer 
+Position:  -600.00 0.00 -9.00
+Size:  75.00 76.00 25.00
+Color:  0.25 0.70 0.60
+Radius:  9.00 
+
+Object:  conifer 
+Position:  -550.00 0.00 -119.00
+Size:  75.00 76.00 35.00
+Color:  0.00 0.70 0.60
+Radius:  19.00 
+
+Object:  conifer 
+Position:  -430.00 17.00 -125.00
+Size:  628.00 826.00 21.00
+Color:  0.00 0.70 0.60
+Radius:  19.00 
+
+Object:  bush 
+Position:  -830.00 7.00 -165.00
+Size:  628.00 826.00 11.00
+
+Object:  bush 
+Position:  -770.00 2.00 -105.00
+Size:  628.00 826.00 11.00
+
+Object:  bush 
+Position:  -869.00 0.00 -57.00
+Size:  628.00 826.00 19.00
+
+Object:  bush 
+Position:  -629.00 20.00 -187.00
+Size:  628.00 826.00 9.00
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE 1 3 ############################
+##### Turnaround at the fountain
+Scene Location: 1 8
+
+Object:  road 
+Position:  -230.00 0.00 -1000.00
+Length:  604.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  curve 
+Position:  -230.00 0.00 -200.00
+Width:  120.00 
+Color:  0.00 0.00 0.00
+Radius:  200.00 
+Angle:  360.00 
+
+# ----- two-sided checkpoint -----
+Object:  checkpoint 
+Position:  -229.75 0.00 -60.00
+Type:  1 8
+Label:  -8-
+Yrot:  90.00
+Size:  20.00 120.00 50.00
+Radius:  2.00 
+#only put refuel on one; 
+# it will work either direction
+
+Object:  checkpoint 
+Position:  -230.25 0.00 -60.00
+Type:  1 8
+Label:  -8-
+Yrot:  -90.00
+Size:  20.00 120.00 50.00
+Radius:  2.00 
+Data:  1 3
+50.00  5.00  0.00  
+
+Object:  speed limit sign 
+Position:  -200.00 0.00 -800.00
+Type:  55
+Size:  15.00 15.00 10.00
+Color:  1.00 1.00 1.00
+Radius:  1.50 
+
+# ----- rim of fountain -----
+Object:  curvewall 
+Position:  -230.00 0.00 -200.00
+Size:  604.00 5.00 3.00
+Color:  0.80 0.80 0.80
+Radius:  75.00 
+Angle:  360.00 
+
+# ----- outside wall of loop -----
+Object:  curvewall 
+Position:  -230.00 0.00 -200.00
+Yrot:  -80.00
+Size:  500.00 30.00 20.00
+Color:  0.80 0.80 0.80
+Radius:  240.00 
+Angle:  340.00 
+
+# ----- water in fountain -----
+Object:  cylinder 
+Position:  -230.00 0.00 -200.00
+Size:  604.00 5.00 2.00
+Color:  0.00 0.30 0.60
+Radius:  71.00 
+
+# ----- fountain base -----
+Object:  cylinder 
+Position:  -230.00 0.00 -200.00
+Size:  604.00 5.00 5.00
+Color:  0.50 0.60 0.50
+Radius:  15.00 
+
+# ----- the fountain -----
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.40 0.80 0.90
+Animation Bits:  0xce92 
+Data:  6 3
+-230.00  0.00  -200.00  
+-231.00  10.00  -200.00  
+-232.00  15.00  -200.00  
+-233.00  17.00  -200.00  
+-234.00  16.00  -200.00  
+-235.00  14.00  -200.00  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.40 0.80 0.90
+Animation Bits:  0xaaaa 
+Data:  5 3
+-230.00  0.00  -200.00  
+-228.00  11.00  -200.00  
+-226.00  16.00  -200.00  
+-224.00  19.00  -200.00  
+-222.00  17.00  -200.00  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.40 0.80 0.90
+Animation Bits:  0xfc75 
+Data:  6 3
+-230.00  0.00  -200.00  
+-230.00  17.00  -201.00  
+-230.00  25.00  -202.00  
+-230.00  31.00  -203.00  
+-230.00  23.00  -204.00  
+-230.00  14.00  -205.00  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.50 0.90 1.00
+Animation Bits:  0x8124 
+Data:  8 3
+-230.00  0.00  -200.00  
+-231.00  14.00  -198.50  
+-232.00  26.00  -197.00  
+-233.00  33.00  -195.50  
+-234.00  37.00  -194.00  
+-235.00  40.00  -192.50  
+-236.00  38.00  -191.00  
+-237.00  35.00  -189.50  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.50 0.90 1.00
+Animation Bits:  0x52c9 
+Data:  8 3
+-230.00  0.00  -200.00  
+-231.00  12.00  -202.00  
+-232.00  22.00  -204.00  
+-233.00  28.00  -206.00  
+-234.00  34.00  -208.00  
+-235.00  38.00  -210.00  
+-236.00  31.00  -212.00  
+-237.00  25.00  -214.00  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.40 0.80 0.90
+Animation Bits:  0xdbbd 
+Data:  5 3
+-230.00  0.00  -200.00  
+-229.00  18.00  -200.00  
+-228.00  26.00  -200.00  
+-227.00  33.00  -200.00  
+-226.00  30.00  -200.00  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.40 0.80 0.90
+Animation Bits:  0x645a 
+Data:  5 3
+-230.00  0.00  -200.00  
+-231.00  21.00  -204.00  
+-232.00  30.00  -206.00  
+-233.00  39.00  -208.00  
+-234.00  35.00  -210.00  
+
+Object:  polyline 
+Position:  0.00 0.00 0.00
+Color:  0.40 0.80 0.90
+Animation Bits:  0x19b5 
+Data:  5 3
+-230.00  0.00  -200.00  
+-230.50  15.00  -198.50  
+-231.00  25.00  -197.00  
+-231.50  31.00  -195.50  
+-232.00  34.00  -194.00  
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+##### SCENE -1 3 ################################
+##### Lake and stream
+Scene Location: -1 8
+
+Object:  road 
+Position:  -420.00 0.00 -1000.00
+Length:  500.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  curve 
+Position:  257.50 0.00 -500.00
+Yrot:  90.00
+Width:  45.00 
+Color:  0.00 0.00 0.00
+Radius:  700.00 
+Angle:  90.00 
+
+Object:  bridge 
+Position:  557.50 0.00 177.50
+Yrot:  90.00
+Size:  600.00 45.00 30.00
+
+Object:  road 
+Position:  1000.00 0.00 177.50
+Yrot:  90.00
+Length:  150.00 
+Width:  45.00 
+Color:  0.00 0.00 0.00
+
+Object:  checkpoint 
+Position:  1000.00 0.00 177.50
+Type:  1 10
+Label:  -10-
+Yrot:  -90.00
+Size:  10.00 45.00 30.00
+Radius:  2.00 
+Data:  1 3
+10.00  5.00  0.00  
+
+# ----- the lake -----
+Object:  pond 
+Position:  250.00 0.00 -450.00
+Size:  590.00 760.00 30.00
+
+Object:  pond 
+Position:  450.00 0.00 -150.00
+Yrot:  -45.00
+Size:  320.00 250.00 10.00
+
+Object:  pond 
+Position:  540.00 0.00 -20.00
+Yrot:  50.00
+Size:  60.00 46.00 10.00
+
+# ----- the stream -----
+Object:  flat 
+Position:  550.00 0.00 50.00
+Yrot:  -10.00
+Size:  110.00 30.00 10.00
+Color:  0.00 0.50 0.60
+
+Object:  flat 
+Position:  560.00 0.00 170.00
+Size:  160.00 26.00 10.00
+Color:  0.00 0.50 0.60
+
+Object:  curvewall 
+Position:  388.00 0.00 250.00
+Size:  160.00 26.00 0.50
+Color:  0.00 0.50 0.60
+Radius:  185.00 
+Angle:  110.00 
+
+Object:  curvewall 
+Position:  252.00 0.00 705.00
+Yrot:  210.00
+Size:  160.00 25.00 0.50
+Color:  0.00 0.50 0.60
+Radius:  315.00 
+Angle:  75.00 
+
+Object:  flat 
+Position:  -125.00 0.00 755.00
+Yrot:  30.00
+Size:  520.00 23.00 0.50
+Color:  0.00 0.50 0.60
+
+# ----- the vegetation ------
+Object:  conifer 
+Position:  610.00 0.00 -12.00
+Size:  60.00 46.00 36.00
+Color:  0.00 0.80 0.60
+Radius:  14.00 
+
+Object:  conifer 
+Position:  640.00 0.00 -22.00
+Size:  60.00 46.00 41.00
+Color:  0.00 0.60 0.30
+Radius:  22.00 
+
+Object:  conifer 
+Position:  633.00 0.00 -47.00
+Size:  60.00 46.00 37.00
+Color:  0.00 0.80 0.30
+Radius:  20.00 
+
+Object:  bush 
+Position:  580.00 0.00 -47.00
+Size:  60.00 46.00 12.00
+
+Object:  bush 
+Position:  566.00 0.00 -37.00
+Size:  60.00 46.00 8.00
+
+Object:  bush 
+Position:  505.00 0.00 5.00
+Size:  60.00 46.00 18.00
+
+Object:  conifer 
+Position:  480.00 0.00 75.00
+Size:  60.00 46.00 16.00
+Color:  0.00 0.80 0.30
+Radius:  8.00 
+
+Object:  grass 
+Position:  680.00 0.00 75.00
+Size:  60.00 46.00 4.00
+Radius:  88.00 
+
+Object:  grass 
+Position:  440.00 0.00 75.00
+Size:  60.00 46.00 6.00
+Radius:  80.00 
+
+Object:  grass 
+Position:  500.00 0.00 375.00
+Size:  360.00 46.00 6.00
+Radius:  180.00 
+
+Object:  deciduous 
+Position:  170.00 0.00 245.00
+Type:  
+Size:  25.00 25.00 36.00
+Color:  0.40 0.80 0.30
+Radius:  2.00 
+
+Object:  deciduous 
+Position:  220.00 0.00 285.00
+Type:  
+Size:  35.00 29.00 42.00
+Color:  0.40 0.80 0.60
+Radius:  2.00 
+
+Object:  deciduous 
+Position:  120.00 0.00 355.00
+Type:  
+Size:  21.00 26.00 31.00
+Color:  0.40 0.80 0.60
+Radius:  2.00 
+
+Object:  deciduous 
+Position:  70.00 0.00 395.00
+Type:  
+Size:  28.00 26.00 23.00
+Color:  0.20 0.80 0.60
+Radius:  2.00 
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+
+

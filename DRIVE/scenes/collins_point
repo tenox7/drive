@@ -1,0 +1,1183 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#############################################################################
+#  Collins Point Raceway
+#  by Edgar Circenis
+#############################################################################
+Racecourse:             Collins Point
+Practice Seconds:       0 
+Pre-Race Seconds:       2 
+Race Seconds:           225 
+Post-Race Seconds:      5 
+Start SceneX:           0 
+Start SceneZ:           0
+Start Angle:            180 
+Start Position:         622.5 0 100
+Start Positions:        4
+Turbo Mode:             0 
+Guns Mode:              0 
+
+#----------------------------------------------------------------------------
+Scene Location:  0 0
+
+Object: ground
+
+Object: road
+Width: 60
+Length: 1300
+Position: 600 0 -300
+
+Object: wall
+Size: 40 20 60
+Position: 640 0 780
+Color: 1 1 1
+
+Object: wall
+Size: 40 20 60
+Position: 560 0 780
+Color: 1 1 1
+
+Object: wall
+Size: 40 100 15
+Position: 600 50 780
+Color: 1 1 1
+
+Object: curvewall
+Radius: 50
+Height: 40
+Width: 20
+Angle: 180
+Position: 600 15 820
+Xrot: -90
+Color: 1 1 1
+
+Object: wall
+Size: 50 110 5
+Position: 600 55 775
+
+Object: generic sign
+Size: 10 10 0.0001
+Label: F
+Position: 624 23 821
+Color: 0.3 0.3 1
+Yrot: 180
+Zrot: -15
+
+Object: generic sign
+Size: 10 10 0.0001
+Label: I
+Position: 615 21 821
+Color: 0.3 0.3 1
+Yrot: 180
+Zrot: -8
+
+Object: generic sign
+Size: 10 10 0.0001
+Label: N
+Position: 605 20 821
+Color: 0.3 0.3 1
+Yrot: 180
+Zrot: -5
+
+Object: generic sign
+Size: 10 10 0.0001
+Label: I
+Position: 595 20 821
+Color: 0.3 0.3 1
+Yrot: 180
+Zrot: 5
+
+Object: generic sign
+Size: 10 10 0.0001
+Label: S
+Position: 585 21 821
+Color: 0.3 0.3 1
+Yrot: 180
+Zrot: 8
+
+Object: generic sign
+Size: 10 10 0.0001
+Label: H
+Position: 576 23 821
+Color: 0.3 0.3 1
+Yrot: 180
+Zrot: 15
+
+Object: finish
+Length: 10
+Width:  60
+Height: 60
+Label:  FINISH
+Radius: 0.5
+Position: 600 0 800
+Type: 1 13
+Yrot: 180
+
+Object: start
+Length: 10
+Width:  60
+Height: 20
+Label:  COLLINS POINT
+Radius: 0.5
+Position: 600 0 -200
+Type: 1 13
+Yrot: 180
+
+Object: bridge
+Width: 60
+Length: 201
+Height: 10
+Position: 600 0 -400
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 180
+Position: 300 0 -500
+Yrot: 180
+
+Object: road
+Width: 60
+Length: 475
+Position: 0 0 -500
+
+Object: checkpoint
+Length: 10
+Width:  60
+Height: 20
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: 0 0 -400
+Type: 1 1
+
+Object: wall
+Size: 5 5 20
+Position: -30 0 -400
+Yrot: 90
+
+Object: wall
+Size: 5 5 20
+Position: 30 0 -400
+Yrot: -90
+
+Object: curve
+Radius: 100
+Width: 70
+Angle: 360
+Position: 0 0.5 -200
+
+Object: curvewall
+Radius: 102
+Width: 3
+Height: 2
+Angle: 147
+Position: 0 0 -200
+Yrot: -73
+
+Object: curvewall
+Radius: 102
+Width: 3
+Height: 2
+Angle: 147
+Position: 0 0 -200
+Yrot: 107
+
+Object: curvewall
+Radius: 30
+Width: 5
+Height: 2
+Angle: 360
+Position: 0 0 -200
+
+Object: pond
+Width: 42
+Length: 42
+Height: 5
+Position: 0 1.5 -200
+
+Object: cone
+Width: 10
+Radius: 7
+Height: 10
+Position: 0 0 -200
+Color: 1 1 1
+
+Object: cone
+Width: 10
+Radius: 20
+Height: 3
+Position: 0 10 -200
+Color: 1 1 1
+
+Object: pond
+Width: 28
+Length: 28
+Height: 1
+Position: 0 14 -200
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -300 0 -25
+
+Object: road
+Width: 60
+Length: 200
+Position: -300 0 275
+Yrot: 90
+
+Object: road
+Width: 60
+Height: 2
+Length: 500.3238951
+Position: -1000 18 275
+Xrot: 2.071757692
+Yrot: -90
+
+Object: generic sign
+Label: FIVE LAPS\THEN EXIT
+Size: 50 105 0.0001
+Color: 1 1 0
+Position: -950 29 275
+Yrot: 90
+
+Object: wall
+Size: 5 5 79
+Position: -950 0 220
+
+Object: wall
+Size: 5 5 79
+Position: -950 0 325
+
+Object: road
+Width: 60
+Length: 100
+Position: -1000 0 760
+Yrot: -90
+
+Object: checkpoint
+Length: 10
+Width:  60
+Height: 20
+Label:  CHECKPOINT 11
+Radius: 0.5
+Position: -950 0 760
+Type: 1 11
+Yrot: -90
+
+Object: wall
+Size: 5 5 20
+Position: -950 0 790
+
+Object: wall
+Size: 5 5 20
+Position: -950 0 725
+
+Object: ramp
+Width: 60
+Length: 100
+Height: 8
+Position: -900 0 760
+Yrot: -90
+
+Object: ramp
+Width: 60
+Length: 100
+Height: 5
+Position: -600 0 760
+Yrot: 90
+
+Object: road
+Width: 60
+Length: 105
+Position: -605 0 760
+Yrot: -90
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -500 0 1060
+Yrot: -90
+
+Object: curvewall
+Width: 3
+Height: 4.5
+Radius: 333
+Angle: 90
+Position: -500 0 1060
+Color: 1 1 1
+Yrot: -90
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 332
+Angle: 85
+Position: -500 0 1060
+Color: 1 0 0
+Yrot: -85
+
+#----------------------------------------------------------------------------
+Scene Location:  -1 0
+
+#----------------- RE-ENTRY RAMPS
+Object: road
+Width: 200
+Length: 60
+Height: 4
+Position: -129 4 -109
+Color: 1 1 0
+Xrot: 4
+Yrot: 45
+
+Object: road
+Width: 200
+Length: 60
+Height: 4
+Position: 71 4 91
+Color: 1 1 0
+Xrot: 4
+Yrot: 45
+
+Object: road
+Width: 200
+Length: 60
+Height: 4
+Position: 115 4 47
+Color: 1 1 0
+Xrot: 4
+Yrot: -135
+
+Object: road
+Width: 200
+Length: 60
+Height: 4
+Position: -72 4 -140
+Color: 1 1 0
+Xrot: 4
+Yrot: -135
+
+#Object: curve
+#Width: 60
+#Radius: 330
+#Angle: 270
+#Position: 0 0 400
+#Yrot: -45
+
+Object: road
+Width: 60
+Length: 600
+Position: 212 0 -236
+Yrot: 45
+
+Object: road
+Width: 60
+Length: 600
+Position: -212 0 -236
+Yrot: -45
+
+# --------------------------- checkpoint tunnel
+
+Object: checkpoint
+Length: 1
+Width:  60
+Height: 10
+#Label:  2
+Radius: 0.5
+Position: 170 0 -194
+Type: 1 2
+Yrot: 45
+
+Object: checkpoint
+Length: 1
+Width:  60
+Height: 10
+#Label:  4
+Radius: 0.5
+Position: 150 0 -174
+Type: 1 4
+Yrot: 45
+
+Object: checkpoint
+Length: 1
+Width:  60
+Height: 10
+#Label:  6
+Radius: 0.5
+Position: 130 0 -154
+Type: 1 6
+Yrot: 45
+
+Object: checkpoint
+Length: 1
+Width:  60
+Height: 10
+#Label:  8
+Radius: 0.5
+Position: 110 0 -134
+Type: 1 8
+Yrot: 45
+
+Object: checkpoint
+Length: 1
+Width:  60
+Height: 10
+#Label:  10
+Radius: 0.5
+Position: 90 0 -114
+Type: 1 10
+Yrot: 45
+
+#Object: invisible wormhole
+#Width: 60
+#Height: 10
+#Position: 70 0 -94
+#Type: position in scene += -10,0,10
+#Yrot: 45
+
+Object: wall
+Width: 5
+Height: 10
+Length: 270
+Position: 190 0 -258
+Color: 0 0 0
+Yrot: 45
+
+Object: wall
+Width: 5
+Height: 10
+Length: 270
+Position: 234 0 -214
+Color: 0 0 0
+Yrot: 45
+
+Object: wall
+Width: 67
+Length: 270
+Height: 2
+Position: 211 9 -235
+Color: 0 0 0
+Yrot: 45
+
+# ------------------------- INNER NORTH 270
+
+Object: wall
+Width: 4
+Length: 4
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -232 0 164
+
+Object: generic sign
+Label: TO\CHECKPOINTS
+Color: 1 1 0
+Width: 60
+Length: 15
+Height: 0.0001
+Position: -210 12 186
+Yrot: 45
+
+Object: curve
+Width: 62
+Radius: 331
+Angle: 270
+Position: 0 0 400
+Yrot: -45
+
+#outside wall
+Object: curvewall
+Width: 2
+Height: 15
+Radius: 332
+Angle: 270
+Position: 0 0 400
+Color: 0 0 0
+Yrot: -45
+
+# half-ouside wall
+Object: curvewall
+Width: 3
+Height: 15
+Radius: 333
+Angle: 135
+Position: 0 0 400
+Color: 0 0 0
+Yrot: -45
+
+Object: curvewall
+Width: 2
+Height: 5
+Radius: 332
+Angle: 265
+Position: 0 0 400
+Color: 1 1 0
+Yrot: -40
+
+#inside wall
+Object: curvewall
+Width: 3.5
+Height: 15
+Radius: 270
+Angle: 270
+Position: 0 0 400
+Yrot: -45
+Color: 0 0 0
+
+Object: curvewall
+Width: 2
+Height: 5
+Radius: 270
+Angle: 265
+Position: 0 0 400
+Yrot: -40
+Color: 1 1 0
+
+#outside of top
+Object: curvewall
+Width: 66
+Height: 2
+Radius: 333
+Angle: 270
+Position: 0 15 400
+Yrot: -45
+Color: 0 0 0
+
+Object: light
+Width: 40
+Length: 10
+Position: 259.808 14 250
+Color: 1 1 1
+Yrot: -30
+Xrot: 180
+
+Object: light
+Width: 40
+Length: 10
+Position: 259.808 14 550
+Color: 1 1 1
+Yrot: 30
+Xrot: 180
+
+Object: light
+Width: 40
+Length: 10
+Position: 1.3469e-08 14 700
+Color: 1 1 1
+Yrot: 90
+Xrot: 180
+
+Object: light
+Width: 40
+Length: 10
+Position: -259.808 14 550
+Color: 1 1 1
+Yrot: 150
+Xrot: 180
+
+Object: light
+Width: 40
+Length: 10
+Position: -259.808 14 250
+Color: 1 1 1
+Yrot: 210
+Xrot: 180
+
+# ---------------------------------- SECOND SET OF CHECKPOINTS
+Object: checkpoint
+Length: 1
+Width:  62
+Height: 16
+#Label:  3
+Radius: 0.5
+Position: -50 0 695
+Type: 1 3
+Yrot: -80
+
+Object: checkpoint
+Length: 1
+Width:  62
+Height: 16
+#Label:  5
+Radius: 0.5
+Position: -25 0 698
+Type: 1 5
+Yrot: -85
+
+Object: checkpoint
+Length: 1
+Width:  62
+Height: 16
+#Label:  7
+Radius: 0.5
+Position: 0 0 699
+Type: 1 7
+Yrot: -90
+
+Object: checkpoint
+Length: 1
+Width:  62
+Height: 16
+#Label:  9
+Radius: 0.5
+Position: 25 0 699
+Type: 1 9
+Yrot: -95
+
+
+
+# ---------------------------------- OUTER NORTH 270
+
+Object: generic sign
+Label: EXIT TO\CHKPT 11
+Color: 1 1 0
+Width: 60
+Length: 15
+Height: 0.0001
+Position: -254 12 142
+Yrot: 45
+
+Object: curve
+Width: 62
+Radius: 391
+Angle: 135
+Position: 0 0 400
+Yrot: 90
+
+#outside wall
+Object: curvewall
+Width: 3
+Height: 15
+Radius: 393
+Angle: 135
+Position: 0 0 400
+Color: 0 0 0
+Yrot: 90
+
+Object: curvewall
+Width: 2
+Height: 5
+Radius: 392
+Angle: 130
+Position: 0 0 400
+Color: 1 1 0
+Yrot: 95
+
+#outside of top
+Object: curvewall
+Width: 66
+Height: 2
+Radius: 393
+Angle: 135
+Position: 0 15 400
+Yrot: 90
+Color: 0 0 0
+
+# ---------------------------------- turn out
+
+Object: road
+Width: 62
+Length: 310
+Position: 0 0 -17
+Yrot: 57.0
+
+# ---------------------------------- criss cross walls
+
+Object: wall
+Width: 2
+Height: 4
+Color: 1 1 0
+Length: 270
+Position: -0.5 0 19
+Yrot: -45
+
+Object: wall
+Width: 2
+Height: 4
+Color: 1 1 0
+Length: 270
+Position: 43 0 -24.5
+Yrot: -45
+
+Object: wall
+Width: 2
+Height: 4
+Color: 1 1 0
+Length: 270
+Position: 0.5 0 19
+Yrot: 45
+
+Object: wall
+Width: 2
+Height: 4
+Color: 1 1 0
+Length: 280
+Position: -43 0 -24.5
+Yrot: 57.5
+
+Object: wall
+Width: 2
+Height: 4
+Color: 1 1 0
+Length: 270
+Position: -42.5 0 -23.5
+Yrot: 135
+
+Object: wall
+Width: 2
+Height: 4
+Color: 1 1 0
+Length: 270
+Position: 1 0 -66.5
+Yrot: 135
+
+# ------------------------------ southern 270
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 270
+Position: 0 0 -448
+Yrot: 135
+
+Object: curvewall
+Width: 3
+Height: 4.5
+Radius: 333
+Angle: 270
+Position: 0 0 -448
+Yrot: 135
+Color: 1 1 1
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 332
+Angle: 265
+Position: 0 0 -448
+Yrot: 140
+Color: 1 0 0
+
+Object: curvewall
+Width: 3
+Height: 4.5
+Radius: 270
+Angle: 270
+Position: 0 0 -448
+Yrot: 135
+Color: 1 1 1
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 270
+Angle: 265
+Position: 0 0 -448
+Yrot: 140
+Color: 1 0 0
+
+# ------------------------------ INSERTION
+
+Object: curve
+Width: 62
+Height: 2
+Radius: 331
+Angle: 45
+Yrot: 90
+Position: 425 18 -25
+
+Object: curvewall
+Width: 3
+Height: 6.5
+Radius: 333
+Angle: 45
+Yrot: 90
+Position: 425 16 -25
+Color: 0 0 0
+
+Object: curvewall
+Width: 2
+Height: 6
+Radius: 332
+Angle: 40
+Yrot: 95
+Position: 425 16 -25
+Color: 1 1 0
+
+Object: curvewall
+Width: 3.5
+Height: 6.5
+Radius: 270
+Angle: 45
+Yrot: 90
+Position: 425 16 -25
+Color: 0 0 0
+
+Object: curvewall
+Width: 2
+Height: 6
+Radius: 270
+Angle: 40
+Yrot: 95
+Position: 425 16 -25
+Color: 1 1 0
+
+Object: road
+Width: 60
+Height: 2
+Length: 575
+Position: 425 18 275
+Yrot: -90
+
+Object: wall
+Width: 2
+Color: 1 1 0
+Height: 6
+Length: 575
+Position: 425 16 244
+Yrot: -90
+
+Object: wall
+Width: 2
+Color: 1 1 0
+Height: 6
+Length: 575
+Position: 425 16 304
+Yrot: -90
+
+
+# ------------------------------ ESCAPE
+
+Object: road
+Width: 60
+Length: 1000
+Position: 0 0 760
+Yrot: -90
+
+Object: ground
+
+#----------------------------------------------------------------------------
+Scene Location:  0 1
+
+# ------------------ landscaping
+
+Object: deciduous
+Height: 40
+Position: -150 20 -400
+Type: round
+
+Object: deciduous
+Height: 40
+Position: -130 10 -450
+Type: pear
+
+Object: deciduous
+Height: 40
+Position: -250 0 -510
+Type: round
+
+Object: deciduous
+Height: 50
+Position: -270 50 340
+Type: oval
+
+Object: wall
+Width: 2000
+Height: 205.915
+Length: 70
+Position: 0 0 -500
+Xrot: 76.2336
+Color: 0.3 0.9 0.2
+
+Object: wall
+Width: 2000
+Height: 49
+Length: 550
+Position: 0 0 -300
+Color: 0.3 0.9 0.2
+
+Object: wall
+Width: 500
+Length: 150
+Height: 48.5
+Position: -500 0 280
+Color: 0.3 0.9 0.2
+Yrot: 200
+
+Object: wall
+Width: 500
+Length: 200
+Height: 48.5
+Position: -650 0 280
+Color: 0.3 0.9 0.2
+Yrot: 160
+
+Object: wall
+Width: 200
+Length: 200
+Height: 48.5
+Position: 200 0 280
+Color: 0.3 0.9 0.2
+Yrot: 140
+
+Object: wall
+Width: 400
+Length: 200
+Height: 48.5
+Position: 600 0 280
+Color: 0.3 0.9 0.2
+Yrot: 190
+
+#ocean
+Object: pond
+Width: 2000
+Length: 1000
+Height: 250
+Position: 0 20 500
+
+# ------------------ lighthouse
+
+Object: cone
+Width: 40
+Radius: 30
+Height: 130
+Position: -100 50 100
+Color: 1 1 1
+
+Object: cylinder
+Radius: 35
+Height: 30
+Color: 1 0 0
+Position: -100 180 100
+
+Object: cone
+Width: 30
+Radius: 1
+Height: 20
+Position: -100 210 100
+Color: 1 1 1
+
+Object: wall
+Color: 0.7 0.7 1
+Size: 74 20 20
+Position: -100 185 63
+
+Object: wall
+Color: 0.7 0.7 1
+Size: 74 20 20
+Position: -137 185 100
+Yrot: -90
+
+Object: generic sign
+Label: C\O\L\L\I\N\S
+Size: 110 40 0.0001
+Color: 1 1 1
+Position: -100 60 59.5
+Xrot: 4.7
+
+Object: generic sign
+Label: C\O\L\L\I\N\S
+Size: 110 40 0.0001
+Color: 1 1 1
+Position: -100 60 140.5
+Yrot: 180
+Xrot: 4.7
+
+Object: wall
+Size: 390 2 4
+Color: 1 1 1
+Position: -70 50 -300
+
+# ------------------ seagulls
+
+Construct: gull
+Position: -100 70 260
+
+Construct: gull
+Position: -120 65 240
+Yrot: -20
+
+# ------------------ roadways
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -500 0 -940
+Yrot: -90
+
+Object: curvewall
+Width: 3
+Height: 4.5
+Radius: 333
+Angle: 90
+Position: -500 0 -940
+Color: 1 1 1
+Yrot: -90
+
+Object: curvewall
+Width: 2
+Height: 4
+Radius: 332
+Angle: 85
+Position: -500 0 -940
+Color: 1 0 0
+Yrot: -85
+
+Object: generic sign
+Label: SLOW!\SHARP CURVES
+Size: 30 102 0.0001
+Color: 1 1 0
+Position: -200 20 -800
+
+Object: wall
+Size: 5 5 50
+Position: -250 0 -802.5
+Yrot: 90
+
+Object: wall
+Size: 5 5 50
+Position: -150 0 -802.5
+Yrot: -90
+
+Object: road
+Width: 60
+Length: 340
+Position: -200 0 -940
+
+Object: spline road
+Width: 60
+Height: 50
+Data: 6 3
+-200 0 -600
+-200 0 -520
+-200 42 -335
+-200 55 -285
+-200 50 -230
+-200 50 -200
+
+Object: road
+Width: 60
+Length: 300
+Height: 2
+Position: -200 50 -200
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 130
+Angle: 180
+Position: -100 50 100
+
+Object: curvewall
+Width: 4
+Height: 2.5
+Radius: 134
+Angle: 180
+Position: -100 50 100
+Color: 1 1 1
+
+Object: curvewall
+Width: 2
+Height: 2
+Radius: 132
+Angle: 175
+Position: -100 50 100
+Color: 1 0 0
+Yrot: 5
+
+Object: checkpoint
+Length: 10
+Width:  60
+Height: 20
+Label:  CHECKPOINT 12
+Radius: 0.5
+Position: 300 50 -200
+Type: 1 12
+Yrot: -90
+
+Object: wall
+Size: 5 5 20
+Position: 300 50 -170
+
+Object: wall
+Size: 5 5 20
+Position: 300 50 -235
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Height: 2
+Position: 300 50 100
+Yrot: 180
+
+Object: curvewall
+Width: 3
+Radius: 333
+Angle: 90
+Height: 2.5
+Position: 300 50 100
+Color: 1 1 1
+Yrot: 180
+
+Object: curvewall
+Width: 2
+Radius: 332
+Angle: 85
+Height: 2
+Position: 300 50 100
+Color: 1 0 0
+Yrot: 185
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Height: 52
+Position: 300 50 -500
+
+Object: curvewall
+Width: 3
+Height: 2.5
+Radius: 333
+Angle: 90
+Position: 300 50 -500
+Color: 1 1 1
+
+Object: curvewall
+Width: 2
+Height: 2
+Radius: 332
+Angle: 85
+Position: 300 50 -500
+Color: 1 0 0
+Yrot: 5
+
+Object: road
+Width: 60
+Height: 50
+Length: 503
+Position: 600 50 -500
+Yrot: 180
+Xrot: 5.710593138
+
+Object: ground
+

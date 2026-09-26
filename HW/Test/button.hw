@@ -1,0 +1,25 @@
+hwButton Push {
+    PosX = 100
+    PosY = 100
+    Width = 128
+    Height = 32
+    Color = {1,1,1}
+    BackgroundColor = {.5,.5,.5}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+    Label = "Push"
+}
+
+hwButton Button {
+    PosX = 100
+    PosY = 148
+    Width = 128
+    Height = 32
+    Color = {1,1,1}
+    BackgroundColor = {.5,.5,.5}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+    Label = "Button"
+}

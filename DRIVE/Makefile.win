@@ -1,0 +1,70 @@
+!include <win32.mak>
+
+#SRV_DEBUG=
+SRV_DEBUG=-debug -pdb:drive_server.pdb
+#CLI_DEBUG=
+CLI_DEBUG=-debug -pdb:drive.pdb
+
+
+all:    drive_server drive
+
+drive_server:
+	cd libnum
+	nmake /f Makefile.win
+	cd ../libphysics
+	nmake /f Makefile.win
+	cd ../libprims
+	nmake /f Makefile.win
+	cd ../server/drive_physics
+	nmake /f Makefile.win
+	cd ../../server/objects
+	nmake /f Makefile.win
+	cd ../../server
+	nmake /f Makefile.win
+	cd ../shared
+	nmake /f Makefile.win
+	cd ..
+	$(link) $(LOPTS) -nodefaultlib:libcd -out:drive_server.exe \
+                $(SRV_DEBUG) \
+		server/drive_server.obj \
+                server.lib \
+		libnum.lib \
+		libphysics.lib \
+		libprims.lib \
+                drive_physics.lib \
+                objects.lib \
+		shared.lib \
+		../pdcurses/pdcurses.lib \
+                ../HW/hwnull.lib ../JPEG/libjpeg.lib wsock32.lib user32.lib
+
+drive:
+	cd client
+	nmake /f Makefile.win
+	cd ..
+	$(link) $(LOPTS) -nodefaultlib:libcd -out:drive.exe \
+                $(CLI_DEBUG) \
+		client/drive.obj \
+		client.lib \
+                shared.lib \
+		../HW/hw.lib ../JPEG/libjpeg.lib \
+                glu32.lib opengl32.lib wsock32.lib user32.lib winmm.lib \
+		$(guilibs)
+
+clean:
+	cd libnum
+	nmake /f Makefile.win clean
+	cd ../libphysics
+	nmake /f Makefile.win clean
+	cd ../libprims
+	nmake /f Makefile.win clean
+	cd ../server/drive_physics
+	nmake /f Makefile.win clean
+	cd ../../server/objects
+	nmake /f Makefile.win clean
+	cd ../../server
+	nmake /f Makefile.win clean
+	cd ../shared
+	nmake /f Makefile.win clean
+	cd ../client
+	nmake /f Makefile.win clean
+	cd ..

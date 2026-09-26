@@ -1,0 +1,171 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+Object: cone
+Width: 50
+Radius: 20
+Height: 180
+Position: 0 0 0
+Xrot: -90
+Color: 1 1 1
+
+Object: cone
+Width: 50
+Radius: 30
+Height: 60
+Position: 0 0 0
+Xrot: 90
+Color: 1 1 1
+
+Object: cone
+Width: 10
+Radius: 25
+Color: 0.7 0.6 0
+Height: 5
+Position: 0 0 60
+Xrot: 90
+
+Object: cylinder
+Radius: 20
+Height: 200
+Position: 80 100 -40
+Xrot: -90
+Color: 1 1 1
+
+Object: sphere
+Color: 1 0 0
+Radius: 20
+Position: 80 100 -40
+
+Object: cylinder
+Radius: 20
+Height: 200
+Position: -80 100 -40
+Xrot: -90
+Color: 1 1 1
+
+Object: sphere
+Color: 1 0 0
+Radius: 20
+Position: -80 100 -40
+
+Object: wall
+Size: 40 10 120
+Position: 0  0 -130
+Zrot: 45
+Color: 1 1 1
+
+Object: wall
+Size: 40 10 120
+Position: 0  0 -130
+Zrot: -45
+Color: 1 1 1
+
+Object: sphere
+Radius: 30
+Color: 0.7 1 0.7
+Position: 0 95 150
+
+Object: cone
+Width: 20
+Radius: 150
+Height: 20
+Position: 0 70 150
+Color: 1 1 1
+
+#phaser fire!
+#Object: wall
+#Color: 1 0 0
+#Position: 0 70 150
+#Zrot: 180
+#Size: 1 1 5000
+#Xrot: -80
+#Yrot: 2
+#Animation Bits: 0x2116
+
+#phaser fire!
+#Object: wall
+#Color: 1 0 0
+#Position: 0 70 150
+#Zrot: 180
+#Size: 1 1 5000
+#Xrot: -80
+#Yrot: -2
+#Animation Bits: 0x2116
+
+Object: cylinder
+Height: 10
+Radius: 150
+Position: 0 90 150
+Color: 1 1 1
+
+Object: cone
+Width: 150
+Radius: 20
+Height: 20
+Position: 0 100 150
+Color: 1 1 1
+
+#TOP SIGNS
+Object: generic sign
+Size: 50 60 0.0001
+Label: NCC
+Color: 1 1 1
+Yrot: 170
+Xrot: 81
+Position: 40 107 250
+
+Object: generic sign
+Size: 50 70 0.0001
+Label: 1701
+Color: 1 1 1
+Yrot: 190
+Xrot: 81
+Position: -40 107 250
+
+#BOTTOM SIGNS
+Object: generic sign
+Size: 50 60 0.0001
+Label: NCC
+Color: 1 1 1
+Yrot: 175
+Xrot: -81
+Position: 35 75 200
+
+Object: generic sign
+Size: 50 70 0.0001
+Label: 1701
+Color: 1 1 1
+Yrot: 185
+Xrot: -81
+Position: -35 75 200
+
+Object: wall
+Width: 20
+Length: 60
+Height: 115
+Position: 0 0 -20
+Xrot: 25
+Color: 1 1 1
+
+Object: wall
+Width: 20
+Length: 60
+Height: 125
+Position: 0 0 -70
+Xrot: 45
+Color: 1 1 1

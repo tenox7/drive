@@ -1,0 +1,139 @@
+NAME
+    hwTexture - define a texture map for use in rendering
+
+INHERITS FROM
+    hwImage
+    hwOrient
+
+PROPERTIES
+    Apply	1I	One of HW_TM_MODULATE, HW_TM_REPLACE,
+			HW_TM_DECAL, HW_TM_BLEND, HW_TM_ADD,
+			or HW_TM_COMBINE
+    Bound	1I	One of HW_TM_REPEAT or HW_TM_CLAMP
+    CoordMode	1I	One of HW_TM_EXPLICIT, HW_TM_PLANAR,
+			HW_TM_SPHERE, HW_TM_CYLINDER, or
+			HW_TM_ENVMAP
+    Filter	1I	One of HW_TM_POINT, HW_TM_LINEAR,
+			HW_TM_MIP, or HW_TM_TRILINEAR
+
+DEFAULTS
+    Apply = HW_TM_MODULATE
+    Bound = HW_TM_REPEAT
+    CoordMode = HW_TM_EXPLICIT
+    Filter = HW_TM_LINEAR
+
+DESCRIPTION
+    The hwTexture class is used to create a texture map which may be
+    applied to rendered surfaces.  The texture encapsulates both the
+    image used for texturing (see hwImage(3) for more information) and
+    methods used when applying the texture.
+
+    The possible Apply values are:
+
+	HW_TM_MODULATE		The lit surface color is modulated by
+				the texture color; this is accomplished
+				by multiplying the two colors together
+				component-by-component
+	HW_TM_REPLACE		The texture color replaces the lit
+				surface color; this is handy for
+				emissive objects
+	HW_TM_DECAL		The texture is "decalled" onto the lit
+				surface, its color blending with the lit
+				surface based on the alpha value at each
+				texel
+	HW_TM_DECAL		The texture is "blended" onto the lit
+				surface
+
+    The two possible Bound modes are:
+
+	HW_TM_REPEAT		If the texture coordinates exceed the
+				range [0.0,1.0], then the texture map
+				repeats infinitely
+	HW_TM_CLAMP		The texture coordinates are clamped to
+				the range [0.0,1.0]
+
+    The possible CoordMode values are:
+
+	HW_TM_EXPLICIT          Texture coordinates used are those
+				specified with the original surface; see
+				each graphics type for what the default
+				explicit surface texture coordinates
+				are.  These coordinates are then passed
+				through the matrix expressed using the
+				hwOrient parameters of the texture.
+
+	HW_TM_PLANAR            Texture coordinates are specified
+				projected onto a plane whose center and
+				orientation are specifed by the hwOrient
+				Pos and Rotate parameters.  The
+				coordinates are then scaled by the
+				inverse of the Scale parameter.  The
+				effect is as if the texture were blown
+				up by the Scale parameter and the
+				vertices of the surface were projected
+				into that blown up texture map.
+
+	HW_TM_SPHERE            Texture coordinates are specified
+				relative to a sphere centered at the
+				hwOrient Pos parameter, and oriented by
+				the hwOrient Rotate parameter.  They are
+				then subsequently scaled by the Scale
+				parameter.
+
+	HW_TM_CYLINDER          Texture coordinates are specified
+				relative to a cylinder (with axis along
+				Z) centered at the hwOrient Pos
+				parameter, and oriented by the hwOrient
+				Rotate parameter.  The U coordinate is
+				the longitude along the cylinder; the V
+				coordinate is the distance from the
+				(rotated) plane at the origin.
+
+	HW_TM_ENVMAP            Texture coordinates are generated based
+				on the vertex normal and the
+				eye-to-vertex vector.  This allows for
+				"shiny" looking surfaces such as a
+				mirrored ball.
+
+    The possible values for the Filter parameter include:
+
+	HW_TM_POINT		The texture is not filtered at all
+
+	HW_TM_LINEAR            The texture is filtered from the nearest
+				four samples
+
+	HW_TM_MIP               The texture is filtered from the nearest
+				four samples in the appropriate
+				level-of-detail
+
+	HW_TM_TRILINEAR         The texture is filtered between the
+				neare eight samples in the two nearest
+				MIP levels-of-detail.
+
+
+C EXAMPLE
+    /* Texture map a sphere using planar coordinate generation */
+    hwObject
+	tm, sphere;
+
+    tm = hwTexture->create( hwTexture );
+    tm->modify( tm, hwStrFileName, HW_TYPE_STRING, "foo.ppm" );
+    HW_MODIFY_1I( tm, hwStrCoordMode, HW_TM_PLANAR );
+
+    sphere = hwSphere->create( hwSphere );
+    sphere->modify( sphere, hwStrTexture, HW_TYPE_OBJECT, tm );
+    sphere->draw( sphere, disp );
+    sphere->destroy( sphere );
+    tm->destroy( tm );
+
+OBJECT FILE EXAMPLE
+    # A sphere demonstrating planar coordinate generation
+    hwSphere sphere {
+	Texture = hwTexture {
+	    FileName = "foo.ppm"
+	    CoordMode = HW_TM_PLANAR
+	}
+    }
+
+SEE ALSO
+    hw(3), hwImage(3), hwOrient(3)

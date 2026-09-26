@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwRowCol - GUI layout widget that tightly controls placement of children</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwRowCol - GUI layout widget that tightly controls placement of
+children</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwGUI.htm">hwGUI</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Rows</td>
+<td>1I</td>
+<td>Number of rows in the hwRowCol</td>
+</tr>
+<tr><td>Columns</td>
+<td>1I</td>
+<td>Number of columns in the hwRowCol</td>
+</tr>
+<tr><td>Children</td>
+<td>*O</td>
+<td>List of children. This need not match Rows*Columns.</td>
+</tr>
+<tr><td>Padding</td>
+<td>2I</td>
+<td>X and Y padding around each child in the hwRowCol</td>
+</tr>
+<tr><td>BackgroundColor</td>
+<td>4F</td>
+<td>Background color of the entire hwRowCol</td>
+</tr>
+<tr><td>Texture</td>
+<td>0O</td>
+<td>Background texture image of the entire hwRowCol</td>
+</tr>
+<tr><td>Invisible</td>
+<td>1B</td>
+<td>True if the background should not be drawn</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Rows</td>
+<td>1</td>
+</tr>
+<tr><td>Columns</td>
+<td>1</td>
+</tr>
+<tr><td>Invisible</td>
+<td>False</td>
+</tr>
+<tr><td>BackgroundColor</td>
+<td>{0,0,0,0}</td>
+</tr>
+<tr><td>Texture</td>
+<td>NULL</td>
+</tr>
+<tr><td>Padding</td>
+<td>{0,0}</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwRowCol widget arranges its children in a strict row/column
+fashion. Note that there does not need to be a 1:1 mapping between
+the total number of cells (Rows*Columns) and the number of children.
+If there are more cells than children, the last cells will be empty.
+If there are more children than cells, not all the children will be
+drawn.</p>
+<p>Note that the hwRowCol widget overrites the hwGUI paramters of the
+children's PosX, PosY, Width, Height, and Align properties, since it
+forces a position / size on all its children.</p>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+      hwRowCol numPad {
+          PosX = 625   PosY = 425
+          Width = 570 Height = 760
+          Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+          Rows = 4    Columns = 3
+          Padding = {20,20}
+          Children = {
+              hwButton B_1   { Label = &quot;1&quot; ID = 10049 },
+              hwButton B_2   { Label = &quot;2&quot; ID = 10050 },
+              hwButton B_3   { Label = &quot;3&quot; ID = 10051 },
+              hwButton B_4   { Label = &quot;4&quot; ID = 10052 },
+              hwButton B_5   { Label = &quot;5&quot; ID = 10053 },
+              hwButton B_6   { Label = &quot;6&quot; ID = 10054 },
+              hwButton B_7   { Label = &quot;7&quot; ID = 10055 },
+              hwButton B_8   { Label = &quot;8&quot; ID = 10056 },
+              hwButton B_9   { Label = &quot;9&quot; ID = 10057 },
+              hwButton B_dot { Label = &quot;.&quot; ID = 10046 },
+              hwButton B_0   { Label = &quot;0&quot; ID = 10048 },
+              hwButton B_del { Label = &quot;bs&quot; ID = 10008 }
+          }
+          BackgroundColor = {.5,.5,.5}
+          Invisible = True
+      }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwGUI.htm">hwGUI</a>, <a
+href="hwLayout.htm">hwLayout</a></p>
+</body>
+</html>

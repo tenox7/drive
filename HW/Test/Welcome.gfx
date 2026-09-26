@@ -1,0 +1,93 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+CAM_FRONT=0.1
+
+# Set up the global environment
+hwEnviron {
+    BackgroundColor = {0,0,1}
+    AmbientFactor = 1.0
+    AmbientColor = {0.5, 0.5, 0.5}
+}
+
+hwTimer {
+    Equation = {0,1}
+    CycleTime = 24
+    Children = {
+	hwSpinner {
+	    PosType = HW_SPIN_SMOOTH
+	    PosParams = {
+		 0,0,-6,
+		 6,0, 0,
+		 0,0, 6,
+		-6,0, 0,
+		 0,0,-6
+	    }
+	    PosTimes = {0,10,20,60,100}
+
+	    DirType = HW_SPIN_SMOOTH
+	    DirParams = {
+		 0,0, 1,
+		-1,0, 0,
+		 0,0,-1,
+		 1,0, 0,
+		 0,0, 1
+	    }
+	    DirTimes = {0,10,20,60,100}
+
+	    CycleTime = 5.0
+
+	    Children = {
+		hwCamera {
+		    Pos = {0,0,0}
+		    Dir = {1,0,0}
+		    Up = {0,1,0}
+		    Perspective = True
+		    Planes = {CAM_FRONT,12}
+		    Field = 45
+		},
+		hwLight {
+		    Color = {1,1,1}
+		    Dir = {1,0,1}
+		}
+	    }
+	},
+	hwSpinner {
+	#    UpType = HW_SPIN_LINEAR
+	#    UpParams = {0,360}
+	#    CycleTime = 3
+	    Lifetime = {12,24}
+
+	    Children = {
+		hwFile {
+		   FileName = "box.gfx"
+		}
+	    }
+	},
+	hwSpinner {
+	#    UpType = HW_SPIN_LINEAR
+	#    UpParams = {0,360}
+	#    CycleTime = 3
+	    Lifetime = {0,12}
+
+	    Children = {
+		hwFile {
+		   FileName = "Text.gfx"
+		}
+	    }
+	}
+    }
+}

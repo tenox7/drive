@@ -1,0 +1,284 @@
+hwGroup {
+    Children = {
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {1,0,-6,1,9,-6,11,9,
+                -6,11,0,-6}
+            Color = {0.7,0.4,0.4}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-11,0,-10,-11,9,-10,-5,19,
+                -10,1,9,-10,1,0,-10}
+            Color = {0.7,0.4,0.4}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {11,9,-6,11,19,0,11,9,
+                6,11,0,6,11,0,-6}
+            Color = {0.7,0.4,0.4}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {1,0,-10,1,9,-10,1,9,
+                -6,1,0,-6}
+            Color = {0.7,0.4,0.4}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-11,0,6,-11,9,6,-11,9,
+                -10,-11,0,-10}
+            Color = {0.7,0.4,0.4}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {11,0,6,11,9,6,-11,9,
+                6,-11,0,6}
+            Color = {0.7,0.4,0.4}
+            Visibility = 0xffffffff
+        }
+    }
+    Invisible = False
+    Visibility = 0xffffffff
+}
+hwGroup {
+    Children = {
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {1,9,-6,-5,19,0,11.5,19,
+                0,11.5,9,-6}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-5,19,0,-11,9,6,11.5,9,
+                6,11.5,19,0}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {1,9,-10.5,-5,19,-10.5,-5,19,
+                0,1,9,-6}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-11,9,-10.5,-11,9,6,-5,19,
+                0,-5,19,-10.5}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {11.5,9,-6,11.5,19,0,11,19,
+                0,11,9,-6}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {11.5,19,0,11.5,9,6,11,9,
+                6,11,19,0}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-5,19,-10,-11,9,-10,-11,9,
+                -10.5,-5,19,-10.5}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {1,9,-10,-5,19,-10,-5,19,
+                -10.5,1,9,-10.5}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {2,0,-6.05,2,6.5,-6.05,4,6.5,
+                -6.05,4,0,-6.05}
+            Color = {0.5,0.1,0.1}
+            Visibility = 0xffffffff
+        }
+    }
+    Invisible = False
+    Visibility = 0xffffffff
+}
+hwGroup {
+    Children = {
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {6.45,1.7,-6.05,6.45,6.7,-6.05,8.55,6.7,
+                -6.05,8.55,1.7,-6.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-9.575,1.7,-10.05,-9.575,6.7,-10.05,-7.475,6.7,
+                -10.05,-7.475,1.7,-10.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-6.05,1.7,-10.05,-6.05,6.7,-10.05,-3.95,6.7,
+                -10.05,-3.95,1.7,-10.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-6.05,8,-10.05,-6.05,13,-10.05,-3.95,13,
+                -10.05,-3.95,8,-10.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-2.525,1.7,-10.05,-2.525,6.7,-10.05,-0.425,6.7,
+                -10.05,-0.425,1.7,-10.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-7.475,1.7,6.05,-7.475,6.7,6.05,-9.575,6.7,
+                6.05,-9.575,1.7,6.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {1.05,1.7,6.05,1.05,6.7,6.05,-1.05,6.7,
+                6.05,-1.05,1.7,6.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {8.55,1.7,6.05,8.55,6.7,6.05,6.45,6.7,
+                6.05,6.45,1.7,6.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {11.05,1.7,-1.05,11.05,6.7,-1.05,11.05,6.7,
+                1.05,11.05,1.7,1.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {11.05,8,-1.05,11.05,13,-1.05,11.05,13,
+                1.05,11.05,8,1.05}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-11.05,1.7,2.06667,-11.05,6.7,2.06667,-11.05,6.7,
+                -0.0333333,-11.05,1.7,-0.0333333}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-11.05,1.7,-3.96667,-11.05,6.7,-3.96667,-11.05,6.7,
+                -6.06667,-11.05,1.7,-6.06667}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwPolygon  {
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-5.7,21,-0.7,-5.7,21,0.7,-4.3,21,
+                0.7,-4.3,21,-0.7}
+            Color = {0.05,0.05,0.05}
+            Visibility = 0xffffffff
+        },
+        hwMesh  {
+            GraphN = 5
+            GraphM = 2
+            HasNormals = False
+            HasRGB = False
+            HasUV = False
+            Data = {-4.3,21,-0.7,-4.3,17,-0.7,-4.3,21,
+                0.7,-4.3,17,0.7,-5.7,21,0.7,-5.7,
+                17,0.7,-5.7,21,-0.7,-5.7,17,-0.7,
+                -4.3,21,-0.7,-4.3,17,-0.7}
+            Resolution = 1
+            Color = {0.7,0.7,0.7}
+            Visibility = 0xffffffff
+        }
+    }
+    Invisible = False
+    Visibility = 0xffffffff
+}

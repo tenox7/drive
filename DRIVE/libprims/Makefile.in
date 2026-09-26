@@ -1,0 +1,52 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=libprims.a
+all: $(LIBTARGET)
+TOPDIR=..
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include @CPPFLAGS@ @DEFS@ @CFLAGS@ \
+  $(WARNINGS) $(OPTDEBUGFLAGS)
+
+SRC=\
+  circle.c \
+  extrusion.c \
+  mesh2strip.c \
+  mesh_cone.c \
+  mesh_surfrev.c \
+  spl_cone.c \
+  spl_extr.c \
+  spl_sphere.c \
+  spl_surfrev.c \
+  stacknots.c \
+  stackvf.c \
+  trim_pln.c \
+  utils.c \
+  whatstring.c
+
+primtest: $(LIBTARGET)
+	$(CC) $(CFLAGS) primtest.c -o $@ $(LIBTARGET) -lm
+clean::
+	$(RM) primtest
+test: primtest
+	./primtest
+
+include $(TOPDIR)/Makefile.h
+

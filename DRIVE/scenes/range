@@ -1,0 +1,910 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#----------------------------------------------------------------------------
+# Shooting Range
+# designed by Edgar Circenis
+#
+# .server_config entry
+# -----------------------------
+Racecourse: Shooting Range
+Start SceneX: -8
+Start SceneZ: -1
+Start Position: 687.5 0 -450
+Start Angle: 0
+Start Positions: 16
+Race Seconds: 110
+Practice Seconds: 1
+Turbo Mode: 2
+Turbo Boosts: 5
+#
+#----------------------------------------------------------------------------
+# SCENE ONE
+
+Scene Location: -8 -1
+
+#a
+Object: road
+Width: 240
+Height: 2
+Length: 2000
+Position: 800 0 -1000
+
+#b
+Object: road
+Width: 240
+Height: 2
+Length: 600
+Position: -800 0 400
+
+#c
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: -400 0 400
+Yrot: 180
+
+#d
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: -400 0 -400
+
+#e
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: -400 0 1000
+Yrot: 180
+
+#f
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: -400 0 200
+
+#g
+Object: road
+Width: 240
+Height: 2
+Length: 600
+Position: 0 0 -400
+
+#h
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Position: 400 0 -400
+Angle: 180
+Yrot: 180
+
+# SIGNS
+
+Object: generic sign
+Label: FIRING RANGE\ENTER AT OWN RISK
+Color: 1 0 0
+Width: 70
+Length: 50
+Height: 0.001
+Position: 800 20 -1000
+
+# CHECKPOINTS
+
+Object: start
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: START
+Radius: 2.5
+Position: 800 0 -400
+Type: 1 6
+Data: 1 3
+10 10 1
+
+Object: finish
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: FINISH
+Radius: 2.5
+Position: 400 0 -800
+Type: 1 6
+Yrot: -90
+
+# OBSTACLES
+
+#a1
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 710 0 0
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 770 0 0
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 830 0 0
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 890 0 0
+
+#a2
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 690 0 400
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 750 0 400
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 810 0 400
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 870 0 400
+
+#a3
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 730 0 800
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 790 0 800
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 850 0 800
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 910 0 800
+
+# WALLS
+
+#roof
+Object: flat
+Color: 1 0 0
+Width: 2000
+Length: 2000
+Position: 0 70 0
+Xrot: 180
+
+#east
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: 995 0 0
+Yrot: -90
+
+#west
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: -995 0 0
+Yrot: 90
+
+#south
+Object: wall
+Color: 1 0 0
+Width: 1680
+Height: 70
+Length: 5
+Position: -160 0 -999
+
+#south
+Object: wall
+Color: 1 0 0
+Width: 80
+Height: 70
+Length: 5
+Position: 960 0 -999
+
+#south
+Object: wall
+Color: 1 0 0
+Width: 240
+Height: 50
+Length: 5
+Position: 800 70 -999
+Zrot: 180
+
+# MISC
+
+Object: wall
+Width: 2000
+Length: 2000
+Height: 1
+Color: 1 0 0
+Position: 0 -1.25 -1000
+
+#----------------------------------------------------------------------------
+# SCENE TWO
+
+Scene Location: -8 0
+
+#a
+Object: road
+Width: 240
+Height: 2
+Length: 400
+Position: 800 0 -1000
+
+#b
+Object: curve
+Width: 240
+Height: 2
+Radius: 720
+Angle: 90
+Position: 200 0 -600
+
+#c
+Object: road
+Width: 240
+Height: 2
+Length: 400
+Position: 200 0 0
+Yrot: 90
+
+#d
+Object: curve
+Width: 240
+Height: 2
+Radius: 720
+Angle: 90
+Position: -200 0 600
+Yrot: 180
+
+#e
+Object: road
+Width: 240
+Height: 2
+Length: 400
+Position: -800 0 600
+
+#f
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: 400 0 800
+
+#g
+Object: road
+Width: 240
+Height: 2
+Length: 400
+Position: 800 0 600
+
+#h
+Object: curve
+Width: 240
+Height: 2
+Radius: 720
+Angle: 90
+Position: 200 0 600
+Yrot: -90
+
+#i
+Object: curve
+Width: 240
+Height: 2
+Radius: 720
+Angle: 90
+Position: -200 0 -600
+Yrot: 90
+
+#j
+Object: road
+Width: 240
+Height: 2
+Length: 400
+Position: -800 0 -1000
+
+# SIGNS
+
+Object: twopole sign
+Label: TO CHKPT 2
+Width: 250
+Length: 25
+Height: 15
+Position: -624.264 0 175.735
+Color: 1 0 0
+Yrot: 45
+
+Object: twopole sign
+Label: TO CHKPT 5
+Width: 250
+Length: 25
+Height: 15
+Position: -624.264 0 -175.735
+Color: 1 0 0
+Yrot: 135
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: CHECKPOINT 1
+Radius: 2.5
+Position: 624.264 0 -175.735
+Type: 1 1
+Yrot: 45
+
+Object: checkpoint
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: CHECKPOINT 4
+Radius: 2.5
+Position: 800 0 800
+Type: 1 4
+Yrot: 180
+
+Object: checkpoint
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: CHECKPOINT 5
+Radius: 2.5
+Position: -800 0 -900
+Type: 1 5
+Yrot: 180
+
+# OBSTACLES
+
+#c1
+Object: bump
+Color: 1 1 0
+Length: 240
+Width: 40
+Height: 1
+Position: 200 0 0
+
+Object: bump
+Color: 1 1 0
+Length: 240
+Width: 40
+Height: 1
+Position: 100 0 0
+
+Object: bump
+Color: 1 1 0
+Length: 240
+Width: 40
+Height: 1
+Position: 0 0 0
+
+Object: bump
+Color: 1 1 0
+Length: 240
+Width: 40
+Height: 1
+Position: -100 0 0
+
+Object: bump
+Color: 1 1 0
+Length: 240
+Width: 40
+Height: 1
+Position: -200 0 0
+
+#a1
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 710 0 -800
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 770 0 -800
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 830 0 -800
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: 890 0 -800
+
+# WALLS
+
+#roof
+Object: flat
+Color: 1 0 0
+Width: 2000
+Length: 2000
+Position: 0 70 0
+Xrot: 180
+
+#east
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: 995 0 0
+Yrot: -90
+
+#west
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: -995 0 0
+Yrot: 90
+
+# MISC
+
+Object: wall
+Width: 2000
+Length: 2000
+Height: 1
+Color: 1 0 0
+Position: 0 -1.25 -1000
+
+#----------------------------------------------------------------------------
+# SCENE THREE
+
+Scene Location: -8 1
+
+#a
+Object: road
+Width: 240
+Height: 2
+Length: 1400
+Position: -800 0 -1000
+
+#b
+Object: bank
+Width: 240
+Height: 2
+Radius: 520
+Height: 30
+Angle: 180
+Position: -400 0 400
+
+#c
+Object: bank
+Width: 240
+Radius: 520
+Height: 30
+Angle: 270
+Position: 400 0 400
+Yrot: 180
+
+#d
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: 400 0 400
+Yrot: 90
+Xrot: -5
+
+#e
+Object: road
+Width: 240
+Length: 800
+Height: 2
+Position: 1.5222 34.862 -400
+Zrot: -5
+
+#f
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: 400 0 -400
+Yrot: 180
+Zrot: 5
+
+#g
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: 400 0 -1200
+
+#h
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: 400 0 0
+Yrot: 180
+Zrot: 5
+
+#i
+Object: curve
+Width: 240
+Height: 2
+Radius: 520
+Angle: 90
+Position: 400 0 -800
+
+#j
+Object: road
+Width: 240
+Height: 2
+Length: 200
+Position: 800 0 -1000
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: CHECKPOINT 2
+Radius: 2.5
+Position: -800 0 400
+Type: 1 2
+
+Object: checkpoint
+Length: 25.0
+Width:  250.0
+Height: 40.0
+Label: CHECKPOINT 3
+Radius: 2.5
+Position: 800 14.884 400
+Type: 1 3
+Zrot: 7.125
+
+# OBSTACLES
+
+#a1
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -710 0 -900
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -770 0 -900
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -830 0 -900
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -890 0 -900
+
+#a2
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -690 0 -600
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -750 0 -600
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -810 0 -600
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -870 0 -600
+
+#a3
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -730 0 -300
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -790 0 -300
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -850 0 -300
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -910 0 -300
+
+#a4
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -710 0 0
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -770 0 0
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -830 0 0
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -890 0 0
+
+#a5
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -690 0 300
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -750 0 300
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -810 0 300
+
+Object: wall
+Width: 20
+Length: 20
+Height: 10
+Color: 1 1 0
+Yrot: 45
+Position: -870 0 300
+
+# WALLS
+
+#roof
+Object: flat
+Color: 1 0 0
+Width: 2000
+Length: 2000
+Position: 0 70 0
+Xrot: 180
+
+#east
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: 995 0 0
+Yrot: -90
+
+#west
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: -995 0 0
+Yrot: 90
+
+#north
+Object: wall
+Color: 1 0 0
+Width: 2000
+Height: 70
+Length: 5
+Position: 0 0 995
+
+# MISC
+
+Object: wall
+Width: 2000
+Length: 2000
+Height: 1
+Color: 1 0 0
+Position: 0 -1.25 -1000
+
+#----------------------------------------------------------------------------
+# Turnoff from main highway
+
+Scene Location: -8 -2
+
+Object: road
+Width: 60
+Length: 2000
+Position: 1000 0 0
+Yrot: 90
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 180
+Position: 500 0 300
+Yrot: 90
+
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 500 0 900
+Yrot: -90
+
+Object: road
+Width: 240
+Length: 100
+Position: 800 0 900
+
+Object: generic sign
+Label: FIRING RANGE\-->
+Width: 50
+Length: 40
+Height: 2
+Color: 1 1 1
+Position: 550 0 -55
+Yrot: 90
+
+Object: ground

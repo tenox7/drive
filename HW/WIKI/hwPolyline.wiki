@@ -1,0 +1,39 @@
+== NAME ==
+hwPolyline - define a connected series of line segments
+
+== INHERITS FROM ==
+* hwOrient
+
+== PROPERTIES ==
+| Data       | *F | The list of vertices, with 3 floats per vertex
+| OptFlags   | 1I | Optimization flags; see [[hw]] for details
+| Color      | 3F | The color of the polyline
+| Invisible  | 1B | True iff the polyline is not to be displayed
+| Visibility | 1I | Visibilty mask for use with hwDisplay->setVisibility
+| HasFlags   | 1B | True iff the polyline has move/draw flags per vertex
+| PrimSize   | 1F | Width of the lines being drawn, in pixels
+
+== DEFAULTS ==
+| Data       |  NULL
+| OptFlags   | hwDefaultOptFlags
+| Color      | {1,1,1}
+| Invisible  | False
+| Visibility | 0xFFFFFFFF
+| HasFlags   | False
+| PrimSize   | 1.0
+
+== DESCRIPTION ==
+The hwPolyline class takes a list of vertices and displays them as a
+connected strip of lines.  The Data pointer is an array of hwFloat
+values; the number must be equal to either n*3 (if HasFlags is
+False) or n*4 (if HasFlags is True), where n is the number of
+vertices in the polyline.  The Color is the color in which the
+polyline is to be drawn.  See [[hwSurface]] for information on the
+Invisible and Visibility properties.
+
+== C EXAMPLE ==
+
+== OBJECT FILE EXAMPLE ==
+
+== SEE ALSO ==
+[[hw]], [[hwOrient]], [[hwSurface]]

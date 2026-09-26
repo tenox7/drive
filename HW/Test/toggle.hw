@@ -1,0 +1,59 @@
+hwToggle Opt1 {
+    PosX = 100
+    PosY = 100
+    Width = 160
+    Height = 32
+    Color = {1,1,1}
+    BackgroundColor = {.5,.5,.5}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+    Label = "Option 1"
+    Value = 1
+    Align = HW_GUI_LABEL_LEFT
+    Exclude = { hwToggle Opt2 {}, hwToggle Opt3 {} }
+}
+
+hwToggle Opt2 {
+    PosX = 100
+    PosY = 148
+    Width = 160
+    Height = 32
+    Color = {1,1,1}
+    BackgroundColor = {.5,.5,.5}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+    Label = "Option 2"
+    Align = HW_GUI_LABEL_LEFT
+    Exclude = { Opt1, Opt3 }
+}
+
+hwToggle Opt3 {
+    PosX = 100
+    PosY = 196
+    Width = 160
+    Height = 32
+    Color = {1,1,1}
+    BackgroundColor = {.5,.5,.5}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+    Label = "Option 3"
+    Align = HW_GUI_LABEL_LEFT
+    Exclude = { Opt1, Opt2 }
+}
+
+hwToggle Standalone {
+    PosX = 100
+    PosY = 244
+    Width = 160
+    Height = 32
+    Color = {1,1,1}
+    BackgroundColor = {.5,.5,.5}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+    Align = HW_GUI_TOGGLE_RIGHT
+    Label = "Yes/no"
+}

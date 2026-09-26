@@ -1,0 +1,62 @@
+/* (c) Copyright Hewlett-Packard Company 2001
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+
+Welcome to HoverWare, a set of libraries and applications designed to
+help the poor demo writers of the world.  The directory structure
+of HoverWare is as follows:
+
+	README		This file
+	bin/		HoverWare executable programs:
+	    gfx2hw		Convert GraphEd-style objects to HoverWare
+	    spinner		Play HoverWare animations
+	examples/	HoverWare sample files:
+	    README		A description of the sample files
+	include/	Header files for building HoverWare programs
+	    hw.h		Always include this in your .c files
+	    hw_os.h		Included by hw.h
+	    hw_types.h		Included by hw.h
+	    hw_protos.h		Included by hw.h
+	    hw_strings.h	Included by hw.h
+	lib/		HoverWare program libraries:
+	    libhwnull.a         A HoverWare library with no display
+				capability; useful for creating
+				utilities such as gfx2hw
+	    libhwsb.a           A HoverWare library which uses the
+				Starbase graphics API to render 3D
+				graphics
+	man/		HoverWare man pages
+	    cat1/*.1		Documentation for executable programs
+	    cat3/*.3		Documentation for functions and classes
+	src/		HoverWare examples
+	    spinner.c		Source from which spinner was built
+	    Welcome.gfx		A simple HoverWare animation
+	    box.gfx		A box, used by Welcome.gfx
+	    Text.gfx		The text "HoverWare!", used by Welcome.gfx
+	    Texture/		Textures used by the Welcome demo
+		Earth			A texture of the Earth's surface
+		Jupiter			A texture of Jupiter's clouds
+
+For more information about HoverWare, consult the man/cat3/hw.3 man page
+as a starting place.  HoverWare will run on HP-UX 10.20 systems or later.
+To run the spinner program on the provided demo, do the following:
+
+	cd src
+	../bin/spinner -rgb Welcome.gfx
+
+If you have hardware-accelerated texture mapping (Visualize-48 with optional
+texture memory), you may omit the -rgb argument.  Or, if you want to run
+slowly, leave it in...

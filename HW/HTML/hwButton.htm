@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwButton - command button GUI element</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwButton - command button GUI element</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwGUI.htm">hwGUI</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Label</td>
+<td>0S</td>
+<td>Text label for the button</td>
+</tr>
+<tr><td>Color</td>
+<td>3F</td>
+<td>Color of the text label</td>
+</tr>
+<tr><td>BackgroundColor</td>
+<td>4F</td>
+<td>Background color of the button, if any</td>
+</tr>
+<tr><td>ActiveColor</td>
+<td>3F</td>
+<td>Color of text while the button is pushed</td>
+</tr>
+<tr><td>ActiveBackground</td>
+<td>4F</td>
+<td>Background color of the button while it is pushed</td>
+</tr>
+<tr><td>Font</td>
+<td>0O</td>
+<td>Font to use for label rendering</td>
+</tr>
+<tr><td>BorderColor</td>
+<td>3F</td>
+<td>Color of the border, if any</td>
+</tr>
+<tr><td>ActiveBorderColor</td>
+<td>3F</td>
+<td>Color of the border while the button is pushed, if any</td>
+</tr>
+<tr><td>Texture</td>
+<td>0O</td>
+<td>Texture to draw as a background image</td>
+</tr>
+<tr><td>ActiveTexture</td>
+<td>0O</td>
+<td>Texture to draw while button is pushed</td>
+</tr>
+<tr><td>Repeat</td>
+<td>1B</td>
+<td>True iff the command can auto-repeat while the button is pushed</td>
+</tr>
+<tr><td>RepeatDelay</td>
+<td>1F</td>
+<td>Time, in seconds, before the button auto-repeat begins</td>
+</tr>
+<tr><td>RepeatInterval</td>
+<td>1F</td>
+<td>Time, in seconds, between subsequent auto-repeats</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Label</td>
+<td>NULL</td>
+</tr>
+<tr><td>Color</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>BackgroundColor</td>
+<td>0</td>
+</tr>
+<tr><td>ActiveColor</td>
+<td>{0,0,0}</td>
+</tr>
+<tr><td>ActiveBackground</td>
+<td>{1,1,1,.75}</td>
+</tr>
+<tr><td>BorderColor</td>
+<td>0</td>
+</tr>
+<tr><td>ActiveBorderColor</td>
+<td>0</td>
+</tr>
+<tr><td>Font</td>
+<td>NULL</td>
+</tr>
+<tr><td>Texture</td>
+<td>NULL</td>
+</tr>
+<tr><td>ActiveTexture</td>
+<td>NULL</td>
+</tr>
+<tr><td>Repeat</td>
+<td>False</td>
+</tr>
+<tr><td>RepeatDelay</td>
+<td>0.20</td>
+</tr>
+<tr><td>RepeatInterval</td>
+<td>0.10</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwButton class can be used to create simple push-button
+command elements with a label and foreground/background colors in
+both an active and inactive state.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    hwObject button;
+
+    /* Create a simple button in the middle of the screen */
+    button = hwButton-&gt;create( hwButton );
+    HW_MODIFY_3F( button, hwStrBackgroundColor, 0.5, 0.5, 0.5 );
+    HW_MODIFY_1I( button, hwStrAlign, HW_GUI_CENTER | HW_GUI_FRACTIONAL);
+    HW_MODIFY_1I( button, hwStrPosX, 500 );
+    HW_MODIFY_1I( button, hwStrPosY, 500 );
+    HW_MODIFY_1I( button, hwStrWidth, 250 );
+    HW_MODIFY_1I( button, hwStrHeight, 250 );
+    button-&gt;modify( button, hwStrLabel, HW_TYPE_STRING, &quot;Push me&quot; );
+
+    while( 1 ) {
+        button-&gt;draw( button );
+        disp-&gt;update( disp, HW_UPDATE_ALL );
+    }
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    hwButton button {
+        PosX = 500  PosY = 500
+        Width = 250 Height = 250
+        Align = (HW_GUI_CENTER + HW_GUI_FRACTIONAL)
+        BackgroundColor = {.5,.5,.5}
+        Label = &quot;Push me&quot;
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwGUI.htm">hwGUI</a></p>
+</body>
+</html>

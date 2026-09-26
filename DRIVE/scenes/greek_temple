@@ -1,0 +1,133 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+Scene Location: -1 -2
+
+Object: road
+Width: 60.0
+X: 1000
+Yrot: 90
+Length: 2000
+
+###########  BEGIN GREEK TEMPLE ###########
+Object: tree
+Height: 20.0
+Position: -290.0 0.0 -35.0
+
+Object: tree
+Height: 20.0
+Position: -335.0 0.0 -35.0
+
+# Base
+Object: wall
+Position: -315.0 0.0 -92.0
+Size:  54.0 34.0 2.0
+
+Object: pillar
+Position: -300.0 2.0 -40.0
+Object: pillar
+Position: -305.0 2.0 -40.0
+Object: pillar
+Position: -310.0 2.0 -40.0
+Object: pillar
+Position: -315.0 2.0 -40.0
+Object: pillar
+Position: -320.0 2.0 -40.0
+Object: pillar
+Position: -325.0 2.0 -40.0
+Object: pillar
+Position: -330.0 2.0 -40.0
+
+Object: pillar
+Position: -330.0 2.0 -45.0
+Object: pillar
+Position: -330.0 2.0 -50.0
+Object: pillar
+Position: -330.0 2.0 -55.0
+Object: pillar
+Position: -330.0 2.0 -60.0
+Object: pillar
+Position: -330.0 2.0 -65.0
+Object: pillar
+Position: -330.0 2.0 -70.0
+Object: pillar
+Position: -330.0 2.0 -75.0
+Object: pillar
+Position: -330.0 2.0 -80.0
+Object: pillar
+Position: -330.0 2.0 -85.0
+
+Object: pillar
+Position: -300.0 2.0 -90.0
+Object: pillar
+Position: -305.0 2.0 -90.0
+Object: pillar
+Position: -310.0 2.0 -90.0
+Object: pillar
+Position: -315.0 2.0 -90.0
+Object: pillar
+Position: -320.0 2.0 -90.0
+Object: pillar
+Position: -325.0 2.0 -90.0
+Object: pillar
+Position: -330.0 2.0 -90.0
+
+Object: pillar
+Position: -300.0 2.0 -45.0
+Object: pillar
+Position: -300.0 2.0 -50.0
+Object: pillar
+Position: -300.0 2.0 -55.0
+Object: pillar
+Position: -300.0 2.0 -60.0
+Object: pillar
+Position: -300.0 2.0 -65.0
+Object: pillar
+Position: -300.0 2.0 -70.0
+Object: pillar
+Position: -300.0 2.0 -75.0
+Object: pillar
+Position: -300.0 2.0 -80.0
+Object: pillar
+Position: -300.0 2.0 -85.0
+
+Object: wall
+Position: -299.0 12.0 -90.0
+Width: 2.0
+Length: 32.0
+Yrot:   90
+
+Object: wall
+Position: -299.0 12.0 -40.0
+Width: 2.0
+Length: 32.0
+Yrot:   90
+
+Object: wall
+Position: -300.0 12.0 -90.0
+Width: 2.0
+Length: 50.0
+
+Object: wall
+Position: -330.0 12.0 -90.0
+Width: 2.0
+Length: 50.0
+
+###########  END GREEK TEMPLE ###########
+
+Object: ground

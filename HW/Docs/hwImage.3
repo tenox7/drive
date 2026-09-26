@@ -1,0 +1,59 @@
+NAME
+    hwImage - create an image for later use in texture mapping
+
+PROPERTIES
+    Rows	1I	Number of rows in the image
+    Columns	1I	Number of columns in the image
+    Components	1I	1, 2, 3, or 4 depending on the image type
+    Image	**	A 2-dimensional array of values
+    FileName	0S	The name of a file from which to load the
+			image
+
+DEFAULTS
+    None
+
+DESCRIPTION
+    The hwImage class allows the application to either load a file off
+    disc (currently, only PPM and JPEG files are supported), or create
+    an image in memory.  If loading off disc is desired, set the
+    FileName property to the name of the file to be loaded.  If an
+    in-memory image is required, first set the Rows, Columns, and
+    Components properties to the desired values, and then set the Image
+    property to the array of pixel samples.
+
+    When reading images from disc, the hwImage class uses the file
+    extension to determine the which image format reader to use.  Thus,
+    files with the extension ".jpg" or ".jpeg" (case insensitive) are
+    loaded using the JPEG image reader.  All other files are loaded
+    using the PPM image reader.
+
+    The only really useful thing to do with hwImage objects is to give
+    them to hwTexture objects for use as a texture map
+
+C EXAMPLE
+    /* Create a 4x4 luminance checkerboard image */
+    hwObject
+	image;
+    hwInt8
+	pixels[4*4] = {
+	    1, 1, 0, 0,
+	    1, 1, 0, 0,
+	    0, 0, 1, 1,
+	    0, 0, 1, 1,
+	};
+
+    image = hwImage->create( hwImage );
+    HW_MODIFY_1I( image, hwStrRows, 4 );
+    HW_MODIFY_1I( image, hwStrColumns, 4 );
+    HW_MODIFY_1I( image, hwStrComponents, 1 );
+    image->modify( image, hwStrImage, HW_MAKE_TYPE(HW_TYPE_BYTE,4*4),
+			pixels );
+
+OBJECT FILE EXAMPLE
+    /* An image to be loaded out of "foo.jpg" */
+    hwImage image {
+	FileName = "foo.jpg"
+    }
+
+SEE ALSO
+    hw(3), hwTexture(3)

@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwRing - define a partial circular object with a hole in the middle</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwRing - define a partial circular object with a hole in the
+middle</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>Tesselation parameter; the number of rows in the resulting mesh</td>
+</tr>
+<tr><td>GraphM</td>
+<td>1I</td>
+<td>Tesselation parameter; the number of columns in the resulting
+  mesh</td>
+</tr>
+<tr><td>Radius</td>
+<td>2F</td>
+<td>The inner and outer radius of the ring</td>
+</tr>
+<tr><td>LonRange</td>
+<td>2F</td>
+<td>The range of longitudes of the ring, from 0 to 360</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>The optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tessellation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>9</td>
+</tr>
+<tr><td>GraphM</td>
+<td>17</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>Radius</td>
+<td>{0.5,1.0}</td>
+</tr>
+<tr><td>LonRange</td>
+<td>{0,360}</td>
+</tr>
+<tr><td>Resoltuion</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwRing class creates a partial ring with inner and outer radii
+and longitude range. GraphN and GraphM are tesselation parameters,
+and correspond to the rows and columns of the mesh created by the
+hwRing object. The Radius specifies the inner and outer radii of the
+ring. The LonRange specifies the range over which the ring extends.</p>
+<p>The default texture coordinates for for an hwRing texture the
+object as if the ring were cut out of the (square) texture map with
+the top, bottom, left, and right edges touching the edges of the
+texture.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw somthing looking vaguely like the letter &quot;C&quot; */
+    hwObject
+        ring;
+
+    ring = hwRing-&gt;create( hwRing );
+    HW_MODIFY_2F( ring, hwStrLonRange, 0, 180 );
+    HW_MODIFY_1B( ring, hwStrTwoSided, HW_TRUE );
+    ring-&gt;draw( ring );
+    ring-&gt;destroy( ring );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A ring looking vaguely like the letter &quot;C&quot;
+    hwRing ring {
+        LonRange = {0,180}
+        TwoSided = True
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

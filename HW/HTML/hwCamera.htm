@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwCamera - create a virtual camera for viewing a scene</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwCamera - create a virtual camera for viewing a scene</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Pos</td>
+<td>3F</td>
+<td>The position of the camera</td>
+</tr>
+<tr><td>Dir</td>
+<td>3F</td>
+<td>The direction the camera is pointing</td>
+</tr>
+<tr><td>Up</td>
+<td>3F</td>
+<td>The direction which is considered &quot;up&quot;</td>
+</tr>
+<tr><td>Field</td>
+<td>1F</td>
+<td>The field of view, in degrees</td>
+</tr>
+<tr><td>Aspect</td>
+<td>1F</td>
+<td>Aspect ratio of the viewport</td>
+</tr>
+<tr><td>Perspective</td>
+<td>1B</td>
+<td>True for perspective projection, false for orthographic
+  projection</td>
+</tr>
+<tr><td>Planes</td>
+<td>2F</td>
+<td>The front and back clipping planes, defined as distances along
+  the Dir vector from the Pos point.</td>
+</tr>
+<tr><td>Jitter</td>
+<td>2F</td>
+<td>X/Y microjitter, for antialiasing</td>
+</tr>
+<tr><td>Skew</td>
+<td>2F</td>
+<td>X/Y skew, for skewed cameras</td>
+</tr>
+<tr><td>Mirror</td>
+<td>1B</td>
+<td>True iff the image should be mirrored in X</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Pos</td>
+<td>{0,0,-1.4}</td>
+</tr>
+<tr><td>Dir</td>
+<td>{0,0,1}</td>
+</tr>
+<tr><td>Up</td>
+<td>{0,1,0}</td>
+</tr>
+<tr><td>Field</td>
+<td>90</td>
+</tr>
+<tr><td>Aspect</td>
+<td>1.0</td>
+</tr>
+<tr><td>Perspective</td>
+<td>HW_TRUE</td>
+</tr>
+<tr><td>Planes</td>
+<td>{0.4, 2.4}</td>
+</tr>
+<tr><td>Jitter</td>
+<td>{0,0}</td>
+</tr>
+<tr><td>Skew</td>
+<td>{0,0}</td>
+</tr>
+<tr><td>Mirror</td>
+<td>HW_FALSE</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwCamera class provides a mechanism for specifying a virtual
+camera through which a scene may be viewed. The camera is located at
+a particular point in 3-dimensional space, and points in a certain
+direction. The camera may be rotated around this direction by
+modifying the Up vector. The Planes describe the volume being
+examined by the camera; objects in front of the first plane or behind
+the second are not visible. The Planes additionally define the depth
+range used for depth buffering; for best visual results, you should
+try to set the Planes value to just encompass all of the interesting
+objects in the view.</p>
+<p>By default, the view is an orthographic projection of the unit
+cube about the origin. In order to establish a camera object as the
+current viewing camera, merely execute its draw method. Note that the
+camera MUST be drawn before any lights or objects are drawn; if this
+rule is not followed, visual results are undefined. Note also that
+only the first camera drawn after an hwUpdate has any effect;
+subsequent camera draws are ignored. This allows, for example, an
+interactive camera to take precedence over an animated camera.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Create a perspective view of the origin from far away, but
+     * with a fairly narrow field-of-view
+     */
+    hwObject
+        camera;
+
+    camera = hwCamera-&gt;create( hwCamera );
+    HW_MODIFY_3F( camera, hwStrPos, 0, 0, 300 );
+    HW_MODIFY_1F( camera, hwStrField, 30 );
+    HW_MODIFY_2F( camera, hwStrPlanes, 1.0, 600.0 );
+    HW_MODIFY_1B( camera, hwStrPerspective, HW_TRUE );
+    camera-&gt;draw( camera );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A perspective view of the origin from far away
+    hwCamera {
+        Pos = {0,0,300}
+        Field = 30
+        Planes = {1,600}
+        Perspective = True
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

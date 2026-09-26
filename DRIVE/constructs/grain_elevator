@@ -1,0 +1,127 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Grain elevator
+#
+# Approx. construct size: 900x100
+# Offset ~100' from road
+#
+# Daryl Poe, July 1993
+
+Object: cylinder
+Radius: 20.0
+X: -90.0
+Height: 100.0
+
+Object: cylinder
+Radius: 20.0
+X: -45.0
+Height: 100.0
+
+Object: cylinder
+Radius: 20.0
+X: 0.0
+Height: 100.0
+
+Object: cylinder
+Radius: 20.0
+X: 45.0
+Height: 100.0
+
+Object: cylinder
+Radius: 20.0
+X: 90
+Height: 100.0
+
+Object: wall
+Size: 10.0 200.0 10.0
+Y: 100.0
+Z: -5.0
+
+# Spout and pile
+Object: cylinder
+Size: 1.0 1.0 50.0
+Radius: 1.0
+Position: 125.0 90.0 0.0
+Zrot: 70.0
+
+Object: mound
+Size: 25.0 40.0 15.0
+Position: 130.0 0.0 0.0
+Color: 0.5 0.5 0.0
+
+# Sign
+Object: flat
+Size: 5.0 5.0 0.0
+Position: -2.5 62.5 -20.0
+Xrot: -90
+Color: 0.0 0.5 1.0
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: 2.5 62.5 -20.0
+Xrot: -90
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: -2.5 57.5 -20.0
+Xrot: -90
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: 2.5 57.5 -20.0
+Xrot: -90
+Color: 0.0 0.5 1.0
+
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: -2.5 62.5 20.0
+Xrot: 90
+Color: 0.0 0.5 1.0
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: 2.5 62.5 20.0
+Xrot: 90
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: -2.5 57.5 20.0
+Xrot: 90
+Color: 1.0 1.0 1.0
+
+Object: flat
+Size: 5.0 5.0 0.0
+Position: 2.5 57.5 20.0
+Xrot: 90
+Color: 0.0 0.5 1.0
+
+
+# Railroad and overhang
+Object: railroad
+Length: 900
+Position:  450 0 30
+Yrot: 90
+
+Object: wall
+Size: 20.0 80.0 1.0
+Position: 0.0 20.0 20.0
+Xrot: 15

@@ -1,0 +1,543 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+Racecourse:             Croquet Anyone? 
+Practice Seconds:       240 
+Pre-Race Seconds:       5 
+Race Seconds:           150 
+Post-Race Seconds:      5 
+Start SceneX:           -4 
+Start SceneZ:           2 
+Start Angle:            0 
+Start Position:         -25 0 -900 
+Turbo Mode:             2 
+Turbo Boosts:           10 
+Guns Mode:              0 
+Ammo:                   0 
+
+# @(#) $Revision: 1.1 $
+#----------------------------------------------------------------------------
+# Croquet Court
+# designed by Bob Campbell
+#
+#-----------------------------------------------------------------------------
+# SCENE ONE
+Scene Location:  -4 2
+
+#ROADS
+#a
+Object:  road 
+Position:  0 0 -1000
+Length:  480 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#b
+Object:  curve 
+Position:  200 0 -520
+Yrot:  134.255
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  45.745 
+
+#c
+Object:  curve 
+Position:  -200 0 -520
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  45.745 
+
+#d
+Object:  road 
+Position:  60.4294 0 -376.752
+Yrot:  -45.745
+Length:  850.471 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#e
+Object:  road 
+Position:  -60.4294 0 -376.752
+Yrot:  45.745
+Length:  850.471 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#f
+Object:  curve 
+Position:  530 0 360
+Yrot:  -45.745
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  129.273 
+
+#g
+Object:  curve 
+Position:  -530 0 360
+Yrot:  96.4719
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  129.273 
+
+#h
+Object:  road 
+Position:  552.543 0 558.726
+Yrot:  83.5281
+Length:  377.492 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#i
+Object:  road 
+Position:  -552.543 0 558.726
+Yrot:  -83.5281
+Length:  377.492 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#j
+Object:  curve 
+Position:  200 0 800
+Yrot:  132.243
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  131.285 
+
+#k
+Object:  curve 
+Position:  -200 0 800
+Yrot:  -83.5281
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  131.285 
+
+#l
+Object:  road 
+Position:  65.5445 0 948.599
+Yrot:  -47.7569
+Length:  809.012 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#m (start stake)
+Object:  cylinder 
+Position:  0 0 -680
+Width:  0 
+Height:  80 
+Color:  1 0 0
+Radius:  10 
+
+#WICKETS
+Construct: wicket
+Position: 0 0 -520
+Color: 1 1 1
+
+Construct: wicket
+Position: 0 0 -280
+Color: 1 1 1
+
+Construct: wicket
+Position: -730 0 360
+Color: 1 1 1
+
+Construct: wicket
+Position: 730 0 360
+Color: 1 1 1
+
+Construct: wicket
+Position: 0 0 800
+Color: 1 1 1
+
+
+#SIGNS
+
+Object:  generic sign 
+Position:  0 0 -350
+Type:  
+Label:  >>>>>>
+Size:  0 65 0.1
+Color:  1 0 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  0 0 630
+Type:  
+Label:  >>>>>>
+Yrot:  180
+Size:  0 65 0.1
+Color:  1 0 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  0 0 970
+Type:  
+Label:  >>>>>>
+Size:  0 65 0.1
+Color:  1 0 0
+Radius:  1.5 
+
+#CHECKPOINTS
+Object:  start 
+Position:  0 0 -760
+Type:  1 11
+Label:  START
+Size:  20 60 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  0 0 -520
+Type:  1 1
+Label:  CHECKPOINT 1
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  730 0 360
+Type:  1 2
+Label:  CHECKPOINT 2
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  0 0 801
+Type:  1 9
+Label:  CHECKPOINT 9
+Yrot:  -180
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  -730 0 360
+Type:  1 10
+Label:  CHECKPOINT 10
+Yrot:  180
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  0 0 798
+Type:  1 3
+Label:  CHECKPOINT 3
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  finish 
+Position:  -308 0 -135
+Type:  1 11
+Label:  FINISH
+Yrot:  220
+Size:  20 60 30
+Radius:  0.5 
+
+Object:  sphere 
+Position:  104 25 -156
+Color:  1 0 0
+Radius:  25 
+
+Object:  sphere 
+Position:  642 25 -33
+Color:  0 1 0
+Radius:  25 
+
+Object:  pillar 
+Position:  648 25 6
+Xrot:  90
+Width:  25 
+Height:  100 
+Color:  0.5 0.5 0.5
+Radius:  25 
+
+Object:  pillar 
+Position:  648 25 57
+Width:  25 
+Height:  250 
+Color:  0.5 0.5 0.5
+Radius:  10 
+
+Object:  sphere 
+Position:  142 25 746
+Color:  0 1 0
+Radius:  25 
+
+Object:  sphere 
+Position:  -182 25 714
+Color:  1 0 0
+Radius:  25 
+
+Object:  ground 
+Position:  0 0 0
+
+#-----------------------------------------------------------------------------
+# SCENE TWO
+Scene Location:  -4 3
+
+#a
+Object:  road 
+Position:  664.455 0 -508.06
+Yrot:  132.243
+Length:  809.012 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#b
+Object:  road 
+Position:  -664.455 0 -508.06
+Yrot:  -132.243
+Length:  809.012 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#c
+Object:  curve 
+Position:  530 0 -360
+Yrot:  -47.7569
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  108.779 
+
+#d
+Object:  curve 
+Position:  -530 0 -360
+Yrot:  118.978
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  108.779 
+
+#e
+Object:  road 
+Position:  626.895 0 -185.039
+Yrot:  61.0221
+Length:  598.749 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#f
+Object:  road 
+Position:  -626.895 0 -185.039
+Yrot:  -61.0221
+Length:  598.749 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#g
+Object:  curve 
+Position:  200 0 280
+Yrot:  180
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  61.0221 
+
+#h
+Object:  curve 
+Position:  -200 0 280
+Yrot:  -61.0221
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  61.0221 
+
+#i
+Object:  road 
+Position:  0 0 280
+Length:  200 
+Width:  60 
+Color:  0.15 0.15 0.15
+
+#j
+Object:  curve 
+Position:  200 0 480
+Yrot:  135
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  45 
+
+#k
+Object:  curve 
+Position:  -200 0 480
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  230 
+Angle:  45 
+
+#l
+Object:  curve 
+Position:  0 0 680
+Yrot:  -45
+Width:  60 
+Color:  0.15 0.15 0.15
+Radius:  112.843 
+Angle:  270 
+
+#m (turning stake)
+Object:  cylinder 
+Position:  0 0 680
+Width:  0 
+Height:  80 
+Color:  1 0 0
+Radius:  10 
+
+#WICKETS
+Construct: wicket
+Position: 730 0 -360
+Color: 1 1 1
+
+Construct: wicket
+Position: -730 0 -360
+Color: 1 1 1
+
+Construct: wicket
+Position: 0 0 280
+Color: 1 1 1
+
+Construct: wicket
+Position: 0 0 480
+Color: 1 1 1
+
+
+#SIGNS
+
+Object:  generic sign 
+Position:  0 0 110
+Type:  
+Label:  >>>>>>
+Yrot:  180
+Size:  0 65 0.1
+Color:  1 0 0
+Radius:  1.5 
+
+Object:  generic sign 
+Position:  0 0 660
+Type:  
+Label:  U-TURN
+Size:  20 40 0.1
+Color:  1 0 0
+Radius:  1.5 
+
+#CHECKPOINTS
+Object:  checkpoint 
+Position:  730 0 -360
+Type:  1 4
+Label:  CHECKPOINT 4
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  1 0 762.843
+Type:  1 6
+Label:  CHECKPOINT 6
+Yrot:  90
+Size:  10 55 30
+Radius:  0.5 
+
+#Object: checkpoint
+#Length: 10
+#Width: 55
+#Height: 30
+#Label: CHECKPOINT 6
+#Radius: .5
+#Position: -1 0 762.8427
+#Yrot: -90
+#Type: 1 6
+Object:  checkpoint 
+Position:  0 0 282
+Type:  1 7
+Label:  CHECKPOINT 7
+Yrot:  180
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  -730 0 -360
+Type:  1 8
+Label:  CHECKPOINT 8
+Yrot:  180
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  checkpoint 
+Position:  0 0 278
+Type:  1 5
+Label:  CHECKPOINT 5
+Size:  10 55 30
+Radius:  0.5 
+
+Object:  pillar 
+Position:  408 25 32
+Xrot:  90
+Width:  25 
+Height:  100 
+Color:  0.5 0.5 0.5
+Radius:  25 
+
+Object:  pillar 
+Position:  409 25 84
+Width:  25 
+Height:  250 
+Color:  0.5 0.5 0.5
+Radius:  10 
+
+Object:  sphere 
+Position:  142 25 208
+Color:  1 1 0
+Radius:  25 
+
+Object:  sphere 
+Position:  -397 25 -182
+Color:  0 0 1
+Radius:  25 
+
+Object:  pillar 
+Position:  -487 25 -857
+Xrot:  90
+Yrot:  90
+Width:  25 
+Height:  100 
+Color:  0.5 0.5 0.5
+Radius:  25 
+
+Object:  sphere 
+Position:  -423 25 -857
+Color:  1 0 1
+Radius:  25 
+
+Construct: hungry_chef
+Matrix: 10.0  0.0  0.0 0.0 
+         0.0 10.0  0.0 0.0 
+	 0.0  0.0 10.0 0.0 
+	 0.0  0.0  0.0 1.0
+Yrot:  180
+Position:  -723 0 -857
+
+Object:  pillar 
+Position:  -538 25 -857
+Width:  25 
+Height:  200 
+Color:  0.5 0.5 0.5
+Radius:  10 
+
+Object:  ground 
+Position:  0 0 0

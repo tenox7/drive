@@ -1,0 +1,71 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+hwGroup RedBody {
+    Data = {
+	hwTexture {
+	    Scale = {700,700,1}
+	    CoordMode = 1	# Planar coordinates
+	    FileName = "Texture/Bumps.jpg"
+	},
+	hwSurface {
+	    Color = {1,0.9,0.7}
+	},
+	hwBox {
+	    Data = { 50,-190,-25,100,-125,25 }
+	},
+	hwBox {
+	    Data = { -100,-190,-25,-50,-125,25 }
+	},
+	hwSurface {
+	    Color = {1,0.3,0.3}
+	    Backface = True
+	},
+	hwRing {
+	    HasNormals = True
+	    Rotate = {0,180,0}
+	    Pos = {0,0,-50}
+	    GraphN = 2
+	    GraphM = 13
+	    Radius = {125, 150}
+	},
+	hwDisc {
+	    HasNormals = True
+	    Pos = {0,0,50}
+	    GraphN = 13
+	    Radius = 150
+	},
+	hwSurface {
+	    Color = {0.5,0.1,0.1}
+	},
+	hwSphere {
+	    HasNormals = True
+	    Scale = {1,1,0.5}
+	    Pos = {0,0,-50}
+	    GraphN = 7
+	    GraphM = 13
+	    Radius = 125
+	    LatRange = {-90,0}
+	},
+	hwTorus {
+	    HasNormals = True
+	    GraphN = 13
+	    GraphM = 7
+	    Radius = {100,200}
+	    LatRange = {-90,90}
+	}
+    }
+}

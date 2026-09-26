@@ -1,0 +1,33 @@
+OBJS=camera.obj \
+	clook.obj \
+	daylight.obj \
+	disp_ctrl.obj \
+	drive_msg.obj \
+	drive_sb.obj \
+	explosion.obj \
+	frame.obj \
+	headlight.obj \
+	joystick_nt.obj \
+	parse_rcfile.obj \
+	sound.obj \
+	stars.obj
+
+OBJ1=$(OBJS) drive.obj
+
+LIBS=..\client.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../server/objects -I../libnum -I../libphysics -I../include -I../../HW/Inc -I../libprims -I../../pdcurses
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+../client.lib:     $(OBJ1)
+	$(LIB32) @<<
+    $(OBJS) -out:../client.lib
+<<
+

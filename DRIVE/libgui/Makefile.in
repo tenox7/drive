@@ -1,0 +1,51 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=libgui.a
+all: $(LIBTARGET)
+TOPDIR=..
+
+###############################################################################
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include @CPPFLAGS@ @DEFS@ @CFLAGS@ \
+  $(WARNINGS) $(OPTDEBUGFLAGS)
+
+###############################################################################
+# Now the source list.  Rely on Makefile.lib.h magic to build things.
+#
+SRC=\
+  cmap.c \
+  findsvr.c \
+  gauge.c \
+  help.c \
+  interface.c \
+  menubar.c \
+  placewin.c \
+  radar.c \
+  starwin.c \
+  textwin.c \
+  title.c \
+  visDrawArea.c \
+  wheel.c \
+  windows.c \
+  xsight.c \
+  xutils.c
+
+include $(TOPDIR)/Makefile.h
+

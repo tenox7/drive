@@ -1,0 +1,32 @@
+== NAME ==
+hwLayout - basic nestable layout of HoverWare GUI elements
+
+== INHERITS FROM ==
+* [[hwGUI]]
+
+== PROPERTIES ==
+| Children | *O | List of children of this Layout container
+
+== DEFAULTS ==
+None
+
+== DESCRIPTION ==
+The hwLayout widget may be used to nest a collection of child widgets.
+This widget does not enforce any layout constraints on its children;
+it merely provides a bounding box relative to which the children are
+positioned, as well as a hierarchy for event management.
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A layout with a 10% border all around
+    hwLayout layout {
+        PosX = 100   PosY = 100
+        Width = 800  Height = 800
+        Align = HW_GUI_FRACTIONAL
+        Children = {
+            # A list of children...
+        }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwGUI]], [[hwRowCol]]

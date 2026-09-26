@@ -1,0 +1,21 @@
+OBJS=collision.obj \
+	pobj_state.obj \
+	pobject.obj \
+	pobjst_sim.obj
+
+LIBS=..\libphysics.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../libnum
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+../libphysics.lib:     $(OBJS)
+	$(LIB32) @<<
+    $(OBJS) -out:../libphysics.lib
+<<

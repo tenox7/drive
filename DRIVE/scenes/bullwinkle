@@ -1,0 +1,1465 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#----------------------------------------------------------------------------
+# Bullwinkle International Speedway
+# designed by Edgar Circenis
+#
+Racecourse: Bullwinkle
+Practice Seconds: 0
+Race Seconds: 250
+Start SceneX: 18
+Start SceneZ: -1
+Start Position: -52.5 0 800
+Start Angle: 0
+Start Positions: 8
+Turbo Boosts: 10
+
+#----------------------------------------------------------------------------
+# SCENE ONE
+
+Scene Location: 18 -1
+
+# (a)
+Object: curve
+Width: 100
+Height: 2
+Radius: 450
+Angle: 90
+Position: -800 50 -500
+Yrot: 180
+
+# (b)
+Object: road
+Width: 100
+Height: 2
+Length: 502.5
+Position: -800 50 -900
+Yrot: -90
+Xrot: -5.71
+
+# (c)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 90
+Position: -300 100 -600
+Yrot: -90
+
+# (d)
+Object: road
+Width: 100
+Height: 2
+Length: 200
+Position: 0 100 -600
+Yrot: 0
+
+# (e)
+Object: road
+Width: 100
+Height: 2
+Length: 200
+Position: 0 80 -400
+Yrot: 0
+
+# (f)
+Object: road
+Width: 100
+Height: 2
+Length: 200
+Position: 0 60 -200
+Yrot: 0
+
+# (g)
+Object: road
+Width: 100
+Height: 2
+Length: 200
+Position: 0 40 0
+Yrot: 0
+
+# (h)
+Object: road
+Width: 100
+Height: 2
+Length: 200
+Position: 0 20 200
+Yrot: 0
+
+# (i)
+Object: road
+Width: 120
+Length: 600
+Position: 0 0 400
+Yrot: 0
+
+# (j)
+Object: road
+Width: 60
+Length: 1400
+Position: 0 0 -1000
+Yrot: 0
+
+# SIGNS
+
+Object: generic sign
+Label: BULLWINKLE
+Width: 200
+Length: 10
+Height: 0.001
+Position: -90 0 900
+Yrot: 90
+Color: 1.0 1.0 1.0
+
+Object: generic sign
+Label: BULLWINKLE
+Width: 200
+Length: 10
+Height: 0.001
+Position: 90 0 900
+Yrot: -90
+Color: 1.0 1.0 1.0
+
+# CHECKPOINTS
+
+Object: start
+Length: 20.0
+Width:  120.0
+Height: 40.0
+Label: START
+Radius: 0.5
+Position: 0 0 990
+Yrot: 0
+Type: 1 15
+
+Object: finish
+Length: 20.0
+Width:  120.0
+Height: 40.0
+Label: FINISH
+Radius: 0.5
+Position: 0 0 600
+Yrot: 0
+Type: 1 15
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: FOURTEEN
+Radius: 0.5
+Position: 0 100 -600
+Yrot: 0
+Type: 1 14
+
+# WALLS
+
+# (i)
+Object: wall
+Width: 2
+Height: 4
+Length: 300
+Position: 0 0 700
+Yrot: 0
+Color: 1 1 0
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE TWO
+
+Scene Location: 17 -1
+
+# (a)
+Object: road
+Width: 100
+Length: 500
+Position: 800 0 1000
+Yrot: 180
+
+# (b)
+Object: road
+Width: 100
+Length: 1001.25
+Height: 2
+Position: 800 0 500
+Yrot: 180
+Xrot: -2.862
+
+# (c)
+Object: curve
+Width: 100
+Height: 2
+Radius: 450
+Angle: 90
+Position: 1200 50 -500
+Yrot: 180
+
+# (d)
+Object: road
+Width: 100
+Length: 400
+Position: 300 0 1000
+Yrot: 180
+
+# (e)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 0 0 600
+Yrot: 180
+Xrot: -5
+
+# (f)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 0 0 600
+Yrot: 90
+
+# (g)
+Object: road
+Width: 100
+Length: 500
+Position: 0 0 900
+Yrot: -90
+
+# (h)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 500 0 600
+Yrot: 0
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: THIRTEEN
+Radius: 0.5
+Position: 0 26.1467 301.14159
+Yrot: 90
+Zrot: -5
+Type: 1 13
+
+# WALLS
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE THREE
+
+Scene Location: 18 0
+
+# (zero)
+Object: road
+Width: 120
+Length: 30
+Position: 0 0 -1000
+Yrot: 0
+
+# (a)
+Object: curve
+Width: 60
+Radius: 300
+Position: 300 0 -970
+Angle: 90
+Yrot: 90
+
+# (b)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Position: 300 0 -400
+Angle: 180
+Yrot: -90
+Xrot: -3
+
+# (c)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Position: 300 0 200
+Angle: 180
+Yrot: 90
+Xrot: -10
+
+# (d)
+Object: curve
+Width: 100
+Height: 2
+Radius: 550
+Angle: 180
+Position: 300 0 0
+Yrot: -90
+
+# (e)
+Object: curve
+Width: 100
+Height: 2
+Radius: 600
+Angle: 180
+Position: 300 0 50
+Yrot: 90
+Xrot: -10
+
+# (f)
+Object: road
+Width: 100
+Length: 300
+Position: 300 0 600
+Yrot: -90
+
+# (g)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 600 0 900
+Yrot: -90
+Xrot: -10
+
+# (h)
+Object: road
+Width: 60
+Length: 300
+Position: -30 0 -970
+Yrot: 0
+
+# (i)
+Object: curve
+Width: 60
+Radius: 300
+Angle: 90
+Position: -300 0 -670
+Yrot: 0
+
+# (j)
+Object: curve
+Width: 100
+Height: 2
+Angle: 180
+Radius: 350
+Position: -300 0 -100
+Yrot: 90
+Xrot: -10
+
+# (k)
+Object: road
+Width: 100
+Length: 300
+Position: -300 0 200
+Yrot: -90
+
+# (l)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 0 0 500
+Yrot: -90
+Xrot: -10
+
+# (m)
+Object: curve
+Width: 100
+Height: 2
+Radius: 550
+Angle: 180
+Position: 0 0 300
+Yrot: 90
+
+# (n)
+Object: curve
+Width: 100
+Height: 2
+Radius: 600
+Angle: 180
+Position: 0 0 350
+Yrot: -90
+Xrot: -10
+
+# (o)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 0 0 1200
+Yrot: 90
+Xrot: -3
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: ONE
+Radius: 0.5
+Position: 599.5888 15.7 -400
+Yrot: 0
+Zrot: 3
+Type: 1 1
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: ONE
+Radius: 0.5
+Position: -595.44 52 -100
+Yrot: 0
+Zrot: -10
+Type: 1 1
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: TWO
+Radius: 0.5
+Position: 4.557 52.09 200
+Yrot: 0
+Zrot: -10
+Type: 1 2
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: TWO
+Radius: 0.5
+Position: 295.443 52.09 500
+Yrot: 0
+Zrot: 10
+Type: 1 2
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: THREE
+Radius: 0.5
+Position: -241.644 95.5 50
+Yrot: 0
+Zrot: -10
+Type: 1 3
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: THREE
+Radius: 0.5
+Position: 541.644 95.5 350
+Yrot: 0
+Zrot: 10
+Type: 1 3
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: FOUR
+Radius: 0.5
+Position: 895.44 52.09 900
+Yrot: 0
+Zrot: 10
+Type: 1 4
+
+# WALLS
+
+# (h/a)
+Object: wall
+Width: 2
+Height: 4
+Length: 300
+Position: 0 0 -1000
+Yrot: 0
+Color: 1 1 0
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE FOUR
+
+Scene Location: 18 1
+
+# (a)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 600 0 -1100
+Yrot: -90
+Xrot: -10
+
+# (b)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 600 0 -500
+Yrot: 180
+
+# (c)
+Object: road
+Width: 100
+Length: 300
+Position: 300 0 -500
+Yrot: 0
+
+# (d)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 0 0 -800
+Yrot: 90
+Xrot: -3
+
+# (e)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 0 0 -200
+Yrot: -90
+
+# (f)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 600 0 -200
+Yrot: 90
+
+# (g)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 600 0 400
+Yrot: -90
+
+# (h)
+Object: road
+Width: 100
+Length: 200
+Position: 900 0 400
+Yrot: 0
+
+# (i)
+Object: curve
+Width: 100
+Radius: 350
+Angle: 90
+Position: 600 0 600
+Yrot: 0
+
+# (j1)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 600 0 900
+Yrot: 90
+Xrot: -5
+
+# (j2)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 500 0 900
+Yrot: 90
+Xrot: -5
+
+# (j3)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 400 0 900
+Yrot: 90
+Xrot: -5
+
+# (j4)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 300 0 900
+Yrot: 90
+Xrot: -5
+
+# (j5)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 200 0 900
+Yrot: 90
+Xrot: -5
+
+# (j6)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 100 0 900
+Yrot: 90
+Xrot: -5
+
+# (j7)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: 0 0 900
+Yrot: 90
+Xrot: -5
+
+# (j8)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: -100 0 900
+Yrot: 90
+Xrot: -5
+
+# (j9)
+Object: road
+Width: 100
+Height: 2
+Length: 100
+Position: -200 0 900
+Yrot: 90
+Xrot: -5
+
+# (k)
+Object: road
+Width: 100
+Length: 300
+Position: -300 0 900
+Yrot: 90
+
+# (l)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: -600 0 600
+Yrot: 90
+Xrot: -5
+
+# (n)
+Object: curve
+Width: 100
+Height: 2
+Radius: 400
+Angle: 180
+Position: -600 0 -50
+Yrot: -90
+Xrot: -10
+
+# (o)
+Object: road
+Width: 100
+Length: 400
+Position: -600 0 -400
+Yrot: 90
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: FOUR
+Radius: 0.5
+Position: -299.5888 15.7 -800
+Yrot: 0
+Zrot: -3
+Type: 1 4
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: FIVE
+Radius: 0.5
+Position: 600 0 900
+Yrot: 90
+Type: 1 5
+Data: 1 3
+5 2 1
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: SIX
+Radius: 0.5
+Position: -255.317 60.77 -50
+Yrot: 180
+Zrot: -10
+Type: 1 6
+Data: 1 3
+0 0 1
+
+# WALLS
+
+# (j)
+Object: wall
+Width: 4
+Height: 20
+Length: 900
+Position: 600 0 848
+Yrot: 90
+Color: 0 0 1
+
+# (j)
+Object: wall
+Width: 4
+Height: 20
+Length: 900
+Position: 600 0 952
+Yrot: 90
+Color: 0 0 1
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE FIVE
+
+Scene Location: 17 1
+
+# (a)
+Object: road
+Width: 60
+Length: 1020
+Height: 2
+Position: 0 200 -400
+Yrot: -90
+Xrot: 11.30993248
+
+# (a)
+#Object: ramp
+#Width: 60
+#Length: 1000
+#Height: 200
+#Position: 1000 0 -400
+#Yrot: 90
+
+# (lip1)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 0 200 -427
+Yrot: 90
+Xrot: -25
+
+# (lip2)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 0 200 -415
+Yrot: 90
+Xrot: -25
+
+# (lip3)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 0 200 -403
+Yrot: 90
+Xrot: -25
+
+# (lip4)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 0 200 -391
+Yrot: 90
+Xrot: -25
+
+# (lip5)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 0 200 -379
+Yrot: 90
+Xrot: -25
+
+# (b)
+Object: road
+Width: 60
+Length: 700
+Position: -300 0 -400
+Yrot: 90
+
+# (d)
+Object: road
+Width: 60
+Length: 400
+Position: -1000 0 500
+Yrot: -90
+
+# (e)
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -600 0 200
+Yrot: 0
+
+# (f)
+Object: road
+Width: 60
+Length: 1200
+Position: -300 0 200
+Yrot: 180
+
+# (i)
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 180
+Position: 0 30 -1000
+Yrot: 0
+Xrot: -5
+
+# (j)
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 180
+Position: 300 140 -100
+Yrot: 90
+Xrot: -11.30993248
+
+# (k)
+Object: road
+Width: 100
+Height: 2
+Length: 305.94117
+Position: 300 140 200
+Yrot: -90
+Xrot: 11.30993248
+
+# (l)
+Object: curve
+Width: 100
+Height: 2
+Radius: 350
+Angle: 180
+Position: 600 80 500
+Yrot: -90
+
+# (m)
+Object: road
+Width: 100
+Height: 2
+Length: 300
+Position: 600 80 800
+Yrot: 90
+
+# (n)
+Object: curve
+Width: 100
+Height: 2
+Angle: 90
+Radius: 350
+Position: 300 80 500
+Yrot: 90
+
+# (o)
+Object: road
+Width: 100
+Height: 2
+Length: 200
+Position: 0 80 500
+Yrot: 180
+
+# (o2)
+Object: road
+Width: 100
+Height: 2
+Length: 407.921
+Position: 0 80 300
+Yrot: 180
+Xrot: 11.30993248
+
+# (p)
+Object: curve
+Width: 100
+Angle: 90
+Radius: 350
+Position: -300 0 -100
+Yrot: -90
+
+# SIGNS
+
+Object: generic sign
+Label: MOOSE EXIT\-->
+Size: 30 40 10
+Position: 500 100 -350
+Yrot: 90
+Color: 0.0 1.0 0.0
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 60.0
+Label: SEVEN
+Radius: 0.5
+Position: -50 210 -400
+Yrot: 90
+Type: 1 7
+
+Object: checkpoint
+Length: 15.0
+Width:  100.0
+Height: 30.0
+Label: SEVEN
+Radius: 0.5
+Position: 300 80 800
+Yrot: 90
+Type: 1 7
+
+Object: checkpoint
+Length: 17.0
+Width:  60.0
+Height: 35.0
+Label: ELEVEN
+Radius: 0.5
+Position: 0 56.146 -701.14
+Yrot: 90
+Zrot: 5
+Type: 1 11
+
+# WALLS
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE SIX
+
+Scene Location: 17 0
+
+# (incoming lip from scene 5, object i)
+Object: road
+Width: 60
+Length: 20
+Height: 2
+Position: -300 30 1000
+Yrot: 180
+Xrot: -1.6
+
+# (a)
+Object: bridge
+Width: 60
+Height: 20
+Length: 280
+Position: -300 0 850
+Yrot: 0
+
+# (b)
+Object: road
+Width: 60
+Length: 1600
+Position: -300 0 1000
+Yrot: 180
+
+# (c)
+Object: road
+Width: 60
+Height: 2
+Length: 700
+Position: -300 30 700
+Yrot: 180
+
+# (lip c)
+Object: road
+Width: 60
+Length: 20
+Height: 2
+Position: -300 30 0
+Yrot: 180
+Xrot: -1.6
+
+# (f)
+Object: bridge
+Width: 60
+Height: 20
+Length: 280
+Position: -300 0 -150
+Yrot: 0
+
+# (g)
+Object: road
+Width: 60
+Height: 2
+Length: 300
+Position: -300 30 -300
+Yrot: 180
+
+# (h)
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 180
+Position: 0 0 -600
+Yrot: 180
+Xrot: -3.43
+
+# (i)
+Object: road
+Width: 60
+Length: 300
+Position: 300 0 -600
+Yrot: 0
+
+# (i2)
+Object: bridge
+Width: 60
+Height: 20
+Length: 300
+Position: 300 0 -150
+Yrot: 0
+
+# (i2)
+Object: wall
+Width: 600
+Length: 60
+Height: 15
+Position: 300 0 -180
+Yrot: 0
+Color: 0.3 1 0.4
+
+# (j)
+Object: road
+Width: 60
+Length: 500
+Position: 300 0 0
+Yrot: 0
+
+# (k)
+Object: road
+Width: 60
+Length: 500.9
+Height: 2
+Position: 300 0 500
+Yrot: 0
+Xrot: -3.43
+
+# (l)
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 180
+Position: -600 30 -600
+Yrot: 180
+Xrot: -5
+
+# (m)
+Object: road
+Width: 60
+Length: 601.3
+Height: 2
+Position: -900 30 -600
+Yrot: 0
+Xrot: -3.81
+
+# (lip m)
+Object: road
+Width: 60
+Length: 10
+Height: 2
+Position: -900 70 0
+Yrot: 0
+Xrot: -5
+
+# (n)
+Object: road
+Width: 60
+Length: 550
+Position: -900 0 0
+Yrot: 0
+
+# (o)
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -600 0 550
+Yrot: 90
+
+# (p)
+Object: road
+Width: 60
+Length: 1070
+Position: -600 0 850
+Yrot: -90
+
+# (q)
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 470 0 550
+Yrot: 0
+
+# (r)
+Object: road
+Width: 120
+Length: 150
+Position: 770 0 550
+Yrot: 180
+
+# (s)
+Object: road
+Width: 60
+Length: 1020
+Height: 2
+Position: 800 200 -600
+Yrot: 0
+Xrot: 11.30993248
+
+# (s)
+#Object: ramp
+#Width: 60
+#Length: 1000
+#Height: 200
+#Position: 800 0 400
+#Yrot: 180
+
+# (fork 1)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 827 200 -600
+Yrot: 180
+Xrot: -25
+
+# (fork 2)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 815 200 -600
+Yrot: 180
+Xrot: -25
+
+# (fork 3)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 803 200 -600
+Yrot: 180
+Xrot: -25
+
+# (fork 4)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 791 200 -600
+Yrot: 180
+Xrot: -25
+
+# (fork 5)
+Object: road
+Width: 6
+Length: 50
+Height: 2
+Position: 779 200 -600
+Yrot: 180
+Xrot: -25
+
+# (t)
+Object: road
+Width: 60
+Length: 1002.8
+Position: 740 0 401
+Yrot: 177.7
+
+# (u)
+Object: curve
+Width: 100
+Radius: 250
+Angle: 90
+Position: 500 0 -600
+Yrot: -90
+
+# (v)
+Object: curve
+Width: 100
+Radius: 250
+Angle: 90
+Position: 500 0 -1000
+Yrot: 90
+
+# SIGNS
+
+Object: generic sign
+Label: MOOSE EXIT\RIGHT LANE
+Width: 50
+Length: 40
+Height: 5
+Position: 100 0 795
+Yrot: -90
+Color: 0.0 1.0 0.0
+
+Object: generic sign
+Label: SQUIRREL JUMP\LEFT LANE
+Width: 50
+Length: 40
+Height: 5
+Position: 100 0 905
+Yrot: -90
+Color: 0.0 1.0 0.0
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 17.0
+Width:  60.0
+Height: 35.0
+Label: NINE
+Radius: 0.5
+Position: -300 30 200
+Yrot: 180
+Type: 1 9
+
+Object: checkpoint
+Length: 17.0
+Width:  60.0
+Height: 35.0
+Label: TEN
+Radius: 0.5
+Position: 0 17.948 -899.46
+Yrot: -90
+Zrot: 3.43
+Type: 1 10
+
+Object: checkpoint
+Length: 17.0
+Width:  60.0
+Height: 35.0
+Label: TWELVE
+Radius: 0.5
+Position: -900 50 -300
+Yrot: 0
+Type: 1 12
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 60.0
+Label: THIRTEEN
+Radius: 0.5
+Position: 800 210 -650
+Yrot: 180
+Type: 1 13
+
+# WALLS
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------------
+# SCENE SEVEN
+
+Scene Location: 16 1
+
+# (a)
+Object: road
+Width: 60
+Length: 100
+Position: 1000 0 -400
+Yrot: 90
+
+# (b)
+Object: curve
+Width: 60
+Radius: 480
+Height: 2
+Angle: 180
+Position: 900 0 50
+Yrot: 90
+Xrot: -10
+
+# (c)
+Object: road
+Width: 60
+Length: 100
+Position: 900 0 500
+Yrot: -90
+
+# SIGNS
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 17.0
+Width:  60.0
+Height: 35.0
+Label: EIGHT
+Radius: 0.5
+Position: 456.8365 78.14 0
+Yrot: 0
+Zrot: -10
+Type: 1 8
+Data: 1 3
+5 2 1
+
+# WALLS
+
+# MISC
+
+Object: ground
+
+#----------------------------------------------------------------------
+# HILLS
+
+Scene Location: 15 2
+Scene Type:  hill no roads
+
+Scene Location: 16 2
+Scene Type:  hill no roads
+
+Scene Location: 17 2
+Scene Type:  hill no roads
+
+Scene Location: 18 2
+Scene Type:  hill no roads
+
+Scene Location: 19 2
+Scene Type:  hill no roads
+
+Scene Location: 19 1
+Scene Type:  hill no roads
+
+Scene Location: 19 0
+Scene Type:  hill no roads
+
+Scene Location: 19 -1
+Scene Type:  hill no roads
+
+Scene Location: 19 -2
+Scene Type:  hillxroad
+
+Scene Location: 18 -2
+# Turn Off from Highway
+
+#(a)
+Object: road
+Position: 1000 0 0
+Yrot: 90
+Size: 2000 60 0
+
+#(b)
+Object: curve
+Position: -500 0 500
+Radius: 530
+Angle: 90
+Width: 60
+Yrot: -90
+
+#(c)
+Object: road
+Position: 0 0 500
+Size: 500 60 0
+
+#(d)
+Object: generic sign
+Position: -500 0 -100
+Label: BULLWINKLE SPEEDWAY\<------
+Size: 40 80 10
+Color: 1.0 1.0 1.0
+Yrot: -90
+
+#(e)
+Object: ground
+
+Scene Location: 17 -2
+Scene Type:  hillxroad
+
+Scene Location: 16 -2
+Scene Type:  hillxroad
+
+Scene Location: 16 -1
+Scene Type:  hill no roads
+
+Scene Location: 16 0
+Scene Type:  hill no roads
+
+Scene Location: 15 0
+Scene Type:  hill no roads
+
+Scene Location: 15 1
+Scene Type:  hill no roads
+

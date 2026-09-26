@@ -1,0 +1,25 @@
+##
+##  Makefile for Windows NT
+##
+
+
+!include <ntwin32.mak>
+
+CFLAGS=-I../Inc
+LIBS=$(guilibs)
+
+all	: wintexfont.exe
+
+wintexfont.exe:	wintexfont.obj
+	$(link) $(LOPTS) -out:$@ wintexfont.obj $(LIBS)
+
+wintexfont.obj:	wintexfont.c
+
+.c.obj:
+	$(CC) $(CFLAGS) -c $<
+
+clean:
+	del *.obj *.pdb *.ilk *.ncb *~
+
+clobber: clean
+	del *.exe

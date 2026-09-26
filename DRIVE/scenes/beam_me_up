@@ -1,0 +1,728 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#############################################################################
+#  Beam Me Up!
+#  by Edgar Circenis
+#  Don't ask me what I was thinking....
+#############################################################################
+Racecourse:             beam_me_up
+Practice Seconds:       0 
+Pre-Race Seconds:       2 
+Race Seconds:           180 
+Post-Race Seconds:      5 
+Start SceneX: 5
+Start SceneZ: 5
+Start Angle:            0 
+Start Position:         477.5 4 -700 
+Start Positions:        4
+Turbo Mode:             0 
+Guns Mode:              0 
+
+#----------------------------------------------------------------------------
+Scene Location: 5 5
+
+Object: road
+Width: 120
+Length: 700
+Height: 4
+Position: 500 4 -1000
+
+Object: curve
+Width: 120
+Height: 4
+Angle: 90
+Position: 100 4 -300
+Radius: 460
+
+Object: curve
+Width: 120
+Height: 4
+Angle: 90
+Position: 100 4 500
+Radius: 460
+Yrot: 180
+
+Object: road
+Width: 120
+Height: 4
+Length: 500
+Position: -300 4 500
+
+# beam me up roads
+Object: road
+Width: 120
+Length: 300
+Height: 4
+Position: -200 1000 -700
+
+Object: curve
+Width: 120
+Radius: 360
+Height: 4
+Angle: 90
+Position: -500 1000 -400
+
+Object: curve
+Width: 120
+Radius: 360
+Height: 4
+Angle: 90
+Position: -500 1000 200
+Yrot: 180
+
+Object: curve
+Width: 120
+Radius: 460
+Height: 4
+Angle: 90
+Position: -400 1000 200
+Yrot: 90
+
+Object: road
+Width: 120
+Length: 200
+Height: 4
+Position: -400 1000 600
+Yrot: -90
+
+Object: road
+Width: 120
+Length: 70
+Height: 4
+Position: -200 1000 600
+Yrot: -90
+Xrot: -5
+
+Object: road
+Width: 120
+Length: 700
+Height: 4
+Position: 100 1000 600
+Yrot: -90
+
+Object: road
+Width: 30
+Length: 60
+Height: 4
+Position: 800 1000 600
+Yrot: -90
+Xrot: -5
+
+Object: invisible wormhole
+Width: 30
+Height: 10
+Position: 849 1005 600
+Yrot: -90
+Type: linear velocity/=10;position in scene=0,0,4000;angular velocity=0
+
+Object: wall
+Size: 1 30 20
+Position: 850 1003 600
+Yrot: -90
+Color: 0 0 0
+
+########################################## CHECKPOINTS
+Object: start
+Length: 20
+Width:  120
+Height: 40
+Label:  WORMY
+Radius: 0.5
+Position: 500 0 -500
+Type: 1 11
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 8
+Radius: 0.5
+Position: 500 0 -300
+Type: 1 8
+Yrot: 180
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 9
+Radius: 0.5
+Position: -300 0 500
+Type: 1 9
+Yrot: 0
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 10
+Radius: 0.5
+Position: -300 0 980
+Type: 1 10
+Yrot: 0
+
+######################################################## WORMHOLES
+# to A
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 500 4 -400
+Type: position in scene += -700, 0, 2900; angle += 0,5,0
+
+# to G
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 500 4 -350
+Type: position in scene += -410, 0, 450; angle -= 0,95,0
+
+# reverse (near G)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 500 4 -350
+Type: angle += 0,180,0
+
+# to AA
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 550
+Type: position in scene += 0, 0, 210; angle = 0,180,0
+
+# to DD
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 560
+Type: position in scene += 0, 0, 320; angle += 0,180,0
+
+# reverse (near CC)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 660
+Type: angle = 0,0,0
+
+# reverse (near CC)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 640
+Type: angle = 0,180,0
+
+# to CC
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 810
+Type: position in scene -= 0, 0, 220
+
+# to EE
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 830
+Type: position in scene += 0, 0, 70; angle = 0,0,0
+
+############################################################# SIGNS
+
+Object: generic sign
+Label: STAY ON THE ROAD
+Position: 500 200 -400
+Size: 200 580 0.01
+
+############################################################# ENTERPRISE
+Construct: enterprise
+Position: 900 1020 600
+
+# to orbit (test wormhole)
+#Object: wormhole
+#Width: 120
+#Height: 100
+#Position: 500 4 -600
+#Angle: -90
+#Type: position in scene=0,2000,4000;angle=90,0,0;angular velocity=0,25,0;linear velocity=0
+
+#into landing bay
+Object: invisible wormhole
+Width: 30
+Height: 10
+Position: 849 1005 600
+Yrot: -90
+Type: linear velocity=0,0,15;position in scene=0,0,4000;angular velocity=0;angle=0,0,0
+
+############################################################# 
+#Object: ground
+
+# "ground"
+Object: wormhole
+Width: 2000
+Height: 2000
+Position: 0 0 -1000
+Xrot: 90
+Type: position in scene = 500, 400, -800; angle = 0; linear velocity = 0; angular velocity = 0
+
+#----------------------------------------------------------------------------
+Scene Location: 5 6
+
+# "O"
+Object: curve
+Width: 120
+Height: 4
+Radius: 360
+Angle: 360
+Position: -500 4 500
+
+# "H"
+Object: road
+Width: 120
+Height: 4
+Length: 600
+Position: 0 4 200
+
+Object: road
+Width: 120
+Height: 4
+Length: 600
+Position: 500 4 200
+
+Object: road
+Width: 120
+Height: 4
+Length: 500
+Position: 0 4 500
+Yrot: -90
+
+# "N"
+Object: road
+Width: 120
+Height: 4
+Length: 600
+Position: -800 4 -600
+
+Object: road
+Width: 120
+Height: 4
+Length: 600
+Position: -300 4 -600
+
+Object: road
+Width: 120
+Height: 4
+Length: 781
+Position: -300 4 -600
+Yrot: 39.8
+
+# "O"
+Object: curve
+Width: 120
+Height: 4
+Radius: 360
+Angle: 360
+Position: 200 4 -300
+
+# "!"
+Object: road
+Width: 120
+Height: 4
+Length: 400
+Position: 700 4 -400
+
+Object: road
+Width: 120
+Height: 4
+Length: 100
+Position: 700 4 -600
+
+# jump of gloom
+
+Object: road
+Width: 120
+Height: 4
+Length: 110
+Position: -300 4 -1000
+Xrot: -15
+
+Object: pond
+Width: 200
+Length: 200
+Position: -300 4 -850
+Height: 50
+
+########################################## CHECKPOINTS
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: -712.132 0 712.132
+Type: 1 1
+Yrot: 135
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: 500 0 750
+Type: 1 2
+Yrot: 0
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: 200 0 0
+Type: 1 3
+Yrot: -90
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: -800 0 -170
+Type: 1 4
+Yrot: 0
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: -430 0 -445
+Type: 1 5
+Yrot: 219.8
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 6
+Radius: 0.5
+Position: -300 0 -50
+Type: 1 6
+Yrot: 0
+
+Object: checkpoint
+Length: 20
+Width:  120
+Height: 40
+Label:  CHECKPOINT 7
+Radius: 0.5
+Position: 500 0 -300
+Type: 1 7
+Yrot: 0
+
+######################################################## WORMHOLES
+# to BX1 (outside lane)
+Object: invisible wormhole
+Width: 60
+Height: 10
+Position: -830 4 500
+Type: position in scene = 0, 4, 230; angle = 0,0,0
+Animation Bits: 0x5555
+
+# to BX1 (inside lane)
+Object: invisible wormhole
+Width: 60
+Height: 10
+Position: -770 4 500
+Type: position in scene = 0, 4, 230; angle = 0,0,0
+Animation Bits: 0xaaaa
+
+# to BX2 (outside lane)
+Object: invisible wormhole
+Width: 60
+Height: 10
+Position: -830 4 500
+Type: position in scene = 0, 4, 770; angle = 0, 180, 0
+Animation Bits: 0xaaaa
+
+# to BX2 (inside lane)
+Object: invisible wormhole
+Width: 60
+Height: 10
+Position: -770 4 500
+Type: position in scene = 0, 4, 770; angle = 0, 180, 0
+Animation Bits: 0x5555
+
+
+# to B (north)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 0 4 790
+Type: position in scene = 500, 9, 230; angle = 0
+
+# to B (south)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 0 4 210
+Type: position in scene = 500, 9, 230; angle = 0
+
+# reverse (near checkpoint 2)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 500 4 790
+Type: position in scene += 0,0,-10; angle += 0,180,0
+
+# to C
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 500 4 210
+Type: position in scene += -600, 0, -510; angle = 0, -10, 0
+
+# to D
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 220 4 0
+Yrot: -90
+Type: position in scene += -1000, 0, -550; angle = 0; angular velocity=0; linear velocity=0,0,100
+
+# to F
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: 412.132 4 -87.867
+Yrot: 45
+Type: position in scene += 88, 0, -2212; angle = 0, 0, 0
+
+# reverse (near checkpoint 4)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -800 4 -10
+Type: position in scene += 25, 0, -20; angle -= 0,140.2,0
+
+# reverse (near checkpoint 5)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -410 4 -470
+Yrot: 39.8
+Type: position in scene += 100, 0, 0; angle = 0
+
+# reverse (near checkpoint 6)
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 -10
+Type: position in scene -= 0, 0, 20; angle += 0,180,0
+
+# to E
+Object: invisible wormhole
+Width: 120
+Height: 10
+Position: -300 4 -590
+Type: position in scene += 370,0,40; angle=0,-90,0; linear velocity=60,0,0;angular velocity=0,0,0
+
+# slow down (at top of ramp)
+Object: invisible wormhole
+Width: 120
+Height: 100
+Position: -300 2 -970
+Type: linear velocity /= 4
+
+# to H
+Object: invisible wormhole
+Width: 120
+Height: 200
+Position: -300 6 -920
+Xrot: 90
+Type: position in scene=0,2000,2000;angle=90,0,0;angular velocity=0,25,0;linear velocity=0
+
+
+
+########################################################### SIGNS
+
+Object: generic sign
+Label: HIT ME
+Size: 60 120 0.01
+Position: -800 0 0
+
+Object: generic sign
+Label: HIT ME
+Size: 60 120 0.01
+Position: -300 0 -600
+Yrot: 180
+
+Object: generic sign
+Label: BEAM ME UP
+Size: 60 120 0.01
+Position: -300 0 -605
+Yrot: 0
+
+Object: generic sign
+Label: HIT ME
+Size: 60 120 0.01
+Position: 500 0 200
+Yrot: 180
+
+Object: generic sign
+Label: HIT ME
+Size: 60 120 0.01
+Position: 0 0 200
+Yrot: 180
+
+Object: generic sign
+Label: HIT ME
+Size: 60 120 0.01
+Position: 0 0 800
+
+#Object: ground
+
+# "ground"
+Object: wormhole
+Width: 2000
+Height: 2000
+Position: 0 0 -1000
+Xrot: 90
+Type: position in scene = 500, 200, -2800; angle = 0; linear velocity = 0; angular velocity = 0
+
+#----------------------------------------------------------------------------
+Scene Location: 5 7
+
+Construct: enterprise
+Position: 30 1000 80
+Xrot: -100
+
+Object: flat
+Size: 2000 2000 0
+Position: 0 500 0
+Color: 0 0 0
+
+Object: invisible wormhole
+Size: 0 2000 2000
+Xrot: 90
+Position: 0 501 -1000
+Type: position in scene = -200,1005,-4650; angle=0,0,0; linear velocity=0,10,120; angular velocity=0
+
+Object: wall
+Size: 5 200 40
+Position: 0 0 -100
+
+Object: wall
+Size: 5 200 40
+Position: 0 0 200
+
+Object: wall
+Size: 300 5 40
+Position: -98 0 -100
+
+Object: wall
+Size: 300 5 40
+Position: 98 0 -100
+
+Object: wall
+Size: 300 200 5
+Position: 0 40 -100
+Color: 0.4 0 0
+
+Object: generic sign
+Label: TRANSPORTER ROOM
+Size: 20 160 0.001
+Color: 1 0 0
+Position: 0 20 199
+
+Object: wormhole
+Size: 1 40 15
+Position: 0 0 199
+Type: position in scene=0,2,700;angle=0,90,0;linear velocity=-70,0,0
+
+Object: road
+Width: 60
+Height: 2
+Length: 1800
+Position: 1000 2 700
+Yrot: 90
+
+######################## HAND
+
+Object: cylinder
+Radius: 3
+Height: 30
+Position: -600 0 690
+Xrot: -20
+
+Object: cylinder
+Radius: 3
+Height: 40
+Position: -600 0 696
+Xrot: -20
+
+Object: cylinder
+Radius: 3
+Height: 45
+Position: -600 0 690
+Xrot: 20
+
+Object: cylinder
+Radius: 3
+Height: 40
+Position: -600 0 696
+Xrot: 20
+
+Object: cylinder
+Radius: 3.5
+Height: 15
+Position: -600 10 701
+Xrot: 45
+
+Object: wall
+Width: 20
+Height: 18
+Length: 6
+Position: -603 0 693 
+Yrot: -90
+
+Object: finish
+Length: 20
+Width:  60
+Height: 40
+Label:  FINISH
+Radius: 0.5
+Position: -200 0 700
+Type: 1 11
+Yrot: 90
+
+#ground
+Object: flat
+Size: 2000 2000 0
+Position: 0 0 0
+Color: 0.4 0.4 0.2
+
+#sky
+Object: flat
+Color: 0.4 0 0
+Size: 2000 2000 0
+Position: 0 70 0
+Zrot: 180
+
+

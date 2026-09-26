@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwDisc - create a circular disc</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwDisc - create a circular disc</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>Tessellation of the disc - number of columns in the resulting
+  mesh</td>
+</tr>
+<tr><td>Radius</td>
+<td>1F</td>
+<td>Radius of the disc</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags - see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tessellation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>17</td>
+</tr>
+<tr><td>Radius</td>
+<td>1.0</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwDisc class creates a circular disc of a given radius about
+the origin. The disc lies in the XY plane, and its front surface
+faces positive Z. The default texture coordinates for a disc are as
+if the disc were cut out of the (square) texture map projected on the
+XY plane with the center at the origin.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a purple twosided disc of radius 2.0 */
+    hwObject
+        disc;
+
+    disc = hwDisc-&gt;create( hwDisc );
+    HW_MODIFY_1B( disc, hwStrTwoSided, HW_TRUE );
+    HW_MODIFY_1F( disc, hwStrRadius, 2.0 );
+    HW_MODIFY_3F( disc, hwStrColor, 1.0, 0.0, 1.0 );
+    disc-&gt;draw( disc );
+    disc-&gt;destroy( disc );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A purple twosided disc of radius 2.0
+    hwDisc disc {
+        TwoSided = True
+        Radius = 2.0
+        Color = {1,0,1}
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

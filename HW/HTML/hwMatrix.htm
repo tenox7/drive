@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwMatrix - HoverWare matrix utilities</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwMatrix - HoverWare matrix utilities</p>
+<h2>SYNOPSIS</h2>
+<pre>
+    #include &quot;hw.h&quot;
+
+    void hwIdentity( hwFloat res[4][4] )
+    void hwScale( hwFloat res[4][4], hwFloat sx, hwFloat sy, hwFloat sz )
+    void hwRotateX( hwFloat res[4][4], hwFloat angle )
+    void hwRotateY( hwFloat res[4][4], hwFloat angle )
+    void hwRotateZ( hwFloat res[4][4], hwFloat angle )
+    void hwRotateAxis( hwFloat res[4][4], hwFloat angle, hwFloat axis[3] )
+    void hwMatMult( hwFloat res[4][4], hwFloat a[4][4], hwFloat b[4][4] )
+    void hwTransform( hwFloat mat[4][4], hwFloat point[3] )
+    hwInt32 hwInvertMat( hwFloat mat[4][4], hwFloat dst[4][4] )
+
+    void hwDisplay-&gt;pushMatrix( hwDisplay disp, hwFloat mat[4][4] )
+    void hwDisplay-&gt;popMatrix( hwDisplay disp )
+</pre>
+<h2>DESCRIPTION</h2>
+<p>These routines manipulate 4x4 transformations useful as modelling
+transforms in HoverWare. Their full descriptions are as follows:</p>
+
+<dl>
+  <dt>hwIdentity</dt>
+  <dd>Initialize a 4x4 matrix to &quot;identity&quot;.</dd>
+</dl>
+
+<dl>
+  <dt>hwScale</dt>
+  <dd>Place the X, Y, and Z scale factors xs, ys, and zs along the
+  diagonal of the matrix</dd>
+</dl>
+
+<dl>
+  <dt>hwRotateX</dt>
+  <dd>Create a matrix which rotates about the X axis by angle
+  radians.</dd>
+</dl>
+
+<dl>
+  <dt>hwRotateY</dt>
+  <dd>Create a matrix which rotates about the Y axis by angle
+  radians.</dd>
+</dl>
+
+<dl>
+  <dt>hwRotateZ</dt>
+  <dd>Create a matrix which rotates about the Z axis by angle
+  radians.</dd>
+</dl>
+
+<dl>
+  <dt>hwRotateAxis</dt>
+  <dd>Create a matrix which rotates about an arbitrary axis by
+  angle radians</dd>
+</dl>
+
+<dl>
+  <dt>hwMatMult</dt>
+  <dd>Post-multiply matrix a by matrix b, placing the result in
+  res.</dd>
+</dl>
+
+<dl>
+  <dt>hwTransform</dt>
+  <dd>Transform a point by the given matrix</dd>
+</dl>
+
+<dl>
+  <dt>hwInvertMat</dt>
+  <dd>Calculate the inverse of a given mat, putting the result in
+  dst. The return value is 1 if the matrix is invertible, 0
+  otherwise.</dd>
+</dl>
+
+<dl>
+  <dt>hwDisplay-&gt;pushMatrix</dt>
+  <dd>Push a matrix on the HoverWare matrix stack. The depth of
+  this stack is system-dependent, but it is at least 8. The matrix is
+  pre-concatenated with the other matrices on the stack.</dd>
+</dl>
+
+<dl>
+  <dt>hwDisplay-&gt;popMatrix</dt>
+  <dd>Pop the top of the HoverWare matrix stack.</dd>
+</dl>
+<p>The model matrix affects all graphics primitives in HoverWare,
+including cameras and lights. Note that pushMatrix() and popMatrix()
+are actually methods in the hwDisplay class and need to be called
+through an instance of hwDisplay.</p>
+<h2>EXAMPLES</h2>
+<pre>
+    /* Push a rotation about X on the matrix stack */
+    hwFloat
+        mat[4][4];
+
+    hwRotateX( mat, 30.0 * M_PI / 180.0 );
+    disp-&gt;pushMatrix( disp, mat );
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hwSpinner.htm">hwSpinner</a></p>
+</body>
+</html>

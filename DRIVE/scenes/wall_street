@@ -1,0 +1,1478 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#---------------------------------------------------------------------------
+Racecourse: Wall Street
+Practice Seconds: 0
+Race Seconds: 600
+Start SceneX: 9
+Start SceneZ: -9
+Start Position: -22.5 0 -800
+Start Angle: 0
+Start Positions: 4
+Turbo Mode: 2
+Turbo Boosts: 20
+# Enough turbo to kill yourself :-)
+
+
+#---------------------------------------------------------------------------
+# SCENE 1
+
+Scene Location: 9 -9
+
+#a
+Object: road
+Width: 60
+Length: 500
+Position: 0 0 -1000
+
+Object: wall
+Width: 10
+Length: 500
+Height: 40
+Position: 35 0 -1000
+
+Object: wall
+Width: 10
+Length: 500
+Height: 40
+Position: -35 0 -1000
+
+#b
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 300 0 -500
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 300 0 -500
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 300 0 -500
+Yrot: 90
+
+#c
+Object: curve
+Width: 60
+Radius: 330
+Angle: 270
+Position: 300 0 100
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 270
+Position: 300 0 100
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 270
+Position: 300 0 100
+Yrot: -90
+
+#d
+Object: curve
+Width: 60
+Radius: 330
+Angle: 180
+Position: -300 0 100
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -300 0 100
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 65
+Position: -300 0 100
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 180
+Position: -300 0 100
+Yrot: 180
+
+#e
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -300 0 -500
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 65
+Position: -300 0 -500
+Yrot: 115
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -300 0 -500
+Yrot: 90
+
+#f
+Object: road
+Width: 60
+Length: 100
+Position: -600 0 -600
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -635 0 -600
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -565 0 -600
+
+#g
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -900 0 -600
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -900 0 -600
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -900 0 -600
+Yrot: -90
+
+#h
+Object: road
+Width: 60
+Length: 100
+Position: -1000 0 -900
+Yrot: -90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -1000 0 -935
+Yrot: -90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -1000 0 -865
+Yrot: -90
+
+#i
+Object: road
+Width: 60
+Length: 100
+Position: -600 0 100
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -635 0 100
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -565 0 100
+
+#j
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -900 0 200
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -900 0 200
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -900 0 200
+
+#k
+Object: road
+Width: 60
+Length: 100
+Position: -1000 0 500
+Yrot: -90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -1000 0 535
+Yrot: -90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: -1000 0 465
+Yrot: -90
+
+# WALLS
+
+# CHECKPOINTS
+
+Object: start
+Length: 20
+Width:  60
+Height: 40
+Label: START
+Radius: 0.5
+Position: 0 0 -700
+Type: 1 4
+
+Object: ground
+
+#---------------------------------------------------------------------------
+# SCENE 2
+
+Scene Location: 8 -9
+
+#a
+Object: curve
+Width: 60
+Radius: 230
+Angle: 90
+Position: 1000 0 -700
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 240
+Angle: 90
+Position: 1000 0 -700
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 170
+Angle: 90
+Position: 1000 0 -700
+Yrot: 180
+
+#b
+Object: road
+Width: 60
+Length: 160
+Position: 800 0 -700
+
+Object: wall
+Width: 10
+Length: 160
+Height: 40
+Position: 835 0 -700
+
+Object: wall
+Width: 10
+Length: 160
+Height: 40
+Position: 765 0 -700
+
+#c
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 500 0 -540
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 500 0 -540
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 500 0 -540
+
+#d
+Object: curve
+Width: 60
+Radius: 230
+Angle: 90
+Position: 1000 0 300
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 240
+Angle: 90
+Position: 1000 0 300
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 170
+Angle: 90
+Position: 1000 0 300
+Yrot: 90
+
+#e
+Object: road
+Width: 60
+Length: 160
+Position: 800 0 140
+
+Object: wall
+Width: 10
+Height: 40
+Length: 160
+Position: 835 0 140
+
+Object: wall
+Width: 10
+Height: 40
+Length: 160
+Position: 765 0 140
+
+#f
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 500 0 140
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 500 0 140
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 500 0 140
+Yrot: -90
+
+#g
+Object: road
+Width: 140
+Length: 300
+Position: 500 0 -200
+Yrot: 90
+
+#h
+Object: road
+Height: 5
+Width: 140
+Length: 100
+Position: 200 0 -200
+Yrot: 90
+Xrot: -10
+
+#i
+Object: road
+Width: 140
+Length: 600
+Position: 100 0 -200
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 1000
+Position: 500 0 -275
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 1000
+Position: 500 0 -125
+Yrot: 90
+
+#j
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -500 0 -540
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -500 0 -540
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -500 0 -540
+Yrot: 90
+
+#k
+Object: curve
+Height: 5
+Width: 60
+Radius: 330
+Angle: 180
+Position: -500 0 -540
+Yrot: 180
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 340
+Angle: 180
+Position: -500 0 -540
+Yrot: 180
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 270
+Angle: 180
+Position: -500 0 -540
+Yrot: 180
+Xrot: -10
+
+#l
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -500 0 140
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -500 0 140
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -500 0 140
+Yrot: 180
+
+#m
+Object: curve
+Height: 5
+Width: 60
+Radius: 330
+Angle: 180
+Position: -500 0 140
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 340
+Angle: 180
+Position: -500 0 140
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 270
+Angle: 180
+Position: -500 0 140
+Xrot: -10
+
+#n
+Object: road
+Height: 5
+Width: 140
+Length: 203.085
+Position: -160 0 -540
+Xrot: 10
+
+Object: wall
+Height: 40
+Width: 10
+Length: 203.085
+Position: -235 0 -540
+Xrot: 10
+
+Object: wall
+Height: 40
+Width: 10
+Length: 203.085
+Position: -85 0 -540
+Xrot: 10
+
+#o
+Object: road
+Height: 5
+Width: 140
+Length: 203.085
+Position: -160 0 140
+Yrot: 180
+Xrot: 10
+
+Object: wall
+Width: 10
+Height: 40
+Length: 203.085
+Position: -235 0 140
+Yrot: 180
+Xrot: 10
+
+Object: wall
+Width: 10
+Height: 40
+Length: 203.085
+Position: -85 0 140
+Yrot: 180
+Xrot: 10
+
+#p
+Object: road
+Width: 140
+Length: 280
+Height: 5
+Position: -160 -35.265 -340
+
+Object: wall
+Width: 10
+Height: 30
+Length: 280
+Position: -235 -35.265 -340
+
+Object: wall
+Width: 10
+Height: 30
+Length: 280
+Position: -85 -35.265 -340
+
+#q
+Object: curve
+Height: 5
+Width: 60
+Radius: 430
+Angle: 180
+Position: -520 0 -540
+Yrot: 180
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 440
+Angle: 180
+Position: -520 0 -540
+Yrot: 180
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 370
+Angle: 180
+Position: -520 0 -540
+Yrot: 180
+Xrot: -10
+
+#r
+Object: curve
+Height: 5
+Width: 60
+Radius: 430
+Angle: 180
+Position: -520 0 140
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 440
+Angle: 180
+Position: -520 0 140
+Xrot: -10
+
+Object: curvewall
+Height: 40
+Width: 10
+Radius: 370
+Angle: 180
+Position: -520 0 140
+Xrot: -10
+
+#s
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -1220 0 -540
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -1220 0 -540
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -1220 0 -540
+
+#t
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: -1220 0 140
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: -1220 0 140
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: -1220 0 140
+Yrot: -90
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label: CHECKPOINT 1
+Radius: 0.5
+Position: -501 0 -240
+Type: 1 1
+Yrot: 90
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label: CHECKPOINT 1
+Radius: 0.5
+Position: -501 0 -160
+Type: 1 1
+Yrot: 90
+
+# SIGNS
+
+Object: twopole sign
+Label: THIS WAY
+Color: 1 0 0
+Width: 61
+Length: 15
+Height: 25
+Position: -120 0 140
+Xrot: -10
+
+Object: twopole sign
+Label: THIS WAY
+Color: 1 0 0
+Width: 61
+Length: 15
+Height: 25
+Position: -120 0 -540
+Yrot: 180
+Xrot: -10
+
+Object: ground
+
+#---------------------------------------------------------------------------
+# SCENE 3
+
+Scene Location: 7 -9
+
+#a
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 780 0 -540
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 780 0 -540
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 780 0 -540
+
+#b
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 780 0 140
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 780 0 140
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 780 0 140
+Yrot: -90
+
+#c
+Object: road
+Width: 140
+Length: 680
+Position: 780 0 -200
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 680
+Position: 780 0 -275
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 680
+Position: 780 0 -125
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 40
+Position: 95 0 -160
+
+Object: wall
+Width: 10
+Height: 40
+Length: 40
+Position: 95 0 -240
+Yrot: 180
+
+#d
+Object: curve
+Width: 60
+Radius: 430
+Angle: 90
+Position: 100 0 200
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 440
+Angle: 90
+Position: 100 0 200
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 370
+Angle: 90
+Position: 100 0 200
+Yrot: 180
+
+#e
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 0 0 200
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 0 0 200
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 0 0 200
+Yrot: 90
+
+#f
+Object: curve
+Width: 60
+Radius: 230
+Angle: 90
+Position: 0 0 300
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 240
+Angle: 90
+Position: 0 0 300
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 170
+Angle: 90
+Position: 0 0 300
+
+#g
+Object: curve
+Width: 60
+Radius: 330
+Angle: 180
+Position: 500 0 300
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 180
+Position: 500 0 300
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 180
+Position: 500 0 300
+Yrot: 180
+
+#h
+Object: road
+Width: 60
+Length: 700
+Position: 800 0 300
+
+Object: wall
+Width: 10
+Height: 40
+Length: 700
+Position: 835 0 300
+
+Object: wall
+Width: 10
+Height: 40
+Length: 700
+Position: 765 0 300
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label: CHECKPOINT 2
+Radius: 0.5
+Position: 800 0 990
+Type: 1 2
+
+Object: ground
+
+#---------------------------------------------------------------------------
+# SCENE 4
+
+Scene Location: 7 -8
+
+#a
+Object: road
+Width: 60
+Length: 200
+Position: 800 0 -1000
+
+Object: wall
+Width: 10
+Height: 40
+Length: 200
+Position: 835 0 -1000
+
+Object: wall
+Width: 10
+Height: 40
+Length: 200
+Position: 765 0 -1000
+
+#b
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 500 0 -800
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 500 0 -800
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 500 0 -800
+
+#c
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 500 0 -200
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 500 0 -200
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 500 0 -200
+Yrot: 180
+
+#d
+Object: bank
+Height: 15
+Width: 60
+Radius: 830
+Angle: 90
+Position: 1000 0 -200
+Yrot: 90
+
+#outside wall
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 840
+Angle: 90
+Position: 1000 0 -200
+Yrot: 90
+
+#inside wall
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 770
+Angle: 90
+Position: 1000 0 -200
+Yrot: 90
+
+# SIGNS
+
+Object: twopole sign
+Label: SLOW
+Color: 1 1 0
+Width: 61
+Length: 15
+Height: 25
+Position: 995 0 600
+Yrot: -90
+
+Object: ground
+
+#---------------------------------------------------------------------------
+# SCENE 5
+
+Scene Location: 8 -8
+
+#a
+Object: curve
+Width: 60
+Radius: 230
+Angle: 90
+Position: -1000 0 400
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 240
+Angle: 90
+Position: -1000 0 400
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 170
+Angle: 90
+Position: -1000 0 400
+
+#b
+Object: road
+Width: 60
+Length: 400
+Position: -800 0 0
+
+Object: wall
+Width: 10
+Height: 40
+Length: 400
+Position: -835 0 0
+
+Object: wall
+Width: 10
+Height: 40
+Length: 400
+Position: -765 0 0
+
+#c
+Object: curve
+Width: 60
+Radius: 830
+Angle: 90
+Position: 0 0 0
+Yrot: 180
+
+#outside
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 840
+Angle: 90
+Position: 0 0 0
+Yrot: 180
+
+#d
+Object: curve
+Width: 60
+Radius: 730
+Angle: 90
+Position: 0 0 -100
+Yrot: -90
+
+#outside
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 740
+Angle: 90
+Position: 0 0 -100
+Yrot: -90
+
+#e
+Object: curve
+Width: 60
+Radius: 630
+Angle: 180
+Position: 100 0 -100
+
+#outside
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 640
+Angle: 180
+Position: 100 0 -100
+
+#inside
+Object: curvewall
+Width: 40
+Height: 40
+Radius: 570
+Angle: 180
+Position: 100 0 -100
+
+#f
+Object: curve
+Width: 60
+Radius: 530
+Angle: 90
+Position: 0 0 -100
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 540
+Angle: 90
+Position: 0 0 -100
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 470
+Angle: 90
+Position: 0 0 -100
+Yrot: 180
+
+#g
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 0 0 -300
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 0 0 -300
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 0 0 -300
+Yrot: -90
+
+#h
+Object: curve
+Width: 60
+Radius: 230
+Angle: 90
+Position: 100 0 -300
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 240
+Angle: 90
+Position: 100 0 -300
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 170
+Angle: 90
+Position: 100 0 -300
+
+#i
+Object: road
+Width: 60
+Length: 100
+Position: 100 0 -100
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: 100 0 -135
+Yrot: 90
+
+Object: wall
+Width: 10
+Height: 40
+Length: 100
+Position: 100 0 -65
+Yrot: 90
+
+#j
+Object: curve
+Width: 60
+Radius: 230
+Angle: 90
+Position: 0 0 100
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 240
+Angle: 90
+Position: 0 0 100
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 170
+Angle: 90
+Position: 0 0 100
+Yrot: 180
+
+#k
+Object: curve
+Width: 60
+Radius: 330
+Angle: 90
+Position: 100 0 100
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 340
+Angle: 90
+Position: 100 0 100
+Yrot: 90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 270
+Angle: 90
+Position: 100 0 100
+Yrot: 90
+
+#l
+Object: curve
+Width: 60
+Radius: 530
+Angle: 90
+Position: 100 0 -100
+
+#inside
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 470
+Angle: 90
+Position: 100 0 -100
+
+#m
+Object: curve
+Width: 60
+Radius: 630
+Angle: 90
+Position: 0 0 -100
+Yrot: -90
+
+Object: curvewall
+Width: 40
+Height: 40
+Radius: 670
+Angle: 90
+Position: 0 0 -100
+Yrot: -90
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 570
+Angle: 90
+Position: 0 0 -100
+Yrot: -90
+
+#n
+Object: curve
+Width: 60
+Radius: 730
+Angle: 90
+Position: 0 0 0
+Yrot: 180
+
+Object: curvewall
+Width: 40
+Height: 40
+Radius: 770
+Angle: 90
+Position: 0 0 0
+Yrot: 180
+
+Object: curvewall
+Width: 10
+Height: 40
+Radius: 670
+Angle: 90
+Position: 0 0 0
+Yrot: 180
+
+#o
+Object: road
+Width: 60
+Length: 1000
+Position: -700 0 0
+
+Object: wall
+Width: 10
+Height: 40
+Length: 1000
+Position: -735 0 0
+
+Object: wall
+Width: 10
+Height: 40
+Length: 1000
+Position: -665 0 0
+
+# SIGNS
+
+Object: twopole sign
+Label: SLOW
+Color: 1 1 0
+Width: 61
+Length: 15
+Height: 25
+Position: 0 0 -600
+Yrot: -90
+
+# CHECKPOINTS
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label: CHECKPOINT 3
+Radius: 0.5
+Position: 50 0 -100
+Type: 1 3
+Yrot: 90
+
+Object: finish
+Length: 20
+Width:  60
+Height: 40
+Label: FINISH
+Radius: 0.5
+Position: -700 0 700
+Type: 1 4
+
+Object: ground
+
+#---------------------------------------------------------------------------
+# Turnoff from highway
+
+Scene Location: 9 -10
+
+Object: road
+Width: 60
+Length: 2000
+Position: -1000 0 0
+Yrot: -90
+
+Object: curve
+Width: 60
+Radius: 530
+Angle: 90
+Position: -500 0 500
+Yrot: -90
+
+Object: road
+Width: 60
+Length: 500
+Position: 0 0 500
+
+Object: generic sign
+Label: WALL STREET\<--
+Size: 40 60 1
+Color: 1 1 1
+Position: -600 0 -60
+Yrot: -90
+
+Object: ground

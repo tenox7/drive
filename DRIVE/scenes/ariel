@@ -1,0 +1,526 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+Racecourse:  Ariel
+Start SceneX: -2
+Start SceneZ: -2
+Start Position: 700 1 -23
+Start Positions: 4
+Start Angle: 90
+Turbo Mode: 1
+Race Seconds: 120
+Turbo Boosts: 5
+Practice Seconds: 1
+
+
+
+# Turn off to the Ariel Speedway
+
+Scene Location: -2 -2
+
+Object: generic sign
+Size: 60 80 10
+Position: 800 0 60
+Yrot: 90
+Label: ARIEL\SPEEDWAY\NEXT LEFT
+Color: 0.6 0.6 0.0
+
+Object: generic sign
+Size: 30 80 10
+Position: 300 0 60
+Yrot: 90
+Label: <--- ARIEL SPEEDWAY
+Color: 0.0 0.0 0.0
+
+Object: curve
+Position: 500 0 -500
+Radius: 560
+Angle: 90
+Width: 120
+Yrot: 90
+
+Object: curve
+Position: 500 0 -430
+Radius: 460
+Width: 60
+Angle: 90
+
+Object: road
+Position: 30 0 -500
+Length: 501
+Width: 60
+Yrot: 180
+
+Object: road
+Position: -30 0 -500
+Length: 510
+Height: 2
+Width: 60
+Yrot: 180
+Xrot: -11.31
+
+Object: road
+Position: 930 0 -1000
+Length: 572
+Width: 60
+
+Object: road
+Position: 1000 0 0
+Yrot: 90
+Width: 60
+Length: 2001
+
+Object: wall
+Length: 200.0
+Width:  4.0
+Height: 4.0
+Position: 898 0 -1000
+
+Object: ground
+
+#-----------------------------------------------------------------------------
+
+#Ariel Speedway
+
+Scene Location: -2 -3
+
+# LOW ROAD
+Object: curve
+Position: 530 0 1000
+Radius: 530
+Width: 60
+Angle: 90
+Yrot: 180
+
+Object: curve
+Position: 500 0 70
+Radius: 460
+Width: 60
+Angle: 90
+
+Object: road
+Position: 925 0 -350
+Length: 480
+Width: 50
+
+Object: curve
+Position: 500 0 -350
+Radius: 450
+Width: 50
+Angle: 90
+Yrot: -90
+
+Object: road
+Position: 500 0 -775
+Yrot: 90
+Width: 50
+Length: 1000
+
+Object: curve
+Position: -500 0 -350
+Angle: 180
+Radius: 450
+Width: 50
+Yrot: 90
+
+Object: road
+Position: -500 0 75
+Yrot: -90
+Xrot: -15
+Length: 350
+Width: 50
+Height: 2
+
+Object: road
+Position: 80 100 75
+Width: 50
+Length: 320
+Yrot: -90
+Height: 3
+
+
+#HIGH ROAD
+
+Object: road
+Position: -30 100 500
+Length: 500
+Width: 60
+Height: 3
+
+Object: curve
+Position: 400 100 500
+Radius: 460
+Angle: 270
+Yrot: 180
+Width: 60
+Height: 3
+
+#Object: curveguardrail
+#Position: 400 100 500
+#Radius: 460
+#Angle: 180
+#Yrot: -90
+##Width: 60
+#Height: 4
+
+Object: road
+Position: 400 100 930
+Length: 300
+Height: 3
+Width: 60
+Xrot: -10
+Yrot: 90
+
+Object: road
+Position: -400 100 930
+Length: 300
+Height: 3
+Width: 60
+Yrot: -90
+Xrot: -10
+
+Object: road
+Position: -400 100 930
+Width: 60
+Height: 3
+Length: 200
+Yrot: 90
+
+Object: wall
+Position: -475 95 965
+Size: 10 20 8
+Yrot: 90
+
+
+Object: generic sign
+Label: ROAD\NARROWS!
+Size: 60 70 20
+Yrot: 90
+Position: -480 100 970
+Color: 1.0 0.0 0.0
+
+Object: curve
+Position: -600 100 600
+Radius: 360
+Angle: 90
+Width: 60
+Height: 3
+Yrot: 90
+
+Object: road
+Position: -930 100 600
+Width: 30
+Length: 450
+Height: 3
+Yrot: 180
+Xrot: -5
+
+Object: wall
+Position: -960 97 595
+Width: 30
+Height: 8
+Length: 5
+Color: 1.0 0.0 0.0
+
+Object: wall
+Position: -900 97 595
+Width: 30
+Height: 8
+Length: 5
+Color: 1.0 0.0 0.0
+
+Object: road
+Position: -930 100 -400
+Width: 30
+Length: 450
+Height: 3
+Xrot: -5
+
+Object: road
+Position: -925 100 -500
+Width: 50
+Length: 100
+Height: 3
+
+Object: curve
+Position: -500 100 -500
+Radius: 450
+Angle: 180
+Height: 3
+Width: 50
+Yrot: 180
+Xrot: -15
+
+Object: curve
+Position: 250 100 -500
+Width: 50
+Radius: 350
+Angle: 90
+Height: 3
+Yrot: 90
+
+Object: road
+Position: 250 100 -175
+Length: 400
+Height: 2
+Width: 50
+Yrot: -90
+Xrot: 15
+
+
+Object: curve
+Position: 600 0 150
+Radius: 350
+Angle: 80
+Yrot: -90
+Width: 50
+
+Object: road
+Position:  930 0 150
+Width: 60
+Length: 850
+
+Object: pillar
+Position: -30 0 950
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: -30 0 450
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: 150 0 75
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: 450 0 75
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: 825 0 500
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: 400 0 925
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: -400 0 925
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: -850 0 850
+Height: 98
+Radius: 2
+
+Object: pond
+Position: -800 0 700
+Length: 400
+Width: 300
+
+Object: pillar
+Position: -925 0 200
+Height: 134
+Radius: 2
+
+Object: pillar
+Position: -925 0 0
+Height: 134
+Radius: 2
+
+Object: pillar
+Position: -925 0 -500
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: -75 0 -500
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: 250 0 -175
+Height: 98
+Radius: 2
+
+Object: pillar
+Position: -175 0 75
+Height: 87
+Radius: 2
+
+Object: pillar
+Position: -500 0 -925
+Height: 210
+Radius: 2
+
+Object: generic sign
+Label: KEEP\RIGHT
+Size: 15 15 10
+Yrot: -70
+Position: 825 0 -150
+Color: 0.0 1.0 0.0
+
+Object: generic sign
+Label: KEEP\LEFT
+Size: 15 15 10
+Yrot: -135
+Position: 780 0 300
+Color: 0.0 1.0 0.0
+
+Object: tree
+Position: 900 0 900
+Height: 250
+
+Object: tree
+Position: 550 0 -50
+Height: 250
+
+Object: lamp
+Type: overhanging
+Position: -75 0 -650 
+Radius: 2
+Height: 160
+Yrot: 180
+
+Object: lamp
+Type: overhanging
+Position: -850 0 -800 
+Radius: 2
+Height: 200
+
+Object: lamp
+Type: overhanging
+Position: -500 0 -885 
+Radius: 2
+Height: 250
+Yrot: -90
+
+Object: generic sign
+Label: APPROACHING\JUMP TO\UPPER TERRACE!
+Size: 60 70 20
+Yrot: 90
+Position: 0 0 -700
+Color: 1.0 0.0 0.0
+
+Object: generic sign
+Label: MIN. SPEED\120 M.P.H.
+Size: 60 70 20
+Yrot: 90
+Position: -400 0 -700
+Color: 1.0 0.0 0.0
+
+# Checkpoints
+
+Object: start
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: START
+Radius: 0.5
+Position: -25 100 998
+Type: 1 6
+Yrot: 180
+
+
+Object: checkpoint
+Length: 20.0
+Width:  52.0
+Height: 30.0
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: -400 100 925
+Type: 1 1
+Yrot: 90
+Data: 1 3
+5 1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  52.0
+Height: 30.0
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: 250 100 -175
+Type: 1 2
+Yrot: -90
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: 930 0 999
+Type: 1 3
+Data: 1 3
+5 2 1
+
+Object: checkpoint
+Length: 20.0
+Width:  70.0
+Height: 30.0
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: 27 0 999
+Type: 1 4
+Yrot: 180
+
+Object: checkpoint
+Length: 20.0
+Width:  55.0
+Height: 30.0
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: 480 0 -775
+Type: 1 5
+Yrot: 90
+
+Object: finish
+Length: 20.0
+Width:  50.0
+Height: 50.0
+Label: FINISH LINE
+Radius: 0.5
+Position: 0 100 75 
+Type: 1 6
+Yrot: -90.0
+
+Object: ground
+
+#-----------------------------------------------------------
+# Define the scenes around ariel to be hilly
+
+Scene Location: -3 -3
+Scene Type:  hill no roads
+
+Scene Location: -3 -4
+Scene Type:  hill no roads
+Scene Location: -2 -4
+Scene Type:  hill no roads
+Scene Location: -1 -4
+Scene Type:  hill no roads
+Scene Location: -1 -3
+Scene Type:  hill no roads
+

@@ -1,0 +1,231 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# An orchard in summer
+#
+# This fills a block about 160x160.
+# It should be set off a road by about 80 feet.
+#
+# Daryl Poe, Dec 1993
+
+#### A fruit stand ####
+Object: pillar
+Color: 0.4 0.3 0.1
+Position: -7.8 0 -70.0
+Height: 8.0
+Radius: 0.3
+
+Object: pillar
+Color: 0.4 0.3 0.1
+Position: 7.8 0 -70.0
+Height: 8.0
+Radius: 0.3
+
+Object: pillar
+Color: 0.4 0.3 0.1
+Position: -7.8 0 -60.0
+Height: 5.5
+Radius: 0.3
+
+Object: pillar
+Color: 0.4 0.3 0.1
+Position: 7.8 0 -60.0
+Height: 5.5
+Radius: 0.3
+
+# roof
+Object: wall
+Color: 0.4 0.3 0.1
+Position: 0.0 8.0 -70.0
+Size: 12.0 16.0 0.3
+Xrot: 15
+
+# counter
+Object: wall
+Color: 0.4 0.3 0.1
+Position: 0.0 3.0 -70.0
+Size: 2.0 16.0 0.2
+
+# basket
+Object: cone
+Color: 0.8 0.7 0.4
+Position: 1.0 3.2 -69.0
+Width: 1.0
+Radius: 1.5
+Height: 1.5
+
+# fruit
+Object: mound
+Color: 0.7 0.1 0.0
+Position: 1.0 4.7 -69.0
+Size: 2.0 2.0 0.7
+
+Object: generic sign
+Color: 0.5 0.2 0.2
+Position: 0.0 0.0 -70.0
+Size: 3.0 8.0 0.01
+Radius: 0.01
+Label: Fruit
+
+Object: generic sign
+Color: 0.5 0.2 0.2
+Position: -75.0 0.0 -65.0
+Size: 6.0 8.0 0.01
+Radius: 0.01
+Yrot: -90
+Label: Fruit\Ahead
+
+Object: generic sign
+Color: 0.5 0.2 0.2
+Position: 75.0 0.0 -65.0
+Size: 6.0 8.0 0.01
+Radius: 0.01
+Yrot: 90
+Label: Fruit\Ahead
+
+
+#### The trees ####
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -50 0 -50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -25 0 -50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: 0 0 -50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: 25 0 -50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: 50 0 -50
+
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -50 0 -25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -25 0 -25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:   0 0 -25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  25 0 -25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  50 0 -25
+
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -50 0 0
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -25 0 0
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:   0 0 0
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  25 0 0
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  50 0 0
+
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -50 0 25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -25 0 25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:   0 0 25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  25 0 25
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  50 0 25
+
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -50 0 50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position: -25 0 50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:   0 0 50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  25 0 50
+
+Object: deciduous
+Type: round
+Width: 15.0
+Position:  50 0 50
+
+

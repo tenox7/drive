@@ -1,0 +1,45 @@
+#
+# This file is used in constructing the random scenes.
+# The descriptions below control what constructs and non-contruct items
+# are added to random scenes and with what frequency they are added.
+# Each of these collections of items is called a "block".
+#
+# The syntax is:
+#   desc weight needs_road road_offset width
+#
+# where
+#   desc is a string with no blank space, possibly a construct name.
+#   weight is an integer, giving the relative frequency it appears.
+#   needs_road is 'Y' or 'N' and indicates whether the block must connect.
+#   road_offset is a float telling how far back in +Z the block must be
+#     moved to connect to a road.  Set to zero when the block is fully
+#     resizable.
+#   width is the width of the construct or scene.  Set to zero when the
+#     block is fully resizable.
+#
+# Blank lines and lines beginning with '#' are ignored.
+
+# Name			Weight	Roads?	Offset	Width
+empty			25	N	0.0	0.0
+grass			15	N	0.0	0.0
+house			10	Y	0.0	0.0
+farm			10	Y	0.0	0.0
+woods			15	N	0.0	0.0
+mounds			20	N	0.0	0.0
+business		8	Y	0.0	0.0
+teleline		15	Y	0.0	0.0
+gas_station		5	Y	50.0	200.0
+power_plant		2	Y	100.0	900.0
+grain_elevator		4	Y	100.0	900.0
+factory			3	Y	250.0	800.0
+nuke_plant		1	Y	140.0	300.0
+fast_food		3	Y	90.0	180.0
+used_car_lot		2	Y	50.0	160.0
+road_constrn		5	Y	-7.5	400.0
+ranch			7	Y	200.0	400.0
+orchard			5	Y	80.0	160.0
+stadium			1	Y	310.0	800.0
+refinery		1	Y	75.0	500.0
+oil_well		3	N	20.0	20.0
+plns_windmill		3	N	20.0	20.0
+hot_air_bln		1	N	0.0	20.0

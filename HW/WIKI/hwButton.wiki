@@ -1,0 +1,74 @@
+== NAME ==
+hwButton - command button GUI element
+
+== INHERITS FROM ==
+* [[hwGUI]]
+
+== PROPERTIES ==
+| Label | 0S | Text label for the button
+| Color | 3F | Color of the text label
+| BackgroundColor | 4F | Background color of the button, if any
+| ActiveColor | 3F | Color of text while the button is pushed
+| ActiveBackground | 4F | Background color of the button while it is pushed
+| Font | 0O | Font to use for label rendering
+| BorderColor | 3F | Color of the border, if any
+| ActiveBorderColor | 3F | Color of the border while the button is pushed, if any
+| Texture | 0O | Texture to draw as a background image
+| ActiveTexture | 0O | Texture to draw while button is pushed
+| Repeat | 1B | True iff the command can auto-repeat while the button is pushed
+| RepeatDelay | 1F | Time, in seconds, before the button auto-repeat begins
+| RepeatInterval | 1F | Time, in seconds, between subsequent auto-repeats
+
+== DEFAULTS ==
+| Label |  NULL
+| Color | {1,1,1}
+| BackgroundColor | 0
+| ActiveColor | {0,0,0}
+| ActiveBackground | {1,1,1,.75}
+| BorderColor | 0
+| ActiveBorderColor | 0
+| Font | NULL
+| Texture | NULL
+| ActiveTexture | NULL
+| Repeat | False
+| RepeatDelay | 0.20
+| RepeatInterval | 0.10
+
+== DESCRIPTION ==
+The hwButton class can be used to create simple push-button command
+elements with a label and foreground/background colors in both an
+active and inactive state.
+
+== C EXAMPLE ==
+{{{
+    hwObject button;
+
+    /* Create a simple button in the middle of the screen */
+    button = hwButton->create( hwButton );
+    HW_MODIFY_3F( button, hwStrBackgroundColor, 0.5, 0.5, 0.5 );
+    HW_MODIFY_1I( button, hwStrAlign, HW_GUI_CENTER | HW_GUI_FRACTIONAL);
+    HW_MODIFY_1I( button, hwStrPosX, 500 );
+    HW_MODIFY_1I( button, hwStrPosY, 500 );
+    HW_MODIFY_1I( button, hwStrWidth, 250 );
+    HW_MODIFY_1I( button, hwStrHeight, 250 );
+    button->modify( button, hwStrLabel, HW_TYPE_STRING, "Push me" );
+
+    while( 1 ) {
+        button->draw( button );
+        disp->update( disp, HW_UPDATE_ALL );
+    }
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    hwButton button {
+        PosX = 500  PosY = 500
+        Width = 250 Height = 250
+        Align = (HW_GUI_CENTER + HW_GUI_FRACTIONAL)
+        BackgroundColor = {.5,.5,.5}
+        Label = "Push me"
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwGUI]]

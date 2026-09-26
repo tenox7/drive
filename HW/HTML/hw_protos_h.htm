@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>
+OADL header file
+</title>
+<link rel="stylesheet" type="text/css" href="code.css">
+</head>
+<body>
+<pre>
+<i>/* (c) Copyright Hewlett-Packard Company 2001
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */</i>
+
+<b>#</b><b>include</b> &lt;stdio.h&gt;
+
+<b>#</b><b>ifdef</b> __cplusplus
+ <strong>extern</strong> <em>"C"</em> {
+<b>#</b><b>endif</b>
+
+<i>/* Initialize Hoverware - once per process */</i>
+<strong>extern</strong> hwInt32
+    hwInit( hwInt32 argc, <strong>char</strong> **argv );
+
+<i>/* Create a display.  Note that you still have to call
+ * disp-&gt;makeCurrent with the resulting hwDisplay for
+ * much of anything useful to happen
+ */</i>
+<strong>extern</strong> hwDisplay hwCreateDisplay
+    (
+        hwDisplay dispFunc, hwDisplay sharedDisp,
+        OS_DISPLAY_TYPE display
+    );
+
+<i>/* Get the current display for this thread */</i>
+<strong>extern</strong> hwDisplay
+    hwGetCurrentDisplay( <strong>void</strong> );
+
+<i>/* Get the most recent error code, and zero it out */</i>
+<strong>extern</strong> hwInt32
+    hwGetError( <strong>void</strong> );
+
+<i>/* Register a constant for use in parsing.  Constants are global.  */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwRegisterConstant( <strong>const</strong> <strong>char</strong> *, hwInt32, <strong>void</strong> * );
+
+<i>/* Register a class for use in parsing.  Classes are global.  */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwRegisterClass( <strong>const</strong> hwObject );
+
+<i>/* Register an object for use in parsing. Objects are LOCAL to
+ * the current hwDisplay - you must have done a disp-&gt;makeCurrent()
+ * in the current thread for this to work!
+ */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwRegisterObject( <strong>const</strong> hwObject );
+
+<i>/* Register a callback for use with various classes.  Callbacks are global. */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwRegisterCallback( <strong>const</strong> <strong>char</strong> *, hwCallback );
+
+<i>/* Unregister all register objects */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwUnregisterObjects( <strong>void</strong> );
+
+<i>/* Find a constant in the registry */</i>
+<strong>extern</strong> hwInt32
+    hwFindConstant( <strong>const</strong> <strong>char</strong> *, <strong>void</strong> ** );
+
+<i>/* Find a class in the registry */</i>
+<strong>extern</strong> hwObject
+    hwFindClass( <strong>const</strong> <strong>char</strong> * );
+
+<i>/* Find an object in the registry */</i>
+<strong>extern</strong> hwObject
+    hwFindObject( <strong>const</strong> <strong>char</strong> * );
+
+<i>/* Find a callback in the registry */</i>
+<strong>extern</strong> hwCallback
+    hwFindCallback( <strong>const</strong> <strong>char</strong> * );
+
+<i>/************ File I/O routines ************/
+/* Parse a file, returning all of the top-level objects found in it */</i>
+<strong>extern</strong> hwInt32
+    hwParseFile( <strong>const</strong> <strong>char</strong> *, hwObject ** );
+
+<i>/* Parse a string array, returning all of the top-level objects found in it.
+ * The array should be NULL-terminated.
+ */</i>
+<strong>extern</strong> hwInt32
+    hwParseArray( <strong>char</strong> **, hwObject ** );
+
+<i>/* Write an object (in ASCII) to a file */</i>
+<strong>extern</strong> hwInt32
+    hwWriteAscii( <strong>const</strong> hwObject, FILE * );
+
+<i>/* Initialize a binary file for read/write */</i>
+<strong>extern</strong> hwInt32
+    hwBeginBinary( hwObjRW oRdWr, <strong>void</strong> *f, hwInt32 flags, hwInt32 *numObj );
+
+<i>/* Finish up reading/writing a binary file */</i>
+<strong>extern</strong> hwInt32
+    hwEndBinary( hwObjRW oRdWr, <strong>void</strong> *f );
+
+<i>/* Write an object to a binary file */</i>
+<strong>extern</strong> hwInt32
+    hwWriteBinary( <strong>const</strong> hwObject obj, hwObjRW oWrite, <strong>void</strong> *f );
+
+<i>/* Read objects from a binary file */</i>
+hwInt32
+    hwReadBinary( hwObjRW oRead, <strong>void</strong> *f, hwInt32 numObjs, hwObject **objs );
+
+<i>/********* Matrix utilities ***********/</i>
+<strong>extern</strong> <strong>void</strong>
+    hwIdentity( hwFloat Mat[4][4] ),
+    hwMakeMatrix(<strong>const</strong> hwOrientType *, hwFloat Mat[4][4]),
+    hwScale( hwFloat Mat[4][4], hwFloat sx, hwFloat sy, hwFloat sz ),
+    hwRotateX( hwFloat Mat[4][4], hwFloat Ang ),
+    hwRotateY( hwFloat Mat[4][4], hwFloat Ang ),
+    hwRotateZ( hwFloat Mat[4][4], hwFloat Ang ),
+    hwRotateAxis( hwFloat Mat[4][4], hwFloat Ang, <strong>const</strong> hwFloat XYZ[3] ),
+    hwMatMult( hwFloat Res[4][4], hwFloat A[4][4], hwFloat B[4][4] ),
+    hwTransform( hwFloat Mat[4][4], hwFloat Vect[3] ),
+    hwTransform4d( hwFloat dst[4], <strong>const</strong> hwFloat src[4], hwFloat Mat[4][4] ),
+    hwTransformPersp( hwFloat dst[3], <strong>const</strong> hwFloat src[3], hwFloat Mat[4][4] );
+<strong>extern</strong> hwInt32
+    hwInvertMat( hwFloat Src[4][4], hwFloat Dst[4][4] );
+
+<i>/* Random numbers Note that each hwDisplay context has its own
+ * random number seed.
+ */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwSrand48(<strong>long</strong> seed);
+<strong>extern</strong> <strong>double</strong>
+    hwDrand48(<strong>void</strong>);
+
+<i>/* Hash table utilities.  Note that these ARE NOT thread-safe. */</i>
+<strong>void</strong>
+    *hwCreateHash( <strong>int</strong> size );
+<strong>void</strong>
+    hwEmptyHash( <strong>void</strong> *table );
+<strong>int</strong>
+    hwInsert( <strong>const</strong> <strong>char</strong> *name, <strong>int</strong> value, <strong>void</strong> *table );
+<strong>int</strong>
+    hwLookup( <strong>const</strong> <strong>char</strong> *name, <strong>void</strong> *table );
+<strong>int</strong>
+    hwFindSym( <strong>char</strong> name[256], hwInt32 value, <strong>void</strong> *table );
+<strong>void</strong>
+    hwDestroyHash( <strong>void</strong> *table );
+
+<i>/* Data flag utilities */</i>
+<strong>extern</strong> hwInt32
+    hwGetVertexOffsets( hwInt32 flags, hwVertexOffsets *offs ),
+    hwCalcWPV( hwInt32 flags ),
+    hwTextureFlags( <strong>const</strong> hwSurfaceType *surf );
+
+<i>/* Surface attr texture ID cooking utility */</i>
+<strong>extern</strong> <strong>void</strong>
+   hwSurfAttrs(hwSurfaceType *surf);
+
+<i>/* Normal / bump map utilities */</i>
+<strong>extern</strong> <strong>void</strong>
+    hwMakeNormalMap8( hwUint8 *dst, hwUint8 *src, hwInt32 w, hwInt32 h,
+                      hwInt32 clampW, hwInt32 clampH,
+                      hwFloat bumpScale ),
+    hwMakeNormalMap16( hwUint8 *dst, hwUint16 *src, hwInt32 w, hwInt32 h,
+                       hwInt32 clampW, hwInt32 clampH,
+                       hwFloat bumpScale );
+
+<i>/* File I/O routines which can access the APK */</i>
+<strong>extern</strong> <strong>void</strong> *hwFopen(<strong>const</strong> <strong>char</strong> *, <strong>const</strong> <strong>char</strong> *);
+<strong>extern</strong> <strong>void</strong> hwFclose(<strong>void</strong> *);
+<strong>extern</strong> <strong>int</strong> hwFread(<strong>void</strong> *, <strong>int</strong>, <strong>int</strong>, <strong>void</strong> *);
+<strong>extern</strong> <strong>int</strong> hwFwrite(<strong>void</strong> *, <strong>int</strong>, <strong>int</strong>, <strong>void</strong> *);
+<strong>extern</strong> <strong>int</strong> hwFgetc(<strong>void</strong> *);
+<strong>extern</strong> <strong>int</strong> hwFungetc(<strong>int</strong>, <strong>void</strong> *);
+<strong>extern</strong> <strong>int</strong> hwFscanf(<strong>void</strong> *, <strong>const</strong> <strong>char</strong> *, <strong>void</strong> *);
+<strong>extern</strong> <strong>char</strong> *hwFgets(<strong>char</strong> *, <strong>int</strong>, <strong>void</strong> *);
+<strong>extern</strong> <strong>int</strong> hwFseek(<strong>void</strong> *, <strong>long</strong>, <strong>int</strong>);
+<strong>extern</strong> <strong>void</strong> hwFrewind(<strong>void</strong> *);
+<strong>extern</strong> <strong>long</strong> hwFtell(<strong>void</strong> *);
+
+<b>#</b><b>ifdef</b> __cplusplus
+ }
+<b>#</b><b>endif</b>
+</pre>
+</body>
+</html>

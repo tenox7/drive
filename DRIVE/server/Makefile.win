@@ -1,0 +1,30 @@
+OBJS=connection.obj \
+	parse_config.obj \
+	parse_scene.obj \
+	random_scene.obj \
+	read_scene.obj \
+	scene.obj \
+	server_interface.obj \
+	spline.obj \
+	surface_chars.obj \
+        textgad.obj \
+	town.obj
+OBJ1=$(OBJS) drive_server.obj
+
+LIBS=..\server.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../libnum -I../libphysics -I../include -I../../HW/Inc -I../libprims -I../../pdcurses
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+../server.lib:     $(OBJ1)
+	$(LIB32) @<<
+    $(OBJS) -out:../server.lib
+<<
+

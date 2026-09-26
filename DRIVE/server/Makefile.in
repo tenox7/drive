@@ -1,0 +1,92 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+all: ../drive_server 
+TOPDIR=..
+
+GUILIB_DIR=../libgui
+GUILIB=libgui.a
+
+PHYSICSLIB_DIR=../libphysics
+PHYSICSLIB=libphysics.a
+
+DEMO_PHYSICSLIB_DIR=drive_physics
+DEMO_PHYSICSLIB=drivePhysics.a
+
+OBJECTS_DIR=objects
+DEMO_OBJECTS=objects.a
+
+SHARED_LIB_DIR=../shared
+SHARED_LIB=libshared.a
+
+NUMLIB_DIR=../libnum
+NUMLIB=libnum.a
+
+PRIMLIB_DIR=../libprims
+PRIMLIB=libprims.a
+
+###############################################################################
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+EXEEXT = @EXEEXT@
+X_LIBS = @X_LIBS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include -Iobjects \
+  -I$(NUMLIB_DIR) -I$(PHYSICSLIB_DIR) -I$(PRIMLIB_DIR) \
+  @CPPFLAGS@ @DEFS@ @CFLAGS@ @X_CFLAGS@ $(WARNINGS) $(OPTDEBUGFLAGS)
+HOVERWARE = @HOVERWARE@
+OPENGL = @OPENGL@
+
+###############################################################################
+SRC=\
+  connection.c \
+  drive_server.c \
+  parse_config.c \
+  parse_scene.c \
+  random_scene.c \
+  read_scene.c \
+  scene.c \
+  server_interface.c \
+  spline.c \
+  surface_chars.c \
+  town.c
+
+LOCAL_LIBS=\
+  $(OBJECTS_DIR)/$(DEMO_OBJECTS) \
+  $(SHARED_LIB_DIR)/$(SHARED_LIB) \
+  $(GUILIB_DIR)/$(GUILIB) \
+  $(DEMO_PHYSICSLIB_DIR)/$(DEMO_PHYSICSLIB) \
+  $(PHYSICSLIB_DIR)/$(PHYSICSLIB) \
+  $(PRIMLIB_DIR)/$(PRIMLIB) \
+  $(NUMLIB_DIR)/$(NUMLIB)
+
+include $(TOPDIR)/Makefile.h
+
+$(LOCAL_LIBS):
+	cd $(@D) && $(MAKE) $(@F)
+
+../drive_server: $(OFILES) $(LOCAL_LIBS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ \
+	  $(OFILES) $(LOCAL_LIBS) $(HOVERWARE) $(OPENGL) \
+	  $(X_LIBS) -lXext -lMrm -lXm -lXt -lX11 -lm
+clean::
+	$(RM) ../drive_server
+
+

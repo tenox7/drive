@@ -1,0 +1,73 @@
+== NAME ==
+hwToggle - toggle button GUI element
+
+== INHERITS FROM ==
+* [[hwGUI]]
+
+== PROPERTIES ==
+| Label | 0S | Text label for the button
+| Color | 3F | Color of the text label
+| BackgroundColor | 4F | Background color of the button, if any
+| ActiveColor | 3F | Color of text while the button is pushed
+| ActiveBackground | 4F | Background color of the button while it is pushed
+| BorderColor | 3F | Color of the border, if any
+| ActiveBorderColor | 3F | Color of the border while the button is pushed, if any
+| Font | 0O | Font to use for label rendering
+| Texture | 0O | Texture to draw as a background image
+| ActiveTexture | 0O | Texture to draw while the button is pused
+| Exclude | *O | List of other toggle widgets with which to be mutually exclusive.  If this property is provided, the toggle is drawn in a radio button style.  Otherwise, it is drawn in an on/off button style.
+| Value | 1B | Selected (if True) or unselected (if False) state of the toggle
+
+== DEFAULTS ==
+| Label |  NULL
+| Color | {1,1,1}
+| BackgroundColor | 0
+| ActiveColor | {0,0,0}
+| ActiveBackground | {1,1,1,.75}
+| BorderColor | 0
+| ActiveBorderColor | 0
+| Font | NULL
+| Texture | NULL
+| ActiveTexture | NULL
+| Exclude | NULL
+| Value | False
+
+== DESCRIPTION ==
+The hwToggle class can be used to create simple toggle-button GUI
+elements with a label and foreground/background colors in both an
+active and inactive state, as well as a toggle indicator in either
+a radio-button or a on/off-button style.
+
+== C EXAMPLE ==
+{{{
+    hwObject toggle;
+
+    /* Create a simple toggle in the middle of the screen */
+    toggle = hwToggle->create( hwButton );
+    HW_MODIFY_3F( toggle, hwStrBackgroundColor, 0.5, 0.5, 0.5 );
+    HW_MODIFY_1I( toggle, hwStrAlign, HW_GUI_CENTER | HW_GUI_FRACTIONAL);
+    HW_MODIFY_1I( toggle, hwStrPosX, 500 );
+    HW_MODIFY_1I( toggle, hwStrPosY, 500 );
+    HW_MODIFY_1I( toggle, hwStrWidth, 250 );
+    HW_MODIFY_1I( toggle, hwStrHeight, 250 );
+    toggle->modify( toggle, hwStrLabel, HW_TYPE_STRING, "Toggle me" );
+
+    while( 1 ) {
+        toggle->draw( toggle );
+        disp->update( disp, HW_UPDATE_ALL );
+    }
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    hwToggle toggle {
+        PosX = 500  PosY = 500
+        Width = 250 Height = 250
+        Align = (HW_GUI_CENTER + HW_GUI_FRACTIONAL)
+        BackgroundColor = {.5,.5,.5}
+        Label = "Toggle me"
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwGUI]]

@@ -1,0 +1,424 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+
+Object: Cone
+Radius: 6
+Width: 10
+Height: 40
+Position: 0 0 0
+Color: 0.5 0.3 0.1
+
+Object: cylinder
+Position: 0 30 -12
+Radius: 1
+Length: 8
+Xrot: 90
+Color: 0.5 0.3 0.1
+
+
+#Top arm
+Object: wall
+Animation Bits: 0x0001
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 0
+
+Object: wall
+Animation Bits: 0x0002
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 5.62
+
+Object: wall
+Animation Bits: 0x0004
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 11.24
+
+Object: wall
+Animation Bits: 0x0008
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 16.86
+
+Object: wall
+Animation Bits: 0x0010
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 22.48
+
+Object: wall
+Animation Bits: 0x0020
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 28.10
+
+Object: wall
+Animation Bits: 0x0040
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 33.72
+
+Object: wall
+Animation Bits: 0x0080
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 39.34
+
+Object: wall
+Animation Bits: 0x0100
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 44.96
+
+Object: wall
+Animation Bits: 0x0200
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 50.58
+
+Object: wall
+Animation Bits: 0x0400
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 56.20
+
+Object: wall
+Animation Bits: 0x0800
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 61.82
+
+Object: wall
+Animation Bits: 0x1000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 67.44
+
+Object: wall
+Animation Bits: 0x2000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 73.06
+
+Object: wall
+Animation Bits: 0x4000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 78.68
+
+Object: wall
+Animation Bits: 0x8000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 84.30
+
+
+#Bottom arm
+Object: wall
+Animation Bits: 0x0001
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 180
+
+Object: wall
+Animation Bits: 0x0002
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 185.62
+
+Object: wall
+Animation Bits: 0x0004
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 191.24
+
+Object: wall
+Animation Bits: 0x0008
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 196.86
+
+Object: wall
+Animation Bits: 0x0010
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 202.48
+
+Object: wall
+Animation Bits: 0x0020
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 208.10
+
+Object: wall
+Animation Bits: 0x0040
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 213.72
+
+Object: wall
+Animation Bits: 0x0080
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 219.34
+
+Object: wall
+Animation Bits: 0x0100
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 224.96
+
+Object: wall
+Animation Bits: 0x0200
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 230.58
+
+Object: wall
+Animation Bits: 0x0400
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 236.20
+
+Object: wall
+Animation Bits: 0x0800
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 241.82
+
+Object: wall
+Animation Bits: 0x1000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 247.44
+
+Object: wall
+Animation Bits: 0x2000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 253.06
+
+Object: wall
+Animation Bits: 0x4000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 258.68
+
+Object: wall
+Animation Bits: 0x8000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 264.30
+
+
+#Right arm
+Object: wall
+Animation Bits: 0x0001
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 270
+
+Object: wall
+Animation Bits: 0x0002
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 275.62
+
+Object: wall
+Animation Bits: 0x0004
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 281.24
+
+Object: wall
+Animation Bits: 0x0008
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 286.86
+
+Object: wall
+Animation Bits: 0x0010
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 292.48
+
+Object: wall
+Animation Bits: 0x0020
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 298.10
+
+Object: wall
+Animation Bits: 0x0040
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 303.72
+
+Object: wall
+Animation Bits: 0x0080
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 309.34
+
+Object: wall
+Animation Bits: 0x0100
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 314.96
+
+Object: wall
+Animation Bits: 0x0200
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 320.58
+
+Object: wall
+Animation Bits: 0x0400
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 326.20
+
+Object: wall
+Animation Bits: 0x0800
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 331.82
+
+Object: wall
+Animation Bits: 0x1000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 337.44
+
+Object: wall
+Animation Bits: 0x2000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 343.06
+
+Object: wall
+Animation Bits: 0x4000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 348.68
+
+Object: wall
+Animation Bits: 0x8000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 354.30
+
+
+#Top arm
+Object: wall
+Animation Bits: 0x0001
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 90
+
+Object: wall
+Animation Bits: 0x0002
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 95.62
+
+Object: wall
+Animation Bits: 0x0004
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 101.24
+
+Object: wall
+Animation Bits: 0x0008
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 106.86
+
+Object: wall
+Animation Bits: 0x0010
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 112.48
+
+Object: wall
+Animation Bits: 0x0020
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 118.10
+
+Object: wall
+Animation Bits: 0x0040
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 123.72
+
+Object: wall
+Animation Bits: 0x0080
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 129.34
+
+Object: wall
+Animation Bits: 0x0100
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 134.96
+
+Object: wall
+Animation Bits: 0x0200
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 140.58
+
+Object: wall
+Animation Bits: 0x0400
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 146.20
+
+Object: wall
+Animation Bits: 0x0800
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 151.82
+
+Object: wall
+Animation Bits: 0x1000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 157.44
+
+Object: wall
+Animation Bits: 0x2000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 163.06
+
+Object: wall
+Animation Bits: 0x4000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 168.68
+
+Object: wall
+Animation Bits: 0x8000
+Position: 0 30 -11
+Size: 1 4 25
+Zrot: 174.30
+

@@ -1,0 +1,610 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>
+OADL header file
+</title>
+<link rel="stylesheet" type="text/css" href="code.css">
+</head>
+<body>
+<pre>
+<i>/* (c) Copyright Hewlett-Packard Company 2001
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */</i>
+
+<i>/* Basic type definitions */</i>
+<b>typedef</b> <strong>char</strong>            hwInt8;
+<b>typedef</b> <strong>unsigned</strong> <strong>char</strong>   hwUint8;
+<b>typedef</b> <strong>short</strong>           hwInt16;
+<b>typedef</b> <strong>unsigned</strong> <strong>short</strong>  hwUint16;
+<b>typedef</b> int32_t         hwInt32;
+<b>typedef</b> uint32_t        hwUint32;
+<b>typedef</b> <strong>float</strong>           hwFloat;
+
+<i>/* A HoverWare display object, forward reference (see hw_display.h) */</i>
+<b>typedef</b> <strong>struct</strong> __hwDisplayStruct *hwDisplay;
+
+<i>/* List of property/type pairs that each object supports
+ * for its inquire method:
+ */</i>
+<i>/* The root of all HoverWare: the hwObject */</i>
+<b>typedef</b> <strong>struct</strong> _hwObjectStruct *hwObject;
+<strong>struct</strong> _hwObjectStruct {
+    hwObject    parent;                 <i>/* Parent class */</i>
+    <strong>const</strong> <strong>char</strong>  *name;                  <i>/* Name, if any */</i>
+    <strong>const</strong> <strong>char</strong>  **props;                <i>/* List of valid properties */</i>
+
+    hwObject    (*create)( hwObject );
+    <strong>void</strong>        (*addref)( hwObject );
+    <strong>void</strong>        (*destroy)( hwObject );
+    <strong>void</strong>        (*modify)( hwObject, <strong>const</strong> <strong>char</strong> *, hwInt32, <strong>const</strong> <strong>void</strong> * );
+    hwInt32     (*inquire)( hwObject, <strong>const</strong> <strong>char</strong> *, <strong>void</strong> ** );
+    <strong>void</strong>        (*draw)( hwObject );
+};
+
+<i>/* Type construction for modify - avoid the high-order bit for
+ * portability!
+ */</i>
+<b>#</b><b>define</b> HW_TYPE_BYTE            0x01000000L
+<b>#</b><b>define</b> HW_TYPE_SHORT           0x02000000L
+<b>#</b><b>define</b> HW_TYPE_INT             0x03000000L
+<b>#</b><b>define</b> HW_TYPE_BOOL            0x04000000L
+<b>#</b><b>define</b> HW_TYPE_FLOAT           0x05000000L
+<b>#</b><b>define</b> HW_TYPE_STRING          0x06000000L
+<b>#</b><b>define</b> HW_TYPE_OBJECT          0x07000000L
+<b>#</b><b>define</b> HW_TYPE_CALLBACK        0x08000000L
+<b>#</b><b>define</b> HW_TYPE_EVENT           0x09000000L
+<b>#</b><b>define</b> HW_TYPE_IMAGE           0x0A000000L
+<b>#</b><b>define</b> HW_TYPE_FONT            0x0B000000L
+
+<i>/* If, on inquire, this bit is set, it means the property is unmodified
+ * from default values, and need not be written out.
+ */</i>
+<b>#</b><b>define</b> HW_TYPE_CLEAN           0x80000000L
+
+<b>#</b><b>define</b> HW_MAKE_TYPE(base,count)        ((base)|((count)&amp;0x00FFFFFF))
+<b>#</b><b>define</b> HW_GET_BASE(type)               ((type)&amp;0x7F000000)
+<b>#</b><b>define</b> HW_GET_COUNT(type)              ((type)&amp;0x00FFFFFF)
+
+<b>#</b><b>define</b> HW_TYPE_1I              HW_MAKE_TYPE(HW_TYPE_INT,1)
+<b>#</b><b>define</b> HW_TYPE_2I              HW_MAKE_TYPE(HW_TYPE_INT,2)
+<b>#</b><b>define</b> HW_TYPE_3I              HW_MAKE_TYPE(HW_TYPE_INT,3)
+<b>#</b><b>define</b> HW_TYPE_4I              HW_MAKE_TYPE(HW_TYPE_INT,4)
+<b>#</b><b>define</b> HW_TYPE_1B              HW_MAKE_TYPE(HW_TYPE_BOOL,1)
+<b>#</b><b>define</b> HW_TYPE_1F              HW_MAKE_TYPE(HW_TYPE_FLOAT,1)
+<b>#</b><b>define</b> HW_TYPE_2F              HW_MAKE_TYPE(HW_TYPE_FLOAT,2)
+<b>#</b><b>define</b> HW_TYPE_3F              HW_MAKE_TYPE(HW_TYPE_FLOAT,3)
+<b>#</b><b>define</b> HW_TYPE_4F              HW_MAKE_TYPE(HW_TYPE_FLOAT,4)
+
+<b>#</b><b>define</b> HW_TRUE         1
+<b>#</b><b>define</b> HW_FALSE        0
+
+<i>/* Utility macros for the most common "immediate" calls */</i>
+<b>#</b><b>define</b> HW_MODIFY_1I( obj, prop, a ) { \
+    hwInt32 __tmp[1]; __tmp[0] = (a); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_1I, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_2I( obj, prop, a, b ) { \
+    hwInt32 __tmp[2]; __tmp[0] = (a); __tmp[1] = (b); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_2I, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_3I( obj, prop, a, b, c ) { \
+    hwInt32 __tmp[3]; __tmp[0] = (a); __tmp[1] = (b); __tmp[2] = (c); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_3I, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_1B( obj, prop, a ) { \
+    hwInt32 __tmp[1]; __tmp[0] = (a); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_1B, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_1F( obj, prop, a ) { \
+    hwFloat __tmp[1]; __tmp[0] = (a); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_1F, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_2F( obj, prop, a, b ) { \
+    hwFloat __tmp[2]; __tmp[0] = (a); __tmp[1] = (b); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_2F, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_3F( obj, prop, a, b, c ) { \
+    hwFloat __tmp[3]; __tmp[0] = (a); __tmp[1] = (b); __tmp[2] = (c); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_3F, __tmp ); \
+}
+<b>#</b><b>define</b> HW_MODIFY_4F( obj, prop, a, b, c, d ) { \
+    hwFloat __tmp[4]; __tmp[0] = (a); __tmp[1] = (b); __tmp[2] = (c); __tmp[3] = (d); \
+    (obj)-&gt;modify( (obj), (prop), HW_TYPE_4F, __tmp ); \
+}
+
+<i>/* GUI callbacks */</i>
+<b>#</b><b>define</b> HW_CB_ACTIVATE          1       <i>/* Widget was activated */</i>
+<b>#</b><b>define</b> HW_CB_TRACK             2       <i>/* Widget was changed while tracking */</i>
+<b>#</b><b>define</b> HW_CB_DEACTIVATE        3       <i>/* Widget was cancelled */</i>
+<b>#</b><b>define</b> HW_CB_COMPLETE          4       <i>/* W was deactivated inside bbox */</i>
+
+<b>typedef</b> <strong>void</strong> (*hwCallback)( hwObject, hwInt32 );
+
+<i>/* Errors from hwGetError */</i>
+<b>#</b><b>define</b> HW_ERROR_NO_MEMORY      1
+<b>#</b><b>define</b> HW_ERROR_BAD_PROP       2
+<b>#</b><b>define</b> HW_ERROR_BAD_TYPE       3
+<b>#</b><b>define</b> HW_ERROR_INTERNAL       4
+
+<i>/* Flags for hwChooseVisual */</i>
+<b>#</b><b>define</b> HW_VIS_DBUFF    0x00000001      <i>/* Give me a double-buffered visual */</i>
+<b>#</b><b>define</b> HW_VIS_DEPTH    0x00000002      <i>/* ...with a depth buffer */</i>
+<b>#</b><b>define</b> HW_VIS_ALPHA    0x00000004      <i>/* ...with an alpha buffer */</i>
+<b>#</b><b>define</b> HW_VIS_STENCIL  0x00000008      <i>/* ...with a stencil buffer */</i>
+<b>#</b><b>define</b> HW_VIS_TEXTURE  0x00000010      <i>/* ...with accelerated textures */</i>
+<b>#</b><b>define</b> HW_VIS_OVERLAY  0x00000020      <i>/* ...an overlay visual */</i>
+<b>#</b><b>define</b> HW_VIS_STEREO   0x00000040      <i>/* ...quadbuffered stereo */</i>
+<b>#</b><b>define</b> HW_VIS_AA       0x00000080      <i>/* ... multisample AA (&lt; 4 samples) */</i>
+<b>#</b><b>define</b> HW_VIS_AA_MED   0x00000100      <i>/* ... multisample AA (&lt; 8 samples) */</i>
+<b>#</b><b>define</b> HW_VIS_AA_HI    0x00000200      <i>/* ... multisample AA (&gt;= 8 samples) */</i>
+<b>#</b><b>define</b> HW_VIS_SUCCESS  0x80000000      <i>/* We succeeded! */</i>
+
+<i>/* Values for disp-&gt;createWindow */</i>
+<b>#</b><b>define</b> HW_WIN_INPUT            0x00000001      <i>/* Allow window input */</i>
+<b>#</b><b>define</b> HW_WIN_FULLSCREEN       0x00000002      <i>/* Full screen */</i>
+<b>#</b><b>define</b> HW_WIN_BORDERLESS       0x00000004      <i>/* No window decorations */</i>
+<b>#</b><b>define</b> HW_WIN_HIDE_CURSOR      0x00000008      <i>/* Hide the cursor */</i>
+<b>#</b><b>define</b> HW_WIN_JOYSTICK         0x00000010      <i>/* Allow joystick input */</i>
+
+<i>/* Values for disp-&gt;getInfo */</i>
+<b>#</b><b>define</b> HW_INFO_HW              0       <i>/* The name of the HW renderer */</i>
+<b>#</b><b>define</b> HW_INFO_VENDOR          1       <i>/* The name of the gfx base vendor */</i>
+<b>#</b><b>define</b> HW_INFO_RENDERER        2       <i>/* The name of the gfx base renderer */</i>
+<b>#</b><b>define</b> HW_INFO_VERSION         3       <i>/* The version of the gfx base rend. */</i>
+<b>#</b><b>define</b> HW_INFO_EXTENSIONS      4       <i>/* Any extensions? */</i>
+<b>#</b><b>define</b> HW_INFO_JOYSTICK        5       <i>/* Joystick name, if any? */</i>
+
+<i>/* Texture parameters */</i>
+<b>#</b><b>define</b> HW_TM_MODULATE  0       <i>/* Modulate amb/diff color with texture color */</i>
+<b>#</b><b>define</b> HW_TM_BUMP      1       <i>/* Normal map */</i>
+<b>#</b><b>define</b> HW_TM_RELIEF    2       <i>/* Normal + relief */</i>
+<b>#</b><b>define</b> HW_TM_GLOSS     3       <i>/* Gloss map */</i>
+<b>#</b><b>define</b> HW_TM_SHADOW    4       <i>/* Shadow map */</i>
+<b>#</b><b>define</b> HW_TM_SHADOW_VAR 5      <i>/* Variance shadow map */</i>
+
+<b>#</b><b>define</b> HW_TM_REPEAT    0       <i>/* Repeat texels */</i>
+<b>#</b><b>define</b> HW_TM_CLAMP     1       <i>/* Clamp to border value */</i>
+
+<b>#</b><b>define</b> HW_TM_EXPLICIT  0       <i>/* Explicit texture coords */</i>
+<b>#</b><b>define</b> HW_TM_PLANAR    1       <i>/* Planar texture coords */</i>
+<b>#</b><b>define</b> HW_TM_SPHERE    2       <i>/* Spherical texture coords */</i>
+<b>#</b><b>define</b> HW_TM_CYLINDER  3       <i>/* Cylindrical texture coords */</i>
+<b>#</b><b>define</b> HW_TM_ENVMAP    4       <i>/* Environment mapping */</i>
+
+<b>#</b><b>define</b> HW_TM_POINT     0       <i>/* Point sampled */</i>
+<b>#</b><b>define</b> HW_TM_LINEAR    1       <i>/* Linear base */</i>
+<b>#</b><b>define</b> HW_TM_MIP       2       <i>/* Linear MIP */</i>
+<b>#</b><b>define</b> HW_TM_TRILINEAR 3       <i>/* Trilinear filtered */</i>
+
+<b>#</b><b>define</b> HW_TM_COLOR     0       <i>/* This is a lum, lum-alpha, rgb, or rgba tex */</i>
+<b>#</b><b>define</b> HW_TM_ALPHA     1       <i>/* This is a one-component alpha texture */</i>
+<b>#</b><b>define</b> HW_TM_INTENSITY 2       <i>/* This is a one-component intensity texture */</i>
+<b>#</b><b>define</b> HW_TM_HEIGHT    3       <i>/* This is a one-component height field */</i>
+<b>#</b><b>define</b> HW_TM_NORMAL    4       <i>/* This is a 3-component normal map */</i>
+<b>#</b><b>define</b> HW_TM_NORMAL_HEIGHT 5   <i>/* This is a 4-component (nx,ny,nz,h) map */</i>
+<b>#</b><b>define</b> HW_TM_DEPTH     6       <i>/* This is a 1-component depth map */</i>
+<b>#</b><b>define</b> HW_TM_DEPTH_VAR 7       <i>/* This is a 2-component depth+variance map */</i>
+
+<b>#</b><b>define</b> HW_MAX_TEXTURES 8       <i>/* Maximum # of textures supported */</i>
+
+<i>/* Fog parameters */</i>
+<b>#</b><b>define</b> HW_FOG_LINEAR   0
+<b>#</b><b>define</b> HW_FOG_EXP      1
+<b>#</b><b>define</b> HW_FOG_EXP2     2
+
+<i>/* Text parameters */</i>
+<b>#</b><b>define</b> HW_TEXT_ALIGN_LEFT      1
+<b>#</b><b>define</b> HW_TEXT_ALIGN_CENTER    2
+<b>#</b><b>define</b> HW_TEXT_ALIGN_RIGHT     3
+
+<b>#</b><b>define</b> HW_TEXT_ALIGN_TOP       4
+<b>#</b><b>define</b> HW_TEXT_ALIGN_BOTTOM    5
+
+<b>#</b><b>define</b> HW_TEXT_ALIGN_FRONT     6
+<b>#</b><b>define</b> HW_TEXT_ALIGN_BACK      7
+
+<i>/* Widget alignment parameters */</i>
+<b>#</b><b>define</b> HW_GUI_REL_RIGHT        0x00000001      <i>/* Position is right-rel */</i>
+<b>#</b><b>define</b> HW_GUI_REL_BOT          0x00000002      <i>/* Position is bot-rel */</i>
+<b>#</b><b>define</b> HW_GUI_REL_WIDTH        0x00000004      <i>/* Width is size-rel */</i>
+<b>#</b><b>define</b> HW_GUI_REL_HEIGHT       0x00000008      <i>/* Height is size-rel */</i>
+<b>#</b><b>define</b> HW_GUI_FRACTIONAL       0x00000010      <i>/* Pos/size are rel. to win. */</i>
+<b>#</b><b>define</b> HW_GUI_CENTER           0x00000020      <i>/* Pos is center of widget */</i>
+<b>#</b><b>define</b> HW_GUI_POS_MASK         0x0000003F      <i>/* Mask of widget pos flags */</i>
+<b>#</b><b>define</b> HW_GUI_LABEL_LEFT       0x00000040      <i>/* Left adjust label */</i>
+<b>#</b><b>define</b> HW_GUI_LABEL_RIGHT      0x00000080      <i>/* Right adjust label */</i>
+<b>#</b><b>define</b> HW_GUI_LABEL_TOP        0x00000100      <i>/* Top-adjust label */</i>
+<b>#</b><b>define</b> HW_GUI_LABEL_BOTTOM     0x00000200      <i>/* Right adjust label */</i>
+<b>#</b><b>define</b> HW_GUI_TOGGLE_RIGHT     0x00000400      <i>/* Vs. on the left */</i>
+<b>#</b><b>define</b> HW_GUI_FONT_FRACTIONAL  0x00000800      <i>/* The font height is fract. */</i>
+<b>#</b><b>define</b> HW_GUI_FONT_FRACT_W     0x00001000      <i>/* The font height is fract. */</i>
+<b>#</b><b>define</b> HW_GUI_DO_NOT_USE_BITS  0xFF800000      <i>/* Don't use these bits */</i>
+
+<i>/* Primitive per-vertex data parameters.  Note:  Some of the
+ * flags are dependent on other flags.  Specifically, HW_DATA_ALPHA
+ * is only valid if HW_DATA_RGB is present.  Likewise, HW_DATA_[RQ]*
+ * is only valid if HW_DATA_ST* is present.  Also, HW_DATA_BINORMAL
+ * is only valid if HW_DATA_TANGENT is present. Not all hardware supports
+ * multitexture (ST1,RQ1 through ST7,RQ7).  Data is present in
+ * the vertex in the order shown here, with XYZ always present and
+ * always first in the vertex.  The largest vertex format
+ * supported currently is 49 floats per vertex (!).
+ */</i>                                             <i>/* 3 - XYZ */</i>
+<b>#</b><b>define</b> HW_DATA_RGB             (1 &lt;&lt;  0)
+<b>#</b><b>define</b> HW_DATA_ALPHA           (1 &lt;&lt;  1)       <i>/* +4 = 7 */</i>
+<b>#</b><b>define</b> HW_DATA_NORMALS         (1 &lt;&lt;  2)       <i>/* +3 = 10 */</i>
+<b>#</b><b>define</b> HW_DATA_MD_FLAGS        (1 &lt;&lt;  3)       <i>/* +1 = 11 */</i>
+<b>#</b><b>define</b> HW_DATA_TANGENT         (1 &lt;&lt;  4)       <i>/* +3 = 14 */</i>
+<b>#</b><b>define</b> HW_DATA_BINORMAL        (1 &lt;&lt;  5)       <i>/* +3 = 17 */</i>
+<b>#</b><b>define</b> HW_DATA_ST              (1 &lt;&lt;  6)
+<b>#</b><b>define</b> HW_DATA_R               (1 &lt;&lt;  7)
+<b>#</b><b>define</b> HW_DATA_Q               (1 &lt;&lt;  8)       <i>/* +4 = 21 */</i>
+<b>#</b><b>define</b> HW_DATA_ST1             (1 &lt;&lt;  9)
+<b>#</b><b>define</b> HW_DATA_R1              (1 &lt;&lt; 10)
+<b>#</b><b>define</b> HW_DATA_Q1              (1 &lt;&lt; 11)       <i>/* +4 = 25 */</i>
+<b>#</b><b>define</b> HW_DATA_ST2             (1 &lt;&lt; 12)
+<b>#</b><b>define</b> HW_DATA_R2              (1 &lt;&lt; 13)
+<b>#</b><b>define</b> HW_DATA_Q2              (1 &lt;&lt; 14)       <i>/* +4 = 29 */</i>
+<b>#</b><b>define</b> HW_DATA_ST3             (1 &lt;&lt; 15)
+<b>#</b><b>define</b> HW_DATA_R3              (1 &lt;&lt; 16)
+<b>#</b><b>define</b> HW_DATA_Q3              (1 &lt;&lt; 17)       <i>/* +4 = 33 */</i>
+<b>#</b><b>define</b> HW_DATA_ST4             (1 &lt;&lt; 18)
+<b>#</b><b>define</b> HW_DATA_R4              (1 &lt;&lt; 19)
+<b>#</b><b>define</b> HW_DATA_Q4              (1 &lt;&lt; 20)       <i>/* +4 = 37 */</i>
+<b>#</b><b>define</b> HW_DATA_ST5             (1 &lt;&lt; 21)
+<b>#</b><b>define</b> HW_DATA_R5              (1 &lt;&lt; 22)
+<b>#</b><b>define</b> HW_DATA_Q5              (1 &lt;&lt; 23)       <i>/* +4 = 41 */</i>
+<b>#</b><b>define</b> HW_DATA_ST6             (1 &lt;&lt; 24)
+<b>#</b><b>define</b> HW_DATA_R6              (1 &lt;&lt; 25)
+<b>#</b><b>define</b> HW_DATA_Q6              (1 &lt;&lt; 26)       <i>/* +4 = 45 */</i>
+<b>#</b><b>define</b> HW_DATA_ST7             (1 &lt;&lt; 27)
+<b>#</b><b>define</b> HW_DATA_R7              (1 &lt;&lt; 28)
+<b>#</b><b>define</b> HW_DATA_Q7              (1 &lt;&lt; 29)       <i>/* +4 = 49 */</i>
+<i>/* Bits 30, 31 unused &amp; reserved */</i>
+
+<b>#</b><b>define</b> HW_DATA_MAX_WPV         49
+
+<b>#</b><b>define</b> HW_DATA_UV      HW_DATA_ST      <i>/* Backwards compatibility */</i>
+
+<i>/* Some convenience macros which combine some of the above flags */</i>
+<b>#</b><b>define</b> HW_DATA_RGBA            (HW_DATA_RGB |HW_DATA_ALPHA)
+<b>#</b><b>define</b> HW_DATA_STR             (HW_DATA_ST  |HW_DATA_R )
+<b>#</b><b>define</b> HW_DATA_STRQ            (HW_DATA_STR |HW_DATA_Q )
+<b>#</b><b>define</b> HW_DATA_STR1            (HW_DATA_ST1 |HW_DATA_R1)
+<b>#</b><b>define</b> HW_DATA_STRQ1           (HW_DATA_STR1|HW_DATA_Q1)
+<b>#</b><b>define</b> HW_DATA_STR2            (HW_DATA_ST2 |HW_DATA_R2)
+<b>#</b><b>define</b> HW_DATA_STRQ2           (HW_DATA_STR2|HW_DATA_Q2)
+<b>#</b><b>define</b> HW_DATA_STR3            (HW_DATA_ST3 |HW_DATA_R3)
+<b>#</b><b>define</b> HW_DATA_STRQ3           (HW_DATA_STR3|HW_DATA_Q3)
+<b>#</b><b>define</b> HW_DATA_STR4            (HW_DATA_ST4 |HW_DATA_R4)
+<b>#</b><b>define</b> HW_DATA_STRQ4           (HW_DATA_STR4|HW_DATA_Q4)
+<b>#</b><b>define</b> HW_DATA_STR5            (HW_DATA_ST5 |HW_DATA_R5)
+<b>#</b><b>define</b> HW_DATA_STRQ5           (HW_DATA_STR5|HW_DATA_Q5)
+<b>#</b><b>define</b> HW_DATA_STR6            (HW_DATA_ST6 |HW_DATA_R6)
+<b>#</b><b>define</b> HW_DATA_STRQ6           (HW_DATA_STR6|HW_DATA_Q6)
+<b>#</b><b>define</b> HW_DATA_STR7            (HW_DATA_ST7 |HW_DATA_R7)
+<b>#</b><b>define</b> HW_DATA_STRQ7           (HW_DATA_STR7|HW_DATA_Q7)
+<b>#</b><b>define</b> HW_DATA_TEXCOORD        (HW_DATA_STRQ|HW_DATA_STRQ1|HW_DATA_STRQ2\
+                                |HW_DATA_STRQ3|HW_DATA_STRQ4|HW_DATA_STRQ5\
+                                |HW_DATA_STRQ6|HW_DATA_STRQ7)
+
+<i>/* A structure used to extract offets from vertex flags - see
+ * hwGetVertexOffsets for a function which fills this in
+ */</i>
+<b>typedef</b> <strong>struct</strong> {
+    hwInt8 rgb;
+    hwInt8 alpha;
+    hwInt8 normal;
+    hwInt8 tangent;
+    hwInt8 binormal;
+    hwInt8 texCoord[HW_MAX_TEXTURES];
+    hwInt8 texSize[HW_MAX_TEXTURES];
+    hwInt8 wpv;
+} hwVertexOffsets;
+
+<i>/* Image types */</i>
+<b>#</b><b>define</b> HW_IMG_UBYTE    0
+<b>#</b><b>define</b> HW_IMG_USHORT   1
+<b>#</b><b>define</b> HW_IMG_UINT     2
+<b>#</b><b>define</b> HW_IMG_FLOAT    3
+
+<i>/* Optimization levels */</i>
+<b>#</b><b>define</b> HW_OPT_SAFE_USER_DATA   0x00000001
+<b>#</b><b>define</b> HW_OPT_CACHE_DATA       0x00000002
+<b>#</b><b>define</b> HW_OPT_USE_DL           0x00000004
+<b>#</b><b>define</b> HW_OPT_DL_ATTRS         0x00000008
+
+<b>#</b><b>define</b> HW_OPT_DEFAULT          HW_OPT_USE_DL
+
+<i>/* Spinner motion types */</i>
+<b>#</b><b>define</b> HW_SPIN_CONSTANT        0
+<b>#</b><b>define</b> HW_SPIN_LINEAR  1
+<b>#</b><b>define</b> HW_SPIN_SMOOTH  2
+<b>#</b><b>define</b> HW_SPIN_RANDOM  3
+
+<i>/* Orientation values, used for many graphics */</i>
+<b>typedef</b> <strong>struct</strong> {
+    hwFloat
+        scale[3],               <i>/* Scaling on XYZ axes */</i>
+        rotate[3],              <i>/* Rotation about XYZ axes */</i>
+        pos[3];                 <i>/* Position in 3-space */</i>
+} hwOrientType;
+
+<i>/* Surface parameters, used for many graphics */</i>
+<b>#</b><b>define</b> HW_SURF_BACKFACE        0x00000001
+<b>#</b><b>define</b> HW_SURF_TWOSIDED        0x00000002
+<b>#</b><b>define</b> HW_SURF_UNCOLORED       0x00000004
+<b>#</b><b>define</b> HW_SURF_EMISSIVE        0x00000008
+<b>#</b><b>define</b> HW_SURF_INVISIBLE       0x00000010
+<b>#</b><b>define</b> HW_SURF_WIREFRAME       0x00000020
+<b>#</b><b>define</b> HW_SURF_PRUNE_PRIM      0x00000040
+<b>#</b><b>define</b> HW_SURF_BLEND           0x00000080
+<b>#</b><b>define</b> HW_SURF_FLIP_NORMALS    0x00000100
+<b>#</b><b>define</b> HW_SURF_TEX_SAMP        0x00000200
+
+<i>/* These flags are intended for the three-pass rendering/occlusion algorithm.  They
+ * are, in general, NOT intended for direct end-user playing with.  The
+ * algorithm is as follows:
+ *
+ *      1. Set render mode to HW_RENDER_DRAW_UNOCCLUDED.  Draw ALL of the objects.
+ *         They will render if and only if the HW_INT_SURF_OCCLUDED flag is NOT set
+ *         (initial flag value is clear).
+ *      2. Set render mode to HW_RENDER_VISIBILITY_TEST.  Draw ALL of the objects.  The
+ *         flags will be set as follows:
+ *              HW_INT_FORCE_REDRAW     set if object is visible and OCCLUDED
+ *                                      flag is set (indicates an error in the
+ *                                      predictive occlusion test)
+ *              HW_INT_SURF_OCCLUDED    set only if the object is not visible
+ *                                      in the view frustum or depth buffer
+ *      3. Set render mode to HW_RENDER_VISIBILITY_FIXUP.  Draw ALL of the objects.
+ *         They will render if and only if the HW_INT_FORCE_REDRAW flag is set.
+ */</i>
+<b>#</b><b>define</b> HW_INT_SURF_OCCLUDED    0x00000001      <i>/* Surface occluded on check */</i>
+<b>#</b><b>define</b> HW_INT_FORCE_REDRAW     0x00000002      <i>/* Please redraw on 3rd pass */</i>
+
+<b>typedef</b> <strong>struct</strong> {
+    hwFloat
+        color[3],               <i>/* RGB color */</i>
+        transp,                 <i>/* Transparency */</i>
+        specColor[3],           <i>/* Specular highlight color */</i>
+        shininess,              <i>/* Shininess coefficient */</i>
+        primSize;               <i>/* Line width/point size, in pixels */</i>
+    hwInt32
+        visibility,             <i>/* Visibility mask */</i>
+        flags,                  <i>/* From HW_SURF_*, above */</i>
+        internalFlags,          <i>/* Internal flags, for Hoverware use only */</i>
+        numTextures;            <i>/* Size of texture array */</i>
+    hwObject
+        textures[HW_MAX_TEXTURES]; <i>/* Pointer to the textures to use */</i>
+    hwInt32
+        textureIDs[HW_MAX_TEXTURES]; <i>/* IDs of the textures */</i>
+} hwSurfaceType;
+
+<i>/* Image manipulation structure */</i>
+<b>typedef</b> <strong>struct</strong> __hwImageStruct {
+    hwInt32
+        width, height, depth,   <i>/* Dimensions of image */</i>
+        components, type,       <i>/* Type of image */</i>
+        refCount,               <i>/* Reference count */</i>
+        tmId;                   <i>/* Texture ID for e.g. glBindTexture */</i>
+    <strong>char</strong>
+        *fileName;              <i>/* File this was loaded from */</i>
+    <strong>void</strong>
+        *data;                  <i>/* Allocated data */</i>
+    <strong>struct</strong> __hwImageStruct
+        *next;                  <i>/* Next in hash bin */</i>
+} hwImageStruct;
+
+<i>/* Information needed for a camera */</i>
+<b>typedef</b> <strong>struct</strong> {
+    hwInt32
+        perspective,
+        mirror;
+    hwFloat
+        pos[3],
+        dir[3],
+        up[3],
+        jitter[2],
+        skew[2],
+        field, aspect,
+        planes[2];
+} hwCamStruct;
+
+<i>/* Information needed for text */</i>
+<b>typedef</b> <strong>struct</strong> {
+    hwFloat
+        textUp[3],              <i>/* Up vector of the text */</i>
+        textDir[3],             <i>/* Direction vector of the text */</i>
+        textOrient[4][4],       <i>/* Orientation, derived from above */</i>
+        textScale,              <i>/* Scaling factor of text */</i>
+        textScaleOrient[4][4],  <i>/* Combination of scale and orient */</i>
+        textExtrude[3];         <i>/* Extrude distance in MCs */</i>
+    hwInt32
+        horizAlign,             <i>/* From HW_TEXT_ALIGN_* */</i>
+        vertAlign,              <i>/* Ditto */</i>
+        depthAlign;             <i>/* Ditto */</i>
+    hwSurfaceType
+        frontSurf,              <i>/* Surface of the front plane */</i>
+        sideSurf,               <i>/* Surface of the side */</i>
+        backSurf;               <i>/* Surface of the back plane */</i>
+} hwTextState;
+
+<i>/* Possible render modes */</i>
+<b>#</b><b>define</b> HW_RENDER_MASK                  0x0000000F      <i>/* One of... */</i>
+<b>#</b><b>define</b>         HW_RENDER_DRAW          0x00000000      <i>/*      Draw prims */</i>
+<b>#</b><b>define</b>         HW_RENDER_SELECT        0x00000001      <i>/*      Select prims */</i>
+<b>#</b><b>define</b>         HW_RENDER_VIS_TEST      0x00000002      <i>/*      Occl. test */</i>
+<b>#</b><b>define</b> HW_RENDER_Z_TEST                0x00000010      <i>/* With depth test? */</i>
+<b>#</b><b>define</b> HW_RENDER_Z_WRITE               0x00000020      <i>/* With Z writes? */</i>
+<b>#</b><b>define</b> HW_RENDER_XOR                   0x00000040      <i>/* With XOR? */</i>
+<b>#</b><b>define</b> HW_RENDER_EDGE_MODE             0x00000080      <i>/* With edge mode? */</i>
+<b>#</b><b>define</b> HW_RENDER_CULL_FACE             0x00000100      <i>/* With backface cull?*/</i>
+<b>#</b><b>define</b> HW_RENDER_MULTISAMPLE           0x00000200      <i>/* Supersampled? */</i>
+<b>#</b><b>define</b> HW_RENDER_QUERY                 0xffffffff      <i>/* return current mode*/</i>
+
+<i>/* Control flags for selection */</i>
+<b>#</b><b>define</b> HW_SELECT_VERTICES      0x00000001      <i>/* Pick only vertices */</i>
+<b>#</b><b>define</b> HW_SELECT_EDGES         0x00000002      <i>/* Pick only edges */</i>
+<b>#</b><b>define</b> HW_SELECT_CHILD         0x00000004      <i>/* Pick child (def: parent) */</i>
+<b>#</b><b>define</b> HW_SELECT_CULL_FACE     0x00000008      <i>/* Don't select backfaces */</i>
+
+<b>#</b><b>define</b> HW_RENDER_DEFAULT       (HW_RENDER_DRAW | HW_RENDER_Z_TEST | \
+                                        HW_RENDER_Z_WRITE | HW_RENDER_CULL_FACE)
+
+<i>/* Possible update flags */</i>
+<b>#</b><b>define</b> HW_UPDATE_SWAP          0x00000001
+<b>#</b><b>define</b> HW_UPDATE_CLEAR         0x00000006
+<b>#</b><b>define</b> HW_UPDATE_CLEAR_COLOR   0x00000002
+<b>#</b><b>define</b> HW_UPDATE_CLEAR_DEPTH   0x00000004
+<b>#</b><b>define</b> HW_UPDATE_MATRIX        0x00000008
+<b>#</b><b>define</b> HW_UPDATE_TIME          0x00000010
+<b>#</b><b>define</b> HW_UPDATE_GUI           0x00000020
+<b>#</b><b>define</b> HW_CLEAR_GUI            0x00000040
+<b>#</b><b>define</b> HW_CHECK_EVENTS         0x00000080
+<b>#</b><b>define</b> HW_UPDATE_ALL           0xFFFFFFFF
+
+<i>/* Possible drawing buffers */</i>
+<b>#</b><b>define</b> HW_DRAW_BACK_LEFT       0
+<b>#</b><b>define</b> HW_DRAW_BACK_RIGHT      1
+<b>#</b><b>define</b> HW_DRAW_FRONT_LEFT      2
+<b>#</b><b>define</b> HW_DRAW_FRONT_RIGHT     3
+
+<i>/* Flags for GUI lines / triangles */</i>
+<b>#</b><b>define</b> HW_GUI_BLEND            0x00000001
+<b>#</b><b>define</b> HW_GUI_SMOOTH           0x00000002
+
+<i>/* Flags for hwBeginBinary() */</i>
+<b>#</b><b>define</b> HW_FILE_WRITE_HDR       0x00000001
+<b>#</b><b>define</b> HW_FILE_READ_HDR        0x00000002
+
+<i>/* Prototype for stream I/O for HW binary utilities */</i>
+<b>typedef</b> <strong>int</strong> (*hwObjRW)( <strong>void</strong> *, <strong>int</strong>, <strong>int</strong>, <strong>void</strong> * );
+
+<i>/* Window input events */</i>
+<b>#</b><b>define</b> HW_INPUT_EXPOSE         0       <i>/* Change in window exposure */</i>
+<b>#</b><b>define</b> HW_INPUT_CONFIG         1       <i>/* Change in window size/position */</i>
+<b>#</b><b>define</b> HW_INPUT_DESTROY        2       <i>/* Window is destroyed */</i>
+<b>#</b><b>define</b> HW_INPUT_FOCUS          3       <i>/* Change in window focus */</i>
+<b>#</b><b>define</b> HW_INPUT_KEYBOARD       4       <i>/* Keyboard input */</i>
+<b>#</b><b>define</b> HW_INPUT_POINTER        5       <i>/* Pointer (mouse) motion */</i>
+<b>#</b><b>define</b> HW_INPUT_BUTTON_PRESS   6       <i>/* Pointer button press event */</i>
+<b>#</b><b>define</b> HW_INPUT_BUTTON_RELEASE 7       <i>/* Pointer button release event */</i>
+<b>#</b><b>define</b> HW_INPUT_JOY_PRESS      8       <i>/* Joystick button press event */</i>
+<b>#</b><b>define</b> HW_INPUT_JOY_RELEASE    9       <i>/* Joystick button release event */</i>
+<b>#</b><b>define</b> HW_INPUT_JOY_AXIS       10      <i>/* Joystick axis event */</i>
+
+<i>/* Keyboard modifiers */</i>
+<b>#</b><b>define</b> HW_KBD_MOD_SHIFT        0x0001
+<b>#</b><b>define</b> HW_KBD_MOD_CTRL         0x0002
+<b>#</b><b>define</b> HW_KBD_MOD_ALT          0x0004
+
+<i>/* Special keys */</i>
+<b>#</b><b>define</b> HW_KEY_LEFT             0x10000
+<b>#</b><b>define</b> HW_KEY_RIGHT            0x10001
+<b>#</b><b>define</b> HW_KEY_UP               0x10002
+<b>#</b><b>define</b> HW_KEY_DOWN             0x10003
+<b>#</b><b>define</b> HW_KEY_PREV             0x10004
+<b>#</b><b>define</b> HW_KEY_NEXT             0x10005
+<b>#</b><b>define</b> HW_KEY_HOME             0x10006
+<b>#</b><b>define</b> HW_KEY_END              0x10007
+<b>#</b><b>define</b> HW_KEY_F1               0x10008
+<b>#</b><b>define</b> HW_KEY_F2               0x10009
+<b>#</b><b>define</b> HW_KEY_F3               0x1000A
+<b>#</b><b>define</b> HW_KEY_F4               0x1000B
+<b>#</b><b>define</b> HW_KEY_F5               0x1000C
+<b>#</b><b>define</b> HW_KEY_F6               0x1000D
+<b>#</b><b>define</b> HW_KEY_F7               0x1000E
+<b>#</b><b>define</b> HW_KEY_F8               0x1000F
+<b>#</b><b>define</b> HW_KEY_F9               0x10010
+<b>#</b><b>define</b> HW_KEY_F10              0x10011
+<b>#</b><b>define</b> HW_KEY_F11              0x10012
+<b>#</b><b>define</b> HW_KEY_F12              0x10013
+
+<i>/* Joystick / gamepad support */</i>
+<i>/* Passed with HW_INPUT_JOY_PRESS / HW_INPUT_JOY_RELEASE */</i>
+<b>#</b><b>define</b> HW_JOY_DPAD_UP          0
+<b>#</b><b>define</b> HW_JOY_DPAD_DOWN        1
+<b>#</b><b>define</b> HW_JOY_DPAD_LEFT        2
+<b>#</b><b>define</b> HW_JOY_DPAD_RIGHT       3
+<b>#</b><b>define</b> HW_JOY_START            4
+<b>#</b><b>define</b> HW_JOY_SELECT           5
+<b>#</b><b>define</b> HW_JOY_THUMB_LEFT       6
+<b>#</b><b>define</b> HW_JOY_THUMB_RIGHT      7
+<b>#</b><b>define</b> HW_JOY_SHOULDER_LEFT    8
+<b>#</b><b>define</b> HW_JOY_SHOULDER_RIGHT   9
+<b>#</b><b>define</b> HW_JOY_HOME             10
+<b>#</b><b>define</b> HW_JOY_A                11
+<b>#</b><b>define</b> HW_JOY_B                12
+<b>#</b><b>define</b> HW_JOY_X                13
+<b>#</b><b>define</b> HW_JOY_Y                14
+<b>#</b><b>define</b> HW_JOY_TRIGGER_LEFT     15
+<b>#</b><b>define</b> HW_JOY_TRIGGER_RIGHT    16
+
+<i>/* Passed with HW_INPUT_JOY_AXIS */</i>
+<b>#</b><b>define</b> HW_AXIS_LEFT_X          0
+<b>#</b><b>define</b> HW_AXIS_LEFT_Y          1
+<b>#</b><b>define</b> HW_AXIS_RIGHT_X         2
+<b>#</b><b>define</b> HW_AXIS_RIGHT_Y         3
+<b>#</b><b>define</b> HW_AXIS_LTRIGGER        4
+<b>#</b><b>define</b> HW_AXIS_RTRIGGER        5
+<b>#</b><b>define</b> HW_AXIS_HAT_X           6
+<b>#</b><b>define</b> HW_AXIS_HAT_Y           7
+
+<b>typedef</b> <strong>union</strong> {
+    hwInt32 type;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 numClipRects;
+        hwInt32 *clipRectList;
+    } expose;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 posx, posy;
+        hwInt32 width, height;
+    } config;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 hasFocus;
+    } focus;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 key;
+        hwInt32 mods;
+    } keyboard;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 x, y, buttonState, kbdMods;
+    } pointer;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 x, y, button, kbdMods;
+    } button;
+    <strong>struct</strong> {
+        hwInt32 type;
+        hwInt32 axis;
+        hwFloat value;
+    } joystick;
+} hwWinEvent;
+
+<i>/* Callback for joystick objects */</i>
+<b>typedef</b> <strong>void</strong> (*hwJoystickCB)( hwObject, hwWinEvent * );
+
+<i>/*** EOF hw_types.h ***/</i>
+</pre>
+</body>
+</html>

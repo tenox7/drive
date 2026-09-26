@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwGroup - create a group of objects which share a transformation</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwGroup - create a group of objects which share a transformation</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Children</td>
+<td>*O</td>
+<td>The list of children which are grouped together in this object</td>
+</tr>
+<tr><td>Invisible</td>
+<td>1B</td>
+<td>True if the object is not to be displayed; false otherwise</td>
+</tr>
+<tr><td>Visibility</td>
+<td>1I</td>
+<td>Visibility mask for use with hwDisplay-&gt;setVisibility</td>
+</tr>
+<tr><td>LOD</td>
+<td>*F</td>
+<td>Array of level-of-detail information</td>
+</tr>
+<tr><td>Matrices</td>
+<td>*F</td>
+<td>Individual transform matrix for each Child</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1B</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for more details</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Children</td>
+<td>{}</td>
+</tr>
+<tr><td>Invisible</td>
+<td>False</td>
+</tr>
+<tr><td>Visibility</td>
+<td>0xFFFFFFFF</td>
+</tr>
+<tr><td>LOD</td>
+<td>{}</td>
+</tr>
+<tr><td>Matrices</td>
+<td>{}</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>False</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwGroup class is used to group a set of children together and
+apply a common transformation to them. This is useful for two
+reasons; first, it is often easier to transform multiple objects
+simultaneously; second, a hierarchy of objects enhances the
+visibility culling algorithms used by HoverWare.</p>
+<p>The LOD property is an array of minimum and maximum LOD values at
+which the corresponding Child is to be drawn. The LOD values are
+expressed as a percentage of viewport size. When the bounding volume
+of the whole group is found to be within range of a particular
+Child's LOD min and max, then that child is drawn. If the Children
+array has more entries than the LOD array has pairs, then the extra
+Children are always drawn.</p>
+<p>The Matrices property is used to transform individual Children.
+Every 16 floats of the Matrices property is considered to be an
+individual matrix corresponding to the i'th Child. This matrix is
+pushed before the Child is drawn, and then popped afterward. If there
+are more Children than Matrices, the extra children are drawn without
+an extra matrix push/pop.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a group of objects all rotated about Y by 30 degrees */
+    hwObject
+        group,
+        objectList[] = {obj1, obj2, obj3, obj4};
+
+    group = hwGroup-&gt;create( hwGroup );
+    group-&gt;modify( group, hwStrChildren,
+                        HW_MAKE_TYPE(HW_TYPE_OBJECT,4), objectList );
+    HW_MODIFY_3F( group, hwStrRotate, 0.0, 30.0, 0.0 );
+    group-&gt;draw( group );
+    group-&gt;destroy( group );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A group of objects, rotated about Y by 30 degrees
+    hwGroup group {
+        Rotate = {0,30,0}
+        Children = {obj1, obj2, obj3, obj4}
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwOrient.htm">hwOrient</a>, <a
+href="hwDisplay.htm">hwDisplay-&gt;setVisibility</a></p>
+</body>
+</html>

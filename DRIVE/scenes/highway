@@ -1,0 +1,137 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+### HIGHWAY ###
+
+Scene Location: 1 -2
+Scene Type:  flat x highway overpass
+
+Scene Location: 2 -2
+Scene Type:  flat x highway
+
+Scene Location: 3 -2
+Scene Type:  flat x highway overpass
+
+# Scene Location: 4 -2 -- Now bridge
+
+Scene Location: 5 -2
+Scene Type:  flat x highway overpass
+
+# Scene Location: 6 -2   -- airport -- 
+
+Scene Location: 7 -2
+Scene Type:  flat x highway
+
+#Scene Location: 8 -2  -- Sherman Farms turnoff --
+
+#Scene Location: 9 -2  -- Four Seasons turnoff
+
+Scene Location: 10 -2
+Scene Type:  flat x highway
+
+Scene Location: 11 -2
+Scene Type:  flat x highway
+
+Scene Location: 12 -2
+Scene Type:  flat x highway
+
+# Scene Location: 13 -2   -- Bumpy Turnoff --
+
+# Scene Location: 14 -2   -- Sunday Drive Turnoff
+
+# Scene Location: 15, -2 is the turnoff to Monaco
+# Scene location -1, -2 is the Greek Temple
+# Scene Location -2, -2 is the turnoff to the Ariel Speedway
+
+Scene Location: -3 -2
+Scene Type:  flat x highway
+
+Scene Location: -5 -2
+Scene Type:  flat x highway overpass
+
+Scene Location: -6 -2
+Scene Type:  flat x highway
+
+Scene Location: -7 -2
+Scene Type:  flat x highway
+
+#Scene Location: -8 -2   -- This is defined by the shooting range
+
+Scene Location: -9 -2
+Construct: cloverleaf
+Object: ground
+
+#Scene Location: -10 -2   -- This is defined by the tubular speedway
+
+#Scene Location: -11 -2   -- This is defined by the reaction speedway
+
+Scene Location: -12 -2
+Scene Type:  flat x highway
+
+#Scene Location: -13 -2   -- This is defined by the tubular speedway
+
+Scene Location: 0 -3
+Scene Type:  flat z road
+
+Scene Location: 0 -6
+Scene Type:  flat left t
+
+Scene Location: 0 -7
+Scene Type:  flat z road
+
+Scene Location: 4 -4
+Scene Type: flat z road
+
+Scene Location: 4 -5
+Scene Type: flat turn right up
+
+Scene Location: 5 -5
+Scene Type: hill x road
+
+Scene Location: 6 -5
+Scene Type: hill x road
+
+# Scene Location: 7, -5 is the turnoff to Fahrvergnugen
+
+Scene Location: 0 -10
+Scene Type: flat right t
+
+Scene Location: 1 -10
+Scene Type: flat x highway
+
+Scene Location: 2 -10
+Scene Type: hill x road
+
+Scene Location: 3 -10
+Scene Type: flat x highway
+
+Scene Location: 4 -10
+Scene Type: flat x highway
+
+# Scene Location: 5 -10 is the turnoff to head_on
+
+Scene Location: 6 -10
+Scene Type: flat x highway
+
+Scene Location: 7 -10
+Scene Type: flat x highway
+
+Scene Location: 8 -10
+Scene Type: flat x highway
+
+# Scene Location: 9 -10 is the turnoff to wall_street
+

@@ -1,0 +1,101 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Barricade construct
+#
+# The barricade sits facing you if you're looking down the +Z axis.
+# The flasher is on the right side.
+#
+#
+# Daryl Poe
+
+
+# The crossbar
+Object: wall
+Size: .25 1.0 .75
+Position: -1.5 3.0 -.125
+Color: 1.0 1.0 1.0
+
+Object: wall
+Size: .25 1.0 .75
+Position: -0.5 3.0 -.125
+Color: 1.0 0.0 0.0
+
+Object: wall
+Size: .25 1.0 .75
+Position:  0.5 3.0 -.125
+Color: 1.0 1.0 1.0
+
+Object: wall
+Size: .25 1.0 .75
+Position:  1.5 3.0 -.125
+Color: 1.0 0.0 0.0
+
+
+# Flashing light
+Object: cylinder
+Radius: 0.35
+Height: 0.23
+Position: 1.75 4.05 -.124
+Xrot: 90
+Color: 0.5 0.5 0.0
+
+Object: oval light
+Width: 0.7
+Length: 0.7
+Position: 1.75 4.05 -0.126
+Xrot: -90
+Color: 1.0 1.0 0.0
+Animation Bits: 0x3333
+
+Object: oval light
+Width: 0.7
+Length: 0.7
+Position: 1.75 4.05  0.126
+Xrot:  90
+Color: 1.0 1.0 0.0
+Animation Bits: 0x3333
+
+
+# The legs
+Object: cylinder
+Radius: .1
+Height: 3.3
+Position: -1.9 0.0 -1.0
+Xrot: 18
+Color: 0.5 0.5 0.5
+
+Object: cylinder
+Radius: .1
+Height: 3.3
+Position:  1.9 0.0 -1.0
+Xrot: 18
+Color: 0.5 0.5 0.5
+
+Object: cylinder
+Radius: .1
+Height: 3.3
+Position: -1.9 0.0  1.0
+Xrot: -18
+Color: 0.5 0.5 0.5
+
+Object: cylinder
+Radius: .1
+Height: 3.3
+Position:  1.9 0.0  1.0
+Xrot: -18
+Color: 0.5 0.5 0.5

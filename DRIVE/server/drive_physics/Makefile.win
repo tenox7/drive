@@ -1,0 +1,26 @@
+OBJS=ballistic.obj \
+	car.obj \
+	common.obj \
+	gears.obj \
+	intersect.obj \
+	plane.obj \
+	simple.obj \
+	ufop.obj \
+	xfighterp.obj
+
+LIBS=..\..\drive_physics.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../../libnum -I../../libphysics -I../../include -I../../../HW/Inc -I../objects -I../../libprims
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+..\..\drive_physics.lib:     $(OBJS)
+	$(LIB32) @<<
+    $(OBJS) -out:..\..\drive_physics.lib
+<<

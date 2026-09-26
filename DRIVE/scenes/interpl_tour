@@ -1,0 +1,3343 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Interplanetary Tour
+#
+# By Daryl Poe, Jun 1994
+#
+
+Racecourse: Interplanetary Tour
+Practice Seconds: 0
+Race Seconds: 250
+Start SceneX: -5
+Start SceneZ: -3
+Start Position: 22.5 0 -50
+Start Angle: 180
+Start Positions: 4
+Turbo Mode: 0
+
+
+################################################################################
+## Entrance scene
+################################################################################
+Scene Location: -5 -3
+Object: road
+Width: 80
+Z: -1000
+Length: 2000
+
+Object: start
+Position: 0 0 -100
+Size: 10 80 20
+Yrot: 180
+Label: start
+Type: 1 9
+
+Object: generic sign
+Size: 20 40 1
+Position: -60 0 -200
+Yrot: 180
+Label: Interplanetary\Tour
+Color: 1 1 1
+
+Object: generic sign
+Size: 20 50 1
+Position: -70 0 -400
+Yrot: 180
+Label: Presented by\Artificial Malevolence, Inc.
+Color: .5 0 0
+
+Object: generic sign
+Size: 20 50 1
+Position: -70 0 -600
+Yrot: 180
+Label: In conjunction with\Daryl Poe
+Color: 0 0 .8
+
+Object: generic sign
+Size: 20 40 1
+Position: -60 0 -800
+Yrot: 180
+Label: Please buckle\your helmet
+Color: 1 1 0
+
+Object: ground
+
+################################################################################
+### Split start
+################################################################################
+
+Scene Location:  -5 -4
+
+Object:  road 
+Position:  0.00 0.00 699.00
+Length:  301.00 
+Width:  80.00 
+Color:  0.00 0.00 0.00
+
+# Red/yellow entrance and exit
+Object:  curve 
+Position:  300.00 0.00 700.00
+Yrot:  180.00
+Width:  50.00 
+Color:  0.00 0.00 0.00
+Radius:  310.00 
+Angle:  60.00 
+
+Object:  curve 
+Position:  250.00 0.00 -266.00
+Yrot:  114.00
+Width:  50.00 
+Color:  0.00 0.00 0.00
+Radius:  260.00 
+Angle:  71.00 
+
+# Green/blue entrance and exit
+Object:  curve 
+Position:  -300.00 0.00 700.00
+Yrot:  -60.00
+Width:  50.00 
+Color:  0.00 0.00 0.00
+Radius:  310.00 
+Angle:  60.00 
+
+Object:  curve 
+Position:  -249.00 0.00 -285.00
+Width:  50.00 
+Color:  0.00 0.00 0.00
+Radius:  260.00 
+Angle:  71.00 
+
+### Yellow route
+Object:  curve 
+Position:  78.00 5.00 315.00
+Xrot:  5.00
+Yrot:  -3.00
+Zrot:  6.00
+Size:  209.00 30.00 1.00
+Color:  0.50 0.50 0.10
+Radius:  180.00 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  78.00 5.00 315.00
+Xrot:  5.00
+Yrot:  -3.00
+Zrot:  6.00
+Radius:  179.50 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  78.00 5.00 315.00
+Xrot:  5.00
+Yrot:  -3.00
+Zrot:  6.00
+Radius:  150.50 
+Angle:  65.00 
+
+Object:  road 
+Position:  244.00 21.80 88.00
+Zrot:  6.00
+Size:  226.00 25.00 0.50
+Color:  0.50 0.50 0.10
+
+Object: checkpoint
+Position: 244 20 190
+Size: 10 25 20
+Label:  CHECKPOINT 1
+Radius: 0.5
+Yrot: 180
+Type: 1 1
+
+Object:  curve 
+Position:  78.00 6.00 89.00
+Xrot:  -7.00
+Yrot:  295.00
+Zrot:  -2.00
+Size:  200.00 25.00 0.50
+Color:  0.50 0.50 0.10
+Radius:  180.00 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  78.00 6.00 89.00
+Xrot:  -7.00
+Yrot:  295.00
+Zrot:  -2.00
+Radius:  179.50 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  78.00 6.00 89.00
+Xrot:  -7.00
+Yrot:  295.00
+Zrot:  -2.00
+Radius:  155.50 
+Angle:  65.00 
+
+### Red route
+Object:  curve 
+Position:  50.00 0.00 286.00
+Width:  30.00 
+Color:  0.50 0.10 0.10
+Radius:  205.00 
+Angle:  60.00 
+
+Object:  road 
+Position:  239.50 0.00 87.00
+Length:  200.00 
+Width:  30.00 
+Color:  0.50 0.10 0.10
+
+Object: checkpoint
+Position:  239.5 0 190
+Size: 5 30 17
+Label:  CHECKPOINT 1
+Radius: 0.5
+Yrot: 180
+Type: 1 1
+
+Object:  curve 
+Position:  80.00 0.00 105.00
+Yrot:  294.00
+Width:  30.00 
+Color:  0.50 0.10 0.10
+Radius:  176.00 
+Angle:  60.00 
+
+### Blue route
+Object:  curve 
+Position:  -63.00 0.00 293.00
+Yrot:  120.00
+Width:  30.00 
+Color:  0.10 0.10 0.50
+Radius:  191.00 
+Angle:  60.00 
+
+Object:  road 
+Position:  -239.50 0.00 93.00
+Length:  200.00 
+Width:  30.00 
+Color:  0.10 0.10 0.50
+
+Object: checkpoint
+Position: -239.5 0 190
+Size: 5 30 17
+Label:  CHECKPOINT 1
+Radius: 0.5
+Yrot: 180
+Type: 1 1
+
+Object:  curve 
+Position:  -72.00 0.00 86.00
+Yrot:  177.00
+Width:  30.00 
+Color:  0.10 0.10 0.50
+Radius:  184.00 
+Angle:  60.00 
+
+### Green route
+Object:  curve 
+Position:  -77.00 3.00 314.00
+Xrot:  -7.00
+Yrot:  120.00
+Zrot:  -1.00
+Size:  216.00 25.00 0.50
+Color:  0.10 0.50 0.10
+Radius:  180.00 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  -77.00 3.00 314.00
+Xrot:  -7.00
+Yrot:  120.00
+Zrot:  -1.00
+Radius:  179.50 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  -77.00 3.00 314.00
+Xrot:  -7.00
+Yrot:  120.00
+Zrot:  -1.00
+Radius:  155.50 
+Angle:  65.00 
+
+Object:  road 
+Position:  -242.00 20.00 75.00
+Zrot:  -8.00
+Size:  227.00 25.00 0.50
+Color:  0.10 0.50 0.10
+
+Object: checkpoint
+Position: -242 18 190
+Size: 10 25 20
+Label:  CHECKPOINT 1
+Radius: 0.5
+Yrot: 180
+Type: 1 1
+
+Object:  curve 
+Position:  -87.00 -11.00 61.00
+Xrot:  1.00
+Yrot:  174.00
+Zrot:  11.00
+Size:  216.00 25.00 0.50
+Color:  0.10 0.50 0.10
+Radius:  170.00 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  -87.00 -11.00 61.00
+Xrot:  1.00
+Yrot:  174.00
+Zrot:  11.00
+Radius:  169.50 
+Angle:  65.00 
+
+Object:  curveguardrail 
+Position:  -87.00 -11.00 61.00
+Xrot:  1.00
+Yrot:  174.00
+Zrot:  11.00
+Radius:  145.50 
+Angle:  65.00 
+
+Object:  pillar 
+Position:  -255.00 0.00 200.00
+Size:  227.00 15.00 20.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  -255.00 0.00 300.00
+Size:  227.00 15.00 20.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  -255.00 0.00 100.00
+Size:  227.00 15.00 20.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  -225.00 0.00 100.00
+Size:  227.00 15.00 18.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  -225.00 0.00 200.00
+Size:  227.00 15.00 18.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  -225.00 0.00 300.00
+Size:  227.00 15.00 18.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  wall 
+Position:  -240.00 17.00 298.00
+Zrot:  -5.00
+Size:  4.00 30.00 2.00
+Color:  1.00 1.00 1.00
+
+Object:  wall 
+Position:  -240.00 17.00 198.00
+Zrot:  -5.00
+Size:  4.00 30.00 2.00
+Color:  1.00 1.00 1.00
+
+Object:  wall 
+Position:  -240.00 17.00 98.00
+Zrot:  -5.00
+Size:  4.00 30.00 2.00
+Color:  1.00 1.00 1.00
+
+Object:  pillar 
+Position:  255.00 0.00 300.00
+Size:  4.00 15.00 22.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  225.00 0.00 300.00
+Size:  4.00 15.00 20.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  wall 
+Position:  240.00 19.00 298.00
+Zrot:  5.00
+Size:  4.00 30.00 2.00
+Color:  1.00 1.00 1.00
+
+Object:  wall 
+Position:  240.00 19.00 198.00
+Zrot:  5.00
+Size:  4.00 30.00 2.00
+Color:  1.00 1.00 1.00
+
+Object:  wall 
+Position:  240.00 19.00 98.00
+Zrot:  5.00
+Size:  4.00 30.00 2.00
+Color:  1.00 1.00 1.00
+
+Object:  pillar 
+Position:  255.00 0.00 200.00
+Size:  4.00 15.00 22.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  255.00 0.00 100.00
+Size:  4.00 15.00 22.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  225.00 0.00 200.00
+Size:  4.00 15.00 20.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  pillar 
+Position:  225.00 0.00 100.00
+Size:  4.00 15.00 20.00
+Color:  1.00 1.00 1.00
+Radius:  2.00 
+
+Object:  road 
+Position:  0.00 0.00 -500.00
+Length:  215.00 
+Width:  80.00 
+Color:  0.00 0.00 0.00
+
+Object:  spline road 
+Position:  0.00 0.00 0.00
+Width:  60.00 
+Color:  0.00 0.00 0.00
+Data:  3 4
+0.00  0.00  -1000.00 30.00  
+0.00  0.00  -750.00  40.00  
+0.00  0.00  -499.00  80.00  
+
+Object:  wall 
+Position:  0.00 0.00 513.00
+Yrot:  125.00
+Size:  180.00 4.00 4.00
+Color:  1.00 0.00 0.00
+
+Object:  wall 
+Position:  0.00 0.00 513.00
+Yrot:  -125.00
+Size:  180.00 4.00 4.00
+Color:  1.00 0.00 0.00
+
+Object:  wall 
+Position:  -130.00 0.00 530.00
+Yrot:  130.00
+Size:  250.00 4.00 4.00
+Color:  1.00 0.00 0.00
+
+Object:  wall 
+Position:  130.00 0.00 530.00
+Yrot:  -130.00
+Size:  250.00 4.00 4.00
+Color:  1.00 0.00 0.00
+
+Object:  generic sign 
+Position:  0.00 0.00 550.00
+Type:  
+Label:  <- ->
+Yrot:  180.00
+Size:  20.00 40.00 2.00
+Color:  1.00 1.00 0.00
+Radius:  1.50 
+
+Object: checkpoint
+Size: 10 50 20
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: 0 0 -900
+Yrot: 180
+Type: 1 2
+
+Object:  ground 
+Position:  0.00 0.00 0.00
+
+################################################################################
+### Twistjump
+################################################################################
+
+Scene Location: -5 -5
+
+Object: road
+Size: 101 30 0
+Z: 900
+
+Object: spline road
+Data: 3 4
+  0 0 700 14
+  0 0 800 20
+  0 0 901 30
+
+Object: road
+Width: 14
+Length: 701
+Position: 0 0 0
+
+Object: generic sign
+Label: Orbit Vehicle\Tryout Ahead
+Position: 15 0 950
+Yrot: 180
+Size: 10 20 5
+
+Object: generic sign
+Label: Drive\straight!
+Position: -35 0 900
+Yrot: 180
+Size: 10 20 5
+Color: 1 0 0
+
+Object: wall
+Size: 200 2 2
+Position: 7 0 500
+
+Object: wall
+Size: 200 2 2
+Position: -7 0 500
+
+Object: invisible wormhole
+Size: 3 20 20
+Z: 485
+Type: linear velocity = 0.0,0.0,-168.0
+
+Object: invisible wormhole
+Size: 3 20 20
+Z: 480
+Type: linear velocity = 0.0,0.0,-168.0
+
+Object: twistramp
+Z: 479
+Yrot: 180
+Width: 10
+Length: 150
+Height: 29.8
+
+Object: wall
+Size: 20 150 30
+Color: 1 0 0
+Z: -500
+
+Object: road
+Width: 80
+Z: -1000
+Length: 500
+
+# The saver
+Object: wormhole
+Size: 5 80 40
+Z: -725
+Type: angle=0,180,0; angular velocity=0
+
+Object: ground
+
+###
+Scene Location: -5 -6
+
+Object: checkpoint
+Size: 10 80 20
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: 0 0 700
+Yrot: 180
+Type: 1 3
+
+Object: generic sign
+Label: You passed!\Prepare to launch
+Position: 55 0 0
+Yrot: 180
+Size: 20 40 5
+
+Object: road
+Size:  2000 80 0
+Z: -1000
+
+Object: ground
+
+################################################################################
+### Linear accelerator
+################################################################################
+
+Scene Location: -5 -7
+
+Object: generic sign
+Size: 20 40 1
+Label: Entering\Linear\Accelerator
+Position: 50 0 995
+Yrot: 180
+Color: 1 .4 .1
+
+Object: generic sign
+Size: 20 40 1
+Label: Prepare for\Acceleration
+Yrot: 180
+Position: -50 0 995
+Color: 1 .4 .1
+
+
+### The accelerator
+Object: road
+Size: 1051 60 0
+Position: 0 .1 -50
+
+Object: wall
+Color: 1 1 .5
+Size: 700 5 5
+Yrot: 180
+Position: 0 30 900
+
+Object: wall
+Color: 1 1 .5
+Size: 700 5 5
+Yrot: 180
+Position: 25 20 900
+Zrot:  30
+
+Object: wall
+Color: 1 1 .5
+Size: 700 5 5
+Position: -25 20 900
+Yrot: 180
+Zrot: -30
+
+Object: invisible wormhole
+Size: 0 70 35
+Z: 900
+Type: linear_velocity *= 0,0,1.2
+Object: invisible wormhole
+Size: 0 70 35
+Z: 800
+Type:  linear_velocity *= 0,0,1.2
+Object: invisible wormhole
+Size: 0 70 35
+Z: 700
+Type:  linear_velocity *= 0,0,1.2
+Object: invisible wormhole
+Size: 0 70 35
+Z: 600
+Object: invisible wormhole
+Size: 0 70 35
+Z: 500
+Type:  linear_velocity *= 0,0,1.2
+Object: invisible wormhole
+Size: 0 70 35
+Z: 400
+Type:  linear_velocity *= 0,0,1.2
+Object: invisible wormhole
+Size: 0 70 35
+Z: 300
+Type:  linear_velocity *= 0,0,1.2
+Object: invisible wormhole
+Size: 0 70 35
+Z: 200
+Type:  linear_velocity = 0,0,600
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Z: 900
+Height: 5
+Radius: 35
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 901
+Height: 7
+Radius: 36
+Animation Bits: 0x1111
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Z: 800
+Height: 5
+Radius: 35
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 801
+Height: 7
+Radius: 36
+Animation Bits: 0x2222
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Z: 700
+Height: 5
+Radius: 35
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 701
+Height: 7
+Radius: 36
+Animation Bits: 0x4444
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Z: 600
+Height: 5
+Radius: 35
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 601
+Height: 7
+Radius: 36
+Animation Bits: 0x8888
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Radius: 35
+Height: 5
+Z: 500
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 501
+Height: 7
+Radius: 36
+Animation Bits: 0x1111
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Radius: 35
+Height: 5
+Z: 400
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 401
+Height: 7
+Radius: 36
+Animation Bits: 0x2222
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Radius: 35
+Height: 5
+Z: 300
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 301
+Height: 7
+Radius: 36
+Animation Bits: 0x4444
+
+Object: curvewall
+Xrot: -90
+Color: .2 .2 .2
+Radius: 35
+Height: 5
+Z: 200
+Object: curvewall
+Xrot: -90
+Color: 1 1 0
+Z: 201
+Height: 7
+Radius: 36
+Animation Bits: 0x8888
+
+Object: checkpoint
+Size: 5 40 20
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: 0 0 190
+Yrot: 180
+Type: 1 4
+
+# Launch ramp
+Object: spline road
+Width:  100
+Height: 5
+Data: 10 3
+  0   0 0
+  0  10 -100
+  0  25 -200
+  0  50 -300
+  0  70 -400
+  0 100 -500
+  0 150 -600
+  0 200 -700
+  0 300 -800
+  0 450 -900
+
+Object: flat
+Size: 2000 2000 0
+Color: .1 .5 .1
+
+Scene Location: -5 -8
+Object: flat
+Size: 2000 2000 0
+
+Object: invisible wormhole
+Y: 2500
+Size: 2000 2000 50
+Xrot: -90
+Type: position=-12000,2000,-18000; angle=90,0,0; angular velocity=0,20,0; linear velocity=0
+
+
+Scene Location: -5 -9
+
+Object: invisible wormhole
+Y: 2000
+Size: 2000 2000 50
+Xrot: -90
+Type: position=-12000,2000,-18000; angle=90,0,0; angular velocity=0,20,0; linear velocity=0
+
+
+################################################################################
+### Cave World Transition
+################################################################################
+
+Scene Location: -6 -9
+
+Object: sphere
+Radius: 100
+Position: 0 750 0
+Color: .8 .4 .1
+
+Object: curvewall
+Radius: 200
+Angle: 360
+Size: 0 80 .1
+Zrot: 80
+Position: 0 750 0
+Color: .9 .8 .1
+
+Object: curvewall
+Radius: 170
+Angle: 360
+Size: 0 5 .3
+Zrot: 80
+Position: 0 750 0
+Color: 0 0 .3
+
+Object: curvewall
+Radius: 152
+Angle: 360
+Size: 0 1 .3
+Zrot: 80
+Position: 0 750 0
+Color: 0 0 0
+
+Object: flat
+Size: 2000 2000 0
+Position: 0 0 0
+Color: 0 0 0
+
+# Randomly select one of four starting locations
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Destination: 50 0 -4100
+Type: position=-14030,2,-12430; angle=0; angular velocity=0; linear velocity=0
+Animation Bits: 0x1111
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Destination: 50 0 -4100
+Type: position=-14010,2,-12430; angle=0; angular velocity=0; linear velocity=0
+Animation Bits: 0x2222
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Destination: 50 0 -4100
+Type: position=-13990,2,-12430; angle=0; angular velocity=0; linear velocity=0
+Animation Bits: 0x4444
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Destination: 50 0 -4100
+Type: position=-13970,2,-12430; angle=0; angular velocity=0; linear velocity=0
+Animation Bits: 0x8888
+
+Object: generic sign
+Position: 30 1500 0
+Size: 20 40 .01
+Label: Approaching\Cave World
+Xrot: 90
+Yrot: -90
+Color: 0 0 0
+
+
+################################################################################
+###  Cave World
+################################################################################
+
+Scene Location: -7 -6
+
+Object: generic sign
+Size: 5 10 .1
+Label: North to\Wormhole
+Position: 0 15 -350
+
+# Stalagtites
+Object: cone
+Size: 0 0.0001 15
+Position: -15 5 212
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: -13 10 76
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: 25 10 49
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: -32 0 -251
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: 37 0 375
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: -27 0 82
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: 7 10 -310
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: 22 0 66
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: 16 5 285
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: 0 0 -309
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: -21 10 -176
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: 29 15 -237
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: -15 10 -341
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -30 5 -119
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 20
+Position: -11 0 133
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: -14 0 -374
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: 6 15 2
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -21 5 351
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: 34 10 270
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: 6 15 -260
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: 16 5 229
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: 9 5 -159
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: 19 10 206
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: 7 10 -229
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: -4 15 -7
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: -36 0 354
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: -9 15 -346
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: 3 10 -38
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: -5 0 127
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -29 5 339
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -20 5 -6
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 20
+Position: 11 0 -21
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: 10 15 -293
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -20 5 -279
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: -15 15 -178
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 5
+Position: -34 15 -62
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: 9 5 271
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -25 5 247
+Radius: 3
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 10
+Position: -11 10 -28
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 0.0001 15
+Position: -7 5 -141
+Radius: 1
+Color: 0.4 0.3 0.1
+
+# Stalagmites
+Object: cone
+Size: 0 2 15
+Position: -25 0 -129
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 5
+Position: 34 0 143
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 15
+Position: -40 0 -65
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 10
+Position: 12 0 47
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 20
+Position: 8 0 -370
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 5
+Position: -3 0 68
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: -7 0 386
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 20
+Position: 39 0 -246
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: -21 0 126
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 20
+Position: 7 0 138
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 20
+Position: 37 0 -367
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 10
+Position: 7 0 -41
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 5
+Position: 15 0 51
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: 14 0 339
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 5
+Position: -35 0 269
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 20
+Position: 29 0 266
+Radius: 2
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 20
+Position: -1 0 -240
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 15
+Position: 34 0 -45
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 15
+Position: -17 0 -165
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 20
+Position: 7 0 212
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 10
+Position: -40 0 -104
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 10
+Position: 17 0 220
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: -37 0 -3
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 15
+Position: 35 0 328
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 10
+Position: 10 0 173
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 15
+Position: -37 0 -127
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 15
+Position: 31 0 342
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 5
+Position: 2 0 -133
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 5
+Position: 4 0 370
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 5
+Position: 31 0 374
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 15
+Position: -21 0 361
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: 35 0 -193
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: 4 0 -52
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 20
+Position: -5 0 302
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 10
+Position: -36 0 -231
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 5
+Position: 35 0 -377
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 3 20
+Position: -5 0 -100
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 20
+Position: 15 0 26
+Radius: 1
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 2 15
+Position: 20 0 330
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+Object: cone
+Size: 0 1 20
+Position: -30 0 229
+Radius: 0.001
+Color: 0.4 0.3 0.1
+
+# Ceiling
+Object: flat
+Size: 900 80 0
+Position: 0 20 0
+Zrot: 180
+Color: 0.2 0.1 0.0
+
+# Walls
+Object: wall
+Position: 40 0 -450
+Size: 450 5 20
+Color: 0.2 0.1 0.0
+
+Object: wall
+Position: 40 0 0
+Size: 450 5 20
+Color: 0.2 0.1 0.0
+
+Object: wall
+Position: -40 0 -450
+Size: 450 5 20
+Color: 0.2 0.1 0.0
+
+Object: wall
+Position: -40 0 0
+Size: 450 5 20
+Color: 0.2 0.1 0.0
+
+Object: wall
+Position: 0 0 -450
+Size: 2 80 20
+
+# Floor
+Object: flat
+Size: 2000 2000 0
+Position: 0 0 0
+Color: 0.2 0.1 0.0
+
+Object: wormhole
+Position: 0 0 450
+Size: 0 80 20
+Type: position=-14000,2000,-16000; angle=90,0,0; angular velocity=0,20,0; linear velocity=0
+
+Object: checkpoint
+Size: 5 85 15
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: 0 0 445
+Type: 1 5
+
+################################################################################
+### Lava World Transition
+################################################################################
+
+Scene Location: -7 -8
+
+Object: sphere
+Radius: 100
+Y: 750
+Color: .3 .3 .3
+
+Object: flat
+Size: 2000 2000 0
+Position: 0 0 0
+Color: 0 0 0
+
+Object: generic sign
+Position: 30 1500 0
+Size: 20 40 .01
+Label: Approaching\Lava World
+Xrot: 90
+Yrot: -90
+Color: 0 0 0
+
+Object: generic sign
+Position: 0 1300 30
+Size: 20 40 .01
+Label: Avoid\Lava Pits!
+Xrot: 90
+Yrot: 0
+Color: 0 0 0
+
+# Randomly select one of four starting positions
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-18030,2,-14850; angle=0; angular velocity=0; linear_velocity=0
+Animation Bits: 0x1111
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-18010,2,-14850; angle=0; angular velocity=0; linear_velocity=0
+Animation Bits: 0x2222
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-17990,2,-14850; angle=0; angular velocity=0; linear_velocity=0
+Animation Bits: 0x4444
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-17970,2,-14850; angle=0; angular velocity=0; linear_velocity=0
+Animation Bits: 0x8888
+
+
+################################################################################
+### Lava World
+################################################################################
+
+Scene Location: -9 -7
+
+Object: generic sign
+Size: 20 40 1
+Label: North to\Wormhole
+Position: 0 0 -700
+
+# Cinder cones
+Object: cone
+Position: 43 0 7
+Size: 0 10 10
+Radius: 3
+Color: .28 .28 .28
+
+Object: cone
+Position: -200 0 539
+Size: 0 15 4
+Radius: 5
+Color: .25 .25 .25
+
+Object: cone
+Position: -53 0 -408
+Size: 0 25 12
+Radius: 8
+Color: .34 .34 .34
+
+Object: cone
+Position: -142 0 -562
+Size: 0 10 2
+Radius: 3
+Color: .31 .31 .31
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: -142 -6 -562
+Size: 20 12 40
+Radius: .001
+Animation Bits: 0x0007
+
+Object: cone
+Position: -25 0 479
+Size: 0 25 4
+Radius: 8
+Color: .27 .27 .27
+
+Object: cone
+Position: 84 0 -733
+Size: 0 25 8
+Radius: 8
+Color: .25 .25 .25
+
+Object: cone
+Position: -159 0 -221
+Size: 0 10 12
+Radius: 3
+Color: .25 .25 .25
+
+Object: cone
+Position: -104 0 665
+Size: 0 20 2
+Radius: 6
+Color: .29 .29 .29
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: -104 -6 665
+Size: 20 12 40
+Radius: .001
+Animation Bits: 0x0070
+
+Object: cone
+Position: -189 0 706
+Size: 0 25 2
+Radius: 8
+Color: .27 .27 .27
+
+Object: cone
+Position: 83 0 215
+Size: 0 20 12
+Radius: 6
+Color: .27 .27 .27
+Object: flames
+Count: 4
+Size: 8 8 16
+Yrot: 99
+Position: 83 12 215
+
+Object: cone
+Position: 197 0 666
+Size: 0 15 6
+Radius: 5
+Color: .32 .32 .32
+
+Object: cone
+Position: 17 0 -604
+Size: 0 20 6
+Radius: 6
+Color: .28 .28 .28
+
+Object: cone
+Position: -163 0 763
+Size: 0 15 8
+Radius: 5
+Color: .26 .26 .26
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: -163 0 763
+Size: 20 30 40
+Radius: .001
+Animation Bits: 0x0070
+
+Object: cone
+Position: 177 0 -133
+Size: 0 15 12
+Radius: 5
+Color: .28 .28 .28
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: 177 4 -133
+Size: 20 18 40
+Radius: .001
+Animation Bits: 0x0038
+
+Object: cone
+Position: 108 0 706
+Size: 0 25 12
+Radius: 8
+Color: .32 .32 .32
+
+Object: cone
+Position: -23 0 -320
+Size: 0 15 2
+Radius: 5
+Color: .26 .26 .26
+
+Object: cone
+Position: 73 0 -604
+Size: 0 10 10
+Radius: 3
+Color: .27 .27 .27
+Object: flames
+Count: 4
+Size: 8 8 16
+Yrot: 55
+Position: 73 10 -604
+
+Object: cone
+Position: -39 0 -455
+Size: 0 15 4
+Radius: 5
+Color: .30 .30 .30
+
+Object: cone
+Position: -146 0 -551
+Size: 0 15 6
+Radius: 5
+Color: .25 .25 .25
+
+Object: cone
+Position: 168 0 42
+Size: 0 15 10
+Radius: 5
+Color: .29 .29 .29
+
+Object: cone
+Position: -113 0 489
+Size: 0 20 10
+Radius: 6
+Color: .31 .31 .31
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: -113 2 489
+Size: 20 6 40
+Radius: .001
+Animation Bits: 0x1c00
+
+Object: cone
+Position: -9 0 703
+Size: 0 15 4
+Radius: 5
+Color: .27 .27 .27
+
+Object: cone
+Position: 97 0 43
+Size: 0 20 12
+Radius: 6
+Color: .27 .27 .27
+
+Object: cone
+Position: -24 0 328
+Size: 0 20 12
+Radius: 6
+Color: .26 .26 .26
+
+Object: cone
+Position: -95 0 -58
+Size: 0 15 4
+Radius: 5
+Color: .34 .34 .34
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: -95 -4 -58
+Size: 20 18 40
+Radius: .001
+Animation Bits: 0x0007
+
+Object: cone
+Position: -4 0 232
+Size: 0 15 12
+Radius: 5
+Color: .31 .31 .31
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: -4 4 232
+Size: 20 30 40
+Radius: .001
+Animation Bits: 0x000e
+
+Object: cone
+Position: -77 0 -70
+Size: 0 20 12
+Radius: 6
+Color: .27 .27 .27
+
+Object: cone
+Position: 11 0 -318
+Size: 0 15 2
+Radius: 5
+Color: .32 .32 .32
+Object: flames
+Count: 4
+Size: 8 8 16
+Yrot: 309
+Position: 11 2 -318
+
+Object: cone
+Position: 179 0 469
+Size: 0 20 12
+Radius: 6
+Color: .28 .28 .28
+
+Object: cone
+Position: 22 0 799
+Size: 0 15 8
+Radius: 5
+Color: .32 .32 .32
+
+Object: cone
+Position: 120 0 708
+Size: 0 25 12
+Radius: 8
+Color: .30 .30 .30
+
+Object: cone
+Position: 146 0 204
+Size: 0 15 8
+Radius: 5
+Color: .31 .31 .31
+Object: flames
+Count: 4
+Size: 8 8 16
+Yrot: 341
+Position: 146 8 204
+
+Object: cone
+Position: 56 0 570
+Size: 0 10 12
+Radius: 3
+Color: .31 .31 .31
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: 56 4 570
+Size: 20 30 40
+Radius: .001
+Animation Bits: 0x0380
+
+Object: cone
+Position: 47 0 -233
+Size: 0 25 10
+Radius: 8
+Color: .25 .25 .25
+
+Object: cone
+Position: 53 0 409
+Size: 0 25 2
+Radius: 8
+Color: .32 .32 .32
+Object: deciduous
+Type: cone
+Color: 1 1 1
+Position: 53 -6 409
+Size: 20 30 40
+Radius: .001
+Animation Bits: 0x01c0
+
+Object: cone
+Position: 186 0 97
+Size: 0 25 8
+Radius: 8
+Color: .26 .26 .26
+
+Object: cone
+Position: -125 0 -730
+Size: 0 15 4
+Radius: 5
+Color: .27 .27 .27
+
+Object: cone
+Position: 138 0 -500
+Size: 0 10 2
+Radius: 3
+Color: .34 .34 .34
+
+Object: cone
+Position: 105 0 -384
+Size: 0 10 8
+Radius: 3
+Color: .30 .30 .30
+
+Object: cone
+Position: -173 0 -401
+Size: 0 15 4
+Radius: 5
+Color: .25 .25 .25
+# Magma
+
+Object: oval light
+Position: -150 0.2 -213
+Size: 7 6 0
+Color: 1 1 0
+Object: land mine
+Position: -150 0.0 -213
+Size: 7 6 1
+
+Object: oval light
+Position: -78 0.2 -561
+Size: 10 10 0
+Color: 1 0 0
+Object: land mine
+Position: -78 0.0 -561
+Size: 10 10 1
+
+Object: oval light
+Position: 102 0.2 -169
+Size: 9 6 0
+Color: 1 1 0
+Object: land mine
+Position: 102 0.0 -169
+Size: 9 6 1
+
+Object: oval light
+Position: -119 0.2 -78
+Size: 7 9 0
+Color: 1 1 0
+Object: land mine
+Position: -119 0.0 -78
+Size: 7 9 1
+
+Object: oval light
+Position: 53 0.2 459
+Size: 5 7 0
+Color: 1 0 0
+Object: land mine
+Position: 53 0.0 459
+Size: 5 7 1
+
+Object: oval light
+Position: -157 0.2 -431
+Size: 6 8 0
+Color: 1 0 0
+Object: land mine
+Position: -157 0.0 -431
+Size: 6 8 1
+
+Object: oval light
+Position: 68 0.2 676
+Size: 5 7 0
+Color: 1 0 0
+Object: land mine
+Position: 68 0.0 676
+Size: 5 7 1
+
+Object: oval light
+Position: 1 0.2 687
+Size: 9 5 0
+Color: 1 0 0
+Object: land mine
+Position: 1 0.0 687
+Size: 9 5 1
+
+Object: oval light
+Position: -73 0.2 -391
+Size: 5 5 0
+Color: 1 1 0
+Object: land mine
+Position: -73 0.0 -391
+Size: 5 5 1
+
+Object: oval light
+Position: 175 0.2 -60
+Size: 10 9 0
+Color: 1 1 0
+Object: land mine
+Position: 175 0.0 -60
+Size: 10 9 1
+
+Object: oval light
+Position: -65 0.2 127
+Size: 5 5 0
+Color: 1 1 0
+Object: land mine
+Position: -65 0.0 127
+Size: 5 5 1
+
+Object: oval light
+Position: 139 0.2 170
+Size: 8 7 0
+Color: 1 1 0
+Object: land mine
+Position: 139 0.0 170
+Size: 8 7 1
+
+Object: oval light
+Position: -142 0.2 -168
+Size: 6 5 0
+Color: 1 1 0
+Object: land mine
+Position: -142 0.0 -168
+Size: 6 5 1
+
+Object: oval light
+Position: -168 0.2 460
+Size: 6 7 0
+Color: 1 0 0
+Object: land mine
+Position: -168 0.0 460
+Size: 6 7 1
+
+Object: oval light
+Position: -67 0.2 -163
+Size: 9 5 0
+Color: 1 1 0
+Object: land mine
+Position: -67 0.0 -163
+Size: 9 5 1
+
+Object: oval light
+Position: 16 0.2 100
+Size: 6 8 0
+Color: 1 1 0
+Object: land mine
+Position: 16 0.0 100
+Size: 6 8 1
+
+Object: oval light
+Position: -183 0.2 61
+Size: 9 5 0
+Color: 1 0 0
+Object: land mine
+Position: -183 0.0 61
+Size: 9 5 1
+
+Object: oval light
+Position: 156 0.2 -793
+Size: 7 9 0
+Color: 1 1 0
+Object: land mine
+Position: 156 0.0 -793
+Size: 7 9 1
+
+Object: oval light
+Position: -69 0.2 -556
+Size: 10 7 0
+Color: 1 0 0
+Object: land mine
+Position: -69 0.0 -556
+Size: 10 7 1
+
+Object: oval light
+Position: -168 0.2 -593
+Size: 6 6 0
+Color: 1 0 0
+Object: land mine
+Position: -168 0.0 -593
+Size: 6 6 1
+
+Object: oval light
+Position: -6 0.2 250
+Size: 6 6 0
+Color: 1 0 0
+Object: land mine
+Position: -6 0.0 250
+Size: 6 6 1
+
+Object: oval light
+Position: -140 0.2 -56
+Size: 7 6 0
+Color: 1 1 0
+Object: land mine
+Position: -140 0.0 -56
+Size: 7 6 1
+
+Object: oval light
+Position: -39 0.2 -507
+Size: 6 6 0
+Color: 1 0 0
+Object: land mine
+Position: -39 0.0 -507
+Size: 6 6 1
+
+Object: oval light
+Position: -47 0.2 552
+Size: 10 9 0
+Color: 1 0 0
+Object: land mine
+Position: -47 0.0 552
+Size: 10 9 1
+
+Object: oval light
+Position: -114 0.2 -276
+Size: 7 5 0
+Color: 1 1 0
+Object: land mine
+Position: -114 0.0 -276
+Size: 7 5 1
+
+Object: oval light
+Position: -60 0.2 631
+Size: 6 8 0
+Color: 1 1 0
+Object: land mine
+Position: -60 0.0 631
+Size: 6 8 1
+
+Object: oval light
+Position: 39 0.2 651
+Size: 8 8 0
+Color: 1 1 0
+Object: land mine
+Position: 39 0.0 651
+Size: 8 8 1
+
+Object: oval light
+Position: -179 0.2 504
+Size: 10 6 0
+Color: 1 0 0
+Object: land mine
+Position: -179 0.0 504
+Size: 10 6 1
+
+Object: oval light
+Position: -95 0.2 707
+Size: 5 5 0
+Color: 1 1 0
+Object: land mine
+Position: -95 0.0 707
+Size: 5 5 1
+
+Object: oval light
+Position: 0 0.2 -789
+Size: 7 10 0
+Color: 1 0 0
+Object: land mine
+Position: 0 0.0 -789
+Size: 7 10 1
+
+Object: oval light
+Position: 14 0.2 97
+Size: 9 7 0
+Color: 1 1 0
+Object: land mine
+Position: 14 0.0 97
+Size: 9 7 1
+
+Object: oval light
+Position: -3 0.2 9
+Size: 5 7 0
+Color: 1 0 0
+Object: land mine
+Position: -3 0.0 9
+Size: 5 7 1
+
+Object: oval light
+Position: 18 0.2 722
+Size: 8 7 0
+Color: 1 0 0
+Object: land mine
+Position: 18 0.0 722
+Size: 8 7 1
+
+Object: oval light
+Position: 177 0.2 419
+Size: 6 6 0
+Color: 1 1 0
+Object: land mine
+Position: 177 0.0 419
+Size: 6 6 1
+
+Object: oval light
+Position: -82 0.2 -620
+Size: 8 8 0
+Color: 1 0 0
+Object: land mine
+Position: -82 0.0 -620
+Size: 8 8 1
+
+Object: oval light
+Position: 0 0.2 -567
+Size: 10 8 0
+Color: 1 1 0
+Object: land mine
+Position: 0 0.0 -567
+Size: 10 8 1
+
+Object: oval light
+Position: -69 0.2 -36
+Size: 8 10 0
+Color: 1 1 0
+Object: land mine
+Position: -69 0.0 -36
+Size: 8 10 1
+
+Object: oval light
+Position: -100 0.2 8
+Size: 9 8 0
+Color: 1 1 0
+Object: land mine
+Position: -100 0.0 8
+Size: 9 8 1
+
+Object: oval light
+Position: -148 0.2 -658
+Size: 6 6 0
+Color: 1 0 0
+Object: land mine
+Position: -148 0.0 -658
+Size: 6 6 1
+
+Object: oval light
+Position: -6 0.2 -415
+Size: 9 8 0
+Color: 1 1 0
+Object: land mine
+Position: -6 0.0 -415
+Size: 9 8 1
+
+Object: oval light
+Position: 94 0.2 -356
+Size: 10 7 0
+Color: 1 0 0
+Object: land mine
+Position: 94 0.0 -356
+Size: 10 7 1
+
+Object: oval light
+Position: 158 0.2 131
+Size: 5 7 0
+Color: 1 1 0
+Object: land mine
+Position: 158 0.0 131
+Size: 5 7 1
+
+Object: oval light
+Position: -40 0.2 159
+Size: 9 9 0
+Color: 1 1 0
+Object: land mine
+Position: -40 0.0 159
+Size: 9 9 1
+
+Object: oval light
+Position: 5 0.2 -206
+Size: 10 5 0
+Color: 1 1 0
+Object: land mine
+Position: 5 0.0 -206
+Size: 10 5 1
+
+Object: oval light
+Position: 164 0.2 -559
+Size: 7 5 0
+Color: 1 1 0
+Object: land mine
+Position: 164 0.0 -559
+Size: 7 5 1
+
+Object: oval light
+Position: 7 0.2 -162
+Size: 7 8 0
+Color: 1 0 0
+Object: land mine
+Position: 7 0.0 -162
+Size: 7 8 1
+
+Object: oval light
+Position: -112 0.2 -150
+Size: 8 7 0
+Color: 1 1 0
+Object: land mine
+Position: -112 0.0 -150
+Size: 8 7 1
+
+Object: oval light
+Position: -23 0.2 -747
+Size: 10 7 0
+Color: 1 1 0
+Object: land mine
+Position: -23 0.0 -747
+Size: 10 7 1
+
+Object: oval light
+Position: -59 0.2 -114
+Size: 8 10 0
+Color: 1 1 0
+Object: land mine
+Position: -59 0.0 -114
+Size: 8 10 1
+
+Object: oval light
+Position: -172 0.2 604
+Size: 10 10 0
+Color: 1 1 0
+Object: land mine
+Position: -172 0.0 604
+Size: 10 10 1
+
+Object: oval light
+Position: 167 0.2 -301
+Size: 5 9 0
+Color: 1 0 0
+Object: land mine
+Position: 167 0.0 -301
+Size: 5 9 1
+
+Object: oval light
+Position: -117 0.2 -432
+Size: 10 10 0
+Color: 1 0 0
+Object: land mine
+Position: -117 0.0 -432
+Size: 10 10 1
+
+Object: oval light
+Position: -121 0.2 -701
+Size: 8 6 0
+Color: 1 0 0
+Object: land mine
+Position: -121 0.0 -701
+Size: 8 6 1
+
+Object: oval light
+Position: -164 0.2 408
+Size: 9 5 0
+Color: 1 0 0
+Object: land mine
+Position: -164 0.0 408
+Size: 9 5 1
+
+Object: oval light
+Position: 163 0.2 -694
+Size: 10 7 0
+Color: 1 1 0
+Object: land mine
+Position: 163 0.0 -694
+Size: 10 7 1
+
+Object: oval light
+Position: -184 0.2 535
+Size: 9 10 0
+Color: 1 0 0
+Object: land mine
+Position: -184 0.0 535
+Size: 9 10 1
+
+Object: oval light
+Position: -104 0.2 -693
+Size: 7 9 0
+Color: 1 1 0
+Object: land mine
+Position: -104 0.0 -693
+Size: 7 9 1
+
+Object: oval light
+Position: -165 0.2 -97
+Size: 8 8 0
+Color: 1 1 0
+Object: land mine
+Position: -165 0.0 -97
+Size: 8 8 1
+
+Object: oval light
+Position: -182 0.2 535
+Size: 9 10 0
+Color: 1 1 0
+Object: land mine
+Position: -182 0.0 535
+Size: 9 10 1
+
+Object: oval light
+Position: -129 0.2 393
+Size: 6 7 0
+Color: 1 1 0
+Object: land mine
+Position: -129 0.0 393
+Size: 6 7 1
+
+Object: oval light
+Position: -198 0.2 693
+Size: 10 9 0
+Color: 1 1 0
+Object: land mine
+Position: -198 0.0 693
+Size: 10 9 1
+
+Object: oval light
+Position: 17 0.2 77
+Size: 5 9 0
+Color: 1 0 0
+Object: land mine
+Position: 17 0.0 77
+Size: 5 9 1
+
+Object: oval light
+Position: -134 0.2 259
+Size: 9 10 0
+Color: 1 0 0
+Object: land mine
+Position: -134 0.0 259
+Size: 9 10 1
+
+Object: oval light
+Position: -145 0.2 294
+Size: 7 10 0
+Color: 1 1 0
+Object: land mine
+Position: -145 0.0 294
+Size: 7 10 1
+
+Object: oval light
+Position: -79 0.2 658
+Size: 7 5 0
+Color: 1 1 0
+Object: land mine
+Position: -79 0.0 658
+Size: 7 5 1
+
+Object: oval light
+Position: -40 0.2 616
+Size: 10 10 0
+Color: 1 1 0
+Object: land mine
+Position: -40 0.0 616
+Size: 10 10 1
+
+Object: oval light
+Position: 156 0.2 395
+Size: 10 7 0
+Color: 1 1 0
+Object: land mine
+Position: 156 0.0 395
+Size: 10 7 1
+
+Object: oval light
+Position: -90 0.2 18
+Size: 7 10 0
+Color: 1 0 0
+Object: land mine
+Position: -90 0.0 18
+Size: 7 10 1
+
+Object: oval light
+Position: 110 0.2 -62
+Size: 8 7 0
+Color: 1 1 0
+Object: land mine
+Position: 110 0.0 -62
+Size: 8 7 1
+
+Object: oval light
+Position: 24 0.2 447
+Size: 10 7 0
+Color: 1 1 0
+Object: land mine
+Position: 24 0.0 447
+Size: 10 7 1
+
+Object: oval light
+Position: 182 0.2 132
+Size: 6 9 0
+Color: 1 1 0
+Object: land mine
+Position: 182 0.0 132
+Size: 6 9 1
+
+Object: oval light
+Position: -155 0.2 -500
+Size: 10 5 0
+Color: 1 0 0
+Object: land mine
+Position: -155 0.0 -500
+Size: 10 5 1
+
+Object: oval light
+Position: 185 0.2 638
+Size: 8 9 0
+Color: 1 0 0
+Object: land mine
+Position: 185 0.0 638
+Size: 8 9 1
+
+Object: oval light
+Position: -197 0.2 -447
+Size: 6 9 0
+Color: 1 0 0
+Object: land mine
+Position: -197 0.0 -447
+Size: 6 9 1
+
+Object: oval light
+Position: -141 0.2 -627
+Size: 6 8 0
+Color: 1 0 0
+Object: land mine
+Position: -141 0.0 -627
+Size: 6 8 1
+
+Object: oval light
+Position: 133 0.2 -341
+Size: 8 10 0
+Color: 1 1 0
+Object: land mine
+Position: 133 0.0 -341
+Size: 8 10 1
+
+Object: oval light
+Position: 113 0.2 -669
+Size: 5 8 0
+Color: 1 0 0
+Object: land mine
+Position: 113 0.0 -669
+Size: 5 8 1
+
+Object: oval light
+Position: 95 0.2 414
+Size: 6 7 0
+Color: 1 0 0
+Object: land mine
+Position: 95 0.0 414
+Size: 6 7 1
+
+Object: oval light
+Position: 100 0.2 -72
+Size: 9 7 0
+Color: 1 1 0
+Object: land mine
+Position: 100 0.0 -72
+Size: 9 7 1
+
+Object: oval light
+Position: -85 0.2 -419
+Size: 8 9 0
+Color: 1 0 0
+Object: land mine
+Position: -85 0.0 -419
+Size: 8 9 1
+
+Object: light
+Size: 50 2 0
+Position: 148 25 -573
+Xrot: -97
+Color: 1 1 1
+Animation Bits: 0x0200
+
+Object: light
+Size: 50 2 0
+Position: 148 25 -573
+Yrot: 20
+Xrot: 97
+Color: 1 1 1
+Animation Bits: 0x0200
+
+Object: light
+Size: 50 2 0
+Position: 161 25 152
+Xrot: -92
+Color: 1 1 1
+Animation Bits: 0x8000
+
+Object: light
+Size: 50 2 0
+Position: 161 25 152
+Yrot: 20
+Xrot: 92
+Color: 1 1 1
+Animation Bits: 0x8000
+
+Object: light
+Size: 50 2 0
+Position: 100 25 -138
+Xrot: -83
+Color: 1 1 1
+Animation Bits: 0x0800
+
+Object: light
+Size: 50 2 0
+Position: 100 25 -138
+Yrot: 20
+Xrot: 83
+Color: 1 1 1
+Animation Bits: 0x0800
+
+Object: light
+Size: 50 2 0
+Position: 169 25 82
+Xrot: -98
+Color: 1 1 1
+Animation Bits: 0x0200
+
+Object: light
+Size: 50 2 0
+Position: 169 25 82
+Yrot: 20
+Xrot: 98
+Color: 1 1 1
+Animation Bits: 0x0200
+
+Object: light
+Size: 50 2 0
+Position: -73 25 -480
+Xrot: -92
+Color: 1 1 1
+Animation Bits: 0x4000
+
+Object: light
+Size: 50 2 0
+Position: -73 25 -480
+Yrot: 20
+Xrot: 92
+Color: 1 1 1
+Animation Bits: 0x4000
+
+Object: light
+Size: 50 2 0
+Position: 158 25 364
+Xrot: -96
+Color: 1 1 1
+Animation Bits: 0x0080
+
+Object: light
+Size: 50 2 0
+Position: 158 25 364
+Yrot: 20
+Xrot: 96
+Color: 1 1 1
+Animation Bits: 0x0080
+
+Object: light
+Size: 50 2 0
+Position: -62 25 -774
+Xrot: -94
+Color: 1 1 1
+Animation Bits: 0x0010
+
+Object: light
+Size: 50 2 0
+Position: -62 25 -774
+Yrot: 20
+Xrot: 94
+Color: 1 1 1
+Animation Bits: 0x0010
+
+Object: light
+Size: 50 2 0
+Position: -182 25 -353
+Xrot: -98
+Color: 1 1 1
+Animation Bits: 0x0010
+
+Object: light
+Size: 50 2 0
+Position: -182 25 -353
+Yrot: 20
+Xrot: 98
+Color: 1 1 1
+Animation Bits: 0x0010
+
+Object: light
+Size: 50 2 0
+Position: -185 25 -100
+Xrot: -89
+Color: 1 1 1
+Animation Bits: 0x0001
+
+Object: light
+Size: 50 2 0
+Position: -185 25 -100
+Yrot: 20
+Xrot: 89
+Color: 1 1 1
+Animation Bits: 0x0001
+
+Object: light
+Size: 50 2 0
+Position: 20 25 317
+Xrot: -94
+Color: 1 1 1
+Animation Bits: 0x0080
+
+Object: light
+Size: 50 2 0
+Position: 20 25 317
+Yrot: 20
+Xrot: 94
+Color: 1 1 1
+Animation Bits: 0x0080
+
+Object: light
+Size: 50 2 0
+Position: 114 25 -138
+Xrot: -95
+Color: 1 1 1
+Animation Bits: 0x2000
+
+Object: light
+Size: 50 2 0
+Position: 114 25 -138
+Yrot: 20
+Xrot: 95
+Color: 1 1 1
+Animation Bits: 0x2000
+
+Object: light
+Size: 50 2 0
+Position: 177 25 -264
+Xrot: -97
+Color: 1 1 1
+Animation Bits: 0x0004
+
+Object: light
+Size: 50 2 0
+Position: 177 25 -264
+Yrot: 20
+Xrot: 97
+Color: 1 1 1
+Animation Bits: 0x0004
+
+# Surrounder walls
+# "Walls"
+Object: wall
+Size: 1800 10 5
+Position: -200 0 -900
+Color: 0.3 0.3 0.3
+Object: wall
+Size: 1800 10 5
+Position: 200 0 -900
+Color: 0.3 0.3 0.3
+Object: wall
+Size: 10 400 5
+Position: 0 0 -900
+Color: 0.3 0.3 0.3
+Object: wall
+Size: 10 400 5
+Position: 0 0 900
+Color: 0.3 0.3 0.3
+
+# Floor
+Object: flat
+Position: 0 0 0
+Size: 2000 2000 0
+Color: 0.3 0.3 0.3
+
+# Ceiling
+Object: flat
+Size: 2000 2000 0
+Position: 0 50 0
+Zrot: 180
+Color: 1.0 0.1 0.1
+
+Object: checkpoint
+Size: 10 85 20
+Label:  CHECKPOINT 6
+Radius: 0.5
+Position: 0 0 885
+Type: 1 6
+
+Object: wormhole
+Position: 0 0 890
+Size: 0 80 20
+Type: position=-16000,2000,-18000; angle=90,0,0; angular velocity=0,20,0; linear velocity=0
+
+
+Scene Location: -9 -6
+
+# Ceiling
+Object: flat
+Size: 2000 2000 0
+Position: 0 50 0
+Zrot: 180
+Color: 1.0 0.1 0.1
+
+
+################################################################################
+### Rev Grav World Transition
+################################################################################
+
+Scene Location: -8 -9
+
+Object: sphere
+Radius: 100
+Y: 750
+Color: .8 .8 .8
+
+Object: sphere
+Radius: 100
+Y: 750.001
+Color: 0 0 0
+
+Object: flat
+Size: 2000 2000 0
+Position: 0 0 0
+Color: 0 0 0
+
+Object: generic sign
+Position: 30 1500 0
+Size: 20 40 .01
+Label: Reverse\Gravity\Zone
+Xrot: 90
+Yrot: -90
+Color: 0 0 0
+
+# Randomly select one of four starting positions
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-20010,102,-10990; angle=0; angular velocity=0; linear velocity=0
+Animation Bits: 0x5555
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-19990,102,-10990; angle=0; angular velocity=0; linear velocity=0
+Animation Bits: 0xaaaa
+
+################################################################################
+### Reverse Gravity
+################################################################################
+
+Scene Location: -10 -6
+# Safety Net
+Object: invisible wormhole
+Position: 0 2 1000
+Xrot: -90
+Size: 5 2000 2000
+Type: position in scene = 0,105,1050; angular velocity=0,0,0; angle=0; linear velocity=0,0,0
+
+# The ground-sky
+Object: flat
+Size: 2000 2000 0
+Y: 140
+Color: .2 .8 0
+Xrot: 180
+
+
+###########################################################################
+Scene Location: -9 -4
+
+Object: flat
+Size: 2000 2000 0
+Y: 140
+Color: .2 .8 0
+Xrot: 180
+
+
+###########################################################################
+Scene Location: -10 -5
+
+# Safety Net
+Object: invisible wormhole
+Position: 0 2 1000
+Xrot: -90
+Size: 5 2000 2000
+Type: position in scene = 0,105,-950; angular velocity=0,0,0; angle=0; linear velocity=0,0,0
+
+# The ground-sky
+Object: flat
+Size: 2000 2000 0
+Y: 140
+Color: .2 .8 0
+Xrot: 180
+
+Object: road
+Y: 100
+Width: 50
+Height: 0.5
+Length: 1000
+Zrot: 180
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 0
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 200
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 400
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 600
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 800
+
+Object: tree
+Position: 60 140 100
+Xrot: 180
+Height: 70
+
+Object: tree
+Position: -80 140 220
+Xrot: 180
+Height: 40
+
+Object: tree
+Position: -70 140 420
+Xrot: 180
+Height: 50
+
+Object: house
+Position: 30 140 700
+Xrot: 180
+Yrot: 210
+Type: dutch colonial
+
+Object: conifer
+Position: 60 140 720
+Xrot: 180
+Height: 30
+Color: 0 .3 .5
+
+Object: road
+Yrot: 90
+Zrot: 180
+Position: 1000 139.5 670
+Length: 2000
+
+Object: spline road
+Width: 50
+Height: 0.5
+Zrot: 180
+Position: 0 200 0
+Data:  9 3
+   0.0 100.0 0.0
+   0.0 100.0 -40.0
+   0.0 120.0 -110.0
+   0.0 130.0 -160.0
+   0.0 130.0 -200.0
+   0.0 140.0 -240.0
+   0.0 120.0 -280.0
+   0.0 100.0 -360.0
+   0.0 100.0 -400.0
+
+
+Object: road
+Position: 0 100 -1000
+Width: 50
+Height: 0.5
+Length: 600
+Zrot: 180
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 -800
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 -600
+
+Object: wall
+Size: 6 6 50
+Position: 0 100 -400
+
+
+# Crossing road
+Object: road
+Yrot: 90
+Zrot: 180
+Length: 2000
+Position: 1000 110 -200
+Height: 4
+
+Object: pillar
+Radius: 3
+Position: 50 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: 250 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: 450 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: 650 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: -50 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: -250 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: -450 110 -200
+Height: 50
+
+Object: pillar
+Radius: 3
+Position: -650 110 -200
+Height: 50
+
+Object: conifer
+Position:  70 140 -400
+Height: 60
+Zrot: 180
+
+
+###############################################################
+Scene Location: -10 -4
+
+# Safety Net
+Object: invisible wormhole
+Position: 0 2 1000
+Xrot: -90
+Size: 5 2000 2000
+Type: position in scene = 0,105,-990; angular velocity=0,0,0; angle=0; linear velocity=0,0,0
+
+# The ground-sky
+Object: flat
+Size: 2000 2000 0
+Y: 140
+Color: .2 .8 0
+Xrot: 180
+
+Object: curve
+Height: 0.5
+Radius: 400
+Position: 375 100 -1000
+Yrot: 0
+Zrot: 180
+Width: 50
+Angle: 90
+
+Object: wall
+Size: 6 6 50
+Position: 15 100 -900
+
+Object: wall
+Size: 6 6 50
+Position: 100 100 -750
+
+Object: curve
+Height: 0.5
+Radius: 400
+Position: 375 100 -250
+Yrot:  180
+Zrot:  180
+Width:  50
+Angle:  90
+
+Object: wall
+Size: 6 6 50
+Position: 500 100 -600
+
+Object: wall
+Size: 6 6 50
+Position: 750 100 -250
+
+Object: road
+Zrot: 180
+Width: 50
+Height: 0.5
+Position: 750 100 -250
+Length: 200
+
+Object: skyscraper
+Position: 500 139 -400
+Height: 100
+Zrot: 180
+
+Object: conifer
+Position: 400 139 -400
+Height: 70
+Zrot: 180
+
+Object: conifer
+Position: 500 139 -420
+Height: 40
+Zrot: 180
+
+Object: checkpoint
+Size: 5 55 20
+Label:  CHECKPOINT 7
+Radius: 0.5
+Position: 750 99 -65
+Type: 1 7
+
+Object: wormhole
+Size: 10 50 20
+Position: 750 100 -50
+Type: position=-20000,2000,-18000; angle=90,0,0; angular velocity=0,20,0; linear velocity=0
+
+
+################################################################################
+### Earth Transition
+################################################################################
+Scene Location: -10 -9
+
+Object: sphere
+Radius: 100
+Y: 750
+Color: 0 0 .5
+
+Object: deciduous
+Type:  round
+Height: 255
+Width: 180
+Y: 600
+Radius: 0.001
+Color: .6 .4 .2
+
+Object: flat
+Size: 2000 2000 0
+Position: 0 0 0
+Color: 0 0 0
+
+Object: generic sign
+Position: 30 1500 0
+Size: 20 40 .01
+Label: Welcome\Home
+Xrot: 90
+Yrot: -90
+Color: 0 0 0
+
+# Randomly select one of four starting positions
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-14030,2,-8900; angle=0; angular velocity=0; linear velocity=0,0,60
+Animation Bits: 0x1111
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-14010,2,-8900; angle=0; angular velocity=0; linear velocity=0,0,60
+Animation Bits: 0x2222
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-13990,2,-8900; angle=0; angular velocity=0; linear velocity=0,0,60
+Animation Bits: 0x4444
+
+Object: invisible wormhole
+Position: 0 870 -1000
+Size: 0 2000 2000
+Xrot: 90
+Type: position=-13970,2,-8900; angle=0; angular velocity=0; linear velocity=0,0,60
+Animation Bits: 0x8888
+
+################################################################################
+### Earth/finish
+################################################################################
+Scene Location: -7 -4 
+
+Object: road
+Z: -1000
+Size: 2000 80 0
+
+Object: ramp
+Size: 100 80 20
+Position: 0 0 0
+
+Object: checkpoint
+Position: 0 20 100
+Size: 10 80 20
+Label:  CHECKPOINT 8
+Radius: 0.5
+Type: 1 8
+
+#Construct:  plns_windmill
+#Position: 60 0 -200
+
+#Construct: oil_well
+#Position: -60 0 600
+#Yrot: 75
+
+Construct: flag
+Position: -60 0 800
+Color: 1 0 0
+Construct: flag
+Position: 60 0 800
+Color: 1 0 0
+
+Construct: flag
+Position: -60 0 825
+Color: 1 1 0
+Construct: flag
+Position: 60 0 825
+Color: 1 1 0
+
+Construct: flag
+Position: -60 -2 850
+Color: 0 1 0
+Construct: flag
+Position: 60 -2 850
+Color: 0 1 0
+
+Construct: flag
+Position: -60 -4 875
+Color: 0 1 1
+Construct: flag
+Position: 60 -4 875
+Color: 0 1 1
+
+Construct: flag
+Position: -60 -8 900
+Color: 0 0 1
+Construct: flag
+Position: 60 -8 900
+Color: 0 0 1
+
+Construct: flag
+Position: -60 -10 925
+Color: 1 0 1
+Construct: flag
+Position: 60 -10 925
+Color: 1 0 1
+
+
+Object: finish
+Size: 15 80 30
+Label: FINISH
+Radius: 0.5
+Position: 0 0 990
+Type: 1 9
+
+Object: ground
+
+####
+Scene Location: -7 -3
+
+# Fireworks
+
+
+Object: flat
+Size: 2000 2000 0
+
+
+
+################################################################################
+## Empty scenes
+################################################################################
+# Keep intervening scenes empty for max performance
+
+Scene Location: -4 -3
+Object: flat
+Size: 2000 2000 0
+Scene Location: -4 -4
+Object: flat
+Size: 2000 2000 0
+Scene Location: -4 -5
+Object: flat
+Size: 2000 2000 0
+Scene Location: -4 -6
+Object: flat
+Size: 2000 2000 0
+Scene Location: -4 -7
+Object: flat
+Size: 2000 2000 0
+
+# These overlap with JR DOBBS -- Need to remove them from here.
+#Scene Location: -4 -8
+#Object: flat
+#Size: 2000 2000 0
+#Scene Location: -4 -9
+#Object: flat
+#Size: 2000 2000 0
+#Scene Location: -4 -10
+#Object: flat
+#Size: 2000 2000 0
+
+Scene Location: -5 -10
+Object: flat
+Size: 2000 2000 0
+
+Scene Location: -6 -3
+Object: flat
+Size: 2000 2000 0
+Scene Location: -6 -4
+Object: flat
+Size: 2000 2000 0
+Scene Location: -6 -5
+Object: flat
+Size: 2000 2000 0
+Scene Location: -6 -6
+Object: flat
+Size: 2000 2000 0
+Scene Location: -6 -7
+Object: flat
+Size: 2000 2000 0
+Scene Location: -6 -8
+Object: flat
+Size: 2000 2000 0
+Scene Location: -6 -10
+Object: flat
+Size: 2000 2000 0
+
+Scene Location: -7 -5
+Object: flat
+Size: 2000 2000 0
+Scene Location: -7 -7
+Object: flat
+Size: 2000 2000 0
+Scene Location: -7 -9
+Object: flat
+Size: 2000 2000 0
+Scene Location: -7 -10
+Object: flat
+Size: 2000 2000 0
+
+Scene Location: -8 -3
+Object: flat
+Size: 2000 2000 0
+Scene Location: -8 -4
+Object: flat
+Size: 2000 2000 0
+Scene Location: -8 -5
+Object: flat
+Size: 2000 2000 0
+Scene Location: -8 -6
+Object: flat
+Size: 2000 2000 0
+Scene Location: -8 -7
+Object: flat
+Size: 2000 2000 0
+Scene Location: -8 -8
+Object: flat
+Size: 2000 2000 0
+Scene Location: -8 -10
+Object: flat
+Size: 2000 2000 0
+
+Scene Location: -9 -3
+Object: flat
+Size: 2000 2000 0
+Scene Location: -9 -5
+Object: flat
+Size: 2000 2000 0
+Scene Location: -9 -9
+Object: flat
+Size: 2000 2000 0
+Scene Location: -9 -10
+Object: flat
+Size: 2000 2000 0
+
+Scene Location: -10 -3
+Object: flat
+Size: 2000 2000 0
+Scene Location: -10 -7
+Object: flat
+Size: 2000 2000 0
+Scene Location: -10 -8
+Object: flat
+Size: 2000 2000 0
+Scene Location: -10 -10
+Object: flat
+Size: 2000 2000 0
+
+Scene Location: -11 -3
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -4
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -5
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -6
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -7
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -8
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -9
+Object: flat
+Size: 2000 2000 0
+Scene Location: -11 -10
+Object: flat
+Size: 2000 2000 0

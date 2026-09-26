@@ -1,0 +1,75 @@
+== NAME ==
+hwMatrix - HoverWare matrix utilities
+
+== SYNOPSIS ==
+{{{
+    #include "hw.h"
+
+    void hwIdentity( hwFloat res[4][4] )
+    void hwScale( hwFloat res[4][4], hwFloat sx, hwFloat sy, hwFloat sz )
+    void hwRotateX( hwFloat res[4][4], hwFloat angle )
+    void hwRotateY( hwFloat res[4][4], hwFloat angle )
+    void hwRotateZ( hwFloat res[4][4], hwFloat angle )
+    void hwRotateAxis( hwFloat res[4][4], hwFloat angle, hwFloat axis[3] )
+    void hwMatMult( hwFloat res[4][4], hwFloat a[4][4], hwFloat b[4][4] )
+    void hwTransform( hwFloat mat[4][4], hwFloat point[3] )
+    hwInt32 hwInvertMat( hwFloat mat[4][4], hwFloat dst[4][4] )
+
+    void hwDisplay->pushMatrix( hwDisplay disp, hwFloat mat[4][4] )
+    void hwDisplay->popMatrix( hwDisplay disp )
+}}}
+
+== DESCRIPTION ==
+These routines manipulate 4x4 transformations useful as modelling
+transforms in HoverWare.  Their full descriptions are as follows:
+
+; hwIdentity
+: Initialize a 4x4 matrix to "identity".
+
+; hwScale
+: Place the X, Y, and Z scale factors xs, ys, and zs along the diagonal of the matrix
+
+; hwRotateX
+: Create a matrix which rotates about the X axis by angle radians.
+
+; hwRotateY
+: Create a matrix which rotates about the Y axis by angle radians.
+
+; hwRotateZ
+: Create a matrix which rotates about the Z axis by angle radians.
+
+; hwRotateAxis
+: Create a matrix which rotates about an arbitrary axis by angle radians
+
+; hwMatMult
+: Post-multiply matrix a by matrix b, placing the result in res.
+
+; hwTransform
+: Transform a point by the given matrix
+
+; hwInvertMat
+: Calculate the inverse of a given mat, putting the result in dst.  The return value is 1 if the matrix is invertible, 0 otherwise.
+
+; hwDisplay->pushMatrix
+: Push a matrix on the HoverWare matrix stack.  The depth of this stack is system-dependent, but it is at least 8.  The matrix is pre-concatenated with the other matrices on the stack.
+
+; hwDisplay->popMatrix
+: Pop the top of the HoverWare matrix stack.
+
+The model matrix affects all graphics primitives in HoverWare,
+including cameras and lights.  Note that pushMatrix() and
+popMatrix() are actually methods in the hwDisplay class and need to
+be called through an instance of hwDisplay.
+
+== EXAMPLES ==
+{{{
+    /* Push a rotation about X on the matrix stack */
+    hwFloat
+        mat[4][4];
+
+    hwRotateX( mat, 30.0 * M_PI / 180.0 );
+    disp->pushMatrix( disp, mat );
+}}}
+
+== SEE ALSO ==
+[[hwSpinner]]

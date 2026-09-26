@@ -1,0 +1,37 @@
+== NAME ==
+hwFont - maintain references to TexFont objects
+
+== PROPERTIES ==
+| FileName | 0S | Name of the font file, if the font is to be loaded from disc
+| FontHeight | 1I | Desired font height, if one of the incuded static fonts should be used
+
+== DEFAULTS ==
+None
+
+== DESCRIPTION ==
+The hwFont class can be used to maintain references to font files.  There
+is no requirement to use this class; however, it makes the programmer's
+job slightly easier.
+
+== C EXAMPLE ==
+{{{
+    hwObject myFont, label;
+
+    myFont = hwFont->create( hwFont );
+    myFont->modify( myFont, hwStrFileName, HW_TYPE_STRING, "fontfile.txf" );
+
+    label = hwLabel->create( hwLabel );
+    label->modify( label, hwStrFont, HW_TYPE_OBJECT, myFont );
+    label->modify( label, hwStrLabel, HW_TYPE_STRING, "Howdy!" );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    hwLabel label {
+        Label = "Howdy!"
+        Font = hwFont { FileName = "fontfile.txf" }
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[TexFont]]

@@ -1,0 +1,40 @@
+hwLayout {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    BackgroundColor = {0,0,1}
+    Children = {
+        hwButton Push {
+            PosX = 100 PosY = 100
+            Width = 128  Height = 32
+            Label = "Push"
+            BackgroundColor = {.5,.5,.5}
+        },
+        hwButton Button {
+            PosX = 100 PosY = 148
+            Width = 128  Height = 32
+            Label = "Button"
+            BackgroundColor = {.5,.5,.5}
+        },
+        hwButton Okay {
+            PosX = 288 PosY = 64
+            Width = 128  Height = 32
+            Align = (HW_GUI_REL_BOT + HW_GUI_REL_RIGHT)
+            Label = "OK"
+            BackgroundColor = {.5,.5,.5}
+        },
+        hwButton Cancel {
+            PosX = 144 PosY = 64
+            Width = 128  Height = 32
+            Align = (HW_GUI_REL_BOT + HW_GUI_REL_RIGHT)
+            Label = "Cancel"
+            BackgroundColor = {.5,.5,.5}
+        }
+    }
+
+    # The following will all just flow through to the children
+    Color = {1,1,1}
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,0,0}
+    FontHeight = 24
+}

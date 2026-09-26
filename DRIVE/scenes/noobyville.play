@@ -1,0 +1,299 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Default starting place -- the central town
+#
+
+Scene Location: 0 -2
+
+Object: left curve sign
+Position: 20 0 -20
+Width: 20.0
+Height: 10.0
+Label: 100
+
+### X-axis road ###
+Object: road
+Length: 2000
+Yrot:   90
+Width:  40
+X:      1000
+
+### Z-axis road ###
+#Object: road
+#Length: 100
+#Z: 900
+
+Object: road
+Length: 152
+Width:  60
+Z:      849
+
+Object: bridge
+Length: 300
+Width:  40
+Height: 13
+Z:	700
+
+Object: road
+Length: 532
+Width:  40
+Z:      19
+
+Object: stoplight
+Size: 60.0 60.0 25.0
+Yrot: 90
+
+Object: road
+Length: 880
+Width:  40
+Z:      -900
+
+Object: road
+Length: 100
+Z: -1000
+
+Object: pond
+Length: 200.0
+Width: 160.0
+Position: -115 0 -135 
+
+Object: tree
+Position: -175 0 -205
+Height: 50.0
+
+### Items along the main road ###
+Object: telephone line
+Length: 1900
+Yrot: 90
+Position: 950 0 -35
+
+Object: lamp
+Position: -25 0 -1000
+
+Object: lamp
+Position: -25 0 -800
+
+Object: lamp
+Position: -25 0 -600
+
+Object: lamp
+Position: -25 0 -400
+
+Object: lamp
+Position: -25 0 -200
+
+Object: tree
+Position: 25 0 -850
+
+Object: tree
+Position: 25 0 -650
+
+Object: tree
+Position: 25 0 -450
+
+Object: tree
+Position: 25 0 -250
+
+Object: lamp
+Type: overhanging
+Yrot: 45
+Position: -25 0 -25
+
+Object: lamp
+Type: overhanging
+Yrot: 225
+Position: 25.0 0 30.0
+
+Object: lamp
+Position: -25 0 200
+
+Object: lamp
+Position: -25 0 400
+
+Object: lamp
+Position: -25 0 600
+
+Object: lamp
+Position: -25 0 800
+
+Object: tree
+Position: 25 0 250
+
+Object: tree
+Position: 25 0 450
+
+Object: tree
+Position: 25 0 650
+
+Object: tree
+Position: 25 0 850
+
+### Side roads ###
+Object: road
+Length: 581
+Position: 400 0 20
+
+Object: stop sign
+Position: 385 0 25
+Yrot: 180
+#Radius: 4
+Height: 4
+
+Object: left curve sign
+Position: 415 0 500
+Width:  6
+Height: 4
+Label: 30
+
+Object: curve
+Radius: 115
+Width: 30
+Position: 300 0 600
+Angle: 90
+
+Object: right curve sign
+Position: 250 0 685
+Yrot: -90
+Width:  6
+Height: 4
+Label: 30
+
+Object: road
+Length: 702
+Yrot: 90
+Position: 301 0 700
+
+Object: curve
+Radius: 415
+Width: 30
+Position: -400 0 300
+Yrot: 90
+Angle: 90
+
+Object: road
+Position: -800 0 14
+Length: 287
+
+Object: stop sign
+Position: -817 0 23
+Height: 4
+Yrot: 180
+
+Object: house
+Type: antebellum farm
+Position: 440 0 50
+Yrot: -90
+
+Object: house
+Type: gothic cottage
+Position: 360 0 215
+Yrot: 90
+
+Object: house
+Type: garrison
+Position: 360 0 321
+Yrot: 90
+
+Object: house
+Type: dutch colonial
+Position: 60 0 740
+
+Object:  speed limit sign
+Label: 35
+Position: 25 0 -900
+
+Object:  speed limit sign
+Label: 35
+Position: -32 0 900
+Yrot: 180
+
+
+##### Parking lot and connecting roads.
+
+Object: parking lot
+Width: 200
+Length: 170
+Position: 150 0 -135
+
+Object: road
+Position: 230 0 -50
+Length: 30
+Width: 40
+
+Object: road
+Position: 50 0 -140
+Length: 30
+Width: 40
+Yrot: 90
+
+
+# Pseudo-entrance, actually gateway to Teleport Central.
+Construct: black_gateway
+Position: 90 0 49.7
+Color: 1.0 1.0 0.0
+Label: TELEPORTERS
+Destination: 2100 2 6100
+Angle: 0
+
+# Psuedo-building
+Object: wall
+Position: 150 0 50
+Size: 200 202 20
+
+Object: skyscraper
+Size: 50 50 100
+Position: 50 20 50
+
+Object: ground
+
+
+############ TELEPORT CENTRAL ###########
+Scene Location: 1 3
+
+Construct: telprt_cntrl
+Position: 150 0 150
+
+Object: road
+Length: 2000
+Z: -1000
+
+Object: road
+Length: 2000
+X: 1000
+Yrot: 90
+
+# Return to noobyville
+Construct: black_gateway
+Position: 90 0 50.3
+Color: 1.0 1.0 0.0
+Label: NOOBYVILLE
+Destination: 80 0 -3970
+Angle: 180
+Yrot: 180
+
+# Fill gaps in wall
+Object: wall
+Size: 2 10 20
+Position: 75 0 50
+
+Object: wall
+Size: 2 10 20
+Position: 105 0 50
+
+
+Object: ground

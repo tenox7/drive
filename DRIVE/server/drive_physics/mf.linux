@@ -1,0 +1,30 @@
+# $Source: /cvsroot/hoverball/HB_HW/DRIVE/server/drive_physics/mf.linux,v $
+# $Revision: 1.1 $
+# $Date: 2004/02/20 00:44:29 $
+
+TARGET=physics.a
+
+include ../../mf.linux.h
+
+LIBPRIMS=../../libprims
+LIBPHYSICS=../../libphysics
+LIBNUM=../../libnum
+INC=../../include
+INCLUDES=\
+  -I$(INC) \
+  -I$(LIBPHYSICS) \
+  -I$(LIBNUM) \
+  -I$(LIBPRIMS) \
+  -I../objects \
+  -I/opt/HoverWare/Inc
+
+# Standard rules to turn all the *.c files to $(OBJ)*.o files
+SRC := $(wildcard *.c)
+OFILES := $(SRC:%.c=$(OBJ)%.o)
+$(OFILES): $(OBJ)%.o : %.c
+	@ mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(TARGET): $(OFILES)
+	ar rv $@ $?
+

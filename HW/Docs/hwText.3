@@ -1,0 +1,92 @@
+NAME
+    hwText - create 3-dimensional, extruded text
+
+PROPERTIES
+    Data	0S	The string to be displayed
+    Surface	3O	3 hwSurface objects defining front, side, and
+			back surface properties
+    Pos		3F	The position of the starting point of the text
+    Dir		3F	The direction the baseline of the text should follow
+    Up		3F	The "up" direction of each character
+    Scale	1F	The relative size of each character
+    Extrude	3F	The extrusion distance in X, Y, and Z
+    Align	3I	Where the text is to be aligned in each of the
+			three axes
+
+DEFAULTS
+    Data	NULL
+    Surface	Default hwSurfaces
+    Pos		{0,0,0}
+    Dir		{1,0,0}
+    Up		{0,1,0}
+    Scale	1
+    Extrude	{0,0,0.25}
+    Align	{HW_ALIGN_CENTER, HW_ALIGN_CENTER, HW_ALIGN_CENTER}
+
+DESCRIPTION
+    The hwText class creates 3-dimensional extruded text based on an
+    ASCII string.  Each face of the extrusion (front, side, and back)
+    may have separate surface attributes.  The text starts at the given
+    Pos, proceeds along the given Dir, and has the give Up vector.  The
+    Dir and Up vectors are automatically adjusted to be perpendicular to
+    each other.  The Scale sets the size of the character, in MC units.
+    The Extrude is a vector which is used to displace the back surface
+    from the front surface.  The Align parameter specifies the alignment
+    of the text string relative to the starting position; possible
+    values for the alignments are:
+
+	Align[0] (left-to-right alignment):
+	    HW_TEXT_ALIGN_LEFT
+	    HW_TEXT_ALIGN_CENTER
+	    HW_TEXT_ALIGN_RIGHT
+
+	Align[1] (top-to-bottom alignment):
+	    HW_TEXT_ALIGN_TOP
+	    HW_TEXT_ALIGN_CENTER
+	    HW_TEXT_ALIGN_BOTTOM
+
+	Align[2] (front-to-back alignment):
+	    HW_TEXT_ALIGN_FRONT
+	    HW_TEXT_ALIGN_CENTER
+	    HW_TEXT_ALIGN_BACK
+
+    The Surface parameter is an array of three hwSurface objects,
+    defining the surface parameters of the text.
+
+C EXAMPLE
+    /* Draw an extruded text string with blue front, red back,
+     * and white sides
+     */
+    hwObject
+	text,
+	surf[3];
+
+    surf[0] = hwSurface->create( hwSurface );
+    surf[1] = hwSurface->create( hwSurface );
+    surf[2] = hwSurface->create( hwSurface );
+
+    HW_MODIFY_3F( surf[0], hwStrColor, 0, 0, 1 );	/* Blue */
+    HW_MODIFY_3F( surf[1], hwStrColor, 1, 1, 1 );	/* White */
+    HW_MODIFY_3F( surf[2], hwStrColor, 1, 0, 0 );	/* Red */
+
+    text = hwText->create( hwText );
+    text->modify( text, hwStrSurface, HW_MAKE_TYPE(HW_TYPE_OBJECT,3),
+			surf );
+    text->modify( text, hwStrData, HW_TYPE_STRING, "HoverWare!" );
+    HW_MODIFY_3F( text, hwStrExtrude, 0, 0, 0.25 );
+    text->draw( text, disp );
+
+OBJECT FILE EXAMPLE
+    # Extruded red-white-and-blue text
+    hwText text {
+	Data = "HoverWare!"
+	Surface = {
+	    hwSurface { Color = {0,0,1} },
+	    hwSurface { Color = {1,1,1} },
+	    hwSurface { Color = {1,0,0} }
+	}
+	Extrude = {0,0,0.25}
+    }
+
+SEE ALSO
+    hw(3), hwSurface(3)

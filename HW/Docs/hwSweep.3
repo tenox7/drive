@@ -1,0 +1,61 @@
+NAME
+    hwSweep - create a shape specified by sweeping a 2-dimensional
+		path through a 3-dimensional path
+
+INHERITS FROM
+    hwSurface
+    hwOrient
+
+PROPERTIES
+    Shape	*F	The 2-dimensional shape to be swept through
+			the three-dimensional path
+    Path	*F	The 3-dimensional path across which the shape
+			will be swept
+    HasSizes	1B	True iff the Path also contains a scaling
+			factor per vertex
+    HasUp	1B	True iff the Path also contains an Up direction
+			vector per vertex
+    GraphN	1I	The number of places at which to evaluate
+			the Sweep
+    OptLevel	1I	Optimization level; see hw(3) for details
+    HasNormals	1B	True for smooth shading; false for faceted
+    			appearance
+    Lifetime	2F	Which portion of the path is to be used
+			to draw the shape
+    HasCaps	1B	True iff caps at the end of the sweep are to
+			be drawn
+    Surface	3O	Array of hwSurface objects to use as the
+			surface attributes for the swept shape and
+			the two endcaps
+    Resolution	1F	Tesselation multiplier
+
+DEFAULTS
+    Shape = {}
+    Path = {}
+    HasSizes = False
+    HasUp = False
+    GraphN = 16
+    OptLevel = hwDefaultOptLevel
+    HasNormals = True
+    Lifetime = {0.0, length(path)}
+    Surface = {default hwSurface,default hwSurface,default hwSurface}
+    Resolution = 1.0
+
+DESCRIPTION
+    The hwSweep class creates a surface by sweeping a 2-dimensional
+    Shape along a 3-dimensional Path.  The position, orientation, and
+    size of the swept shape is interpolated smoothly along a spline
+    curve which goes through the points specified in the Path.
+
+    /* More description TBD */
+
+
+C EXAMPLE
+    /* TBD */
+
+OBJECT FILE EXAMPLE
+    # A simple surface of revolution
+    # TBD
+
+SEE ALSO
+    hw(3), hwSurface(3), hwOrient(3)

@@ -1,0 +1,121 @@
+== NAME ==
+hwInit, etc. - visual selection and context management routines for HoverWare
+
+== SYNOPSIS ==
+{{{
+    #include "hw.h"
+
+    int hwInit( hwInt32 argc, char **argv )
+    hwDisplay hwDisplay->create( hwDisplay proto, hwDisplay sharedDisp,
+                                 OS_DISPLAY_TYPE osDisplay )
+    hwInt32 hwDisplay->chooseVisual( hwDisplay disp,
+                        hwInt32 must, hwInt32 want )
+    hwDrawable hwDisplay->createWindow( hwDisplay disp, const char *winName,
+                        hwInt32 winX, hwInt32 winY,
+                        hwInt32 winW, hwInt32 winH )
+    void hwDisplay->makeCurrent( hwDisplay disp, hwDrawable draw )
+    OS_VISUAL_TYPE hwDisplay->extractVisual( hwDisplay disp )
+    OS_DRAWABLE_TYPE hwDisplay->extractWindow( hwDisplay disp, hwDrawable draw )
+    hwDrawable hwDisplay->initDrawable( hwDisplay disp, OS_DRAWABLE_TYPE draw )
+    void hwDisplay->viewport( hwDisplay disp, hwInt32 x, hwInt32 y,
+                                        hwInt32 width, hwInt32 height )
+    void hwDisplay->update( hwDisplay disp )
+}}}
+
+== DESCRIPTION ==
+These functions are used to initialize HoverWare for drawing.  Their
+specific uses are:
+
+; hwInit()
+: Initializes HoverWare.  Exactly one call to hwInit should be made per program.  The argc and argv arguments are as received by main().  The result should be checked against 0.
+
+; create()
+: Creates and initializes a hwDisplay.  The shareDisp parameter indicates that another hwDisplay exists with which you want to share resources - such as object names, display lists, and texture IDs.  For portability, NULL should be passed as the osDisplay.
+
+; chooseVisual()
+: Finds a visual (or pixel format, in the case of Windows NT) which matches the given critera. The criteria specified in the "must" argument must all be present; the criteria specified in the "want" argument are used to distinguish between multiple visuals which meet the must criteria.  The result contains all of the criteria which were met, or 0 if the must criteria could not be met.  Additionally, if a visual was found, the HW_VIS_SUCCESS flag will be or'd into the result passed to the caller.  This call must be made before any disp->createWindow or disp->initDrawable calls.  The set of criteria includes:
+| HW_VIS_DBUFF    |A double-buffered visual
+| HW_VIS_DEPTH    |A visual with depth (Z) buffer
+| HW_VIS_ALPHA    |A visual with destination alpha
+| HW_VIS_STENCIL  |A visual with a stencil buffer
+| HW_VIS_TEXTURE  |A visual which accelerates texture mapping
+| HW_VIS_AA       |A visual which has multisample AA (>= 2 and < 4 samples)
+| HW_VIS_AA_MED   |A visual which has multisample AA (>= 4 and < 8 samples)
+| HW_VIS_AA_HI    |A visual which has multisample AA (>= 8 samples)
+
+; createWindow()
+: This is an "easy" window creation routine which creates a window on the chosen display and visual, and creates a HoverWare context which fills the window.  The name is the name to be placed in the window title bar.  The winX and winY parameters specify window placement.  The winW and winH parameters specify the window size.  The return value may be used for subsequent makeCurrent calls.  Flags describing the window style can include:
+
+| HW_WIN_INPUT  | Allow window input to pass events to the routine established via disp->inputHandler
+| HW_WIN_FULLSCREEN | Make the window full-screen and borderless
+| HW_WIN_BORDERLESS | Make the window borderless
+| HW_WIN_HIDE_CURSOR | Hide the cursor when inside the window
+| HW_WIN_JOYSTICK | Allow joystick input to pass events to the routine established via disp->inputHandler
+
+; makeCurrent()
+: This routine makes the given hwDisplay current to the running thread.  A "live" hwDisplay should only be made current to one thread at a time.
+
+; extractVisual()
+: This routine extracts the system-dependent visual ID from the HoverWare display.  On X-based systems, this visual ID is a pointer to an XVisualInfo structure.
+
+; extractWindow()
+: This routine extracts the system-dependent window ID from the HoverWare drawable object.  On X-based systems, this is a Window atom.
+
+; initDrawable()
+: This routine creates a HoverWare drawable object to be displayed on the given system-dependent window object.  It returns the HoverWare drawable which can be passed to subsequent makeCurrent calls.
+
+; viewport()
+: This routine resizes the HoverWare viewport of the current drawable.  This is typically called upon receiving a window resize event from the window manager.  The viewport is specified with the origin at the upper-left corner of the screen.
+
+; update()
+: This routine flushes all pending graphics requests to the current drawable.  If the visual is a double-buffered one, it also performs a double buffer swap, clearing the back and depth buffers.
+
+Note that create(), chooseVisual(), createWindow(), makeCurrent(),
+extractVisual(), extractWindow(), initDrawable(), viewport(),
+and update() are actually methods in the hwDisplay class, and as
+such are always called through an instance of that class.
+
+== EXAMPLES ==
+{{{
+    /* This program creates a simple window on the display and
+     * then exits after the user hits return
+     */
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include "hw.h"
+
+    int main( int argc, char **argv )
+    {
+        hwDisplay disp;
+        hwInt32 visResult;
+        hwDrawable win;
+
+        /* Initialize the display pointer */
+        hwInit( argc, argv );
+        disp = hwDefaultDisplay->create( hwDefaultDisplay, NULL, NULL );
+        if( !disp )     exit( 1 );
+
+        /* Find the appropriate visual type */
+        visResult = disp->chooseVisual( disp, HW_VIS_DBUFF|HW_VIS_DEPTH, 0 );
+        if( !visResult )        exit( 1 );
+
+        /* Create a 512x512 window */
+        win = disp->createWindow( disp, "Test", 10, 10, 512, 512 );
+        if( !win )              exit( 1 );
+
+        /* Establish it as current */
+        disp->makeCurrent( disp, win );
+
+        /* Update all graphics in it */
+        disp->update( disp );
+
+        /* Wait for user to hit return */
+        (void)getchar();
+
+        /* All done! */
+        return 0;
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]]

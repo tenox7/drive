@@ -1,0 +1,2570 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#############################################################################
+#  Mr. and Mrs. Hungry Chef's House (California Version)
+#############################################################################
+Racecourse:             hungry's_house 
+Practice Seconds:       0 
+Pre-Race Seconds:       2 
+Race Seconds:           300 
+Post-Race Seconds:      5 
+Start SceneX: -5
+Start SceneZ: 5
+Start Angle:            90 
+Start Position:         700 401 77.5 
+Start Positions:        4
+Turbo Mode:             2 
+Turbo Boosts:           20 
+Guns Mode:              0 
+Ammo:                   0 
+
+#               +-------------+------------------------------------------
+#               | bedroom, w/ |                yard with     |       |  |
+#               | hungry chef |   door         trees and     |       |  |
+#               | sound asleep|   |            shrubs        |       |  |
+#               |             |   v                          |       |  |
+#               |             |                              |       |  |
+# +-------------+---+    +----+--   ---==---+---======----+  |       |  |
+# | office      |___|    |____|  living rm  |  dining rm  |  |       |  |
+# |                                                       |  |       | X|<- big
+# | desk           hallway      couch, lamp   table and   |  |       |  |  tree
+# |              _____________  and TV          chairs    |  |       |  |
+# |             |             |             |             |  |       |  |
+# +-------------+-------------+-------------+----     ----+---       ---+
+#                             |  bathroom   | kitchen     |  garage     |
+#                             |             |                           |
+#                             |  tub, sink, | fridge,        large car  |
+#                             |  toilet     | cabinets,   |             |
+#                             |             | sink, stove |             |
+#                             +-------------+-------------+-------------+
+#                              
+#  This is the "California Version" (no basement) designed for the contest.
+#  For a more challenging race, try the Colorado version (with basement).
+#                              
+#----------------------------------------------------------------------------
+# Living room
+#----------------------------------------------------------------------------
+Scene Location: -5 6
+
+
+############################ COUCH ##################################
+Object:  wall 
+Position:  0 170 500
+Size:  100 900 150
+Color:  0 1 0.3
+
+Object:  wall 
+Position:  0 50 250
+Size:  350 900 120
+Color:  0 1 0.3
+
+Object:  wall 
+Position:  400 170 250
+Size:  350 100 90
+Color:  0 1 0.3
+
+Object:  wall 
+Position:  -400 170 250
+Size:  350 100 90
+Color:  0 1 0.3
+
+Object:  cone 
+Position:  400 0 300
+Height: 50
+Width: 20
+Radius: 30
+Color:  0.5 0.5 0
+
+Object:  cone 
+Position:  -400 0 300
+Height: 50
+Width: 20
+Radius: 30
+Color:  0.5 0.5 0
+
+Object:  cone 
+Position:  -400 0 550
+Height: 50
+Width: 20
+Radius: 30
+Color:  0.5 0.5 0
+
+Object:  cone 
+Position:  400 0 550
+Height: 50
+Width: 20
+Radius: 30
+Color:  0.5 0.5 0
+
+############################### LAMP ###########################
+Object:  cylinder 
+Position:  -640 0 400
+Size:  800 60 500
+Color:  1 1 0.5
+Radius:  7 
+
+Object:  cylinder 
+Position:  -640 0 400
+Size:  800 60 15
+Color:  1 1 0.5
+Radius:  100 
+
+Object:  cone 
+Position:  -640 600 400
+Size:  800 60 -90
+Color:  1 0.5 0.5
+Radius:  100 
+
+################################### TV #################################
+#leg
+Object:  cone 
+Position:  -200 0 -200
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  200 0 -200
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  -200 0 -300
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  200 0 -300
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#body
+Object: wall
+Position: 0 90 -150
+Yrot: 180
+Size: 200 480 300
+Color: 0.4 0.4 0
+
+#tube
+Object: oval light
+Position: 20 245 -149.5
+Xrot: 90
+Width: 350
+Length: 250
+Color: 1 1 1
+
+#top knob
+Object: pillar
+Radius: 15
+Color: 1 1 1
+Height: 5
+Position: -190 350 -149
+Xrot: 90
+
+#bottom knob
+Object: pillar
+Radius: 15
+Color: 1 1 1
+Height: 5
+Position: -190 300 -149
+Xrot: 90
+
+#antenna
+Object: pillar
+Radius: 3
+Color: 1 1 0
+Height: 300
+Position: -100 390 -300
+Zrot: 20
+
+#antenna
+Object: pillar
+Radius: 3
+Color: 1 1 0
+Height: 300
+Position: -100 390 -300
+Zrot: -20
+
+###################### walls, etc ###################
+
+#north walls
+Object: wall
+Size: 5 400 700
+Position: -800 0 1000
+Yrot: 180
+Color: 0.8 0.8 1
+
+Object: wall
+Size: 5 1000 700
+Position: 500 0 1000
+Yrot: 180
+Color: 0.8 0.8 1
+
+Object: wall
+Size: 5 2000 200
+Position: 0 700 1000
+Yrot: 180
+Color: 0.8 0.8 1
+
+################################# roads ###############################
+
+#roads from front yard to mouse hole
+Object: road
+Width: 60
+Height: 2
+Length: 600
+Position: -500 1 400
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: -200 1 400
+Yrot: 180
+
+Object: road
+Width: 60
+Height: 2
+Length: 650
+Position: -200 1 100
+Yrot: -90
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: 450 1 400
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 600
+Position: 750 1 400
+
+#entrance from living room to mouse hole
+Object: oval
+Size: 60 60
+Color: 0 0 0
+Position: 750 1 994
+Xrot: -90
+
+Object: invisible wormhole
+Size: 1 60 20
+Position: 750 2 980
+Xrot: 90
+Type: position in scene -= 4500, 0, -600 ; linear velocity *= 0.8
+
+#roads from mouse hole to hallway
+
+#exit from living room to mouse hole
+Object: oval
+Size: 60 60
+Color: 0 0 0
+Position: 250 1 994
+Xrot: -90
+
+Object: invisible wormhole
+Size: 1 60 20
+Position: 250 2 980
+Xrot: 90
+Type: position in scene -= 4500, 0, -600
+
+Object: road
+Width: 60
+Height: 2
+Length: 800
+Position: 250 1 200
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: -50 1 200
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 950
+Position: -50 1 -100
+Yrot: 90
+
+#Construct: acceleratorX2
+#Position: -200 0 -100
+#Yrot: 90
+
+#roads from bathroom to dining room
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: -200 1 -800
+Yrot: -90
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 530
+Angle: 90
+Position: 600 1 -800
+Yrot: 90
+
+Object: road
+Width: 60
+Height: 2
+Length: 412.5
+Position: 600 1 -300
+Yrot: -90
+Xrot: -14.02
+
+################################# BAD ROADS ###############################
+#
+#Object:  road 
+#Position:  1000 1 0
+#Yrot:  90
+#Size:  800 60 2
+#Color:  1 0.3 0.1
+#
+#
+#################################### LOOP #################################
+#Object:  spline road 
+#Position:  0 1 0
+#Size:  800 60 5
+#Color:  1 0.3 0.1
+#Data:  3 6
+#-200  200  -25  1  0  0  
+#-200  0  -12.5  0.707107  0.707107  0  
+#200  0  0  0  1  0  
+#
+#Object:  spline road 
+#Position:  0 1 0
+#Size:  800 60 5
+#Color:  1 0.3 0.1
+#Data:  3 6
+#0  400  -50  0  -1  0  
+#-200  400  -37.5  0.707107  -0.707107  0  
+#-200  200  -25  1  0  0  
+#
+#Object:  spline road 
+#Position:  0 1 0
+#Size:  800 60 5
+#Color:  1 0.3 0.1
+#Data:  3 6
+#200  200  -75  -1  0  0  
+#200  400  -62.5  -0.707107  -0.707107  0  
+#0  400  -50  0  -1  0  
+#
+#Object:  spline road 
+#Position:  0 1 0
+#Size:  800 60 5
+#Color:  1 0.3 0.1
+#Data:  3 6
+#-200  0  -100  0  1  0  
+#200  0  -87.5  -0.707107  0.707107  0  
+#200  200  -75  -1  0  0  
+#
+#Object:  road 
+#Position:  -1000 1 -100
+#Yrot:  -90
+#Size:  800 60 2
+#Color:  1 0.3 0.1
+
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  1 0.7 0.5
+
+#----------------------------------------------------------------------------
+#  Dining room
+#----------------------------------------------------------------------------
+Scene Location: -4 6
+
+################## Table #################
+#top
+Object: oval
+Position: 100 200 0
+Color: 0.8 0.5 0
+Size: 800 1000 5
+
+Object: pillar
+Position: 100 199 0
+Radius: 400
+Height: 0.5
+
+#bottom
+Object: oval
+Position: 100 199 0
+Color: 0.8 0.5 0
+Size: 800 1000 5
+Xrot: 180
+
+#leg
+Object: cone
+Color: 0.8 0.5 0
+Position: -200 0 200
+Width: 5
+Height: 200
+Radius: 10
+
+#leg
+Object: cone
+Color: 0.8 0.5 0
+Position: -200 0 -200
+Width: 5
+Height: 200
+Radius: 10
+
+#leg
+Object: cone
+Color: 0.8 0.5 0
+Position: 400 0 200
+Width: 5
+Height: 200
+Radius: 10
+
+#leg
+Object: cone
+Color: 0.8 0.5 0
+Position: 400 0 -200
+Width: 5
+Height: 200
+Radius: 10
+
+Construct: chair
+Position: 100 0 400
+
+Construct: chair
+Position: 100 0 -400
+Yrot: 180
+
+Construct: chair
+Position: -400 0 0
+Yrot: 90
+
+Construct: chair
+Position: 570 0 0
+Yrot: -90
+
+######################## plates ####################
+Object: cylinder
+Color: 1 1 1
+Radius: 50
+Height: 2
+Position: 100 200 -300
+
+Object: cylinder
+Color: 1 1 1
+Radius: 50
+Height: 2
+Position: 100 200 300
+
+Object: cylinder
+Color: 1 1 1
+Radius: 50
+Height: 2
+Position: -300 200 0
+
+Object: cylinder
+Color: 1 1 1
+Radius: 50
+Height: 2
+Position: 300 200 0
+
+####################### turkey dinner ###########################
+Object: cylinder
+Color: 1 1 1
+Radius: 100
+Height: 10
+Position: 100 200 0
+
+Object: sphere
+Color: 0.5 0.3 0
+Radius: 30
+Position: 60 240 0
+
+Object: sphere
+Color: 0.5 0.3 0
+Radius: 40
+Position: 100 240 0
+
+Object: sphere
+Color: 0.5 0.3 0
+Radius: 40
+Position: 140 240 0
+
+Object: deciduous
+Position: 30 275 -20
+Xrot: 30
+Zrot: -120
+Height: 110
+Radius: 5
+Width: 55
+Type: oval
+Color: 0.5 0.3 0
+
+Object: deciduous
+Position: 30 275 20
+Xrot: -30
+Zrot: -120
+Height: 110
+Radius: 5
+Width: 55
+Type: oval
+Color: 0.5 0.3 0
+
+################### roads ################
+
+Object: spline road
+Width: 60
+Height: 2
+Data: 3 3
+-1000 101 -300
+-600 201 -300
+-349 201.1 -300
+
+Object: left curve sign
+Position: -260 201 -350
+Width: 20
+Label: 150
+Yrot: -90
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: -350 201 0
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 400
+Position: -50 201 0
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  TURKEY
+Radius: 0.5
+Position: -50 200 200
+Type: 1 2
+Yrot: 0
+
+Object: right curve sign
+Label: 150
+Width: 20
+Position: -10 200 390
+
+Object: spiral
+Width: 60
+Radius: 530
+Angle: 225
+Yrot: -45
+Height: 200
+Position: 450 1 400
+
+Object: pillar
+Radius: 0.4
+Height: 25
+Color: 0 0 0
+Position: -80 201 400
+
+Object: spline road
+Color: 1 0 0
+Height: 0.01
+Xrot: -90
+Yrot: 0
+Position: -80 223.5 400
+Data:  4 4
+  0 0 0 5
+  5 2 -.5 3
+ 10 2 -1 1
+ 15 0 -1 .01
+
+Object: pillar
+Radius: 0.4
+Height: 25
+Color: 0 0 0
+Position: -70 191 500
+
+Object: spline road
+Color: 1 0 0
+Height: 0.01
+Xrot: -90
+Yrot: 0
+Position: -70 213.5 500
+Data:  4 4
+  0 0 0 5
+  5 2 -.5 3
+ 10 2 -1 1
+ 15 0 -1 .01
+
+Object: pillar
+Radius: 0.4
+Height: 25
+Color: 0 0 0
+Position: -40 181 600
+
+Object: spline road
+Color: 1 0 0
+Height: 0.01
+Xrot: -90
+Yrot: 0
+Position: -40 203.5 600
+Data:  4 4
+  0 0 0 5
+  5 2 -.5 3
+ 10 2 -1 1
+ 15 0 -1 .01
+
+Object: pillar
+Radius: 0.4
+Height: 25
+Color: 0 0 0
+Position: 7 171 690
+
+Object: spline road
+Color: 1 0 0
+Height: 0.01
+Xrot: -90
+Yrot: 0
+Position: 7 193.5 690
+Data:  4 4
+  0 0 0 5
+  5 2 -.5 3
+ 10 2 -1 1
+ 15 0 -1 .01
+
+Object: road
+Width: 60
+Height: 2
+Length: 894
+Yrot: 135
+Position: 804 1 47
+
+Object: curve
+Width: 60
+Height: 2
+Angle: 45
+Yrot: 135
+Radius: 617
+Position: 587 1 -1000
+
+###################### walls, etc ###################
+
+#north wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 1000
+Yrot: 180
+Color: 0.8 0.8 1
+
+#east wall
+Object: wall
+Size: 5 2000 900
+Position: 1000 0 0
+Color: 0.8 0.8 1
+Yrot: 90
+
+#west walls
+Object: wall
+Size: 5 600 700
+Position: -1000 0 700
+Color: 0.8 0.8 1
+Yrot: -90
+
+Object: wall
+Size: 5 600 700
+Position: -1000 0 -700
+Color: 0.8 0.8 1
+Yrot: -90
+
+Object: wall
+Size: 5 2000 200
+Position: -1000 700 0
+Color: 0.8 0.8 1
+Yrot: -90
+
+# carpet
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  1 0.7 1
+
+
+#----------------------------------------------------------------------------
+#  Kitchen
+#----------------------------------------------------------------------------
+Scene Location: -4 5
+
+################### Mrs. Hungry Chef #####################
+
+Construct: mrs_big_chef
+Position: 20 0 -300
+Yrot: -140
+
+################### cabinets ###################
+
+# back cabinets
+Object: wall
+Size: 300 1990 400
+Position: 0 0 -995
+Color: 0.5 0.5 1
+
+# back cabinet counter
+Object: wall
+Size: 300 1990 20
+Color: 1 1 1
+Position: 0 400 -995
+
+# east cabinet
+Object: wall
+Size: 400 300 400
+Position: 845 0 -700
+Color: 0.5 0.5 1
+
+# east cabinet counter
+Object: wall
+Size: 400 300 20
+Position: 845 400 -700
+Color: 1 1 1
+
+# west cabinet
+Object: wall
+Size: 400 300 400
+Position: -845 0 -700
+Color: 0.5 0.5 1
+
+# west cabinet counter
+Object: wall
+Size: 400 300 20
+Position: -845 400 -700
+Color: 1 1 1
+
+# fridge
+Object: wall
+Size: 300 300 700
+Position: -845 0 -250
+Color: 0 0.6 0
+
+# fridge handle
+Object: wall
+Size: 20 20 100
+Color: 0 0 0
+Position: -695 300 -230
+Yrot: -90
+
+# stove top
+Object: wall
+Color: 0 0.6 0
+Size: 250 250 5
+Position: 850 420 -600
+
+# burner
+Object: oval
+Color: 0 0 0
+Radius: 42
+Position: 785 426 -535
+
+# burner
+Object: oval
+Color: 0 0 0
+Radius: 42
+Position: 915 426 -535
+
+# burner
+Object: oval
+Color: 0 0 0
+Radius: 42
+Position: 785 426 -420
+
+# burner
+Object: oval
+Color: 0 0 0
+Radius: 42
+Position: 915 426 -420
+
+# sink
+Object: wall
+Color: 0 0.6 0
+Size: 250 550 5
+Position: 0 420 -975
+
+# west basin
+Object: pond
+Color: 0.5 0.5 0.5
+Position: -137 425 -850
+Size: 200 200 2
+
+# east basin
+Object: pond
+Color: 0.5 0.5 0.5
+Position: 137 425 -850
+Size: 200 200 2
+
+# spigot
+Object: curvewall
+Width: 10
+Height: 20
+Angle: 110
+Radius: 80
+Color: 1 1 0
+Position: 45 425 -880
+Xrot: -90
+Yrot: -120
+
+################# roads #####################
+
+Object: spline road
+Width: 60
+Height: 2
+Data: 6 3
+0 1 1000
+0 1 800
+0 200 600
+0 200 300
+0 1 -100
+0 1 -201
+
+Object: checkpoint
+Length: 15
+Width:  60
+Height: 25
+Label:  MRS CHEF
+Radius: 0.5
+Position: 0 112 685
+Type: 1 3
+Yrot: 180
+Xrot: -45
+
+Object: curve
+Radius: 330
+Angle: 180
+Height: 2
+Width: 60
+Position: 300 1 -200
+Yrot: 180
+
+Object: curve
+Radius: 430
+Angle: 96
+Height: 2
+Width: 60
+Position: 1000 1 -200
+Yrot: 84
+
+###################### walls, etc ###################
+
+#south wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 -1000
+Color: 0.8 0.8 1
+
+#west wall
+Object: wall
+Size: 5 2000 900
+Position: -1000 0 0
+Color: 0.8 0.8 1
+Yrot: -90
+
+#north walls
+Object: wall
+Size: 5 600 700
+Position: -700 0 1000
+Color: 0.8 0.8 1
+Yrot: 180
+
+Object: wall
+Size: 5 600 700
+Position: 700 0 1000
+Color: 0.8 0.8 1
+Yrot: 180
+
+Object: wall
+Size: 5 2000 200
+Position: 0 700 1000
+Color: 0.8 0.8 1
+Yrot: 180
+
+#east walls
+Object: wall
+Size: 5 600 700
+Position: 1000 0 700
+Color: 0.8 0.8 1
+Yrot: 90
+
+Object: wall
+Size: 5 1000 700
+Position: 1000 0 -500
+Color: 0.8 0.8 1
+Yrot: 90
+
+Object: wall
+Size: 5 2000 200
+Position: 1000 700 0
+Color: 0.8 0.8 1
+Yrot: 90
+
+
+#linoleum
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  0 1 0.3
+
+
+#----------------------------------------------------------------------------
+#  Bathroom
+#----------------------------------------------------------------------------
+Scene Location: -5 5
+
+################ toilet #################
+
+Object: wall
+Size: 150 400 200
+Color: 1 1 0.7
+Position: -600 0 325
+
+Object: sphere
+Radius: 150
+Position: -500 150 400
+Color: 1 1 0.7
+
+Object: cylinder
+Radius: 150
+Position: -500 150 400
+Color: 1 1 0.7
+Height: 110
+
+Object: cylinder
+Radius: 150
+Position: -500 270 400
+Color: 1 1 0.7
+Height: 30
+
+Object: wall
+Size:  400 200 300
+Color: 1 1 0.7
+Position: -800 200 200
+
+############## TP holder ##############
+
+Object: cylinder
+Color: 1 1 1
+Radius: 30
+Height: 100
+Position: -950 300 0
+Xrot: 90
+
+Object: cylinder
+Color: 0 0 0
+Radius: 10
+Height: 110
+Position: -950 300 -5
+Xrot: 90
+
+Object: wall
+Color: 0 0 0
+Size: 5 55 20
+Position: -972 290 -5
+
+Object: wall
+Color: 0 0 0
+Size: 5 55 20
+Position: -972 290 100
+
+Object: wall
+Color: 1 1 1
+Size: 2 100 150
+Position: -920 150 50
+Yrot: 90
+
+################ tub #################
+
+Object: wall
+Color: 1 1 0.7
+Size: 800 1390 300
+Position: -300 0 -995
+
+Object: pond
+Length: 500
+Width: 1000
+Height: 350
+Position: -300 302 -595
+
+############## sink #################
+
+Object: wall
+Color: 1 1 0.7
+Size: 400 400 100
+Position: 795 300 0
+
+Object: pillar
+Color: 1 1 0.7
+Radius: 100
+Height: 300
+Position: 895 0 200
+
+Object: pond
+Size: 250 250 50
+Position: 795 400 200
+
+################ roads ################
+
+Object: road
+Width: 60
+Height: 2
+Length: 400
+Position: 995 401 100
+Yrot: 90
+
+Object: start
+Length: 20
+Width:  80
+Height: 50
+Label: START
+Radius: 0.5
+Position: 601 400 100
+Type: 1 12
+Yrot: 90
+
+Object: spline road
+Width: 60
+Height: 2
+Data: 4 3
+595 401 100
+500 401 100
+100 1 100
+0 1 100
+
+Object: spline road
+Height: 2
+Data: 4 4
+0 1 100 60
+-30 1 100 80
+-170 1 0 100
+-200 1.1 0 120
+
+Object: road
+Width: 120
+Height: 2
+Length: 450
+Position: -200 1 0
+Yrot: 90
+
+Object: bridge
+Width: 120
+Height: 10
+Length: 280
+Position: -350 1 0
+Yrot: 90
+
+Object: curve
+Width: 120
+Height: 2
+Radius: 360
+Angle: 90
+Position: -630 1 300
+Yrot: 180
+
+Object: spline road
+Height: 2
+Data: 3 4
+-930 1 300 120
+-930 1 400 90
+-930 1.11 500 60
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 430
+Angle: 90
+Position: -530 1 500
+Yrot: 90
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label:  BATHROOM
+Radius: 0.5
+Position: -400 1.1 900
+Type: 1 1
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 330
+Position: -530 1 900
+Yrot: -90
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: -200 1 1200
+Yrot: -90
+
+
+################ walls, etc #################
+
+# north walls
+Object: wall
+Size: 5 700 700
+Position: -650 0 1000
+Yrot: 180
+
+Object: wall
+Size: 5 700 700
+Position: 650 0 1000
+Yrot: 180
+
+Object: wall
+Size: 5 2000 200
+Position: 0 700 1000
+Yrot: 180
+
+# west wall
+Object: wall
+Size: 5 2000 900
+Position: -1000 0 0
+Yrot: -90
+
+# south wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 -1000
+
+#carpet
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  1 0.7 0.5
+
+
+#----------------------------------------------------------------------------
+#  Garage
+#----------------------------------------------------------------------------
+Scene Location: -3 5
+
+####################### MR CHEF'S CAR ##############################
+
+# right front tire
+Object: cylinder
+Radius: 100
+Height: 60
+Color: 0 0 0
+Position: -200 100 -300
+Yrot: 90
+Xrot: -90
+
+# right rear tire
+Object: cylinder
+Radius: 100
+Height: 60
+Color: 0 0 0
+Position: -200 100 300
+Yrot: 90
+Xrot: -90
+
+# left front tire
+Object: cylinder
+Radius: 100
+Height: 60
+Color: 0 0 0
+Position: 200 100 -300
+Yrot: -90
+Xrot: -90
+
+# left rear tire
+Object: cylinder
+Radius: 100
+Height: 60
+Color: 0 0 0
+Position: 200 100 300
+Yrot: -90
+Xrot: -90
+
+# right front hubcap
+Object: oval
+Radius: 70
+Color: 1 1 1
+Position: -201 100 -300
+Yrot: -90
+Xrot: -90
+
+# right rear hubcap
+Object: oval
+Radius: 70
+Color: 1 1 1
+Position: -201 100 300
+Yrot: -90
+Xrot: -90
+
+# left front hubcap
+Object: oval
+Radius: 70
+Color: 1 1 1
+Position: 201 100 -300
+Yrot: 90
+Xrot: -90
+
+# left rear hubcap
+Object: oval
+Radius: 70
+Color: 1 1 1
+Position: 201 100 300
+Yrot: 90
+Xrot: -90
+
+# body
+Object: wall
+Size: 900 384 150
+Color: 1 0 0
+Position: 0 90 -450
+
+# passenger compartment
+Object: wall
+Size: 650 380 90
+Color: 0.3 0.3 0.3
+Position: 0 240 -200
+
+Object: wall
+Position: 0 330 -200
+Size: 100 375 120
+Yrot: 180
+Xrot: 150
+Color: 0 0 0
+
+# license plate
+Object: generic sign
+Label: CHEF-1
+Size: 30 100 0.005
+Color: 0.2 0.7 0.2
+Position: 0 90 455
+Yrot: 180
+
+#######################roads ###################
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 700
+Angle: 32
+Position: -1000 1 -470
+Yrot: 60
+
+Object: road
+Width: 60
+Height: 2
+Length: 650
+Position: -665.5 1 110.5
+Yrot: -120
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 300
+Angle: 120
+Yrot: 240
+Position: 30 1 21
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  GARAGE
+Radius: 0.5
+Position: 0 0 -240
+Type: 1 4
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 979
+Position: 300 1 1000
+Yrot: 180
+
+Construct: acceleratorX2
+Position: 300 0 100
+
+Construct: acceleratorX2
+Position: 300 0 700
+
+
+###################### walls, etc ###################
+
+#south wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 -1000
+Color: 0.8 0.8 1
+
+#east wall
+Object: wall
+Size: 5 2000 900
+Position: 1000 0 0
+Color: 0.8 0.8 1
+Yrot: 90
+
+#north walls
+Object: wall
+Size: 5 500 700
+Position: -750 0 1000
+Color: 0.8 0.8 1
+Yrot: 180
+
+Object: wall
+Size: 5 500 700
+Position: 750 0 1000
+Color: 0.8 0.8 1
+Yrot: 180
+
+Object: wall
+Size: 5 2000 200
+Position: 0 700 1000
+Color: 0.8 0.8 1
+Yrot: 180
+
+# concrete floor
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  0.5 0.5 0.5
+
+
+#----------------------------------------------------------------------------
+#  Bedroom
+#----------------------------------------------------------------------------
+Scene Location: -6 7
+
+######################## BED ###########################
+
+#leg
+Object:  cone 
+Position:  -700 0 100
+Size:  0 10 50
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  100 0 100
+Size:  0 10 50
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  -700 0 900
+Size:  0 10 50
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  -100 0 900
+Size:  0 10 50
+Color:  0 0 0
+Radius:  20 
+
+# box spring
+Object: wall
+Color: 1 0.8 0.8
+Size: 900 900 75
+Position: -300 50 50
+
+# mattress
+Object: wall
+Color: 1 0.8 0.8
+Size: 900 900 75
+Position: -300 130 50
+
+# headboard
+Object: wall
+Size: 20 900 225
+Color: 0.4 0.4 0.1
+Position: -300 50 950
+
+# snoozer
+Construct: mr_big_chef
+Position: -250 225 130
+Xrot: 90
+Yrot: 20
+
+########################## DRESSER ############################
+
+#leg
+Object:  cone 
+Position:  650 0 -900
+Size:  0 10 50
+Color: 1 0.5 0.5
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  950 0 -900
+Size:  0 10 50
+Color: 1 0.5 0.5
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  650 0 -400
+Size:  0 10 50
+Color: 1 0.5 0.5
+Radius:  20 
+
+#leg
+Object:  cone 
+Position:  950 0 -400
+Size:  0 10 50
+Color: 1 0.5 0.5
+Radius:  20 
+
+#dresser
+Object: wall
+Size: 550 350 350
+Color: 1 0.5 0.5
+Position: 800 50 -925
+
+####################### roads ##########################
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Position: -400 1 -1200
+Angle: 90
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 250
+Angle: 90
+Position: -400 1 -680
+Yrot: 180
+
+Object: spline road
+Width: 60
+Height: 2
+Data: 4 3
+-620 1 -680
+-620 1 -550
+-620 206 -100
+-620 206.3 53
+
+Object: generic sign
+Color: 1 1 0
+Label: VEER\LEFT
+Size: 50 50 10
+Position: -700 206 53
+
+Object: road
+Width: 60
+Height: 2
+Length: 633.5
+Position: -620 206 50
+Yrot: 4.68
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  BED
+Radius: 0.5
+Position: -673 205 700
+Type: 1 7
+Yrot: 0
+Data: 1 3
+20 0 0
+
+Object: curve
+Width: 60
+Radius: 250
+Height: 2
+Position: -453 206 700
+Angle: 95
+Yrot: 90
+
+Object: road
+Width: 60
+Height: 2
+Length: 603
+Position: -453 206 920
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 530.7
+Position: 150 206 920
+Yrot: -90
+Xrot: 11.52166758
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 325
+Angle: 100
+Position: 670 100 625
+Yrot: -10
+
+Object: road
+Width: 60
+Height: 2
+Length: 1208
+Position: 960.5 100 574
+Yrot: -190
+Xrot: 4.705
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  DRESSER
+Radius: 0.5
+Position: 740 0 -650
+Type: 1 8
+Yrot: 170
+
+Object: curve
+Angle: 80
+Radius: 330
+Width: 60
+Height: 2
+Position: 457 1 -555
+Yrot: -90
+
+Object: curve
+Angle: 90
+Radius: 387
+Width: 60
+Height: 2
+Yrot: 90
+Position: 457 1 -1212
+
+######################## walls, etc #####################
+
+# north wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 1000
+Yrot: 180
+
+# west wall
+Object: wall
+Size: 5 2000 900
+Position: -1000 0 0
+Yrot: -90
+
+# east wall
+Object: wall
+Size: 5 2000 900
+Position: 1000 0 0
+Yrot: 90
+
+#carpet
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  0.1 0.7 1
+
+
+#----------------------------------------------------------------------------
+#  Hallway
+#----------------------------------------------------------------------------
+Scene Location: -6 6
+
+################################## roads ###################
+
+#connection from living room to bedroom
+Object: road
+Width: 60
+Height: 2
+Length: 700
+Position: 1000 1 -100
+Yrot: 90
+
+Object: curve
+Width: 60
+Height: 2
+Angle: 90
+Radius: 430
+Position: 300 1 300
+Yrot: 180
+
+#outside
+Object: curvewall
+Width: 2
+Height: 4
+Angle: 43
+Radius: 432
+Position: 300 0 300
+Yrot: 180
+Color: 1 0 0
+
+#outside
+Object: curvewall
+Width: 2
+Height: 4
+Angle: 38.5
+Radius: 432
+Position: 300 0 300
+Yrot: 231.5
+Color: 1 0 0
+
+#inside
+Object: curvewall
+Width: 2
+Height: 4
+Angle: 42
+Radius: 370
+Position: 300 0 300
+Yrot: 180
+Color: 1 0 0
+
+#inside
+Object: curvewall
+Width: 2
+Height: 4
+Angle: 38.5
+Radius: 370
+Position: 300 0 300
+Yrot: 231.5
+Color: 1 0 0
+
+Object: road
+Width: 60
+Length: 500
+Height: 2
+Position: -100 1 300
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Position: -400 1 800
+Angle: 90
+
+# connection from bedroom to office
+Object: curve
+Angle: 90
+Radius: 387
+Width: 60
+Height: 2
+Yrot: 90
+Position: 457 1 788
+
+Object: road
+Width: 60
+Height: 2
+Length: 588
+Position: 100 1 200
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 330
+Angle: 90
+Position: -200 1 200
+Yrot: -90
+
+#outside
+Object: curvewall
+Height: 4
+Width: 2
+Radius: 332
+Angle: 44.5
+Position: -200 0 200
+Yrot: -90
+Color: 1 1 0
+
+#outside
+Object: curvewall
+Height: 4
+Width: 2
+Radius: 332
+Angle: 35
+Position: -200 0 200
+Yrot: -35
+Color: 1 1 0
+
+#inside
+Object: curvewall
+Height: 4
+Width: 2
+Radius: 270
+Angle: 43.8
+Position: -200 0 200
+Yrot: -90
+Color: 1 1 0
+
+#inside
+Object: curvewall
+Height: 4
+Width: 2
+Radius: 270
+Angle: 33
+Position: -200 0 200
+Yrot: -33
+Color: 1 1 0
+
+# to office
+Construct: acceleratorX2
+Position: -400 0 -100
+Yrot: 90
+
+Object: road
+Width: 60
+Height: 2
+Length: 800
+Position: -200 1 -100
+Yrot: 90
+
+# connection from office to living room
+Object: road
+Width: 60
+Height: 2
+Length: 500
+Position: -1000 1 100
+Yrot: -90
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label:  HALLWAY
+Radius: 0.5
+Position: -550 1.1 100
+Type: 1 11
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 35
+Length: 100
+Position: -500 1 100
+Yrot: -90
+Xrot: -8
+
+Object: road
+Width: 60
+Height: 2
+Length: 850
+Position: 1000 1 100
+Yrot: 90
+
+Object: finish
+Length: 20
+Width:  60
+Height: 40
+Label:  FINISH
+Radius: 0.5
+Position: 990 1.15 100
+Type: 1 12
+Yrot: -90
+
+#################################### walls, etc ###################
+Object: wall
+Size: 700 2000 1500
+Position: 0 0 -1000
+Color: 0.8 0.8 1
+
+Object: wall
+Size: 700 700 1500
+Position: 650 0 300
+Color: 0.8 0.8 1
+
+Object: wall
+Size: 700 700 1500
+Position: -650 0 300
+Color: 0.8 0.8 1
+
+#floor
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  1 0.7 0.5
+
+#----------------------------------------------------------------------------
+#  Office
+#----------------------------------------------------------------------------
+Scene Location: -7 6
+
+################### desk ###############
+
+#leg
+Object:  cone 
+Position: -850 0 -400
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position: -850 0 400
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position: -500 0 -400
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#leg
+Object:  cone 
+Position: -500 0 400
+Size:  0 10 90
+Color:  0 0 0
+Radius:  20 
+
+#left
+Object: wall
+Size: 400 200 120
+Position: -475 90 -325
+Color: 0.5 0 0
+Yrot: 90
+
+#right
+Object: wall
+Size: 400 200 120
+Position: -475 90 325
+Color: 0.5 0 0
+Yrot: 90
+
+#top
+Object: wall
+Size: 400 850 20
+Position: -475 210 0
+Color: 0.5 0.3 0
+Yrot: 90
+
+Construct: chair
+Position: -475 0 0
+Yrot: -90
+
+
+############################ scratching dog ########################
+
+Construct: mr_big_dog
+Position: 0 0 0
+Yrot: 37
+
+########################## roads ###################################
+
+Object: road
+Width: 60
+Height: 2
+Length: 1000
+Position: 1000 1 -100
+Yrot: 90
+
+Object: curve
+Radius: 330
+Angle: 90
+Width: 60
+Height: 2
+Yrot: 90
+Position: 0 1 -400
+
+Object: curve
+Radius: 330
+Angle: 180
+Width: 60
+Height: 2
+Yrot: 180
+Position: -600 1 -400
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  OFFICE
+Radius: 0.5
+Position: -600 0 -700
+Type: 1 9
+Yrot: 90
+
+Object: road
+Width: 60
+Length: 800
+Height: 2
+Position: -900 1 -400
+
+Object: curve
+Radius: 330
+Angle: 180
+Width: 60
+Height: 2
+Yrot: 0
+Position: -600 1 400
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  DOG
+Radius: 0.5
+Position: -600 0 700
+Type: 1 10
+Yrot: -90
+
+Object: curve
+Radius: 330
+Angle: 90
+Width: 60
+Height: 2
+Yrot: 180
+Position: 0 1 400
+
+Construct: acceleratorX2
+Position: 200 0 100
+Yrot: -90
+
+Object: road
+Width: 60
+Height: 2
+Length: 1000
+Position: 1000 1 100
+Yrot: 90
+
+############################ walls, etc ############################
+# north wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 1000
+Yrot: 180
+
+# west wall
+Object: wall
+Size: 5 2000 900
+Position: -1000 0 0
+Yrot: -90
+
+# south wall
+Object: wall
+Size: 5 2000 900
+Position: 0 0 -1000
+
+#carpet
+Object: wall
+Position: 0 -1.25 -1000
+Size:  2000 2000 1
+Color:  1 0.7 0
+
+
+#----------------------------------------------------------------------------
+#  Driveway (south)
+#----------------------------------------------------------------------------
+Scene Location: -3 6
+
+Object: deciduous
+Position: 700 0 0
+Height: 1000
+Radius: 100
+Width: 1000
+Type: round
+Color: 0 1 0
+
+#driveway
+Object:  flat 
+Position:  0 0 0
+Size:  2000 1000 0
+Color:  0.4 0.4 0.4
+
+################## roads ##################
+
+Object: road
+Width: 60
+Height: 2
+Length: 2000
+Position: 300 1 -1000
+
+Object: ground
+
+#----------------------------------------------------------------------------
+#  Driveway (north)
+#----------------------------------------------------------------------------
+Scene Location: -3 7
+
+#driveway
+Object:  flat 
+Position:  0 0 0
+Size:  2000 1000 0
+Color:  0.4 0.4 0.4
+
+################## tricycle ###############
+
+#wheel
+Object: pillar
+Radius: 50
+Height: 20
+Color: 0 0 0
+Position: 370 50 -300
+Zrot: 90
+
+#wheel
+Object: pillar
+Radius: 50
+Height: 20
+Color: 0 0 0
+Position: 170 50 -300
+Zrot: 90
+
+#wheel
+Object: pillar
+Radius: 65
+Height: 20
+Color: 0 0 0
+Position: 270 65 -450
+Zrot: 90
+
+#axel
+Object: wall
+Color: 0.3 0.3 1
+Size: 30 200 10
+Position: 270 45 -315
+
+#crossbar
+Object: wall
+Color: 0.3 0.3 1
+Size: 150 30 10
+Position: 260 45 -315
+Yrot: 180
+Xrot: -40
+
+#fork
+Object: wall
+Color: 0.3 0.3 1
+Size: 120 30 10
+Xrot: -75
+Position: 260 50 -450
+
+#seat
+Object: wall
+Color: 1 1 1
+Size: 70 70 15
+Position: 260 100 -370
+
+#handlebars
+Object: curvewall
+Width: 10
+Height: 10
+Radius: 100
+Angle: 140
+Position: 260 150 -330
+Yrot: 200
+
+Object: generic sign
+Size: 50 100 4
+Label: HISTORIC\LANDMARK\NEXT RIGHT
+Color: 0 1 0
+Position: -700 0 600
+Yrot: 90
+
+
+
+################## roads ##################
+
+Object: road
+Width: 60
+Height: 2
+Length: 1000
+Position: 300 1 -1000
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 530
+Angle: 90
+Position: -200 1 0
+
+Object: road
+Width: 60
+Height: 2
+Length: 800
+Position: -200 1 500
+Yrot: 90
+
+Object:  ground 
+
+#----------------------------------------------------------------------------
+#  Yard (east)
+#----------------------------------------------------------------------------
+Scene Location: -4 7
+
+Object: deciduous
+Position: 0 0 0
+Height: 700
+Radius: 100
+Width: 1000
+Type: round
+Color: 0 1 0
+
+Object: cone
+Color: 0 1 0.5
+Width: 40
+Radius: 50
+Height: 70
+Position: -900 0 350
+#
+Object: deciduous
+Height: 70
+Width: 80
+Position: -900 70 350
+Color: 0 1 0
+
+Object: cone
+Color: 0.6 1 0.5
+Width: 40
+Radius: 50
+Height: 70
+Position: -600 0 350
+#
+Object: deciduous
+Height: 70
+Width: 80
+Position: -600 70 350
+Color: 0 1 0
+
+##################### roads ####################
+
+###---------- historic landmark ----------###
+Object: spline road
+Width: 60
+Height: 2
+Data: 6 3
+1000 1 500
+900 1 500
+700 1 700
+300 1 700
+100 1 500
+0 1 500
+
+Object: generic sign
+Label: THIS RACE TRACK WAS DESIGNED\BY EDGAR CIRCENIS.\IT IS AT LEAST HIS 17TH TRACK\DESIGN, AND POSSIBLY HIS LAST.\THIS MONUMENT HAS BEEN\ERECTED IN HIS HONOR BY HIMSELF.\\ENJOY THE RACES -- EDGAR
+Color:  1 1 1
+Size: 20 30 0.005
+Position: 450 2.5 750
+
+#matting
+Object: wall
+Size: 2 34 24
+Color: 0.4 0 0
+Position: 450 0.5 751
+
+Object: wall
+Size: 50 50 70
+Position: 450 0 752
+Color:  1 1 1
+
+Object: wall
+Size: 50 50 50
+Position: 475 54 752
+Yrot: 45
+Xrot: 45
+Color:  1 1 1
+
+Object: wall
+Size: 50 50 50
+Position: 425 54 752
+Yrot: -45
+Xrot: 45
+Color:  1 1 1
+
+Object: deciduous
+Position: 490 0 750
+
+Object: deciduous
+Position: 510 0 750
+
+Object: deciduous
+Position: 530 0 750
+
+Object: deciduous
+Position: 410 0 750
+
+Object: deciduous
+Position: 390 0 750
+
+Object: deciduous
+Position: 370 0 750
+
+###-------- end historic landmark --------###
+
+Construct: acceleratorX3
+Position: 0 0 500
+Yrot: 90
+
+Object: road
+Width: 60
+Height: 2
+Length: 2000
+Position: -1000 1 500
+Yrot: -90
+
+Object: ramp
+Width: 60
+Height: 10
+Length: 100
+Position: 800 1 500
+Yrot: 90
+
+Object: checkpoint
+Length: 20
+Width:  60
+Height: 40
+Label:  YARD
+Radius: 0.5
+Position: 700 9 500
+Type: 1 5
+Yrot: 90
+
+Object:  ground 
+
+#----------------------------------------------------------------------------
+#  Yard (west)
+#----------------------------------------------------------------------------
+Scene Location: -5 7
+
+#sidewalk
+Object: flat
+Color: 0.5 0.5 0.5
+Size: 2000 600 0
+Position: -300 0 0
+
+####### flower pots #########
+
+Object: cone
+Color: 0.7 0.2 0
+Width: 40
+Radius: 50
+Height: 70
+Position: 800 0 350
+#
+Object: deciduous
+Height: 70
+Width: 80
+Position: 800 70 350
+Color: 0 1 0
+
+Object: cone
+Color: 0.7 0.2 0
+Width: 40
+Radius: 50
+Height: 70
+Position: 500 0 350
+#
+Object: deciduous
+Height: 70
+Width: 80
+Position: 500 70 350
+Color: 0.7 1 0
+
+Object: cone
+Color: 0.7 0.2 0
+Width: 40
+Radius: 50
+Height: 70
+Position: 200 0 350
+#
+Object: deciduous
+Height: 70
+Width: 80
+Position: 200 70 350
+Color: 1 0.2 0
+
+######################### roads ######################
+
+Object: road
+Width: 60
+Height: 2
+Length: 800
+Position: -500 1 -1000
+
+# NOTE: this is a cool spline twisty road, but wastes too much time
+#Object: spline road
+#Width: 60
+#Height: 2
+#Data: 10 6
+#-500 1 -800 0 1 0
+#-500 20 -400 0.2 1 0
+#-500 45 0 0.5 1 0
+#-100 30 400 0 1 -0.5
+#300 15 0 -0.5 1 0
+#-100 15 -400 0 1 0.5
+#-500 8 0 0.2 1 0
+#-500 5 400 0.2 1 0
+#0 1 500 0 1 0
+#200 1 500 0 1 0
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 730
+Angle: 90
+Position: 200 1 -200
+Yrot: 90
+
+Object: road
+Width: 60
+Height: 2
+Length: 800
+Position: 200 1 500
+Yrot: -90
+
+
+Object:  ground 
+
+#----------------------------------------------------------------------------
+#  Mouse hole
+#----------------------------------------------------------------------------
+Scene Location: -7 7
+
+###################### mouse #########################
+#body rear
+Object: sphere
+Radius: 30
+Color:  1 1 1
+Position: 0 25 0
+
+#body front
+Object: sphere
+Radius: 30
+Color:  1 1 1
+Position: 0 25 -20
+
+#nose
+Object: cone
+Width: 28
+Radius: 0
+Height: 70
+Position: 0 25 -30
+Xrot: -90
+Color:  1 1 1
+
+#whisker
+Object: pillar
+Color: 0.5 0.5 0.5
+Radius: 2
+Height: 70
+Position: -35 18 -75
+Zrot: -80
+
+#whisker
+Object: pillar
+Color: 0.5 0.5 0.5
+Radius: 2
+Height: 70
+Position: -35 30 -75
+Zrot: -100
+
+#eye
+Object: sphere
+Radius: 6
+Color: 1 0.3 0.3
+Position: 10 35 -65
+
+#eye
+Object: sphere
+Radius: 6
+Color: 1 0.3 0.3
+Position: -10 35 -65
+
+#tail
+Object: pillar
+Color: 0.5 0.5 0.5
+Radius: 2
+Height: 40
+Position: 0 25 29
+Xrot: 90
+
+################## cheese ############
+
+Object: wall
+Size: 30 30 20
+Color: 1 0.8 0
+Position: -55 0 -70
+
+Object: oval
+Size: 6 6 0
+Color: 1 0.6 0
+Position: -55 6 -71
+Xrot: -90
+
+Object: oval
+Size: 6 8 0
+Color: 1 0.6 0
+Position: -65 15 -71
+Xrot: -90
+
+Object: oval
+Size: 6 6 0
+Color: 1 0.6 0
+Position: -45 10 -71
+Xrot: -90
+
+Object: oval
+Size: 5 5 0
+Color: 1 0.6 0
+Position: -52 14 -71
+Xrot: -90
+
+Object: oval
+Size: 6 6 0
+Color: 1 0.6 0
+Position: -39 14 -50
+Xrot: -90
+Yrot: 90
+
+Object: oval
+Size: 5 5 0
+Color: 1 0.6 0
+Position: -39 13 -65
+Xrot: -90
+Yrot: 90
+
+Object: oval
+Size: 5 5 0
+Color: 1 0.6 0
+Position: -39 8 -45
+Xrot: -90
+Yrot: 90
+
+Object: oval
+Size: 7 6 0
+Color: 1 0.6 0
+Position: -39 1 -65
+Xrot: -90
+Yrot: 90
+
+################# roads ##################
+
+Object: curve
+Width: 60
+Height: 2
+Radius: 280
+Position: 0 1 -350
+Angle: 180
+
+Object: checkpoint
+Length: 20
+Width:  80
+Height: 40
+Label:  MOUSE
+Radius: 0.5
+Position: -200 0 -200
+Type: 1 6
+Yrot: 135
+
+#exit
+Object: invisible wormhole
+Size: 1 60 20
+Position: -250 2 -435
+Xrot: -90
+Type: position in scene += 4500, 0, -600; linear velocity *= 1.5
+
+#entrance
+Object: invisible wormhole
+Size: 1 60 20
+Position: 250 2 -435
+Xrot: -90
+Type: position in scene += 4500, 0, -600
+
+Object: oval light
+Width: 60
+Length: 60
+Position: 250 1 -449
+Xrot: 90
+
+Object: oval light
+Width: 60
+Length: 60
+Position: -250 1 -449
+Xrot: 90
+
+Object: road
+Width: 60
+Length: 100
+Height: 2
+Position: 250 1 -450
+
+Object: road
+Width: 60
+Length: 100
+Height: 2
+Position: -250 1 -450
+
+
+########################### walls #########################
+
+Object: wall
+Size: 5 800 100
+Color: 0 0 0
+Position: 0 0 -455
+
+Object: wall
+Size: 5 800 100
+Color: 0 0 0
+Position: 0 0 200
+
+Object: wall
+Size: 5 660 100
+Color: 0 0 0
+Position: 400 0 -125
+Yrot: 90
+
+Object: wall
+Size: 5 660 100
+Color: 0 0 0
+Position: -400 0 -125
+Yrot: -90
+
+#lid
+Object: wall
+Size: 660 810 5
+Color: 0 0 0
+Position: 0 95 -455
+
+
+Object:  flat 
+Position:  0 0 0
+Size:  2000 2000 1
+Color:  0 0 0
+

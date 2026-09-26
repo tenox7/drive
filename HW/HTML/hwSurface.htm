@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwSurface - define surface parameters of an object</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwSurface - define surface parameters of an object</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Color</td>
+<td>3F</td>
+<td>The color of the surface</td>
+</tr>
+<tr><td>Transparency</td>
+<td>1F</td>
+<td>How transparent is the surface; 0 = completely opaque</td>
+</tr>
+<tr><td>SpecColor</td>
+<td>3F</td>
+<td>The specular highlight color of the surface</td>
+</tr>
+<tr><td>Shininess</td>
+<td>1F</td>
+<td>How &quot;specular&quot; is the surface; 0 = dull, 1.0 =
+  extremely shiny</td>
+</tr>
+<tr><td>Backface</td>
+<td>1B</td>
+<td>Is this surface back-facing only?</td>
+</tr>
+<tr><td>TwoSided</td>
+<td>1B</td>
+<td>Is this surface visible from both sides?</td>
+</tr>
+<tr><td>Bright</td>
+<td>1B</td>
+<td>Is this surface intrinsically bright?</td>
+</tr>
+<tr><td>Invisible</td>
+<td>1B</td>
+<td>Is this surface visible at all?</td>
+</tr>
+<tr><td>Wireframe</td>
+<td>1B</td>
+<td>Should this surface be drawn as a wireframe?</td>
+</tr>
+<tr><td>Visibility</td>
+<td>1I</td>
+<td>Visibility mask for use with hwDisplay-&gt;setVisibility</td>
+</tr>
+<tr><td>Texture</td>
+<td>0O</td>
+<td>Object to be used to texture map this surface; should be a
+  hwTexture object</td>
+</tr>
+<tr><td>PrunePrim</td>
+<td>1B</td>
+<td>Obsolete</td>
+</tr>
+<tr><td>SampVert</td>
+<td>1B</td>
+<td>Should the objects using this surface be drawn with texturing
+  simulated by sampling the color at the vertex?</td>
+</tr>
+<tr><td>Blend</td>
+<td>1B</td>
+<td>Should this object be alpha blended?</td>
+</tr>
+<tr><td>PreMult</td>
+<td>1B</td>
+<td>When blending, is alpha pre-multiplied?</td>
+</tr>
+<tr><td>FlipNormals</td>
+<td>1B</td>
+<td>Should the normals of this surface be flipped?</td>
+</tr>
+<tr><td>Uncolored</td>
+<td>1B</td>
+<td>Should this surface inherit color/texture attributes from the
+  previously drawn surface?</td>
+</tr>
+<tr><td>PrimSize</td>
+<td>1F</td>
+<td>Size of lines or points to be drawn</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Color</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>Transparency</td>
+<td>0.0</td>
+</tr>
+<tr><td>SpecColor</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>Shininess</td>
+<td>0.1;</td>
+</tr>
+<tr><td>Backface</td>
+<td>False</td>
+</tr>
+<tr><td>TwoSided</td>
+<td>False</td>
+</tr>
+<tr><td>Bright</td>
+<td>False</td>
+</tr>
+<tr><td>Invisible</td>
+<td>False</td>
+</tr>
+<tr><td>Wireframe</td>
+<td>False</td>
+</tr>
+<tr><td>Visibility</td>
+<td>0xFFFFFFFF</td>
+</tr>
+<tr><td>Texture</td>
+<td>NULL</td>
+</tr>
+<tr><td>PrunePrim</td>
+<td>False</td>
+</tr>
+<tr><td>SampVert</td>
+<td>False</td>
+</tr>
+<tr><td>Blend</td>
+<td>False</td>
+</tr>
+<tr><td>PreMult</td>
+<td>False</td>
+</tr>
+<tr><td>FlipNormals</td>
+<td>False</td>
+</tr>
+<tr><td>Uncolored</td>
+<td>False</td>
+</tr>
+<tr><td>PrimSize</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwSurface class defines the surface attributes of graphics
+primitives in HoverWare. Most primitives inherit these properties
+from the hwSurface class; however, you can always create a hwSurface
+object and pass it in to one of these objects as the Surface
+parameter.</p>
+<p>The Color is the color of the surface; an RGB triple. Transparency
+is the amount of transparency the object has; 0.0 is opaque, 1.0 is
+fully transparent. SpecColor is the specular highlight color of the
+surface; an RGB triple. Shininess controls how shiny the object is; a
+Shininess of 0.0 implies a matte object, a Shininess of 1.0 is a very
+reflective surface. The Backface attribute tells HoverWare that this
+surface has an orientation which is the reverse of HoverWare's
+default. The TwoSided attribute tells HoverWare that both sides of a
+surface are visible. The Bright attribute indicates that the surface
+is fully emissive; that is, it is always fully bright. The Invisible
+flag is handy when you want to temporarily not draw a surface. The
+Wireframe flag tells HoverWare to draw the surface as a wireframe
+outline only. The Visibility mask is a set of 32 bits which indicates
+which states this surface is visible in; see
+hwDisplay-&gt;setVisibility for more information. The Texture
+attribute is an hwTexture object which indicates how the surface
+should be texture mapped. Finally, the Uncolored flag tells HoverWare
+that this surface should inherit color and texture attributes from
+the previously drawn surface.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Create a red surface and use it on a ball */
+    hwObject
+        surf, sphere;
+
+    surf = hwSurface-&gt;create( hwSurface );
+    HW_MODIFY_3F( surf, hwStrColor, 1, 0, 0 );
+
+    sphere = hwSphere-&gt;create( hwSphere );
+    sphere-&gt;modify( sphere, hwStrSurface, HW_TYPE_OBJECT, surf );
+    sphere-&gt;draw( sphere );
+    sphere-&gt;destroy( sphere );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A red surface used on a ball
+    hwSurface surf {
+        Color = {1,0,0}
+    }
+    hwSphere sphere {
+        Surface = surf
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwTexture.htm">hwTexture</a>, <a
+href="hwDisplay.htm">hwDisplay-&gt;setVisibility</a></p>
+</body>
+</html>

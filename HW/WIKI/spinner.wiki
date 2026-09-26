@@ -1,0 +1,28 @@
+== NAME ==
+spinner - a playback program for HoverWare animations
+
+== SYNOPSIS ==
+spinner [-time] [-opt n] [-wire] [-rgb] [-windowid id] [-full] file
+
+== DESCRIPTION ==
+The spinner program will play back HoverWare animations to a
+resizable window.  The options to spinner are as follows:
+
+; -time  : Provide a frames-per-second rate on the console from which spinner was invoked
+; -opt n : Override the default optimization level of all of the HoverWare objects in the animation.
+; -wire  : Play the animation in wireframe mode
+; -rgb   : Play the animation in color-per-vertex mode instead of texture mapped mode (which is the default)
+; -windowid id : Given a specified window ID, spinner will play the animation in that window.  The window should be suitable for 3D graphics; that is, a truecolor, double-bufferable window, in the image planes, if possible
+; -full : Play the animation in full-screen mode
+
+The window that the animation is playing in may be resized at any time;
+additionally, the following keyboard inputs are recognized:
+
+; <space> : Toggle the pause state of spinner
+; <r>     : Restart the animation
+; <q>     : Exit spinner
+
+Spinner may also be exited by using the close menu item in the window menu.
+
+== SEE ALSO ==
+[[hw]]

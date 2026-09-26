@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwSweep - create a shape specified by sweeping a 2-dimensional path through a 3-dimensional path</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwSweep - create a shape specified by sweeping a 2-dimensional
+path through a 3-dimensional path</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Shape</td>
+<td>*F</td>
+<td>The 2-dimensional shape to be swept through the
+  three-dimensional path</td>
+</tr>
+<tr><td>Path</td>
+<td>*F</td>
+<td>The 3-dimensional path across which the shape will be swept</td>
+</tr>
+<tr><td>HasSizes</td>
+<td>1B</td>
+<td>True iff the Path also contains a scaling factor per vertex</td>
+</tr>
+<tr><td>HasUp</td>
+<td>1B</td>
+<td>True iff the Path also contains an Up direction vector per
+  vertex</td>
+</tr>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>The number of places at which to evaluate the Sweep</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>1B</td>
+<td>True for smooth shading; false for faceted appearance</td>
+</tr>
+<tr><td>Lifetime</td>
+<td>2F</td>
+<td>Which portion of the path is to be used to draw the shape</td>
+</tr>
+<tr><td>HasCaps</td>
+<td>1B</td>
+<td>True iff caps at the end of the sweep are to be drawn</td>
+</tr>
+<tr><td>Surface</td>
+<td>3O</td>
+<td>Array of hwSurface objects to use as the surface attributes for
+  the swept shape and the two endcaps</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tesselation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Shape</td>
+<td>{}</td>
+</tr>
+<tr><td>Path</td>
+<td>{}</td>
+</tr>
+<tr><td>HasSizes</td>
+<td>False</td>
+</tr>
+<tr><td>HasUp</td>
+<td>False</td>
+</tr>
+<tr><td>GraphN</td>
+<td>16</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>True</td>
+</tr>
+<tr><td>Lifetime</td>
+<td>{0.0, length(path)}</td>
+</tr>
+<tr><td>Surface</td>
+<td>{default hwSurface,default hwSurface,default hwSurface}</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwSweep class creates a surface by sweeping a 2-dimensional
+Shape along a 3-dimensional Path. The position, orientation, and size
+of the swept shape is interpolated smoothly along a spline curve
+which goes through the points specified in the Path.</p>
+<p>/* More description TBD */</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* TBD */
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A simple surface of revolution
+    # TBD
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

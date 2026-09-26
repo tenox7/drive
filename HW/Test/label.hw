@@ -1,0 +1,9 @@
+hwLabel {
+    PosX = 100
+    PosY = 100
+    Width = 128
+    Height = 32
+    BackgroundColor = {.5,.5,.5}
+    FontHeight = 24
+    Label = "Test"
+}

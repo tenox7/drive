@@ -1,0 +1,204 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(server/drive_server.c)
+AC_PREFIX_DEFAULT(/usr/local/drive)
+AC_CONFIG_HEADER(include/config.h)
+
+dnl ########## Checks for programs. ##########
+AC_LANG_C
+AC_PROG_CC
+
+dnl ## Split out debug and optimize options.
+dnl ## Too bad configure doesn't do this for us already.  :-(
+if echo "$CFLAGS " | grep -q -- "-g "; then
+  COMPILER_DEBUGFLAGS="-g"
+  CFLAGS=$(echo "$CFLAGS " | sed 's/-g //')
+fi
+changequote(<<,>>)dnl
+if echo "$CFLAGS " | grep -q -- '[-+]O[0-9]* '; then
+  COMPILER_OPTFLAGS=$(echo "$CFLAGS " | sed 's/^.*\([+-]O[0-9]*\) .*$/\1/')
+  CFLAGS=$(echo "$CFLAGS " | sed 's/[+-]O[0-9]* //')
+fi
+changequote([,])dnl
+AC_SUBST(COMPILER_DEBUGFLAGS)
+AC_SUBST(COMPILER_OPTFLAGS)
+
+AC_PROG_CPP
+AC_PROG_INSTALL
+
+dnl ########## Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_OFF_T
+AC_TYPE_SIZE_T
+AC_HEADER_TIME
+AC_C_BIGENDIAN
+AC_EXEEXT
+AC_OBJEXT
+AC_PATH_XTRA
+AC_CHECK_TYPE(byte, unsigned char)
+AC_CHECK_TYPE(u_32, unsigned long)
+
+dnl ########## Essential defines ##########
+CPPFLAGS="$CPPFLAGS -DV4_FILE_SYS -DHOVERWARE_MODEL"
+
+dnl ########## Checks for header files. ##########
+AC_HEADER_STDC
+AC_CHECK_HEADERS(fcntl.h malloc.h sys/time.h unistd.h)
+AC_CHECK_HEADERS(sys/audio.h sys/soundcard.h)
+
+dnl ########## Checks for libraries. ##########
+AC_CHECK_LIB(X11, XOpenDisplay)
+AC_CHECK_LIB(Xt, XtInitialize)
+
+dnl ##### Motif #####
+AC_MSG_CHECKING(Motif)
+checkdirs="/usr/X11R6/include
+           /usr/include/Motif2.1
+           /usr/include/Motif2.0
+           /usr/include/Motif1.2
+	   /usr/include/Motif1.1
+	   /usr/local/LessTif/Motif2.0/include
+           /usr/local/LessTif/Motif1.2/include"
+motifIDir=""
+for dir in $checkdirs; do
+  AC_CHECK_FILE($dir/Xm/Xm.h, motifIDir=$dir)
+  if test ! -z "$motifIDir"; then break; fi
+done
+if test -z "$motifIDir"; then
+  AC_MSG_ERROR("Motif headers not found!");
+fi
+CPPFLAGS="$CPPFLAGS -I$motifIDir"
+
+checkdirs="/usr/X11R6/lib
+           /usr/lib/Motif2.1
+           /usr/lib/Motif2.0
+           /usr/lib/Motif1.2
+	   /usr/lib/Motif1.1
+	   /usr/local/LessTif/Motif2.0/lib
+           /usr/local/LessTif/Motif1.2/lib"
+motifLDir=""
+for dir in $checkdirs; do
+  save_CPPFLAGS="$CPPFLAGS"
+  CPPFLAGS="$CPPFLAGS -L$dir"
+  AC_CHECK_LIB(Xm,XmStringCreateLtoR,
+    motifLDir=$dir,
+    true,
+    $X_LIBS -lXt -lX11)
+  CPPFLAGS="$save_CPPFLAGS"
+  if test ! -z "$motifLDir"; then break; fi
+done
+if test -z "$motifLDir"; then
+  AC_MSG_ERROR("Motif libraries not found!");
+fi
+LDFLAGS="$LDFLAGS -L$motifLDir"
+
+dnl ##### HOVERWARE AND OPENGL #####
+OPENGL="-lGL -lGLU"
+AC_CHECK_FILE(/opt/graphics/OpenGL/lib/libGL.sl,
+  OPENGL="-L/opt/graphics/OpenGL/lib -lGL -lGLU")
+dnl ### Check here for Hoverball
+checkdirs="/opt/hoverball.B.0.1/HB_HW/HW
+           /opt/HoverWare
+           /usr/local/HoverWare"
+hwDir=""
+for dir in $checkdirs; do
+  AC_CHECK_FILE($dir/Inc/hw.h, hwDir=$dir)
+  AC_CHECK_FILE($dir/libhwgl.a,
+    HOVERWARE="$dir/libhwgl.a -L$dir/JPEG -ljpeg",
+    [AC_CHECK_FILE($dir/libhwsb.a,
+      HOVERWARE="$dir/libhwsb.a -L$dir/JPEG -ljpeg"
+      OPENGL="-L/opt/graphics/common/lib -lXwindow -lhpgfx")
+      ])
+  if test ! -z "$hwDir"; then break; fi
+done
+if test -z "$hwDir"; then
+  AC_MSG_ERROR("Hoverware not found!");
+fi
+CPPFLAGS="$CPPFLAGS -I$hwDir/Inc"
+AC_SUBST(OPENGL)
+AC_SUBST(HOVERWARE)
+
+
+dnl ##### RTA #####
+RTA=
+AC_CHECK_FILE(/usr/local/include/rtaudio.h,
+  CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+  AC_DEFINE(USE_RTA))
+AC_CHECK_FILE(/opt/RTA/rtaudio.h,
+  CPPFLAGS="$CPPFLAGS -I/opt/RTA"
+  AC_DEFINE(USE_RTA))
+AC_CHECK_FILE(/usr/local/lib/librta.a,
+  RTA="-L/usr/local/lib -lrta"
+  AC_DEFINE(USE_RTA))
+AC_CHECK_FILE(/opt/RTA/librta.a,
+  RTA="-L/opt/RTA -lrta"
+  AC_DEFINE(USE_RTA))
+AC_SUBST(RTA)
+
+
+dnl ########## Checks for library functions. ##########
+AC_PROG_GCC_TRADITIONAL
+AC_FUNC_MMAP
+AC_TYPE_SIGNAL
+AC_CHECK_FUNCS(gethostname gettimeofday select socket strdup)
+AC_MSG_CHECKING(for msem_init)
+AC_TRY_LINK_FUNC(msem_init,
+  AC_DEFINE(HAVE_MSEM_INIT) AC_MSG_RESULT(yes),
+  AC_MSG_RESULT(no))
+
+dnl ##### Figure out how to do automatic dependency generation #####
+dnl Default to punting on this.  :-(
+AC_MSG_CHECKING(automatic dependency generation)
+MAKE_DEPEND='echo; :'   # output something and ignore the rest of the line
+MAKE_DEPEND_OUTPUT_FD=1
+MAKE_DEPEND_DISCARD_FD=3
+if test "$GCC" = "yes"; then
+  MAKE_DEPEND='$(CC) -E -MM'
+  AC_MSG_RESULT(yes (gcc -E -MM))
+else case $(uname -s) in
+  HP-UX|hp-ux)
+    MAKE_DEPEND='$(CC) -E -Wp,-M'
+    MAKE_DEPEND_OUTPUT_FD=2
+    MAKE_DEPEND_DISCARD_FD=1
+    AC_MSG_RESULT(yes (cc -E -Wp,-M))
+    ;;
+  *)
+    AC_MSG_RESULT(no)
+    ;;
+  esac
+fi
+AC_SUBST(MAKE_DEPEND)
+AC_SUBST(MAKE_DEPEND_OUTPUT_FD)
+AC_SUBST(MAKE_DEPEND_DISCARD_FD)
+
+dnl ##### See which version of Hoverware we're working with. #####
+AC_MSG_CHECKING(hoverware version)
+AC_TRY_COMPILE(#include <hw.h>,
+  static dummy(hwObject obj) {
+    static hwDisplay disp = NULL;
+    obj->draw(obj,disp);
+  }, dummy((void *) 0),
+  AC_DEFINE(HOVERWARE_TWOARG) AC_MSG_RESULT(twoarg),
+  AC_MSG_RESULT(onearg))
+
+
+dnl ##########################################################################
+dnl ############################### OUTPUT PHASE #############################
+dnl ########## Make our output non-writable as a reminder ##########
+AC_OUTPUT(Makefile
+    server/Makefile
+    client/Makefile
+    libgui/Makefile
+    libnum/Makefile
+    libphysics/Makefile
+    libprims/Makefile
+    shared/Makefile
+    server/drive_physics/Makefile
+    server/objects/Makefile
+    server/Makefile,
+  chmod -w Makefile include/config.h
+  for subdir in client libgui libnum libphysics libprims shared server server/drive_physics server/objects; do
+    ( cd $subdir
+      chmod -w Makefile
+      if test ! -f .depend; then touch -t 199001010000 .depend; fi
+      make .depend)
+  done,
+  chmod +w Makefile */Makefile include/config.h)

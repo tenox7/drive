@@ -1,0 +1,809 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#
+# Designed by Steve Platt
+#
+#-------------------------------------------------------------------------
+
+Racecourse:  Monaco
+Practice Seconds: 0
+Race Seconds: 180
+Start SceneX: 15
+Start SceneZ: -3
+Start Position: 922.5 1 200
+Start Angle: 180
+Start Positions: 4
+Turbo Mode: 2
+Turbo Boosts: 10
+
+
+#SCENE ONE
+Scene Location: 15 -3
+
+# (a)
+Object: road
+Length: 1300
+Width: 60
+Position: 900 0 1000
+Yrot: 180
+
+# (a1)
+Object: ramp
+Width: 60
+Length: 325
+Height: 20
+Position: 900 0 -300
+Yrot: 180
+
+# (a2)
+Object: ramp
+Width: 60
+Length: 325
+Height: 20
+Position: 900 0 -1000
+Yrot: 0
+
+# (b)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 500 0 500
+Yrot: 0
+
+# (b1)
+Object: wall
+Width: 20
+Height: 5
+Length: 1200
+Position: -925 0 -1000
+Yrot: 270
+Color: 0.4 0.5 0.5
+
+# (c)
+Object: road
+Length: 500
+Width: 60
+Position: 500 0 900
+Yrot: 90
+
+# (d)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 0 0 500
+Yrot: 90
+
+# (e)
+Object: road
+Length: 1100
+Width: 60
+Position: -400 0 500
+Yrot: 180
+
+# (f)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 0 0 0
+Yrot: 90
+
+# (g)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 0 0 0
+Yrot: 0
+
+# (h)
+Object: ramp
+Width: 60
+Length: 300
+Height: 50
+Position: -400 0 -600
+Yrot: 180
+
+# (i)
+Object: wall
+Width: 60
+Length: 60
+Height: 50
+Position: -400 0 -980
+Yrot: 0
+
+# (j1) support
+Object: wall
+Width: 10
+Length: 60
+Height: 20
+Position: -425 50 -980
+Yrot: 0
+
+# (j1) support
+Object: wall
+Width: 10
+Length: 60
+Height: 20
+Position: -375 50 -980
+Yrot: 0
+
+# (j2) crossbar
+Object: wall
+Width: 60
+Length: 60
+Height: 10
+Position: -430 70 -950
+Yrot: 270
+
+# powershift sign
+Object: powershift sign
+Size: 40.0 4.0 20.0
+Position: -400 90 -950
+
+# pole for powershift sign
+Object: lamp
+Position: -400 80 -950
+Radius: 0.5
+Height: 10
+
+# (k)
+Object: road
+Length: 1000
+Width: 60
+Position: 400 0 0
+Yrot: 180
+
+Object: wall
+Width: 3
+Height: 5
+Length: 1000
+Position: 370 0 0
+Yrot: 180
+Color: 1.0 1.0 0.0
+
+Object: wall
+Width: 3
+Height: 5
+Length: 1000
+Position: 430 0 0
+Yrot: 180
+Color: 1.0 1.0 0.0
+
+
+# (l)
+Object: curvewall
+Position: 430 0 0
+Height: 4
+Width: 27
+Angle: 180
+Yrot: 90
+Radius: 27
+Color: 1.0 1.0 0.0
+
+# (m)
+Object: curvewall
+Position: 370 0 -150
+Height: 4
+Width: 27
+Angle: 180
+Yrot: 270
+Radius: 27
+Color: 1.0 1.0 0.0
+
+# (n)
+Object: curvewall
+Position: 430 0 -300
+Height: 4
+Width: 27
+Angle: 180
+Yrot: 90
+Radius: 27
+Color: 1.0 1.0 0.0
+
+# (o)
+Object: curvewall
+Position: 370 0 -450
+Height: 4
+Width: 27
+Angle: 180
+Yrot: 270
+Radius: 27
+Color: 1.0 1.0 0.0
+
+# (p)
+Object: curvewall
+Position: 430 0 -600
+Height: 4
+Width: 27
+Angle: 180
+Yrot: 90
+Radius: 27
+Color: 1.0 1.0 0.0
+
+# SIGNS
+
+Object: start
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label: START
+Radius: 0.5
+Position: 900 0 0
+Type: 1 10
+Yrot: 180
+
+Object: finish
+Length: 20.0
+Width:  110.0
+Height: 55.0
+Label: FINISH
+Radius: 0.5
+Position: 500 0 900
+Type: 1 10
+Yrot: 270
+Object: ground
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  LE SLALOM
+Radius: 0.5
+Position: 400 0 -750
+Type: 1 7
+Yrot: 0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  L'AERIEL
+Radius: 0.5
+Position: -400 0 -500
+Type: 1 8
+Yrot: 180
+
+Object: generic sign
+Label: SLOW !
+Size: 20 40 5
+Color: 1.0 1.0 0.0
+Position: 450 10 -800
+Yrot: 0
+
+Object: generic sign
+Label: SLOW !
+Size: 20 40 5
+Color: 1.0 1.0 0.0
+Position: 350 10 -800
+Yrot: 0
+
+Object: generic sign
+Label: CONTINUE\STRAIGHT
+Size: 20 40 5
+Color: 0.0 1.0 0.0
+Position: -450 0 0
+Yrot: 0
+
+Object: generic sign
+Label: CONTINUE\STRAIGHT
+Size: 20 40 5
+Color: 0.0 1.0 0.0
+Position: -350 0 0
+Yrot: 0
+
+
+#SCENE TWO
+Scene Location: 15 -4
+
+# (a)
+Object: ramp
+Width: 60
+Length: 300
+Height: 50
+Position: -400 0 700
+Yrot: 0
+
+# (b)
+Object: road
+Length: 400
+Width: 60
+Position: -400 0 700
+Yrot: 180
+
+# (b1)
+Object: wall
+Width: 20
+Height: 5
+Length: 1000
+Position: 0 0 0 
+Yrot: 0
+Color: 0.4 0.5 0.5
+
+# (c)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -300 0 300
+Yrot: 180
+
+# (d)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -300 0 100
+Yrot: 0
+
+# (e)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -300 0 100
+Yrot: 270
+
+# (f)
+Object: road
+Length: 200
+Width: 60
+Position: -300 0 0
+Yrot: 90
+
+# (g)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -500 0 100
+Yrot: 180
+
+# (h)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -500 0 100
+Yrot: 90
+
+# (i)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -500 0 300
+Yrot: 270
+
+# (j)
+Object: pond
+Length: 200.0
+Width: 300.0
+Position: 400 0 900
+
+# (k)
+Object: ramp
+Width: 30
+Length: 300
+Height: 15
+Position: 400 0 500
+Yrot: 0
+
+# (l)
+Object: road
+Length: 200
+Width: 45
+Position: 400 0 500
+Yrot: 180
+
+# (l1)
+Object: road
+Length: 200
+Width: 60
+Position: 400 0 300
+Yrot: 180
+
+# (m)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 0 0 100
+Yrot: 270
+
+# (n)
+Object: road
+Length: 400
+Width: 60
+Position: 0 0 -300
+Yrot: 90
+
+# (o)
+Object: bridge
+Width: 60
+Length: 200
+Height: 20
+Position: -500 0 -300
+Yrot: 90
+
+# (p)
+Object: road
+Length: 200
+Width: 60
+Position: -600 0 -300
+Yrot: 90
+
+# (q)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -800 0 -400
+Yrot: 90
+
+# (q1)
+Object: curvewall
+Radius: 160
+Width: 3
+Angle: 180
+Position: -830 0 -400
+Yrot: 90
+Color: 1.0 0.0 0.0
+
+# (q2)
+Object: curvewall
+Radius: 70
+Width: 3
+Angle: 180
+Position: -770 0 -400
+Yrot: 90
+Color: 1.0 0.0 0.0
+
+# (r)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -800 0 -400
+Yrot: 180
+
+# (s)
+Object: road
+Length: 300
+Width: 60
+Position: -800 0 -500
+Yrot: 270
+
+# (t)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -500 0 -600
+Yrot: 0
+
+# (t1)
+Object: curvewall
+Radius: 160
+Width: 3
+Angle: 180
+Position: -470 0 -600
+Yrot: 270
+Color: 1.0 0.0 0.0
+
+# (t2)
+Object: curvewall
+Radius: 70
+Width: 3
+Angle: 180
+Position: -530 0 -600
+Yrot: 270
+Color: 1.0 0.0 0.0
+
+# (u)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -500 0 -600
+Yrot: 270
+
+# (v)
+Object: road
+Length: 300
+Width: 60
+Position: -500 0 -700
+Yrot: 90
+
+# (w)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -800 0 -800
+Yrot: 90
+
+# (w1)
+Object: curvewall
+Radius: 160
+Width: 3
+Angle: 180
+Position: -830 0 -800
+Yrot: 90
+Color: 1.0 0.0 0.0
+
+# (w2)
+Object: curvewall
+Radius: 70
+Width: 3
+Angle: 180
+Position: -770 0 -800
+Yrot: 90
+Color: 1.0 0.0 0.0
+
+# (x)
+Object: curve
+Radius: 130
+Width: 60
+Angle: 90
+Position: -800 0 -800
+Yrot: 180
+
+# (y)
+Object: road
+Length: 1300
+Width: 60
+Position: -800 0 -900
+Yrot: 270
+
+# (z)
+Object: curve
+Radius: 430
+Width: 60
+Angle: 90
+Position: 500 0 -500
+Yrot: 270
+
+# (a1)
+Object: bridge
+Length: 300
+Width: 60
+Height: 15
+Position: 900 0 -200
+Yrot: 0
+
+# (a2)
+Object: road
+Length: 150
+Width: 60
+Position: 900 0 -350
+Yrot: 180
+
+# (b1)
+Object: road
+Length: 550
+Width: 60
+Position: 900 0 500
+Yrot: 180
+
+# (c1)
+Object: road
+Length: 300
+Width: 60
+Position: 900 0 700
+Yrot: 0
+
+# Chicane
+
+# (d1)
+Object: curve
+Radius: 70.7
+Width: 60
+Angle: 45
+Position: 859.3 0 500
+Yrot: 0
+
+# (e1)
+Object: curve
+Radius: 141.4
+Width: 60
+Angle: 90
+Position: 970 0 600
+Yrot: 135
+
+# (f1)
+Object: curve
+Radius: 70.7
+Width: 60
+Angle: 45
+Position: 859.3 0 700
+Yrot: 315
+
+# (d2)
+Object: curvewall
+Radius: 141.4
+Height: 3
+Width: 2
+Angle: 90
+Position: 970 0 600
+Yrot: 135
+Color: 1.0 1.0 0.0
+
+# (d2)
+Object: curvewall
+Radius: 141.4
+Height: 3
+Width: 2
+Angle: 90
+Position: 1030 0 600
+Yrot: 135
+Color: 1.0 1.0 0.0
+
+# SIGNS
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 50.0
+Label:  LE CHICANE 
+Radius: 0.5
+Position: 900 0 700
+Type: 1 1
+Yrot: 180
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  LE PONT
+Radius: 0.5
+Position: 900 0 0
+Type: 1 2
+Yrot: 180
+
+Object: generic sign
+Label: HAIRPINS\AHEAD
+Size: 40 70 10
+Color: 1.0 1.0 0.0
+Position: -300 0 -960
+Yrot: 90
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CURVE UN 
+Radius: 0.5
+Position: -810 0 -900
+Type: 1 3
+Yrot: 90
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CURVE DEUX
+Radius: 0.5
+Position: -490 0 -700
+Type: 1 4
+Yrot: 270
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CURVE TROIS
+Radius: 0.5
+Position: -810 0 -500
+Type: 1 5
+Yrot: 90
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  LE LAC
+Radius: 0.5
+Position: 400 0 400
+Type: 1 6
+Yrot: 0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  LE LOOP
+Radius: 0.5
+Position: -400 0 0
+Type: 1 9
+Yrot: 90
+
+# Sign in loop
+Object: generic sign
+Label: MAX SPEED\40 MPH
+Size: 40 60 10
+Yrot: 180
+Color: 1.0 1.0 0.0
+Position: -400 0 100
+
+Object: ground
+
+Scene Location: 14 -3
+Scene Type:  hill no roads
+
+Scene Location: 14 -4
+Scene Type:  hill no roads
+
+Scene Location: 14 -5
+Scene Type:  hill no roads
+
+Scene Location: 15 -5
+Scene Type:  hill no roads
+
+Scene Location: 16 -5
+Scene Type:  hill no roads
+
+Scene Location: 16 -4
+Scene Type:  hill no roads
+
+Scene Location: 16 -3
+Scene Type:  hill no roads
+
+#------------------------------------------------------------------------------
+# Turnoff from highway
+Scene Location: 15 -2
+
+Object: road
+Width: 60
+Length: 2000
+Position: -1000 0 0
+Yrot: -90
+
+Object: curve
+Width: 60
+Radius: 1030
+Angle: 90
+Yrot: 0
+Position: -100 0 -1000
+
+Object: curve
+Width: 60
+Radius: 1030
+Angle: 90
+Yrot: -90
+Position: -200 0 1000
+
+Object: generic sign
+Label: Proving Grounds\<--
+Size: 40 60 4
+Color: 1 1 1
+Position: -500 0 60
+Yrot: -90
+
+Object: generic sign
+Label: Monaco\-->
+Size: 40 60 4
+Color: 1 1 1
+Position: -300 0 -60
+Yrot: -90
+
+Object: ground
+

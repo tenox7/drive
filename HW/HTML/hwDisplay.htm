@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwDisplay - class to handle graphical rendering</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwDisplay - class to handle graphical rendering</p>
+<h2>SYNOPSIS</h2>
+<pre>
+        #include &quot;hw.h&quot;
+
+        hwDisplay disp;
+
+        disp = hwDefaultDisplay-&gt;create( hwDefaultDisplay, NULL, NULL );
+        disp-&gt;entry_point_name( args... );
+</pre>
+<h2>DESCRIPTION</h2>
+<p>HoverWare abstracts graphical rendering away from the underlying
+API. This allows HoverWare to be implemented on any modern 3D
+graphics API, including the portions of the API which are
+window-system and operating-system dependent. Currently, HoverWare
+runs on top of the OpenGL API (the OpenGL ES 1.1 subset,
+specifically) on Linux, Windows, Macintosh, and Android. A DirectX
+port is underway on Windows as well.</p>
+<p>Note that, other than the entry points described in <a
+href="hwInit.htm">hwInit</a>, applications only rarely have to directly
+call hwDisplay entry points; usually, hwObjects are created which
+themselves call hwDisplay entry points to draw themselves.</p>
+<p>These are entry points used to initialize graphics contexts for
+use by HoverWare:</p>
+<table>
+<tr><td>create</td>
+<td>Create a new instance of the given prototype, typically
+  hwDefaultDisplay</td>
+</tr>
+<tr><td>chooseVisual</td>
+<td>Called by user application to select a visual which allows for
+  specific kinds of rendering; see <a href="hwInit.htm">hwInit</a> for
+  details</td>
+</tr>
+<tr><td>createWindow</td>
+<td>Creates a window of given name, size, and type and returns a
+  HoverWare drawable object</td>
+</tr>
+<tr><td>makeCurrent</td>
+<td>Makes a HoverWare hwDisplay and hwDrawable object current for
+  rendering. This must be done before most other Hoverware calls are
+  done.</td>
+</tr>
+<tr><td>extractVisual</td>
+<td>OS-dependent - extracts the visual for other uses by the
+  application</td>
+</tr>
+<tr><td>extractWindow</td>
+<td>OS-dependent - extracts the window ID from the drawable
+  currently attached to the hwDisplay</td>
+</tr>
+<tr><td>createChildWindow</td>
+<td>OS-dependent - creates a child window of a given window,
+  returning a HoverWare drawable object</td>
+</tr>
+<tr><td>initDrawable</td>
+<td>OS-dependent - create a HoveWare drawable object from an
+  arbitrary OS-dependent window</td>
+</tr>
+<tr><td>viewport</td>
+<td>Indicates the viewport to be used for subsequent rendering.
+  Should be called whenever the window size changes.</td>
+</tr>
+<tr><td>update</td>
+<td>Flushes graphics, presents the pending frame to the display,
+  and prepares for the next frame</td>
+</tr>
+</table>
+<p>The following entry points are to manage user input:</p>
+<table>
+<tr><td>inputHandler</td>
+<td>Establish a callback routine to handle user input events</td>
+</tr>
+<tr><td>getMousePos</td>
+<td>Returns the instantaneous current mouse position</td>
+</tr>
+</table>
+<p>The following control the global state of rendering and
+selection:</p>
+<table>
+<tr><td>renderMode</td>
+<td>Toggles between rendering and selection</td>
+</tr>
+<tr><td>selectionInfo</td>
+<td>Sets up selection parameters</td>
+</tr>
+<tr><td>wasSelected</td>
+<td>Gets the selected object</td>
+</tr>
+<tr><td>currentObject</td>
+<td>Establishes the current object for selection</td>
+</tr>
+<tr><td>currentChild</td>
+<td>Establishes the current child object for selection</td>
+</tr>
+</table>
+<p>The following establish scene rendering parameters. See <a
+href="hwLight.htm">hwLight</a>, <a href="hwCamera.htm">hwCamera</a>, and <a
+href="hwEnviron.htm">hwEnviron</a> for classes which encapsulate these:</p>
+<table>
+<tr><td>setCamera</td>
+<td>Establishes viewing geometry parameters. Note that the current
+  matrix stack affects the camera position and viewing directions</td>
+</tr>
+<tr><td>positionalLight</td>
+<td>Creates an omnidirectional light at a specified position. Note
+  that the matrix stack affects the position and direction of a
+  light.</td>
+</tr>
+<tr><td>directionalLight</td>
+<td>Creates an infinite directional light. Note that the matrix
+  stack affects the direction of the light.</td>
+</tr>
+<tr><td>doFog</td>
+<td>Enables or disables depth-based fog</td>
+</tr>
+<tr><td>fogParams</td>
+<td>Sets the type and color of fog</td>
+</tr>
+<tr><td>ambientLight</td>
+<td>Establishes global ambient lighting parameters</td>
+</tr>
+<tr><td>enableLighting</td>
+<td>Enables or disables lighting calculation</td>
+</tr>
+<tr><td>backgroundColor</td>
+<td>Sets the background clear color</td>
+</tr>
+</table>
+<p>The following are texture utilities - see <a
+href="hwTexture.htm">hwTexture</a> for a class which encapsulates these:</p>
+<table>
+<tr><td>createTexture</td>
+<td>Creates a texture ID from an image and other parameters</td>
+</tr>
+<tr><td>destroyTexture</td>
+<td>Destroys a texture ID</td>
+</tr>
+<tr><td>currentTexture</td>
+<td>Makes a given texture ID current for rendering</td>
+</tr>
+</table>
+<p>The following are bounding box utilities (most rendering objects
+incorporate calls to these automatically):</p>
+<table>
+<tr><td>drawBBox</td>
+<td>Draws a 3D min/max bounding box</td>
+</tr>
+<tr><td>boundsVisible</td>
+<td>Queries whether a 3D min/max bounding box would be within the
+  current window boundaries given the current transformation</td>
+</tr>
+<tr><td>boundsSize</td>
+<td>Returns the angular extent of a bounding box for
+  level-of-detail calculations</td>
+</tr>
+</table>
+<p>The following affect the position, size, appearance, etc. of
+subsequent rendering commands:</p>
+<table>
+<tr><td>pushMatrix</td>
+<td>Pushes a new 4x4 transformation onto the matrix stack</td>
+</tr>
+<tr><td>popMatrix</td>
+<td>Pops the matrix stack, restoring the previous transformation</td>
+</tr>
+<tr><td>surfAttrs</td>
+<td>Establishes color, texture, blending, etc. for subsequent
+  rendering</td>
+</tr>
+<tr><td>setVisibility</td>
+<td>Establishes a visibility mask for simple animations</td>
+</tr>
+<tr><td>setInvisibility</td>
+<td>Establishes an invisibility mask for simple animations</td>
+</tr>
+<tr><td>getVisibility</td>
+<td>Returns whether a given mask satisfies visibility/invisibility
+  criteria</td>
+</tr>
+</table>
+<p>The following are the basic 3D rendering primitives - these are
+encapsulated by objects such as <a href="hwSphere.htm">hwSphere</a>, <a
+href="hwMesh.htm">hwMesh</a>, and many others:</p>
+<table>
+<tr><td>drawMesh</td>
+<td>Draws a quadrilateral mesh</td>
+</tr>
+<tr><td>drawStrip</td>
+<td>Draws a triangle strip</td>
+</tr>
+<tr><td>drawPolygon</td>
+<td>Draws a convex polygon</td>
+</tr>
+<tr><td>drawPolyline</td>
+<td>Draws a polyline, with optional move/draw flags</td>
+</tr>
+<tr><td>drawQuads</td>
+<td>Draws a set of 4-point polygons</td>
+</tr>
+<tr><td>drawIndexedTriangles</td>
+<td>Draws a set of triangles given vertex and index data</td>
+</tr>
+<tr><td>drawMarkers</td>
+<td>Draws a set of points or markers</td>
+</tr>
+</table>
+<p>The following are used to draw &quot;overlay&quot; GUI elements.
+Objects such as <a href="hwImage.htm">hwImage</a>, <a
+href="hwLabel.htm">hwLabel</a>, etc. encapsulate most of these:</p>
+<table>
+<tr><td>guiText</td>
+<td>Draws GUI (floating overlay) text</td>
+</tr>
+<tr><td>guiRaster</td>
+<td>Draws a GUI (floating overlay) image</td>
+</tr>
+<tr><td>guiRectangle</td>
+<td>Draws a GUI (floating overlay) rectangle</td>
+</tr>
+<tr><td>guiPolyline</td>
+<td>Draws a GUI (floating overlay) polyline</td>
+</tr>
+<tr><td>guiLines</td>
+<td>Draws several GUI (floating overlay) lines</td>
+</tr>
+<tr><td>guiPolygon</td>
+<td>Draws a GUI (floating overlay) polygon</td>
+</tr>
+<tr><td>openGuiList</td>
+<td>Subsequent GUI primitives will be accumulated in a display list</td>
+</tr>
+<tr><td>closeGuiList</td>
+<td>Terminates accumulation of GUI elements</td>
+</tr>
+<tr><td>callGuiList</td>
+<td>Calls a previously accumulated list of GUI commands</td>
+</tr>
+<tr><td>destroyGuiList</td>
+<td>Destroys a GUI display list</td>
+</tr>
+</table>
+<p>The following maintain lists of retained graphics rendering
+primitives and state. This is especially important for objects of
+moderate or greater complexity:</p>
+<table>
+<tr><td>openList</td>
+<td>Subsequent rendering primitives will be accumulated in a
+  display list</td>
+</tr>
+<tr><td>closeList</td>
+<td>Terminates accumulation of rendering primitives</td>
+</tr>
+<tr><td>callList</td>
+<td>Calls a previously accumulated list of primitives</td>
+</tr>
+<tr><td>destroyList</td>
+<td>Destroys a display list</td>
+</tr>
+</table>
+<p>The following provide information about the current rendering
+context:</p>
+<table>
+<tr><td>getTextState</td>
+<td>Gets a pointer to the current 3D text state.</td>
+</tr>
+<tr><td>getDrawSize</td>
+<td>Gets the current width and height of the current drawable</td>
+</tr>
+<tr><td>getInfo</td>
+<td>Gets string information (such as the current renderer,
+  extensions, etc.) about the current rendering context</td>
+</tr>
+</table>
+<p>Finally, the following manage the passage of time for Hoverware:</p>
+<table>
+<tr><td>getCurrTime</td>
+<td>Gets the current time</td>
+</tr>
+<tr><td>getStartTime</td>
+<td>Gets the established start time</td>
+</tr>
+<tr><td>getElapsedTime</td>
+<td>Gets how much time has elapsed since the start time</td>
+</tr>
+<tr><td>setCurrTime</td>
+<td>Establishes a new current time</td>
+</tr>
+<tr><td>setStartTime</td>
+<td>Establishes a new start time</td>
+</tr>
+<tr><td>setElapsedTime</td>
+<td>Establishes a new elapsed time</td>
+</tr>
+</table>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwInit.htm">hwInit</a>, <a
+href="hw_display_h.htm">hw_display.h</a> <a
+href="hw_types_h.htm">hw_types.h</a></p>
+</body>
+</html>

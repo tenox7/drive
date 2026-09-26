@@ -1,0 +1,125 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#--------------------------------------------
+# Space building #1
+#--------------------------------------------
+
+#bottom
+Object: sphere
+Radius: 50
+Position: 0 60 0
+Color: 1 0 0.4
+
+#middle
+Object: pillar
+Color: 0.2 1 0.2
+Radius: 50
+Height: 50
+Position: 0 60 0
+
+#top
+Object: sphere
+Radius: 50
+Position: 0 110 0
+Color: 1 0 0.4
+
+#platform #1
+Object: curvewall
+Radius: 70
+Width: 70
+Height: 2.5
+Angle: 360
+Position: 0 60 0
+
+Object: curvewall
+Radius: 70
+Width: 70
+Height: 2.5
+Angle: 360
+Position: 0 60 0
+Xrot: 180
+Yrot: 180
+
+#platform #2
+Object: curvewall
+Radius: 70
+Width: 70
+Height: 2.5
+Angle: 360
+Position: 0 85 0
+
+Object: curvewall
+Radius: 70
+Width: 70
+Height: 2.5
+Angle: 360
+Position: 0 85 0
+Xrot: 180
+Yrot: 180
+
+#platform #3
+Object: curvewall
+Radius: 70
+Width: 70
+Height: 2.5
+Angle: 360
+Position: 0 110 0
+
+Object: curvewall
+Radius: 70
+Width: 70
+Height: 2.5
+Angle: 360
+Position: 0 110 0
+Xrot: 180
+Yrot: 180
+
+#top antenna
+Object: pillar
+Radius: 2
+Height: 10
+Position: 0 160 0
+
+Object: sphere
+Radius: 4
+Position: 0 170 0
+Color: 1 1 0
+
+#bottom antenna?
+Object: pillar
+Radius: 2
+Height: 10
+Position: 0 0 0
+
+Object: curvewall
+Radius: 6
+Height: 3
+Width: 6
+Angle: 360
+Position: 0 0 0
+Color: 0 0 1
+
+Object: curvewall
+Radius: 6
+Height: 3
+Width: 6
+Angle: 360
+Position: 0 0 0
+Xrot: 180
+Color: 0 0 1
+

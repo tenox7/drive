@@ -1,0 +1,175 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+############################ scratching dog ########################
+
+# lower body
+Object: sphere
+Radius: 40
+Position: 0 40 0
+Color: 0.4 0.4 0.4
+
+# upper body
+Object: sphere
+Radius: 40
+Position: 0 60 -10
+Color: 0.4 0.4 0.4
+
+# head
+Object: sphere
+Radius: 20
+Position: 0 110 -30
+
+#eye
+Object: oval
+Width: 7
+Length: 7
+Color: 0 0 0
+Position: 12 115 -45
+Xrot: -90
+Zrot: -40
+
+#eye
+Object: oval
+Width: 7
+Length: 7
+Color: 0 0 0
+Position: -12 115 -45
+Xrot: -90
+Zrot: 40
+
+# snout
+Object: cone
+Width: 15
+Radius: 8
+Height: 40
+Position: 0 110 -30
+Xrot: -110
+Color: 0.4 0.4 0.4
+
+#ear
+Object: cone
+Width: 5
+Radius: 0
+Height: 15
+Position: 15 120 -30
+Zrot: -50
+Xrot: -10
+Color: 0.3 0.3 0.3
+
+#ear
+Object: cone
+Width: 5
+Radius: 0
+Height: 15
+Position: -15 120 -30
+Zrot: 50
+Xrot: -10
+Color: 0.3 0.3 0.3
+
+#tail
+Object: curvewall
+Width: 7
+Height: 4
+Angle: 90
+Radius: 70
+Position: -2 70 0
+Yrot: 0
+Zrot: -90
+Animation Bits: 0xf041
+
+#tail
+Object: curvewall
+Width: 7
+Height: 4
+Angle: 80
+Radius: 80
+Position: -2 80 0
+Yrot: 0
+Zrot: -90
+Animation Bits: 0x08a2
+
+#tail
+Object: curvewall
+Width: 7
+Height: 4
+Angle: 70
+Radius: 90
+Position: -2 90 0
+Yrot: 0
+Zrot: -90
+Animation Bits: 0x0514
+
+#tail
+Object: curvewall
+Width: 7
+Height: 4
+Angle: 60
+Radius: 100
+Position: -2 100 0
+Yrot: 0
+Zrot: -90
+Animation Bits: 0x0208
+
+#fore leg
+Object: pillar
+Radius: 5
+Height: 60
+Position: -20 0 -40
+
+#fore leg
+Object: pillar
+Radius: 5
+Height: 60
+Position: 20 0 -40
+
+#rear leg
+Object: pillar
+Radius: 30
+Height: 80
+Position: 40 30 10
+Zrot: 90
+
+# right rear foot
+Object: wall
+Size: 50 10 10
+Position: -35 0 -30
+
+# left rear foot
+Object: wall
+Size: 50 10 10
+Position: 35 8 -6
+Yrot: 180
+Xrot: -40
+Animation Bits: 0x1111
+
+# left rear foot
+Object: wall
+Size: 50 10 10
+Position: 35 20 -14
+Yrot: 180
+Xrot: -60
+Animation Bits: 0xaaaa
+
+# left rear foot
+Object: wall
+Size: 50 10 10
+Position: 35 25 -20
+Yrot: 180
+Xrot: -80
+Animation Bits: 0x4444
+

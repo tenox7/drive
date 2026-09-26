@@ -1,0 +1,51 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# A power plant
+#
+# This fills a block about 900x200.
+# It should be set off a road by about 100 feet.
+#
+# Daryl Poe, Jul 1993
+
+Object: skyscraper
+Size:  100 100 50
+Position: -50 0 -50
+
+Construct: smokestack
+Position:  70 0 30
+
+Object: mound
+Size: 100 150 20
+Position: -100 0 0
+Color: 0.0 0.0 0.0
+
+Object: railroad
+Length: 900
+Position:  450 0 70
+Yrot: 90
+
+Object: telephone line
+Length: 900
+Position:  450 0 -70
+Yrot: 90
+
+Object: generic sign
+Label:  ACME POWER AND LIGHT
+Size:  10 60 1
+Position: 0 0 -51
+Color: 0.5 0.1 0.0

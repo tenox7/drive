@@ -1,0 +1,283 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Airport scene
+#
+# Daryl Poe, Nov 1992
+#
+
+Scene Location: 6 -2
+
+# Xhighway
+Object: road
+Width: 60.0
+X: 1000
+Yrot: 90
+Length: 2000
+
+Object: conifer
+Position: -800 0 -50
+Height: 50
+Yrot: 231
+
+Object: conifer
+Position: -500 0 -50
+Height: 50
+Yrot: 313
+
+Object: conifer
+Position: -200 0 -50
+Height: 50
+Yrot: 36
+
+Object: conifer
+Position: 200 0 -50
+Height: 50
+Yrot: 136
+
+Object: conifer
+Position: 500 0 -50
+Height: 50
+Yrot: 113
+
+Object: conifer
+Position: 800 0 -50
+Height: 50
+Yrot: 144
+
+
+# North road
+Object: curve
+Position: -900 0 100
+Radius: 100
+Yrot: -90
+Width: 30
+Angle: 90
+
+Object: road
+Position: -815 0 99 
+Length: 732
+Width: 30
+
+Object: curve
+Position: -730 0 830
+Radius: 100
+Yrot: 90
+Width: 30
+Angle: 90
+
+Object: road
+Position: -731 0 915
+Length: 647
+Width: 30
+Yrot: -90
+
+Object: curve
+Position: -85 0 1000
+Radius: 100
+Yrot: -90
+Width: 30
+Angle: 90
+
+
+# South road
+Object: road
+Length: 1000
+Z: -1000
+
+Object: stoplight
+Length: 60
+Width: 60
+
+# railroad
+Object: railroad
+Length: 2000
+Z: -1000
+X: 600
+
+Object: generic sign
+Position: 350 0 -40
+Size: 7 15 2
+Label: RR X-ING
+Color: 1.0 1.0 0.0
+Yrot: -90
+
+Object: generic sign
+Position: 850 0 40
+Size: 7 15 2
+Label: RR X-ING
+Color: 1.0 1.0 0.0
+Yrot: 90
+
+# Entrance
+Object: curve
+Position: -735 0 150
+Width: 30
+Radius: 150
+Yrot: -90
+Angle: 90
+
+Object: curve
+Position: -465 0 150
+Width: 30
+Radius: 150
+Yrot: 180
+Angle: 90
+
+Object: lamp
+Position: -545 0 70
+Type: overhanging
+Yrot: 215
+
+Object: lamp
+Position: -655 0 70
+Type: overhanging
+Yrot: -45
+
+Object: road
+Width: 30
+Position: -600 0 150
+Length: 50
+
+Object: generic sign
+Position: -602 0 40
+Size: 10 20 5
+Yrot: -90
+Label: <- Airport
+
+Object: generic sign
+Position: -598 0 40
+Size: 10 20 5
+Yrot: 90
+Label: Airport ->
+
+# Passenger area
+Object: parking lot
+Position: -600 0 250
+Size: 150 200 0
+
+Object: lamp
+Position: -650 0 250
+
+Object: lamp
+Position: -550 0 250
+
+Object: sidewalk
+Position: -600 0 335
+Width: 20
+Length: 100
+Yrot: -90
+
+Object: bush
+Position: -665 0 335
+Yrot: 10
+
+Object: bush
+Position: -660 0 335
+Yrot: 50
+
+Object: bush
+Position: -655 0 335
+Yrot: 80
+
+Object: bush
+Position: -545 0 335
+Yrot: 120
+
+Object: bush
+Position: -540 0 335
+Yrot: 170
+
+Object: bush
+Position: -535 0 335
+Yrot: 270
+
+Object: skyscraper
+Position: -700 0 345
+Size: 200 50 30
+
+Object: flat
+Position: -600 5 345
+Size: 10 20 10
+Color: 0.05 0.05 0.05
+Xrot: -90
+
+Object: sidewalk
+Position: -450 0 215
+Length: 100
+Yrot: -90
+
+Object: flat
+Position: -450 0 205
+Length: 15
+Width: 100
+
+# control tower
+Object: wall
+Position: -350 0 255
+Size: 10 10 50
+
+Object: wall
+Position: -350 50 250
+Size: 20 20 5
+
+Object: skyscraper
+Position: -360 55 250
+Size: 20 20 20
+
+# plane parking area
+Object: flat
+Position: -200 0 150
+Size: 150 400 0
+
+#Object: fokD7
+#Position: -120 0 120
+
+# runways
+Object: flat
+Position: -100 0 525
+Size:  600 40 0
+
+Object: flat
+Position: -30 0 525
+Size:  600 40 0
+
+Object: flat
+Position: -65 0 300
+Size:  30 30 0
+
+Object: flat
+Position: -65 0 700
+Size:  30 30 0
+
+# filler
+#Object: forest
+#Position: 300 0 -500
+#Length: 450
+#Width: 140
+#Height: 40
+
+Object: grass
+Position: -600 0 -600
+Length: 350
+Width: 350
+Height: 4
+
+# for fun
+Object: UFO
+
+Object: ground

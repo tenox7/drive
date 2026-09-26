@@ -1,0 +1,263 @@
+== NAME ==
+hw - HoverWare, an object-oriented three-dimensional graphics library
+== OVERVIEW ==
+HoverWare is a middleware library which is intended to make the
+problem of graphics primitive creation and management more
+tractable.  HoverWare is written to interface with ANSI-C code;
+despite this, it is object-oriented.  In order to enhance
+portability, all parameters to and return values from HoverWare are
+encapsulated via typedefs; these typedefs are:
+
+| hwInt8  | a signed, 8-bit integer
+| hwInt16 | a signed, 16-bit integer
+| hwInt32 | a signed, 32-bit integer
+| hwFloat | a 32-bit floating point number
+
+The central datatype of HoverWare is the hwObject.  From a C point
+of view, the hwObject looks like this:
+{{{
+	typedef struct _hwObjectStruct *hwObject;
+	struct _hwObjectStruct {
+	    hwObject	parent;
+	    const char	*name;
+	    const char	**props;
+	    hwObject	(*create)( hwObject template );
+	    void	(*addref)( hwObject obj );
+	    void	(*destroy)( hwObject obj );
+	    void	(*modify)( hwObject obj, const char *prop,
+					hwInt32 type, const void *val );
+	    hwInt32	(*inquire)( hwObject obj, const char *prop,
+					void **val );
+	    void	(*draw)( hwObject obj );
+	};
+}}}
+There are three publicly visible (but read-only) data items:
+
+| parent | The parent class of this object (this is NULL if the object is a class template).
+| name | The name of this object, if any, or the name of the class if it is a class template.
+| props | A NULL-terminated list of valid properties which may be inquired of the object (this is primarily used when saving objects to disc).
+
+There are, in addition, 6 methods, or function pointers, which are
+defined for a HoverWare object:
+
+| create | Create a new HoverWare object given a template.  Note that only a class template's create method may be executed.
+| addref | Tells a HoverWare object to add a reference to itself.  Any time you store a pointer to a HoverWare object, you probably should call its addref method.
+| destroy | Ask a HoverWare object to destroy itself 
+| modify | Modify one of the parameters of a HoverWare object
+| inquire | Inquire one of the parameters of a HoverWare object
+| draw | Ask a HoverWare object to draw itself on the current hwDisplay
+
+Each HoverWare object will have one or more properties which further
+define the object; these properties may ONLY be set and gotten via
+the modify and inquire methods.  When setting a property to a value,
+the *type* of the value must be passed in.  HoverWare properties can
+be assigned single values, or may be uniform arrays of values.  To
+describe the type of a property, a type naming scheme has been
+created.  A type name consists of a 32-bit integer divided into two
+parts: the type tag (4 bits) and the count (24 bits).  If the count
+is zero, the parameter value is a scalar pointer type (hwObjects or
+strings only).  The defined type tags are:
+
+| HW_TYPE_BYTE | An array of hwInt8 objects
+| HW_TYPE_SHORT | An array of hwInt16 objects
+| HW_TYPE_INT | An array of hwInt32 objects
+| HW_TYPE_BOOL | An array of hwInt32 objects, with a value of HW_TRUE or HW_FALSE
+| HW_TYPE_FLOAT | An array of hwFloat objects
+| HW_TYPE_STRING | A scalar (count = 0) pointer to or array of pointers to null-terminated strings
+| HW_TYPE_OBJECT | A scalar (count = 0) or array of hwObjects
+| HW_TYPE_CALLBACK | A callback routine for GUI routines
+| HW_TYPE_EVENT | A pointer to an hwWinEvent, for GUI and window event tracking
+| HW_TYPE_IMAGE | A pointer to an hwImage structure
+| HW_TYPE_FONT | A pointer to a TexFont structure
+
+In order to find the size of the array, the HW_GET_COUNT(name) macro
+is provided.  To find the type tag, use the HW_GET_BASE(name) macro.
+To construct a type name, use the HW_MAKE_TYPE(tag,count) macro.
+Here are some examples of some values and their corresponding type
+name:
+
+|= C declaration |= HW type name
+| {{{char *x}}} | HW_TYPE_STRING
+| {{{hwFloat foo[3]}}} | HW_MAKE_TYPE(HW_TYPE_FLOAT,3)
+| {{{hwObject z}}} | HW_TYPE_OBJECT
+| {{{char *x[5]}}} | HW_MAKE_TYPE(HW_TYPE_STRING,5)
+
+For convenience, the most common array type names have predeclared
+names in hw.h:
+
+| HW_TYPE_1I | HW_MAKE_TYPE(HW_TYPE_INT,1)
+| HW_TYPE_2I | HW_MAKE_TYPE(HW_TYPE_INT,2)
+| HW_TYPE_3I | HW_MAKE_TYPE(HW_TYPE_INT,3)
+| HW_TYPE_4I | HW_MAKE_TYPE(HW_TYPE_INT,4)
+| HW_TYPE_1B | HW_MAKE_TYPE(HW_TYPE_BOOL,1)
+| HW_TYPE_1F | HW_MAKE_TYPE(HW_TYPE_FLOAT,1)
+| HW_TYPE_2F | HW_MAKE_TYPE(HW_TYPE_FLOAT,2)
+| HW_TYPE_3F | HW_MAKE_TYPE(HW_TYPE_FLOAT,3)
+| HW_TYPE_4F | HW_MAKE_TYPE(HW_TYPE_FLOAT,4)
+
+In addition, the following macros may be used to create more readable
+modification code:
+| HW_MODIFY_1I( obj, prop, a )
+| HW_MODIFY_2I( obj, prop, a, b )
+| HW_MODIFY_3I( obj, prop, a, b, c )
+| HW_MODIFY_1B( obj, prop, a )
+| HW_MODIFY_1F( obj, prop, a )
+| HW_MODIFY_2F( obj, prop, a, b )
+| HW_MODIFY_3F( obj, prop, a, b, c )
+| HW_MODIFY_4F( obj, prop, a, b, c, d )
+
+These type names are passed as the third parameter to the modify
+method (to tell the object what you're giving it), and returned from
+the inquire method (to tell you what it is you got from the object).
+
+In the object man pages which describe each class template, a
+shorthand version of this type naming is used.  This shorthand
+consists of an integer count concatenated with a single-character
+type from the set 'I', 'B', 'F', 'S', and 'O', corresponding to
+HW_TYPE_INT, HW_TYPE_BOOL, HW_TYPE_FLOAT, HW_TYPE_STRING, and
+HW_TYPE_OBJECT, respectively.  If the integer count is 0, it
+represents a scalar value.  Here are some example shorthand names
+with their equivalent full types:
+
+| 1I | HW_MAKE_TYPE(HW_TYPE_INT,1)
+| 6F | HW_MAKE_TYPE(HW_TYPE_FLOAT,6)
+| 0O | HW_TYPE_OBJECT
+| 0S | HW_TYPE_STRING
+
+In addition to using C code to create and modify hwObjects, an
+object file format is defined.  See [[hwParseFile]] for more details
+on this file format.
+
+HoverWare implements the following 3D object classes:
+
+| [[hwCamera]]     | Camera-like scene viewing parameters
+| [[hwLight]]      | A light source
+| [[hwSpinner]]    | An animation object
+| [[hwTimer]]      | Application-controlled time settings
+| [[hwFile]]       | A reference to a HoverWare object file
+| [[hwEnviron]]    | Environmental settings (fog, depth test, etc.)
+| [[hwImage]]      | An image for use as a texture map or GUI element
+| [[hwTexture]]    | A texture map, including texture coordinate generation
+| [[hwSphere]]     | A full or partial sphere
+| [[hwCone]]       | A full or partial cone
+| [[hwRing]]       | A full or partial ring
+| [[hwTorus]]      | A full or partial torus
+| [[hwDisc]]       | A disc
+| [[hwGroup]]      | A group of primitives
+| [[hwBox]]        | A 3-dimensional box
+| [[hwSurfRev]]    | A surface of revolution
+| [[hwSweep]]      | A general sweep, extrusion primitive
+| [[hwText]]       | An extruded 3-dimensional text string
+| [[hwMesh]]       | A quadrilateral mesh of vertices
+| [[hwPolygon]]    | A closed, convex polygonal primitive
+| [[hwPolyline]]   | A connected list of line segments
+| [[hwPolymarker]] | A set of dot or marker primitives
+| [[hwTriangles]]  | A collections of 1 or more triangles
+| [[hwQuads]]      | A set of quadrilaterals
+| [[hwStrip]]      | A triangular strip
+| [[hwSurface]]    | Surface characteristics for primitives
+| [[hwOrient]]     | Orientation values for primitives
+
+In addition, HoverWare implements the following GUI classes and utilities:
+
+| [[hwButton]] | A clickable command button
+| [[hwFont]] | A font for use in other GUI objects
+| [[hwGauge]] | A powerful multi-needle analog gauge
+| [[hwLabel]] | A multi-line text label
+| [[hwLayout]] | A nestable arbitrary layout container
+| [[hwRowCol]] | A nestable enforced row/column layout container
+| [[hwToggle]] | A toggle switch
+
+
+For more information on each class, please see the appropriate man
+page.
+
+Hoverware also provides many utility routines:
+
+| [[hwInit]] | Initialize a HW connection to an OS display
+| [[hwGetError]] | Get the most recent error code, and zero it out
+| [[hwLookup|hwRegisterConstant]] | Register a constant for use in parsing
+| [[hwLookup|hwRegisterClass]] | Register a class for use in parsing
+| [[hwLookup|hwRegisterObject]] | Register an object for use in parsing
+| [[hwLookup|hwRegisterCallback]] | Register a callback for use with various classes
+| [[hwLookup|hwUnregisterObjects]] | Unregister all register objects
+| [[hwLookup|hwFindConstant]] | Find a constant in the registry
+| [[hwLookup|hwFindClass]] | Find a class in the registry
+| [[hwLookup|hwFindObject]] | Find an object in the registry
+| [[hwLookup|hwFindCallback]] | Find a callback in the registry
+| [[hwParseFile]] | Parse a file, returning all of the top-level objects found in it
+| [[hwParseFile|hwParseArray]] | Parse an array of strings , returning all of the top-level objects found in it
+| [[hwWriteAscii]] | Write an object (in ASCII) to a file
+| [[hwBinary|hwBeginBinary]] | Initialize a binary file for read/write
+| [[hwBinary|hwEndBinary]] | Finish up reading/writing a binary file
+| [[hwBinary|hwWriteBinary]] | Write an object to a binary file
+| [[hwBinary|hwReadBinary]] | Read objects from a binary file
+| [[hwMatrix|hwIdentity]] | Create a 4x4 identity matrix
+| [[hwMatrix|hwScale]] | Create a non-uniform scale matrix
+| [[hwMatrix|hwRotateX]] | Create a matrix representing rotation about X
+| [[hwMatrix|hwRotateY]] | Create a matrix representing rotation about Y
+| [[hwMatrix|hwRotateZ]] | Create a matrix representing rotation about Z
+| [[hwMatrix|hwRotateAxis]] | Create a matrix representing rotation about an arbitrary axis
+| [[hwMatrix|hwMatMult]] |  Multiply two matrices together
+| [[hwMatrix|hwTransform]] | Transform a 3D point by a matrix
+| [[hwMatrix|hwTransform4d]] | Homogeneous transform of a 4D point by a matrix
+| [[hwMatrix|hwTransformPersp]] | Perspective transformation of a 3D point by a matrix
+| [[hwMatrix|hwInvertMat]] | Invert a matrix
+| [[hwVertex|hwCalcWPV]] | Calculate the number of words in a vertex given vertex flags
+| [[TexFont]] | Textured font utilities
+
+== USING HOVERWARE ==
+The following is the smallest possible HoverWare program.  It
+doesn't do anything but put up a window and wait for the user to hit
+return on the console from which it was started:
+{{{
+	/* Include HoverWare type and function definitions */
+    	#include "hw.h"
+
+	main( int argc, char **argv )
+	{
+	    /* Declare a pointer to the display */
+    	    hwDisplay
+		disp;
+	    /* Declare a pointer to the drawable (window) */
+    	    hwDrawable
+		draw;
+
+	    /* Initialize HoverWare to the default display */
+            hwInit( argc, argv );
+    	    disp = hwDefaultDisplay->create( hwDefaultDisplay, NULL, NULL );
+	    if( !disp )	exit( 1 );
+
+	    /* Choose a double-buffered visual */
+    	    if( !disp->chooseVisual( disp, HW_VIS_DBUFF, 0 ) )	exit( 1 );
+
+	    /* Create a simple window */
+    	    draw = disp->createWindow( disp, "Test", 100, 100, 256, 256 );
+	    if( !draw )	exit( 1 );
+
+	    /* Make the window the current context.  This *must* be
+             * done before any other Hoverware, such as file
+             * parsing, object drawing, etc.
+             */
+	    disp->makeCurrent( disp, draw );
+
+	    /* Flush out any rendering commands */
+	    disp->update( disp );
+
+	    /* Wait for the user to hit return */
+	    (void)getchar();
+	}
+}}}
+
+== SEE ALSO ==
+; Header files
+: [[hw_h|hw.h]], [[hw_types_h|hw_types.h]], [[hw_protos_h|hw_protos.h]], [[hw_display_h|hw_display.h]]
+
+; 3D objects
+: [[hwBox]], [[hwCamera]], [[hwCone]], [[hwDisc]], [[hwEnviron]], [[hwFile]], [[hwGroup]], [[hwLight]], [[hwMesh]], [[hwOrient]], [[hwPolygon]], [[hwPolyline]], [[hwPolymarker]], [[hwQuads]], [[hwRing]], [[hwSphere]], [[hwSpinner]], [[hwStrip]], [[hwSurfRev]], [[hwSurface]], [[hwSweep]], [[hwText]], [[hwTexture]], [[hwTimer]], [[hwTorus]], [[hwTriangles]], [[hwVertex]]
+
+; GUI objects
+: [[hwButton]], [[hwFont]], [[hwGUI]], [[hwGauge]], [[hwImage]], [[hwLabel]], [[hwLayout]], [[hwRowCol]], [[hwToggle]]
+
+; Utility functions
+: [[hwBinary]], [[hwDisplay]], [[hwGetError]], [[hwInit]], [[hwLookup]], [[hwMatrix]], [[hwParseFile]], [[hwWriteAscii]], [[TexFont]]

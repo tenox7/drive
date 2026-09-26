@@ -1,0 +1,66 @@
+Current State:  Post-Race                                     Time Left:  00:007
+                                                                               
+[ NEXT STATE ]  [ ] Automatic Race Control  Course: [ Default ]                
+                                                                               
+Start stopwatch when: [ Start Line Crossed ]                      +----------+
+                                                   Practice Time: | 00:00:00 |
+       End race when: [ Finish Line Crossed ]                     +----------+
+                                                                  +----------+
+        Wreck Action: [ Upright ]                  Pre-Race Time: | 00:00:00 |
+                                                                  +----------+
+    Explosion Action: [ Random Force ]                            +----------+
+                                                       Race Time: | 00:00:00 |
+          Turbo Mode: [ Unlimited ]                               +----------+
+                      +-------+                                   +----------+
+        Turbo Boosts: |     0 |                   Post-Race Time: | 00:00:00 |
+                      +-------+                                   +----------+
+                                               Time-of-Day:       
+           Guns Mode: [ Unlimited Ammo ]       [--#---------------------]
+                      +-------+                +-------+
+                Ammo: |     0 |                | 02:00 |  [ ] Freeze
+                      +-------+                +-------+              [ QUIT ]
+
+
+
+Label(   1,  1, "Current State:"),
+Label(   1, 17, "Post-Race"),
+Label(   1, 63, "Time Left"),
+Label(   1, 75, "00:00"),
+
+Button(  3,  1, 12, "NEXT STATE"),
+Checkbox(3, 17, "Automatic Race Control"),
+Label(   3, 45, "Course:"),
+Menu(    3, 53, 25, course_menu),
+
+Label(   5,  1, "Start stopwatch when:"),
+Menu(    5, 23, 20, start_menu),
+Label(   7,  8, "End race when:"),
+Menu(    7, 23, 21, finish_menu),
+Label(   9,  9, "Wreck Action:"),
+Menu(    9, 23,  9, wreck_menu),
+Label(  11,  5, "Explosion Action:"),
+Menu(   11, 23, 14, explosion_menu),
+Label(  13, 11, "Turbo Mode:", 13, 11),
+Menu(   13, 23, 11, turbo_menu),
+Label(  15,  9, "Turbo Boosts:"),
+Editor( 14, 23, 7, "9"),
+Label(  18, 12, "Guns Mode:"),
+Menu(   18, 23, 16, guns_menu),
+Label(  20, 17, "Ammo:"),
+Editor( 19, 23, 7, "9"),
+
+Label(   6, 52, "Practice Time:"),
+Editor(  5, 67, 10, "99:99:99" ),
+Label(   9, 52, "Pre-Race Time:"),
+Editor(  8, 67, 10, "99:99:99" ),
+Label(  12, 56, "Race Time:"),
+Editor( 11, 67, 10, "99:99:99" ),
+Label(  15, 51, "Post-Race Time:"),
+Editor( 14, 67, 10, "99:99:99" ),
+
+Label(  17, 48, "Time of day:"),
+HSlide( 18, 48, 24 );
+Editor( 19, 48, 7, "99:99" );
+Checkbox(20, 59, "Freeze");
+
+Button( 21, 71, "Quit" );

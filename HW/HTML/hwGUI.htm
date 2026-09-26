@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwGUI - properties common to GUI elements</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwGUI - properties common to GUI elements</p>
+<h2>INHERITS FROM</h2>
+<p>None</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>PosX</td>
+<td>1I</td>
+<td>X position of the element</td>
+</tr>
+<tr><td>PosY</td>
+<td>1I</td>
+<td>Y position of the element</td>
+</tr>
+<tr><td>Width</td>
+<td>1I</td>
+<td>Width of the element</td>
+</tr>
+<tr><td>Height</td>
+<td>1I</td>
+<td>Height of the element</td>
+</tr>
+<tr><td>Align</td>
+<td>1I</td>
+<td>Set of flags describing how position / size are to be
+  interpreted</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<p>None</p>
+<h2>DESCRIPTION</h2>
+<p>GUI elements in HoverWare share a comon set of positioning rules
+to make it easier to properly lay out user interfaces. All elements
+are placed relative to their parent container - either an hwRowCol or
+hwLayout object, or the window if there is no enclosing layout
+object. By default, PosX, PosY, Width, and Height are pixel
+coordinates of the upper left corner of the object relative to the
+upper left corner of its parent. However, this behavior may be
+changed including one or more of the following flags in the Align
+property:</p>
+<table>
+<tr><td>HW_GUI_REL_RIGHT</td>
+<td>The PosX describes a position the given distance to the left of
+  the right edge of the parent</td>
+</tr>
+<tr><td>HW_GUI_REL_BOT</td>
+<td>The PosY describes a position the given distance to the bottom
+  edge of the parent</td>
+</tr>
+<tr><td>HW_GUI_REL_WIDTH</td>
+<td>The Width should be subtracted from the parent's width to
+  derive the size</td>
+</tr>
+<tr><td>HW_GUI_REL_HEIGHT</td>
+<td>The Height should be subtracted from the parent's height to
+  describe the size</td>
+</tr>
+<tr><td>HW_GUI_FRACTIONAL</td>
+<td>All units (PosX, PosY, Width, and Height) are to be interpreted
+  as the numerator of a fraction whose denominator is 1000, and the
+  resulting fraction used to calculate a value which is a fraction of
+  the parent's width (for PosX and Width) or height (for PosY and
+  Height)</td>
+</tr>
+<tr><td>HW_GUI_CENTER</td>
+<td>PosX and PosY position the center of the widget.</td>
+</tr>
+</table>
+<p>Note that all of these properties are overriden if the parent
+container is an hwRowCol object.</p>
+<p>For objects which contain a text label, by default, the label is
+centered horizontally and vertically inside the object's bounding
+rectangle. This behavior may be altered by including one or more of
+the following flags in the Align property:</p>
+<table>
+<tr><td>HW_GUI_LABEL_LEFT</td>
+<td>The label should be left-aligned in the bounding box</td>
+</tr>
+<tr><td>HW_GUI_LABEL_RIGHT</td>
+<td>The label should be right-aligned in the bounding box</td>
+</tr>
+<tr><td>HW_GUI_LABEL_TOP</td>
+<td>The label should be positioned starting at the top of the
+  bounding box</td>
+</tr>
+<tr><td>HW_GUI_LABEL_BOTTOM</td>
+<td>The label should be positioned ending at the bottom of the
+  bounding box</td>
+</tr>
+</table>
+<h2>C EXAMPLE</h2>
+<pre>
+    hwObject buttonOK, buttonCancel;
+
+    /* Create the buttons in the bottom right corner of the window: */
+    buttonOK = hwButton-&gt;create( hwButton );
+    buttonOK-&gt;modify( buttonOK, hwStrLabel, HW_TYPE_STRING, &quot;OK&quot; );
+    HW_MODIFY_3F( buttonOK, hwStrBackgroundColor, 0.5, 0.5, 0.5 );
+    HW_MODIFY_1I( buttonOK, hwStrPosX, 280 );
+    HW_MODIFY_1I( buttonOK, hwStrPosY, 50);
+    HW_MODIFY_1I( buttonOK, hwStrWidth, 120 );
+    HW_MODIFY_1I( buttonOK, hwStrHeight, 40);
+    HW_MOIDFY_1I( buttonOK, hwStrAlign, (HW_GUI_REL_RIGHT | HW_GUI_REL_BOT) );
+
+    buttonCancel = hwButton-&gt;create( hwButton );
+    buttonCancel-&gt;modify( buttonCancel, hwStrLabel, HW_TYPE_STRING, &quot;Cancel&quot; );
+    HW_MODIFY_3F( buttonCancel, hwStrBackgroundColor, 0.5, 0.5, 0.5 );
+    HW_MODIFY_1I( buttonCancel, hwStrPosX, 140 );
+    HW_MODIFY_1I( buttonCancel, hwStrPosY, 50);
+    HW_MODIFY_1I( buttonCancel, hwStrWidth, 120 );
+    HW_MODIFY_1I( buttonCancel, hwStrHeight, 40);
+    HW_MOIDFY_1I( buttonCancel, hwStrAlign, (HW_GUI_REL_RIGHT | HW_GUI_REL_BOT) );
+
+    while( 1 ) {
+        buttonOK-&gt;draw( buttonOK );
+        buttonCancel-&gt;draw( buttonCancel );
+        disp-&gt;update( disp, HW_UPDATE_ALL );
+    }
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    hwButton buttonOK {
+        PosX = 280      PosY = 50
+        Width = 120     Height = 40
+        Align = (HW_GUI_REL_RIGHT + HW_GUI_REL_BOT)
+        BackgroundColor = {.5, .5, .5 }
+        Label = &quot;OK&quot;
+    }
+    hwButton buttonCancel {
+        PosX = 140      PosY = 50
+        Width = 120     Height = 40
+        Align = (HW_GUI_REL_RIGHT + HW_GUI_REL_BOT)
+        BackgroundColor = {.5, .5, .5 }
+        Label = &quot;Cancel&quot;
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwButton.htm">hwButton</a>, <a
+href="hwLabel.htm">hwLabel</a>, <a href="hwToggle.htm">hwToggle</a>, <a
+href="hwRowCol.htm">hwRowCol</a>, <a href="hwLayout.htm">hwLayout</a></p>
+</body>
+</html>

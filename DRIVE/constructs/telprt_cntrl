@@ -1,0 +1,257 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Teleporters arena
+#
+# This object is usually placed far away from the maddening crowd and
+# is reached through a "black gateway".  Usually a "black gateway" is
+# placed at the exit to return the driver to where he started.
+#
+# 200x200 building centered on 0,0
+#
+
+Construct: gateway
+Position: -85 0 96
+Color: 0.0 1.0 0.0
+Label: LEMANS
+Destination: -23 1 -1100
+Angle: 0
+
+Construct: gateway
+Position: -55 0 96
+Color: 0.0 1.0 0.0
+Label: SHERMAN FARMS
+Destination: 15600 1 -2525
+Angle: 90
+
+Construct: gateway
+Position: -25 0 96
+Color: 0.0 1.0 0.0
+Label: GRRVILLE RACEWAY
+Destination: 7977 1 -2100
+Angle: 0
+
+Construct: gateway
+Position: 5 0 96
+Color: 0.0 1.0 0.0
+Label: AERIAL SPEEDWAY
+Destination: -3300 1 -4023
+Angle: 90
+
+Construct: gateway
+Position: 35 0 96
+Color: 0.0 1.0 0.0
+Label: DRIVING SCHOOL
+Destination: -7482 1 -2230
+Angle: 0
+
+Construct: gateway
+Position: 65 0 96
+Color: 0.0 1.0 0.0
+Label: SKYTROPOLIS
+Destination: 4700 1 -5220
+Angle: 90
+
+Construct: gateway
+Position: 95 0 96
+Color: 0.0 1.0 0.0
+Label: BUMPY SPEEDWAY
+Destination: 24970 1 -1652.5
+Angle: 90
+
+Construct: gateway
+Position: 125 0 96
+Color: 0.0 1.0 0.0
+Label: BULLWINKLE
+Destination: 35947.5 1 -1200
+Angle: 0
+
+Construct: gateway
+Position: 155 0 96
+Color: 0.0 1.0 0.0
+Label: J.R. DOBBS SPEEDWAY
+Destination: -1225 1 -18037.5
+Angle: 90
+
+Construct: gateway
+Position: 185 0 96
+Color: 0.0 1.0 0.0
+Label: MONACO SPEEDWAY
+Destination: 30900 1 -5800
+Angle: 180
+
+Construct: gateway
+Position: 215 0 96
+Color: 0.0 1.0 0.0
+Label: FOUR SEASONS
+Destination: 21700 1 -7277.5
+Angle: 270
+
+Construct: gateway
+Position: 245 0 96
+Color: 0.0 1.0 0.0
+Label: FAHRVERGNUGEN
+Destination: 14449.0 1 -8507.5
+Angle: 270
+
+Construct: gateway
+Position: 297 0 75
+Color: 0.0 1.0 0.0
+Label: TUBULAR SPEEDWAY
+Destination: -19323 105 -350
+Angle: 0
+Yrot: -90
+
+Construct: gateway
+Position: 297 0 45
+Color: 0.0 1.0 0.0
+Label: OVAL SPEEDWAY
+Destination: 25500 1 -700
+Angle: -90
+Yrot: -90
+
+Construct: gateway
+Position: 297 0 15
+Color: 0.0 1.0 0.0
+Label: FIGURE 8 RACEWAY
+Destination: -26300 1 -2000
+Angle: 0
+Yrot: -90
+
+Construct: gateway
+Position: 297 0 -15
+Color: 0.0 1.0 0.0
+Label: BIG INDY
+Destination: 3300 1 -16950
+Angle: -90
+Yrot: -90
+
+Construct: gateway
+Position: -97 0 75
+Color: 1.0 0.0 0.0
+Label: FAR, FAR AWAY
+Destination: 200000 0 200000
+Angle: 0
+Yrot:  90
+
+Construct: gateway
+Position: -97 0 45
+Color: 0.0 1.0 1.0
+Label: TWILIGHT ZONE
+Destination: -990 0 -12000
+Angle: 90
+Yrot:  90
+
+Construct: gateway
+Position: -97 0 15
+Color: 0.0 1.0 1.0
+Label: AIRPORT
+Destination: 11001 1 -4000
+Angle: -90
+Yrot:  90
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: -50 19 -50
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: -50 19 0
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: -50 19 50
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: 0 19 -50
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: 0 19 0
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: 0 19 50
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: 50 19 -50
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: 50 19 0
+Size: 5 10 0
+
+Object: light
+Color: 1.0 1.0 1.0
+Xrot: 180
+Position: 50 19 50
+Size: 5 10 0
+
+Object: wall
+Position: -100 0 -100
+Size: 200 2 20
+
+Object: wall
+Position: 300 0 -100
+Size: 200 2 20
+
+Object: wall
+Position: -100 0 -99
+Size: 20 2 20
+Yrot: -90
+
+Object: wall
+Position: 300 0 -99
+Size: 340 2 20
+Yrot: 90
+
+Object: wall
+Position: -100 0 99
+Size: 400 2 20
+Yrot: -90
+
+Object: wall
+Position: 100 19.8 -100
+Size: 200 402 1.2
+
+Object: flat
+Position: 100 0 0
+Size: 200 400 0
+
+Object: generic sign
+Color: 1.0 1.0 0.0
+Size: 8 40 .01
+Position: -60 10 -100
+Label: TELEPORTERS
+

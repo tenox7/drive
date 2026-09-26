@@ -1,0 +1,354 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#
+
+Scene Location: 4 -2
+
+
+# The River.
+Object: Pond
+Length: 1000
+Width: 500
+Height: 10
+
+Object: ramp
+Position: -625 0 0
+Length: 375
+Width: 60
+Height: 15
+Yrot: -90
+
+Object: ramp
+Position: 625 0 0
+Length: 375
+Width: 60
+Height: 15
+Yrot: 90
+
+Object: road
+Length: 380
+Yrot:   90
+Width:  60
+X:      1000
+
+Object: road
+Length: 380
+Yrot:   270
+Width:  60
+X:      -1000
+
+######
+
+Object: road
+Length: 300
+Yrot:   90
+Width:  60
+Height:	5
+Y:	30
+X:      150
+
+#Object: wall
+#Position: 150 30 29
+#Width: 2
+#Height: 2
+#Length: 300
+#Yrot: 90
+
+#Object: wall
+#Position: 150 30 -29
+#Width: 2
+#Height: 2
+#Length: 300
+#Yrot: 90
+
+######
+
+Object: road
+Length: 500
+Yrot:   90
+Width:  60
+Height:	5
+Y:	15
+X:      250
+
+#Object: wall
+#Position: 250 15 29
+#Width: 2
+#Height: 2
+#Length: 500
+#Yrot: 90
+
+#Object: wall
+#Position: 250 15 -29
+#Width: 2
+#Height: 2
+#Length: 500
+#Yrot: 90
+
+######
+
+Object: pillar
+Position: 150 0 -30
+Radius: 5
+Height: 30
+
+Object: pillar
+Position: 150 0 30
+Radius: 5
+Height: 30
+
+Object: pillar
+Position: -150 0 -30
+Radius: 5
+Height: 30
+
+Object: pillar
+Position: -150 0 30
+Radius: 5
+Height: 30
+
+#####
+
+Object: curve
+Position: 150 30 -300
+Angle: 90
+Width: 60
+Height: 5
+Radius: 330
+
+Object: curvewall
+Position: 150 30 -300
+Angle: 90
+Width: 2
+Radius: 330
+
+#Object: curvewall
+#Position: 150 30 -300
+#Angle: 90
+#Width: 2
+#Height: 2
+#Radius: 272
+
+Object: curve
+Position: -150 30 300
+Angle: 90
+Yrot: 180
+Width: 60
+Height: 5
+Radius: 330
+
+Object: curvewall
+Position: -150 30 300
+Angle: 90
+Yrot: 180
+Width: 2
+Radius: 330
+
+#Object: curvewall
+#Position: -150 30 300
+#Angle: 90
+#Yrot: 180
+#Width: 2
+#Height: 2
+#Radius: 272
+
+######
+
+Object: pillar
+Position: 430 0 -280
+Radius: 5
+Height: 25
+
+Object: pillar
+Position: 470 0 -280
+Radius: 5
+Height: 25
+
+Object: pillar
+Position: -430 0 280
+Radius: 5
+Height: 25
+
+Object: pillar
+Position: -470 0 280
+Radius: 5
+Height: 25
+
+######
+
+Object: road
+Length: 252
+Xrot:   6.84277
+Width:  60
+Height:	5
+X:	-450
+Y:	30
+Z:	300
+
+#Object: wall
+#Position: 479 30 -300
+#Length: 252
+#Xrot:   6.84277
+#Yrot:	180
+#Width:  2
+#Height:	2
+
+#Object: wall
+#Position: 421 30 -300
+#Length: 252
+#Xrot:   6.84277
+#Yrot:	180
+#Width:  2
+#Height:	2
+
+Object: road
+Length: 252
+Xrot:   6.84277
+Yrot:	180
+Width:  60
+Height:	5
+X:	450
+Y:	30
+Z:	-300
+
+#Object: wall
+#Position: -479 30 300
+#Length: 252
+#Xrot:   6.84277
+#Width:  2
+#Height:	2
+
+#Object: wall
+#Position: -421 30 300
+#Length: 252
+#Xrot:   6.84277
+#Width:  2
+#Height:	2
+
+######
+
+Object: curve
+Position: -200 0 550
+Angle: 90
+Width: 60
+Yrot: 90
+Radius: 280
+
+Object: curveguardrail
+Position: -200 0 550
+Angle: 90
+Width: 60
+Yrot: 90
+Radius: 282
+
+Object: curve
+Position: -200 0 1000
+Angle: 90
+Width: 60
+Yrot: 270
+Radius: 230
+
+Object: curve
+Position: 200 0 -550
+Angle: 90
+Width: 60
+Yrot: 270
+Radius: 280
+
+Object: curveguardrail
+Position: 200 0 -550
+Angle: 90
+Width: 60
+Yrot: 270
+Radius: 282
+
+Object: curve
+Position: 200 0 -1000
+Angle: 90
+Width: 60
+Yrot: 90
+Radius: 230
+
+####
+
+Object: curve
+Position: -1000 0 -1000
+Angle: 90
+Width: 60
+Radius: 1030
+
+Object: curve
+Position: -1000 0 1000
+Angle: 90
+Width: 60
+Yrot: 270
+Radius: 1030
+
+Object: curve
+Position: 1000 0 -1000
+Angle: 90
+Width: 60
+Yrot: 90
+Radius: 1030
+
+Object: curve
+Position: 1000 0 1000
+Angle: 90
+Width: 60
+Yrot: 180
+Radius: 1030
+
+#####
+
+#Object: tree
+#Position: 300 0 -100
+#Height: 50
+
+#Object: tree
+#Position: -300 0 100
+#Height: 55
+
+#Object: conifer
+#Position: 300 0 -700
+#Height: 50
+
+#Object: conifer
+#Position: -300 0 700
+#Height: 55
+
+Object: bush
+Position: 10 0 700
+Height: 5
+
+Object: bush
+Position: 10 0 -700
+Height: 5
+
+###
+
+Object: generic sign
+Label: <--- GRRRVILLE
+Size: 30 50 5
+Position: -1000 0 70
+Yrot: -90
+Color: 0.0 0.8 0.0
+
+Object: ground
+
+
+

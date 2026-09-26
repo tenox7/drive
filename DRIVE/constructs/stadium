@@ -1,0 +1,262 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# $Header: /cvsroot/hoverball/HB_HW/DRIVE/constructs/stadium,v 1.1 2004/02/19 23:34:36 hoverball Exp $
+#
+#  Stadium construct
+#  The Hoser Dome
+#
+# Size: 800x600, offset 310 in Z to entrance
+#
+# Daryl Poe, Dec 1993
+#
+
+Object: mound
+Size: 500 400 100
+Color: 0.8 0.8 0.8
+Position: 0 100 0
+
+Object: wall
+Size: 400 6 100
+Position: -200 0 -200
+
+Object: wall
+Size: 400 6 100
+Position:  200 0  -200
+
+Object: wall
+Size: 6 300 100
+Position: 0 0 -253
+
+Object: wall
+Size: 6 300 100
+Position: 0 0  247
+
+Object: curvewall
+Width: 6
+Height: 100
+Angle: 90
+Radius: 53
+Position: 150 0 200
+
+Object: curvewall
+Width: 6
+Height: 100
+Angle: 90
+Radius: 53
+Position: 150 0 -200
+Yrot: -90
+
+Object: curvewall
+Width: 6
+Height: 100
+Angle: 90
+Radius: 53
+Position: -150 0 -200
+Yrot: -180
+
+Object: curvewall
+Width: 6
+Height: 100
+Angle: 90
+Radius: 53
+Position: -150 0 200
+Yrot: 90
+
+Object: generic sign
+Color: 0.0 1.0 1.0
+Label: Hoser Dome
+Size: 30 80 0.01
+Position: 0 30 -255
+Radius: 0.01
+
+Object: generic sign
+Color: 0.0 1.0 1.0
+Label: Hoser Dome
+Size: 30 80 0.01
+Position: 0 30  255
+Radius: 0.01
+Yrot: 180
+
+Object: generic sign
+Color: 0.0 1.0 1.0
+Label: Hoser Dome
+Size: 30 80 0.01
+Position: -204 30 0
+Radius: 0.01
+Yrot: -90
+
+Object: generic sign
+Color: 0.0 1.0 1.0
+Label: Hoser Dome
+Size: 30 80 0.01
+Position: 204 30  0
+Radius: 0.01
+Yrot: 90
+
+# Doors 
+# S side
+Object: flat
+Size: 20 20 0
+Position: -100 10 -254
+Xrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:  -50 10 -254
+Xrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:    0 10 -254
+Xrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:   50 10 -254
+Xrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:  100 10 -254
+Xrot: -90
+Color: 0 0 0
+
+# N side
+Object: flat
+Size: 20 20 0
+Position: -100 10 254
+Xrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:  -50 10 254
+Xrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:    0 10 254
+Xrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:   50 10 254
+Xrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position:  100 10 254
+Xrot: 90
+Color: 0 0 0
+
+# W side
+Object: flat
+Size: 20 20 0
+Position: -204 10 -100
+Zrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: -204 10 -50
+Zrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: -204 10 0
+Zrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: -204 10 50
+Zrot: 90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: -204 10 100
+Zrot: 90
+Color: 0 0 0
+
+
+# E side
+Object: flat
+Size: 20 20 0
+Position: 204 10 -100
+Zrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: 204 10 -50
+Zrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: 204 10 0
+Zrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: 204 10 50
+Zrot: -90
+Color: 0 0 0
+
+Object: flat
+Size: 20 20 0
+Position: 204 10 100
+Zrot: -90
+Color: 0 0 0
+
+
+#### Parking lots ####
+Object: parking lot
+Position: -300 0 -10
+Size: 600 200 0
+
+Object: parking lot
+Position:  300 0 -10
+Size: 600 200 0
+
+Object: road
+Width: 30
+Position: -200 0 275
+Length: 400
+Yrot: -90
+
+Object: road
+Width: 30
+Position: -200 0 -275
+Length: 400
+Yrot: -90
+
+Object: road
+Width: 60
+Position: 0 0 -310
+Length: 20

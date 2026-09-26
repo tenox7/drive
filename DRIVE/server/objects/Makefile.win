@@ -1,0 +1,29 @@
+OBJS=FokD7.obj T34.obj banks.obj barn.obj bridge.obj \
+	bump.obj checkpt.obj conifer.obj countach.obj curve.obj \
+	curvegdrail.obj curvewall.obj deciduous.obj fence.obj flames.obj \
+	flat.obj graftal.obj ground.obj guardrail.obj hill.obj \
+	hillroad.obj hillxroad.obj house.obj lamp.obj land_mine.obj \
+	ltube.obj mailbox.obj mcycle.obj minivan.obj mound.obj \
+	obj_list.obj obj_utils.obj oval.obj parkinglot.obj pillar.obj \
+	police.obj polyline.obj pond.obj railroad.obj ramp.obj \
+	road.obj rocket_car.obj rubble.obj sedan.obj shell.obj \
+	sign.obj silo.obj skyscraper.obj sphere.obj spiral.obj \
+	splroad.obj stoplight.obj teleline.obj twistramp.obj ufo.obj \
+	wall.obj wormhole.obj xfighter.obj
+
+LIBS=..\..\objects.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../../libnum -I../../libphysics -I../../include -I../../../HW/Inc -I../../libprims
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+..\..\objects.lib:     $(OBJS)
+	$(LIB32) @<<
+    $(OBJS) -out:..\..\objects.lib
+<<

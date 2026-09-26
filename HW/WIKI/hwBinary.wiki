@@ -1,0 +1,63 @@
+== NAME ==
+hwBinary - utilities to read and write HoverWare objects from binary files
+
+== SYNOPSIS ==
+{{{
+        #include "hw.h"
+
+        hwInt32 hwBeginBinary( hwObjRW oRdWr, void *f, hwInt32 flags, hwInt32 *numObj )
+        hwInt32 hwEndBinary( hwObjRW oRdWr, void *f )
+        hwInt32 hwWriteBinary( hwObject obj, hwObjRW oWrite, void *f )
+        hwInt32 hwReadBinary( hwObjRW oRead, void *f, hwInt32 numObjs, hwObject **objs )
+}}}
+
+== DESCRIPTION ==
+The hwBinary utilities can read and write binary HoverWare object files.
+Note that the interface is abstracted such that these binary files can
+actually be memory buffers for transmission over sockets:
+
+
+; hwInt32 hwBeginBinary( hwObjRW oRdWr, void *f, hwInt32 flags, hwInt32 *numObj )
+: Begin binary I/O to a given object.  The oRdWr function is typically
+fread or fwrite, although it is possible to pass in other compatible
+functions.  The argument "f" is typically an fopen'd FILE * pointer.  The
+flags are one of HW_FILE_WRITE_HDR (if this is the start of binary file creation) or HW_FILE_READ_HDR (if this is the start of reading from a binary file).  The numObj argument points to an hwInt32 containing the number of objs to be written, or will be modified with the number of objects that need to be read.  Returns 0 on failure, 1 on success.
+
+; hwInt32 hwEndBinary( hwObjRW oRdWr, void *f )
+: Terminates binary file I/O, returning 1 on success or 0 on failure
+
+; hwInt32 hwWriteBinary( hwObject obj, hwObjRW oWrite, void *f )
+: Writes a single hwObject to the given file.  Returns 1 on success or 0 on failure.
+
+; hwInt32 hwReadBinary( hwObjRW oRead, void *f, hwInt32 numObjs, hwObject **objs )
+: Reads several objects from a binary file into the provided object array.  Returns the number of objects read.  Note that 0 may be passed as numObjs, in which case all of the objects in the file are read.
+
+== EXAMPLE ==
+{{{
+    FILE
+        *f;
+    hwInt32
+        numObjs;
+    hwObject
+        *objs;
+
+    f = fopen("filename.hwb", "rb");
+    if( !f ) {
+        /* Error */
+    }
+    if( !hwBeginBinary( (hwObjRW)fread, inFile, HW_FILE_READ_HDR, &numObjs ) ) {
+        /* Error */
+    }
+    if( hwReadBinary( (hwObjRW)fread, inFile, numObjs, &objs ) != numObjs ) {
+        /* Error */
+    }
+    if( !hwEndBinary( (hwObjRW)fread, inFile ) ) {
+        /* Error */
+    }
+    fclose( f );
+
+    /* We now have numObjs objects in the objs array */
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwParseFile]], [[hwWriteASCII]]

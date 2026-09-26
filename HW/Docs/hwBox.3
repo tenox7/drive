@@ -1,0 +1,61 @@
+NAME
+    hwBox - create a box defined by its extreme corners
+
+INHERITS FROM
+    hwSurface
+    hwOrient
+
+PROPERTIES
+    Data	6F	Lower-left-front and upper-right-back corners
+    OptLevel	1I	Optimization level; see hw(3) for details
+    GraphN	1I	Tesselation parameter
+    GraphM	1I	Tesselation parameter
+
+DEFAULTS
+    Data	{-1,-1,-1, 1,1,1}
+    OptLevel	HW_OPT_NONE
+    GraphN	1
+    GraphM	1
+
+DESCRIPTION
+    The hwBox class creates a 3-dimensional box specified by two points:
+    the lower-left-front point and the upper-right-back point.  The box
+    will be drawn with surface characteristics as defined by the
+    hwSurface properties, and in the orientation defined by the hwOrient
+    properties.
+
+    If textured, the default texture coordinates for hwBox map the
+    entire texture across each face of the box.  On the front, back, and
+    sides, the texture is oriented so that the bottom of the texture
+    touches the bottom of the box.  On the top, the texture appears
+    upright if the box is tilted toward the viewer.  On the bottom, the
+    texture appears upright if the box is tilted away from the viewer.
+
+    Each face of the box may be tesselated more highly if desired; use
+    the GraphN and GraphM parameters to specify the number of sub-quads
+    in the horizontal and vertical directions of the face.
+
+C EXAMPLE
+    /* Draw a red box twice the default size */
+    hwObject
+	box;
+    hwFloat
+	corners[6] = {-2,-2,-2, 2,2,2};
+    hwInt32
+	type = HW_MAKE_TYPE(HW_TYPE_FLOAT,6);
+
+    box = hwBox->create( hwBox );
+    box->modify( box, hwStrData, type, corners );
+    HW_MODIFY_3F( box, hwStrColor, 1, 0, 0 );
+    box->draw( box, disp );
+    box->destroy( box );
+
+OBJECT FILE EXAMPLE
+    # A red box, twice the default size
+    hwBox box {
+	Data = {-2,-2,-2, 2,2,2}
+	Color = {1,0,0}
+    }
+
+SEE ALSO
+    hw(3), hwSurface(3), hwOrient(3)

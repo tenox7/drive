@@ -1,0 +1,21 @@
+# $Source: /cvsroot/hoverball/HB_HW/DRIVE/libgui/mf.linux,v $
+# $Revision: 1.1.1.1 $
+# $Date: 2004/02/19 19:27:31 $
+
+TARGET=gui.a
+include ../mf.linux.h
+
+HW=/opt/HoverWare
+INC=../include
+INCLUDES=-I ../include  -I $(HW)/Inc  -I. -I/usr/X11R6/LessTif/Motif1.2/include
+
+# Standard rules to turn all the *.c files to $(OBJ)*.o files
+SRC := $(wildcard *.c)
+SRC := $(filter-out Starbase.c,$(SRC))
+OFILES = $(SRC:%.c=$(OBJ)%.o)
+$(OFILES): $(OBJ)%.o : %.c
+	@ mkdir -p $(@D)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(TARGET): $(OFILES)
+	ar rv $@ $?

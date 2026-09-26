@@ -1,0 +1,209 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#
+# Oil Well
+#
+# Daryl Poe, May 1994
+#
+
+
+# Main legs
+Object: cylinder
+Radius: .35
+Height: 11.0
+Position: 3.0 0.0 -4.0
+Xrot: 20.0
+Yrot: 45.0
+Color: 0.1 0.1 0.1
+
+Object: cylinder
+Radius: .35
+Height: 11.0
+Position: -3.0 0.0 -4.0
+Xrot: 20.0
+Yrot: -45.0
+Color: 0.1 0.1 0.1
+
+Object: cylinder
+Radius: .35
+Height: 12.0
+Position: 0.0 0.0 6.0
+Xrot: -30
+Color: 0.1 0.1 0.1
+
+# Rotating part support
+Object: cylinder
+Radius: .25
+Height: 3.0
+Position: -0.5 0.0 -7.0
+Color: 0.1 0.1 0.1
+
+Object: cylinder
+Radius: .25
+Height: 3.0
+Position:  0.5 0.0 -7.0
+Color: 0.1 0.1 0.1
+
+# Plunger
+Object: cylinder
+Position: 0.0 0.0 6.5
+Height: 10.0
+Radius: 0.25
+Color: 0.1 0.1 0.1
+Animation Bits: 0xf83f
+
+Object: cylinder
+Position: 0.0 0.0 6.5
+Height: 12.0
+Radius: 0.25
+Color: 0.1 0.1 0.1
+Animation Bits: 0x07c0
+
+# Base
+Object: flat
+Size: 14.0 8.0 0.0
+Color: 0.1 0.1 0.1
+
+# Moving parts -- main rocker
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: 24
+Animation Bits: 0x0001
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: 18
+Animation Bits: 0x8002
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: 12
+Animation Bits: 0x4004
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: 6
+Animation Bits: 0x2008
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: 0
+Animation Bits: 0x1010
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: -6
+Animation Bits: 0x0820
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: -12
+Animation Bits: 0x0440
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: -18
+Animation Bits: 0x0280
+
+Construct: oil_well_arm
+Position: 0.0 10.0 0.0
+Xrot: -24
+Animation Bits: 0x0100
+
+
+# Rotating whatchamagig
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 0.0
+Animation Bits: 0x1000
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 22.5
+Animation Bits: 0x2000
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 45.0
+Animation Bits: 0x4000
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 67.5
+Animation Bits: 0x8000
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 90.0
+Animation Bits: 0x0001
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 112.5
+Animation Bits: 0x0002
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 135.0
+Animation Bits: 0x0004
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 157.5
+Animation Bits: 0x0008
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 180.0
+Animation Bits: 0x0010
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 202.5
+Animation Bits: 0x0020
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 225.0
+Animation Bits: 0x0040
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 247.5
+Animation Bits: 0x0080
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 270.0
+Animation Bits: 0x0100
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 292.5
+Animation Bits: 0x0200
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 315.0
+Animation Bits: 0x0400
+
+Construct: oil_well_arm2
+Position: 0.0 3.0 -7.0
+Xrot: 337.5
+Animation Bits: 0x0800
+

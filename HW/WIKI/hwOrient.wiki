@@ -1,0 +1,62 @@
+== NAME ==
+hwOrient - define a transformation
+
+== PROPERTIES ==
+|   Scale      |3F |    Scaling factors along each axis
+|   Rotate     |3F |    Rotation about each axis, in degrees
+|   Pos        |3F |    Offset from origin
+
+== DEFAULTS ==
+|   Scale  | {1,1,1}
+|   Rotate | {0,0,0}
+|   Pos    | {0,0,0}
+
+== DESCRIPTION ==
+The hwOrient class defines a transformation in terms of high-level
+operations.  The operations are always performed in the order:
+scale, rotate, position.  This will never yield a "skewed" matrix.
+The Scale parameter specifies scaling along each of the X, Y, and Z
+axes.  The Rotate parameter specifies a rotation about the X, Y, and
+Z axes *in turn*; that is, a rotation about X followed by a rotation
+about Y followed by a rotation about Z.  The angles are specified in
+degrees.  The Pos parameter specifies a translation from the
+origin.  Note that most primitives have embedded hwOrient classes; a
+standalone hwOrient object is only useful to pass to multiple
+primitives which might share an orientation.
+
+== C EXAMPLE ==
+{{{
+    /* Create an X scale of 2 with 30 degree rotation about Y, moved
+     * 20 units in Z, and apply it to a box.
+     */
+    hwObject
+        orient,
+        box;
+
+    orient = hwOrient->create( hwOrient );
+    HW_MODIFY_3F( orient, hwStrScale, 2, 1, 1 );
+    HW_MODIFY_3F( orient, hwStrRotate, 0, 30, 0 );
+    HW_MODIFY_3F( orient, hwStrPos, 0, 0, 20 );
+
+    box = hwBox->create( hwBox );
+    box->modify( box, hwStrOrient, HW_TYPE_OBJECT, orient );
+    box->draw( box );
+    box->destroy( box );
+    orient->destroy( orient );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # Same as above
+    hwOrient orient {
+        Scale = {2, 1, 1}
+        Rotate = {0, 30, 0}
+        Pos = {0,0,20}
+    }
+    hwBox box {
+        Orient = orient
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]]

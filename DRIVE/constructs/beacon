@@ -1,0 +1,50 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# A 6 foot spherical beacon
+
+Object: sphere
+Animation Bits: 0x3333
+Color: 1 1 0.3
+Radius: 3
+
+Object: sphere
+Animation Bits: 0xCCCC
+Color: 0.2 0.2 0
+Radius: 3
+
+Object: pillar
+Y: -6
+Radius: 0.5
+Height: 12
+Color: 0 0 0
+
+Object: pillar
+Z: -6
+Xrot: 90
+Radius: 0.5
+Height: 12
+Color: 0 0 0
+
+Object: pillar
+X: -6
+Yrot: -90
+Xrot: 90
+Radius: 0.5
+Height: 12
+Color: 0 0 0
+

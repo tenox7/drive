@@ -1,0 +1,185 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Plains windmill
+#
+# Daryl Poe, May 1994
+#
+
+Object: cylinder
+Height: 3.0
+Radius: 3.0
+Position: 8 0 1
+
+
+Object: cylinder
+Position: 4 0 -4
+Height: 28
+Radius: 0.25
+Zrot: -11
+Yrot: 135
+
+Object: cylinder
+Position: -4 0 -4
+Height: 28
+Radius: 0.25
+Zrot: -11
+Yrot: 45
+
+Object: cylinder
+Position: 4 0 4
+Height: 28
+Radius: 0.25
+Zrot: -11
+Yrot: -135
+
+Object: cylinder
+Position: -4 0 4
+Height: 28
+Radius: 0.25
+Zrot: -11
+Yrot: -45
+
+# First level supports
+Object: cylinder
+Position: -3 8 -3
+Height: 6
+Radius: 0.25
+Zrot: -90
+
+Object: cylinder
+Position: -3 8 3
+Height: 6
+Radius: 0.25
+Zrot: -90
+
+Object: cylinder
+Position: -3 8 -3
+Height: 6
+Radius: 0.25
+Zrot: -90
+Yrot: 90
+
+Object: cylinder
+Position: 3 8 -3
+Height: 6
+Radius: 0.25
+Zrot: -90
+Yrot: 90
+
+# Second level supports
+Object: cylinder
+Position: -2 16 -2
+Height: 4
+Radius: 0.25
+Zrot: -90
+
+Object: cylinder
+Position: -2 16 2
+Height: 4
+Radius: 0.25
+Zrot: -90
+
+Object: cylinder
+Position: -2 16 -2
+Height: 4
+Radius: 0.25
+Zrot: -90
+Yrot: 90
+
+Object: cylinder
+Position: 2 16 -2
+Height: 4
+Radius: 0.25
+Zrot: -90
+Yrot: 90
+
+Object: cylinder
+Height: 3.2
+Radius: 0.2
+Xrot: -90
+Y: 27
+Z: 1
+
+Object: cylinder
+Height: 0.2
+Radius: 0.6
+Xrot: -90
+Y: 27
+Z: -2
+
+Object: cylinder
+Height: 27
+Radius: 0.2
+
+Construct: plns_wm_bld
+Xrot: 70
+Yrot: 90
+Zrot: 10
+Color: 0.0 0.5 0
+Position: 0 27 0.5
+
+# Rotating blades
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 0
+Animation Bits: 0x0101
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 11.25
+Animation Bits: 0x8080
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 22.5
+Animation Bits: 0x4040
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 33.75
+Animation Bits: 0x2020
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 45
+Animation Bits: 0x1010
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 56.25
+Animation Bits: 0x0808
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 67.5
+Animation Bits: 0x0404
+
+Construct: plns_wm_blds2
+Y: 27
+Z: -2
+Zrot: 78.75
+Animation Bits: 0x0202
+
+

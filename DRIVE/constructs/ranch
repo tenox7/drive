@@ -1,0 +1,88 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# A ranch
+#
+# This fills a block about 400x400.
+# It should be set off a road by about 200 feet.
+#
+# Some day we'll have cows.  :-\
+#
+# Daryl Poe, Dec 1993
+
+
+Object: house
+Position: 0 0 0
+
+Object: fence
+Type: split rail
+Position: -15.0 0 -195.0
+Length: 185
+Yrot: 90
+
+Object: fence
+Type: split rail
+Position: 0 0 -195
+Length: 200
+Yrot: -90
+
+# gate
+Object: fence
+Type: split rail
+Position: 0 0 -195
+Length: 15
+Yrot: 45
+
+Object: mailbox
+Position: 0 0 -198
+
+Object: road
+Width: 10.0
+Position: -10.0 0 -200
+Length: 180
+Color: 0.3 0.2 0.1
+
+Object: fence
+Type: barbed wire
+Position: -200 0 -195
+Length: 400
+Spacing: 20.0
+
+Object: fence
+Type: barbed wire
+Position: 200 0 -195
+Length: 400
+Spacing: 20.0
+
+Object: pillar
+Radius: 0.25
+Height: 10.0
+Position: 0 0 -195
+Color: 0.5 0.4 0.1
+
+Object: pillar
+Radius: 0.25
+Height: 10.0
+Position: -15 0 -195
+Color: 0.5 0.4 0.1
+
+Object: generic sign
+Size: 5.0 15.0 0.01
+Label: Bar-D Ranch
+Position: -7.5 10.0 -195
+Color: 0.5 0.4 0.1
+Radius: 0.01

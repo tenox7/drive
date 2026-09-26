@@ -1,0 +1,147 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Generic gas station
+#
+# A 200x200 group of objects centered at 0,0
+#
+# To place it next to a road, offset it by 100 in the +Z direction
+# (before rotation).
+#
+
+# Pumps
+Object: wall
+Position: 0 0 -2
+Size: 4 60 .3
+
+Construct:  gas_pump
+Position: 15 .3 0
+
+Construct:  gas_pump
+Position: -15 .3 0
+
+# Asphalt
+Object: flat
+Position: 0 0 0
+Size: 40 80 0
+Color: 0.1 0.1 0.1
+
+Object: flat
+Position: 40 0 -30
+Size: 40 20 0
+Color: 0.1 0.1 0.1
+
+Object: flat
+Position: -40 0 -30
+Size: 40 20 0
+Color: 0.1 0.1 0.1
+
+# Overhang
+Object: wall
+Position: 0 15 -7.5
+Size: 15 60 .5
+
+Object: shadow
+Position: 0 0.55 0
+Size: 20 65 0
+
+Object: pillar
+Position: -25 0 0
+Radius: .5
+Height: 15
+
+Object: pillar
+Position: 0 0 0
+Radius: .5
+Height: 15
+
+Object: pillar
+Position: 25 0 0
+Radius: .5
+Height: 15
+
+# Building
+Object: wall
+Position: 0 0 25
+Size: 20 40 12
+Color: 0.3 0.3 0.3
+
+# door
+Object: flat
+Size: 7.0 3.0 0.0
+Position: 0 3.5 25
+Xrot: -90
+Color: 0.5 0.8 0.8
+
+Object: wall
+Position: 0 3.5 24.8
+Size: .2 3.0 .2
+Color: 0.5 0.5 0.5
+
+# windows
+Object: flat
+Size: 2.0 10.0 0.0
+Position: -10 4 25
+Xrot: -90
+Color: 0.5 0.8 0.8
+
+Object: flat
+Size: 2.0 10.0 0.0
+Position: 10 4 25
+Xrot: -90
+Color: 0.5 0.8 0.8
+
+# Landscaping
+Object: conifer
+Position: -40 0 30
+Height: 20
+Yrot: 28
+
+Object: conifer
+Position: 40 0 30
+Height: 20
+Yrot: 171
+
+Object: bush
+Position: -20 0 -25
+Height: 3.0
+Yrot: 187
+
+Object: bush
+Position: 0 0 -25
+Height: 3.0
+Yrot: 21
+
+Object: bush
+Position: 20 0 -25
+Height: 3.0
+Yrot: 52
+
+# Sign
+Object: generic sign
+Label: GAS
+Position: 1 0 -40
+Size: 5.0 10.0 20.0
+Color: 0.3 1.0 1.0
+Yrot: 90
+
+Object: generic sign
+Label: GAS
+Position: -1 0 -40
+Size: 5.0 10.0 20.0
+Color: 0.3 1.0 1.0
+Yrot: 270

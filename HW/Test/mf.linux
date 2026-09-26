@@ -1,0 +1,134 @@
+SHELL=/bin/bash
+
+HWGL=../libhwgl.a ../../JPEG/libjpeg.a
+HWUT=../libhwut.a ../../JPEG/libjpeg.a
+GLLIBS= $(HWGL) -L/usr/X11R6/lib -L/opt/graphics/OpenGL/lib -lGLU -lGL -lXext  -lX11 -lm
+UTLIBS= $(HWUT) -L/usr/X11R6/lib -L/opt/graphics/OpenGL/lib -lGLU -lGL -lXext  -lX11 -lm
+
+INC=../Inc/
+OBJ=Objs/
+
+CC=gcc 
+CFLAGS=-g -DUSE_X11 -I/usr/X11R6/include -I$(INC)
+
+TESTS=parse_gl poly_gl mesh_gl simple_gl sphere_gl text_gl \
+	tm_gl view_hw_gl welcome_gl vistest_gl hbgui_gl
+
+all:  $(TESTS)
+
+clean:
+	rm $(TESTS)
+
+hbgui_gl:	$(OBJ)hbgui.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)hbgui.o $(GLLIBS)
+
+mesh_gl:	$(OBJ)mesh.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)mesh.o $(GLLIBS)
+
+mesh_sb:	$(OBJ)mesh.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)mesh.o $(SBLIBS)
+
+parse_gl:	$(OBJ)parse.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)parse.o $(GLLIBS)
+
+parse_sb:	$(OBJ)parse.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)parse.o $(SBLIBS)
+
+peel:	$(OBJ)peel.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)peel.o $(SBLIBS)
+
+welcome_gl:	$(OBJ)welcome.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)welcome.o $(GLLIBS)
+
+welcome_sb:	$(OBJ)welcome.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)welcome.o $(SBLIBS)
+
+poly_gl:	$(OBJ)poly.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)poly.o $(GLLIBS)
+
+poly_sb:	$(OBJ)poly.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)poly.o $(SBLIBS)
+
+simple_gl:	$(OBJ)simple.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)simple.o $(GLLIBS)
+
+simple_sb:	$(OBJ)simple.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)simple.o $(SBLIBS)
+
+sphere_gl:	$(OBJ)sphere.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)sphere.o $(GLLIBS)
+
+sphere_bump_gl:	$(OBJ)sphere_bump.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)sphere_bump.o $(GLLIBS)
+
+sphere_sb:	$(OBJ)sphere.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)sphere.o $(SBLIBS)
+
+write_sb:	$(OBJ)write.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)write.o $(SBLIBS)
+
+tm_gl:	$(OBJ)tm.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)tm.o $(GLLIBS)
+
+tm_sb:	$(OBJ)tm.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)tm.o $(SBLIBS)
+
+text_gl:	$(OBJ)text.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)text.o $(GLLIBS)
+
+text_ut:	$(OBJ)text.o $(HWUT)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)text.o $(UTLIBS)
+
+text_sb:	$(OBJ)text.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)text.o $(SBLIBS)
+
+view_hw_gl:	$(OBJ)view_hw.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)view_hw.o $(GLLIBS)
+
+view_hw_sb:	$(OBJ)view_hw.o $(HWSB)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)view_hw.o $(SBLIBS)
+
+vistest_gl:	$(OBJ)vistest.o $(HWGL)
+	$(CC) $(CFLAGS) -o $@ $(OBJ)vistest.o $(GLLIBS)
+
+$(OBJ)view_hw.o:	view_hw.c
+	$(CC) $(CFLAGS) -c -o $@ view_hw.c
+
+$(OBJ)hbgui.o:	hbgui.c
+	$(CC) $(CFLAGS) -c -o $@ hbgui.c
+
+$(OBJ)mesh.o:	mesh.c
+	$(CC) $(CFLAGS) -c -o $@ mesh.c
+
+$(OBJ)parse.o:	parse.c
+	$(CC) $(CFLAGS) -c -o $@ parse.c
+
+$(OBJ)peel.o:	peel.c
+	$(CC) $(CFLAGS) -c -o $@ peel.c
+
+$(OBJ)welcome.o:	welcome.c
+	$(CC) $(CFLAGS) -c -o $@ welcome.c
+
+$(OBJ)poly.o:	poly.c
+	$(CC) $(CFLAGS) -c -o $@ poly.c
+
+$(OBJ)simple.o:	simple.c
+	$(CC) $(CFLAGS) -c -o $@ simple.c
+
+$(OBJ)sphere.o:	sphere.c
+	$(CC) $(CFLAGS) -c -o $@ sphere.c
+
+$(OBJ)sphere_bump.o:	sphere_bump.c
+	$(CC) $(CFLAGS) -c -o $@ sphere_bump.c
+
+$(OBJ)tm.o:	tm.c
+	$(CC) $(CFLAGS) -c -o $@ tm.c
+
+$(OBJ)text.o:	text.c
+	$(CC) $(CFLAGS) -c -o $@ text.c
+
+$(OBJ)vistest.o:	vistest.c
+	$(CC) $(CFLAGS) -c -o $@ vistest.c
+
+$(OBJ)write.o:	write.c
+	$(CC) $(CFLAGS) -c -o $@ write.c

@@ -1,0 +1,92 @@
+/* (c) Copyright Hewlett-Packard Company 2001
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or (at
+ * your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+
+
+#ifndef _PHYSICS_IH_INCLUDED
+#define _PHYSICS_IH_INCLUDED 1
+
+#include <stdio.h>
+#include "libnum.h"
+#include "physics.h"
+
+#define FRICTIONLESS	TRUE
+#define TRANSLATE_I	TRUE
+#define DEBUG		TRUE
+#define METHOD1         TRUE
+
+
+#if LIBNUM_XINDEX == 0
+/* The new model */
+# define REFINE_PASSES	1
+# define ALLOCATE_MATRIX(rows,cols) \
+    matrix(rows,cols)
+# define FREE_MATRIX(mat,rows,cols) \
+    free_matrix(mat,rows,cols)
+# define ALLOCATE_VECTOR(size) \
+    vector(size)
+# define FREE_VECTOR(v,size) \
+    free_vector(v,size)
+# define ALLOCATE_IVECTOR(size) \
+    ivector(size)
+# define FREE_IVECTOR(v,size) \
+    ifree_vector(v,size)
+# define MATxDIAG(m1,m2,m3,rows,cols) \
+    matrix_times_diag(m1,m2,m3,rows,cols)
+# define MATxMAT(m1,m2,m3,rows,cols) \
+    multiply_matrices(m1,m2,m3,rows,cols)
+# define CROSS_PRODUCT(v1,v2,v3) \
+    cross_product(v1,v2,v3)
+# define MATxVEC(m,v1,result,rows,cols) \
+    matrix_times_vector(m,v1,result,rows,cols)
+# define VECxQ(v,q1,q2) \
+    vector_times_quaternion(v,q1,q2)
+# define CP_MATRIX(in,out,rows,cols) \
+    copy_matrix(in,out,rows,cols)
+# define TRANSPOSE(m,rows,cols) \
+    transpose_matrix_inplace(m,rows,cols)
+#else
+/* The old model */
+# define REFINE_PASSES	0
+# define ALLOCATE_MATRIX(rows,cols) \
+    matrix(1,rows,1,cols)
+# define FREE_MATRIX(mat,rows,cols) \
+    free_matrix(mat,1,rows,1,cols)
+# define ALLOCATE_VECTOR(size) \
+    vector(1,size)
+# define FREE_VECTOR(v,size) \
+    free_vector(v,1,size)
+# define ALLOCATE_IVECTOR(size) \
+    ivector(1,size)
+# define FREE_IVECTOR(v,size) \
+    free_ivector(v,1,size)
+# define MATxDIAG(m1,m2,m3,rows,cols) \
+    matrix_times_diag(m1,m2,m3,1,rows,1,cols,1,1,1,1)
+# define MATxMAT(m1,m2,m3,rows,cols) \
+    multiply_matrices(m1,m2,m3,1,rows,1,cols,1,1,1,1)
+# define CROSS_PRODUCT(v1,v2,v3) \
+    cross_product(v1,v2,v3,1,1,1)
+# define MATxVEC(m,v1,result,rows,cols) \
+    matrix_times_vector(m,v1,result,1,rows,1,cols,1,1)
+# define VECxQ(v,q1,q2) \
+    vector_times_quaternion(v,q1,q2)
+# define CP_MATRIX(in,out,rows,cols) \
+    COPY_MATRIX(in,out,1,rows,1,cols,1,1)
+# define TRANSPOSE(m,rows,cols) \
+    transpose_matrix(m,1,rows,1,cols)
+#endif
+
+#endif /* _PHYSICS_IH_INCLUDED */

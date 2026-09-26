@@ -1,0 +1,50 @@
+== NAME ==
+hwLabel - multi-line GUI text display
+
+== INHERITS FROM ==
+* [[hwGUI]]
+
+== PROPERTIES ==
+| Label | 0S | The text to display
+| Font | 0O | The font to use for display
+| FontHeight | 1I | The character height, in pixels
+| Color | 3F | Color of the characters
+| BackgroundColor | 4F | Background color of bounding box
+| BorderColor | 4F | Border color of the bounding box
+| Texture | 0O | Texture to use as background image of label
+
+== DEFAULTS ==
+| Color | {1,1,1}
+| BackgroundColor | {0,0,0,0}
+| BorderColor | {0,0,0,0}
+| FontHeight |  12
+
+== DESCRIPTION ==
+The hwLabel class may be used to put a label at a given position on
+the screen.  It inherits the typical [[hwGUI]] positioning properties
+and rules.  Note that the label text may be multi-line, separated by
+newline '\n' characters.
+
+== C EXAMPLE ==
+{{{
+    hwObject myLabel;
+
+    myLabel = hwLabel->create( hwLabel );
+    HW_MODIFY_1I( myLabel, hwStrPosX, 100 );
+    HW_MODIFY_1I( myLabel, hwStrPosY, 100 );
+    HW_MODIFY_1I( myLabel, hwStrWidth, 0 );
+    HW_MODIFY_1I( myLabel, hwStrHeight, 0 );
+    myLabel->modify( myLabel, hwStrLabel, HW_TYPE_STRING, "Two\nLines" );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    hwLabel myLabel {
+        PosX = 100  PosY = 100
+        Width = 0   Height = 0
+        Label = "Two\nLines"
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwGUI]]

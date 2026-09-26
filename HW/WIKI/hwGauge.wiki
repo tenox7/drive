@@ -1,0 +1,118 @@
+== NAME ==
+hwGauge - powerful multi-needle analog gauge display
+
+== INHERITS FROM ==
+* [[hwGUI]]
+
+== PROPERTIES ==
+| Scale | 1F | Scaling factor of gauge dividing lines, as a percentage of the effective radius
+| LonRange | 2F | Position of minimum and maximum gauge positions, in degrees
+| Color | 3F | Foreground color of line elements
+| BackgroundColor | 3F | Background color of the gauge
+| SpotColor | 3F | Color of the center spot of the gauge
+| NeedleColor | 3F | Color of the gauge needle
+| GaugeRange | 3I | Minimum and maximum values indicated by the gauge
+| Divisions | 3F | Number of major, minor, and "baby" divisions of the gauge
+| FontHeight | 1F | Height of the gauge labels, as a percentage of the effective radius
+| Label | 0S | Center label
+| NeedleLength | *F | Length(s) of the gauge needle(s) as a percentage of the effective radius.  The number of needles is equal to the number of values given here.
+| NeedlePos | *F | Position(s) of the gauge needle(s).  The same number of floats must be given as were given by NeedleLength
+| OptFlags | 1I | Optimization flags
+
+
+== DEFAULTS ==
+None
+
+== DESCRIPTION ==
+The hwGauge class implements a powerful analog gauge display with an
+arbitrary number of needles or "hands".  The gauge is always circular,
+centered on its bounding box as described by [[hwGUI]].  The radius
+of the circle is set to half the minimum of the width or height of the
+bounding box.
+
+The LonRange establishes the starting and ending longitude of
+the gauge display, in degrees.  0 degrees is the positive X axis.
+If the ending longitude is greater than the starting longitude, then
+the gauge needle will rotate counter-clockwise as the value increases.
+Otherwise, the needle will rotate clockwise as the value increases.
+
+The longitude range is divided into "divisions".  These are specified by
+the Divisions property, which is an array of 3 numbers.  The first
+number is the count of major divisions - this is also the count
+of the gauge segment labels (minus one).  The second number is the number
+of minor divisions per major division.  For example, a clock will have
+12 major divisions (one for each hour) and 5 minor divisions (one
+for each minute in the hour segment).  Finally, the third number,
+if non-zero, establishes the "baby divisions" which is also relative
+to the number of major divisions.  The speedometer example below
+has 12 major divisions (one for each 10 MPH), 2 minor divisions (to
+show the 5 MPH increments), and 10 baby divisions (one for each single
+MPH).
+
+The indicator range of the gauge is established by the GaugeRange property,
+which consists of three numbers.  The first number is the minimum reading
+allowed on the gauge.  The second number is the maximum reading allowed on the
+gauge.  The last of the three numbers, if non-zero, establishes
+a multiplication factor for the gauge scale labels.  In the speedometer
+example below, this is set to 10, so that each of the major divisions
+from 0 to 12 get an appropriate label from 0 to 120.
+
+The needle(s) of the gauge are established by the NeedleLength property.
+This is a length, as a percentage of the radius, of each needle.  The
+number of floats in this array indicate the number of needles on 
+the gauge.  The position(s) of the needle(s) are set by the NeedlePos
+property.  Each number in this array is in the same units as the GaugeRange.
+
+The Scale property controls the length of the tic marks as well as the
+size of the central spot.  The "baby" tics are drawn at a length of Scale
+pixels; the minor tics are twice that length, and the major tics
+are four times that length.  All of the tics are drawn radially to within
+Scale pixels of the outer circle.  The gauge labels are drawn centered
+at ten times the Scale distance from the outer circle, aligned with
+the major tic marks.
+
+== C EXAMPLE ==
+{{{
+    /* Create a clock */
+    myclock = hwGauge->create( hwGauge );
+    HW_MODIFY_1I(myclock, hwStrPos, 15 );
+    HW_MODIFY_1I(myclock, hwStrPos, 15 );
+    HW_MODIFY_1F(myclock, hwStrWidth, 180 );
+    HW_MODIFY_1F(myclock, hwStrHeight, 180 );
+    HW_MODIFY_1F(myclock, hwStrScale, 2.5);
+    HW_MODIFY_2F(myclock, hwStrLonRange, 90., -270.);
+    HW_MODIFY_3I(myclock, hwStrGaugeRange, 0, 12*60, 1);
+    HW_MODIFY_3I(myclock, hwStrDivisions, 12, 5, 0);
+    HW_MODIFY_1I(myclock, hwStrFontHeight, 20);
+    HW_MODIFY_1I(myclock, hwStrColor, 0xFFFFFFFF);
+    HW_MODIFY_1I(myclock, hwStrBackgroundColor, 0x80000000);
+    HW_MODIFY_1I(myclock, hwStrSpotColor, 0xFF808080);
+    HW_MODIFY_1I(myclock, hwStrNeedleColor, 0xFFFF0000);
+    HW_MODIFY_2F(myclock, hwStrNeedleLength, 35., 75.);
+    HW_MODIFY_1I(myclock, hwStrOptFlags, HW_OPT_USE_DL);
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # Create a speedometer
+    hwGauge speedo {
+        PosX = 180   PosY = 20
+        Width = 440  Height = 440
+        Scale = 5.
+        LonRange = { 225., -45. }
+        GaugeRange = { 0, 120, 10 }
+        Divisions = { 12, 2, 10 }
+        FontHeight =  11
+        Label = "MPH"
+        Color = 0xFFFFFFFF
+        BackgroundColor = 0x80808080
+        SpotColor = 0xFF808080
+        NeedleColor = 0xFFFF0000
+        NeedleLength = 75.
+        NeedlePos = 55.
+        OptFlags = HW_OPT_USE_DL
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwGUI]]

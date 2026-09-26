@@ -1,0 +1,63 @@
+== NAME ==
+hwSurfRev - create a shape specified by revolving a path about the Z axis
+
+== INHERITS FROM ==
+* [[hwSurface]]
+* [[hwOrient]]
+
+== PROPERTIES ==
+| GraphN     | 1I | The number of rows in the resulting mesh
+| Data       | *F | The 2-dimensional path to be rotated around the Z axis
+| LonRange   | 2F | The starting and ending points of the rotation, in degrees from 0 to 360
+| OptFlags   | 1I | Optimization flags; see [[hw]] for details
+| HasNormals | 1B | True for smooth shading; false for faceted appearance
+| Resolution | 1F | Tesselation multiplier
+
+== DEFAULTS ==
+| GraphN     | 9
+| LonRange   | {0,360}
+| OptFlags   | hwDefaultOptFlags
+| HasNormals | True
+| Resolution | 1.0
+
+== DESCRIPTION ==
+The hwSurfRev class creates a surface of revolution based on a
+2-dimensional path.  The path consists of radius, height pairs.  The
+radius is the distance of this point on the path from the Z axis.
+The height is the distance of the point above the XY plane.  This
+path is revolved about the Z axis, starting at LonRange[0] degrees,
+and going to LonRange[1] degrees.  By default, this surface is
+smoothly shaded; set HasNormals to False if you want a faceted
+appearance.
+
+The default texture coordinates for a surface of revolution have the
+S coordinate increasing from 0.0 to 1.0 around the arc, and T
+increasing from 0.0 to 1.0 from minimum Z to maximum Z.
+
+== C EXAMPLE ==
+{{{
+    /* Draw a surface of revolution */
+    hwObject
+        surfRev;
+    hwFloat
+        points[] = {1,0, 0.5,1, 1,2};
+
+    surfRev = hwSurfRev->create( hwSurfRev );
+    surfRev->modify( surfRev, hwStrData,
+                        HW_MAKE_TYPE(HW_TYPE_FLOAT,6), points );
+    HW_MODIFY_1B( surfRev, hwStrTwoSided, HW_TRUE );
+    surfRev->draw( surfRev );
+    surfRev->destroy( surfRev );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A simple surface of revolution
+    hwSurfRev surfRev {
+        Data = {1,0, 0.5,1, 1,2}
+        TwoSided = True
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwSurface]], [[hwOrient]]

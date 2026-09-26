@@ -1,0 +1,38 @@
+#
+# Use the compiler's various options to generate a dependency list
+# for the compiler, options, and file given on the command line.
+# The sed is necessary to add $(OBJDIR) on the front of the .o names.
+#
+
+PATH=/bin:/usr/bin
+
+cmd=$1
+compiler=$(basename $1); shift
+cmdline="$*"
+
+# Get the last parameter
+let k=$#-1
+shift $k
+file=$1
+# And its directory
+dir="$(dirname $file)/"
+if [ $dir = "./" ]; then dir=""; fi
+
+if [ "$compiler" = "gcc" ]; then
+    #################### gcc ####################
+    # use -E -M
+    $cmd -E -M $cmdline | \
+       sed "s#^\([A-Za-z0-9_]*\.o\) *:#Opt/$dir\1 Debug/$dir\1:#"
+elif [ "$compiler" = "cc" ]; then
+    case $(uname -s) in
+        HP-UX|hp-ux)
+	    #################### HP-UX cc ####################
+	    # use -Wp,-M, discard stdout, and use stderr
+	    $cmd -E -Wp,-M $cmdline 2>&1 1>/dev/null | \
+	       sed "s#^\([A-Za-z0-9_]*\.o\) *:#Opt/$dir\1 Debug/$dir\1:#"
+	    ;;
+    esac
+fi
+
+echo		# This will give us something for the cases not covered
+exit 0

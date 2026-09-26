@@ -1,0 +1,50 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=libnum.a
+all: $(LIBTARGET)
+TOPDIR=..
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include @CPPFLAGS@ @DEFS@ @CFLAGS@ \
+  $(WARNINGS) $(OPTDEBUGFLAGS)
+
+SRC=\
+  curvefit.c \
+  dmatrix.c \
+  gaussj.c \
+  imatrix.c \
+  integrate.c \
+  ivector.c \
+  ludcmp.c \
+  matrix.c \
+  nrerror.c \
+  ode.c \
+  quaternion.c \
+  root.c 
+
+ntest: $(LIBTARGET)
+	$(CC) $(CFLAGS) ntest.c -o $@ $(LIBTARGET) -lm
+clean::
+	$(RM) ntest
+test: ntest
+	./ntest
+
+include $(TOPDIR)/Makefile.h
+

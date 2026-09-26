@@ -1,0 +1,397 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# @(#) $Revision: 1.1 $
+#----------------------------------------------------------------------------
+# Reaction Speedway
+# designed by Edgar Circenis
+#
+
+Racecourse: Reaction Speedway
+Practice Seconds: 0
+Race Seconds: 110
+Start SceneX: -11
+Start SceneZ: -1
+Start Position: 277.5 0 -920.5
+Start Angle: 0
+Start Positions: 4
+Turbo Boosts: 5
+
+
+#----------------------------------------------------------------------------
+# SCENE ONE
+
+Scene Location: -11 -1
+
+#a
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: -600 0 -500
+
+#b
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: 0 0 -500
+
+#c
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: 600 0 -500
+
+#d
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: -300 0 19.615
+
+#e
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: 300 0 19.615
+
+#f
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: -600 0 539.23
+
+#g
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: 0 0 539.23
+
+#h
+Object: curve
+Width: 60
+Radius: 330
+Angle: 360
+Position: 600 0 539.23
+
+#i
+Object: road
+Width: 60
+Length: 500
+Position: 300 0 -1000
+
+#j
+Object: road
+Width: 60
+Length: 500
+Position: 450 0 -240.192
+Yrot: -60
+
+# CHECKPOINTS
+
+Object: start
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: START
+Radius: 0.5
+Position: 300 0 -800
+Yrot: 0
+Type: 1 9
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 1
+Radius: 0.5
+Position: 0 0 -800
+Yrot: -90
+Type: 1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 2
+Radius: 0.5
+Position: 900 0 -500
+Yrot: 180
+Type: 1 2
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 3
+Radius: 0.5
+Position: 600 0 19.615
+Yrot: 0
+Type: 1 3
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 4
+Radius: 0.5
+Position: 0 0 839.23
+Yrot: 90
+Type: 1 4
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 5
+Radius: 0.5
+Position: 900 0 539.23
+Yrot: 180
+Type: 1 5
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 6
+Radius: 0.5
+Position: -900 0 -500
+Yrot: 180
+Type: 1 6
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 7
+Radius: 0.5
+Position: -600 0 0
+Yrot: 0
+Type: 1 7
+
+Object: checkpoint
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: CHECKPOINT 8
+Radius: 0.5
+Position: -600 0 839.23
+Yrot: 90
+Type: 1 8
+
+Object: finish
+Length: 20.0
+Width:  60.0
+Height: 30.0
+Label: FINISH
+Radius: 0.5
+Position: 796.41 0 -40.192
+Yrot: -60
+Type: 1 9
+
+# SIGNS
+
+#AA
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: 1\<-
+Position: -300 0 -759.615
+Yrot: 180
+
+#A
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+#Label: <- 1\6 ->
+Label: 1     6\<-  ->
+Position: -375 0 -370
+Yrot: 120
+
+#A
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+#Label: <- 7
+Label: 7\<-
+Position: -300 0 -240.385
+Yrot: 0
+
+#B
+Object: generic sign
+Size: 40 50 2
+Color: 1 1 1
+#Label: <- 1\2 ->\3 ->
+Label: 1     2\<-  ->\      3
+Position: 300 0 -240.385
+Yrot: 0
+
+#B
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: F\<-
+Position: 375 0 -370
+Yrot: 240
+
+#C
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+#Label: <- 6\7 ->
+Label: 6     7\<-  ->
+Position: -675 0 -110.385
+Yrot: 60
+
+#D
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: 1\<-
+Position: -75 0 -110.385
+Yrot: 60
+
+#D
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+#Label: 6 ->\<- F
+Label: F     6\<-  ->
+Position: 0 0 -240
+Yrot: 180
+
+#E
+Object: twopole sign
+Size: 30 64 20
+Color: 1 1 1
+Label: 3     2\<-  ->
+Position: 675 0 -110.385
+Yrot: -60
+
+#F
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: 6\<-
+Position: -75 0 149.615
+Yrot: 120
+
+#F
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+#Label: <- 5\F ->
+Label: 5     F\<-  ->
+Position: 75 0 149.615
+Yrot: 240
+
+#G
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+#Label: <- 8\F ->
+Label: 8     F\<-  ->
+Position: -225 0 409.23
+Yrot: -60
+
+#G
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: 5\<-
+Position: -300 0 279.615
+Yrot: 180
+
+#H
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+#Label: 4 ->\<- 6
+Label: 6     4\<-  ->
+Position: 225 0 409.23
+Yrot: 60
+
+#H
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: 5\<-
+Position: 375 0 409.23
+Yrot: -60
+
+#I
+Object: generic sign
+Size: 30 40 2
+Color: 1 1 1
+Label: 8\<-
+Position: -300 0 798.845
+Yrot: 0
+
+#J
+Object: generic sign
+Size: 30 50 2
+Color: 1 1 1
+Label: 4     5\<-  ->
+Position: 300 0 798.845
+Yrot: 0
+
+Object: twopole sign
+Size: 20 64 10
+Color: 1 1 1
+Label: PROCEED\TO FINISH
+Position: -900 0 539.23
+Yrot: 180
+
+
+Object: ground
+
+#---------------------------------------------------------------------------
+# Turnoff from highway
+
+Scene Location: -11 -2
+
+Object: road
+Width: 60
+Length: 2000
+Position: 1000 0 0
+Yrot: 90
+
+Object: curve
+Width: 60
+Radius: 530
+Angle: 90
+Position: 800 0 500
+Yrot: 180
+
+Object: road
+Width: 60
+Length: 500
+Position: 300 0 500
+
+Object: generic sign
+Label: Reaction\Speedway
+Color: 1 1 1
+Size: 40 50 1
+Position: 900 0 -55
+Yrot: 90
+
+Object: ground

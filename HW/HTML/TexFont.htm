@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>TexFont - utilities for displaying text from a texture-mapped font</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>TexFont - utilities for displaying text from a texture-mapped font</p>
+<h2>SYNOPSIS</h2>
+<pre>
+        #include &quot;hw.h&quot;
+
+        typedef struct {
+            ...
+        } TexFont;
+
+        typedef size_t (*TxfReadFunc)(void *, size_t, size_t, void *);
+        char *txfErrorString(void);
+        TexFont *txfLoadFont(TxfReadFunc read, void *file);
+        void txfUnloadFont(TexFont * txf);
+        hwObject txfEstablishTexture(hwDisplay disp, TexFont * txf);
+        void txfBindFontTexture(hwDisplay disp, TexFont * txf);
+        void txfGetStringMetrics(TexFont * txf, char *string, int len,
+                                int *width, int *max_ascent, int *max_descent);
+        void txfRenderGlyph(hwDisplay disp, TexFont * txf, int c);
+        void txfRenderString(hwDisplay disp, TexFont * txf,
+                            char *string, int len);
+        void txfRenderFancyString(hwDisplay disp, TexFont * txf,
+                                 char *string, int len);
+        void txfSetPosition(hwFloat xPos, hwFloat yPos);
+        void txfSetScale(hwFloat pixSize);
+        void txfSetColor(hwFloat color[3]);
+        int txfBeginFontRendering(hwDisplay disp, TexFont *txf, hwInt32 mode);
+        void txfEndFontRendering(hwDisplay disp);
+        TexFont *txfLoadStaticFont(int size);
+</pre>
+<h2>DESCRIPTION</h2>
+<p>This is a set of routines for loading character glyphs into
+textures from a standardized file format, and displaying strings with
+them with appropriate scaling and alignment. The font files are in
+the format defined by Mark Kilgard's texfont utilities (which this
+set of routines was derived from). Original documentation for those
+utilities may be found at <a
+href="http://www.opengl.org/archives/resources/code/samples/glut_examples/texfont/texfont.html">opengl.org</a></p>
+<h3>Font loading routines</h3>
+
+<dl>
+  <dt>TexFont *txfLoadFont(TxfReadFunc read, void *file)</dt>
+  <dd>Loads a font using the provided read function and extra
+  pointer (frequently, fread and fopen'd FILE *)</dd>
+</dl>
+
+<dl>
+  <dt>void txfUnloadFont(TexFont * txf)</dt>
+  <dd>Unloads a font loaded with txfLoadFont</dd>
+</dl>
+
+<dl>
+  <dt>TexFont *txfLoadStaticFont(int size)</dt>
+  <dd>Loads a static font of the given size. Static fonts do not
+  need to be unloaded.</dd>
+</dl>
+<h3>Font texture routines</h3>
+<p><i>Note that these routines are not typically called by user
+programs</i></p>
+
+<dl>
+  <dt>hwObject txfEstablishTexture(hwDisplay disp, TexFont * txf)</dt>
+  <dd>Creates a hwTexture object from the loaded TexFont</dd>
+</dl>
+
+<dl>
+  <dt>void txfBindFontTexture(hwDisplay disp, TexFont * txf)</dt>
+  <dd>Makes the texture in the given TexFont current</dd>
+</dl>
+<h3>Font glyph rendering state routines</h3>
+
+<dl>
+  <dt>int txfBeginFontRendering(hwDisplay disp, TexFont *txf, hwInt32
+  mode)</dt>
+  <dd>Begins font rendering. Mode is one of TXF_COORD_MODE_NDC or
+  TXF_COORD_MODE_WIN. In TXF_COORD_MODE_NDC, character positions and
+  sizes range from -1 to 1 in X and Y. In TXF_COORD_MODE_WIN,
+  character positions and sizes range from 0 to the window size in X
+  and Y.</dd>
+</dl>
+
+<dl>
+  <dt>void txfSetPosition(hwFloat xPos, hwFloat yPos)</dt>
+  <dd>Sets the current &quot;cursor&quot; position for font glyph
+  rendering, using the current font coordinate mode</dd>
+</dl>
+
+<dl>
+  <dt>void txfSetScale(hwFloat pixSize)</dt>
+  <dd>Sets the current glyph size for subsequent font glyph
+  rendering, using the current font coordinate mode</dd>
+</dl>
+
+<dl>
+  <dt>void txfSetColor(hwFloat color[3])</dt>
+  <dd>Sets the current color for subsequent font glyph rendering</dd>
+</dl>
+
+<dl>
+  <dt>void txfEndFontRendering(hwDisplay disp)</dt>
+  <dd>Terminates a series of font rendering calls</dd>
+</dl>
+<h3>Font glyph rendering calls</h3>
+
+<dl>
+  <dt>void txfGetStringMetrics(TexFont * txf, char *string, int len,
+  int *width, int *max_ascent, int *max_descent)</dt>
+  <dd>Given a string and input length, returns the overall width of
+  the string, and the maximum ascent and descent of the glyphs
+  relative to the baseline.</dd>
+</dl>
+
+<dl>
+  <dt>void txfRenderGlyph(hwDisplay disp, TexFont * txf, int c)</dt>
+  <dd>Renders a single glpyh to the given hwDisplay</dd>
+</dl>
+
+<dl>
+  <dt>void txfRenderString(hwDisplay disp, TexFont * txf, char
+  *string, int len)</dt>
+  <dd>Renders a simple string as a series of glyphs to the given
+  hwDisplay</dd>
+</dl>
+
+<dl>
+  <dt>void txfRenderFancyString(hwDisplay disp, TexFont * txf, char
+  *string, int len)</dt>
+  <dd>Interprets escape codes in the string to modify the color of
+  the glyphs:</dd>
+</dl>
+<table>
+<tr><th>Escape sequence</th>
+<th>Colors</th>
+</tr>
+<tr><td>\033 M r g b</td>
+<td>Sets the current glyph color to the given uniform RGB color</td>
+</tr>
+<tr><td>\033 T r0 g0 b0 r1 g1 b1</td>
+<td>Top-bottom color gradient. r0,g0,b0 is the top color and
+  r1,g1,b1 is the bottom color.</td>
+</tr>
+<tr><td>\033 L r0 g0 b0 r1 g1 b1</td>
+<td>Left-right color gradient. r0,g0,b0 is the left color and
+  r1,g1,b1 is the right color.</td>
+</tr>
+<tr><td>\033 F r0 g0 b0 r1 g1 b1 r2 g2 b2 r3 g3 b3</td>
+<td>Four corner color gradient. The four colors are the top left,
+  top right, bottom left, and bottom right colors, respectively.</td>
+</tr>
+</table>
+<h2>NOTES</h2>
+<p>The original implementation of TexFont.c had the following
+copyright notices:</p>
+<pre>
+    /* Copyright (c) Mark J. Kilgard, 1997. */
+
+    /* This program is freely distributable without licensing fees  and is
+       provided without guarantee or warrantee expressed or  implied. This
+       program is -not- in the public domain. */
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwFont.htm">hwFont</a></p>
+</body>
+</html>

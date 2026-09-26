@@ -1,0 +1,50 @@
+File commands:
+	Open <filename>
+	Revert
+	New
+	Save
+	SaveAs <filename>
+	Quit
+
+Edit commands:
+	Duplicate
+	Delete
+	Undo
+	Redo
+
+Selection commands:
+	SelectAll
+	UnselectAll
+	SelectXY <x> <y>
+	SelectMouse
+	SelectObject <objname|objnum>
+	UnselectObject <objname|objnum>
+	ListSelected
+	ListObjects
+
+Object manipulation:
+	PushSubset <object> <propname>
+	PopSubset
+	GetProp <propname>
+	SetProp <propname> <value>
+	ListProps <objname>
+	NewObject <class>
+	NewNamedObject <class> <objname>
+	Translate <x> <y> <z>
+	Rotate <cx> <cy> <cz> <rx> <ry> <rz>
+	Scale <cx> <cy> <cz> <sx> <sy> <sz>
+
+View manipulation:
+	ResetView
+	CamPos <x> <y> <z>
+	CamField <degrees>
+	CamDir <x> <y> <z>
+	CamUp <x> <y> <z>
+	CamPlanes <near> <far>
+	MouseSpin
+	MousePan
+	MouseZoom
+	ShowBounds
+	Wireframe {true|false}
+
+* = requires HoverWare mods to work

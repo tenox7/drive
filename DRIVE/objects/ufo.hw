@@ -1,0 +1,63 @@
+hwGroup {
+    Children = {
+        hwCone  {
+            GraphN = 2
+            GraphM = 4
+            Radius = {0.25,0}
+            Height = 0.5
+            HasNormals = True
+            Shininess = 0.125
+            Rotate = {45,0,315}
+            Pos = {-0.3,0.3,0.5}
+	    Uncolored = True
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 4
+            Radius = {0.25,0}
+            Height = 0.5
+            HasNormals = True
+            Shininess = 0.125
+            Rotate = {45,0,225}
+            Pos = {-0.3,-0.3,0.5}
+	    Uncolored = True
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 4
+            Radius = {0.25,0}
+            Height = 0.5
+            HasNormals = True
+            Shininess = 0.125
+            Rotate = {45,0,135}
+            Pos = {0.3,-0.3,0.5}
+	    Uncolored = True
+        },
+        hwCone  {
+            GraphN = 2
+            GraphM = 4
+            Radius = {0.25,0}
+            Height = 0.5
+            HasNormals = True
+            Shininess = 0.125
+            Rotate = {45,0,45}
+            Pos = {0.3,0.3,0.5}
+	    Uncolored = True
+        },
+        hwSurfRev  {
+            GraphN = 17
+            Data = {0.001,0,0.5,0,1,0.25,0.0001,1}
+            HasNormals = True
+            Shininess = 0.0625
+	    Uncolored = True
+        },
+	hwDisc {
+	    GraphN = 5
+	    Radius = 0.4
+	    Color = {1,1,1}
+	    Bright = True
+	    Pos = {0,0,-0.05}
+	}
+    }
+    Rotate = {90,0,0}
+}

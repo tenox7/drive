@@ -1,0 +1,31 @@
+OBJS=circle.obj \
+	extrusion.obj \
+	mesh2strip.obj \
+	mesh_cone.obj \
+	mesh_surfrev.obj \
+	spl_cone.obj \
+	spl_extr.obj \
+	spl_sphere.obj \
+	spl_surfrev.obj \
+	stacknots.obj \
+	stackvf.obj \
+	trim_pln.obj \
+	utils.obj \
+	whatstring.obj
+
+LIBS=..\libprims.lib
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG) -DWINDOWS -DWIN32 -I../libnum -I../include
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+../libprims.lib:     $(OBJS)
+	$(LIB32) @<<
+    $(OBJS) -out:../libprims.lib
+<<

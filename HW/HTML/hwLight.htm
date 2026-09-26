@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwLight - create a light source for illuminating a scene</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwLight - create a light source for illuminating a scene</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>Color</td>
+<td>3F</td>
+<td>Color of the light source</td>
+</tr>
+<tr><td>Positional</td>
+<td>1I</td>
+<td>True if it has a finite distance, false if is placed an
+  infinite distance from the scene</td>
+</tr>
+<tr><td>Pos</td>
+<td>3F</td>
+<td>Position, if Positional is true</td>
+</tr>
+<tr><td>Dir</td>
+<td>3F</td>
+<td>Direction the light is pointing</td>
+</tr>
+<tr><td>Cutoff</td>
+<td>1F</td>
+<td>Cutoff angle of a positional light, in degrees</td>
+</tr>
+<tr><td>LightExp</td>
+<td>1F</td>
+<td>Rate of &quot;fade&quot; as objects get away from the
+  centerline of the light</td>
+</tr>
+<tr><td>Atten</td>
+<td>1F</td>
+<td>Rate of &quot;fade&quot; as objects get farther away from the
+  light</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>Color</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>Positional</td>
+<td>False</td>
+</tr>
+<tr><td>Pos</td>
+<td>{0,0,-1}</td>
+</tr>
+<tr><td>Dir</td>
+<td>{0,0,1}</td>
+</tr>
+<tr><td>Cutoff</td>
+<td>0.0 <i>radiate in all directions</i></td>
+</tr>
+<tr><td>LightExp</td>
+<td>0.0 <i>don't fade</i></td>
+</tr>
+<tr><td>Atten</td>
+<td>0.0 <i>don't attenuate</i></td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwLight class creates a light source which will illuminate
+objects in the scene. Either directional or positional light sources
+may be created; a directional light source lights as if it were
+located an infinite distance away from the view and objects; a
+positional light source has a specified position in the scene.</p>
+<p>For directional light sources, the only relevant parameters are
+the Color and the Dir (the direction the light beams are shining).
+All other parameters are ignored. Directional light sources are
+probably the easiest to use. The Dir parameter will be modified by
+the model matrix in place when the light is drawn.</p>
+<p>For positional light sources, all parameters are relevant. The Pos
+is the position of the light, in *model* coordinates. That is, the
+Pos will be effected by whatever matrix is pushed on the stack. The
+Dir is only useful if the Cutoff angle is non-zero; it is the
+direction that a cone light is pointing. It is modified by the model
+matrix in place when the light is drawn. The Cutoff angle is half of
+the width, in degrees, of a conical light source. If this angle is
+zero, the light source radiates in all directions. The LightExp is a
+number between 0.0 and 1.0 which specifies the spotlight
+&quot;fade&quot; as the direction from the light to the object gets
+farther from the axis. The Atten is a number specifying the rate at
+which the light attenuates as objects get farther from it. If this is
+0.0, then the light does not attenuate. Otherwise, it must be greater
+than or equal to 1.0.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a directional red light */
+    hwObject
+        light;
+
+    light = hwLight-&gt;create( hwLight );
+    HW_MODIFY_3F( light, hwStrColor, 1, 0, 0 );
+    HW_MODIFY_3F( light, hwStrDir, 1, 1, 1 );
+    light-&gt;draw( light );
+    light-&gt;destroy( light );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A directional red light
+    hwLight light {
+        Color = {1,0,0}
+        Dir = {1,1,1}
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwMatrix.htm">hwMatrix</a>, <a
+href="hwSpinner.htm">hwSpinner</a></p>
+</body>
+</html>

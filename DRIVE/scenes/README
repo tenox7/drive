@@ -1,0 +1,686 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+*********************** SCENE FILE SYNTAX ***************************
+Each scene begins with a "Scene Location" field.  Several scenes can be
+in the same scene file -- each time a "Scene Location" field is read, it
+will mark the beginning of a new scene.
+
+Each scene is a 2000 foot by 2000 foot square, residing in the X,Z plane. 
+Objects in each scene are positioned relative to the origin (0,0,0), which
+is in the middle of the square.  Thus, objects in the scene can have an
+X coordinate from -1000 to 1000, and can have a Z coordinate from -1000 to
+1000.  The ground is assumed to be at Y = 0.  If a hill is placed first
+in the scene, many objects will automatically be placed on top of the hill's
+surface if they would normally be buried.
+
+The entire scene's contents can be specified either by specifying the
+scene's type (e.g.  "Flat X Highway") or by explicitly specifying the
+objects in the scene.
+
+Each object begins with a line reading "Object: <identifier>",
+where <identifier> is an object name or number.  Objects can be modified
+by using a variety of fields.
+
+    Scene Location: <x> <y>
+
+    Scene Type: <string>                   [see below]
+
+    Object:     <string>
+    Construct:  <filename>                 [see below]
+    Type:       <string>
+    Label:      <string>                   [text on signs]
+    Matrix:     <16 floats>                [rotation, translation]
+    Xrot:       <degrees>                  [rotation]
+    Yrot:       <degrees>                  [rotation]
+    Zrot:       <degrees>                  [rotation]
+    Position:   <x> <y> <z>                [translation]
+    X:          <x>                        [translation]
+    Y:          <y>                        [translation]
+    Z:          <z>                        [translation]
+    Size:       <length> <width> <height>
+    Length:     <length>
+    Width:      <width>
+    Height:     <height>
+    Radius:     <radius>
+    Angle:      <degrees>
+    Count:      <integer>                  [number within an area] 
+    Spacing:    <feet>
+    Destination:<x> <y> <z>                [for wormholes]
+    Color:      <r> <g> <b>                [0.0-1.0 each]
+    Animation Bits: <16-bit mask>          [see below]
+    Dimension:  <integer>                  [for splineroads]
+    Data:       <floats...>                [for splineroads, checkpoints, etc]
+
+Blank lines and lines beginning with a '#' are ignored.  All dimensions
+are in feet or degrees.
+
+The rotation, translation, and animation bits attributes apply to almost
+all objects, other attributes are recognized by only certain objects, as
+listed below.  The center of the object is usually placed at the
+position specified, though there are exceptions.
+
+
+***************************** SCENE TYPES ***********************************
+The following Scene Types are currently defined:
+  flat no roads
+  flat X road
+     A single road runs along the X axis of the screen.
+  flat Z road
+     A single road runs along the Z axis of the screen.
+  flat left T
+     A road runs along the entire Z axis, plus a road runs from the center
+     of the scene to the left (Xminimum) side.
+  flat right T
+     A road runs along the entire Z axis, plus a road runs from the center
+     of the scene to the right (Xmaximum) side.
+  flat down T
+     A road runs along the entire X axis, plus a road runs from the center
+     of the scene to the bottom (Zminimum) side.
+  flat up T
+     A road runs along the entire X axis, plus a road runs from the center
+     of the scene to the top (Zmaximum) side.
+  flat crossroads
+     A road runs along the entire X and Z axes, with an intersection
+     in the center.
+  flat overpass
+     A road runs along the entire X and Z axes, with an overpass
+     in the center.
+  flat turn right down
+     A road runs from the right (Xmaximum) side and is joined to a road
+     that runs from the bottom (Zminimum) side, with a curve joining them
+     near the center of the scene.
+  flat turn right up
+     A road runs from the right (Xmaximum) side and is joined to a road
+     that runs from the top (Zmaximum) side, with a curve joining them
+     near the center of the scene.
+  flat turn left down
+     A road runs from the left (Xminimum) side and is joined to a road
+     that runs from the bottom (Zminimum) side, with a curve joining them
+     near the center of the scene.
+  flat turn left up
+     A road runs from the left (Xminimum) side and is joined to a road
+     that runs from the top (Zmaximum) side, with a curve joining them
+     near the center of the scene.
+  flat x highway
+     Like "flat X road", but using a multi-lane road.
+  flat z highway
+     Like "flat Z road", but using a multi-lane road.
+  flat x highway overpass
+     A highway along the X axis with an overpass over a normal-width road in
+     the Z direction.
+  flat z highway overpass
+     A highway along the Z axis with an overpass over a normal-width road in
+     the X direction.
+  village
+     A few structures and assorted items.  Roads the same as "flat crossroads".
+  town
+     More structures and assorted items.  Roads the same as "flat crossroads".
+  city
+     Several large structures and assorted items.
+     Roads the same as "flat crossroads".
+  hill no roads
+     A random hilly scene with no roads.
+  hill X road
+     A random hilly scene with a road over it along the X axis.
+  hill Z road
+     A random hilly scene with a road over it along the Z axis.
+  hill crossroads
+     A random hilly scene with a road over it along both axes.
+
+
+
+**************************** ANIMATION BITS **********************************
+The sixteen animation bits allow simple animations of up to four seconds
+in length.  A counter is incremented every quarter second and "current
+animation bit" is shifted one position to the left, wrapping around to
+the first position after they reach the sixteenth.  Any time this
+current animation bit matches a bit in the object's specified animation
+bits, the object is drawn.  When there isn't a match, the object is not
+drawn.  By default, all objects begin with all their bits "on".
+
+For instance, to create a light that blinks on and off every half second,
+you could specify a dark object with animation bits of 0x3333 and a bright
+object with animation bits 0xCCCC.  The first quarter second, the "current
+animation bit" will be 0x0001, so the dark object will be visible and the
+bright object invisible.  The second quarter second, it will be 0x0002,
+and the same will be visible.  In the third, it will be 0x0004, and the 
+dark object will be invisible and the bright object visible.
+
+Animation bits also affect physics -- an object can only be collided with
+when it is visible.
+
+
+**************************** CONSTRUCTS **********************************
+Constructs are "meta-objects" composed of a set of simple objects.
+Construct files are stored in the "constructs" directory instead of the
+"scenes" directory.  Construct files have the same syntax as scene
+files except that "Scene Location" and "Scene Type" cannot be used
+in construct files.
+
+When a Construct is found in a scene file, the contents of the
+corresponding construct file are inserted into the scene.  Construct
+files may contain other constructs.  Attributes can be applied to
+constructs, overriding the normal defaults, and those attributes will be
+applied to all objects in the construct, unless the construct explicitly
+sets them.
+
+
+**************************** SIMPLE OBJECTS ********************************
+UNDERLYING SCENE OBJECTS
+========================
+General notes: One (but not both) of these should be in most scenes.
+
+ground
+    Local origin:  N/A, fills the entire scene
+    Attributes recognized:  none
+    Notes:  If included, this should always be the *last* object in a
+      scene.  If it is not last, undesirable graphics effects may
+      occur.
+
+hill
+    Local origin:  N/A, fills the entire scene
+    Attributes recognized:  none
+    Notes:  This is general hilly terrain (a "mound" can be used for a
+      single hill).  If included, this should always be the *first*
+      object in a scene.  If it is not first, other objects in the scene
+      may not be placed on the surface of the hill.
+
+
+ROADS
+=====
+General Notes:  Most road-type objects are expected to be placed on top
+  of something like "ground" or "hill" unless you give them height, in
+  which case they can be placed anywhere, even floating in mid-air.  The
+  number of lanes will be determined by the road's width; very narrow
+  roads are not even marked with centerlines or lane markers.
+
+road
+    Local origin:  center X, Zminimum
+    Attributes recognized:  length, width, height, color
+    Notes: By default, oriented from Zmin to (Zmin+Length), but
+      they can be rotated into any orientation.
+curve
+    Local origin:  Center of circle.
+    Attributes recognized:  width, angle, radius, height, color
+    Notes:  "radius" is OUTSIDE radius of curve; and, of course, inside
+      radius is (radius)-(width).  The curve is essentially an arc along
+      the diameter of a circle, going from down the local X axis (zero
+      degrees) to the angle specified in a clockwise direction.  Of
+      course, by specifying "Yrot", they can be turned to any
+      orientation.
+ramp
+    Local origin: Center of the ramp at minimum Z, oriented along the
+      Z axis from Zmin to Zmin+Length.
+    Attributes recognized:  length, width (of road), height
+twistramp
+    Same as a ramp, but twists near the top to give a spin to the vehicle.
+bank
+    Local origin:
+    Attributes recognized:  width, angle, radius, height, color
+    Notes:  "radius" is OUTSIDE radius of curve; and, of course, inside
+      radius is (radius)-(width).  The curve is essentially an arc along
+      the diameter of a circle, going from down the local X axis (zero
+      degrees) to the angle specified in a clockwise direction.  Of
+      course, by specifying "Yrot", they can be turned to any
+      orientation.
+      Height is the height of the banked curve along its outside radius.
+bridge
+    Local origin: bottom center of the entire bridge.
+    Attributes recognized:  length (of the bridge), width (of road and bridge),
+      height
+    Notes:  By default oriented along the Z axis, from Zcenter-Length/2
+      to Zcenter+Length/2.  The width of the gap under the bridge will
+      be the same as the width of the bridge.
+parking lot
+    Local origin: Center X, Center Z
+    Attributes recognized:  length, width
+    Notes:   small parking lots will not have stripes.
+railroad
+    Local origin:  center X, Z minimum, like a road.
+    Attributes recognized:  length, width
+spiral
+    Notes: oriented from Zmin to Zmax (if height positive) or Zmax
+	to Zmin (if height negative).  A road segment which spirals
+	around the Z axis
+    Local origin: Center Z, Z minimum/maximum
+    Attributes recognized:  width (of road), height (of spiral), radius
+	(outside of spiral), angle (amount of twist)
+
+spline road
+
+Spline roads are a flexible way to create sections of curved,
+canted, or variable width road.  They are extremely powerful, but
+also relatively expensive (in terms of physics and polygons) for
+long sections of road.
+
+The best uses of spline roads are for those tricky sections that
+cannot be created with the "canned" road segments.  Examples of
+these are:
+
+    - A place where the road narrows or widens.  Spline roads
+      will allow smooth changes in width.
+
+    - A transition from flat to hill or hill to flat.  Spline
+      roads can create a smooth junction between flat road
+      segments.
+
+    - Roads that follow contours.
+
+    - Sections that require the road normal to change along 
+      the length of the road.  An example of this would be a
+      segment that begins tilted to the left and ends tilted
+      to the right.
+
+There are several things to remember when using spline roads.
+First, since they are relatively expensive, both in rendering
+time and display time, they should be used sparingly.  In other
+words, they should generally not be used to create segments of
+road that can be created with "road", "curve", "bank", etc.
+Secondly, short spline segments are more efficient since the
+display code can cull these when possible to allow better display
+performance.  Finally, it is very easy to create road segments
+that are completely impossible to drive.  Gentle slopes, curves,
+and transitions are required to make the segment navigable.
+
+The basic algorithm used for spline roads is that of a Uniform
+Cubic B-Spline using a knot vector with open end conditions.
+This implies that the road will be guaranteed to begin at the
+first control point and end at the last.  However, it is likely
+that the road will not pass through the intermediate control
+points.  These intermediate control points will determine the 
+shape of the spline road.
+
+In addition to control points, spline roads also allow a width
+and/or a normal to be specified at each control point.  Again,
+these will be followed exactly for the first and last control
+points, but intermediate width and normals will only influence
+the width and normal for that segment of the road.
+
+The format for specifying a spline road is:
+
+Object: spline road
+Width: <optional>
+Height: <optional>
+Data: <COUNT> <DIMENSION>
+      <X> <Y> <Z>
+          or
+      <X> <Y> <Z> <WIDTH>
+          or
+      <X> <Y> <Z> <NX> <NY> <NZ>
+          or
+      <X> <Y> <Z> <NX> <NY> <NZ> <WIDTH>
+      ...
+
+If the width value is specified with the global "Width:", then 
+this width applies to the entire spline road.  Otherwise, width
+values can be specified with each control point.
+
+The "Height:" specification controls the thickness of the road
+as it does for other road segment types.
+
+In the "Data:" field, the <COUNT> specifies the number of control
+points.  The <DIMENSION> specifies what data is included with each
+control point.  The possible values are 3, 4, 6, and 7.  A
+dimension of 3 implies only x,y,z data.  A dimension of 4 includes
+x,y,z and width.  A dimension of 6 includes x,y,z, and normal.
+And a dimension of 7 implies x,y,z, normal, and width.
+
+
+PRIMITIVE OBJECTS
+=================
+pillar (or cylinder)
+    Local origin:  center bottom
+    Attributes recognized:  height, radius, color
+cone
+    Local origin: center bottom
+    Attributes recognized: width (bottom radius), radius (top radius),
+      height, color
+sphere
+    Local origin: center
+    Attributes recognized: radius, color
+wall
+    Local origin:  center X, Z minimum.
+    Attributes recognized:  length, width, height, color
+    Notes: Runs from the Z specified to (Z+Length), like a "road".
+curvewall
+    Local origin:  Center of circle.
+    Attributes recognized:  width, angle, radius, height, color
+    Notes:  "radius" is the OUTSIDE radius.  Specified like a "curve"
+flat
+    Local origin:  center
+    Attributes recognized:  length, width, color
+    Notes:  This is a generic flat rectangular object that can be used
+      for a wide variety of things.  By default, it lies flat on the
+      X-Z plane, but you can rotate it as necessary.
+oval
+    Local origin:  center
+    Attributes recognized:  length, width, color
+    Notes:  This is a generic flat elliptical or circular object that
+      can be used for a wide variety of things.  By default, it lies
+      flat on the X-Z plane, but you can rotate it as necessary.
+light
+    Local origin:  center
+    Attributes recognized:  length, width, color
+    Notes: like "flat", but self-lit.  This is useful for making flashing
+      lights, ceiling lights, etc.
+oval_light
+    Local origin:  center
+    Attributes recognized:  length, width, color
+    Notes: like "oval", but self-lit.  This too is useful for making flashing
+      lights, ceiling lights, etc.
+ice
+    Local origin:  center
+    Attributes recognized:  length, width
+    Notes:  Like a white "flat" object with low friction.
+shadow
+    Local origin:  center
+    Attributes recognized:  length, width
+    Notes:  Like a "flat" object, but it is semi-transparent and can be
+      layed over other objects.
+oval_shadow
+    Local origin:  center
+    Attributes recognized:  length, width
+    Notes:  Like a "oval" object, but it is semi-transparent and can be
+      layed over other objects.
+bump
+    Local origin:  center
+    Attributes recognized:  length, width, height
+    Notes: A yellow speed bump.
+mound
+    Local origin: center bottom
+    Attributes recognized:  length, width, height, color
+    Notes: A roundish pile of material or a hill.  If color is not
+      specified, it will look like terrain.
+rubble
+    Local origin: center bottom
+    Attributes recognized:  length, width, height, color
+    Notes:  a simple pile of rubble, dark by default.  Combines well
+       with "flames".
+polyline:
+    Local origin:  N/A -- specified directly in "Data"
+    Attributes required: Count, Dimension, Data
+    Attributes recognized: Color
+    Notes:  Polylines do not do cause collisions -- they are visual only.
+      Count is the number of points in the polyline.  Dimension is
+      either three or four -- if three, the data is a set of connected
+      3D points; if four, the fourth datum of each point should be 0.0
+      or 1.0 -- 0.0 means "move without drawing a line"; 1.0 means "move
+      and draw a line".  "Data" should contain first a repeat of the
+      count and dimension, then sets of 3D or 4D points.
+      Example:
+	Count: 6
+	Dimension: 4
+	Data: 6 4
+	  1.0 1.0 1.0 0.0
+	  1.0 2.0 1.0 1.0
+	  2.0 1.0 1.0 0.0
+	  2.0 2.0 1.0 1.0
+	  3.0 1.0 1.0 0.0
+	  3.0 2.0 1.0 1.0
+
+
+PLANTS
+======
+deciduous
+    Notes:  a summer/autumn tree with leaves
+    Local origin:  center bottom
+    Attributes recognized:  height (of total tree), radius (of trunk),
+      width (of the leafy part), length (a second width used with
+      cone-type trees only), type (see below), color
+    Types:  round, onion, oval, pear, top, cylinder, cone
+    Notes:  By changing the color and size, these can be used to
+      represent a wide variety of somewhat-random objects, from
+      smokestack smoke to hot-air balloons.
+tree
+    Notes:  a winter/spring tree with branches
+    Local origin:  center bottom
+    Attributes recognized:  height
+conifer
+    Local origin:  center bottom
+    Attributes recognized:  height, color, radius (of trunk)
+forest
+    Local origin:  center bottom
+    Attributes recognized:  length, width, height, count
+weed patch
+    Local origin:  center bottom
+    Attributes recognized:  length, width, height, count
+grass
+    Local origin:  center bottom
+    Attributes recognized:  length, width, height, count radius
+lawn
+    Local origin:  center
+    Attributes recognized:  length, width
+bush
+    Local origin:  center bottom
+    Attributes recognized:  height
+
+
+MISC. OBJECTS
+=============
+skyscraper
+    Local origin: lower left corner
+    Attributes recognized:  length, width, height
+barn
+    Local origin: center bottom
+    Attributes recognized:  none -- one size is all you get
+silo
+    Local origin:  center bottom
+    Attributes recognized:  height, radius
+lamp
+    Local origin:  center bottom
+    Attributes recognized:  length, height, radius, type
+    Types:  default, overhanging
+telephone line
+    Notes: oriented from Zmin to Zmax
+    Local origin:  center X, Z minimum
+    Attributes recognized:  length (of the set of poles), height (of poles),
+      radius (of poles), spacing (between poles)
+house
+    Local origin:  center
+    Attributes recognized:  type
+    Types:  garrison, antebellum farm, gothic cottage, dutch colonial
+    Notes:  colors are somewhat randomized automatically
+mailbox
+    Local origin:  center bottom
+    Attributes recognized:  height
+lower tube
+    Local origin: center bottom
+    Attributes recognized:  length, radius
+    Notes:  radius defines the Width of the lower tube. (Width = 2*radius)
+sidewalk
+    Local origin:  center X, Z minimum
+    Attributes recognized:  length, width
+    Notes: oriented from Zmin to Zmax, like a wall
+pond
+    Local origin:
+    Attributes recognized:  length, width, height (depth)
+stoplight
+    Local origin:  center, bottom of support poles
+    Attributes recognized:  length & width (of intersection), height
+    Notes:  one of the animated objects, it changes over time.
+fence
+    Local origin:  X center, Y bottom, Z mininum
+    Attributes recognized: type, length, color, sometimes height
+    Types recognized:  split rail, barbed wire, chain link, guardrail
+    Notes: oriented from Zmin to Zmax, like a road.  Don't overdo
+      the more complicated types or you'll have a lot to draw.
+guardrail
+    Same as "Object: Fence; Type: guardrail".
+curveguardrail
+    Local origin:  Center of circle.
+    Notes: The curve is essentially an arc along the diameter of a 
+	circle.
+    Attributes recognized:  angle, radius
+ufo
+    Local origin:  center
+    Attributes recognized:
+land mine
+    Local origin: center bottom
+    Attributes recognized: length width height spacing
+    Notes:  Spacing is the number of seconds the mine takes to 
+      re-arm itself after exploding.  Also, a land mine is invisible
+      -- if you want it to be visible you need to put a short, fat
+      pillar over top of it or something.  Land mines pre-placed in
+      scenes will explode even if the server is in "No Explosions"
+      mode.
+flames
+    Local origin: center bottom
+    Attributes recognized: length width height (of flaming area),
+       count (number of individual flames)
+    Notes:  A visual effect only, these cause no collisions.  If
+      you want to punish someone for driving through them, combine
+      them with a land mine.
+wormhole
+    Local origin: center bottom
+    Attributes recognized:  destination angle type
+    Notes:  When an wormhole is intersected, several things can happen.
+      The "Type" string is parsed looking for the following:
+	<operation> [; <operation>]...
+      where <operation> is:
+	<operand> <operator> <value>[,<value>,<value>]
+      and <operand> is "position", "position in scene", "angle",
+        "angular velocity", or "linear velocity";
+      <operator> is "=", "+=", "-=", "*=", or "/=";
+      <value> is a floating point number.
+      If only one value is specified, it is used in all dimensions,
+	so "linear velocity += 10.0" is the same as 
+	"linear velocity += 10.0, 10.0, 10.0".
+      Any value not specified will not be altered.
+      Units are degrees for angle (north is zero), degrees per second
+	for angular velocity, feet for position, MPH for linear velocity.
+      If the "Destination" attribute is used, it is the same as
+	specifying "position = <x>,<y>,<z>"; if Angle is specified,
+	it is the same as "angle = <x>".
+      If "position =" is used, it is in absolute coordinates;
+	i.e. if the scene is positioned at -6000,8000 the coordinates
+	need to include these offsets.  If "position in scene =" is used,
+	the coordinates are relative to the current scene, and the
+	scene can more easily be relocated.
+      Examples of different "Type" strings:
+	"position = 10.0, 10.0, 10.0" moves the vehicle to 10,10,10
+	   (world coordinates) and leaves everything else unchanged.
+	"position in scene = 10.0, 10.0, 10.0" moves the vehicle to 10,10,10
+	   (relative to the scene's position) and leaves everything else
+	   unchanged.
+	"linear velocity *= 2.0; angle = 0.0" doubles the vehicle's
+ 	   current speed and points it north.
+	"position = 100.0, 200.0, 300.0; linear_velocity *= 10.0;
+	   angular velocity += 0.0, 1.0, 0.0", the position of the
+	   vehicle will be changed to 100,200,300; the linear velocity
+	   of the vehicle will be multipled by ten, and the angular
+	   velocity will be increased by one radian per second about the
+	   Y axis.
+
+
+
+
+
+CHECKPOINTS
+===========
+start
+    Local origin: center bottom
+    Attributes recognized:  length, width, height, radius (poles), Data 
+    (see checkpoint for description of how Data works)
+    'height' is the overall height of the sign.  'width is the width of
+    the banner portion of the sign, and 'length' is acutally the height
+    of the banner portion of the sign.
+finish
+    Local origin: center bottom
+    Attributes recognized:  length, width, height, radius (poles)
+    See 'start' object for description of attributes.
+checkpoint
+    Local origin: center bottom
+    Attributes recognized:  length, width, height, radius (poles), Data
+    See 'start' object for description of attributes.
+
+    Data can be used to specify # of turbos and ammo for 'reloading'
+    a vehicle if 'Checkpoint Reload' mode is enabled. All Data: fields
+    should be of the following form:
+
+Data: 1 3
+<#turbos> <#shells> <reset>
+
+eg:
+
+Data: 1 3
+5 5 1
+
+If <reset> is 0, then the turbos and shells are added to what the vehicle
+already has.  If <reset> is 1, then the vehicle is given exactly <#turbos>
+and <#shells>.  The above example will remove whatever turbos and shells a
+vehicle has (<reset> is 1) and give the vehicle 5 turbo boosts and 5 shells.
+
+
+
+SIGNS
+=====
+stop sign
+    Local origin:  center bottom
+    Attributes recognized:  height, radius
+    height is the height of the pole, radius is the radius of the 
+    octogonal part of the sign (as if it were a circle).
+speed limit sign
+    Local origin:  center bottom
+    Attributes recognized:  width, height, label
+    Width is the width of the white part of the sign. Height is the
+    overall height, and label is the text used for the speed limit value.
+left t sign
+    Local origin:  center bottom
+    Attributes recognized:  width, height
+    'height' is the height of the pole, width controls the width (and
+    height) of the yellow part of the sign.
+right t sign
+    Local origin:  center bottom
+    Attributes recognized:  width, height  -- similar to 'left t sign'
+top t sign
+    Local origin:  center bottom
+    Attributes recognized:  width, height  -- similar to 'left t sign'
+left curve sign
+    Local origin:  center bottom
+    Attributes recognized:  width, height  -- similar to 'left t sign'
+right curve sign
+    Local origin:  center bottom
+    Attributes recognized:  width, height  -- similar to 'left t sign'
+generic sign
+    Local origin:  center bottom
+    Attributes recognized:  length, width, height, radius, color
+    'height' is the height of the pole, 'width' is the width of ths sign.
+    'length' is actually the height of the sign excluding the pole. 
+    'radius' is the radius of the pole.  'color' is the background color
+    of the sign.  (Text color is chosen based on background color).
+
+
+VEHICLES
+========
+    Notes:  Vehicles are complex objects and too many of them in a scene
+	can slow down both the client and the server.
+countach
+    Local origin:  center
+    Attributes recognized:  color
+sedan
+    Local origin:  center
+    Attributes recognized:  color
+minivan
+    Local origin:  center
+    Attributes recognized:  color
+t34
+    Local origin:  center
+    Attributes recognized:  color
+motorcycle
+    Local origin:  center
+    Attributes recognized:  color

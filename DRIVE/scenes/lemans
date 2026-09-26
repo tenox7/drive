@@ -1,0 +1,809 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+### LEMANS RACE COURSE ###
+
+Scene Location: 0 0
+
+### Course description
+Racecourse: Lemans
+Start SceneX: 0
+Start SceneZ: -1
+Start Position: -23 1 900
+Start Angle: 0
+Start Positions: 4
+Turbo Mode: 0
+#Turbo Mode: 2
+#Turbo Boosts: 8
+Practice Seconds: 0
+Race Seconds: 120
+
+
+### Objects
+
+Object: road
+Length: 2004
+Width:  60
+Position: 0 0  -1002 
+
+Object: road
+Length: 205
+Width:  60
+Position: -198 0  0 
+Yrot: 90
+
+Object: curve
+Width: 60.0
+Radius: 430
+Position: -400 0 -400
+Angle: 90.0
+Yrot: 90.0
+
+Object: grass
+Radius: 370
+Position: -400 0 -400
+Count: 100
+Height: 2
+
+Object: grass
+Position: 30 0 -1000
+Count: 100
+Length: 970
+Width: 940
+Height: 2
+
+Object: grass
+Position: -1000 0 30
+Count: 100
+Length: 940
+Width: 970
+Height: 2
+
+Object: grass
+Position: 30 0 30
+Count: 100
+Length: 940
+Width: 970
+Height: 2
+
+Object: weed patch
+Position: 30 0 30
+Count: 2
+Length: 10
+Width: 1
+Height: 3
+
+Object: weed patch
+Position: -30 0 30
+Count: 1
+Length: 10
+Width: 1
+Height: 3
+
+Object: road
+Length: 601
+Width:  60
+Position: -800 0  -1000
+
+Object: bridge
+Length: 400
+Width: 60
+Height: 30
+Position: 0 0 0
+Yrot: 90
+
+Object: road
+Length: 803
+Width:  60
+Position: 198 0  0 
+Yrot: -90
+
+Object: left curve sign
+Position: 40 0 980
+Width: 20.0
+Height: 10.0
+Label: 100
+
+Object: wall
+Position: 32 0 -80
+Size: 100.0 4.0 2.0
+
+Object: wall
+Position: -32 0 -80
+Size: 100.0 4.0 2.0
+
+# Checkpoints in scene 0,0
+
+Object: start
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label: Start
+Radius: 0.5
+Position: 0 0 -980
+Type: 1 9
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 1
+Radius: 0.5
+Position: 0 0 800
+Type: 1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 6
+Radius: 0.5
+Position: 800 0 0
+Type: 1 6
+Yrot:90.0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label: CHECKPOINT 7
+Radius: 0.5
+Position: -400 0 0
+Type: 1 7
+Yrot: 90.0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label: CHECKPOINT 8
+Radius: 0.5
+Position: -800 0 -900
+Type: 1 8
+Yrot: 180.0
+
+Object: left curve sign
+Position: -400 0 50
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: 90.0
+
+Object: generic sign
+Label: THIS SPACE\FOR RENT
+Size: 60 70 10
+Position: 300 0 80
+Yrot: 90.0
+Color: 0.0 0.0 0.0
+
+Object: lamp
+Position: 33 0 -800
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 -400
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 400
+Type: overhanging
+Yrot: 180
+
+Object: lamp
+Position: 33 0 800
+Type: overhanging
+Yrot: 180
+
+Object: ground
+
+Scene Location: 0 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 2
+Radius: 0.5
+Position: -990 0 0
+Type: 1 2
+Yrot: 90.0
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 5
+Radius: 0.5
+Position: 400 0 600
+Type: 1 5
+Yrot: -90.0
+
+Object: curve
+Radius: 1030
+Position: -1000 0 -1000
+Angle: 90.0
+Width:  60
+
+#Object: curvewall
+#Radius: 1030
+#Position: -980 0 -980
+#Angle: 90.0
+#Width: 10.0
+#Height: 4.0
+
+#Object: curvewall
+#Radius: 1030
+#Position: -1060 0 -1060
+#Angle: 90.0
+#Width: 10.0
+#Height: 4.0
+
+Object: tree
+Height: 30
+Position: 0 0 -400
+
+Object: tree
+Height: 30
+Position: -180 0 -200
+
+Object: tree
+Height: 30
+Position: -600 0  20
+
+Object: tree
+Height: 30
+Position: -120 0 -800
+
+Object: tree
+Height: 30
+Position: -350 0 -400
+
+Object: tree
+Height: 30
+Position: -700 0  -150
+
+Object: road
+Position: -1000 0 600
+Length: 700
+Width: 60
+Yrot: -90.0
+
+Object: ramp
+Position: -300 0 600
+Width: 60
+Yrot: -90.0
+Height: 20
+Length: 300
+
+Object: ramp
+Position: 330 0 600
+Width: 60
+Yrot: 90.0
+Height: 20
+Length: 300
+
+Object: road
+Position: 300 0 600
+Length: 702
+Width: 60
+Yrot: -90.0
+
+Object: generic sign
+Position: -600 0 500
+Size: 40 100 10
+Label: DAREDEVIL RAMP\SHORTCUT\NEXT RIGHT
+Yrot: -90.0
+Color: 1.0 1.0 0.0
+
+Object: generic sign
+Position: 900 0 500
+Size: 40 100 10
+Label: DAREDEVIL RAMP\MIN SPEED\100 MPH
+Yrot: -90.0
+Color: 1.0 1.0 0.0
+
+Object: generic sign
+Position: 800 0 700
+Size: 40 100 10
+Label: SAFE ROUTE\GO STRAIGHT
+Yrot: -90.0
+Color: 1.0 1.0 0.0
+
+Object: skyscraper
+Position: -500 0 700
+Size: 100 400 40
+Yrot: 90
+
+Object: tree
+Position: -300 0 700
+Height: 80
+
+
+Object: ground
+
+Scene Location: 0 -1
+
+Object: road
+Position: -800 0 599
+Length: 402
+Width: 60.0
+
+Object: road
+Position: 0 0 -1000
+Length: 2001
+Width: 60.0
+
+Object: curve
+Position: -400 0 600
+Radius: 430
+Width: 60.0
+Angle: 180.0
+Yrot: 180.0
+
+
+Object: finish
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label: FINISH LINE
+Radius: 0.5
+Position: -400 0 200
+Type: 1 9
+Yrot: -90.0
+
+Object: left curve sign
+Position:  -850 0 600
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: 180.0
+
+Object: skyscraper
+Size: 400 100 30
+Position: -600 0 00
+
+Object: telephone line
+Length: 2000
+Position: 40 0 -1000
+
+Object: generic sign
+Label: RACE TRACK\STRAIGHT AHEAD
+Size: 10 30 5
+Position: -50 0 -800
+Color: 1.0 1.0 0.0
+
+Object: tree
+Position: -840 0 800
+
+Object: tree
+Position: -840 0 600
+
+Object: tree
+Position: -840 0 400
+
+Object: ground
+Scene Location: 1 0
+
+Object: ramp
+Width: 60
+Height: 80
+Length: 604
+Position: -602 0 400
+
+#Object: road
+#Width: 60
+#Position: -600 0 399
+#Length: 202
+
+Object: curve
+Radius: 430
+Position: -1000 0 400
+Width: 60
+Yrot: -90.0
+Angle:90.0
+
+Object: road
+Position: 400 0 400
+Width: 60.0
+Length: 601
+
+Object: curve
+Position: 0 0 400
+Width: 60
+Radius: 430
+Yrot: -90.0
+Angle: 90.0
+
+Object: road
+Position: 2 0 0
+Width: 60.0
+Length: 980.0
+Yrot: 90.0
+
+Object: right curve sign
+Position: 350 0 400
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: 180
+
+Object: right curve sign
+Position: -650 0 400
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: 180
+
+Object: house
+Type: dutch colonial
+Position: 400 0 160
+Yrot: 180
+
+Object: road
+Position: 370 0 0
+Length: 200
+Width: 20
+
+Object: mailbox
+Position: 380 0 190
+Yrot: 180
+
+Object: tree
+Position: 420 0 180
+Height: 20
+
+Object: tree
+Position: 200 0 -35
+Height: 30
+
+Object: barn
+Position: 370 0 -50
+Yrot: 180
+
+Object: silo
+Position: 300 0 -50
+
+Object: tree
+Position: -200 0 -40
+Height: 50
+
+Object: tree
+Position: -400 0 40
+Height: 50
+
+Object: tree
+Position: -600 0 -40
+Height: 50
+
+
+Object: ground
+
+Scene Location: 1 -1
+Object: ground
+Scene Location: 1 1
+
+Object: curve
+Radius: 430
+Position: -1000 0 200
+Width: 60.0
+Angle: 90.0
+
+Object: road
+Position: -600 0 -501
+Length: 702.0
+Width:  60.0 
+
+Object: ramp
+Position: -600 0  -415
+Width: 60.0
+Height: 80.0
+Length: 400.0
+Yrot: 180.0
+
+Object: road
+Width: 60.0
+Length: 1002
+Position: -1000 0 600 
+Yrot: -90.0
+
+Object: curve
+Radius: 430
+Position: 0 0 200
+Width: 60.0
+Angle: 90.0
+
+Object: road
+Width: 60.0
+Length: 1202
+Position: 400 0 -1000
+
+Object: generic sign
+Position: -950 0 670
+Yrot: -90.0
+Size: 20 80 5
+Label: DareDevil Ramp ->
+Color: 1.0 1.0 0.0
+
+Object: right curve sign
+Position: 0 0 550
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: -90.0
+
+Object: generic sign
+Label: OPEN GL...
+Size: 60 80 10
+Position: 460 0 -600
+Yrot: 180.0
+Color: 0.0 0.0 0.0
+
+Object: generic sign
+Label:IS NEITHER!
+Size: 60 80 10
+Position: 480 0 -950
+Yrot: 180.0
+Color: 0.0 0.0 0.0
+
+Object: house
+Type: antebellum farm
+Position: 480 0 200
+Yrot: -90
+
+Object: road
+Length: 70
+Width: 20
+Position: 430 0 170
+Yrot: -90
+
+Object: tree
+Height: 100
+Position: 480 0 250
+
+Object: mailbox
+Position: 431 0 160
+Yrot: -90
+
+Object: ground
+
+Scene Location: -1 1
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 3
+Radius: 0.5
+Position: 0 0 800
+Type: 1 3
+
+Object: checkpoint
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label:  CHECKPOINT 4
+Radius: 0.5
+Position: -240 0 600
+Type: 1 4
+Yrot: -90
+
+Object: curve
+Radius: 630
+Position: 600 0 600
+Angle: 90.0
+Yrot: 180.0
+Width:  60
+
+Object: road
+Width: 60
+Position: 0 0 600
+Length: 402
+
+Object: road
+Width: 60
+Position: 1000 0 0
+Length: 402
+Yrot: 90
+
+Object: curve
+Radius: 430
+Position: -400 0 1000
+Angle: 90.0
+Width:  60
+Yrot: 180.0
+
+Object: grass
+Radius: 370
+Position: -400 0 1000
+Count: 100
+Height: 2
+
+Object: grass
+Position: -1000 0 -1000
+Length: 1560
+Width: 970
+Count: 150
+Height: 2
+
+Object: grass
+Position: -30 0 -1000
+Length: 970
+Width: 1030
+Count: 100
+Height: 2
+
+Object: weed patch
+Position: 30 0 555
+Count: 1
+Length: 15
+Width: 1
+Height: 3
+
+Object: weed patch
+Position: -30 0 555
+Count: 2
+Length: 15
+Width: 1
+Height: 2
+
+Object: grass
+Position: 120 0 120
+Count: 50
+Length: 150
+Width: 50
+Yrot: 45.0
+Height: 2
+
+Object: road
+Position: -402 0 600
+Length: 210
+Width: 60
+Yrot: -90.0
+
+Object: bridge
+Length: 400
+Width: 60
+Height: 30
+Position: 0 0 600
+Yrot: 90
+
+Object: road
+Position: 198 0 600
+Length: 803
+Width: 60
+Yrot: -90.0
+
+Object: right curve sign
+Position: 700 0 40
+Width: 20.0
+Height: 10.0
+Label: 100
+Yrot: 90.0
+
+Object: left curve sign
+Position: 40 0 950
+Width: 20.0
+Height: 10.0
+Label: 100
+
+Object: house
+Type: dutch colonial
+Position: -400 0 550
+Yrot: 180
+
+Object: road
+Width: 20
+Position: -350 0 530
+Length: 43
+
+Object: mailbox
+Position: -340 0 570
+
+Object: tree
+Position: 200 0 550
+Object: tree
+Position: 200 0 650
+Object: tree
+Position: 400 0 550
+Object: tree
+Position: 400 0 650
+Object: tree
+Position: 600 0 550
+Object: tree
+Position: 600 0 650
+Object: tree
+Position: 800 0 550
+Object: tree
+Position: 800 0 650
+
+Object: generic sign
+Label: BUY VGX\BOAT ANCHORS!
+Size: 50 70 10
+Position: 500 0 -100
+Yrot: 90.0
+Color: 0.0 0.0 0.0
+
+Object: ground
+
+Scene Location: -1 2
+
+Object: curve
+Radius: 430
+Position: -400 0 -1000
+Angle: 180.0
+Width:  60
+
+Object: tree
+Height: 25
+Position: -70 0 -700
+
+Object: tree
+Height: 26
+Position: -200 0 -600
+
+Object: barn
+Position: -600 0 -530
+Yrot: 40
+
+Object: silo
+Position: -660 0 -600
+
+Object: tree
+Height: 30
+Position: -800 0 -750
+
+
+Object: ground
+
+Scene Location: -1 0
+Scene Type:  hill no roads
+
+Scene Location: -2 0
+Scene Type:  hill no roads
+
+Scene Location: -2 1
+Scene Type:  hill no roads
+
+Scene Location: -2 2
+Scene Type:  hill no roads
+
+Scene Location: -2 3
+Scene Type:  hill no roads
+
+Scene Location: -1 3
+Scene Type:  hill no roads
+
+Scene Location: 0 3
+Scene Type:  hill no roads
+
+Scene Location: 0 2
+Scene Type:  hill no roads
+
+Scene Location: 1 2
+Scene Type:  hill no roads
+
+Scene Location: 2 2
+Scene Type:  hill no roads
+
+Scene Location: 2 1
+Scene Type:  hill no roads
+
+Scene Location: 2 0
+Scene Type:  hill no roads
+

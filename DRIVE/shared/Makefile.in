@@ -1,0 +1,43 @@
+# Do not check in "Makefile" itself
+#    -- it's supposed to be constructed on the fly!
+
+LIBTARGET=libshared.a
+all: $(LIBTARGET)
+TOPDIR=..
+
+# Shove the configure variables into normal makefile variables so they
+# can be overridden on the command line if desired.
+# (And it looks pretty.)
+#
+SHELL = @SHELL@
+srcdir = @srcdir@
+VPATH = @srcdir@
+CC= @CC@
+CPP= @CPP@
+OBJEXT = @OBJEXT@
+X_CFLAGS = @X_CFLAGS@
+MAKE_DEPEND = @MAKE_DEPEND@
+MAKE_DEPEND_OUTPUT_FD = @MAKE_DEPEND_OUTPUT_FD@
+MAKE_DEPEND_DISCARD_FD = @MAKE_DEPEND_DISCARD_FD@
+COMPILER_DEBUGFLAGS = @COMPILER_DEBUGFLAGS@
+COMPILER_OPTFLAGS = @COMPILER_OPTFLAGS@
+OPTDEBUGFLAGS=$(COMPILER_OPTFLAGS)
+CFLAGS = -I. -I../include -I../libnum -I../libphysics -I../libgui \
+  @DEFS@ @CPPFLAGS@ @CFLAGS@ $(WARNINGS) $(OPTDEBUGFLAGS)
+
+SRC=\
+  dlist.c \
+  fastmalloc.c \
+  filenames.c \
+  ipc.c \
+  message.c \
+  nquery.c \
+  query.c \
+  random.c \
+  scanargs.c \
+  sockets.c \
+  utils.c \
+  version.c
+
+include $(TOPDIR)/Makefile.h
+

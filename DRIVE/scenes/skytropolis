@@ -1,0 +1,1282 @@
+# (c) Copyright Hewlett-Packard Company 2001
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or (at
+# your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+# Here's a bit of scenery we cooked up for the DRIVE demo.
+# Put it in /usr/demos/graphics/drive/scenes/skytropolis,
+# restart the drive_server, and enjoy!
+# _________________________________________________
+#                                                        
+# Bill Frolik 
+# 
+#
+# 
+# 
+# SKYTROPOLIS RACEWAY
+#                          .........
+#                          :Nooby- :
+#                          :  ville:
+#   _______________________:_______:
+#  |       |       |       |       |
+#  |  1,-3    2,-3    3,-3 | +4,-3 |
+#  |_S K Y T R O P O L I S_|_______|
+#  |       |       |       |
+#  |  1,-4    2,-4    3,-4 |
+#  |_____R A C E W A Y_____|
+#  |                       |
+#  |  1,-5 |  2,-5 |  3,-5 |
+#  |_______|_______|_______|
+
+Racecourse: Skytropolis
+Start SceneX: 2
+Start SceneZ: -3
+Start Position: 700 1 780
+Start Angle: 90
+Start Positions: 4
+#Turbo Mode: 1
+Turbo Mode: 2
+#Turbo Boosts: 50
+Practice Seconds: 0
+Race Seconds: 230
+
+
+Scene Location: 4 -3
+
+Object: road
+Length: 2074
+Width:  60
+Position: 0 0 -1002
+
+Object: road
+Length: 972
+Width:  60
+Position: -1002 0 800
+Yrot: -90
+
+Object: curve
+Radius: 180
+Angle: 90
+Yrot: -90
+Position: -150 0 950
+Width: 60
+
+Object: curve
+Radius: 180
+Angle: 90
+Position: -150 0 650
+Width: 60
+
+Object: generic sign
+Label: SKYTROPOLIS\RACEWAY ->
+Size: 20 40 10
+Position: 50 0 950
+Yrot: 180
+Color: 0.0 0.0 0.0
+
+Object: generic sign
+Label: <- SKYTROPOLIS\RACEWAY
+Size: 20 40 10
+Position: 50 0 650
+Color: 0.0 0.0 0.0
+
+Object: ground
+
+##########################################################
+
+Scene Location: 3 -3
+
+Object: road
+Length: 2004
+Width:  60
+Position: -1002 0 800
+Yrot:   -90
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 1630
+Position: -800 0 -800
+
+Object: road
+Length: 203
+Width:  60
+Position: 800 0 -1002
+
+Object: grass
+Radius: 500
+Count:  200
+Height: 2
+Position: -400 0 0
+
+Object: grass
+Radius: 200
+Count:  100
+Height: 2
+Position: 600 0 500
+
+Object: grass
+Radius: 200
+Count:  100
+Height: 2
+Position: 400 0 -400
+
+Object: skyscraper
+Position: 600 0 -800
+Size: 50 70 90
+
+Object: skyscraper
+Position: 600 0 -700
+Size: 50 70 40
+
+Object: skyscraper
+Position: 600 0 -600
+Size: 50 70 80
+
+Object: finish
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Label: FINISH LINE
+Radius: 0.5
+Yrot:   45
+Type:   1 10
+Position: 331 0 331
+
+Object: ground
+
+##########################################################
+
+Scene Location: 2 -3
+
+Object: road
+Length: 2004
+Width:  60
+Yrot:   -90
+Position: -1002 0 800
+
+Object: road
+Length: 203
+Width:  60
+Position: 200 0 -1002
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 1230
+Position: -1000 0 -800
+
+Object: pond
+Length: 600
+Width:  600
+Position: -500 0 -300
+
+Object: house
+Type:   garrison
+Yrot:   -90
+Position: 100 0 -500
+
+Object: grass
+Radius: 400
+Count:  150
+Height: 3
+Position: 600 0 300
+
+Object: start
+Label: START
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Radius: 0.5
+Position: 600 0 800
+Yrot:   90
+Type:   1 10
+Data: 1 3
+50 1 1
+
+Object: tree
+Height: 30
+Position: 400 0 -600
+
+Object: tree
+Height: 30
+Position: 0 0 -300
+
+Object: tree
+Height: 30
+Position: -750 0 300
+
+Object: pond
+Height: 800
+Width:  600
+Position: -500 0 -400
+
+#row of trees on left side of track
+
+Object: tree
+Height: 40
+Position: 400 0 700
+
+Object: tree
+Height: 40
+Position: 300 0 700
+
+Object: tree
+Height: 40
+Position: 200 0 700
+
+Object: tree
+Height: 40
+Position: 100 0 700
+
+Object: tree
+Height: 40
+Position: 0 0 700
+
+Object: tree
+Height: 40
+Position: -100 0 700
+
+Object: tree
+Height: 40
+Position: -200 0 700
+
+Object: tree
+Height: 40
+Position: -300 0 700
+
+Object: tree
+Height: 40
+Position: -400 0 700
+
+Object: tree
+Height: 40
+Position: -500 0 700
+
+Object: tree
+Height: 40
+Position: -600 0 700
+
+#row of trees on right side of track
+
+Object: tree
+Height: 40
+Position: 400 0 900
+
+Object: tree
+Height: 40
+Position: 300 0 900
+
+Object: tree
+Height: 40
+Position: 200 0 900
+
+Object: tree
+Height: 40
+Position: 100 0 900
+
+Object: tree
+Height: 40
+Position: 0 0 900
+
+Object: tree
+Height: 40
+Position: -100 0 900
+
+Object: tree
+Height: 40
+Position: -200 0 900
+
+Object: tree
+Height: 40
+Position: -300 0 900
+
+Object: tree
+Height: 40
+Position: -400 0 900
+
+Object: tree
+Height: 40
+Position: -500 0 900
+
+Object: tree
+Height: 40
+Position: -600 0 900
+
+Object: left curve sign
+Position: -800 0 850
+Yrot: 90
+Width: 20.0
+Height: 10.0
+Label: 140
+
+Object: left curve sign
+Position: -800 0 750
+Yrot: 90
+Width: 20.0
+Height: 10.0
+Label: 140
+
+Object: skyscraper
+Size: 100 100 50
+Position: 800 0 600
+
+Object: generic sign
+Position: -800 0 500
+Size: 40 100 10
+Yrot: -90
+Label: KILLER JUMP\AHEAD
+Color: 1.0 1.0 1.0
+
+Object: generic sign
+Position: 300 0 -800
+Size: 40 100 10
+Yrot: 180
+Label: ARE YOU WEARING\YOUR SEATBELT?
+Color: 1.0 1.0 1.0
+
+Object: ground
+
+##########################################################
+
+Scene Location: 1 -3
+
+Object: road
+Length: 203
+Width:  60
+Yrot:   90
+Position: 1002 0 800
+
+Object: road
+Length: 203
+Width:  60
+Position: -800 0 -1002
+
+Object: road
+Length: 803
+Width:  60
+Position: 400 0 -1002
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 630
+Yrot:   90
+Position: 1000 0 -200
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 1630
+Yrot:   90
+Position: 800 0 -800
+
+Object: house
+Type: gothic cottage
+Yrot:   45
+Position: 500 0 300
+
+Object: house
+Type: dutch colonial
+Yrot:   -135
+Position: 620 0 180
+
+Object: checkpoint
+Label: CHECKPOINT 1
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Yrot:   135
+Position: -331 0 331
+Radius: 0.5
+Type: 1 1
+
+Object: checkpoint
+Label: CHECKPOINT 5
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Position: 400 0 -400
+Radius: 0.5
+Type: 1 5
+
+Object: pond
+Length: 1100
+Width:  700
+Position: -50 0 -250
+
+Object: tree
+Height: 30
+Position: -600 0 100
+
+Object: tree
+Height: 30
+Position: -500 0 -200
+
+Object: tree
+Height: 30
+Position: -600 0 400
+
+Object: tree
+Height: 30
+Position: 550 0 -200
+
+Object: tree
+Height: 30
+Position: 550 0 -300
+
+Object: tree
+Height: 30
+Position: 550 0 -400
+
+Object: tree
+Height: 30
+Position: 550 0 -500
+
+Object: tree
+Height: 30
+Position: 550 0 -600
+
+Object: ground
+
+##########################################################
+
+Scene Location: 3 -4
+
+Object: curvewall
+Radius: 440
+Width: 5
+Height: 5
+Angle: 180
+Position: -400 0 400
+
+Object: curvewall
+Radius: 365
+Width: 5
+Height: 5
+Angle: 180
+Yrot: 180
+Position: 400 0 400
+
+Object: road
+Width: 60
+Length: 1403
+Position: -800 0 -1002
+
+Object: road
+Width: 60
+Length: 603
+Position: 800 0 399
+
+Object: bridge
+Width: 60
+Height: 10
+Length: 500
+Position: -800 0 -450
+
+Object: curve
+Angle: 180
+Width: 60
+Radius: 430
+Position: -400 0 400
+Angle: 180
+
+Object: curve
+Angle: 180
+Width: 60
+Radius: 430
+Position: 400 0 400
+Angle: 180
+Yrot: 180
+
+Object: right curve sign
+Position: -750 0 300
+Width: 20
+Height: 10
+Label: 100
+
+Object: left curve sign
+Position: 50 0 450
+Width: 20
+Height: 10
+Yrot: 180
+Label: 100
+
+Object: grass
+Radius: 360
+Height: 5
+Position: -400 0 400
+
+Object: grass
+Radius: 360
+Height: 5
+Position: 400 0 400
+
+Object: checkpoint
+Label: CHECKPOINT 8
+Length: 20.0
+Height: 50.0
+Width: 100.0
+Type: 1 8
+Radius: 0.5
+Position: -800 0 -800
+
+Object: checkpoint
+Label: CHECKPOINT 9
+Length: 20.0
+Height: 50.0
+Width: 100.0
+Type: 1 9
+Radius: 0.5
+Position: 400 0 0
+Yrot: -90
+
+Object: ground
+
+##########################################################
+
+Scene Location: 2 -4
+
+Object: road
+Length: 802
+Width: 60
+Position: 200 0 200
+
+Object: road
+Length: 403
+Width: 60
+Position: 200 0 -1002
+
+Object: checkpoint
+Label: CHECKPOINT 6
+Length: 30.0
+Height: 90.0
+Width: 100.0
+Yrot:  180
+Type: 1 6
+Radius: 1.0
+Position: 200 50 -300
+Data: 1 3
+50 5 1
+
+Object: curve
+Angle: 90
+Width: 60
+Radius: 630
+Position: 200 0 -1000
+
+Object: road
+Length: 402
+Width: 60
+Position: 200 0 -400
+Yrot: 90
+
+Object: curve
+Angle: 90
+Width: 60
+Radius: 430
+Yrot: 180
+Position: -200 0 0
+
+Object: curve
+Angle: 90
+Width: 60 
+Radius: 430
+Position: -1000 0 0
+
+#shortcut
+#Object: road
+#Length: 400
+#Width: 60
+#Position: -600 0 0
+
+#Object: road
+#Length: 1203
+#Width: 60
+#Position: -200 0 800
+#Yrot: -90
+
+Object: tree
+Height: 35
+Position: -900 0 300
+
+Object: tree
+Height: 35
+Position: -800 0 500
+
+Object: tree
+Height: 35
+Position: -700 0 600
+
+Object: tree
+Height: 35
+Position: 400 0 -600
+
+Object: tree
+Height: 35
+Position: 600 0 -800
+
+Object: house
+Type: garrison
+Position: -600 0 400
+
+Object: house
+Type: dutch colonial
+Position: -300 0 -300
+
+Object: house
+Type: dutch colonial
+Position: -500 0 -100
+Yrot: -90
+
+Object: house
+Type: dutch colonial
+Position: -700 0 100
+Yrot: 90
+
+Object: generic sign
+Position: 300 0 600
+Size: 40 100 10
+Label: NO BIFFERS
+Yrot: 180
+Color: 1.0 1.0 1.0
+
+Object: house
+Type: dutch colonial
+Position: -900 0 300
+Yrot: 180
+
+Object: ramp
+Position: 200 0 -1000
+Length: 400
+Width: 60
+Height: 60
+
+Object: ramp
+Position: 200 0 400
+Length: 400
+Width: 60
+Height: 60
+Yrot: 180
+
+# DOWNTOWN SKYTROPOLIS #
+
+Object: skyscraper
+Size: 40 30 30
+Position: 30 0 -350
+
+# This building is the first one you pass over in the
+# jump zone (it lies to right of center, and can be missed
+# entirely if you stay to the left).  Lower it to make
+# the jump easier.
+Object: skyscraper
+Size: 80 40 100
+Position: 110 0 -350
+
+Object: skyscraper
+Position: 230 0 -350
+Size: 60 40 80
+
+Object: skyscraper
+Position: 330 0 -360
+Size: 30 30 40
+
+Object: skyscraper
+Position: 50 0 -500
+Size: 90 50 160
+
+# This building is the narrow one that lies dead-center
+# in the jump zone.  Lower it to make the jump easier.
+Object: skyscraper
+Position: 180 0 -500
+Size: 40 50 80
+
+Object: skyscraper
+Position: 260 0 -550
+Size: 70 100 200
+
+Object: skyscraper
+Position: 70 0 -580
+Size: 150 40 60
+
+Object: pond
+Width: 190
+Length: 200
+Position: 205 0 -170
+
+Object: parking lot
+Length: 60
+Width: 80
+Position: 60 0 -110
+
+Object: road
+Width: 20
+Position: 30 0 -511
+Length: 82
+
+Object: road
+Width: 20
+Position: 160 0 -511
+Length: 82
+
+Object: road
+Width: 20
+Position: 240 0 -580
+Length: 151
+
+Object: road
+Width: 20
+Position: 231 0 -520
+Length: 211
+Yrot: 90
+
+Object: road
+Width: 20
+Position: 90 0 -371
+Length: 231
+
+Object: road
+Width: 20 
+Position: 210 0 -371
+Length: 72
+
+Object: road
+Width: 20
+Position: 310 0 -385
+Length: 86
+
+Object: road
+Width: 20
+Position: 320 0 -290
+Length: 221
+Yrot: 90
+
+Object: stop sign
+Position: 45 0 -435
+Height: 4
+
+Object: stop sign
+Position: 175 0 -435
+Height: 4
+
+Object: stop sign
+Position: 255 0 -435
+Height: 4
+
+Object: stop sign
+Position: 295 0 -365
+Height: 4
+Yrot: 180
+
+Object: stop sign
+Position: 195 0 -365
+Height: 4
+Yrot: 180
+
+Object: stop sign
+Position: 75 0 -365
+Height: 4
+Yrot: 180
+
+Object: lamp
+Position: 50 0 -440
+
+Object: lamp
+Position: 95 0 -440
+
+Object: lamp
+Position: 140 0 -440
+
+Object: lamp
+Position: 180 0 -440
+
+Object: lamp
+Position: 220 0 -440
+
+Object: lamp
+Position: 260 0 -440
+
+Object: lamp
+Position: 300 0 -440
+
+Object: lamp
+Position: 30 0 -360
+
+Object: lamp
+Position: 70 0 -360
+
+Object: lamp
+Position: 110 0 -360
+
+Object: lamp
+Position: 150 0 -360
+
+Object: lamp
+Position: 190 0 -360
+
+Object: lamp
+Position: 230 0 -360
+
+Object: lamp
+Position: 260 0 -360
+
+Object: lamp
+Position: 290 0 -360
+
+Object: house
+Type: dutch colonial
+Position: 55 0 -185
+Yrot: 90
+
+Object: house
+Type: gothic cottage
+Position: 55 0 -235
+Yrot: 90
+
+Object: house
+Type: dutch colonial
+Position: 55 0 -285
+Yrot: 90
+
+#Object: wall
+#Position: 0 0 -600
+#Size: 4.0 340.0 150.0
+
+#Object: wall
+#Position: 400 0 -600
+#Size: 4.0 340.0 150.0
+
+Object: ground
+
+##########################################################
+
+Scene Location: 1 -4
+
+Object: road
+Length: 403
+Width:  60
+Position: -800 0 599
+
+Object: road
+Length: 403
+Width:  60
+Position: 400 0 -1002
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 630
+Yrot:   180
+Position: 1000 0 1000
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 630
+Yrot:   180
+Position: -200 0 600
+
+Object: curve
+Angle: 90
+Width:  60
+Radius: 630
+Position: -200 0 -600
+
+Object: checkpoint
+Label: CHECKPOINT 2
+Length: 20.0
+Width:  100.0
+Height: 50.0
+Yrot:   -90
+Position: -200 0 0
+Radius: 0.5
+Type: 1 2
+
+Object: left curve sign
+Yrot:   180
+Width: 20
+Height: 10
+Position: -850 0 700
+Label: 120
+
+Object: right curve sign
+Yrot:   -90
+Position: -250 0 -50
+Label: 120
+
+Object: house
+Type: garrison
+Position: -100 0 -100
+Yrot: 180
+
+Object: house
+Type: garrison
+Position: -300 0 100
+
+Object: tree
+Height: 35
+Position: -300 0 -50
+
+Object: tree
+Height: 30
+Position: -335 0 -50
+
+Object: tree
+Height: 32
+Position: -370 0 -50
+
+Object: grass
+Height: 2
+Radius: 570
+Position: -200 0 -600
+
+Object: grass
+Height: 2
+Radius: 570
+Position: -200 0 600
+
+Object: ground
+
+##########################################################
+
+Scene Location: 3 -5
+
+Object: road
+Width: 60
+Length: 402
+Position: -201 0 400
+Yrot: -90
+
+Object: road
+Width: 60
+Length: 1203
+Position: -1002 0 -800
+Yrot: -90
+
+Object: curve
+Angle: 180
+Width: 60
+Radius: 630
+Angle: 180
+Yrot: -90
+Position: 200 0 -200
+
+Object: curve
+Angle: 90
+Width: 60
+Radius: 630
+Angle: 90
+Yrot: 180
+Position: -200 0 1000
+
+Object: grass
+Height: 2
+Radius: 570
+Position: 200 0 -200
+
+Object: left curve sign
+Position: 100 0 -850
+Height: 10.0
+Width: 20.0
+Yrot: -90
+Label: 120
+
+Object: right curve sign
+Position: -100 0 350
+Height: 10.0
+Width: 20.0
+Yrot: 90
+Label: 120
+
+Object: checkpoint
+Label: CHECKPOINT 7
+Length: 20.0
+Width: 100.0
+Height: 50.0
+Radius: 0.5
+Type: 1 7
+Position: 800 0 -200
+
+Object: house
+Type: dutch colonial
+Position: 200 0 550
+
+Object: tree
+Height: 30
+Position: 400 0 -850
+
+Object: tree
+Height: 30
+Position: -200 0 500
+
+Object: tree
+Height: 30
+Position: -400 0 300
+
+Object: tree
+Height: 30
+Position: -200 0 500
+
+Object: tree
+Height: 30
+Position: -200 0 500
+
+Object: ground
+
+##########################################################
+
+Scene Location: 2 -5
+
+Object: house
+Type: garrison
+Position: 600 0 800
+Yrot: 50
+
+Object: tree
+Height: 40
+Position: 800 0 600
+
+Object: road
+Width: 60
+Length: 204
+Position: -1002 0 400
+Yrot: -90
+
+Object: bridge
+Width: 60
+Length: 400
+Height: 15
+Yrot: 90
+Position: -600 0 400
+
+Object: road
+Width: 60
+Length: 603
+Position: -402 0 400
+Yrot: -90
+
+Object: road
+Width: 60
+Length: 403
+Position: 200 0 599
+
+Object: left curve sign
+Label: 120
+Position: 100 0 350
+Height: 10.0
+Width: 20.0
+Yrot: -90
+
+Object: skyscraper
+Size: 70 70 200
+Position: -600 0 650
+
+Object: skyscraper
+Size: 70 70 100
+Position: -900 0 150
+
+Object: skyscraper
+Size: 70 70 300
+Position: -200 0 600
+
+Object: road
+Width: 60
+Length: 202
+Position: 200 0 -1
+
+Object: bridge
+Length: 400
+Width: 60
+Height: 30
+Position: 200 0 400
+
+Object: curve
+Angle: 90
+Width: 60
+Radius: 630
+Angle: 90
+Yrot: -90
+Position: 200 0 1000
+
+Object: curve
+Width: 60
+Angle: 90
+Radius: 830
+Angle: 90
+Yrot: 180
+Position: 1000 0 0
+
+Object: checkpoint
+Length: 20.0
+Width: 100.0
+Height: 50.0
+Label: CHECKPOINT 4
+Radius: 0.5
+Type: 1 4
+Yrot: -90
+Position: 0 0 400
+
+Object: house
+Type: dutch colonial
+Position: 400 0 -200
+Yrot: 50
+
+Object: house
+Type: dutch colonial
+Position: 250 0 -600
+Yrot: 135
+
+Object: ground
+
+##########################################################
+
+Scene Location: 1 -5
+
+Object: road
+Length: 1203
+Width: 60
+Yrot: 180
+Position: 400 0 1002
+
+Object: road
+Length: 402
+Width: 60
+Yrot: -90
+Position: -201 0 400
+
+Object: forest
+Length: 500
+Width: 500
+Position: -200 0 -200
+Height: 60
+
+Object: road
+Length: 402
+Width: 60
+Yrot: -90
+Position: 599 0 400
+
+Object: bridge
+Width: 60
+Length: 400
+Height: 30
+Yrot: 90
+Position: 400 0 400
+
+Object: wall
+Position: 300 0 -400
+Length: 1200
+Width: 10
+Height: 6
+
+Object: curvewall
+Width: 5
+Height: 3
+Position: -200 0 -200
+Radius: 565
+Yrot: 180
+Angle: 90
+
+Object: curvewall
+Width: 5
+Height: 3
+Position: -200 0 -200
+Radius: 565
+Yrot: 90
+Angle: 90
+
+Object: curvewall
+Width: 5
+Height: 3
+Position: -200 0 -200
+Radius: 565
+Yrot: -90
+Angle: 90
+
+Object: curve
+Radius: 630
+Width: 60
+Angle: 90
+Yrot: 90
+Position: -200 0 -200
+
+Object: curve
+Radius: 630
+Width: 60
+Angle: 180
+Yrot: 90
+Position: -200 0 -200
+
+Object: curve
+Radius: 630
+Width: 60
+Angle: 90
+Yrot: -90
+Position: -200 0 -200
+
+Object: right curve sign
+Position: 350 0 0 
+Yrot: 180
+Label: 120
+Width: 20.0
+Height: 10.0
+
+Object: checkpoint
+Length: 20.0
+Height: 50.0
+Width: 100.0
+Label: CHECKPOINT 3
+Yrot: -90
+Position: -200 0 400
+Radius: 0.5
+Type: 1 3
+
+Object: house
+Type: garrison
+Position: 460 0 100
+Yrot: -90
+
+Object: house
+Type: garrison
+Position: 340 0 100
+Yrot: 90
+
+Object: grass
+Radius: 570
+Height: 3
+Count: 200
+Angle: 360
+Position: -200 0 -200
+
+Object: house
+Type: gothic cottage
+Position: -200 0 -870
+Yrot: 180
+
+Object: tree
+Height: 25
+Position: -220 0 -840
+
+Object: tree
+Height: 15
+Position: -180 0 -840
+
+Object: ground
+
+# _________________________________________________
+#                                                        
+# Bill Frolik                   Hewlett-Packard Co. 
+# bill@hpcvlx.cv.hp.com         1010 NE Circle Blvd 
+# (503) 750-4082                Corvallis, OR 97330  

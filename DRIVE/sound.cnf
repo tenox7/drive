@@ -1,0 +1,15 @@
+audaemon_config
+#audio file		length		comments
+
+sounds/engine.au   	383844		# SOUND_ENGINE
+sounds/shoot.au   	58568		# SOUND_SHOOT
+sounds/collision.au   	106600		# SOUND_COLLISION
+sounds/explosion.au   	118340		# SOUND_EXPLOSION
+sounds/squeal.au   	181000		# SOUND_SQUEAL
+sounds/screech.au   	150632		# SOUND_SCREECH
+sounds/ignition.au   	169748		# SOUND_IGNITION
+sounds/myhorn.au   	26416		# SOUND_MYHORN
+sounds/horn.au   	26416		# SOUND_HORN
+sounds/klaxon.au   	375716		# SOUND_KLAXON
+sounds/squeal.au   	181000		# SOUND_PEAL
+

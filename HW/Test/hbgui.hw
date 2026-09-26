@@ -1,0 +1,522 @@
+hwLayout hbMainMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Main Menu"
+        },
+        hwRowCol {
+            PosX = 500  PosY = 525
+            Width = 333  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Rows = 5  Columns = 1
+            Children = {
+                hwButton {
+                    ID = 100
+                    Label = "Game"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 110
+                    Label = "Options"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 120
+                    Label = "About"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbGameMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Game Menu"
+        },
+        hwRowCol {
+            Rows = 5  Columns = 1
+            PosX = 500  PosY = 525
+            Width = 333  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwButton {
+                    ID = 200
+                    Label = "Join"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 210
+                    Label = "Next\nPlayer"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 220
+                    Label = "Connect"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 230
+                    Label = "Quit"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbOptionsMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Options Menu"
+        },
+        hwRowCol {
+            Rows = 5  Columns = 1
+            PosX = 500  PosY = 525
+            Width = 333  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwButton {
+                    ID = 300
+                    Label = "Draw"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 310
+                    Label = "Mode"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 320
+                    Label = "Detail"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbDrawMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Draw Menu"
+        },
+        hwRowCol {
+            Rows = 5  Columns = 2
+            PosX = 500  PosY = 525
+            Width = 666  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwToggle hbDrawWalls {
+                    ID = 420
+                    Label = "Walls"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbDrawFloor {
+                    ID = 410
+                    Label = "Floor"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbDrawRoof {
+                    ID = 420
+                    Label = "Roof"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbDrawLines {
+                    ID = 430
+                    Label = "Lines"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbShowHud {
+                    ID = 130
+                    Label = "Show HUD"
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwLabel { Label = "" },
+                hwLabel { Label = "" },
+                hwLabel { Label = "" },
+                hwLabel { Label = "" },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbModeMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Mode Menu"
+        },
+        hwRowCol {
+            Rows = 5  Columns = 1
+            PosX = 500  PosY = 525
+            Width = 333  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwToggle hbWireframe {
+                    ID = 500
+                    Label = "Wireframe"
+                    Exclude = { hwToggle hbSolid {}, hwToggle hbTextured {} }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbSolid {
+                    ID = 510
+                    Label = "Solid"
+                    Exclude = { hbWireframe, hbTextured }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbTextured {
+                    ID = 520
+                    Label = "Textured"
+                    Exclude = { hbWireframe, hbSolid }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbDetailMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Detail Menu"
+        },
+        hwRowCol {
+            Rows = 5  Columns = 1
+            PosX = 500  PosY = 525
+            Width = 333  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwToggle hbLowRes {
+                    ID = 600
+                    Label = "Low"
+                    Exclude = { hwToggle hbMedRes {}, hwToggle hbHiRes {},
+                                hwToggle hbExtRes {} }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbMedRes {
+                    ID = 610
+                    Label = "Medium"
+                    Exclude = { hbLowRes, hbHiRes, hbExtRes }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbHiRes {
+                    ID = 620
+                    Label = "High"
+                    Exclude = { hbLowRes, hbMedRes, hbExtRes }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwToggle hbExtRes {
+                    ID = 630
+                    Label = "Extreme"
+                    Exclude = { hbLowRes, hbMedRes, hbHiRes }
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbAboutMenu {
+    PosX = 0  PosY = 0
+    Width = 0  Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwRowCol {
+            PosX = 500  PosY = 500
+            Width = 900 Height = 275
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            BackgroundColor = {.5,.5,.5,.5}
+            Children = {
+                hwLabel {
+                    Label = "Hoverball v4.0 - Jul 24, 2011\nby Norman Gee and Ross Cunniff\nCopyright 2001 Hewlett-Packard Inc.\nSee http://hoverball.sf.net for GPL source"
+                }
+            }
+        },
+        hwRowCol {
+            Rows = 5  Columns = 1
+            PosX = 500  PosY = 525
+            Width = 333  Height = 950
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwLabel { Label = "" },
+                hwLabel { Label = "" },
+                hwLabel { Label = "" },
+                hwLabel { Label = "" },
+                hwButton {
+                    ID = 1000
+                    Label = "Back"
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwLayout hbServerAddr {
+    PosX = 0        PosY = 0
+    Width = 0       Height = 0
+    Align = (HW_GUI_REL_WIDTH + HW_GUI_REL_HEIGHT)
+    Children = {
+        hwLabel {
+            PosX = 500  PosY = 25
+            Width = 1000 Height = 50
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Label = "Enter server IP address:"
+        },
+        hwRowCol {
+            Rows = 4  Columns = 1
+            PosX = 125  PosY = 425
+            Width = 250 Height = 760
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Padding = {20,20}
+            Children = {
+                hwButton hbAddr0 {
+                    Label = "127"
+                    ID = 800
+                    BackgroundColor = {1,0,0}
+                },
+                hwButton hbAddr1 {
+                    Label = "0"
+                    ID = 810
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton hbAddr2 {
+                    Label = "0"
+                    ID = 820
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton hbAddr3 {
+                    Label = "1"
+                    ID = 830
+                    BackgroundColor = {.5,.5,.5}
+                },
+            }
+        },
+        hwButton {
+            PosX = 680  PosY = 180
+            Width = 320  Height = 160
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_REL_BOT + HW_GUI_REL_RIGHT)
+            Label = "Connect"
+            ID = 840 
+            BackgroundColor = {.5,.5,.5}
+        },
+        hwButton {
+            PosX = 340  PosY = 180
+            Width = 320  Height = 160
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_REL_BOT + HW_GUI_REL_RIGHT)
+            Label = "Back"
+            ID = 1000
+            BackgroundColor = {.5,.5,.5}
+        },
+        hwRowCol hbNumPad {
+            PosX = 625   PosY = 425
+            Width = 570 Height = 760
+            Align = (HW_GUI_FRACTIONAL + HW_GUI_CENTER)
+            Rows = 4    Columns = 3
+            Padding = {20,20}
+            Children = {
+                hwButton B_1 {
+                    Label = "1"
+                    ID = 10049
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_2 {
+                    Label = "2"
+                    ID = 10050
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_3 {
+                    Label = "3"
+                    ID = 10051
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_4 {
+                    Label = "4"
+                    ID = 10052
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_5 {
+                    Label = "5"
+                    ID = 10053
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_6 {
+                    Label = "6"
+                    ID = 10054
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_7 {
+                    Label = "7"
+                    ID = 10055
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_8 {
+                    Label = "8"
+                    ID = 10056
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_9 {
+                    Label = "9"
+                    ID = 10057
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_dot {
+                    Label = "."
+                    ID = 10046
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_0 {
+                    Label = "0"
+                    ID = 10048
+                    BackgroundColor = {.5,.5,.5}
+                },
+                hwButton B_del {
+                    Label = "bs"
+                    ID = 10008
+                    BackgroundColor = {.5,.5,.5}
+                }
+            }
+        }
+    }
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}
+
+hwRowCol Commands {
+    PosX = -1  PosY = -1
+    Width = 160 Height = 2
+    Align = HW_GUI_REL_HEIGHT
+    Padding = {1,1}
+    Rows = 7    Cols = 1
+    Children = {
+        hwButton {
+            Label = "Turbo"
+            ID = 900
+        },
+        hwButton {
+            Label = "Jump"
+            ID = 910
+        },
+        hwButton {
+            Label = "Sink"
+            ID = 920
+        },
+        hwButton {
+            Label = "Options"
+            ID = 930
+        },
+        hwToggle hbWatchBall {
+            Label = "Watch\nBall"
+            ID = 940
+        },
+        hwButton hbToggleView {
+            Label = "Look\nBack"
+            ID = 950
+        },
+        hwButton {
+            Label = "Shoot"
+            ID = 960
+        }
+    }
+    Invisible = True
+    BackgroundColor = {.5,.5,.5,.5}
+    Color = {0,0,0}
+    FontHeight = 24
+    ActiveColor = {0,0,0}
+    ActiveBackground = {1,1,1}
+}

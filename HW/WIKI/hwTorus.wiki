@@ -1,0 +1,61 @@
+== NAME ==
+hwTorus - create a partial torus with given radii
+
+== INHERITS FROM ==
+* [[hwSurface]]
+* [[hwOrient]]
+
+== PROPERTIES ==
+| GraphN     | 1I | Tesselation parameter; the number of rows in the resulting mesh
+| GraphM     | 1I | Tesselation parameter; the number of columns in the resulting mesh
+| Radius     | 2F | Inner and outer radii of the torus
+| LatRange   | 2F | Range of latitudes (up the face of the torus) from 0 to 360
+| LonRange   | 2F | Range of longitudes (around the circumference of the torus) from 0 to 360
+| OptFlags   | 1I | Optimization flags; see [[hw]] for details
+| HasNormals | 1B | True if smooth shading is desired; false for a faceted appearance
+| Resolution | 1F | Tesselation multiplier
+
+== DEFAULTS ==
+| GraphN     | 17
+| GraphM     | 17
+| Radius     | {0.5,1.0}
+| LatRange   | {0,360}
+| LonRange   | {0,360}
+| HasNormals | True
+| Resolution | 1.0
+| OptFlags   | hwDefaultOptFlags
+
+== DESCRIPTION ==
+The hwTorus class creates a partial torus.  The radius of the
+"doughnut hole" is given as Radius[0].  The radius of the outer
+circumference of the torus is given as Radius[1].  The LatRange
+specifies how much of the (warped) cylinder is present, from 0 to
+360 degrees.  The LonRange specifies how much of the doughnut is
+present, from 0 to 360 degrees.  GraphN and GraphM are used to
+tesselate the sphere into a mesh.  HasNormals is used to specify
+smooth shading (the default) or a faceted appearance.
+
+== C EXAMPLE ==
+{{{
+    /* Draw a quarter-doughnut */
+    hwObject
+        torus;
+
+    torus = hwTorus->create( hwTorus );
+    HW_MODIFY_2F( torus, hwStrLonRange, 0.0, 90.0 );
+    HW_MODIFY_1B( torus, hwStrTwoSided, HW_TRUE );
+    torus->draw( torus );
+    torus->destroy( torus );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A quarter-doughnut
+    hwTorus torus {
+        LonRange = {0.0, 90.0}
+        TwoSided = True
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwSurface]], [[hwOrient]]

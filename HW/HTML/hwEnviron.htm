@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwEnviron - establish global scene parameters</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwEnviron - establish global scene parameters</p>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>BackgroundColor</td>
+<td>3F</td>
+<td>Default clear color of the drawable</td>
+</tr>
+<tr><td>AmbientFactor</td>
+<td>1F</td>
+<td>Ambient lighting multiplier</td>
+</tr>
+<tr><td>AmbientColor</td>
+<td>3F</td>
+<td>Color of ambient light</td>
+</tr>
+<tr><td>Fog</td>
+<td>1B</td>
+<td>Is fog enabled?</td>
+</tr>
+<tr><td>FogColor</td>
+<td>3F</td>
+<td>Color of fog</td>
+</tr>
+<tr><td>Lighting</td>
+<td>1B</td>
+<td>Is lighting enabled?</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>BackgroundColor</td>
+<td>{0,0,0}</td>
+</tr>
+<tr><td>AmbientFactor</td>
+<td>0.5</td>
+</tr>
+<tr><td>AmbientColor</td>
+<td>{1,1,1}</td>
+</tr>
+<tr><td>Fog</td>
+<td>False</td>
+</tr>
+<tr><td>FogColor</td>
+<td>{0,0,0}</td>
+</tr>
+<tr><td>Lighting</td>
+<td>True</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwEnviron class establishes global parameters for scene
+display; these parameters are the background color, the ambient
+factor (the percent of the ambient color used in lighting), the
+ambient color, whether or not fog is enabled, and its color if
+enabled, and whether or not lighting is enabled.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Set the background to blue */
+    hwObject
+        environ;
+
+    environ = hwEnviron-&gt;create( hwEnviron );
+    HW_MODIFY_3F( environ, hwStrBackgroundColor, 0.0, 0.0, 1.0 );
+    environ-&gt;draw( environ );
+    environ-&gt;destroy( environ );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # An environment with a blue background color
+    hwEnviron environ {
+        BackgroundColor = {0,0,1}
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a></p>
+</body>
+</html>

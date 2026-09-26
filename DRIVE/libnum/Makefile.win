@@ -1,0 +1,31 @@
+OBJS=curvefit.obj \
+	dmatrix.obj \
+	gaussj.obj \
+	imatrix.obj \
+	integrate.obj \
+	ivector.obj \
+	ludcmp.obj \
+	matrix.obj \
+	nrerror.obj \
+	ntest.obj \
+	ode.obj \
+	quaternion.obj \
+	root.obj
+
+#OPTG=-O2
+OPTG=-Zi
+CFLAGS=$(OPTG)
+
+LIBS=..\libnum.lib
+
+LIB32=link.exe -lib
+
+all:	$(LIBS)
+
+clean:
+	del /Q *.obj $(LIBS)
+
+../libnum.lib:     $(OBJS)
+	$(LIB32) @<<
+    $(OBJS) -out:../libnum.lib
+<<

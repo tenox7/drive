@@ -1,0 +1,449 @@
+                               DRIVE
+
+
+Welcome to DRIVE -- the Distributed Real-time Interactive Vehicle Emulator.
+
+DRIVE was developed to be a multi-player, client/server demonstration of
+Hewlett-Packard's series 9000 Workstation 3D graphics.
+
+
+INTRODUCTION
+=================
+
+DRIVE consists of two executable files, drive and drive_server, as
+well as other data files and information for the program to run. 
+
+WHAT YOU NEED
+====================
+
+< TBD >
+
+
+GETTING STARTED 
+==================
+
+DRIVE uses BSD sockets to communicate between the client and server, and
+as such, requires entries in the /etc/services file in order to run.
+The following entries should be in the /etc/services file of the machine
+running the drive_server, as well as each machine running the drive
+client.
+
+drive        	22747/tcp       #driving simulator
+drivequery	22748/udp       #driving simulator
+
+< TBD:  IS THIS ALL STILL NECESSARY? >
+
+
+The drive_server program
+---------------------------------
+
+The drive_server program must be running a machine somewhere on your
+network in order for DRIVE to work.  The drive_server program may be
+started manually in the following manner:
+
+
+   $ drive_server &
+
+(NOTE:  the '&' at the end of the command line runs the program as a
+background task.)
+
+The server program expects no options.  Once the server is running, 
+the client programs may connect from other workstations:
+
+   $ drive <hostname>
+
+where <hostname> is the name of the machine running the drive_server
+program.
+
+This program is responsible for keeping track of the "world" of the
+Driving Simulator.  It updates all the drive client programs
+(described below) based on the user's input, the physics of the
+simulated world, the interaction of a driver's vehicle with the
+environment and other vehicles, and so on.
+
+If a drive program is started and there is no drive_server running
+on the local network, the user can choose to start a drive_server on 
+his local system 
+
+The DRIVE Program
+====================
+
+When started, the client program, "drive", begins by creating two X11
+windows on your display.  One window is used to select the vehicle you
+wish to drive, the other is the window that will be used to do the
+driving.  (Note that the behavior described here is the "default"
+behavior.  Many aspects of the drive program can be modified by a
+.driverc file, described later).
+
+Selecting a Vehicle
+-------------------
+The smaller of the two initial windows is entitled "Vehicle Selection_popup".  
+This window consists of three parts:
+ 1) a list of vehicles available
+ 2) Three Slider Bars and a "Color" indicator
+ 3) an "OK" button
+
+    1) a list of vehicles available
+       This list shows all the vehicles known to the server program.  To view
+       any of these vehicles, simply click the name of the vehicle with the
+       left mouse button.  This "selects" the vehicle for viewing -- the 
+       vehicle is displayed in the large "drive" window, rotating.
+
+    2) Three Slider Bars and a "Color" indicator
+       Underneath the list of vehicles is a label 'Color: <colorname>',
+       and three slider bars.  The <colorname> reflects the state of the
+       three sliders, which can be used to choose any of a large number 
+       of colors.  The sliders work in an 'HSV' model, or Hue, Saturation,
+       and Value.  The top slider controls the 'Hue' of the vehicle, i.e.,
+       Red, Yellow, Blue, Green, etc.
+
+       The second slider controls the 'Saturation' of the color: the further
+       left the slider is, the more 'washed out' the color is (tending 
+       toward White, or grey).  If you are unfamiliar with the HSV model,
+       you could probably move this slider all the way to the right.
+
+       The third slider controls the 'Value' of the color; how light or
+       dark it is.  The further right the slider is, the brighter the color.
+
+    3) an "OK" button
+       Once you have selected the vehicle you want, and have chosen a color,
+       you may begin driving the vehicle by clicking this button. NOTE: When
+       this button is clicked, the "Vehicle Selection_popup" window disappears.
+
+
+Driving a Vehicle
+----------------------
+Once you have selected a vehicle and joined the game (described above), you
+can now "drive" your vehicle in the Three Dimensional "world" scene. The
+"Driving Simulator" window has several parts:
+ 1) An upper viewing area window, where the world scene may be viewed.
+ 2) A smaller viewing area window, showing the vehicle's dashboard, 
+    instruments, gauges, gears, and so forth.
+ 3) A Text window, where various messages can be displayed.
+ 4) A row of buttons.
+
+
+   1) Upper Viewing area window 
+      This is the window that you will use to control your vehicle, and to
+      see what is in the world scene around your vehicle.  The controls for
+      your vehicle can be seen by clicking the "Help" button in
+      the row of buttons at the bottom of the "Driving Simulator" window,
+      and selecting the "Controls" menu item.
+
+   2) Lower Viewing area window 
+      This window contains a picture of the vehicle's dashboard, as well as 
+      a Speedometer, a Tachometer, and a gear selection indicator.  (The
+      gear indicator in red is the currently selected gear).  Also, the 
+      position of the stick shift indicates which gear the vehicle is in.
+
+   3) Row of buttons
+      The following buttons are found at the bottom of the "Driving Simulator"
+      window:
+
+      Vehicle -- Allows you to select Automatic (default) or Manual 
+		 Transmission.
+      
+      Windows -- Allows you to select a Large or Small driving window,
+		 turn on or off Radar and Race Standings windows, constrain
+		 the cursor, and select more or less detailed graphics 
+		 models.
+
+      Upright -- Will upright your vehicle if you end up on your side or top.
+
+      Start Over -- Will place your vehicle back at the starting point.
+
+      Quit -- Terminates the drive program.
+
+      Help -- Brings up a menu of options; selecting one of the options will
+	      bring up a window with help (text or graphics ) for the selected
+	      topic.
+
+
+Driving Modes
+-----------------------
+
+Regular Viewing Mode:
+  This is the mode that the driving simulator begins in.  The view is as if
+  from the driver's seat of the vehicle, looking out the front windshield.
+  There are keys that allow you to look out the side and back "windows" of
+  the vehicle (the "Controls" menu option of the "Help" button, contains 
+  this information).
+
+Skycam Mode:
+  When is Skycam Mode, the view seen is as though from a point outside your
+  vehicle, always looking at the center of your vehicle.  The position from
+  which you view your vehicle can be adjusted by certain keys  (arrow keys
+  to adjust the angle from which you view your vehicle, Prev and Next keys
+  to zoom out or in.  By moving the viewing position far away from your 
+  vehicle, you may also see much of the other objects in the world scene.
+
+There are a few keys that are not documented in the "Controls" 
+pop up window.  Some of these are noted here:
+
+1) Pressing the Space Bar will apply full brakes to your vehicle.
+   The mouse remains where you have positioned it, but brakes are applied 
+   for as long as the Space Bar is pressed.  Releasing the Space Bar will
+   allow the acceleration to return to normal.
+
+2) Pressing and holding the <shift> key prior to using the <Prev> and <Next>
+   keys in Skycam mode will increase the Zoom in/out speed.
+
+3) Pressing the 't' key gives your vehicle a Turbo boost -- use this
+   carefully!  Turbo boosts are generated while the 't' key is pressed.
+   (This also supplies Turbo brakes).  Releasing the 't' key shuts off
+   turbo boosts.  Note that using Turbo can sometimes cause localized
+   temporal distortion fields which tear the fabric of the space-time
+   continuum, resulting in the suspension of certain laws of simulator
+   physics.  Don't be too surpized by visual and physical abnormalities
+   if you spend much time in this mode.
+
+
+Example .driverc file
+----------------------------
+
+# A .driverc created in your $HOME directory can be used to customize your
+# DRIVE environment.  Lines beginning with '#' and blank lines are ignored.
+# The following options are recognized:
+#
+#  Vehicle: {Sports Car, Sedan, Minivan, Tank}
+#     Use the specified vehicle.
+#
+#  Color:  <r> <g> <b>
+#     Specify rgb color where <r>,<g>, and <b> are between 0.0 and 1.0.
+#
+#  Autostart
+#     Use the specified vehicle and color (defaults if not specified) and
+#     do not bring up the Vehicle Selection Window.
+#
+#  Server: <server machine>
+#     Specify the name of the machine where the drive_server program is running.
+#     
+#  Confine Cursor
+#     Start the simulation with the cursor confined to the window.
+#
+#  Confine Small
+#     Start the simulation with the cursor confined to the driving window.
+#     In this configuration, the cursor cannot be moved to the row of 
+#     buttons at the bottom of the screen (i.e. Quit, Upright, ... )
+#     This mode is good for races and/or when using a steering wheel
+#     with the mouse.
+#
+#  Overhead Camera
+#     This option will start up the program in "skycam" mode instead of 
+#     in the driver's seat.
+#
+#  Camera Up Angle
+#     Controls the height of the camera in "Overhead Camera" mode.
+#
+#  Camera Around Angle
+#     Controls the position of the camera in a circle around the car
+#     in "Overhead Camera" mode.
+#
+#  Camera Distance
+#     Controls the distance from the car in "Overhead Camera" mode.
+#
+#  Automatic Camera
+#     A view that slowly rotates around the car being driven.  This is
+#     useful when combined with the "Automatic Watch Mode" option.
+#
+#  Watch Mode
+#     Allows the user to connect to the server as a spectator instead
+#     of a driver.  No car will be created for this connection, but 
+#     the user will be allowed to see the actions of other drivers.
+#     To switch to watching the next player, use the "Restart" button.
+#
+#  Automatic Watch Mode
+#     This is the same as "Watch Mode" except that the program switches
+#     automatically from connection to connection.
+#
+#  Automatic Watch Frames
+#     This option controls how quickly a program in "Automatic Watch Mode"
+#     will switch between connections.
+#
+#  Small Window
+#     Starts the simulation using a smaller window.  This allows
+#     increased driving frame rates.
+#  
+#  Scene X: <x>
+#  Scene Z: <z>
+#     Specifies the coordinates of the Scene you wish to be started 
+#     (and re-started) in.
+#     The default scene is Noobyville (scene location 0, -2).  These 
+#     numbers must be integers!
+#
+#  Position: <x> <y> <z>
+#      Specifies the x, y, and z offset (in feet) from the origin of the
+#      scene where you start (and re-start).  The default places you in the
+#      parkinglot in Noobyville.  This position can also be specified by
+#      the following three values:
+#  X: <x>
+#  Y: <y>
+#  Z: <z>
+#
+#  Angle: <angle>
+#      Specifies the direction your car faces when starting (or re-starting).
+#      This number represents degrees, with 0 facing due North, 90 facing
+#      West, 180 facing South, and 270 facing due East.  The default
+#      is 0 (North).
+#
+# Example:
+#Vehicle: Sports Car
+#Color: 0.1 0.2 0.2
+#Autostart
+#Server: driver
+#Confine Cursor
+#Confine Small
+#Overhead Camera
+#Camera Up Angle: 40
+#Camera Around Angle: 90
+#Camera Distance: 100
+#Automatic Camera
+#Watch Mode
+#Automatic Watch Mode
+#Automatic Watch Frames: 5
+#Small Window
+# The next 4 lines position a car in the main intersection in Noobyville,
+# facing East.
+#Scene X: -2
+#Scene Z: 0
+#Position: 0.0 0.0 0.0
+#Angle: -90.0
+
+
+Example .server_config file
+----------------------------
+
+# The .server_config file in  <TBD> can be used to customize 
+# your DRIVE server environment.  Lines beginning with '#' and blank lines 
+# are ignored.
+# The following options are recognized:
+#
+#  Normal Mode
+#      The default drive server mode.  
+#
+#  Demo Mode
+#      Brings up the server interface for running races on any of the race
+#      tracks.  The initial mode (for client programs) is a welcome screen 
+#      that shows drivers the color of their cars.  Next is a practice mode 
+#      followed by the actual race.  The transition to each of these modes is 
+#      controlled by a button on the server interface.  
+#
+#  Practice Seconds
+#      Sets the duration of the practice in the "Demo" modes.
+#
+#  Race Seconds
+#      Sets the duration of the race in the "Demo" modes.
+#
+#  Start SceneX:  <x_scene>
+#      Defines the X coordinate of the scene that vehicles will start in
+#      (by default).  A user may override this default (and the default for
+#      Start SceneZ:, Start Position:, and Start Angle:) by setting values
+#      in the .driverc file (see above), unless Demo Mode is turned on in
+#      this file.  If Demo Mode is on, the vehicles are forced to start as 
+#      specified here.
+#
+#  Start SceneZ: <z_scene>
+#      Defines the Z coordinate of the scene that vehicles will start in
+#      (by default).
+#
+#
+#  Start Position: <x> <y> <z>
+#      Defines the x,y,z position within the starting scene for the first 
+#      vehicle to be placed. (Subsequent vehicles are placed from that point,
+#      offset by constant amounts depending on when they enter).
+#
+#  Start Angle: <angle>
+#      Defines the direction that the vehicles will face (by default) when
+#      then enter (and restart).  0 is North, 90 is West, 180 is South,
+#      and 270 is East.
+#
+#  Start Positions: <number>
+#      Defines the number of horizontal positions for vehicles entering the
+#      game.  If more that this number of vehicles enter the game, they will
+#      be given starting positions in "rows" behind the other cars.
+#
+#  Turbo Mode: <value>
+#      Either allows or prohibits users from using the "turbo" key.  To allow
+#      unlimited turbo boosts, the value should be equal to 1. 
+#      To prohibit turbo, value should be equal to 0.  Setting the value to 2
+#      allows limited turbo boosts (See "Turbo Boosts:" below)
+#
+#  Turbo Boosts: <number>
+#       Specifies the number of turbo boosts each vehicle may use for a 
+#       "race".  (The number used by the vehicle may be reset to 0 each time
+#       a "START" type checkpoint object is passed.)  Note that holding 
+#       down the 't' key may generate MANY turbo boosts.
+#
+#  Guns Mode:
+#      Either allows or prohibits users from using Guns.  To allow
+#      unlimited guns, the value should be equal to 1. 
+#      To prohibit guns, value should be equal to 0.  Setting the value to 2
+#      allows limited guns boosts (See "Ammo:" below)
+#
+#  Ammo:
+#      Specifies the number of shells or mines each vehicle may use for a 
+#      "race".  (The number used by the vehicle may be reset to 0 each time
+#      a "START" type checkpoint object is passed.)  
+#      The effect of a shell (or mine) exploding near a vehicle can be set 
+#      with the next 4 entries:
+#
+#  Explosions Disabled
+#      No explosions allowed, and hence, no Guns or mines allowed.  Has the
+#      Same effect as setting Guns Mode to 0.
+#  Explosions Visual
+#      Explosions are seen, but have no effect on vehicles.
+#  Explosions Force
+#      Explosions cause a random force to be applied to affected vehicles.
+#  Explosions Restart
+#      Explosions cause the vehicle to 'Restart'. (Does not currently work).
+#
+#  Checkpoint Reload
+#       This option allows Checkpoints (including Start objects) to 'reload'
+#       Turbo Boosts, Ammo, or both.  The number of turbos and amount of
+#       ammo reloaded by each checkpoint is specified individually for each
+#       Checkpoint in the scene description. 
+#
+#  Spacecraft Races
+#       Enables checkpoint registering for Space Vehicles (allowing them
+#       to participate in races).
+#
+#  Allow Spacecraft
+#       Allows Spacecraft type vehicles to be driven.  By default, these 
+#       vehicles are not allowed.
+#
+#  Disallow Tanks
+#       Prevents Tank type vehicles from being driven.  By default, these 
+#       vehicles are allowed.
+#
+#  Disallow Motorcycles
+#       Prevents Motorcycle type vehicles from being driven.  By default, 
+#       these vehicles are allowed.
+#
+#  Disallow UFOs
+#       Prevents UFO type vehicles from being driven.  By default, these 
+#       vehicles are allowed.
+#
+#  Reread Scenefiles
+#       Causes the drive_server program to continually scan the scenes/
+#       subdirectory to see if any of the scene files have been modified.
+#       If a file has been modified, the drive_server will re-read that
+#       file, throwing away, then re-generating the scenes described in
+#       that file.  This is useful for interactively designing race courses
+#       or otherwise laying out scenes.
+#
+###Examples:
+#
+#Normal Mode
+#Demo Mode
+#Practice Seconds: 120
+#Race Seconds: 120
+
+# The following settings could be used to start races in Grrville....
+
+#Start SceneX: 4
+#Start SceneZ: -1 
+#Start Position: -23 1 -100
+#Start Angle: 0
+#Start Positions: 4
+#Turbo Mode: 2
+#Turbo Boosts: 10

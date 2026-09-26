@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>hwTorus - create a partial torus with given radii</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h2>NAME</h2>
+<p>hwTorus - create a partial torus with given radii</p>
+<h2>INHERITS FROM</h2>
+
+<ul>
+  <li><a href="hwSurface.htm">hwSurface</a></li>
+  <li><a href="hwOrient.htm">hwOrient</a></li>
+</ul>
+<h2>PROPERTIES</h2>
+<table>
+<tr><td>GraphN</td>
+<td>1I</td>
+<td>Tesselation parameter; the number of rows in the resulting mesh</td>
+</tr>
+<tr><td>GraphM</td>
+<td>1I</td>
+<td>Tesselation parameter; the number of columns in the resulting
+  mesh</td>
+</tr>
+<tr><td>Radius</td>
+<td>2F</td>
+<td>Inner and outer radii of the torus</td>
+</tr>
+<tr><td>LatRange</td>
+<td>2F</td>
+<td>Range of latitudes (up the face of the torus) from 0 to 360</td>
+</tr>
+<tr><td>LonRange</td>
+<td>2F</td>
+<td>Range of longitudes (around the circumference of the torus)
+  from 0 to 360</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>1I</td>
+<td>Optimization flags; see <a href="hw.htm">hw</a> for details</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>1B</td>
+<td>True if smooth shading is desired; false for a faceted
+  appearance</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1F</td>
+<td>Tesselation multiplier</td>
+</tr>
+</table>
+<h2>DEFAULTS</h2>
+<table>
+<tr><td>GraphN</td>
+<td>17</td>
+</tr>
+<tr><td>GraphM</td>
+<td>17</td>
+</tr>
+<tr><td>Radius</td>
+<td>{0.5,1.0}</td>
+</tr>
+<tr><td>LatRange</td>
+<td>{0,360}</td>
+</tr>
+<tr><td>LonRange</td>
+<td>{0,360}</td>
+</tr>
+<tr><td>HasNormals</td>
+<td>True</td>
+</tr>
+<tr><td>Resolution</td>
+<td>1.0</td>
+</tr>
+<tr><td>OptFlags</td>
+<td>hwDefaultOptFlags</td>
+</tr>
+</table>
+<h2>DESCRIPTION</h2>
+<p>The hwTorus class creates a partial torus. The radius of the
+&quot;doughnut hole&quot; is given as Radius[0]. The radius of the
+outer circumference of the torus is given as Radius[1]. The LatRange
+specifies how much of the (warped) cylinder is present, from 0 to 360
+degrees. The LonRange specifies how much of the doughnut is present,
+from 0 to 360 degrees. GraphN and GraphM are used to tesselate the
+sphere into a mesh. HasNormals is used to specify smooth shading (the
+default) or a faceted appearance.</p>
+<h2>C EXAMPLE</h2>
+<pre>
+    /* Draw a quarter-doughnut */
+    hwObject
+        torus;
+
+    torus = hwTorus-&gt;create( hwTorus );
+    HW_MODIFY_2F( torus, hwStrLonRange, 0.0, 90.0 );
+    HW_MODIFY_1B( torus, hwStrTwoSided, HW_TRUE );
+    torus-&gt;draw( torus );
+    torus-&gt;destroy( torus );
+</pre>
+<h2>OBJECT FILE EXAMPLE</h2>
+<pre>
+    # A quarter-doughnut
+    hwTorus torus {
+        LonRange = {0.0, 90.0}
+        TwoSided = True
+    }
+</pre>
+<h2>SEE ALSO</h2>
+<p><a href="hw.htm">hw</a>, <a href="hwSurface.htm">hwSurface</a>, <a
+href="hwOrient.htm">hwOrient</a></p>
+</body>
+</html>

@@ -1,0 +1,60 @@
+== NAME ==
+hwRing - define a partial circular object with a hole in the middle
+
+== INHERITS FROM ==
+* [[hwSurface]]
+* [[hwOrient]]
+
+== PROPERTIES ==
+| GraphN     | 1I | Tesselation parameter; the number of rows in the resulting mesh
+| GraphM     | 1I | Tesselation parameter; the number of columns in the resulting mesh
+| Radius     | 2F | The inner and outer radius of the ring
+| LonRange   | 2F | The range of longitudes of the ring, from 0 to 360
+| OptFlags   | 1I | The optimization flags; see [[hw]] for details
+| Resolution | 1F | Tessellation multiplier
+
+== DEFAULTS ==
+| GraphN  | 9
+| GraphM     | 17
+| OptFlags   | hwDefaultOptFlags
+| Radius     | {0.5,1.0}
+| LonRange   | {0,360}
+| Resoltuion | 1.0
+
+== DESCRIPTION ==
+The hwRing class creates a partial ring with inner and outer radii
+and longitude range.  GraphN and GraphM are tesselation parameters,
+and correspond to the rows and columns of the mesh created by the
+hwRing object.  The Radius specifies the inner and outer radii of
+the ring.  The LonRange specifies the range over which the ring
+extends.
+
+The default texture coordinates for for an hwRing texture the object
+as if the ring were cut out of the (square) texture map with the
+top, bottom, left, and right edges touching the edges of the
+texture.
+
+== C EXAMPLE ==
+{{{
+    /* Draw somthing looking vaguely like the letter "C" */
+    hwObject
+        ring;
+
+    ring = hwRing->create( hwRing );
+    HW_MODIFY_2F( ring, hwStrLonRange, 0, 180 );
+    HW_MODIFY_1B( ring, hwStrTwoSided, HW_TRUE );
+    ring->draw( ring );
+    ring->destroy( ring );
+}}}
+
+== OBJECT FILE EXAMPLE ==
+{{{
+    # A ring looking vaguely like the letter "C"
+    hwRing ring {
+        LonRange = {0,180}
+        TwoSided = True
+    }
+}}}
+
+== SEE ALSO ==
+[[hw]], [[hwSurface]], [[hwOrient]]
