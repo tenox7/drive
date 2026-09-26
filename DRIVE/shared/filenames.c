@@ -22,6 +22,8 @@
 #ifndef WIN32
 #include <unistd.h>
 #include <sys/param.h>
+#else
+#include <windows.h>
 #endif
 
 #include "filenames.h"
@@ -57,6 +59,12 @@ void construct_filenames(
     if ((cptr = getenv("DRIVE_DIRECTORY")) != NULL) {
 	strcpy(drivedir,cptr);
     }
+#ifdef WIN32
+    /* argv[0] tells us nothing useful on Windows; ask for the .exe path. */
+    else if (GetModuleFileName(NULL,drivedir,MAXPATHLEN) > 0) {
+	if ((cptr = strrchr(drivedir,'\\')) != NULL) *cptr = '\0';
+    }
+#endif
     else if (*drivepath == '/') {
 	/* absolute pathname */
 	strcpy(drivedir,drivepath);

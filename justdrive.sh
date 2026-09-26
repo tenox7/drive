@@ -12,14 +12,17 @@ VEHICLE=${1:-Sports Car}
 
 cd "$(dirname "$0")/DRIVE"
 
-if [ ! -x ./drive ] || [ ! -x ./drive_server ]; then
-    case "$(uname)" in
-    Darwin) ../build.macos.sh ;;
-    *)      ../build.linux.sh ;;
-    esac
+case "$(uname)" in
+Darwin)       BUILD=../build.macos.sh ;;
+MINGW*|MSYS*) BUILD=../build.windows.sh; EXE=.exe ;;
+*)            BUILD=../build.linux.sh ;;
+esac
+
+if [ ! -x ./drive$EXE ] || [ ! -x ./drive_server$EXE ]; then
+    $BUILD
 fi
 
 echo "Practice mode, no time limit.  Driving a $VEHICLE."
 echo "Mouse inside the window: up = throttle, down = brake.  'r' respawns."
 DRIVE_LOCAL_SERVER=1 DRIVE_PRACTICE_MODE=1 \
-DRIVE_AUTOSTART_MODE=1 DRIVE_VEHICLE="$VEHICLE" exec ./drive localhost
+DRIVE_AUTOSTART_MODE=1 DRIVE_VEHICLE="$VEHICLE" exec ./drive$EXE localhost

@@ -15,6 +15,8 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+#include <stdint.h>
+
 /* Basic type definitions */
 typedef char            hwInt8;
 typedef unsigned char   hwUint8;

@@ -20,8 +20,8 @@ Company, released under the GPL v2; see COPYING.txt and LICENSE.TXT.
 Parts also carry Daryl Poe's own copyright.
 
 Upstream targets HP-UX, Linux/X11 with Motif, and Win32.  This fork
-builds and runs on current macOS and Linux with GLFW, and keeps only
-DRIVE and the HoverWare pieces it needs.
+builds and runs on current macOS, Linux and Windows with GLFW, and keeps
+only DRIVE and the HoverWare pieces it needs.
 
 This tree is DRIVE plus the parts of HoverWare (HW) it needs:
 
@@ -29,22 +29,31 @@ This tree is DRIVE plus the parts of HoverWare (HW) it needs:
         HW        HoverWare, the graphics library DRIVE draws with
         JPEG      Independent JPEG Group release 6b, for HW textures
         LIBPNG    PNG readers/writers linked into the HW libraries
+        PDCURSES  PDCurses 3.9 wincon, the server console on Windows
 
-GLFW and curses come from the system.  The Hoverball game and the
-bundled GLFW, FreeType, OpenAL and PDCurses sources are not needed to
-build DRIVE and have been removed.
+GLFW comes from the system, and so does curses everywhere but Windows.
+The Hoverball game and the bundled GLFW, FreeType and OpenAL sources are
+not needed to build DRIVE and have been removed.
 
 BUILDING DRIVE ON MODERN SYSTEMS
 ================================
 
     ./build.macos.sh    -- macOS (clang, Homebrew GLFW, arm64 or x86_64)
     ./build.linux.sh    -- Linux (gcc, system GLFW)
+    ./build.windows.sh  -- Windows, in an MSYS2 MINGW64 shell
 
-Both produce DRIVE/drive and DRIVE/drive_server.  Linux needs
-build-essential, libglfw3-dev, libgl1-mesa-dev and libncurses-dev.
+They produce DRIVE/drive and DRIVE/drive_server, .exe on Windows.  Linux
+needs build-essential, libglfw3-dev, libgl1-mesa-dev and libncurses-dev;
+Windows needs mingw-w64-x86_64-gcc, mingw-w64-x86_64-glfw and make.
 The scripts just chain the JPEG, LIBPNG, HW and DRIVE makefiles, so
-individual pieces can also be rebuilt with "make -f OSX_GLFW.mk" or
-"make -f Linux_GLFW.mk" in those directories.
+individual pieces can also be rebuilt with "make -f OSX_GLFW.mk",
+"make -f Linux_GLFW.mk" or "make -f Mingw_GLFW.mk" in those directories.
+Object files are not tagged by platform, so delete them before building
+the same tree for another one.
+
+The Windows binaries are statically linked and need nothing installed.
+The client has no console; the server wants a real one, so run it from
+cmd or Windows Terminal rather than from mintty.
 
 Launcher scripts in the top-level directory:
 

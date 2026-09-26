@@ -258,7 +258,6 @@ Boolean StarbaseGetVisuals(
     XVisualInfo *vgraphics);
 #endif
 
-#ifndef WIN32
 /*****************************************************************
  * start_private_server
  *
@@ -268,7 +267,49 @@ Boolean StarbaseGetVisuals(
  *	has nowhere to set it.  The server exits when we disconnect, and
  *	is killed outright if we quit first.
  */
+#ifdef WIN32
+
+static HANDLE private_server_proc;
+#define have_private_server()	(private_server_proc != NULL)
+
+static void stop_private_server(void)
+{
+    if (private_server_proc == NULL) return;
+    TerminateProcess(private_server_proc,0);
+    CloseHandle(private_server_proc);
+    private_server_proc = NULL;
+}
+
+static void start_private_server(void)
+{
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    char cmd[MAXPATHLEN+3];
+
+    if (getenv("DRIVE_LOCAL_SERVER") == NULL) return;
+
+    /* The child inherits these; CreateProcess gives it no console. */
+    SetEnvironmentVariable("DRIVE_NO_CONSOLE","1");
+    SetEnvironmentVariable("DRIVE_EXIT_WHEN_EMPTY","1");
+
+    memset(&si,0,sizeof(si));
+    si.cb = sizeof(si);
+    sprintf(cmd,"\"%s\"",server_programname);
+
+    /* The server opens its textures relative to the game directory. */
+    if (!CreateProcess(NULL,cmd,NULL,NULL,FALSE,CREATE_NO_WINDOW,
+	    NULL,drivedir,&si,&pi))
+	return;
+
+    CloseHandle(pi.hThread);
+    private_server_proc = pi.hProcess;
+    atexit(stop_private_server);
+}
+
+#else
+
 static pid_t private_server_pid;
+#define have_private_server()	(private_server_pid > 0)
 
 static void stop_private_server(void)
 {
@@ -314,20 +355,20 @@ static void start_private_server(void)
     private_server_pid = pid;
     atexit(stop_private_server);
 }
-#else
-#define start_private_server()
+
 #endif
 
 char *findServer(void)
 {
     static char result[1024];
-#ifndef WIN32
+
     /* Our own server is on the loopback, not on whatever this host calls
      * itself. */
-    if (private_server_pid > 0) return "localhost";
-#endif
+    if (have_private_server()) return "localhost";
+
     if (!*result) {
-        gethostname(result, sizeof(result));
+        /* On Windows this fails until InitIPC() has called WSAStartup(). */
+        if (gethostname(result, sizeof(result)) != 0) return "localhost";
     }
     return result;
 }

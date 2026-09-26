@@ -1,0 +1,28 @@
+OBJS=dirent_win.o \
+	dlist.o \
+	fastmalloc.o \
+	filenames.o \
+	ipc.o \
+	message.o \
+	nquery.o \
+	random.o \
+	scanargs.o \
+	utils.o \
+	version.o
+
+LIBS=../shared.a
+
+#OPTG=-O2
+OPTG=-g
+LEGACY=-fcommon -std=gnu89 -Wno-implicit-int -Wno-implicit-function-declaration -Wno-return-type -Wno-int-conversion -Wno-incompatible-pointer-types
+CC=gcc
+CFLAGS=$(OPTG) -DGLFW -DMINGW -I../libnum -I../libphysics -I../include -I../../HW/Inc -I../libprims $(LEGACY)
+
+all:	$(LIBS)
+
+clean:
+	rm -f *.o $(LIBS)
+
+../shared.a:     $(OBJS)
+	rm -f $@
+	ar rv $@ $(OBJS)

@@ -46,6 +46,8 @@ typedef int *SELTYPE;
 
 #else	/* ] [ */
 
+#include <winsock2.h>
+#include <ws2tcpip.h>
 #include <windows.h>
 #define errno WSAGetLastError()
 #define close closesocket

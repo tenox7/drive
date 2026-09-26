@@ -2968,11 +2968,16 @@ double SrvGetTime(void)
  */
 void _hp_high_res_sleep( double t )
 {
+#ifdef WIN32
+    /* Winsock's select() refuses a call with no descriptor sets at all. */
+    Sleep( (DWORD)(t * 1000.0) );
+#else
     struct timeval tm;
 
     tm.tv_sec = (int)t;
     tm.tv_usec = (int)(t * 1000000.0);
     (void)select( 0, 0, 0, 0, &tm );
+#endif
 }
 
 /* Oops, _hp_invert needs to be here also. */

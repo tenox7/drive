@@ -45,7 +45,7 @@
 /* For some reason, byte-swapping was turned off in the original linux
  * version of this.  Some day we should make this work for interoperability.
  */
-#if defined(__linux__) || defined(MAC)
+#if defined(__linux__) || defined(MAC) || defined(WIN32)
 # define WORDS_BIGENDIAN 1
 #endif
 
@@ -87,6 +87,8 @@ typedef fd_set *SELTYPE;
 
 #ifdef WIN32 /* [ */
 
+#include <winsock2.h>
+#include <ws2tcpip.h>
 #include <windows.h>
 #include "global.h"
 #include "newMessage.h"
