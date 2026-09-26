@@ -9,11 +9,13 @@ BUILD    = build
 APP      = $(BUILD)/$(APP_NAME).app
 DMG      = $(BUILD)/$(APP_NAME).dmg
 ZIP      = $(BUILD)/$(APP_NAME)-windows-x64.zip
+TGZ      = $(BUILD)/$(APP_NAME)-linux-$(shell uname -m).tar.gz
 STAGING  = $(BUILD)/dmg_staging
 ZIPDIR   = $(BUILD)/zip_staging
+TGZDIR   = $(BUILD)/tar_staging
 RES      = $(APP)/Contents/Resources
 
-.PHONY: all binaries icon app dmg release zip clean
+.PHONY: all binaries icon app dmg release zip tar clean
 
 all: dmg
 
@@ -120,6 +122,22 @@ zip:
 	(cd $(ZIPDIR); zip -qr ../$(notdir $(ZIP)) drive)
 	rm -rf $(ZIPDIR)
 	@ls -lh $(ZIP)
+
+# Linux: the same, from what build.linux.sh left in DRIVE.  For a tarball
+# that runs on any distribution use package.linux.sh, which runs this in a
+# container old enough to be compatible.
+tar:
+	@test -x DRIVE/drive || { echo "run ./build.linux.sh first"; exit 1; }
+	rm -rf $(TGZDIR) $(TGZ)
+	mkdir -p $(TGZDIR)/drive/DRIVE
+	cp run.sh justdrive.sh $(TGZDIR)/drive/
+	cp DRIVE/drive DRIVE/drive_server DRIVE/drive_help \
+	   DRIVE/drive_blocks DRIVE/sound.cnf $(TGZDIR)/drive/DRIVE/
+	cp -R DRIVE/pixmaps DRIVE/scenes DRIVE/constructs DRIVE/textures \
+	   $(TGZDIR)/drive/DRIVE/
+	tar czf $(TGZ) -C $(TGZDIR) drive
+	rm -rf $(TGZDIR)
+	@ls -lh $(TGZ)
 
 clean:
 	rm -rf $(BUILD)

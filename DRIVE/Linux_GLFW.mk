@@ -3,6 +3,11 @@
 SRV_DEBUG=-g
 CLI_DEBUG=-g
 
+# Overridable from the environment, which is how package.linux.sh links
+# GLFW and curses statically for a tarball that runs on any distribution.
+GLFW_LIB ?= -lglfw
+CURSES_LIB ?= -lncurses
+
 all:	drive_server_rule drive_rule
 
 drive_server_rule:
@@ -30,7 +35,7 @@ drive_server: server/drive_server.o $(SRV_LIBS)
 		$(SRV_DEBUG) \
 		server/drive_server.o \
 		-Wl,--start-group $(SRV_LIBS) -Wl,--end-group \
-		-lncurses -lm
+		$(CURSES_LIB) -lm -lpthread
 
 drive_rule:
 	(cd client; make -f Linux_GLFW.mk)
@@ -46,7 +51,7 @@ drive:  client/drive.o $(CLI_LIBS)
 		$(CLI_DEBUG) \
 		client/drive.o \
 		-Wl,--start-group $(CLI_LIBS) -Wl,--end-group \
-		-lglfw -lGL -lm -ldl -lpthread
+		$(GLFW_LIB) -lGL -lm -ldl -lpthread
 
 clean:
 	(cd libnum; make -f Linux_GLFW.mk clean)

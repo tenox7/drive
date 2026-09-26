@@ -94,16 +94,24 @@ the Config menu changes it while driving.
 PACKAGING
 =========
 
-    make app        build/DRIVE.app, ad-hoc signed
-    make dmg        the same in build/DRIVE.dmg
-    make release    Developer ID signed, notarized and stapled DMG
-    make zip        build/DRIVE-windows-x64.zip, after build.windows.sh
+    make app             build/DRIVE.app, ad-hoc signed
+    make dmg             the same in build/DRIVE.dmg
+    make release         Developer ID signed, notarized and stapled DMG
+    make zip             build/DRIVE-windows-x64.zip, after build.windows.sh
+    make tar             build/DRIVE-linux-x86_64.tar.gz, after build.linux.sh
+    ./package.linux.sh   the same tarball, built portable in Docker
 
 A double-clickable app with the server hidden inside it; it defaults to
 unlimited practice, and GLFW is linked statically so nothing else has to
 be installed.  "make release" needs DEV_ID and NOTARY_PROFILE in .env --
-copy .env.example and fill them in.  The zip is the same two Windows
-binaries and their data, with the .bat files beside them.
+copy .env.example and fill them in.  The zip and the tarball are the two
+binaries and their data with the launchers beside them.
+
+"make tar" packages whatever the local build.linux.sh produced, which
+will not run on anything older than the machine that built it.
+package.linux.sh instead builds in an Ubuntu 20.04 container with GLFW
+and curses linked statically, so its tarball needs only glibc 2.31 or
+newer and the host's own libGL and libX11.
 
 TESTING WITHOUT A DESKTOP
 =========================

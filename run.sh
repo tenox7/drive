@@ -15,6 +15,7 @@ MINGW*|MSYS*) BUILD=../build.windows.sh; EXE=.exe ;;
 esac
 
 if [ ! -x ./drive$EXE ] || [ ! -x ./drive_server$EXE ]; then
+    [ -x "$BUILD" ] || { echo "Not built, and no $BUILD to build it with."; exit 1; }
     $BUILD
 fi
 
