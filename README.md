@@ -53,12 +53,15 @@ the same tree for another one.
 
 The Windows binaries are statically linked and need nothing installed.
 The client has no console; the server wants a real one, so run it from
-cmd or Windows Terminal rather than from mintty.
+cmd or Windows Terminal rather than from mintty.  drive.exe on its own
+expects a server to already be running, so start it with justdrive.bat
+or run.sh rather than by double-clicking it.
 
 Launcher scripts in the top-level directory:
 
     ./run.sh          server console + client, normal race cycle
     ./justdrive.sh    unlimited practice, car already spawned
+    justdrive.bat     the same, for Windows outside MSYS2
 
 justdrive.sh runs the server hidden inside the game, so there is one
 window and no console; run.sh still opens the operator console.
