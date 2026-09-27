@@ -806,45 +806,45 @@ void __hwGlCamera( hwDisplay disp, hwCamStruct *cam )
     hwGlGetFloatv( HWGL_PROJECTION_MATRIX,
                    &glctx->projMat[0][0] );
 
-    /* Get corners of view volume, in WCs */
+    /* Get corners of view volume, in WCs.  The viewport need not sit at
+     * the window origin (DRIVE puts its dash below the 3D view).
+     */
     {
         GLint viewport[4];
         hwFloat modelMatrix[16];
         hwFloat projMatrix[16];
         hwFloat xyz[3];
+        hwFloat x0, y0, x1, y1;
 
         hwGlGetFloatv( HWGL_MODELVIEW_MATRIX, modelMatrix );
         hwGlGetFloatv( HWGL_PROJECTION_MATRIX, projMatrix );
 
         glGetIntegerv( GL_VIEWPORT, viewport );
+        x0 = viewport[0]; x1 = x0 + viewport[2];
+        y0 = viewport[1]; y1 = y0 + viewport[3];
 
-        hwGluUnProject( 0.f, 0.f, 0.f,
+        hwGluUnProject( x0, y0, 0.f,
                         modelMatrix, projMatrix, viewport,
                         xyz+0, xyz+1, xyz+2 );
         WC_Corners[0][0] = xyz[0];
         WC_Corners[0][1] = xyz[1];
         WC_Corners[0][2] = xyz[2];
 
-        hwGluUnProject( (hwFloat)(glctx->VDC_XMax-1),
-                        0.f, 0.f,
+        hwGluUnProject( x1, y0, 0.f,
                         modelMatrix, projMatrix, viewport,
                         xyz+0, xyz+1, xyz+2 );
         WC_Corners[1][0] = xyz[0];
         WC_Corners[1][1] = xyz[1];
         WC_Corners[1][2] = xyz[2];
 
-        hwGluUnProject( (hwFloat)(glctx->VDC_XMax-1),
-                        (hwFloat)(glctx->VDC_YMax-1),
-                        0.f,
+        hwGluUnProject( x1, y1, 0.f,
                         modelMatrix, projMatrix, viewport,
                         xyz+0, xyz+1, xyz+2 );
         WC_Corners[2][0] = xyz[0];
         WC_Corners[2][1] = xyz[1];
         WC_Corners[2][2] = xyz[2];
 
-        hwGluUnProject( 0.f,
-                        (hwFloat)(glctx->VDC_YMax-1),
-                        (hwFloat)0,
+        hwGluUnProject( x0, y1, 0.f,
                         modelMatrix, projMatrix, viewport,
                         xyz+0, xyz+1, xyz+2 );
         WC_Corners[3][0] = xyz[0];
