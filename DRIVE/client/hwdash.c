@@ -70,7 +70,7 @@ static int helpVisible;
 static hwObject menuBar;
 static void loadMenus(void);
 static void drawMenus(void);
-static void markFogLevel(void);
+static void markConfig(void);
 
 /* Where the dash canvas ended up on screen, and its scale. */
 static float dashScale = 1.0;
@@ -532,18 +532,17 @@ void toggleHelpPanel(void)
 #define ID_QUIT		5000
 #define ID_HELP		6000
 
-/* Pull-down items; the ID is the title's ID plus the item index. */
-static char *vehicleItems[] = {
-    "Choose Vehicle...", "Automatic Transmission", "Manual Transmission", NULL
-};
-/* Fixed depth cue levels, so the setting is absolute and not a nudge. */
+/* Pull-down items; the ID is the title's ID plus the item index.  Fixed
+ * depth cue levels, so the setting is absolute and not a nudge.
+ */
 static char *configItems[] = {
-    "  No Fog", "  Little Fog", "  Some Fog", "  More Fog", "  Max Fog", NULL
+    "  No Fog", "  Little Fog", "  Some Fog", "  More Fog", "  Max Fog",
+    "  Automatic Transmission", "  Manual Transmission", NULL
 };
 static float fogLevel[5] = { 0.0, 0.9, 1.8, 2.4, 3.0 };
 
 static hwObject menuTitle[6];
-static hwObject menuPanel[2];		/* Vehicle and Config only */
+static hwObject menuPanel[2];		/* Config only; Vehicle has none */
 static int menuPanelW[2], menuPanelH[2];
 static int openMenu = -1;		/* index into menuTitle, or -1 */
 
@@ -557,15 +556,13 @@ static void doMenuCommand(int id)
     case ID_QUIT :	client_quit(); exit(0);	break;
     case ID_HELP :	toggleHelpPanel();	break;
 
-    case ID_VEHICLE + 1 :			/* Choose Vehicle... */
+    case ID_VEHICLE :
 	/* Go back to the spinning-vehicle picker.  It runs its own modal
 	 * loop, so it has to start from the main loop rather than from
 	 * inside this event callback.
 	 */
 	request_vehicle_select();
 	break;
-    case ID_VEHICLE + 2 :	gear.type = GEAR_AUTOMATIC;	break;
-    case ID_VEHICLE + 3 :	gear.type = GEAR_STANDARD;	break;
 
     case ID_CONFIG + 1 :
     case ID_CONFIG + 2 :
@@ -574,6 +571,8 @@ static void doMenuCommand(int id)
     case ID_CONFIG + 5 :
 	driveFogAmount = fogLevel[id - ID_CONFIG - 1];
 	break;
+    case ID_CONFIG + 6 :	gear.type = GEAR_AUTOMATIC;	break;
+    case ID_CONFIG + 7 :	gear.type = GEAR_STANDARD;	break;
     }
 }
 
@@ -585,9 +584,9 @@ static void menuCallback(hwObject obj, hwInt32 reason)
     if (obj->inquire(obj, hwStrID, (void **)&idp) != HW_TYPE_1I) return;
 
     /* A title opens or closes its pull-down; an item runs a command. */
-    switch (*idp) {
-    case ID_VEHICLE : openMenu = (openMenu == 0) ? -1 : 0; return;
-    case ID_CONFIG :  openMenu = (openMenu == 1) ? -1 : 1; return;
+    if (*idp == ID_CONFIG) {
+	openMenu = (openMenu == 1) ? -1 : 1;
+	return;
     }
 
     openMenu = -1;
@@ -692,8 +691,6 @@ static void loadMenus(void)
     HW_MODIFY_1B(bar, hwStrInvisible, 0);
     (void)titles;
 
-    menuPanel[0] = buildPanel("driveVehicleMenu", vehicleItems, ID_VEHICLE,
-	&menuPanelW[0], &menuPanelH[0]);
     menuPanel[1] = buildPanel("driveConfigMenu", configItems, ID_CONFIG,
 	&menuPanelW[1], &menuPanelH[1]);
 }
@@ -740,7 +737,7 @@ static void drawMenus(void)
     if (openMenu == 1) {
 	int x = winFullW/6;
 
-	markFogLevel();
+	markConfig();
 	disp->guiRectangle(disp, 0, 0xFF1A1F24, x,
 	    menuBarY() - menuPanelH[1] - 24, menuPanelW[1], 24, 0);
 	dashText(12, 0xFFFFD060, x + 8,
@@ -872,31 +869,34 @@ int dashPickerHit(int mx, int my)
 }
 
 /* Put a tick next to whichever fog level is currently in effect. */
-static void markFogLevel(void)
+static void markConfig(void)
 {
-    static int lastMarked = -2;
+    static int lastFog = -2, lastGear = -2;
     hwObject *kids;
     hwInt32 t;
-    int nk, i, cur = 0;
+    int nk, i, fog = 0, trans;
 
     if (!menuPanel[1]) return;
 
     for (i = 0; i < 5; i++) {
-	if (driveFogAmount >= fogLevel[i] - 0.01) cur = i;
+	if (driveFogAmount >= fogLevel[i] - 0.01) fog = i;
     }
-    if (cur == lastMarked) return;
-    lastMarked = cur;
+    trans = (gear.type == GEAR_STANDARD) ? 6 : 5;
+    if (fog == lastFog && trans == lastGear) return;
+    lastFog = fog;
+    lastGear = trans;
 
     t = menuPanel[1]->inquire(menuPanel[1], hwStrChildren, (void **)&kids);
     if (HW_GET_BASE(t) != HW_TYPE_OBJECT) return;
     nk = HW_GET_COUNT(t);
-    if (nk > 5) nk = 5;
+    if (nk > 7) nk = 7;
 
     for (i = 0; i < nk; i++) {
 	char lbl[64];
 
 	if (!kids[i]) continue;
-	sprintf(lbl, "%c %s", (i == cur) ? '*' : ' ', configItems[i] + 2);
+	sprintf(lbl, "%c %s", (i == fog || i == trans) ? '*' : ' ',
+	    configItems[i] + 2);
 	kids[i]->modify(kids[i], hwStrLabel, HW_TYPE_STRING, lbl);
     }
 }

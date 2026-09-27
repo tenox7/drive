@@ -70,11 +70,10 @@ justdrive.sh takes an optional vehicle name, e.g. ./justdrive.sh "Tank".
 Steer with the mouse (up accelerates, down brakes); "r" respawns and "?"
 shows the keyboard help.
 
-The menu bar along the bottom is the original one: Vehicle (choose vehicle,
-which returns to the spinning picker with a clickable list of cars, and
-automatic/manual transmission),
-Config (depth cue: no / little / some / more / max fog, with the current
-level ticked), Upright, Start Over, Quit and Help.
+The menu bar along the bottom is the original one: Vehicle (back to the
+spinning picker with a clickable list of cars), Config (depth cue: no /
+little / some / more / max fog, and automatic / manual transmission, with
+the current choices ticked), Upright, Start Over, Quit and Help.
 
 The server has a curses operator console.  NEXT STATE steps Pre-Race ->
 Racing -> Post-Race -> Practice; cars can only be driven in Racing and
