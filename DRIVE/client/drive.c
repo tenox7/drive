@@ -1647,7 +1647,7 @@ static void drive_initialize(
 #ifndef WIN32
     struct timezone tz;
 #endif
-    int i;
+    int i, tries = 0;
 
 
     seedrand(getpid() ^ time(0) ^ 0x12345678);
@@ -1806,16 +1806,25 @@ static void drive_initialize(
         exit(1);
     }
 
+    server_socket = (socket_type *)malloc(sizeof(socket_type));
+
     do {
 	if ((hostname == NULL) || (*hostname == '\0')) hostname = findServer();
-
-	server_socket = (socket_type *)malloc(sizeof(socket_type)); 
 
 	server_socket->socketnum = InitIPC(hostname,"drive");
 	if(server_socket->socketnum == IPC_INVALID_SOCK ) {
 	    server_socket->socketnum = InitIPC(hostname, DEFAULT_SOCKET_STRING);
 	}
 	if(server_socket->socketnum == IPC_INVALID_SOCK ) {
+	    /* Our own server needs a moment before it listens; wait quietly */
+	    if (have_private_server() && ++tries < 100) {
+#ifdef WIN32
+		Sleep( 100 );
+#else
+		usleep( 100000 );
+#endif
+		continue;
+	    }
             printf("Unable to connect to %s; retrying in 10 seconds\n", hostname);
 #ifdef WIN32
             Sleep( 10 * 1000 );
