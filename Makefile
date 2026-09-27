@@ -4,7 +4,7 @@
 -include .env
 
 APP_NAME = DRIVE
-VERSION  = 1.0
+VERSION  = 1.1
 BUILD    = build
 APP      = $(BUILD)/$(APP_NAME).app
 DMG      = $(BUILD)/$(APP_NAME).dmg
