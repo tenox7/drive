@@ -342,8 +342,14 @@ static void drawSteeringWheel(void)
  */
 static void updateNeedle(hwObject g, gauge_type *src)
 {
+    float v;
+
     if (!g || !src) return;
-    HW_MODIFY_1F(g, hwStrNeedlePos, src->value);
+    /* Analog RPM and altitude arrive in thousands; the dials are in units */
+    v = src->value;
+    if (src->class == GAUGE_ANALOG_RPM || src->class == GAUGE_ANALOG_ALTITUDE)
+	v *= 1000.0;
+    HW_MODIFY_1F(g, hwStrNeedlePos, v);
 }
 
 /****************************************************************************
