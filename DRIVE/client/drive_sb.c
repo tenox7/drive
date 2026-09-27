@@ -111,6 +111,7 @@ void auto_rotate_vehicle(
 	cstate.camera.mode = CAM_MODE_PREVIEW;
 	cam_update(img_fildes, &cstate.camera, identity);
 	cstate.camera.mode = save_camera_mode;
+	daylight_sun();
 
 	{
 	    static hwSurfaceType surf;
@@ -483,6 +484,7 @@ void redraw_spinning_vehicle(
     cstate.camera.mode = CAM_MODE_PREVIEW;
     cam_update(img_fildes, &cstate.camera, identity);
     cstate.camera.mode = save_camera_mode;
+    daylight_sun();
 
     {
 	static hwSurfaceType surf;

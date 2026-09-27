@@ -313,7 +313,11 @@ void __hwGlUpdate( hwDisplay disp, hwInt32 updateFlags )
         hwGlMatrixMode( HWGL_PROJECTION );
         hwGlLoadIdentity();
 
-        glctx->numLights = 0;
+        /* Lights are defined per frame; drop last frame's */
+        if( glctx->numLights > 8 ) glctx->numLights = 8;
+        while( glctx->numLights > 0 ) {
+            hwGlDisable( HWGL_LIGHT0 + --glctx->numLights );
+        }
         glctx->planesValid = 0;
         glctx->camSet = 0;
 

@@ -964,6 +964,24 @@ void daylight_initialize(
 
 
 /*****************************************************************
+ * daylight_sun
+ *
+ * 	Define the sun.  HoverWare drops lights at every update, so this
+ * 	has to follow the camera in every frame.
+ */
+void daylight_sun(void)
+{
+    static float sunDir[3] = {-SUN_DIRECTION_X,
+				-SUN_DIRECTION_Y,
+				-SUN_DIRECTION_Z};
+    extern hwDisplay disp;
+
+    disp->directionalLight( disp, daylight_sun_color, sunDir );
+    disp->enableLighting( disp, 1 );
+}
+
+
+/*****************************************************************
  * daylight_update
  * 
  * 	Update background color and depth cue based on time of day
@@ -1054,19 +1072,7 @@ void daylight_update(
 		    daylight_depth_cue_range[1],
 		    1.0, 0.0 ); */
 
-    /* Define light for sun.  In the future, if we decide to
-     * actually change the position of the sun dynamically, this
-     * should be moved to daylight_update().
-     */
-    {
-	static float sunDir[3] = {-SUN_DIRECTION_X,
-					-SUN_DIRECTION_Y,
-					-SUN_DIRECTION_Z};
-	disp->directionalLight( disp,
-			daylight_sun_color,
-			sunDir );
-    }
-    disp->enableLighting( disp, 1 );
+    daylight_sun();
 
     /* Copy background color to structure for other modules' use */
     cstate.daylight.back_clr[0] = daylight_background_color[0];

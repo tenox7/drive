@@ -41,5 +41,6 @@ extern void daylight_update(
     int fildes,
     daylight_type *d,
     boolean_type force_update);
+extern void daylight_sun(void);
 
 #endif /* _DAYLIGHT_INCLUDED */

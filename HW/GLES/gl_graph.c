@@ -1708,9 +1708,10 @@ static void AppendOnePoly
     size = ((NP - 2) * 3) + *idxSize;
     tmpIdx = __hwGlGrowIdxPool( glctx, size ) + *idxSize;
 
-    /* Calculate the normal... */
+    /* Calculate the normal, facing the side the emitted winding shows */
     if( !(dataFlags & HW_DATA_NORMALS) ) {
         CalcNormal( Poly, Poly+WPV, Poly+2*WPV, Normal );
+        if( Rev ) VMULC( Normal, Normal, -1.0 );
     }
 
     ptr = tmpPoly;
