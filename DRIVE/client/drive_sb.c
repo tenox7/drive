@@ -288,7 +288,7 @@ void check_background_color(
 
 /*****************************************************************
  * client_update
- * 
+ *
  * 	Draw one frame.
  * 	
  * Inputs:
@@ -307,6 +307,7 @@ void client_update(
 #endif
     unsigned long snapshot_sec, snapshot_usec = 1;
     float fseconds;
+    int upd = client_frozen ? HW_UPDATE_ALL & ~HW_UPDATE_SWAP : HW_UPDATE_ALL;
     extern hwDisplay
 	disp;
 
@@ -328,14 +329,14 @@ void client_update(
      */
     if (cstate.car_selected) {
 	drawDashboard();
-	disp->update( disp, HW_UPDATE_ALL );
+	disp->update( disp, upd );
 	dashEndOverlay();
     }
     else {
-	disp->update( disp, HW_UPDATE_ALL );
+	disp->update( disp, upd );
     }
 #else
-    disp->update( disp, HW_UPDATE_ALL );
+    disp->update( disp, upd );
 #endif
     cstate.frame_ready = FALSE;
 

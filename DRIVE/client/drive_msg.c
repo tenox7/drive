@@ -701,9 +701,26 @@ static void client_send_input(
 static boolean_type client_beginframe(
     struct IPCMsg *m)
 {
-    client_send_input();
+    if (!client_frozen) client_send_input();
 
     return FALSE;
+}
+
+
+/*****************************************************************
+ * toggle_freeze
+ *
+ * 	'p' freezes the client for screenshots.  The picture stops and no
+ * 	input goes out, so the server sends no more frames and soon stops
+ * 	moving the scene nobody is looking at.  Input starts it all again.
+ */
+int client_frozen;
+
+void toggle_freeze(
+    void)
+{
+    client_frozen = !client_frozen;
+    if (!client_frozen) client_send_input();
 }
 
 

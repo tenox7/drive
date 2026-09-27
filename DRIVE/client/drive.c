@@ -490,6 +490,13 @@ void process_keypress(
             client_upright();
             break;
 #if defined(WIN32) || defined(MAC)
+        case 'p' : case 'P' :
+#else
+	case XK_p: /* Freeze the picture */
+#endif
+            toggle_freeze();
+            break;
+#if defined(WIN32) || defined(MAC)
         case 'f' : case 'F' : case HW_KEY_UP :
 #else
 	case XK_f: case XK_Up:  /* front */
@@ -1957,6 +1964,8 @@ int main(
 #ifdef GLFW
 	if (vehicle_select_pending) do_vehicle_select();
 #endif
+	/* No frames come while frozen, so poll for the key that thaws it */
+	if (client_frozen) disp->update( disp, HW_CHECK_EVENTS );
 	done = check_server_socket( 1 );
 
 #if 0

@@ -67,8 +67,8 @@ Launcher scripts in the top-level directory:
 justdrive.sh runs the server hidden inside the game, so there is one
 window and no console; run.sh still opens the operator console.
 justdrive.sh takes an optional vehicle name, e.g. ./justdrive.sh "Tank".
-Steer with the mouse (up accelerates, down brakes); "r" respawns and "?"
-shows the keyboard help.
+Steer with the mouse (up accelerates, down brakes); "r" respawns, "p"
+freezes the game for screenshots and "?" shows the keyboard help.
 
 The menu bar along the bottom is the original one: Vehicle (back to the
 spinning picker with a clickable list of cars), Config (depth cue: no /

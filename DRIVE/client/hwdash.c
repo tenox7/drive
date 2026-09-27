@@ -479,6 +479,7 @@ static const char *helpText[] = {
     "VEHICLE",
     "  r                  restart at the start line",
     "  u                  upright the vehicle",
+    "  p                  freeze / unfreeze",
     "",
     "  ?                  close this help",
     "  Esc                quit",

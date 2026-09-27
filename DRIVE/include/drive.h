@@ -373,6 +373,9 @@ extern void client_restart(
     void);
 extern void client_upright(
     void);
+extern void toggle_freeze(
+    void);
+extern int client_frozen;
 
 
 /*** From query.c ***/
