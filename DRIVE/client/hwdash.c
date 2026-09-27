@@ -468,8 +468,8 @@ static const char *helpText[] = {
     "DRIVING",
     "  mouse up/down      accelerate / brake",
     "  mouse left/right   steer",
-    "  left/right button  shift down / up",
-    "  c                  centre the pointer",
+    "  middle button      fire (Shift: drop a mine)",
+    "  left/right button  climb / descend when flying",
     "",
     "GEARS",
     "  . or >             shift up",
@@ -480,7 +480,8 @@ static const char *helpText[] = {
     "  s or Left          look left",
     "  d or Right         look right",
     "  a or Down          look back",
-    "  i / o              zoom in / out",
+    "  v                  overhead camera on / off",
+    "  i / o              overhead camera nearer / farther",
     "",
     "VEHICLE",
     "  r                  restart at the start line",
@@ -488,7 +489,6 @@ static const char *helpText[] = {
     "  p                  freeze / unfreeze",
     "",
     "  ?                  close this help",
-    "  Esc                quit",
     NULL
 };
 
